@@ -1,0 +1,46 @@
+name: "loki"
+arch: "arm64"
+platform: "linux"
+version: "v3.1.0"
+release: "1"
+version_schema: semver
+description: Loki Logging Service
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Prometheus"
+homepage: "https://github.com/prometheus/prometheus"
+license: "Apache-2.0 license"
+
+deb:
+  compression: gzip
+
+contents:
+
+  - src: loki/loki-linux-arm64
+    dst: /usr/bin/loki
+
+  - src: src/loki.yml
+    dst: /etc/loki.yml
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: loki
+      group: loki
+
+  - src: src/loki.default
+    dst: /etc/default/loki
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: loki
+      group: loki
+
+  - src: src/loki.service
+    dst: /lib/systemd/system/loki.service
+    type: config|noreplace
+
+# add prometheus user/group
+scripts:
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  #postremove:  src/postremove.sh

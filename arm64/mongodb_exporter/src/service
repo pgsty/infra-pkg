@@ -1,0 +1,16 @@
+[Unit]
+Description=A Prometheus exporter for MongoDB including sharding, replication and storage engines
+Documentation=https://github.com/percona/mongodb_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/mongodb_exporter
+User=prometheus
+ExecStart=/usr/bin/mongodb_exporter $MONGODB_EXPORTER_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+
+[Install]
+WantedBy=multi-user.target

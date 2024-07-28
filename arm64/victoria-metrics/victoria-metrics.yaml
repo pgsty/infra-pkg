@@ -1,0 +1,20 @@
+name: "victoria-metrics"
+arch: "arm64"
+platform: "linux"
+version: "v1.102.0"
+version_schema: semver
+description: fast, cost-effective monitoring solution and time series database
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "VictoriaMetrics"
+homepage: "https://github.com/VictoriaMetrics/VictoriaMetrics"
+license: "Apache-2.0 license"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: victoria-metrics/victoria-metrics-prod
+    dst: /usr/bin/victoria-metrics
+    file_info: { mode: 0755 }

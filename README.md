@@ -1,5 +1,10 @@
 # infra-pkg: build rpm/deb for observability stack
 
+Building Infra RPM & DEB packages for [Pigsty](https://pigsty.io).
+
+Collected and distributed by [pgsty/pkg](https://github.com/pgsty/pkg) project.
+
+
 --------
 
 ## What's inside?

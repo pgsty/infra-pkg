@@ -1,0 +1,35 @@
+name: "promtail"
+arch: "arm64"
+platform: "linux"
+version: "v3.1.0"
+release: "1"
+version_schema: semver
+description: Promtail Logging Agent
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Prometheus"
+homepage: "https://github.com/prometheus/prometheus"
+license: "Apache-2.0 license"
+
+deb:
+  compression: gzip
+
+contents:
+
+  - src: loki/promtail-linux-arm64
+    dst: /usr/bin/promtail
+
+  - src: src/promtail.yml
+    dst: /etc/promtail.yml
+    type: config|noreplace
+
+  - src: src/promtail.default
+    dst: /etc/default/promtail
+    type: config|noreplace
+
+  - src: src/promtail.service
+    dst: /usr/lib/systemd/system/promtail.service
+    type: config|noreplace
+
+scripts:
+  postinstall: src/promtail-postinstall.sh
+  preremove:   src/promtail-preremove.sh

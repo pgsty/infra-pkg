@@ -1,0 +1,25 @@
+name: "logcli"
+arch: "arm64"
+platform: "linux"
+version: "v3.1.0"
+release: "1"
+version_schema: semver
+description: Loki Logging Service CLI
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Prometheus"
+homepage: "https://github.com/prometheus/prometheus"
+license: "Apache-2.0 license"
+
+deb:
+  compression: gzip
+
+contents:
+  - src: loki/logcli-linux-arm64
+    dst: /usr/bin/logcli
+
+# add prometheus user/group
+scripts:
+  #preinstall:  src/preinstall.sh
+  #postinstall: src/postinstall.sh
+  #preremove:   src/preremove.sh
+  #postremove:  src/postremove.sh

@@ -1,0 +1,24 @@
+name: "pg_timetable"
+arch: "arm64"
+platform: "linux"
+version: "v5.9.0"
+version_schema: semver
+description: |
+  pg_timetable: Advanced scheduling for PostgreSQL
+
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "cybertec"
+homepage: "https://github.com/cybertec-postgresql/pg_timetable"
+license: "PostgreSQL"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+
+  - src: pg_timetable/pg_timetable
+    dst: /usr/bin/pg_timetable
+    file_info:
+      mode: 0755

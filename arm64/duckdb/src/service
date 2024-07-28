@@ -1,0 +1,18 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=The Prometheus monitoring system and time series database.
+Documentation=https://etcd.io
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/etcd
+User=etcd
+ExecStart=/usr/bin/etcd $PROMETHEUS_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

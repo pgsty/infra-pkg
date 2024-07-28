@@ -1,0 +1,1 @@
+ALERTMANAGER_OPTS="--config.file=/etc/alertmanager.yml --cluster.advertise-address=0.0.0.0:9093 --storage.path=/tmp/alertmanager"

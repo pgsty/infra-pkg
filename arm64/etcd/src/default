@@ -1,0 +1,1 @@
+PROMETHEUS_OPTS='--config.file=/etc/etcd/etcd.yml --storage.tsdb.path=/var/lib/etcd/data --web.console.libraries=/usr/share/etcd/console_libraries --web.console.templates=/usr/share/etcd/consoles'
