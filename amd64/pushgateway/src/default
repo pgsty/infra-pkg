@@ -1,0 +1,1 @@
+PUSHGATEWAY_OPTS="--persistence.file=/tmp/pushgateway.metrics --persistence.interval=1m"

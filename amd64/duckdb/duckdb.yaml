@@ -1,0 +1,27 @@
+name: "duckdb"
+arch: "amd64"
+platform: "linux"
+version: "v1.0.0"
+release: "1"
+version_schema: semver
+description: In-process SQL OLAP Database Management System
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "motherduck"
+homepage: "https://github.com/duckdb/duckdb"
+license: "MIT License"
+
+deb:
+  compression: gzip
+
+contents:
+  - src: duckdb
+    dst: /usr/bin/duckdb
+    file_info:
+      mode: 0755
+
+# add etcd user/group
+#scripts:
+  #preinstall:  src/preinstall.sh
+  #postinstall: src/postinstall.sh
+  #preremove:   src/preremove.sh
+  #postremove:  src/postremove.sh

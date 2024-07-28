@@ -1,0 +1,40 @@
+name: "node-exporter"
+arch: "amd64"
+platform: "linux"
+version: "v1.8.2"
+version_schema: semver
+description: Prometheus exporter for machine metrics
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Prometheus"
+homepage: "https://github.com/prometheus/node_exporter"
+license: "Apache-2.0 license"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+
+  - src: node_exporter/node_exporter
+    dst: /usr/bin/node_exporter
+    file_info:
+      mode: 0755
+
+  - src: src/default
+    dst: /etc/default/node_exporter
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: root
+      group: root
+
+  - src: src/service
+    dst: /lib/systemd/system/node_exporter.service
+    type: config|noreplace
+
+scripts:
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  # postremove:  src/postremove.sh

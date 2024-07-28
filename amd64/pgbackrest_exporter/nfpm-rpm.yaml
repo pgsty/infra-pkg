@@ -1,0 +1,38 @@
+name: "pgbackrest_exporter"
+arch: "amd64"
+platform: "linux"
+version: "v0.17.0"
+version_schema: semver
+maintainer: Ruohang Feng <rh@vonng.com>
+description: |
+  Prometheus exporter for pgBackRest.
+
+vendor: "woblerr"
+homepage: "https://github.com/woblerr/pgbackrest_exporter"
+license: "MIT"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: pgbackrest_exporter
+    dst: /usr/bin/pgbackrest_exporter
+    file_info:
+      mode: 0755
+
+  - src: src/default
+    dst: /etc/default/pgbackrest_exporter
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: prometheus
+      group: prometheus
+
+  - src: src/service
+    dst: /usr/lib/systemd/system/pgbackrest_exporter.service
+    type: config
+
+scripts:
+  preinstall: src/preinstall.sh

@@ -1,0 +1,43 @@
+name: "pushgateway"
+arch: "amd64"
+platform: "linux"
+version: "v1.9.0"
+version_schema: semver
+description: Prometheus pushgateway
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Prometheus"
+homepage: "https://github.com/prometheus/pushgateway"
+license: "Apache-2.0 license"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+
+  # 1 binary files
+  - src: pushgateway/pushgateway
+    dst: /usr/bin/pushgateway
+    file_info:
+      mode: 0755
+
+  # 2 Config files
+  - src: src/default
+    dst: /etc/default/pushgateway
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: prometheus
+      group: prometheus
+
+  - src: src/service
+    dst: /usr/lib/systemd/system/pushgateway.service
+    type: config|noreplace
+
+
+scripts:
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  # postremove:  src/postremove.sh

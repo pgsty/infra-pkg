@@ -1,0 +1,32 @@
+name: "victoria-metrics-utils"
+arch: "amd64"
+platform: "linux"
+version: "v1.102.0"
+version_schema: semver
+description: fast, cost-effective monitoring solution and time series database, agent,alert,auth,backup,ctl
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "VictoriaMetrics"
+homepage: "https://github.com/VictoriaMetrics/VictoriaMetrics"
+license: "Apache-2.0 license"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: victoria-metrics/vmagent-prod
+    dst: /usr/bin/vmagent
+    file_info: { mode: 0755 }
+  - src: victoria-metrics/vmalert-prod
+    dst: /usr/bin/vmalert
+    file_info: { mode: 0755 }
+  - src: victoria-metrics/vmauth-prod
+    dst: /usr/bin/vmauth
+    file_info: { mode: 0755 }
+  - src: victoria-metrics/vmbackup-prod
+    dst: /usr/bin/vmbackup
+    file_info: { mode: 0755 }
+  - src: victoria-metrics/vmctl-prod
+    dst: /usr/bin/vmctl
+    file_info: { mode: 0755 }

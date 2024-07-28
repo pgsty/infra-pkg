@@ -1,0 +1,57 @@
+name: "alertmanager"
+arch: "amd64"
+platform: "linux"
+version: "v0.27.0"
+version_schema: semver
+description: Prometheus Alertmanager
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Prometheus"
+homepage: "https://github.com/prometheus/alertmanager"
+license: "Apache-2.0 license"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+
+  # 2 binary files
+  - src: alertmanager/alertmanager
+    dst: /usr/bin/alertmanager
+    file_info:
+      mode: 0755
+
+  - src: alertmanager/amtool
+    dst: /usr/bin/amtool
+    file_info:
+      mode: 0755
+
+
+  # 3 Config files
+  - src: alertmanager/alertmanager.yml
+    dst: /etc/alertmanager.yml
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: prometheus
+      group: prometheus
+
+  - src: src/default
+    dst: /etc/default/alertmanager
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: prometheus
+      group: prometheus
+
+  - src: src/service
+    dst: /lib/systemd/system/alertmanager.service
+    type: config|noreplace
+
+
+scripts:
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  # postremove:  src/postremove.sh

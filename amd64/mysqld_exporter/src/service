@@ -1,0 +1,16 @@
+[Unit]
+Description=Prometheus exporter for MySQL server metrics.
+Documentation=https://github.com/prometheus/mysqld_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/mysqld_exporter
+User=prometheus
+ExecStart=/usr/bin/mysqld_exporter $MYSQLD_EXPORTER_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+
+[Install]
+WantedBy=multi-user.target

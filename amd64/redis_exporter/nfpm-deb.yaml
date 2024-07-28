@@ -1,0 +1,43 @@
+name: "redis-exporter"
+arch: "amd64"
+platform: "linux"
+version: "v1.62.0"
+version_schema: semver
+description: |
+  Prometheus Exporter for Redis Metrics. Supports Redis 2.x, 3.x, 4.x, 5.x, 6.x, and 7.x
+
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "oliver006"
+homepage: "https://github.com/oliver006/redis_exporter"
+license: "Apache-2.0 license"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+
+  - src: redis_exporter/redis_exporter
+    dst: /usr/bin/redis_exporter
+    file_info:
+      mode: 0755
+
+  - src: src/default
+    dst: /etc/default/redis_exporter
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: prometheus
+      group: prometheus
+
+  - src: src/service
+    dst: /lib/systemd/system/redis_exporter.service
+    type: config|noreplace
+
+
+scripts:
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  # postremove:  src/postremove.sh
