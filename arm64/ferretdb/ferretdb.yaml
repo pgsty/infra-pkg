@@ -1,0 +1,23 @@
+name: "ferretdb"
+arch: "arm64"
+platform: "linux"
+version: "v1.23.0"
+version_schema: semver
+description: A truly Open Source MongoDB alternative
+
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "FerretDB"
+homepage: "https://github.com/FerretDB/FerretDB"
+license: "Apache 2.0"
+
+rpm:
+  compression: gzip
+  prefixes:
+    - /usr/bin
+
+contents:
+
+  - src: ferretdb-linux-arm64
+    dst: /usr/bin/ferretdb
+    file_info:
+      mode: 0755
