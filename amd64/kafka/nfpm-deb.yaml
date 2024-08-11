@@ -1,0 +1,47 @@
+name: "kafka"
+arch: "all"
+platform: "linux"
+version: "v3.8.0"
+version_schema: semver
+description: An open-source distributed event streaming platform
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Apache"
+homepage: "https://kafka.apache.org/"
+license: "Apache-2.0 license"
+
+rpm:
+  compression: gzip
+
+contents:
+
+  # copy binaries to /opt/kafka
+  - src: "kafka/"
+    dst: "/opt/kafka"
+    type: tree
+
+  # config directory /etc/kafka
+  - dst: /etc/kafka/
+    type: dir
+    file_info:
+      mode: 0700
+      owner: kafka
+      group: kafka
+
+  # 3 Config files
+  - src: src/server.properties
+    dst: /etc/kafka/server.properties
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: kafka
+      group: kafka
+
+  - src: src/service
+    dst: /lib/systemd/system/kafka.service
+    type: config|noreplace
+
+scripts:
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  # postremove:  src/postremove.sh
