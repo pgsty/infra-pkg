@@ -47,6 +47,11 @@ pg_timetable:
 ferretdb:
 	cd ferretdb && make
 
-all: loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb
+sqlcmd:
+	cd sqlcmd && make
+tigerbeetle:
+	cd tigerbeetle && make
 
-.PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb
+all: loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle
+
+.PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle

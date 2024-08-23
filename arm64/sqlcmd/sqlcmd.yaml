@@ -1,0 +1,21 @@
+name: "sqlcmd"
+arch: "arm64"
+platform: "linux"
+version: "v1.8.0"
+release: "1"
+version_schema: semver
+description: The new sqlcmd, CLI for SQL Server and Azure SQL (winget install sqlcmd / sqlcmd create mssql / sqlcmd open ads)
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "microsoft"
+homepage: "https://github.com/microsoft/go-sqlcmd"
+license: "MIT License"
+
+deb:
+  compression: gzip
+
+contents:
+  - src: sqlcmd/sqlcmd
+    dst: /usr/bin/sqlcmd
+    file_info:
+      mode: 0755
+
