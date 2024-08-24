@@ -10,11 +10,9 @@ vendor: "tigerbeetle"
 homepage: "https://github.com/tigerbeetle/tigerbeetle"
 license: "Apache-2.0 License"
 
-deb:
-  compression: gzip
-
 rpm:
-  compression: gzip
+  prefixes:
+    - /usr/bin
 
 contents:
   - src: tigerbeetle
