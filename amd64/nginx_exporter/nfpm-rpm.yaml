@@ -9,9 +9,6 @@ vendor: "Prometheus"
 homepage: "https://github.com/nginxinc/nginx-prometheus-exporter"
 license: "Apache-2.0 license"
 
-rpm:
-  compression: gzip
-
 contents:
 
   - src: nginx_exporter/nginx-prometheus-exporter
