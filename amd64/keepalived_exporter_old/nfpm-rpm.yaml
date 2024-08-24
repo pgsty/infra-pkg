@@ -1,34 +1,36 @@
-name: "kafka-exporter"
+name: "keepalived_exporter"
 arch: "amd64"
 platform: "linux"
-version: "v1.8.0"
+version: "v0.7.0"
 version_schema: semver
-description: Prometheus Exporter for Kafka
+description: Prometheus exporter for machine metrics
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "danielqsj"
-homepage: "https://github.com/danielqsj/kafka_exporter"
+vendor: "Prometheus"
+homepage: "https://github.com/prometheus/keepalived_exporter"
 license: "Apache-2.0 license"
 
-deb:
+rpm:
   compression: gzip
+  prefixes:
+    - /usr/bin
 
 contents:
 
-  - src: kafka_exporter/kafka_exporter
-    dst: /usr/bin/kafka_exporter
+  - src: keepalived_exporter/keepalived_exporter
+    dst: /usr/bin/keepalived_exporter
     file_info:
       mode: 0755
 
   - src: src/default
-    dst: /etc/default/kafka_exporter
+    dst: /etc/default/keepalived_exporter
     type: config|noreplace
     file_info:
       mode: 0700
-      owner: prometheus
-      group: prometheus
+      owner: root
+      group: root
 
   - src: src/service
-    dst: /lib/systemd/system/kafka_exporter.service
+    dst: /usr/lib/systemd/system/keepalived_exporter.service
     type: config|noreplace
 
 scripts:

@@ -1,16 +1,16 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-07-28
+# Mtime     :   2024-01-30
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-REPONAME="danielqsj/kafka_exporter"
-PACKAGE="kafka_exporter"
-VERSION=1.8.0
+REPONAME="gen2brain/keepalived_exporter"
+PACKAGE="keepalived_exporter"
+VERSION=0.7.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
-DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
+DIRNAME="$(PACKAGE)-$(VERSION)-amd64"
 FILENAME="$(DIRNAME).tar.gz"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 

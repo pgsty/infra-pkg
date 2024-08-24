@@ -1,7 +1,7 @@
 name: "kafka-exporter"
 arch: "arm64"
 platform: "linux"
-version: "v1.7.0"
+version: "v1.8.0"
 version_schema: semver
 description: Prometheus Exporter for Kafka
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -9,10 +9,8 @@ vendor: "danielqsj"
 homepage: "https://github.com/danielqsj/kafka_exporter"
 license: "Apache-2.0 license"
 
-rpm:
+deb:
   compression: gzip
-  prefixes:
-    - /usr/bin
 
 contents:
 
