@@ -9,11 +9,6 @@ vendor: "Prometheus"
 homepage: "https://github.com/prometheus/alertmanager"
 license: "Apache-2.0 license"
 
-rpm:
-  compression: gzip
-  prefixes:
-    - /usr/bin
-
 contents:
 
   # 2 binary files
