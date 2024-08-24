@@ -15,9 +15,9 @@ DEVEL_PATH = sv:/data/pgsty/infra-pkg
 ###############################################################
 all: amd64 arm64
 amd64:
-	cd amd64 && make all
+	cd amd64 && make
 arm64:
-	cd arm64 && make all
+	cd arm64 && make
 
 
 ###############################################################

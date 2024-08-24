@@ -1,14 +1,20 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-07-28
+# Mtime     :   2024-08-24
 # Desc      :   Makefile shortcuts for prometheus amd64 build
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 
 default: build
-build: all
+build: dir all
+all: loki prometheus alertmanager pushgateway blackbox_exporter \
+	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter \
+	pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
+	kafka sqlcmd tigerbeetle
+dir:
+	mkdir -p ../dist/deb.amd64 ../dist/rpm.x86_64
 
 loki:
 	cd loki && make
@@ -50,8 +56,7 @@ sqlcmd:
 	cd sqlcmd && make
 tigerbeetle:
 	cd tigerbeetle && make
+kafka:
+	cd kafka && make
 
-
-all: loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle
-
-.PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle
+.PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle kafka

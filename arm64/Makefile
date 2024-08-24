@@ -8,7 +8,13 @@
 #==============================================================#
 
 default: build
-build: all
+build: dir all
+all: loki prometheus alertmanager pushgateway blackbox_exporter \
+	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter \
+	pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
+	sqlcmd tigerbeetle
+dir:
+	mkdir -p ../dist/deb.arm64 ../dist/rpm.aarch64
 
 loki:
 	cd loki && make
@@ -46,7 +52,6 @@ pg_timetable:
 	cd pg_timetable && make
 ferretdb:
 	cd ferretdb && make
-
 sqlcmd:
 	cd sqlcmd && make
 tigerbeetle:
