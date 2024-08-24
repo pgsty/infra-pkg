@@ -10,8 +10,9 @@ vendor: "microsoft"
 homepage: "https://github.com/microsoft/go-sqlcmd"
 license: "MIT License"
 
-deb:
-  compression: gzip
+rpm:
+  prefixes:
+    - /usr/bin
 
 contents:
   - src: sqlcmd/sqlcmd
