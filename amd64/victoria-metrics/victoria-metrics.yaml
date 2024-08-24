@@ -1,7 +1,7 @@
 name: "victoria-metrics"
 arch: "amd64"
 platform: "linux"
-version: "v1.102.0"
+version: "v1.102.1"
 version_schema: semver
 description: fast, cost-effective monitoring solution and time series database
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -10,7 +10,6 @@ homepage: "https://github.com/VictoriaMetrics/VictoriaMetrics"
 license: "Apache-2.0 license"
 
 rpm:
-  compression: gzip
   prefixes:
     - /usr/bin
 
