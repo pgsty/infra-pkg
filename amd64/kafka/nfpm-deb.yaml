@@ -9,9 +9,6 @@ vendor: "Apache"
 homepage: "https://kafka.apache.org/"
 license: "Apache-2.0 license"
 
-rpm:
-  compression: gzip
-
 contents:
 
   # copy binaries to /opt/kafka
