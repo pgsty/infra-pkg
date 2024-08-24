@@ -10,18 +10,12 @@ vendor: "motherduck"
 homepage: "https://github.com/duckdb/duckdb"
 license: "MIT License"
 
-deb:
-  compression: gzip
+rpm:
+  prefixes:
+    - /usr/bin
 
 contents:
   - src: duckdb
     dst: /usr/bin/duckdb
     file_info:
       mode: 0755
-
-# add etcd user/group
-#scripts:
-  #preinstall:  src/preinstall.sh
-  #postinstall: src/postinstall.sh
-  #preremove:   src/preremove.sh
-  #postremove:  src/postremove.sh
