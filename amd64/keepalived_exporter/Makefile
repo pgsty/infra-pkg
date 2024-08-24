@@ -1,19 +1,18 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-01-30
+# Mtime     :   2024-08-24
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-REPONAME="gen2brain/keepalived_exporter"
-PACKAGE="keepalived_exporter"
-VERSION=0.7.0
+REPONAME="mehdy/keepalived-exporter"
+PACKAGE="keepalived-exporter"
+VERSION=1.3.3
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
-DIRNAME="$(PACKAGE)-$(VERSION)-amd64"
+DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-
 
 default: all
 all: download extract build clean
@@ -31,12 +30,13 @@ meta:
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
+	@echo $(WEB_URL)
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -SL $(WEB_URL) -o $(FILENAME); fi
 
 # extract tarball content to current directory
 extract:
 	mkdir -p $(PACKAGE)
-	tar -xf $(FILENAME) --strip-components 1 -C $(PACKAGE)
+	tar -xf $(FILENAME)  -C $(PACKAGE) # --strip-components 1
 
 # remove tarball, build dir, rpm & deb files
 clean:

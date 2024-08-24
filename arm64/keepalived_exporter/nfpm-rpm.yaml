@@ -1,18 +1,16 @@
 name: "keepalived_exporter"
 arch: "arm64"
 platform: "linux"
-version: "v1.3.2"
+version: "v1.3.3"
 version_schema: semver
 description: Prometheus exporter for keepalived metrics
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Mehdy"
-homepage: https://github.com/gen2brain/keepalived_exporter
+homepage: https://github.com/mehdy/keepalived-exporter
 license: "GPL-3.0"
 
 rpm:
   compression: gzip
-  prefixes:
-    - /usr/bin
 
 contents:
 

@@ -1,13 +1,13 @@
 name: "keepalived_exporter"
 arch: "amd64"
 platform: "linux"
-version: "v0.7.0"
+version: "v1.3.3"
 version_schema: semver
 description: Prometheus exporter for machine metrics
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Prometheus"
-homepage: "https://github.com/prometheus/keepalived_exporter"
-license: "Apache-2.0 license"
+vendor: "Mehdy"
+homepage: https://github.com/mehdy/keepalived-exporter
+license: "GPL-3.0"
 
 rpm:
   compression: gzip
@@ -16,7 +16,7 @@ rpm:
 
 contents:
 
-  - src: keepalived_exporter/keepalived_exporter
+  - src: keepalived-exporter/keepalived-exporter
     dst: /usr/bin/keepalived_exporter
     file_info:
       mode: 0755
