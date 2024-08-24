@@ -9,11 +9,6 @@ vendor: "Prometheus"
 homepage: "https://github.com/prometheus/mongodb_exporter"
 license: "Apache-2.0 license"
 
-rpm:
-  compression: gzip
-  prefixes:
-    - /usr/bin
-
 contents:
 
   - src: mongodb_exporter/mongodb_exporter
