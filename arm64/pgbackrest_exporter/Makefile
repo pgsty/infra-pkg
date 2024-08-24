@@ -1,16 +1,16 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-01-30
+# Mtime     :   2024-08-24
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=woblerr/pgbackrest_exporter
 PACKAGE=pgbackrest_exporter
-VERSION=0.17.0
+VERSION=0.18.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
-DIRNAME=$(PACKAGE)-$(VERSION)-linux-x86_64
+DIRNAME=$(PACKAGE)-$(VERSION)-linux-arm64
 FILENAME=$(DIRNAME).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 

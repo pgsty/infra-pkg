@@ -1,20 +1,18 @@
 name: "pgbackrest-exporter"
 arch: "arm64"
 platform: "linux"
-version: "v0.17.0"
+version: "v0.18.0"
 version_schema: semver
 maintainer: Ruohang Feng <rh@vonng.com>
 description: |
-  Prometheus exporter for pgBackRest.
+  Prometheus exporter for pgBackRest
 
 vendor: "Vonng"
 homepage: "https://github.com/woblerr/pgbackrest_exporter"
 license: "MIT License"
 
-rpm:
+deb:
   compression: gzip
-  prefixes:
-    - /usr/bin
 
 contents:
   - src: pgbackrest_exporter
