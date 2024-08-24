@@ -13,8 +13,8 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [loki](https://github.com/grafana/loki) : 3.1.0 -> 3.1.1
-- [promtail](https://github.com/grafana/loki) : 3.1.1 (fail on el7)
+- [loki](https://github.com/grafana/loki) : 3.1.1
+- [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
 - [prometheus](https://github.com/prometheus/prometheus) : 2.54.0
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.9.0
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.27.0
