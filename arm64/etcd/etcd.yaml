@@ -2,16 +2,12 @@ name: "etcd"
 arch: "arm64"
 platform: "linux"
 version: "v3.5.15"
-release: "1"
 version_schema: semver
 description: Distributed reliable key-value store for the most critical data of a distributed system
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "etcd.io"
 homepage: "https://github.com/etcd-io/etcd"
 license: "Apache-2.0 license"
-
-deb:
-  compression: gzip
 
 contents:
 
@@ -51,6 +47,3 @@ contents:
 # add etcd user/group
 scripts:
   preinstall:  src/preinstall.sh
-  #postinstall: src/postinstall.sh
-  #preremove:   src/preremove.sh
-  #postremove:  src/postremove.sh
