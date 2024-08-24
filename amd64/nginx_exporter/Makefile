@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-01-30
+# Mtime     :   2024-08-24
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME="nginxinc/nginx-prometheus-exporter"
 PACKAGE="nginx_exporter"
-VERSION=1.2.0
+VERSION=1.3.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="nginx-prometheus-exporter_$(VERSION)_linux_amd64"
 FILENAME="$(DIRNAME).tar.gz"
