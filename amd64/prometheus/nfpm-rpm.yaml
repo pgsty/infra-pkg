@@ -1,7 +1,7 @@
 name: "prometheus2"
 arch: "amd64"
 platform: "linux"
-version: "v2.53.1"
+version: "v2.54.0"
 version_schema: semver
 description: The Prometheus monitoring system and time series database.
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -11,8 +11,6 @@ license: "Apache-2.0 license"
 
 rpm:
   compression: gzip
-  prefixes:
-    - /usr/bin
 
 contents:
 
