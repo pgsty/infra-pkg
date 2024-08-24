@@ -9,11 +9,6 @@ vendor: "Mehdy"
 homepage: https://github.com/mehdy/keepalived-exporter
 license: "GPL-3.0"
 
-rpm:
-  compression: gzip
-  prefixes:
-    - /usr/bin
-
 contents:
 
   - src: keepalived-exporter/keepalived-exporter
