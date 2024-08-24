@@ -4,15 +4,10 @@ platform: "linux"
 version: "v0.18.0"
 version_schema: semver
 maintainer: Ruohang Feng <rh@vonng.com>
-description: |
-  Prometheus exporter for pgBackRest
-
-vendor: "Vonng"
+description: Prometheus exporter for pgBackRest
+vendor: "woblerr"
 homepage: "https://github.com/woblerr/pgbackrest_exporter"
-license: "MIT License"
-
-deb:
-  compression: gzip
+license: "MIT"
 
 contents:
   - src: pgbackrest_exporter
