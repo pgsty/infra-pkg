@@ -10,7 +10,7 @@ REPONAME=cybertec-postgresql/pg_timetable
 PACKAGE=pg_timetable
 VERSION=5.9.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
-DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
+DIRNAME=$(PACKAGE)-v$(VERSION).linux-arm64
 FILENAME=$(PACKAGE)_Linux_arm64.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 

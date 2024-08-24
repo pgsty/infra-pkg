@@ -1,5 +1,5 @@
 name: "tigerbeetle"
-arch: "amd64"
+arch: "arm64"
 platform: "linux"
 version: "v0.15.6"
 release: "1"
