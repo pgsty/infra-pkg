@@ -1,17 +1,17 @@
 name: "logcli"
 arch: "amd64"
 platform: "linux"
-version: "v3.1.0"
-release: "1"
+version: "v3.1.1"
 version_schema: semver
 description: Loki Logging Service CLI
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Prometheus"
-homepage: "https://github.com/prometheus/prometheus"
-license: "Apache-2.0 license"
+vendor: Grafana
+homepage: https://github.com/grafana/loki
+license: AGPL-3.0
 
-deb:
-  compression: gzip
+rpm:
+  prefixes:
+    - /usr/bin
 
 contents:
   - src: loki/logcli-linux-amd64

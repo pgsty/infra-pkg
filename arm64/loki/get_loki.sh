@@ -57,7 +57,7 @@ function get_loki() {
 			                       [-h|--help]               # print this message
 			EXAMPLES
 			    get_loki                  # get latest loki binary to /tmp/loki
-			    get_loki  -v 3.1.0        # get specific version of loki (3.1.0)
+			    get_loki  -v 3.1.1        # get specific version of loki (3.1.1)
 			    get_loki  -p /usr/bin     # download binaries to specific path `/usr/bin`
 			    get_loki  -r              # force re-download and remove tarball after download
 			EOF
