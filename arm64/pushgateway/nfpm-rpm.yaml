@@ -1,7 +1,7 @@
 name: "pushgateway"
 arch: "arm64"
 platform: "linux"
-version: "v1.9.0"
+version: "v1.10.0"
 version_schema: semver
 description: Prometheus pushgateway
 maintainer: Ruohang Feng <rh@vonng.com>
