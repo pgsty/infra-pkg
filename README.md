@@ -32,28 +32,28 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [duckdb](https://github.com/duckdb/duckdb) : 1.1.2
 - [etcd](https://github.com/etcd-io/etcd) : 3.5.15
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.9.0
-- [ferretdb](https://github.com/FerretDB/FerretDB): 1.23.1
+- [ferretdb](https://github.com/FerretDB/FerretDB): 1.24.0
 
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 11.1.4 (Download Directly)
+- [grafana](https://github.com/grafana/grafana/) : 11.2.2 (Download Directly)
     - RPM amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/
     - DEB amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/
 - [**pg_exporter**](https://github.com/Vonng/pg_exporter) : 0.7.0 (Maintained Separately)
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.40.0
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.41.1
     - amd64 & arm64: https://packages.timber.io/vector/latest/
-- [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 2.6.0
-    - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v2.6.0
-- [minio](https://github.com/minio/minio): 20240817012454
+- [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 2.7.0
+    - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v2.7.0
+- [minio](https://github.com/minio/minio): 20241013133411
     - amd64: https://dl.min.io/server/minio/release/linux-amd64/
     - arm64: https://dl.min.io/server/minio/release/linux-arm64/
-- [mcli](https://github.com/minio/mc): 20240817113350
+- [mcli](https://github.com/minio/mc): 20241008093726
     - amd64: https://dl.min.io/client/mc/release/linux-amd64/
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
-- [sealos](https://github.com/labring/sealos): 5.0.0
-    - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.0
+- [sealos](https://github.com/labring/sealos): 5.0.1
+    - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
 
 --------
 
