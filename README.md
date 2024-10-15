@@ -30,7 +30,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.102.1
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : v0.28.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.1.2
-- [etcd](https://github.com/etcd-io/etcd) : 3.5.15
+- [etcd](https://github.com/etcd-io/etcd) : 3.5.16
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.9.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 1.24.0
 

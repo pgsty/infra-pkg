@@ -1,7 +1,7 @@
 name: "etcd"
 arch: "amd64"
 platform: "linux"
-version: "v3.5.15"
+version: "v3.5.16"
 version_schema: semver
 description: Distributed reliable key-value store for the most critical data of a distributed system
 maintainer: Ruohang Feng <rh@vonng.com>
