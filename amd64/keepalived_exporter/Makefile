@@ -1,16 +1,16 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-08-24
+# Mtime     :   2024-11-19
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME="mehdy/keepalived-exporter"
 PACKAGE="keepalived-exporter"
-VERSION=1.3.3
+VERSION=1.4.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
-DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
+DIRNAME="$(PACKAGE)_$(VERSION)_linux_amd64"
 FILENAME="$(DIRNAME).tar.gz"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
