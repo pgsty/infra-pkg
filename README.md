@@ -23,13 +23,13 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.8.2
 - [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.4.0
 - [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.18.0
-- [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.15.1
-- [redis_exporter](https://github.com/oliver006/redis_exporter) : v1.62.0
+- [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.16.0
+- [redis_exporter](https://github.com/oliver006/redis_exporter) : v1.66.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.8.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.41.2
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.102.1
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : v0.28.0
-- [duckdb](https://github.com/duckdb/duckdb) : 1.1.2
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.106.1
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : v1.0.0
+- [duckdb](https://github.com/duckdb/duckdb) : 1.1.3
 - [etcd](https://github.com/etcd-io/etcd) : 3.5.17
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.9.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 1.24.0

@@ -1,0 +1,18 @@
+name: "vlogscli"
+arch: "amd64"
+platform: "linux"
+version: "v1.0.0"
+version_schema: semver
+description: vlogsqcli is an interactive command-line tool for querying VictoriaLogs.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "VictoriaMetrics"
+homepage: "https://docs.victoriametrics.com/victorialogs/querying/vlogscli/"
+license: "Apache-2.0 license"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: victoria-metrics/vlogscli-prod
+    dst: /usr/bin/vlogscli

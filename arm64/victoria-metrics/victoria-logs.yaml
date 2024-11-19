@@ -1,7 +1,7 @@
 name: "victoria-logs"
 arch: "arm64"
 platform: "linux"
-version: "v0.28.0"
+version: "v1.0.0"
 version_schema: semver
 description: VictoriaLogs is open source user-friendly database for logs from VictoriaMetrics.
 maintainer: Ruohang Feng <rh@vonng.com>

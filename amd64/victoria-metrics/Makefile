@@ -1,26 +1,28 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-08-24
+# Mtime     :   2024-11-19
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=VictoriaMetrics/VictoriaMetrics
 PACKAGE=victoria-metrics
-VERSION=1.102.1
-VMLOG_VERSION=0.28.0
+VERSION=1.106.1
+VMLOG_VERSION=1.0.0
 
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME1=victoria-metrics-linux-amd64-v$(VERSION).tar.gz
 FILENAME2=victoria-metrics-linux-amd64-v$(VERSION)-cluster.tar.gz
 FILENAME3=vmutils-linux-amd64-v$(VERSION).tar.gz
 FILENAME4=victoria-logs-linux-amd64-v$(VMLOG_VERSION)-victorialogs.tar.gz
+FILENAME5=vlogscli-linux-amd64-v$(VMLOG_VERSION)-victorialogs.tar.gz
 
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
 WEB_URL2=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME2)
 WEB_URL3=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME3)
 WEB_URL4=https://github.com/$(REPONAME)/releases/download/v$(VMLOG_VERSION)-victorialogs/$(FILENAME4)
+WEB_URL5=https://github.com/$(REPONAME)/releases/download/v$(VMLOG_VERSION)-victorialogs/$(FILENAME5)
 
 
 default: all
@@ -33,8 +35,8 @@ link:
 	@echo curl -SL $(WEB_URL1) -o $(FILENAME1)
 	@echo curl -SL $(WEB_URL2) -o $(FILENAME2)
 	@echo curl -SL $(WEB_URL3) -o $(FILENAME3)
-	@echo curl -SL $(WEB_URL3) -o $(FILENAME4)
-
+	@echo curl -SL $(WEB_URL4) -o $(FILENAME4)
+	@echo curl -SL $(WEB_URL5) -o $(FILENAME5)
 
 # get latest release info
 meta:
@@ -47,7 +49,7 @@ download:
 	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else curl -SL $(WEB_URL2) -o $(FILENAME2); fi
 	if [ -f ../tarball/$(FILENAME3) ]; then cp ../tarball/$(FILENAME3) .; else curl -SL $(WEB_URL3) -o $(FILENAME3); fi
 	if [ -f ../tarball/$(FILENAME4) ]; then cp ../tarball/$(FILENAME4) .; else curl -SL $(WEB_URL4) -o $(FILENAME4); fi
-
+	if [ -f ../tarball/$(FILENAME5) ]; then cp ../tarball/$(FILENAME5) .; else curl -SL $(WEB_URL5) -o $(FILENAME5); fi
 
 # extract tarball content to current directory
 extract:
@@ -56,10 +58,11 @@ extract:
 	tar -xf $(FILENAME2)  -C $(PACKAGE)
 	tar -xf $(FILENAME3)  -C $(PACKAGE)
 	tar -xf $(FILENAME4)  -C $(PACKAGE)
+	tar -xf $(FILENAME5)  -C $(PACKAGE)
 
 # remove tarball, build dir, rpm & deb files
 clean:
-	rm -rf $(PACKAGE) $(FILENAME1) $(FILENAME2) $(FILENAME3) $(FILENAME4)
+	rm -rf $(PACKAGE) $(FILENAME1) $(FILENAME2) $(FILENAME3) $(FILENAME4) $(FILENAME5)
 
 # build rpm & deb package
 build: rpm deb
@@ -68,12 +71,13 @@ rpm:
 	nfpm package --config victoria-logs.yaml            --packager rpm --target ../../dist/rpm.x86_64/
 	nfpm package --config victoria-metrics-cluster.yaml --packager rpm --target ../../dist/rpm.x86_64/
 	nfpm package --config victoria-metrics-utils.yaml   --packager rpm --target ../../dist/rpm.x86_64/
+	nfpm package --config vlogscli.yaml                 --packager rpm --target ../../dist/rpm.x86_64/
 
 deb:
 	nfpm package --config victoria-metrics.yaml         --packager deb --target ../../dist/deb.amd64/
 	nfpm package --config victoria-logs.yaml            --packager deb --target ../../dist/deb.amd64/
 	nfpm package --config victoria-metrics-cluster.yaml --packager deb --target ../../dist/deb.amd64/
 	nfpm package --config victoria-metrics-utils.yaml   --packager deb --target ../../dist/deb.amd64/
-
+	nfpm package --config vlogscli.yaml                 --packager deb --target ../../dist/deb.amd64/
 
 .PHONY: all get link meta download extract clean build rpm deb
