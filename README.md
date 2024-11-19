@@ -33,7 +33,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [etcd](https://github.com/etcd-io/etcd) : 3.5.17
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.9.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 1.24.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 16.8
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.13
 
 
 **Download Directly**:
