@@ -65,7 +65,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - Prometheus: 2.54.0 -> 3.0.0
 - VictoriaMetrics 1.102.1 -> 1.106.1
 - VictoriaLogs v0.28.0 -> 1.0.0
-- MySQLD Exporter 0.15.1 -> 0.16.0
+- MySQL Exporter 0.15.1 -> 0.16.0
 - Redis Exporter 1.62.0 -> 1.66.0
 - MongoDB Exporter 0.41.2 -> 0.42.0
 - Keepalived Exporter 1.3.3 -> 1.4.0
