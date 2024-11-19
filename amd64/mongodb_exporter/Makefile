@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-01-30
+# Mtime     :   2024-11-19
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME="percona/mongodb_exporter"
 PACKAGE="mongodb_exporter"
-VERSION=0.41.2
+VERSION=0.42.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
