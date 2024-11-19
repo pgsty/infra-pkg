@@ -1,7 +1,7 @@
 name: "prometheus2"
 arch: "amd64"
 platform: "linux"
-version: "v2.54.0"
+version: "v3.0.0"
 release: "1"
 version_schema: semver
 description: The Prometheus monitoring system and time series database.
@@ -52,16 +52,6 @@ contents:
   - src: src/service
     dst: /lib/systemd/system/prometheus.service
     type: config|noreplace
-
-
-  # 2 console libraries
-  - src: prometheus/consoles
-    dst: /usr/share/prometheus/consoles
-    type: tree
-
-  - src: prometheus/console_libraries
-    dst: /usr/share/prometheus/console_libraries
-    type: tree
 
 
 # add prometheus user/group
