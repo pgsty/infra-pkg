@@ -58,5 +58,7 @@ tigerbeetle:
 	cd tigerbeetle && make
 kafka:
 	cd kafka && make
+v2ray:
+	cd v2ray && make
 
-.PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle kafka
+.PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle kafka v2ray

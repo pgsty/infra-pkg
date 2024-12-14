@@ -1,0 +1,59 @@
+name: "v2ray"
+arch: "amd64"
+platform: "linux"
+version: "v5.23.0"
+release: "1"
+version_schema: semver
+description: A platform for building proxies to bypass network restrictions.
+maintainer: V2fly Teams
+vendor: "v2fly"
+homepage: "https://github.com/v2fly/v2ray-core"
+license: "MIT License"
+
+contents:
+  # binary
+  - src: v2ray/v2ray
+    dst: /usr/local/bin/v2ray
+    file_info:
+      mode: 0755
+
+  # config
+  - src: src/config.json
+    dst: /etc/v2ray.json
+    type: config|noreplace
+    file_info:
+      mode: 0644
+
+  # service
+  - src: src/v2ray.service
+    dst: /usr/lib/systemd/system/v2ray.service
+    type: config|noreplace
+    file_info:
+      mode: 0644
+
+  # geo data
+  - src: v2ray/geoip.dat
+    dst: /usr/local/share/v2ray/geoip.dat
+    file_info:
+      mode: 0644
+
+  - src: v2ray/geosite.dat
+    dst: /usr/local/share/v2ray/geosite.dat
+    file_info:
+      mode: 0644
+
+  # log dir
+  - dst: /var/log/v2ray
+    type: dir
+    file_info:
+      mode: 0755
+
+  - dst: /var/log/v2ray/access.log
+    type: ghost
+    file_info:
+      mode: 0644
+
+  - dst: /var/log/v2ray/error.log
+    type: ghost
+    file_info:
+      mode: 0644
