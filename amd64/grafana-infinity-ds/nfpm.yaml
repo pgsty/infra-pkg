@@ -1,0 +1,41 @@
+name: "grafana-infinity-ds"
+arch: "amd64"
+platform: "linux"
+version: "2.11.4"
+version_schema: semver
+description: "CSV, JSON, GraphQL, XML and HTML datasource for grafana."
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Grafana"
+homepage: "https://github.com/grafana/grafana-infinity-datasource"
+license: "Apache-2.0"
+
+overrides:
+  deb:
+    depends:
+      - grafana (>= 9.5.15)
+  rpm:
+    depends:
+      - grafana >= 9.5.15
+
+contents:
+
+  - dst: /var/lib/grafana/
+    type: dir
+    file_info:
+      mode: 0755
+      owner: grafana
+      group: grafana
+
+  - dst: /var/lib/grafana/plugins/
+    type: dir
+    file_info:
+      mode: 0755
+      owner: grafana
+      group: grafana
+
+  - src: yesoreyeram-infinity-datasource/
+    dst: /var/lib/grafana/plugins/yesoreyeram-infinity-datasource/
+    type: tree
+    file_info:
+      owner: grafana
+      group: grafana

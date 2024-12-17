@@ -1,0 +1,41 @@
+name: "grafana-victoriametrics-ds"
+arch: "amd64"
+platform: "linux"
+version: "v0.10.3"
+version_schema: semver
+description: "Grafana datasource for VictoriaMetrics"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "VictoriaMetrics"
+homepage: "https://github.com/VictoriaMetrics/victoriametrics-datasource"
+license: "AGPL-3.0"
+
+overrides:
+  deb:
+    depends:
+      - grafana (>= 8.3.0)
+  rpm:
+    depends:
+      - grafana >= 8.3.0
+
+contents:
+
+  - dst: /var/lib/grafana/
+    type: dir
+    file_info:
+      mode: 0755
+      owner: grafana
+      group: grafana
+
+  - dst: /var/lib/grafana/plugins/
+    type: dir
+    file_info:
+      mode: 0755
+      owner: grafana
+      group: grafana
+
+  - src: victoriametrics-datasource/
+    dst: /var/lib/grafana/plugins/victoriametrics-datasource/
+    type: tree
+    file_info:
+      owner: grafana
+      group: grafana

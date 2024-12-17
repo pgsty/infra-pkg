@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-07-28
+# Mtime     :   2024-12-16
 # Desc      :   Makefile shortcuts for prometheus arm64 build
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
@@ -59,6 +59,18 @@ tigerbeetle:
 v2ray:
 	cd v2ray && make
 
-all: loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle v2ray
+ds: grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
+grafana-infinity-ds:
+	cd grafana-infinity-ds && make
 
-.PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle v2ray
+grafana-victoriametrics-ds:
+	cd grafana-victoriametrics-ds && make
+
+grafana-victorialogs-ds:
+	cd grafana-victorialogs-ds && make
+
+.PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter \
+	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
+	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
+	victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle kafka v2ray \
+	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds

@@ -1,35 +1,35 @@
-name: "grafana-victoria-ds"
-arch: "arm64"
+name: "grafana-victorialogs-ds"
+arch: "amd64"
 platform: "linux"
 version: "v0.12.0"
 version_schema: semver
-description: "Grafana datasource for VictoriaMetrics & VictoriaLogs"
+description: "Grafana datasource for VictoriaLogs"
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Vonng"
+vendor: "VictoriaMetrics"
 homepage: "https://github.com/VictoriaMetrics/victorialogs-datasource"
 license: "Apache-2.0"
 
 overrides:
   deb:
     depends:
-      - grafana (>= 11.0.0)
+      - grafana (>= 10.0.3)
   rpm:
     depends:
-      - grafana >= 11.0.0
+      - grafana >= 10.0.3
 
 contents:
 
-  - dst: /var/lib/grafana/plugins/
+  - dst: /var/lib/grafana/
     type: dir
     file_info:
       mode: 0755
       owner: grafana
       group: grafana
 
-  - src: victoriametrics-datasource/
-    dst: /var/lib/grafana/plugins/victoriametrics-datasource/
-    type: tree
+  - dst: /var/lib/grafana/plugins/
+    type: dir
     file_info:
+      mode: 0755
       owner: grafana
       group: grafana
 
