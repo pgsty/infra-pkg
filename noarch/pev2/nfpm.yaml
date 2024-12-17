@@ -1,0 +1,15 @@
+name: "pev2"
+arch: "all"
+platform: "linux"
+version: "v1.12.1"
+version_schema: semver
+description: "PostgreSQL Explain Visualizer"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Dalibo"
+homepage: "https://github.com/dalibo/pev2"
+license: "PostgreSQL"
+
+contents:
+  - src: pev2.html
+    dst: /usr/share/pev2.html
+    type: file
