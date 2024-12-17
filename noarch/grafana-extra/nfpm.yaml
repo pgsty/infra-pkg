@@ -1,0 +1,64 @@
+name: "grafana-extra"
+arch: "all"
+platform: "linux"
+version: "v11.4.0"
+version_schema: semver
+description: "extra panels, datasources, resources for grafana"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Vonng"
+homepage: "https://pigsty.io"
+license: "Apache-2.0"
+
+depends:
+  - grafana
+
+contents:
+  - src: plugins/volkovlabs-echarts-panel/
+    dst: /var/lib/grafana/plugins/volkovlabs-echarts-panel/
+    type: tree
+  - src: plugins/volkovlabs-image-panel/
+    dst: /var/lib/grafana/plugins/volkovlabs-image-panel/
+    type: tree
+  - src: plugins/volkovlabs-form-panel/
+    dst: /var/lib/grafana/plugins/volkovlabs-form-panel/
+    type: tree
+  - src: plugins/volkovlabs-table-panel/
+    dst: /var/lib/grafana/plugins/volkovlabs-table-panel/
+    type: tree
+  - src: plugins/volkovlabs-variable-panel/
+    dst: /var/lib/grafana/plugins/volkovlabs-variable-panel/
+    type: tree
+  - src: plugins/knightss27-weathermap-panel/
+    dst: /var/lib/grafana/plugins/knightss27-weathermap-panel/
+    type: tree
+  - src: plugins/marcusolsson-dynamictext-panel/
+    dst: /var/lib/grafana/plugins/marcusolsson-dynamictext-panel/
+    type: tree
+  - src: plugins/marcusolsson-treemap-panel/
+    dst: /var/lib/grafana/plugins/marcusolsson-treemap-panel/
+    type: tree
+  - src: plugins/marcusolsson-calendar-panel/
+    dst: /var/lib/grafana/plugins/marcusolsson-calendar-panel/
+    type: tree
+  - src: plugins/marcusolsson-hourly-heatmap-panel/
+    dst: /var/lib/grafana/plugins/marcusolsson-hourly-heatmap-panel/
+    type: tree
+  - src: plugins/marcusolsson-static-datasource/
+    dst: /var/lib/grafana/plugins/marcusolsson-static-datasource/
+    type: tree
+  - src: plugins/marcusolsson-json-datasource/
+    dst: /var/lib/grafana/plugins/marcusolsson-json-datasource/
+    type: tree
+  - src: plugins/volkovlabs-rss-datasource/
+    dst: /var/lib/grafana/plugins/volkovlabs-rss-datasource/
+    type: tree
+  - src: plugins/volkovlabs-grapi-datasource/
+    dst: /var/lib/grafana/plugins/volkovlabs-grapi-datasource/
+    type: tree
+  - src: chart/
+    dst:  /usr/share/grafana/public/
+    type: tree
+
+
+
+
