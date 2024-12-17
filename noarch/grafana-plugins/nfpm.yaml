@@ -1,7 +1,7 @@
-name: "grafana-extra"
+name: "grafana-plugins"
 arch: "all"
 platform: "linux"
-version: "v11.4.0"
+version: "11.4.0"
 version_schema: semver
 description: "extra panels, datasources, resources for grafana"
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -9,56 +9,111 @@ vendor: "Vonng"
 homepage: "https://pigsty.io"
 license: "Apache-2.0"
 
-depends:
-  - grafana
+overrides:
+  deb:
+    depends:
+      - grafana (>= 11.0.0)
+  rpm:
+    depends:
+      - grafana >= 11.0.0
 
 contents:
+  - dst: /var/lib/grafana/plugins/
+    type: dir
+    file_info:
+      mode: 0755
+      owner: grafana
+      group: grafana
   - src: plugins/volkovlabs-echarts-panel/
     dst: /var/lib/grafana/plugins/volkovlabs-echarts-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/volkovlabs-image-panel/
     dst: /var/lib/grafana/plugins/volkovlabs-image-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/volkovlabs-form-panel/
     dst: /var/lib/grafana/plugins/volkovlabs-form-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/volkovlabs-table-panel/
     dst: /var/lib/grafana/plugins/volkovlabs-table-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/volkovlabs-variable-panel/
     dst: /var/lib/grafana/plugins/volkovlabs-variable-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/knightss27-weathermap-panel/
     dst: /var/lib/grafana/plugins/knightss27-weathermap-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/marcusolsson-dynamictext-panel/
     dst: /var/lib/grafana/plugins/marcusolsson-dynamictext-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/marcusolsson-treemap-panel/
     dst: /var/lib/grafana/plugins/marcusolsson-treemap-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/marcusolsson-calendar-panel/
     dst: /var/lib/grafana/plugins/marcusolsson-calendar-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/marcusolsson-hourly-heatmap-panel/
     dst: /var/lib/grafana/plugins/marcusolsson-hourly-heatmap-panel/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/marcusolsson-static-datasource/
     dst: /var/lib/grafana/plugins/marcusolsson-static-datasource/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/marcusolsson-json-datasource/
     dst: /var/lib/grafana/plugins/marcusolsson-json-datasource/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/volkovlabs-rss-datasource/
     dst: /var/lib/grafana/plugins/volkovlabs-rss-datasource/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: plugins/volkovlabs-grapi-datasource/
     dst: /var/lib/grafana/plugins/volkovlabs-grapi-datasource/
     type: tree
+    file_info:
+      owner: grafana
+      group: grafana
   - src: chart/
     dst:  /usr/share/grafana/public/
     type: tree
-
+    file_info:
+      owner: grafana
+      group: grafana
 
 
 

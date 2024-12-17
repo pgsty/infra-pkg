@@ -7,18 +7,14 @@
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 
-all: grafana-extra victorialogs-datasource victoriametrics-datasource
+all: grafana-plugins pev2
 
-ge: grafana-extra
-grafana-extra:
-	cd grafana-extra && make
+gp: grafana-plugins
+grafana-plugins:
+	cd grafana-plugins && make
 
-vlds: victorialogs-datasource
-victorialogs-datasource:
-	cd victorialogs-datasource && make
+pev2:
+	cd pev2 && make
 
-vmds: victoriametrics-datasource
-victoriametrics-datasource:
-	cd victoriametrics-datasource && make
 
-.PHONY: all ge vlds vmds grafana-extra victorialogs-datasource victoriametrics-datasource
+.PHONY: all ge grafana-extra pev2
