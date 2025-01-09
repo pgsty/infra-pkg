@@ -38,24 +38,24 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 11.2.2 (Download Directly)
+- [grafana](https://github.com/grafana/grafana/) : 11.4.0 (Download Directly)
     - RPM amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/
     - DEB amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/
-- [**pg_exporter**](https://github.com/Vonng/pg_exporter) : 0.7.0 (Maintained Separately)
+- [**pg_exporter**](https://github.com/Vonng/pg_exporter) : 0.7.1 (Maintained Separately)
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.42.0
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.43.1
     - amd64 & arm64: https://packages.timber.io/vector/latest/
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 3.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v3.0.0
-- [minio](https://github.com/minio/minio): 20241107005220
+- [minio](https://github.com/minio/minio): 20241218131544
     - amd64: https://dl.min.io/server/minio/release/linux-amd64/
     - arm64: https://dl.min.io/server/minio/release/linux-arm64/
-- [mcli](https://github.com/minio/mc): 20241117193525
+- [mcli](https://github.com/minio/mc): 20241121172154
     - amd64: https://dl.min.io/client/mc/release/linux-amd64/
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
 - [sealos](https://github.com/labring/sealos): 5.0.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
-- [rclone](https://github.com/rclone/rclone/releases/tag/v1.68.2) 1.68.2
+- [rclone](https://github.com/rclone/rclone/releases/) 1.68.2
 
 
 --------
