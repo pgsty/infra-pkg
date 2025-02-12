@@ -1,7 +1,7 @@
 name: "mongodb-exporter"
 arch: "amd64"
 platform: "linux"
-version: "v0.43.0"
+version: "v0.43.1"
 version_schema: semver
 description: A Prometheus exporter for MongoDB including sharding, replication and storage engines
 maintainer: Ruohang Feng <rh@vonng.com>
