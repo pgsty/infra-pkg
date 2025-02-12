@@ -1,7 +1,7 @@
 name: "victoria-metrics-utils"
 arch: "amd64"
 platform: "linux"
-version: "v1.107.0"
+version: "v1.111.0"
 version_schema: semver
 description: fast, cost-effective monitoring solution and time series database, agent,alert,auth,backup,ctl
 maintainer: Ruohang Feng <rh@vonng.com>
