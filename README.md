@@ -13,7 +13,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.0.1
+- [prometheus](https://github.com/prometheus/prometheus) : 3.1.0
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.10.0
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.27.0
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.25.0
@@ -61,6 +61,11 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+**2025-01-10**
+
+- Prometheus 3.1.0
+
 
 **2024-11-19**
 
