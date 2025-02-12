@@ -1,7 +1,7 @@
 name: "timescaledb-tools"
 arch: "arm64"
 platform: "linux"
-version: "v0.18.0"
+version: "v0.19.0"
 version_schema: semver
 description: "TimescaleDB tune & parallel copy util"
 maintainer: Ruohang Feng <rh@vonng.com>

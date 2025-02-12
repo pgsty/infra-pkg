@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=https://github.com/timescale/timescaledb-tune
 PACKAGE=timescaledb-tools
-VERSION=5.10.0
+VERSION=0.19.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-arm64
 FILENAME=$(PACKAGE)_Linux_arm64.tar.gz
