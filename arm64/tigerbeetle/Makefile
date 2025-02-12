@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=tigerbeetle/tigerbeetle
 PACKAGE=tigerbeetle
-VERSION=0.16.17
+VERSION=0.16.27
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-aarch64-linux
 FILENAME=$(DIRNAME).zip
