@@ -1,6 +1,6 @@
 # infra-pkg: build rpm/deb for observability stack
 
-Building Infra RPM & DEB packages for [Pigsty](https://pigsty.io).
+Building Infra RPM & DEB packages for [Pigsty](https://pgsty.com).
 
 Collected and distributed by [pgsty/pkg](https://github.com/pgsty/pkg) project.
 
@@ -38,10 +38,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 11.4.0 (Download Directly)
+- [grafana](https://github.com/grafana/grafana/) : 11.4.0
     - RPM amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/
     - DEB amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/
-- [**pg_exporter**](https://github.com/Vonng/pg_exporter) : 0.7.1 (Maintained Separately)
+- [**pg_exporter**](https://github.com/Vonng/pg_exporter) : 0.7.1
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.43.1
     - amd64 & arm64: https://packages.timber.io/vector/latest/
@@ -61,6 +61,27 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+**2025-02-12**
+
+- pushgateway 1.10.0 -> 1.11.0
+- alertmanager 0.27.0 -> 0.28.0
+- nginx_exporter 1.4.0 -> 1.4.1
+- pgbackrest_exporter 0.18.0 -> 0.19.0
+- redis_exporter 1.66.0 -> 1.67.0
+- mongodb_exporter 0.43.0 -> 0.43.1
+- VictoriaMetrics 1.107.0 -> 1.111.0
+- VictoriaLogs v1.3.2 -> 1.9.1
+- DuckDB 1.1.3 -> 1.2.0
+- Etcd 3.5.17 -> 3.5.18
+- pg_timetable 5.10.0 -> 5.11.0
+- FerretDB 1.24.0 -> 2.0.0
+- tigerbeetle 0.16.13 -> 0.16.27
+- grafana 11.4.0 -> 11.5.1
+- vector 0.43.1 -> 0.44.0
+- minio 20241218131544 -> 20250207232109
+- mcli 20241121172154 -> 20250208191421
+- rclone 1.68.2 -> 1.69.0
 
 **2025-01-10**
 
