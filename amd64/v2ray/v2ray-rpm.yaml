@@ -1,7 +1,7 @@
 name: "vray"
 arch: "amd64"
 platform: "linux"
-version: "v5.23.0"
+version: "v5.28.0"
 release: "1"
 version_schema: semver
 description: A platform for building proxies to bypass network restrictions.

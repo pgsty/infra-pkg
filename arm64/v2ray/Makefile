@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-12-14
-# Mtime     :   2024-12-14
+# Mtime     :   2025-02-24
 # Desc      :   Makefile shortcuts for pkg building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=v2fly/v2ray-core
 PACKAGE=v2ray
-VERSION=5.23.0
+VERSION=5.28.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-linux-arm64-v8a
 FILENAME=$(DIRNAME).zip
