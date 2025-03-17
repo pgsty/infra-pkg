@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="prometheus/blackbox_exporter"
 PACKAGE="blackbox_exporter"
-VERSION=0.25.0
+VERSION=0.26.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-arm64"
 FILENAME="$(DIRNAME).tar.gz"

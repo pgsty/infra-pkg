@@ -1,7 +1,7 @@
 name: "blackbox-exporter"
 arch: "arm64"
 platform: "linux"
-version: "v0.25.0"
+version: "v0.26.0"
 version_schema: semver
 description: Prometheus Blackbox prober exporter,  allows blackbox probing of endpoints over HTTP, HTTPS, DNS, TCP, ICMP and gRPC.
 maintainer: Ruohang Feng <rh@vonng.com>
