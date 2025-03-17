@@ -1,0 +1,21 @@
+name: "juicefs"
+arch: "arm64"
+platform: "linux"
+version: "v1.2.3"
+release: "1"
+version_schema: semver
+description: Distributed POSIX file system built on top of Redis and S3.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "JuiceData"
+homepage: "https://github.com/juicedata/juicefs"
+license: "Apache-2.0 License"
+
+contents:
+  - src: juicefs/juicefs
+    dst: /usr/bin/juicefs
+    file_info:
+      mode: 0755
+
+  - src: /usr/bin/juicefs
+    dst: /sbin/mount.juicefs
+    type: symlink
