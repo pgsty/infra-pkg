@@ -1,7 +1,7 @@
 name: "node-exporter"
 arch: "arm64"
 platform: "linux"
-version: "v1.8.2"
+version: "v1.9.0"
 version_schema: semver
 description: Prometheus exporter for machine metrics
 maintainer: Ruohang Feng <rh@vonng.com>
