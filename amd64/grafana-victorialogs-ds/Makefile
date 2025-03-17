@@ -7,23 +7,28 @@
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME1=VictoriaMetrics/victorialogs-datasource
-PACKAGE1=victorialogs-datasource
-VERSION1=0.12.0
+PACKAGE1=victoriametrics-logs-datasource
+VERSION1=0.16.0
 FILENAME1=$(PACKAGE1)-v$(VERSION1).tar.gz
 WEB_URL1=https://github.com/$(REPONAME1)/releases/download/v$(VERSION1)/$(FILENAME1)
+
 
 default: all
 all: download extract build clean
 get: download extract
 
 # download latest release tarball to current directory
+d: download
 download:
 	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else curl -SL $(WEB_URL1) -o $(FILENAME1); fi
 
 # extract tarball content to current directory
+e: extract
 extract:
 	tar -xf $(FILENAME1)
-	rm -rf victorialogs-datasource/victorialogs_backend_plugin_{darwin_amd64,darwin_arm64,linux_386,linux_arm,linux_arm64,windows_amd64.exe} #linux_amd64
+	rm -rf $(PACKAGE1)/victoriametrics_logs_backend_plugin_{darwin_amd64,darwin_arm64,linux_386,linux_arm,linux_arm64,linux_s390x,windows_amd64.exe} #linux_amd64
+
+de: download extract
 
 # remove tarball, build dir, rpm & deb files
 clean:

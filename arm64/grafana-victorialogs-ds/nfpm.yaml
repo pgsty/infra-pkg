@@ -1,7 +1,7 @@
 name: "grafana-victorialogs-ds"
 arch: "arm64"
 platform: "linux"
-version: "v0.12.0"
+version: "v0.16.0"
 version_schema: semver
 description: "Grafana datasource for VictoriaLogs"
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -33,8 +33,8 @@ contents:
       owner: grafana
       group: grafana
 
-  - src: victorialogs-datasource/
-    dst: /var/lib/grafana/plugins/victorialogs-datasource/
+  - src: victoriametrics-logs-datasource/
+    dst: /var/lib/grafana/plugins/victoriametrics-logs-datasource/
     type: tree
     file_info:
       owner: grafana
