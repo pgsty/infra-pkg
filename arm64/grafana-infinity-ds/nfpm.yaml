@@ -1,7 +1,7 @@
 name: "grafana-infinity-ds"
 arch: "arm64"
 platform: "linux"
-version: "2.11.4"
+version: "3.0.0"
 version_schema: semver
 description: "CSV, JSON, GraphQL, XML and HTML datasource for grafana."
 maintainer: Ruohang Feng <rh@vonng.com>
