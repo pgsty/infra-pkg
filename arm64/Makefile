@@ -58,6 +58,11 @@ tigerbeetle:
 	cd tigerbeetle && make
 v2ray:
 	cd v2ray && make
+juicefs:
+	cd juicefs && make
+restic:
+	cd restic && make
+
 
 ds: grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
 grafana-infinity-ds:
@@ -73,4 +78,5 @@ grafana-victorialogs-ds:
 	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle kafka v2ray \
-	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
+	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds \
+	restic juicefs
