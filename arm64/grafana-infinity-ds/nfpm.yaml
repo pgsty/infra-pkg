@@ -12,10 +12,10 @@ license: "Apache-2.0"
 overrides:
   deb:
     depends:
-      - grafana (>= 9.5.15)
+      - grafana (>= 10.4.8)
   rpm:
     depends:
-      - grafana >= 9.5.15
+      - grafana >= 10.4.8
 
 contents:
 

@@ -34,6 +34,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.31
 - [loki](https://github.com/grafana/loki) : 3.1.1
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.16.0
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.14.0
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.0.0
+
 
 
 **Download Directly**:
@@ -77,7 +81,6 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - mysqld_exporter 0.17.2
 - kafka_exporter 1.9.0
 - redis_exporter 1.69.0
-
 - DuckDB 1.2.1
 - etcd 3.5.19
 - FerretDB 2.0.0
@@ -88,7 +91,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - rclone 1.69.1
 - +restic 0.17.3
 - +juicefs 1.2.3
-
+- pev2 1.14.0
+- grafana-victorialogs-ds 0.16.0
+- grafana-victoriametrics-ds 0.14.0
+- grafana-infinity-ds 3.0.0
 
 ```bash
 make prometheus alertmanager blackbox_exporter node_exporter mysqld_exporter kafka_exporter redis_exporter
