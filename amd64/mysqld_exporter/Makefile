@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="prometheus/mysqld_exporter"
 PACKAGE="mysqld_exporter"
-VERSION=0.16.0
+VERSION=0.17.2
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
