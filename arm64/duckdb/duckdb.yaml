@@ -1,7 +1,7 @@
 name: "duckdb"
 arch: "arm64"
 platform: "linux"
-version: "v1.2.0"
+version: "v1.2.1"
 release: "1"
 version_schema: semver
 description: In-process SQL OLAP Database Management System
