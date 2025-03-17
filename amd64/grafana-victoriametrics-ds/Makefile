@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-07-25
-# Mtime     :   2024-12-16
+# Mtime     :   2025-03-17
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME2=VictoriaMetrics/victoriametrics-datasource
-PACKAGE2=victoriametrics-datasource
-VERSION2=0.10.3
+PACKAGE2=victoriametrics-metrics-datasource
+VERSION2=0.14.0
 FILENAME2=$(PACKAGE2)-v$(VERSION2).tar.gz
 WEB_URL2=https://github.com/$(REPONAME2)/releases/download/v$(VERSION2)/$(FILENAME2)
 
@@ -23,7 +23,7 @@ download:
 # extract tarball content to current directory
 extract:
 	tar -xf $(FILENAME2)
-	rm -rf victoriametrics-datasource/victoriametrics_backend_plugin_{darwin_amd64,darwin_arm64,linux_386,linux_arm,linux_arm64,windows_amd64.exe} #linux_amd64
+	rm -rf $(PACKAGE2)/victoriametrics_metrics_backend_plugin_{darwin_amd64,darwin_arm64,linux_386,linux_arm,linux_arm64,linux_s390x,windows_amd64.exe} #linux_amd64
 
 # remove tarball, build dir, rpm & deb files
 clean:
