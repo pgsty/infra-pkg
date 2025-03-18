@@ -42,9 +42,9 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
+	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
 deb:
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
+	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.arm64/
 
 
 .PHONY: all get link meta download extract clean build rpm deb 
