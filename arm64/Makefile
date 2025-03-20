@@ -74,9 +74,12 @@ grafana-victoriametrics-ds:
 grafana-victorialogs-ds:
 	cd grafana-victorialogs-ds && make
 
+timescaledb-event-streamer:
+	cd timescaledb-event-streamer && make
+
 .PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle kafka v2ray \
-	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds \
+	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
 	restic juicefs

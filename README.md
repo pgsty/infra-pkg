@@ -70,8 +70,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
-
-**2025-03-17** (TODO)
+**2025-03-17**
 
 - Grafana 11.5.2
 - Prometheus 3.2.1
@@ -89,20 +88,13 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - VictoriaMetrics 1.113.0
 - VictoriaLogs 1.16.0
 - rclone 1.69.1
-- +restic 0.17.3
-- +juicefs 1.2.3
 - pev2 1.14.0
 - grafana-victorialogs-ds 0.16.0
 - grafana-victoriametrics-ds 0.14.0
 - grafana-infinity-ds 3.0.0
-
-```bash
-make prometheus alertmanager blackbox_exporter node_exporter mysqld_exporter kafka_exporter redis_exporter
-make duckdb etcd ferretdb tigerbeetle victoria-metrics 
-```
-
-
-
+- +timescaledb-event-streamer 0.12.0
+- +restic 0.17.3
+- +juicefs 1.2.3
 
 **2025-02-12**
 
