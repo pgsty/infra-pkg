@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-07-28
-# Desc      :   Makefile shortcuts for rpm building
+# Mtime     :   2025-03-21
+# Desc      :   Makefile shortcuts for rpm/deb building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME="kafka"
 PACKAGE="kafka"
-VERSION=3.8.0
+VERSION=4.0.0
 RELEASE_PAGE=https://downloads.apache.org/kafka/$(VERSION)/kafka_2.13-$(VERSION).tgz
 DIRNAME="kafka_2.13-$(VERSION)"
 FILENAME="$(DIRNAME).tgz"

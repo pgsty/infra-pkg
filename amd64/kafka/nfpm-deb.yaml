@@ -1,7 +1,7 @@
 name: "kafka"
 arch: "all"
 platform: "linux"
-version: "v3.8.0"
+version: "v4.0.0"
 version_schema: semver
 description: An open-source distributed event streaming platform
 maintainer: Ruohang Feng <rh@vonng.com>

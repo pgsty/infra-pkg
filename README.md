@@ -1,9 +1,8 @@
 # infra-pkg: build rpm/deb for observability stack
 
-Building Infra RPM & DEB packages for [Pigsty](https://pgsty.com).
+Building Infra RPM & DEB packages for [Pigsty](https://pigsty.io).
 
-Collected and distributed by [pgsty/pkg](https://github.com/pgsty/pkg) project.
-
+Available in pigsty-infra [**YUM**](http://pigsty.io/ext/repo/yum) & [**APT**](http://pigsty.io/ext/repo/apt) repo
 
 --------
 
@@ -37,7 +36,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.16.0
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.14.0
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.0.0
-
+- [kafka](https://kafka.apache.org/downloads) 4.0.0
 
 
 **Download Directly**:
@@ -72,7 +71,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2025-03-17**
 
-- Grafana 11.5.2
+- kafka 4.0.0
 - Prometheus 3.2.1
 - AlertManager 0.28.1
 - blackbox_exporter 0.26.0
