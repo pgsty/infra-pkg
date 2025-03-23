@@ -8,3 +8,4 @@ amd64/tarball
 noarch/tarball
 tmp/
 
+*.tar.gz

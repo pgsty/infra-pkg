@@ -25,9 +25,11 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.43.1
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.113.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.16.0
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.17.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.2.1
-- [etcd](https://github.com/etcd-io/etcd) : 3.5.19
+- [etcd](https://github.com/etcd-io/etcd) : 3.5.20
+- [restic](https://github.com/restic/restic) : 0.17.3
+- [juicefs](https://github.com/juicedata/juicefs) : 1.2.3
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.11.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.0.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.31
@@ -48,16 +50,16 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - DEB amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/
       - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_11.5.2_amd64.deb
       - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_11.5.2_arm64.deb
-- [**pg_exporter**](https://github.com/Vonng/pg_exporter) : 0.8.0
+- [pg_exporter](https://github.com/Vonng/pg_exporter) : 0.8.0
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.45.0
     - amd64 & arm64: https://packages.timber.io/vector/latest/
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 3.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v3.0.0
-- [minio](https://github.com/minio/minio): 20250207232109
+- [minio](https://github.com/minio/minio): 20250312180418
     - amd64: https://dl.min.io/server/minio/release/linux-amd64/
     - arm64: https://dl.min.io/server/minio/release/linux-arm64/
-- [mcli](https://github.com/minio/mc): 20250208191421
+- [mcli](https://github.com/minio/mc): 20250312172924
     - amd64: https://dl.min.io/client/mc/release/linux-amd64/
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
 - [sealos](https://github.com/labring/sealos): 5.0.1
@@ -68,6 +70,14 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+**2025-03-23**
+
+- etcd 3.5.20
+- pgbackrest_exporter 0.19.0 rebuild
+- victorialogs 1.17.0
+- vslogcli 1.17.0
+
 
 **2025-03-17**
 

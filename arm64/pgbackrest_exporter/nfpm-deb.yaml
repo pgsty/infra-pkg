@@ -2,6 +2,7 @@ name: "pgbackrest-exporter"
 arch: "arm64"
 platform: "linux"
 version: "v0.19.0"
+release: "2"
 version_schema: semver
 maintainer: Ruohang Feng <rh@vonng.com>
 description: Prometheus exporter for pgBackRest
@@ -10,7 +11,7 @@ homepage: "https://github.com/woblerr/pgbackrest_exporter"
 license: "MIT"
 
 contents:
-  - src: pgbackrest_exporter
+  - src: pgbackrest_exporter/pgbackrest_exporter
     dst: /usr/bin/pgbackrest_exporter
     file_info:
       mode: 0755
