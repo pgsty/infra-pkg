@@ -9,7 +9,7 @@
 REPONAME=VictoriaMetrics/VictoriaMetrics
 PACKAGE=victoria-metrics
 VERSION=1.113.0
-VMLOG_VERSION=1.16.0
+VMLOG_VERSION=1.17.0
 
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME1=victoria-metrics-linux-arm64-v$(VERSION).tar.gz
