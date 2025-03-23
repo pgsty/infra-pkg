@@ -1,12 +1,12 @@
 [Unit]
-Description=Prometheus exporter for PostgreSQL/Pgbouncer server metrics
-Documentation=https://github.com/Vonng/pgbackrest_exporter
+Description=Prometheus exporter for pgBackRest metrics
+Documentation=https://github.com/woblerr/pgbackrest_exporter
 After=network.target
 
 [Service]
 EnvironmentFile=-/etc/default/pgbackrest_exporter
 User=prometheus
-ExecStart=/usr/bin/pgbackrest_exporter $pgbackrest_exporter_OPTS
+ExecStart=/usr/bin/pgbackrest_exporter $PGBACKREST_EXPORTER_OPTS
 Restart=on-failure
 
 [Install]
