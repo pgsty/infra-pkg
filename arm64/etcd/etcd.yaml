@@ -7,7 +7,6 @@ description: Distributed reliable key-value store for the most critical data of 
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "etcd.io"
 homepage: "https://github.com/etcd-io/etcd"
-license: "Apache-2.0 license"
 
 contents:
 
@@ -43,6 +42,10 @@ contents:
       owner: etcd
       group: etcd
 
+  - src: LICENSE
+    dst: /usr/share/doc/etcd/LICENSE
+    file_info:
+      mode: 0644
 
 # add etcd user/group
 scripts:
