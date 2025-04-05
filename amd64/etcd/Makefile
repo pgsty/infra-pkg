@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="etcd-io/etcd"
 PACKAGE="etcd"
-VERSION=3.5.20
+VERSION=3.5.21
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-v$(VERSION)-linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
