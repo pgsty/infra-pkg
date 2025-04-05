@@ -7,7 +7,7 @@ description: Prometheus exporter for MySQL server metrics.
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Prometheus"
 homepage: "https://github.com/prometheus/mysqld_exporter"
-license: "Apache-2.0 license"
+3.8.1
 
 contents:
 

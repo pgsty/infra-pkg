@@ -7,7 +7,7 @@ description: "Grafana datasource for VictoriaLogs"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "VictoriaMetrics"
 homepage: "https://github.com/VictoriaMetrics/victorialogs-datasource"
-license: "Apache-2.0"
+license: "Apache-2.0 License"
 
 overrides:
   deb:

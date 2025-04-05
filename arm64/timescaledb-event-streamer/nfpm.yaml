@@ -8,7 +8,7 @@ description: CLI program to create a stream of CDC (Change Data Capture) Timesca
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "noctarius"
 homepage: "https://github.com/noctarius/timescaledb-event-streamer"
-license: "Apache-2.0 license"
+3.8.1
 
 rpm:
   prefixes:

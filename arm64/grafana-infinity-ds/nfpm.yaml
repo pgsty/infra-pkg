@@ -7,7 +7,7 @@ description: "CSV, JSON, GraphQL, XML and HTML datasource for grafana."
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Grafana"
 homepage: "https://github.com/grafana/grafana-infinity-datasource"
-license: "Apache-2.0"
+license: "Apache-2.0 License"
 
 overrides:
   deb:

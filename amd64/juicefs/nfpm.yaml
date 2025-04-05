@@ -8,7 +8,7 @@ description: Distributed POSIX file system built on top of Redis and S3.
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "JuiceData"
 homepage: "https://github.com/juicedata/juicefs"
-license: "Apache-2.0 License"
+3.8.1
 
 contents:
   - src: juicefs/juicefs

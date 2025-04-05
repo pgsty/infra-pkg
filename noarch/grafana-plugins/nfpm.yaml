@@ -7,7 +7,7 @@ description: "extra panels, datasources, resources for grafana"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Vonng"
 homepage: "https://pigsty.io"
-license: "Apache-2.0"
+license: "Apache-2.0 License"
 
 overrides:
   deb:

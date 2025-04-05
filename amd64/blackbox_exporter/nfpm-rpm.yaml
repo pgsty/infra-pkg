@@ -7,7 +7,7 @@ description: Prometheus Blackbox prober exporter,  allows blackbox probing of en
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Prometheus"
 homepage: "https://github.com/prometheus/blackbox_exporter"
-license: "Apache-2.0 license"
+3.8.1
 
 contents:
 
