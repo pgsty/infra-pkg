@@ -16,6 +16,11 @@ contents:
     file_info:
       mode: 0755
 
+  - src: node_exporter/LICENSE
+    dst: /usr/share/doc/node_exporter/LICENSE
+    file_info:
+      mode: 0644
+
   - src: src/default
     dst: /etc/default/node_exporter
     type: config|noreplace
