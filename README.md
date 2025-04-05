@@ -111,7 +111,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - FerretDB 2.0.0
 - tigerbeetle 0.16.31
 - vector 0.45.0
-- VictoriaMetrics 1.113.0
+- VictoriaMetrics 1.114.0
 - VictoriaLogs 1.16.0
 - rclone 1.69.1
 - pev2 1.14.0
