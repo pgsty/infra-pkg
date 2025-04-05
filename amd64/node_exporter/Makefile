@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="prometheus/node_exporter"
 PACKAGE="node_exporter"
-VERSION=1.9.0
+VERSION=1.9.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
