@@ -7,7 +7,7 @@ description: vlogsqcli is an interactive command-line tool for querying Victoria
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "VictoriaMetrics"
 homepage: "https://docs.victoriametrics.com/victorialogs/querying/vlogscli/"
-3.8.1
+license: "Apache-2.0"
 
 rpm:
   prefixes:

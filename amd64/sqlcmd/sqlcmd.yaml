@@ -8,7 +8,7 @@ description: The new sqlcmd, CLI for SQL Server and Azure SQL (winget install sq
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "microsoft"
 homepage: "https://github.com/microsoft/go-sqlcmd"
-license: "MIT License"
+license: "MIT"
 
 rpm:
   prefixes:

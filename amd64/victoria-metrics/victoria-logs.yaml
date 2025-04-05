@@ -7,7 +7,7 @@ description: VictoriaLogs is open source user-friendly database for logs from Vi
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "VictoriaMetrics"
 homepage: "https://github.com/VictoriaMetrics/VictoriaMetrics"
-3.8.1
+license: "Apache-2.0"
 
 rpm:
   prefixes:
@@ -16,3 +16,7 @@ rpm:
 contents:
   - src: victoria-metrics/victoria-logs-prod
     dst: /usr/bin/victoria-logs
+  - src: LICENSE
+    dst: /usr/share/doc/victoria/logs.LICENSE
+    file_info:
+      mode: 0644

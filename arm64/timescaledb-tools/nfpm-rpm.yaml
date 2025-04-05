@@ -7,7 +7,7 @@ description: "TimescaleDB tune & parallel copy util"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Timescale"
 homepage: "https://github.com/timescale/timescaledb-tune"
-license: "Apache-2.0 License"
+license: "Apache-2.0"
 release: "0.el9"
 
 contents:

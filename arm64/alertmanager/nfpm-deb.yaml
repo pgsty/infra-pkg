@@ -7,7 +7,7 @@ description: Prometheus Alertmanager
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Prometheus"
 homepage: "https://github.com/prometheus/alertmanager"
-3.8.1
+license: "Apache-2.0"
 
 contents:
 

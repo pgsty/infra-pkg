@@ -7,7 +7,7 @@ description: Prometheus exporter for machine metrics
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Peter Fern / Waitingsong"
 homepage: "https://github.com/waitingsong/zfs_exporter"
-license: "MIT License"
+license: "MIT"
 
 contents:
 

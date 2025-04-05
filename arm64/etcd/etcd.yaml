@@ -7,6 +7,7 @@ description: Distributed reliable key-value store for the most critical data of 
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "etcd.io"
 homepage: "https://github.com/etcd-io/etcd"
+license: "Apache-2.0"
 
 contents:
 

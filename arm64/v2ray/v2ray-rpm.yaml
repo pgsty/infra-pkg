@@ -8,7 +8,7 @@ description: A platform for building proxies to bypass network restrictions.
 maintainer: V2fly Teams
 vendor: "v2fly"
 homepage: "https://github.com/v2fly/v2ray-core"
-license: "MIT License"
+license: "MIT"
 
 contents:
   # binary

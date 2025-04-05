@@ -8,7 +8,7 @@ description: In-process SQL OLAP Database Management System
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "motherduck"
 homepage: "https://github.com/duckdb/duckdb"
-license: "MIT License"
+license: "MIT"
 
 rpm:
   prefixes:

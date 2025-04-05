@@ -7,7 +7,7 @@ description: Prometheus Exporter for Kafka
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "danielqsj"
 homepage: "https://github.com/danielqsj/kafka_exporter"
-3.8.1
+license: "Apache-2.0"
 
 contents:
 

@@ -8,7 +8,7 @@ description: The financial transactions database designed for mission critical s
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "tigerbeetle"
 homepage: "https://github.com/tigerbeetle/tigerbeetle"
-3.8.1
+license: "Apache-2.0"
 
 rpm:
   prefixes:
@@ -19,3 +19,8 @@ contents:
     dst: /usr/bin/tigerbeetle
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/tigerbeetle/LICENSE
+    file_info:
+      mode: 0644

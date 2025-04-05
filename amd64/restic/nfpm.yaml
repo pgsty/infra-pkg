@@ -7,7 +7,7 @@ description: Restic backup program
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Restic"
 homepage: "https://github.com/restic/restic"
-license: "BSD-2-Clause"
+license: "BSD 2-Clause"
 
 contents:
 

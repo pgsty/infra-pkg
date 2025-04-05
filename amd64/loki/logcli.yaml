@@ -7,7 +7,7 @@ description: Loki Logging Service CLI
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: Grafana
 homepage: https://github.com/grafana/loki
-license: AGPL-3.0
+license: "AGPL-3.0"
 
 rpm:
   prefixes:
