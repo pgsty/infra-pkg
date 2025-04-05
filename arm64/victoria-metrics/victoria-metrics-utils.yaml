@@ -29,3 +29,7 @@ contents:
   - src: victoria-metrics/vmctl-prod
     dst: /usr/bin/vmctl
     file_info: { mode: 0755 }
+  - src: LICENSE
+    dst: /usr/share/doc/victoria/utils.LICENSE
+    file_info:
+      mode: 0644

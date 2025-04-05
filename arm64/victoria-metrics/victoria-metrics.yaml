@@ -17,3 +17,8 @@ contents:
   - src: victoria-metrics/victoria-metrics-prod
     dst: /usr/bin/victoria-metrics
     file_info: { mode: 0755 }
+
+  - src: LICENSE
+    dst: /usr/share/doc/victoria/metrics.LICENSE
+    file_info:
+      mode: 0644

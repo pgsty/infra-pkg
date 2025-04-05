@@ -26,3 +26,7 @@ contents:
   - src: victoria-metrics/vmstorage-prod
     dst: /usr/bin/vmstorage
     file_info: { mode: 0755 }
+  - src: LICENSE
+    dst: /usr/share/doc/victoria/metrics-cluster.LICENSE
+    file_info:
+      mode: 0644

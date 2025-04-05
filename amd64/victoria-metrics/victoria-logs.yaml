@@ -16,6 +16,7 @@ rpm:
 contents:
   - src: victoria-metrics/victoria-logs-prod
     dst: /usr/bin/victoria-logs
+
   - src: LICENSE
     dst: /usr/share/doc/victoria/logs.LICENSE
     file_info:
