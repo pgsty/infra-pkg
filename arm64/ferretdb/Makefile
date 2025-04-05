@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=FerretDB/FerretDB
 PACKAGE=ferretdb
-VERSION=2.0.0
+VERSION=2.1.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-arm64
 FILENAME=$(PACKAGE)-linux-arm64

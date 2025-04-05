@@ -1,7 +1,7 @@
 name: "ferretdb2"
 arch: "amd64"
 platform: "linux"
-version: "v2.0.0"
+version: "v2.1.0"
 version_schema: semver
 description: A truly Open Source MongoDB alternative
 maintainer: Ruohang Feng <rh@vonng.com>
