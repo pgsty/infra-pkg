@@ -7,7 +7,7 @@ description: A truly Open Source MongoDB alternative
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "FerretDB"
 homepage: "https://github.com/FerretDB/FerretDB"
-license: "Apache 2.0"
+license: "Apache-2.0 License"
 
 rpm:
   prefixes:
@@ -19,3 +19,8 @@ contents:
     dst: /usr/bin/ferretdb
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/ferretdb/LICENSE
+    file_info:
+      mode: 0644

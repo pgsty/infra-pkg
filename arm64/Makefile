@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-12-16
+# Mtime     :   2025-04-04
 # Desc      :   Makefile shortcuts for prometheus arm64 build
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
@@ -30,6 +30,8 @@ nginx_exporter:
 	cd nginx_exporter && make
 node_exporter:
 	cd node_exporter && make
+zfs_exporter:
+	cd zfs_exporter && make
 keepalived_exporter:
 	cd keepalived_exporter && make
 pgbackrest_exporter:
@@ -78,7 +80,7 @@ timescaledb-event-streamer:
 	cd timescaledb-event-streamer && make
 
 .PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter \
-	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
+	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics pg_timetable duckdb etcd ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \

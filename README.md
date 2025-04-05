@@ -88,6 +88,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - minio 20250403145628
 - mcli 20250403170756
 
+```bash
+make etcd restic ferretdb tigerbeetle node_exporter mongodb_exporter victoria-metrics zfs_exporter
+```
+
 **2025-03-23**
 
 - etcd 3.5.20
