@@ -1,0 +1,15 @@
+[Unit]
+Description=Prometheus exporter for zfs metrics
+Documentation=https://github.com/waitingsong/zfs_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/zfs_exporter
+User=prometheus
+ExecStart=/usr/bin/zfs_exporter $zfs_exporter_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

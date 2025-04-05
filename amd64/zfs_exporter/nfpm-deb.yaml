@@ -1,0 +1,40 @@
+name: "zfs-exporter"
+arch: "amd64"
+platform: "linux"
+version: "v3.8.1"
+version_schema: semver
+description: Prometheus exporter for zfs metrics
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Peter Fern / Waitingsong"
+homepage: "https://github.com/waitingsong/zfs_exporter"
+license: "MIT License"
+
+contents:
+
+  - src: zfs_exporter/zfs_exporter
+    dst: /usr/bin/zfs_exporter
+    file_info:
+      mode: 0755
+
+  - src: zfs_exporter/LICENSE
+    dst: /usr/share/doc/zfs_exporter/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: src/default
+    dst: /etc/default/zfs_exporter
+    type: config|noreplace
+    file_info:
+      mode: 0700
+      owner: root
+      group: root
+
+  - src: src/service
+    dst: /lib/systemd/system/zfs_exporter.service
+    type: config|noreplace
+
+scripts:
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+
