@@ -1,7 +1,7 @@
 name: "mongodb-exporter"
 arch: "arm64"
 platform: "linux"
-version: "v0.43.1"
+version: "v0.44.0"
 version_schema: semver
 description: A Prometheus exporter for MongoDB including sharding, replication and storage engines
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -27,6 +27,11 @@ contents:
   - src: src/service
     dst: /lib/systemd/system/mongodb_exporter.service
     type: config|noreplace
+
+  - src: mongodb_exporter/LICENSE
+    dst: /usr/share/doc/mongodb_exporter/LICENSE
+    file_info:
+      mode: 0644
 
 scripts:
   preinstall:  src/preinstall.sh

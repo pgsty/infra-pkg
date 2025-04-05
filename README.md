@@ -26,7 +26,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.44.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.114.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.18.0
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.17.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.2.1
 - [etcd](https://github.com/etcd-io/etcd) : 3.5.21
 - [restic](https://github.com/restic/restic) : 0.17.3
