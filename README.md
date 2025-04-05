@@ -18,6 +18,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.26.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.4.1
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.9.1
+- [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.4.0
 - [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.19.0
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.17.2

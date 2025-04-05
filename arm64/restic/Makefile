@@ -7,7 +7,7 @@
 #==============================================================#
 REPONAME="restic/restic"
 PACKAGE="restic"
-VERSION=0.17.3
+VERSION=0.18.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)"
 FILENAME="$(PACKAGE)_$(VERSION)_linux_arm64.bz2"

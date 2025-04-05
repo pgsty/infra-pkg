@@ -1,7 +1,7 @@
 name: "restic"
 arch: "arm64"
 platform: "linux"
-version: "v0.17.3"
+version: "v0.18.0"
 version_schema: semver
 description: Restic backup program
 maintainer: Ruohang Feng <rh@vonng.com>
