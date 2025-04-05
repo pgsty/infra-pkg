@@ -16,3 +16,8 @@ contents:
     dst: /usr/bin/restic
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/restic/LICENSE
+    file_info:
+      mode: 0644
