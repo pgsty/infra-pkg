@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-07-25
-# Mtime     :   2024-12-13
+# Mtime     :   2025-04-23
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=cybertec-postgresql/pg_timetable
 PACKAGE=pg_timetable
-VERSION=5.11.0
+VERSION=5.12.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
 FILENAME=$(PACKAGE)_Linux_x86_64.tar.gz
