@@ -28,6 +28,10 @@ contents:
     dst: /usr/lib/systemd/system/redis_exporter.service
     type: config|noreplace
 
+  - src: redis_exporter/LICENSE
+    dst: /usr/share/doc/redis_exporter/LICENSE
+    file_info:
+      mode: 0644
 
 scripts:
   preinstall:  src/preinstall.sh
