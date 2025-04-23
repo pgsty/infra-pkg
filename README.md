@@ -72,7 +72,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
-**2025-04-22**
+**2025-04-23**
 
 - pig 0.4.0
 - pg_exporter 0.9.0
@@ -83,7 +83,6 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - victoriametrics 1.115.0
 - victoria_logs 1.20.0
 - duckdb 1.2.2
-- restic 0.18.0
 - pg_timetable 5.12.0
 - vector 0.46.1
 - minio
