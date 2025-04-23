@@ -1,7 +1,7 @@
 name: "prometheus"
 arch: "arm64"
 platform: "linux"
-version: "v3.2.1"
+version: "v3.3.0"
 version_schema: semver
 description: The Prometheus monitoring system and time series database.
 maintainer: Ruohang Feng <rh@vonng.com>
