@@ -1,0 +1,22 @@
+name: "mtail"
+arch: "amd64"
+platform: "linux"
+version: "v3.0.8"
+version_schema: semver
+description: extract internal monitoring data from application logs for collection in a timeseries database
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "google"
+homepage: "https://github.com/google/mtail"
+license: "Apache-2.0"
+
+contents:
+
+  - src: mtail
+    dst: /usr/bin/mtail
+    file_info:
+      mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/mtail/LICENSE
+    file_info:
+      mode: 0644
