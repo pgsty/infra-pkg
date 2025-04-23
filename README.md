@@ -29,6 +29,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.20.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.2.2
 - [etcd](https://github.com/etcd-io/etcd) : 3.5.21
+- [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.0
 - [juicefs](https://github.com/juicedata/juicefs) : 1.2.3
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.12.0
@@ -74,6 +75,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2025-04-23**
 
+- mtail 3.0.8 (new)
 - pig 0.4.0
 - pg_exporter 0.9.0
 - prometheus 3.3.0
@@ -85,8 +87,8 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - duckdb 1.2.2
 - pg_timetable 5.12.0
 - vector 0.46.1
-- minio
-- mcli
+- minio 20250422221226
+- mcli 20250416181326
 
 
 **2025-04-05**

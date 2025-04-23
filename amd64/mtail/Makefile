@@ -39,7 +39,7 @@ extract:
 
 # remove tarball, build dir, rpm & deb files
 clean:
-	rm -rf $(PACKAGE) $(FILENAME) $(PACKAGE)*.rpm $(PACKAGE)*.deb
+	rm -rf $(PACKAGE) $(FILENAME) $(PACKAGE)*.rpm $(PACKAGE)*.deb README.md
 
 # build rpm & deb package
 build: rpm deb
