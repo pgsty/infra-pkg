@@ -1,7 +1,7 @@
 name: "pushgateway"
 arch: "amd64"
 platform: "linux"
-version: "v1.11.0"
+version: "v1.11.1"
 version_schema: semver
 description: Prometheus pushgateway
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -30,6 +30,10 @@ contents:
     dst: /usr/lib/systemd/system/pushgateway.service
     type: config|noreplace
 
+  - src: pushgateway/LICENSE
+    dst: /usr/share/doc/pushgateway/LICENSE
+    file_info:
+      mode: 0644
 
 scripts:
   preinstall:  src/preinstall.sh
