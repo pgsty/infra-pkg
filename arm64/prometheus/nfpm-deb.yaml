@@ -53,6 +53,10 @@ contents:
     dst: /lib/systemd/system/prometheus.service
     type: config|noreplace
 
+  - src: prometheus/LICENSE
+    dst: /usr/share/doc/prometheus/LICENSE
+    file_info:
+      mode: 0644
 
 # add prometheus user/group
 scripts:
