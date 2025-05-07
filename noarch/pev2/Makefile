@@ -6,7 +6,7 @@
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-VERSION=1.14.0
+VERSION=1.15.0
 FILENAME=index.html
 WEB_URL=https://github.com/dalibo/pev2/releases/download/v$(VERSION)/$(FILENAME)
 
