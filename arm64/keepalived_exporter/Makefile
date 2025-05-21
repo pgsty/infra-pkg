@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="mehdy/keepalived-exporter"
 PACKAGE="keepalived-exporter"
-VERSION=1.6.0
+VERSION=1.6.2
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)_$(VERSION)_linux_arm64"
 FILENAME="$(DIRNAME).tar.gz"
