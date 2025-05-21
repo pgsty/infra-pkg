@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=woblerr/pgbackrest_exporter
 PACKAGE=pgbackrest_exporter
-VERSION=0.19.0
+VERSION=0.20.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-$(VERSION)-linux-arm64
 FILENAME=$(DIRNAME).tar.gz

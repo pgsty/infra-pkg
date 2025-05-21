@@ -1,7 +1,7 @@
 name: "pgbackrest_exporter"
 arch: "arm64"
 platform: "linux"
-version: "v0.19.0"
+version: "v0.20.0"
 release: "3"
 version_schema: semver
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -27,6 +27,11 @@ contents:
   - src: src/service
     dst: /usr/lib/systemd/system/pgbackrest_exporter.service
     type: config
+
+  - src: pgbackrest_exporter/LICENSE
+    dst: /usr/share/doc/pgbackrest_exporter/LICENSE
+    file_info:
+      mode: 0644
 
 scripts:
   preinstall: src/preinstall.sh
