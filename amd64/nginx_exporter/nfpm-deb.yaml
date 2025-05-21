@@ -1,7 +1,7 @@
 name: "nginx-exporter"
 arch: "amd64"
 platform: "linux"
-version: "v1.4.1"
+version: "v1.4.2"
 version_schema: semver
 description: NGINX Prometheus Exporter for NGINX and NGINX Plus.
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -27,6 +27,11 @@ contents:
   - src: src/service
     dst: /lib/systemd/system/nginx_exporter.service
     type: config|noreplace
+
+  - src: nginx_exporter/LICENSE
+    dst: /usr/share/doc/nginx_exporter/LICENSE
+    file_info:
+      mode: 0644
 
 scripts:
   preinstall:  src/preinstall.sh
