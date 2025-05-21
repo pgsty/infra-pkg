@@ -1,7 +1,7 @@
 name: "pg_timetable"
 arch: "arm64"
 platform: "linux"
-version: "v5.12.0"
+version: "v5.13.0"
 version_schema: semver
 description: "Advanced scheduling for PostgreSQL"
 maintainer: Ruohang Feng <rh@vonng.com>
