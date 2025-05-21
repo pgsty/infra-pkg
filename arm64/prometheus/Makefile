@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="prometheus/prometheus"
 PACKAGE="prometheus"
-VERSION=3.3.0
+VERSION=3.4.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-arm64"
 FILENAME="$(DIRNAME).tar.gz"
