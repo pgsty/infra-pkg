@@ -12,66 +12,92 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.3.0
+- [prometheus](https://github.com/prometheus/prometheus) : 3.4.0
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.1
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.28.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.26.0
-- [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.4.1
+- [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.4.2
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.9.1
 - [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
-- [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.6.0
-- [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.19.0
+- [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.6.2
+- [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.20.0
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.17.2
-- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.70.0
+- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.72.1
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.44.0
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.115.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.20.0
-- [duckdb](https://github.com/duckdb/duckdb) : 1.2.2
-- [etcd](https://github.com/etcd-io/etcd) : 3.5.21
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.117.1
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.22.2
+- [duckdb](https://github.com/duckdb/duckdb) : 1.3.0
+- [etcd](https://github.com/etcd-io/etcd) : 3.6.0
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.0
 - [juicefs](https://github.com/juicedata/juicefs) : 1.2.3
-- [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.12.0
-- [ferretdb](https://github.com/FerretDB/FerretDB): 2.1.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.34
+- [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.13.0
+- [ferretdb](https://github.com/FerretDB/FerretDB): 2.2.0
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.41
 - [loki](https://github.com/grafana/loki) : 3.1.1
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.16.0
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.14.0
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.16.3
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.15.1
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.0.0
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
 
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 11.6.0
+- [grafana](https://github.com/grafana/grafana/) : 12.0.0
     - RPM amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-11.6.0-1.aarch64.rpm
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-11.6.0-1.x86_64.rpm
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.0.0-1.aarch64.rpm
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.0.0-1.x86_64.rpm
     - DEB amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_11.6.0_amd64.deb
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_11.6.0_arm64.deb
-- [pg_exporter](https://github.com/Vonng/pg_exporter) : 0.9.0
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.0.0_amd64.deb
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.0.0_arm64.deb
+- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.0.0
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.46.1
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.47.0
     - amd64 & arm64: https://packages.timber.io/vector/latest/
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 3.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v3.0.0
-- [minio](https://github.com/minio/minio): 20250312180418
+- [minio](https://github.com/minio/minio): 20250422221226
     - amd64: https://dl.min.io/server/minio/release/linux-amd64/
     - arm64: https://dl.min.io/server/minio/release/linux-arm64/
-- [mcli](https://github.com/minio/mc): 20250312172924
+- [mcli](https://github.com/minio/mc): 20250416181326
     - amd64: https://dl.min.io/client/mc/release/linux-amd64/
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
 - [sealos](https://github.com/labring/sealos): 5.0.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
-- [rclone](https://github.com/rclone/rclone/releases/) 1.69.1
+- [rclone](https://github.com/rclone/rclone/releases/) 1.69.3
 
 
 --------
 
 ## Changelog
+
+**2025-05-22**
+
+- [x] prometheus 3.4.0
+- [x] duckdb 1.3.0
+- [x] etcd 3.6.0
+- [x] pg_exporter 1.0.0
+- [x] ferretdb 2.2.0
+- [x] rclone 1.69.3
+- [x] minio 20250422221226
+- [x] mcli 20250416181326
+- [ ] nginx_exporter 1.4.2
+- [ ] keepalived_exporter 1.6.2
+- [ ] pgbackrest_exporter 0.20.0
+- [ ] redis_exporter 1.27.1
+- [ ] victoriametrics 1.117.1
+- [ ] victorialogs 1.22.2
+- [ ] pg_timetable 5.13.0
+- [ ] tigerbeetle 0.16.41
+- [ ] pev2 1.15.0
+- [ ] grafana 12.0.0
+- [ ] grafana-victorialogs-ds 0.16.3
+- [ ] grafana-victoriametrics-ds 0.15.1
+- [ ] grafana-infinity-ds 3.2.1
+- [ ] grafana_plugins 12.0.0
+
 
 **2025-04-23**
 

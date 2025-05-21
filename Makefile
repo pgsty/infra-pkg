@@ -32,7 +32,118 @@ pull:
 pulld:
 	rsync -avc --delete $(DEVEL_PATH)/ ./
 
+
+
+
+###############################################################
+#                       3. Component                          #
+###############################################################
+duckdb:
+	cd amd64/duckdb && make
+	cd arm64/duckdb && make
+etcd:
+	cd amd64/etcd && make
+	cd arm64/etcd && make
+mtail:
+	cd amd64/mtail && make
+	cd arm64/mtail && make
+pg_timetable:
+	cd amd64/pg_timetable && make
+	cd arm64/pg_timetable && make
+ferretdb:
+	cd amd64/ferretdb && make
+	cd arm64/ferretdb && make
+sqlcmd:
+	cd amd64/sqlcmd && make
+	cd arm64/sqlcmd && make
+tigerbeetle:
+	cd amd64/tigerbeetle && make
+	cd arm64/tigerbeetle && make
+v2ray:
+	cd amd64/v2ray && make
+	cd arm64/v2ray && make
+juicefs:
+	cd amd64/juicefs && make
+	cd arm64/juicefs && make
+restic:
+	cd amd64/restic && make
+	cd arm64/restic && make
+
+
+loki:
+	cd amd64/loki && make
+	cd arm64/loki && make
+prometheus:
+	cd amd64/prometheus && make
+	cd arm64/prometheus && make
+pushgateway:
+	cd amd64/pushgateway && make
+	cd arm64/pushgateway && make
+alertmanager:
+	cd amd64/alertmanager && make
+	cd arm64/alertmanager && make
+blackbox_exporter:
+	cd amd64/blackbox_exporter && make
+	cd arm64/blackbox_exporter && make
+nginx_exporter:
+	cd amd64/nginx_exporter && make
+	cd arm64/nginx_exporter && make
+node_exporter:
+	cd amd64/node_exporter && make
+	cd arm64/node_exporter && make
+zfs_exporter:
+	cd amd64/zfs_exporter && make
+	cd arm64/zfs_exporter && make
+keepalived_exporter:
+	cd amd64/keepalived_exporter && make
+	cd arm64/keepalived_exporter && make
+pgbackrest_exporter:
+	cd amd64/pgbackrest_exporter && make
+	cd arm64/pgbackrest_exporter && make
+mysqld_exporter:
+	cd amd64/mysqld_exporter && make
+	cd arm64/mysqld_exporter && make
+redis_exporter:
+	cd amd64/redis_exporter && make
+	cd arm64/redis_exporter && make
+kafka_exporter:
+	cd amd64/kafka_exporter && make
+	cd arm64/kafka_exporter && make
+mongodb_exporter:
+	cd amd64/mongodb_exporter && make
+	cd arm64/mongodb_exporter && make
+victoria-metrics:
+	cd amd64/victoria-metrics && make
+	cd arm64/victoria-metrics && make
+
+grafana-infinity-ds:
+	cd amd64/grafana-infinity-ds && make
+	cd arm64/grafana-infinity-ds && make
+
+grafana-victoriametrics-ds:
+	cd amd64/grafana-victoriametrics-ds && make
+	cd arm64/grafana-victoriametrics-ds && make
+
+grafana-victorialogs-ds:
+	cd amd64/grafana-victorialogs-ds && make
+	cd arm64/grafana-victorialogs-ds && make
+
+timescaledb-event-streamer:
+	cd amd64/timescaledb-event-streamer && make
+	cd arm64/timescaledb-event-streamer && make
+
+
+
+
+
 ###############################################################
 #                         Inventory                           #
 ###############################################################
-.PHONY: all amd64 arm64 push pushd pull pulld
+.PHONY: all amd64 arm64 push pushd pull pulld \
+	loki prometheus alertmanager pushgateway blackbox_exporter \
+	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
+	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
+	victoria-metrics pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
+	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
+	restic juicefs
+
