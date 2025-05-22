@@ -1,13 +1,13 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-07-25
-# Mtime     :   2024-12-16
+# Mtime     :   2025-05-22
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=plugins
-VERSION=11.4.0
+VERSION=12.0.0
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
 FILENAME=plugins-$(VERSION).tgz
 WEB_URL=https://repo.pigsty.io/etc/$(FILENAME)
