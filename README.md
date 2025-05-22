@@ -39,7 +39,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.16.3
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.15.1
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.0.0
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.2.1
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
 
 
@@ -83,20 +83,20 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [x] rclone 1.69.3
 - [x] minio 20250422221226
 - [x] mcli 20250416181326
-- [ ] nginx_exporter 1.4.2
-- [ ] keepalived_exporter 1.6.2
-- [ ] pgbackrest_exporter 0.20.0
-- [ ] redis_exporter 1.27.1
-- [ ] victoriametrics 1.117.1
-- [ ] victorialogs 1.22.2
-- [ ] pg_timetable 5.13.0
-- [ ] tigerbeetle 0.16.41
-- [ ] pev2 1.15.0
-- [ ] grafana 12.0.0
-- [ ] grafana-victorialogs-ds 0.16.3
-- [ ] grafana-victoriametrics-ds 0.15.1
-- [ ] grafana-infinity-ds 3.2.1
-- [ ] grafana_plugins 12.0.0
+- [x] nginx_exporter 1.4.2
+- [x] keepalived_exporter 1.6.2
+- [x] pgbackrest_exporter 0.20.0
+- [x] redis_exporter 1.27.1
+- [x] victoriametrics 1.117.1
+- [x] victorialogs 1.22.2
+- [x] pg_timetable 5.13.0
+- [x] tigerbeetle 0.16.41
+- [x] pev2 1.15.0
+- [x] grafana 12.0.0
+- [x] grafana-victorialogs-ds 0.16.3
+- [x] grafana-victoriametrics-ds 0.15.1
+- [x] grafana-infinity-ds 3.2.1
+- [x] grafana_plugins 12.0.0
 
 
 **2025-04-23**

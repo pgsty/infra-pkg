@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME2=VictoriaMetrics/victoriametrics-datasource
 PACKAGE2=victoriametrics-metrics-datasource
-VERSION2=0.14.0
+VERSION2=0.15.1
 FILENAME2=$(PACKAGE2)-v$(VERSION2).tar.gz
 WEB_URL2=https://github.com/$(REPONAME2)/releases/download/v$(VERSION2)/$(FILENAME2)
 

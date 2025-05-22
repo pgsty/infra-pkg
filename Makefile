@@ -116,6 +116,9 @@ victoria-metrics:
 	cd amd64/victoria-metrics && make
 	cd arm64/victoria-metrics && make
 
+grafana_plugins:
+	cd noarch/grafana_plugins && make
+
 grafana-infinity-ds:
 	cd amd64/grafana-infinity-ds && make
 	cd arm64/grafana-infinity-ds && make
@@ -145,5 +148,5 @@ timescaledb-event-streamer:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
-	restic juicefs
+	restic juicefs grafana_plugins
 
