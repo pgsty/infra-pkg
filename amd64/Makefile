@@ -68,6 +68,8 @@ juicefs:
 	cd juicefs && make
 restic:
 	cd restic && make
+dblab:
+	cd dblab && make
 
 
 ds: grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
@@ -88,4 +90,4 @@ timescaledb-event-streamer:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
-	restic juicefs
+	restic juicefs dblab

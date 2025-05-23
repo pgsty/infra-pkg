@@ -1,0 +1,22 @@
+name: "dblab"
+arch: "amd64"
+platform: "linux"
+version: "v0.32.0"
+version_schema: semver
+description: The database client every command line junkie deserves.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "danvergare"
+homepage: "https://github.com/danvergara/dblab"
+license: "MIT"
+
+contents:
+
+  - src: dblab/dblab
+    dst: /usr/bin/dblab
+    file_info:
+      mode: 0755
+
+  - src: dblab/LICENSE
+    dst: /usr/share/doc/dblab/LICENSE
+    file_info:
+      mode: 0644

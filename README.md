@@ -32,6 +32,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.0
 - [juicefs](https://github.com/juicedata/juicefs) : 1.2.3
+- [dblab](https://github.com/danvergara/dblab) 0.32.0
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.13.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.2.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.41
@@ -75,29 +76,29 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2025-05-22**
 
-- [x] prometheus 3.4.0
-- [x] duckdb 1.3.0
-- [x] etcd 3.6.0
-- [x] pg_exporter 1.0.0
-- [x] ferretdb 2.2.0
-- [x] rclone 1.69.3
-- [x] minio 20250422221226
-- [x] mcli 20250416181326
-- [x] nginx_exporter 1.4.2
-- [x] keepalived_exporter 1.6.2
-- [x] pgbackrest_exporter 0.20.0
-- [x] redis_exporter 1.27.1
-- [x] victoriametrics 1.117.1
-- [x] victorialogs 1.22.2
-- [x] pg_timetable 5.13.0
-- [x] tigerbeetle 0.16.41
-- [x] pev2 1.15.0
-- [x] grafana 12.0.0
-- [x] grafana-victorialogs-ds 0.16.3
-- [x] grafana-victoriametrics-ds 0.15.1
-- [x] grafana-infinity-ds 3.2.1
-- [x] grafana_plugins 12.0.0
-
+- dblab 0.32.0
+- prometheus 3.4.0
+- duckdb 1.3.0
+- etcd 3.6.0
+- pg_exporter 1.0.0
+- ferretdb 2.2.0
+- rclone 1.69.3
+- minio 20250422221226
+- mcli 20250416181326
+- nginx_exporter 1.4.2
+- keepalived_exporter 1.6.2
+- pgbackrest_exporter 0.20.0
+- redis_exporter 1.27.1
+- victoriametrics 1.117.1
+- victorialogs 1.22.2
+- pg_timetable 5.13.0
+- tigerbeetle 0.16.41
+- pev2 1.15.0
+- grafana 12.0.0
+- grafana-victorialogs-ds 0.16.3
+- grafana-victoriametrics-ds 0.15.1
+- grafana-infinity-ds 3.2.1
+- grafana_plugins 12.0.0
 
 **2025-04-23**
 
