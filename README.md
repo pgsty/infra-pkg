@@ -19,7 +19,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.4.2
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.9.1
 - [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
-- [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.6.2
+- [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.0
 - [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.20.0
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.17.2
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.72.1
@@ -73,6 +73,13 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2025-06-01**
+
+- prometheus 3.4.1
+- keepalived_exporter 1.7.0
+- 
 
 **2025-05-22**
 
