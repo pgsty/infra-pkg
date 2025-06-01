@@ -31,8 +31,8 @@ pull:
 	rsync -avc $(DEVEL_PATH)/ ./
 pulld:
 	rsync -avc --delete $(DEVEL_PATH)/ ./
-
-
+dir:
+	mkdir -p dist dist/{rpm.x86_64,rpm.aarch64,deb.amd64,deb.arm64}
 
 
 ###############################################################
@@ -146,7 +146,7 @@ timescaledb-event-streamer:
 ###############################################################
 #                         Inventory                           #
 ###############################################################
-.PHONY: all amd64 arm64 push pushd pull pulld \
+.PHONY: all amd64 arm64 push pushd pull pulld dir \
 	loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \

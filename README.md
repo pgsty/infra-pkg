@@ -12,7 +12,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.4.0
+- [prometheus](https://github.com/prometheus/prometheus) : 3.4.1
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.1
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.28.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.26.0
@@ -46,7 +46,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 12.0.0
+- [grafana](https://github.com/grafana/grafana/) : 12.0.1
     - RPM amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/
       - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.0.0-1.aarch64.rpm
       - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.0.0-1.x86_64.rpm
