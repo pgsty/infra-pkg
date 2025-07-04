@@ -1,7 +1,7 @@
 name: "grafana-infinity-ds"
 arch: "arm64"
 platform: "linux"
-version: "3.2.1"
+version: "3.3.0"
 version_schema: semver
 description: "CSV, JSON, GraphQL, XML and HTML datasource for grafana."
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -39,3 +39,8 @@ contents:
     file_info:
       owner: grafana
       group: grafana
+
+  - src: LICENSE
+    dst: /usr/share/doc/yesoreyeram-infinity-datasource/LICENSE
+    file_info:
+      mode: 0644
