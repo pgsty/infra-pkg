@@ -1,7 +1,7 @@
 name: "grafana-victoriametrics-ds"
 arch: "arm64"
 platform: "linux"
-version: "v0.15.1"
+version: "v0.16.0"
 version_schema: semver
 description: "Grafana datasource for VictoriaMetrics"
 maintainer: Ruohang Feng <rh@vonng.com>
