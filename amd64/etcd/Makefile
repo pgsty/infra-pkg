@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2025-03-23
+# Mtime     :   2025-07-04
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME="etcd-io/etcd"
 PACKAGE="etcd"
-VERSION=3.6.0
+VERSION=3.6.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-v$(VERSION)-linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
