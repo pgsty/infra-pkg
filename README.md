@@ -76,7 +76,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2025-07-04**
 
-- [x prometheus 3.4.1 -> 3.4.2
+- [x] prometheus 3.4.1 -> 3.4.2
 - [x] grafana 12.0.1 -> 12.0.2
 - [x] vector 0.47.0 -> 0.48.0
 - [x] rclone 1.69.0 -> 1.70.2
@@ -91,8 +91,8 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [x] grafana-victorialogs-ds 0.16.3 -> 0.18.1
 - [x] grafana-victoriametrics-ds 0.15.1 -> 0.16.0
 - [x] grafana-inifinity-ds 3.2.1 -> 3.3.0
-- [ ] victorialogs 1.22.2 -> 1.24.0
-- [ ] victoriametrics 1.117.1 -> 1.120.0
+- [x] victorialogs 1.22.2 -> 1.24.0
+- [x] victoriametrics 1.117.1 -> 1.120.0
 
 **2025-06-01**
 
