@@ -38,9 +38,9 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.48
 - [loki](https://github.com/grafana/loki) : 3.1.1
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.16.3
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.15.1
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.2.1
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.18.1
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.16.0
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
 
 
@@ -87,7 +87,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [x] etcd 3.6.0 -> 3.6.1
 - [x] ferretdb 2.2.0 -> 2.3.1
 - [x] tigerbettle 0.16.41 -> 0.16.48
-- [ ] grafana-victorialogs-ds 0.17.0 -> 0.18.1
+- [x] grafana-victorialogs-ds 0.16.3 -> 0.18.1
 - [x] grafana-victoriametrics-ds 0.15.1 -> 0.16.0
 - [x] grafana-inifinity-ds 3.2.1 -> 3.3.0
 - [ ] victorialogs 1.22.2 -> 1.24.0
