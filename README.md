@@ -77,10 +77,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 **2025-07-04**
 
 - [x prometheus 3.4.1 -> 3.4.2
-- [ ] grafana 12.0.1 -> 12.0.2
-- [ ] vector 0.47.0 -> 0.48.0
-- [ ] rclone 1.69.0 -> 1.70.2
-- [ ] vip-manager 3.0.0 -> 4.0.0
+- [x] grafana 12.0.1 -> 12.0.2
+- [x] vector 0.47.0 -> 0.48.0
+- [x] rclone 1.69.0 -> 1.70.2
+- [x] vip-manager 3.0.0 -> 4.0.0
 - [ ] blackbox_exporter 0.26.0 -> 0.27.0
 - [ ] redis_exporter 1.72.1 -> 1.74.0
 - [ ] duckdb 1.3.0 -> 1.3.1
