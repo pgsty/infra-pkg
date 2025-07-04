@@ -85,7 +85,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [x] redis_exporter 1.72.1 -> 1.74.0
 - [x] duckdb 1.3.0 -> 1.3.1
 - [x] etcd 3.6.0 -> 3.6.1
-- [ ] ferretdb 2.3.1
+- [x] ferretdb 2.2.0 -> 2.3.1
 - [ ] tigerbettle 0.16.41 -> 0.16.48
 - [ ] grafana-victorialogs-ds 0.17.0 -> 0.18.1
 - [ ] grafana-victoriametrics-ds 0.15.1 -> 0.16.0

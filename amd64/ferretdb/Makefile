@@ -1,17 +1,17 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-07-25
-# Mtime     :   2025-03-05
+# Mtime     :   2025-07-04
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=FerretDB/FerretDB
 PACKAGE=ferretdb
-VERSION=2.2.0
+VERSION=2.3.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
-FILENAME=$(PACKAGE)-linux-amd64
+FILENAME=$(PACKAGE)-amd64-linux
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
 default: all
