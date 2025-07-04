@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-05-23
-# Mtime     :   2025-05-23
+# Mtime     :   2025-07-04
 # Desc      :   Makefile shortcuts for pkg building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME="danvergara/dblab"
 PACKAGE="dblab"
-VERSION=0.32.0
+VERSION=0.33.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)_$(VERSION)_linux_arm64"
 FILENAME="$(DIRNAME).tar.gz"

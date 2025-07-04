@@ -1,7 +1,7 @@
 name: "dblab"
 arch: "amd64"
 platform: "linux"
-version: "v0.32.0"
+version: "v0.33.0"
 version_schema: semver
 description: The database client every command line junkie deserves.
 maintainer: Ruohang Feng <rh@vonng.com>

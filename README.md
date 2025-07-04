@@ -32,7 +32,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.0
 - [juicefs](https://github.com/juicedata/juicefs) : 1.2.3
-- [dblab](https://github.com/danvergara/dblab) 0.32.0
+- [dblab](https://github.com/danvergara/dblab) 0.33.0
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.13.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.3.1
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.48
@@ -86,6 +86,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [x] duckdb 1.3.0 -> 1.3.1
 - [x] etcd 3.6.0 -> 3.6.1
 - [x] ferretdb 2.2.0 -> 2.3.1
+- [x] dblab 0.32.0 -> 0.33.0
 - [x] tigerbettle 0.16.41 -> 0.16.48
 - [x] grafana-victorialogs-ds 0.16.3 -> 0.18.1
 - [x] grafana-victoriametrics-ds 0.15.1 -> 0.16.0
