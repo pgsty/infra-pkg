@@ -76,22 +76,22 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2025-07-04**
 
-- prometheus 3.4.1 -> 3.4.2
-- grafana 12.0.1 -> 12.0.2
-- vector 0.47.0 -> 0.48.0
-- rclone 1.69.0 -> 1.70.2
-- vip-manager 3.0.0 -> 4.0.0
-- blackbox_exporter 0.26.0 -> 0.27.0
-- redis_exporter 1.72.1 -> 1.74.0
-- duckdb 1.3.0 -> 1.3.1
-- etcd 3.6.0 -> 3.6.1
-- ferretdb 2.3.1
-- tigerbettle 0.16.41 -> 0.16.48
-- grafana-victorialogs-ds 0.17.0 -> 0.18.1
-- grafana-victoriametrics-ds 0.15.1 -> 0.16.0
-- grafana-inifinity-ds 3.2.1 -> 3.3.0
-- victorialogs 1.22.2 -> 1.24.0
-- victoriametrics 1.117.1 -> 1.120.0
+- [x prometheus 3.4.1 -> 3.4.2
+- [ ] grafana 12.0.1 -> 12.0.2
+- [ ] vector 0.47.0 -> 0.48.0
+- [ ] rclone 1.69.0 -> 1.70.2
+- [ ] vip-manager 3.0.0 -> 4.0.0
+- [ ] blackbox_exporter 0.26.0 -> 0.27.0
+- [ ] redis_exporter 1.72.1 -> 1.74.0
+- [ ] duckdb 1.3.0 -> 1.3.1
+- [ ] etcd 3.6.0 -> 3.6.1
+- [ ] ferretdb 2.3.1
+- [ ] tigerbettle 0.16.41 -> 0.16.48
+- [ ] grafana-victorialogs-ds 0.17.0 -> 0.18.1
+- [ ] grafana-victoriametrics-ds 0.15.1 -> 0.16.0
+- [x] grafana-inifinity-ds 3.2.1 -> 3.3.0
+- [ ] victorialogs 1.22.2 -> 1.24.0
+- [ ] victoriametrics 1.117.1 -> 1.120.0
 
 **2025-06-01**
 
