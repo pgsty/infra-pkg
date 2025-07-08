@@ -22,7 +22,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.0
 - [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.20.0
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.17.2
-- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.72.1
+- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.74.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.44.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.120.0
@@ -74,8 +74,15 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
+
+**2025-07-09**
+
+
+
 **2025-07-04**
 
+- [x] genai-toolbox 0.8.0
+- [x] juicefs 1.2.3 -> 1.3.0
 - [x] prometheus 3.4.1 -> 3.4.2
 - [x] grafana 12.0.1 -> 12.0.2
 - [x] vector 0.47.0 -> 0.48.0

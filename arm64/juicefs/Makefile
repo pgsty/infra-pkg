@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-03-17
-# Mtime     :   2025-03-17
+# Mtime     :   2025-07-09
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=juicedata/juicefs
 PACKAGE=juicefs
-VERSION=1.2.3
+VERSION=1.3.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-$(VERSION)-linux-arm64
 FILENAME=$(DIRNAME).tar.gz
