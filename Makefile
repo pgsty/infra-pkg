@@ -119,7 +119,9 @@ mongodb_exporter:
 victoria-metrics:
 	cd amd64/victoria-metrics && make
 	cd arm64/victoria-metrics && make
-
+victoria-logs:
+	cd amd64/victoria-logs && make
+	cd arm64/victoria-logs && make
 grafana_plugins:
 	cd noarch/grafana_plugins && make
 
@@ -150,7 +152,7 @@ timescaledb-event-streamer:
 	loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
-	victoria-metrics pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
+	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
 	restic juicefs dblab grafana_plugins
 

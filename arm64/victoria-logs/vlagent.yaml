@@ -1,0 +1,23 @@
+name: "vlagent"
+arch: "arm64"
+platform: "linux"
+version: "v1.25.1"
+version_schema: semver
+description: A tiny agent which helps you collect logs from various sources and store them in VictoriaLogs
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "VictoriaMetrics"
+homepage: "https://docs.victoriametrics.com/victorialogs/vlagent/"
+license: "Apache-2.0"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: victoria-logs/vlagent-prod
+    dst: /usr/bin/vlagent
+
+  - src: LICENSE
+    dst: /usr/share/doc/victoria-logs/vlagent.LICENSE
+    file_info:
+      mode: 0644

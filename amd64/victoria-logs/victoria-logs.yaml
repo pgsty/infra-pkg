@@ -1,0 +1,23 @@
+name: "victoria-logs"
+arch: "amd64"
+platform: "linux"
+version: "v1.25.1"
+version_schema: semver
+description: Fast and easy to use database for logs, which can efficiently handle terabytes of logs
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "VictoriaMetrics"
+homepage: "https://docs.victoriametrics.com/victorialogs/"
+license: "Apache-2.0"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: victoria-logs/victoria-logs-prod
+    dst: /usr/bin/victoria-logs
+
+  - src: LICENSE
+    dst: /usr/share/doc/victoria-logs/LICENSE
+    file_info:
+      mode: 0644

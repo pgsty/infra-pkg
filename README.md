@@ -25,8 +25,8 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.74.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.44.0
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.120.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.24.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.121.0
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.25.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.3.2
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.1
 - [mtail](https://github.com/google/mtail) : 3.0.8
@@ -35,11 +35,11 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [dblab](https://github.com/danvergara/dblab) 0.33.0
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.13.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.3.1
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.48
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.50
 - [loki](https://github.com/grafana/loki) : 3.1.1
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.18.1
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.16.0
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.17.0
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
 - [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.9.0
