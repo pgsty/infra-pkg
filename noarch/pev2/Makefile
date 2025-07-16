@@ -1,12 +1,12 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-07-25
-# Mtime     :   2025-03-17
+# Mtime     :   2025-07-17
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-VERSION=1.15.0
+VERSION=1.16.0
 FILENAME=index.html
 WEB_URL=https://github.com/dalibo/pev2/releases/download/v$(VERSION)/$(FILENAME)
 
@@ -35,8 +35,10 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
+	mkdir -p ../../dist/noarch/
 	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/noarch/
 deb:
+	mkdir -p ../../dist/noarch/
 	nfpm package --config nfpm.yaml --packager deb --target ../../dist/noarch/
 
 

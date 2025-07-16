@@ -90,6 +90,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - grafana-victoriametrics-ds 0.16.0 -> 0.17.0
 - rclone 1.69.3 -> 1.70.3
 - pig 0.5.0 -> 0.6.0
+- pev2 1.15.0 -> 1.16.0
 
 **2025-07-04**
 
