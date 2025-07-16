@@ -12,7 +12,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.4.2
+- [prometheus](https://github.com/prometheus/prometheus) : 3.5.0
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.1
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.28.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.27.0
@@ -27,11 +27,11 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.44.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.120.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) : 1.24.0
-- [duckdb](https://github.com/duckdb/duckdb) : 1.3.1
+- [duckdb](https://github.com/duckdb/duckdb) : 1.3.2
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.1
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.0
-- [juicefs](https://github.com/juicedata/juicefs) : 1.2.3
+- [juicefs](https://github.com/juicedata/juicefs) : 1.3.0
 - [dblab](https://github.com/danvergara/dblab) 0.33.0
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.13.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.3.1
@@ -42,7 +42,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.16.0
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
-
+- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.9.0
 
 **Download Directly**:
 
@@ -74,10 +74,22 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
+**Next Scheduled**
 
-**2025-07-09**
+- FerretDB 2.4.0
 
+**2025-07-16**
 
+- genai-toolbox 0.8.0 -> 0.9.0 (new)
+- prometheus 3.4.2 -> 3.5.0
+- victoriametrics 1.120.0 -> 1.121.0
+- victorialogs 1.24.0 -> 1.25.0
+- duckdb 1.3.1 -> 1.3.2
+- etcd 3.6.1 -> 3.6.2
+- tigerbeetle 0.16.48 -> 0.16.50
+- grafana-victoriametrics-ds 0.16.0 -> 0.17.0
+- rclone 1.69.3 -> 1.70.3
+- pig 0.5.0 -> 0.6.0
 
 **2025-07-04**
 
