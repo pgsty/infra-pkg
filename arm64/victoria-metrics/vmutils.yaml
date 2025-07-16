@@ -1,9 +1,9 @@
-name: "victoria-metrics-utils"
-arch: "amd64"
+name: "vmutils"
+arch: "arm64"
 platform: "linux"
-version: "v1.120.0"
+version: "v1.121.0"
 version_schema: semver
-description: fast, cost-effective monitoring solution and time series database, agent,alert,auth,backup,ctl
+description: fast, cost-effective monitoring solution and time series database, agent,alert,auth,backup,restore,ctl
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "VictoriaMetrics"
 homepage: "https://github.com/VictoriaMetrics/VictoriaMetrics"
@@ -20,6 +20,9 @@ contents:
   - src: victoria-metrics/vmalert-prod
     dst: /usr/bin/vmalert
     file_info: { mode: 0755 }
+  - src: victoria-metrics/vmalert-tool-prod
+    dst: /usr/bin/vmalert-tool
+    file_info: { mode: 0755 }
   - src: victoria-metrics/vmauth-prod
     dst: /usr/bin/vmauth
     file_info: { mode: 0755 }
@@ -28,6 +31,9 @@ contents:
     file_info: { mode: 0755 }
   - src: victoria-metrics/vmctl-prod
     dst: /usr/bin/vmctl
+    file_info: { mode: 0755 }
+  - src: victoria-metrics/vmrestore-prod
+    dst: /usr/bin/vmrestore
     file_info: { mode: 0755 }
   - src: LICENSE
     dst: /usr/share/doc/victoria/utils.LICENSE

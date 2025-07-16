@@ -81,9 +81,9 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 **2025-07-16**
 
 - genai-toolbox 0.8.0 -> 0.9.0 (new)
+- victoriametrics 1.120.0 -> 1.121.0 (refactor)
+- victorialogs 1.24.0 -> 1.25.0 (refactor)
 - prometheus 3.4.2 -> 3.5.0
-- victoriametrics 1.120.0 -> 1.121.0
-- victorialogs 1.24.0 -> 1.25.0
 - duckdb 1.3.1 -> 1.3.2
 - etcd 3.6.1 -> 3.6.2
 - tigerbeetle 0.16.48 -> 0.16.50
