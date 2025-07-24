@@ -46,13 +46,13 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 12.0.2
+- [grafana](https://github.com/grafana/grafana/) : 12.1.0
     - RPM amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.0.2-1.aarch64.rpm
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.0.2-1.x86_64.rpm
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.1.0-1.aarch64.rpm
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.1.0-1.x86_64.rpm
     - DEB amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.0.2_amd64.deb
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.0.2_arm64.deb
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.1.0_amd64.deb
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.1.0_arm64.deb
 - [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.0.0
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.48.0
@@ -67,16 +67,20 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
 - [sealos](https://github.com/labring/sealos): 5.0.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
-- [rclone](https://github.com/rclone/rclone/releases/) 1.69.3
+- [rclone](https://github.com/rclone/rclone/releases/) 1.70.3
 
 
 --------
 
 ## Changelog
 
-**Next Scheduled**
+**2025-07-24**
 
+- Grafana 12.1.0
 - FerretDB 2.4.0
+- etcd 3.6.3
+- minio 20250723155402
+- mcli 20250721052808
 
 **2025-07-16**
 
