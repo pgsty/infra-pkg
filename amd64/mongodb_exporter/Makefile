@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="percona/mongodb_exporter"
 PACKAGE="mongodb_exporter"
-VERSION=0.44.0
+VERSION=0.47.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
