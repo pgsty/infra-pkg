@@ -35,7 +35,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [dblab](https://github.com/danvergara/dblab) 0.33.0
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 5.13.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.5.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.50
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.54
 - [loki](https://github.com/grafana/loki) : 3.1.1
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.19.3
