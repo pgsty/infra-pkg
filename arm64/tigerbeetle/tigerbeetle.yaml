@@ -1,7 +1,7 @@
 name: "tigerbeetle"
 arch: "arm64"
 platform: "linux"
-version: "v0.16.50"
+version: "v0.16.54"
 release: "1"
 version_schema: semver
 description: The financial transactions database designed for mission critical safety and performance

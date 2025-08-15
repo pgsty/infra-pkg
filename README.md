@@ -90,7 +90,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - grafana-infinity-ds 3.4.1
 - etcd 3.6.4
 - ferretdb 2.5.0
-- tigerbeetle 0.16.50
+- tigerbeetle 0.16.54
 - genai-toolbox 0.12.0
 
 
