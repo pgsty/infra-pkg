@@ -1,7 +1,7 @@
 name: "vlagent"
 arch: "amd64"
 platform: "linux"
-version: "v1.25.1"
+version: "v1.28.0"
 version_schema: semver
 description: A tiny agent which helps you collect logs from various sources and store them in VictoriaLogs
 maintainer: Ruohang Feng <rh@vonng.com>
