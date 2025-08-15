@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=VictoriaMetrics/VictoriaMetrics
 PACKAGE=victoria-metrics
-VERSION=1.121.0
+VERSION=1.123.0
 
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME1=victoria-metrics-linux-arm64-v$(VERSION).tar.gz
