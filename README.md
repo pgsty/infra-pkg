@@ -48,11 +48,11 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 - [grafana](https://github.com/grafana/grafana/) : 12.1.0
     - RPM amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.1.0-1.aarch64.rpm      / https://rpm.grafana.com/yum/rpm/Packages/grafana-12.1.0-1.aarch64.rpm 
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.1.0-1.x86_64.rpm       / https://rpm.grafana.com/yum/rpm/Packages/grafana-12.1.0-1.x86_64.rpm
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.2.0-1.aarch64.rpm      / https://rpm.grafana.com/yum/rpm/Packages/grafana-12.2.0-1.aarch64.rpm 
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.2.0-1.x86_64.rpm       / https://rpm.grafana.com/yum/rpm/Packages/grafana-12.2.0-1.x86_64.rpm
     - DEB amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.1.0_amd64.deb
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.1.0_arm64.deb
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.2.0_amd64.deb
+      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.2.0_arm64.deb
 - [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.0.2
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.49.0
@@ -74,6 +74,28 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
+**2025-10-02**
+
+- prometheus 3.5.0 -> 3.6.0
+- nginx_exporter 1.4.2 -> 1.5.0
+- mysqld_exporter 0.17.2 -> 0.18.0
+- redis_exporter 1.75.0 -> 1.77.0
+- mongodb_exporter 0.47.0 -> 0.47.1
+- VictoriaMetrics 1.121.0 -> 1.126.0
+- VictoriaLogs 1.25.1 -> 1.35.0
+- DuckDB 1.3.2 -> 1.4.0
+- etcd 3.6.4 -> 3.6.5
+- restic 0.18.0 -> 0.18.1
+- tigerbeetle 0.16.54 -> 0.16.60
+- grafana-victorialogs-ds 0.19.3 -> 0.21.0
+- grafana-victoriametrics-ds 0.18.3 -> 0.19.4
+- grafana-infinity-ds 3.3.0 -> 3.5.0
+- genai-toolbox 0.9.0 -> 0.16.0
+- grafana 12.1.0 -> 12.2.0
+- vector 0.49.0 -> 0.50.0
+- rclone 1.70.3 -> 1.71.1
+- minio 20250907161309
+- mcli 20250813083541
 
 **2025-08-15**
 
