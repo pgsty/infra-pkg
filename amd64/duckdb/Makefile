@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-01-30
-# Mtime     :   2025-07-04
+# Mtime     :   2025-10-02
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=duckdb/duckdb
 PACKAGE=duckdb
-VERSION=1.3.2
+VERSION=1.4.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)_cli-linux-amd64
 FILENAME=$(DIRNAME).zip
