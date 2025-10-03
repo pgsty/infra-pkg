@@ -1,13 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-03-17
+# Mtime     :   2025-10-02
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME="restic/restic"
 PACKAGE="restic"
-VERSION=0.18.0
+VERSION=0.18.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)"
 FILENAME="$(PACKAGE)_$(VERSION)_linux_amd64.bz2"
