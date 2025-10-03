@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="nginxinc/nginx-prometheus-exporter"
 PACKAGE="nginx_exporter"
-VERSION=1.4.2
+VERSION=1.5.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="nginx-prometheus-exporter_$(VERSION)_linux_amd64"
 FILENAME="$(DIRNAME).tar.gz"

@@ -1,7 +1,7 @@
 name: "nginx-exporter"
 arch: "amd64"
 platform: "linux"
-version: "v1.4.2"
+version: "v1.5.0"
 version_schema: semver
 description: NGINX Prometheus Exporter for NGINX and NGINX Plus.
 maintainer: Ruohang Feng <rh@vonng.com>
