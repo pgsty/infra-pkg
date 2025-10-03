@@ -1,7 +1,7 @@
 name: "victoria-metrics-cluster"
 arch: "arm64"
 platform: "linux"
-version: "v1.123.0"
+version: "v1.126.0"
 version_schema: semver
 description: fast, cost-effective monitoring solution and time series database, cluster version
 maintainer: Ruohang Feng <rh@vonng.com>
