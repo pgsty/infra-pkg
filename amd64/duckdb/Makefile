@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=duckdb/duckdb
 PACKAGE=duckdb
-VERSION=1.4.0
+VERSION=1.4.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)_cli-linux-amd64
 FILENAME=$(DIRNAME).zip
