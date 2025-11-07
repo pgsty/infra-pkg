@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="prometheus/alertmanager"
 PACKAGE="alertmanager"
-VERSION=0.28.1
+VERSION=0.29.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
