@@ -86,11 +86,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - duckdb 1.4.0 -> 1.4.1
 - dblab 0.33.0 -> 0.34.2
 - pg_timetable 5.13.0 -> 6.1.0
-- tigerbeetle 0.16.54 -> 0.16.60
 - vector 0.50.0 -> 0.51.0
 - rclone 1.71.1 -> 1.71.2
-- VictoriaMetrics 1.126.0 -> 1.129.1
-- VictoriaLogs 1.35.0 -> 1.37.2
+- victoria-metrics 1.126.0 -> 1.129.1
+- victoria-logs 1.35.0 -> 1.37.2
 - grafana-victorialogs-ds 0.21.0 -> 0.21.4
 - grafana-victoriametrics-ds 0.19.4 -> 0.19.6
 - grafana-infinity-ds 3.5.0 -> 3.6.0
