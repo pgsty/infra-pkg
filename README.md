@@ -60,7 +60,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.0.0
 - [minio](https://github.com/minio/minio): 2025061313347
-    - amd64: https://dl.min.io/server/minio/release/linux-amd64/
+    - amd64: https://dl.min.io/server/minio/release/linux-agmd64/
     - arm64: https://dl.min.io/server/minio/release/linux-arm64/
 - [mcli](https://github.com/minio/mc): 20250416181326
     - amd64: https://dl.min.io/client/mc/release/linux-amd64/
@@ -93,7 +93,6 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - grafana-victorialogs-ds 0.21.0 -> 0.21.4
 - grafana-victoriametrics-ds 0.19.4 -> 0.19.6
 - grafana-infinity-ds 3.5.0 -> 3.6.0
-- genai-toolbox 0.16.0 -> 0.18.0
 - pev2 1.16.0 -> 1.17.0
 
 
