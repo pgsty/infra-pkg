@@ -1,7 +1,7 @@
 name: "pev2"
 arch: "all"
 platform: "linux"
-version: "v1.16.0"
+version: "v1.17.0"
 version_schema: semver
 description: "PostgreSQL Explain Visualizer"
 maintainer: Ruohang Feng <rh@vonng.com>
