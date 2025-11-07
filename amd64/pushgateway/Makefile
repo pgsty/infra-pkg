@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="prometheus/pushgateway"
 PACKAGE="pushgateway"
-VERSION=1.11.1
+VERSION=1.11.2
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
