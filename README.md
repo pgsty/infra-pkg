@@ -74,7 +74,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
-**2025-11-07**
+**2025-11-11**
 
 - prometheus 3.6.0 -> 3.7.3
 - pushgateway 1.11.1 -> 1.11.2
@@ -94,7 +94,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - grafana-victoriametrics-ds 0.19.4 -> 0.19.6
 - grafana-infinity-ds 3.5.0 -> 3.6.0
 - pev2 1.16.0 -> 1.17.0
-
+- FerretDB 2.6.0 -> 2.7.0
 
 
 **2025-10-02**
@@ -114,7 +114,6 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - grafana-victoriametrics-ds 0.18.3 -> 0.19.4
 - grafana-infinity-ds 3.3.0 -> 3.5.0
 - genai-toolbox 0.9.0 -> 0.16.0
-- grafana 12.1.0 -> 12.2.0
 - vector 0.49.0 -> 0.50.0
 - rclone 1.70.3 -> 1.71.1
 - minio 20250907161309
