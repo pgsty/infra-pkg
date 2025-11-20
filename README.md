@@ -12,7 +12,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.5.0
+- [prometheus](https://github.com/prometheus/prometheus) : 3.7.3
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.1
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.28.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.27.0
@@ -27,7 +27,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.47.1
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.129.1
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.37.2
-- [duckdb](https://github.com/duckdb/duckdb) : 1.3.2
+- [duckdb](https://github.com/duckdb/duckdb) : 1.4.2
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.5
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
@@ -47,12 +47,12 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 **Download Directly**:
 
 - [grafana](https://github.com/grafana/grafana/) : 12.1.0
-    - RPM amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.2.0-1.aarch64.rpm      / https://rpm.grafana.com/yum/rpm/Packages/grafana-12.0.0-1.aarch64.rpm 
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm/Packages/grafana-12.2.1-1.x86_64.rpm       / https://rpm.grafana.com/yum/rpm/Packages/grafana-12.2.0-1.x86_64.rpm
-    - DEB amd64 & arm64: https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.2.0_amd64.deb
-      - https://mirrors.tuna.tsinghua.edu.cn/grafana/apt/pool/main/g/grafana/grafana_12.2.0_arm64.deb
+  - https://gr  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_amd64.rpm
+  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_arm64.rpm
+  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_amd64.deb
+  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_arm64.deb
+    afana.com/grafana/download
+
 - [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.0.2
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.51.0
@@ -73,6 +73,15 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2025-11-20**
+
+- etcd 3.6.5 -> 3.6.6
+- duckdb 1.4.1 -> 1.4.2
+- sealos 5.0.1 -> 5.1.1
+- vector 1.51.0 -> 1.51.1
+
 
 **2025-11-11**
 
