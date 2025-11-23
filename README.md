@@ -14,7 +14,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 - [prometheus](https://github.com/prometheus/prometheus) : 3.7.3
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.1
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.28.1
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.29.0
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.27.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.4.2
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.9.1
@@ -28,21 +28,21 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.129.1
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.37.2
 - [duckdb](https://github.com/duckdb/duckdb) : 1.4.2
-- [etcd](https://github.com/etcd-io/etcd) : 3.6.5
+- [etcd](https://github.com/etcd-io/etcd) : 3.6.6
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.3.0
 - [dblab](https://github.com/danvergara/dblab) 0.34.2
-- [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.1.0
-- [ferretdb](https://github.com/FerretDB/FerretDB): 2.5.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.60
+- [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.2.0
+- [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.65
 - [loki](https://github.com/grafana/loki) : 3.1.1
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.21.4
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.18.3
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
-- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.9.0
+- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.21.0
 
 **Download Directly**:
 
@@ -53,7 +53,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_arm64.deb
     afana.com/grafana/download
 
-- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.0.2
+- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.0.3
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.51.0
     - amd64 & arm64: https://packages.timber.io/vector/latest/
@@ -65,7 +65,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [mcli](https://github.com/minio/mc): 20250416181326
     - amd64: https://dl.min.io/client/mc/release/linux-amd64/
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
-- [sealos](https://github.com/labring/sealos): 5.0.1
+- [sealos](https://github.com/labring/sealos): 5.1.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
 - [rclone](https://github.com/rclone/rclone/releases/) 1.71.2
 
@@ -77,10 +77,19 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2025-11-20**
 
+- pg_timetable 6.2.0
+- genai-toolbox 0.16.0 -> 0.21.0
 - etcd 3.6.5 -> 3.6.6
 - duckdb 1.4.1 -> 1.4.2
 - sealos 5.0.1 -> 5.1.1
 - vector 1.51.0 -> 1.51.1
+- timescaledb-tools 0.18.1
+- timescaledb-event-streamer 0.20.0
+- tigerbeetle 0.16.65
+- VictoriaMetrics 1.129.1 -> 1.130.0
+- victorialogs 1.37.2 -> 1.38.0
+- grafana-victorialogs-ds 0.21.4 -> 0.22.1
+- grafana-victoriametrics-ds 0.19.6 -> 0.19.7
 
 
 **2025-11-11**

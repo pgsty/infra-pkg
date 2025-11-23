@@ -137,11 +137,13 @@ grafana-victorialogs-ds:
 	cd amd64/grafana-victorialogs-ds && make
 	cd arm64/grafana-victorialogs-ds && make
 
+timescaledb-tools:
+	cd amd64/timescaledb-tools && make
+	cd arm64/timescaledb-tools && make
+
 timescaledb-event-streamer:
 	cd amd64/timescaledb-event-streamer && make
 	cd arm64/timescaledb-event-streamer && make
-
-
 
 
 
@@ -153,6 +155,6 @@ timescaledb-event-streamer:
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
-	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
+	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
 	restic juicefs dblab grafana_plugins
 

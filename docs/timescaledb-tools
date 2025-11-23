@@ -1,0 +1,29 @@
+
+cd ~/dev
+git clone https://github.com/timescale/timescaledb-tune
+
+cd ~/dev/timescaledb-tune
+git checkout v0.18.1
+cd cmd timescaledb-tune
+go get -u
+
+CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -a -ldflags "-extldflags '-static'" -o ~/pgsty/infra-pkg/amd64/tarball/timescaledb-tune
+upx ~/pgsty/infra-pkg/amd64/tarball/timescaledb-tune
+
+CGO_ENABLED=0 GOOS=linux  GOARCH=arm64 go build -a -ldflags "-extldflags '-static'" -o ~/pgsty/infra-pkg/arm64/tarball/timescaledb-tune
+upx ~/pgsty/infra-pkg/arm64/tarball/timescaledb-tune
+
+
+cd ~/dev/
+git clone https://github.com/timescale/timescaledb-parallel-copy
+cd ~/dev/timescaledb-parallel-copy
+
+git checkout v0.11.1
+cd cmd/timescaledb-parallel-copy
+go get -u
+
+CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -a -ldflags "-extldflags '-static'" -o ~/pgsty/infra-pkg/amd64/tarball/timescaledb-parallel-copy
+upx ~/pgsty/infra-pkg/amd64/tarball/timescaledb-parallel-copy
+
+CGO_ENABLED=0 GOOS=linux  GOARCH=arm64 go build -a -ldflags "-extldflags '-static'" -o ~/pgsty/infra-pkg/arm64/tarball/timescaledb-parallel-copy
+upx ~/pgsty/infra-pkg/arm64/tarball/timescaledb-parallel-copy
