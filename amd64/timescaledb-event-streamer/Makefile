@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="noctarius/timescaledb-event-streamer"
 PACKAGE="timescaledb-event-streamer"
-VERSION=0.12.0
+VERSION=0.20.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-v$(VERSION)-linux-amd64"
 FILENAME="$(DIRNAME).tar.gz"
