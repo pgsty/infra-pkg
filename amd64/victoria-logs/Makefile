@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=VictoriaMetrics/VictoriaLogs
 PACKAGE=victoria-logs
-VERSION=1.37.2
+VERSION=1.38.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME1=victoria-logs-linux-amd64-v$(VERSION).tar.gz
 FILENAME2=vlutils-linux-amd64-v$(VERSION).tar.gz
