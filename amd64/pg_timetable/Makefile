@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=cybertec-postgresql/pg_timetable
 PACKAGE=pg_timetable
-VERSION=6.1.0
+VERSION=6.2.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
 FILENAME=$(PACKAGE)_Linux_x86_64.tar.gz
