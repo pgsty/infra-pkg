@@ -75,7 +75,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 ## Changelog
 
 
-**2025-11-20**
+**2025-11-23**
 
 - pg_timetable 6.2.0
 - genai-toolbox 0.16.0 -> 0.21.0
@@ -86,7 +86,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - timescaledb-tools 0.18.1
 - timescaledb-event-streamer 0.20.0
 - tigerbeetle 0.16.65
-- VictoriaMetrics 1.129.1 -> 1.130.0
+- victoria-metrics 1.129.1 -> 1.130.0
 - victorialogs 1.37.2 -> 1.38.0
 - grafana-victorialogs-ds 0.21.4 -> 0.22.1
 - grafana-victoriametrics-ds 0.19.6 -> 0.19.7
