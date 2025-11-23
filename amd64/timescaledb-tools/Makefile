@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-07-25
-# Mtime     :   2024-12-12
+# Mtime     :   2025-11-23
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
@@ -45,9 +45,9 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
 deb:
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.arm64/
+	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
 
 
 .PHONY: all get link meta download extract clean build rpm deb

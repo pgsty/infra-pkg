@@ -1,14 +1,13 @@
 name: "timescaledb-tools"
-arch: "arm64"
+arch: "amd64"
 platform: "linux"
-version: "v0.19.0"
+version: "v0.18.1"
 version_schema: semver
 description: "TimescaleDB tune & parallel copy util"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Timescale"
 homepage: "https://github.com/timescale/timescaledb-tune"
 license: "Apache-2.0"
-release: "0.el9"
 
 contents:
   - src: timescaledb-tune
@@ -21,3 +20,7 @@ contents:
     file_info:
       mode: 0755
 
+  - src: LICENSE
+    dst: /usr/share/doc/timescaledb-tools/LICENSE
+    file_info:
+      mode: 0644
