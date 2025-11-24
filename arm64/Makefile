@@ -70,6 +70,8 @@ restic:
 	cd restic && make
 dblab:
 	cd dblab && make
+pgflo:
+	cd pgflo && make
 
 ds: grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
 grafana-infinity-ds:

@@ -90,6 +90,8 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - victorialogs 1.37.2 -> 1.38.0
 - grafana-victorialogs-ds 0.21.4 -> 0.22.1
 - grafana-victoriametrics-ds 0.19.6 -> 0.19.7
+- grafana-plugins 12.0.0 -> 12.3.0
+- pgflo 0.0.15
 
 
 **2025-11-11**

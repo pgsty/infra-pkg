@@ -17,4 +17,4 @@ pev2:
 	cd pev2 && make
 
 
-.PHONY: all ge grafana-extra pev2
+.PHONY: all ge grafana-plugins pev2
