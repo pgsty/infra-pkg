@@ -1,0 +1,22 @@
+name: "pgflo"
+arch: "amd64"
+platform: "linux"
+version: "v0.0.15"
+version_schema: semver
+description: Stream, transform, and route PostgreSQL data in real-time.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "pgflo"
+homepage: "https://github.com/pgflo/pg_flo"
+license: "MIT"
+
+contents:
+
+  - src: pg_flo/pg_flo
+    dst: /usr/bin/pg_flo
+    file_info:
+      mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/pg_flo/LICENSE
+    file_info:
+      mode: 0644
