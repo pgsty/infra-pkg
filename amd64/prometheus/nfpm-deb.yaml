@@ -42,7 +42,7 @@ contents:
       group: prometheus
 
   - src: src/default
-    dst: /etc/default/promehteus
+    dst: /etc/default/prometheus
     type: config|noreplace
     file_info:
       mode: 0700
