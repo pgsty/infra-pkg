@@ -1,0 +1,7 @@
+RUSTFS_ACCESS_KEY=rustfsadmin
+RUSTFS_SECRET_KEY=rustfsadmin
+RUSTFS_VOLUMES="/data/rustfs"
+RUSTFS_ADDRESS=":9000"
+RUSTFS_CONSOLE_ENABLE=true
+RUST_LOG=error
+RUSTFS_OBS_LOG_DIRECTORY="/var/logs/rustfs/"

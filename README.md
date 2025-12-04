@@ -74,6 +74,12 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
+**2025-12-04**
+
+- minio 20250422
+- rustfs 1.0.0-a71
+- seaweedfs 4.1.0
+- garage 2.1.0
 
 **2025-11-23**
 

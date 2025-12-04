@@ -78,6 +78,8 @@ garage:
 	cd garage && make
 seaweedfs:
 	cd seaweedfs && make
+rustfs:
+	cd rustfs && make
 
 ds: grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
 grafana-infinity-ds:
@@ -97,4 +99,4 @@ timescaledb-event-streamer:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs
+	restic juicefs dblab garage seaweedfs rustfs

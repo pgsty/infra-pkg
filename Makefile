@@ -77,6 +77,9 @@ garage:
 seaweedfs:
 	cd amd64/seaweedfs && make
 	cd arm64/seaweedfs && make
+rustfs:
+	cd amd64/rustfs && make
+	cd arm64/rustfs && make
 
 
 
@@ -162,5 +165,5 @@ timescaledb-event-streamer:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs grafana_plugins
+	restic juicefs dblab garage seaweedfs rustfs grafana_plugins
 
