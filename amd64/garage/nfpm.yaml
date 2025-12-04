@@ -1,0 +1,17 @@
+name: "garage"
+arch: "amd64"
+platform: "linux"
+version: "v2.1.0"
+release: "1"
+version_schema: semver
+description: S3-compatible distributed object storage designed for self-hosting
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Deuxfleurs"
+homepage: "https://garagehq.deuxfleurs.fr/"
+license: "AGPL-3.0"
+
+contents:
+  - src: garage
+    dst: /usr/bin/garage
+    file_info:
+      mode: 0755

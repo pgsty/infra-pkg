@@ -59,7 +59,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - amd64 & arm64: https://packages.timber.io/vector/latest/
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.0.0
-- [minio](https://github.com/minio/minio): 2025061313347
+- [minio](https://github.com/minio/minio): 2025
     - amd64: https://dl.min.io/server/minio/release/linux-agmd64/
     - arm64: https://dl.min.io/server/minio/release/linux-arm64/
 - [mcli](https://github.com/minio/mc): 20250416181326
