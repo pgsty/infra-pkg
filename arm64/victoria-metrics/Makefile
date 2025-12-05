@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2025-10-02
+# Mtime     :   2025-12-05
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=VictoriaMetrics/VictoriaMetrics
 PACKAGE=victoria-metrics
-VERSION=1.130.0
+VERSION=1.131.0
 
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME1=victoria-metrics-linux-arm64-v$(VERSION).tar.gz
