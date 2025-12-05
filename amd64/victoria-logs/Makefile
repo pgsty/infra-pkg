@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-07-16
-# Mtime     :   2025-10-02
+# Mtime     :   2025-12-05
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=VictoriaMetrics/VictoriaLogs
 PACKAGE=victoria-logs
-VERSION=1.38.0
+VERSION=1.39.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME1=victoria-logs-linux-amd64-v$(VERSION).tar.gz
 FILENAME2=vlutils-linux-amd64-v$(VERSION).tar.gz
