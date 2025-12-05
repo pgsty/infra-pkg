@@ -31,7 +31,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.6
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
-- [juicefs](https://github.com/juicedata/juicefs) : 1.3.0
+- [juicefs](https://github.com/juicedata/juicefs) : 1.3.1
 - [dblab](https://github.com/danvergara/dblab) 0.34.2
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.2.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
@@ -80,6 +80,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - rustfs 1.0.0-a71
 - seaweedfs 4.1.0
 - garage 2.1.0
+- juicefs 1.3.1
 
 **2025-11-23**
 

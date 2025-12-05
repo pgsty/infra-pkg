@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=juicedata/juicefs
 PACKAGE=juicefs
-VERSION=1.3.0
+VERSION=1.3.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-$(VERSION)-linux-arm64
 FILENAME=$(DIRNAME).tar.gz
