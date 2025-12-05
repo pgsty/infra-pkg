@@ -88,7 +88,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - victorialogs 1.39.0
 - redis_exporter 1.80.1
 - mongodb_exporter 0.47.2
-- grafana-victoriametrics-ds 0.22.3
+- grafana-victorialogs-ds 0.22.3
 
 **2025-11-23**
 
