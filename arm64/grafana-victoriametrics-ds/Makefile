@@ -24,6 +24,7 @@ download:
 extract:
 	tar -xf $(FILENAME2)
 	rm -rf $(PACKAGE2)/victoriametrics_metrics_backend_plugin_{darwin_amd64,darwin_arm64,linux_386,linux_arm,linux_amd64,linux_s390x,windows_amd64.exe} #linux_arm64
+	rm -rf $(PACKAGE2)/MANIFEST.txt
 
 # remove tarball, build dir, rpm & deb files
 clean:

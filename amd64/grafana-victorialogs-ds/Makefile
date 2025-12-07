@@ -27,6 +27,7 @@ e: extract
 extract:
 	tar -xf $(FILENAME1)
 	rm -rf $(PACKAGE1)/victoriametrics_logs_backend_plugin_{freebsd_amd64,darwin_amd64,darwin_arm64,linux_386,linux_arm,linux_arm64,linux_s390x,windows_amd64.exe} #linux_amd64
+	rm -rf $(PACKAGE1)/MANIFEST.txt
 
 de: download extract
 
