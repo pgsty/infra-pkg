@@ -125,23 +125,26 @@ kafka_exporter:
 mongodb_exporter:
 	cd amd64/mongodb_exporter && make
 	cd arm64/mongodb_exporter && make
+victoria: victoria-metrics victoria-logs victoria-traces
 victoria-metrics:
 	cd amd64/victoria-metrics && make
 	cd arm64/victoria-metrics && make
 victoria-logs:
 	cd amd64/victoria-logs && make
 	cd arm64/victoria-logs && make
+victoria-traces:
+	cd amd64/victoria-traces && make
+	cd arm64/victoria-traces && make
 grafana_plugins:
 	cd noarch/grafana_plugins && make
 
+grafana-ds:  grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
 grafana-infinity-ds:
 	cd amd64/grafana-infinity-ds && make
 	cd arm64/grafana-infinity-ds && make
-
 grafana-victoriametrics-ds:
 	cd amd64/grafana-victoriametrics-ds && make
 	cd arm64/grafana-victoriametrics-ds && make
-
 grafana-victorialogs-ds:
 	cd amd64/grafana-victorialogs-ds && make
 	cd arm64/grafana-victorialogs-ds && make
