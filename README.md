@@ -15,7 +15,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [prometheus](https://github.com/prometheus/prometheus) : 3.8.0
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.29.0
-- [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.27.0
+- [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.10.2
 - [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
@@ -26,8 +26,8 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.47.2
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.131.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.40.0
-- [duckdb](https://github.com/duckdb/duckdb) : 1.4.2
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.41.0
+- [duckdb](https://github.com/duckdb/duckdb) : 1.4.3
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.6
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
@@ -42,7 +42,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.19.7
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
-- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.21.0
+- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.23.0
 
 **Download Directly**:
 
@@ -67,12 +67,20 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
 - [sealos](https://github.com/labring/sealos): 5.1.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
-- [rclone](https://github.com/rclone/rclone/releases/) 1.72.0
+- [rclone](https://github.com/rclone/rclone/releases/) 1.72.1
 
 
 --------
 
 ## Changelog
+
+**2025-12-14**
+
+- blackbox_exporter 0.27.0 -> 0.28.0
+- victoralogs 1.40.0 -> 1.41.0
+- duckdb 1.4.2 -> 1.4.3
+- rclone 1.72.0 -> 1.72.1
+- pev2 1.17.0 -> 1.19.0
 
 **2025-12-06**
 
@@ -174,7 +182,6 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 
 **2025-07-24**
-
 
 - FerretDB 2.4.0
 - etcd 3.6.3
