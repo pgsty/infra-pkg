@@ -1,8 +1,12 @@
 # infra-pkg: build rpm/deb for observability stack
 
-Building Infra RPM & DEB packages for [Pigsty](https://pigsty.io).
+Building Infra RPM & DEB packages for [Pigsty Infra](https://doc.pgsty.com).
 
-Available in pigsty-infra [**YUM**](http://pigsty.io/ext/repo/yum) & [**APT**](http://pigsty.io/ext/repo/apt) repo
+- [Pigsty Infra Repo](https://pgext.cloud/repo/infra)
+- [Infra Change Log](https://pgext.cloud/release/infra)
+
+Available in pigsty-infra [**YUM**](https://pgext.cloud/repo/infra#yum-repo) & [**APT**](https://pgext.cloud/repo/infra#apt-repo) repo
+
 
 --------
 
@@ -74,10 +78,11 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
-**2025-12-14**
+**2025-12-16**
 
+- victoria-metrics 1.131.0 -> 1.132.0
+- victora-logs 1.40.0 -> 1.41.0
 - blackbox_exporter 0.27.0 -> 0.28.0
-- victoralogs 1.40.0 -> 1.41.0
 - duckdb 1.4.2 -> 1.4.3
 - rclone 1.72.0 -> 1.72.1
 - pev2 1.17.0 -> 1.19.0
