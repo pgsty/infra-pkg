@@ -1,0 +1,137 @@
+###############################################################
+#                         uv.toml                             #
+#   https://docs.astral.sh/uv/reference/settings/             #
+###############################################################
+
+###############################################################
+#                      PyPI Mirrors                           #
+###############################################################
+# Uncomment one of the following to use a PyPI mirror:
+#[[index]]
+#url = "https://mirrors.aliyun.com/pypi/simple/"
+#default = true
+
+
+###############################################################
+#                     Global Settings                         #
+###############################################################
+
+# The path to a directory to use for caching
+# cache-dir = "~/.cache/uv"
+
+# The strategy to use when resolving against multiple index URLs
+# Possible values: "first-index", "unsafe-first-match", "unsafe-best-match"
+# index-strategy = "first-index"
+
+# The method to use when installing packages from the global cache
+# Possible values: "clone", "copy", "hardlink", "symlink"
+# link-mode = "clone"
+
+# Compile Python files to bytecode after installation
+# compile-bytecode = false
+
+# Whether to enable experimental, preview features
+# preview = false
+
+# Whether to prefer using Python installations from `uv python install`
+# python-preference = "managed"
+
+# Whether to automatically download Python when required
+# python-downloads = "automatic"
+
+# Disable network access
+# offline = false
+
+# Avoid reading from or writing to the cache
+# no-cache = false
+
+# Allow package upgrades
+# upgrade = false
+
+# The minimum Python version that should be supported by resolved dependencies
+# requires-python = ">= 3.8"
+
+# The resolution strategy to use when selecting between multiple versions
+# Possible values: "highest", "lowest", "lowest-direct"
+# resolution = "highest"
+
+# The strategy to use when considering pre-release versions
+# Possible values: "disallow", "allow", "if-necessary", "explicit", "if-necessary-or-explicit"
+# prerelease = "if-necessary-or-explicit"
+
+# Allow insecure connections to specific hosts
+# allow-insecure-host = []
+
+# Limit candidate packages to those created after a specific date
+# exclude-newer = "2024-01-01T00:00:00Z"
+
+# Disable isolation when building source distributions
+# no-build-isolation = false
+
+# Don't build source distributions
+# no-build = false
+
+# Don't install pre-built wheels
+# no-binary = false
+
+# Trust hosts for SSL verification
+# trusted-host = []
+
+
+###############################################################
+#                     pip Settings                            #
+###############################################################
+# [pip]
+# The URL of the Python package index
+# index-url = "https://pypi.org/simple/"
+
+# Extra URLs of package indexes to use
+# extra-index-url = []
+
+# Locations to search for candidate distributions
+# find-links = []
+
+# Packages to reinstall regardless of version
+# reinstall-package = []
+
+# Packages to upgrade regardless of version
+# upgrade-package = []
+
+# Disable isolation when building source distributions
+# no-build-isolation-package = []
+
+# Don't install package dependencies
+# no-deps = false
+
+# Attempt to use system certificates
+# native-tls = false
+
+# Require a matching hash for each package
+# require-hashes = false
+
+# Validate any hashes provided in the requirements file
+# verify-hashes = true
+
+# Don't build source distributions for specific packages
+# no-build-package = []
+
+# Don't install pre-built wheels for specific packages
+# no-binary-package = []
+
+# Settings to pass to the PEP 517 build backend
+# config-settings = {}
+
+# Disable reading configuration from environment variables
+# no-config = false
+
+# Allow `uv pip sync` to clear the environment
+# allow-empty-requirements = false
+
+# Perform a strict resolution
+# strict = false
+
+# The target Python platform
+# python-platform = "linux"
+
+# The target Python version
+# python-version = "3.12"

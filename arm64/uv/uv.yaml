@@ -1,0 +1,42 @@
+name: "uv"
+arch: "arm64"
+platform: "linux"
+version: "v0.9.18"
+release: "1"
+version_schema: semver
+description: An extremely fast Python package and project manager, written in Rust.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Astral"
+homepage: "https://github.com/astral-sh/uv"
+license: "Apache-2.0"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: uv/uv
+    dst: /usr/bin/uv
+    file_info:
+      mode: 0755
+
+  - src: uv/uvx
+    dst: /usr/bin/uvx
+    file_info:
+      mode: 0755
+
+  - dst: /etc/uv/
+    type: dir
+    file_info:
+      mode: 0755
+
+  - src: src/uv.toml
+    dst: /etc/uv/uv.toml
+    type: config|noreplace
+    file_info:
+      mode: 0644
+
+  - src: LICENSE
+    dst: /usr/share/doc/uv/LICENSE
+    file_info:
+      mode: 0644
