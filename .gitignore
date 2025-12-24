@@ -8,4 +8,7 @@ amd64/tarball
 noarch/tarball
 tmp/
 
+arm64/ccm
+amd64/ccm
+
 *.tar.gz
