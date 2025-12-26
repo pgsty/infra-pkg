@@ -1,0 +1,21 @@
+name: "asciinema"
+arch: "arm64"
+platform: "linux"
+version: "v3.0.1"
+release: "1"
+version_schema: semver
+description: Terminal session recorder and player
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "asciinema"
+homepage: "https://github.com/asciinema/asciinema"
+license: "GPL-3.0"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: asciinema-aarch64-unknown-linux-gnu
+    dst: /usr/bin/asciinema
+    file_info:
+      mode: 0755

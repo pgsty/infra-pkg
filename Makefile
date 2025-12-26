@@ -86,7 +86,9 @@ uv:
 ccm:
 	cd amd64/ccm && make
 	cd arm64/ccm && make
-
+asciinema:
+	cd amd64/asciinema && make
+	cd arm64/asciinema && make
 
 
 loki:
@@ -174,5 +176,5 @@ timescaledb-event-streamer:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv ccm grafana_plugins
+	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema grafana_plugins
 
