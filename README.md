@@ -41,9 +41,9 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.2.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.65
-- [loki](https://github.com/grafana/loki) : 3.1.1
-- [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.22.4 (0.23.2)
+- [loki](https://github.com/grafana/loki) : 3.1.1 (deprecated, use vector)
+- [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (deprecated, use VictoriaLogs)
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.22.4
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.19.7
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
@@ -51,16 +51,16 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 12.3.0 (12.3.1)
-  - https://gr  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_amd64.rpm
-  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_arm64.rpm
-  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_amd64.deb
-  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_arm64.deb
-    afana.com/grafana/download
+- [grafana](https://github.com/grafana/grafana/) : 12.3.1
+  -  https://dl.grafana.com/grafana/release/12.3.1/grafana_12.3.1_20271043721_linux_amd64.deb
+  -  https://dl.grafana.com/grafana/release/12.3.1/grafana_12.3.1_20271043721_linux_arm64.deb
+  -  https://dl.grafana.com/grafana/release/12.3.1/grafana_12.3.1_20271043721_linux_amd64.rpm
+  -  https://dl.grafana.com/grafana/release/12.3.1/grafana_12.3.1_20271043721_linux_arm64.rpm
+  -  https://grafana.com/grafana/download?edition=oss
 
 - [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.1.0
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.51.1 (0.52.0)
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.52.0
     - amd64 & arm64: https://packages.timber.io/vector/latest/
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.0.0
@@ -78,6 +78,22 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+**2025-12-27**
+
+- pig                 : 0.8.1 
+- uv                  : 0.9.18
+- ccm                 : 2.0.76
+- IvorySQL            : 5.1   
+- asciinema           : 3.0.1 
+- grafana             : 12.3.1
+- vector              : 0.52.0
+- etcd                : 3.6.7
+- prometheus          : 3.8.1
+- alertmanager        : 0.30.0
+- victorialogs        : 1.43.1
+- pgbackrest_exporter : 0.22.0
+
 
 **2025-12-16**
 
@@ -119,7 +135,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - victorialogs 1.37.2 -> 1.38.0
 - grafana-victorialogs-ds 0.21.4 -> 0.22.1
 - grafana-victoriametrics-ds 0.19.6 -> 0.19.7
-- grafana-plugins 12.0.0 -> 12.3.0
+- grafana-plugins 12.0.0 -> 12.3.1
 - pgflo 0.0.15
 
 
