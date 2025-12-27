@@ -1,7 +1,7 @@
 name: "alertmanager"
 arch: "arm64"
 platform: "linux"
-version: "v0.29.0"
+version: "v0.30.0"
 version_schema: semver
 description: Prometheus Alertmanager
 maintainer: Ruohang Feng <rh@vonng.com>
