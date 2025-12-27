@@ -1,7 +1,7 @@
 name: "vlogscli"
 arch: "amd64"
 platform: "linux"
-version: "v1.41.0"
+version: "v1.43.1"
 version_schema: semver
 description: vlogsqcli is an interactive command-line tool for querying VictoriaLogs.
 maintainer: Ruohang Feng <rh@vonng.com>

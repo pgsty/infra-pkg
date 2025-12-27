@@ -1,7 +1,7 @@
 name: "victoria-logs"
 arch: "amd64"
 platform: "linux"
-version: "v1.41.0"
+version: "v1.43.1"
 version_schema: semver
 description: Fast and easy to use database for logs, which can efficiently handle terabytes of logs
 maintainer: Ruohang Feng <rh@vonng.com>
