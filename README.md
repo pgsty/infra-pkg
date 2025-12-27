@@ -16,23 +16,24 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.8.0
+- [prometheus](https://github.com/prometheus/prometheus) : 3.8.1
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.29.0
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.30.0
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.10.2
 - [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.0
-- [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.21.0
+- [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.22.0
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.18.0
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.80.1
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.47.2
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.131.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.41.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.131.0 (1.132)
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.41.0 (1.43.1)
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.5.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.4.3
-- [etcd](https://github.com/etcd-io/etcd) : 3.6.6
+- [etcd](https://github.com/etcd-io/etcd) : 3.6.6 (3.6.7)
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.3.1
@@ -42,7 +43,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.65
 - [loki](https://github.com/grafana/loki) : 3.1.1
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (3.1.1 fail on el7/el8)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.22.4
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.22.4 (0.23.2)
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.19.7
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
 - [kafka](https://kafka.apache.org/downloads) 4.0.0
@@ -50,16 +51,16 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 12.3.0
+- [grafana](https://github.com/grafana/grafana/) : 12.3.0 (12.3.1)
   - https://gr  - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_amd64.rpm
   - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_arm64.rpm
   - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_amd64.deb
   - wget https://dl.grafana.com/grafana/release/12.3.0/grafana_12.3.0_19497075765_linux_arm64.deb
     afana.com/grafana/download
 
-- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.0.3
+- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.1.0
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.51.1
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.51.1 (0.52.0)
     - amd64 & arm64: https://packages.timber.io/vector/latest/
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.0.0
@@ -69,7 +70,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [mcli](https://github.com/minio/mc): 20250813083541
     - amd64: https://dl.min.io/client/mc/release/linux-amd64/
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
-- [sealos](https://github.com/labring/sealos): 5.1.1
+- [sealos](https://github.com/labring/sealos): 5.0.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
 - [rclone](https://github.com/rclone/rclone/releases/) 1.72.1
 
