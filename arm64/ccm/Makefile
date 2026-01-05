@@ -10,6 +10,9 @@ PACKAGE=claude
 VERSION=2.0.76
 WEB_URL=https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/$(VERSION)/linux-arm64/claude
 
+# https://claude.ai/install.sh
+# https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases
+
 default: all
 all: download build clean
 get: download

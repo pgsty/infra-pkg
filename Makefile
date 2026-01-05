@@ -165,7 +165,9 @@ timescaledb-event-streamer:
 	cd amd64/timescaledb-event-streamer && make
 	cd arm64/timescaledb-event-streamer && make
 
-
+opencode:
+	cd amd64/opencode && make
+	cd arm64/opencode && make
 
 ###############################################################
 #                         Inventory                           #
@@ -176,5 +178,5 @@ timescaledb-event-streamer:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema grafana_plugins
+	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema grafana_plugins opencode
 

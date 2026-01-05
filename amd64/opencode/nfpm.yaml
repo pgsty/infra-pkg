@@ -1,0 +1,21 @@
+name: "opencode"
+arch: "amd64"
+platform: "linux"
+version: "v1.0.223"
+release: "1"
+version_schema: semver
+description: Open-source AI coding assistant
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Anomaly"
+homepage: "https://github.com/anomalyco/opencode"
+license: "MIT"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: opencode/opencode
+    dst: /usr/bin/opencode
+    file_info:
+      mode: 0755
