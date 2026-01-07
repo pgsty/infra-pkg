@@ -169,6 +169,14 @@ opencode:
 	cd amd64/opencode && make
 	cd arm64/opencode && make
 
+golang:
+	cd amd64/golang && make
+	cd arm64/golang && make
+
+nodejs:
+	cd amd64/nodejs && make
+	cd arm64/nodejs && make
+
 ###############################################################
 #                         Inventory                           #
 ###############################################################
@@ -178,5 +186,5 @@ opencode:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema grafana_plugins opencode
+	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema grafana_plugins opencode golang nodejs
 

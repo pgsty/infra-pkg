@@ -1,0 +1,31 @@
+name: "golang"
+arch: "amd64"
+platform: "linux"
+version: "v1.25.5"
+version_schema: semver
+release: "1"
+description: The Go Programming Language
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Google"
+homepage: "https://go.dev"
+license: "BSD-3-Clause"
+
+replaces:
+  - golang
+  - golang-go
+  - go
+  - go-toolset
+conflicts:
+  - golang
+  - golang-go
+  - go
+  - go-toolset
+
+contents:
+  - src: go/
+    dst: /usr/local/go
+
+  - src: golang.sh
+    dst: /etc/profile.d/golang.sh
+    file_info:
+      mode: 0644

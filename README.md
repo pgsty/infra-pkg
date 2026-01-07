@@ -58,7 +58,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   -  https://dl.grafana.com/grafana/release/12.3.1/grafana_12.3.1_20271043721_linux_arm64.rpm
   -  https://grafana.com/grafana/download?edition=oss
 
-- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.1.0
+- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.1.1
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.52.0
     - amd64 & arm64: https://packages.timber.io/vector/latest/
@@ -74,10 +74,24 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
 - [rclone](https://github.com/rclone/rclone/releases/) 1.72.1
 
+- opencode 1.0.223
+- golang 1.25.5
+- nodejs 24.12.0
+- code 1.107.0 
+  - https://packages.microsoft.com/yumrepos/vscode/Packages/c/  
+  - https://packages.microsoft.com/repos/code/pool/main/c/code/
+
 
 --------
 
 ## Changelog
+
+**2026-01-05**
+
+- code 1.107.0
+- golang 1.25.5
+- nodejs 24.12.0
+- opencode 1.0.223
 
 **2025-12-27**
 
