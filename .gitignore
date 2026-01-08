@@ -8,7 +8,7 @@ amd64/tarball
 noarch/tarball
 tmp/
 
-arm64/ccm
+arm64/claude
 amd64/ccm
 
 *.tar.gz

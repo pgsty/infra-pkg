@@ -1,0 +1,21 @@
+name: "claude"
+arch: "arm64"
+platform: "linux"
+version: "v2.1.1"
+release: "1"
+version_schema: semver
+description: Claude Code Switch
+maintainer: Some One <anon@coder.com>
+vendor: "Anthropic"
+homepage: "https://claude.ai/"
+license: "Proprietary"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: claude
+    dst: /usr/bin/claude
+    file_info:
+      mode: 0755
