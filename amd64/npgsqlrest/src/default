@@ -1,0 +1,17 @@
+# NpgsqlRest default configuration
+# Environment variables for NpgsqlRest
+# Use double-underscore (__) for hierarchy levels
+
+# Database connection string
+# ConnectionStrings__Default="Host=localhost;Port=5432;Database=postgres;Username=postgres"
+
+# Server URLs (default: http://localhost:8080)
+# Urls="http://0.0.0.0:8080"
+
+# API configuration
+# NpgsqlRest__UrlPathPrefix="/api"
+# NpgsqlRest__RequiresAuthorization="false"
+
+# Application settings
+# ApplicationName="npgsqlrest"
+# EnvironmentName="Production"

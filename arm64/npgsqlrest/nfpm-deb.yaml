@@ -1,0 +1,48 @@
+name: "npgsqlrest"
+arch: "arm64"
+platform: "linux"
+version: "v3.3.0"
+release: "1"
+version_schema: semver
+description: NpgsqlRest automatically generates REST API from PostgreSQL database.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "NpgsqlRest"
+homepage: "https://github.com/NpgsqlRest/NpgsqlRest"
+license: "MIT"
+
+contents:
+
+  # binary file
+  - src: npgsqlrest/npgsqlrest
+    dst: /usr/bin/npgsqlrest
+    file_info:
+      mode: 0755
+
+  # config directory
+  - dst: /etc/npgsqlrest/
+    type: dir
+    file_info:
+      mode: 0755
+
+  # config file
+  - src: src/appsettings.json
+    dst: /etc/npgsqlrest/appsettings.json
+    type: config|noreplace
+    file_info:
+      mode: 0640
+
+  # default environment file
+  - src: src/default
+    dst: /etc/default/npgsqlrest
+    type: config|noreplace
+    file_info:
+      mode: 0640
+
+  # systemd service file
+  - src: src/service
+    dst: /lib/systemd/system/npgsqlrest.service
+    type: config|noreplace
+
+scripts:
+  postinstall: src/postinstall.sh
+  preremove: src/preremove.sh

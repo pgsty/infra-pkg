@@ -1,0 +1,18 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=NpgsqlRest REST API for PostgreSQL
+Documentation=https://npgsqlrest.github.io
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/npgsqlrest
+WorkingDirectory=/etc/npgsqlrest
+ExecStart=/usr/bin/npgsqlrest appsettings.json
+Restart=always
+RestartSec=5s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
