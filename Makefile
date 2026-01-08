@@ -83,9 +83,9 @@ rustfs:
 uv:
 	cd amd64/uv && make
 	cd arm64/uv && make
-ccm:
-	cd amd64/ccm && make
-	cd arm64/ccm && make
+claude:
+	cd amd64/claude && make
+	cd arm64/claude && make
 asciinema:
 	cd amd64/asciinema && make
 	cd arm64/asciinema && make
@@ -177,6 +177,14 @@ nodejs:
 	cd amd64/nodejs && make
 	cd arm64/nodejs && make
 
+postgrest:
+	cd amd64/postgrest && make
+	cd arm64/postgrest && make
+
+npgsqlrest:
+	cd amd64/npgsqlrest && make
+	cd arm64/npgsqlrest && make
+
 ###############################################################
 #                         Inventory                           #
 ###############################################################
@@ -186,5 +194,5 @@ nodejs:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema grafana_plugins opencode golang nodejs
+	restic juicefs dblab garage seaweedfs rustfs uv claude asciinema grafana_plugins opencode golang nodejs postgrest npgsqlrest
 

@@ -86,9 +86,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 ## Changelog
 
-**2026-01-05**
+**2026-01-08**
 
 - code 1.107.0
+- code-server 1.107.0
 - golang 1.25.5
 - nodejs 24.12.0
 - opencode 1.0.223
