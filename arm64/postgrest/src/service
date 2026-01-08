@@ -1,0 +1,17 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=PostgREST REST API for PostgreSQL
+Documentation=https://postgrest.org
+After=network.target postgresql.service
+
+[Service]
+EnvironmentFile=-/etc/default/postgrest
+ExecStart=/usr/bin/postgrest /etc/postgrest/postgrest.conf
+ExecReload=/bin/kill -SIGUSR1 $MAINPID
+Restart=always
+RestartSec=5s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
