@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME1=grafana/grafana-infinity-datasource
 PACKAGE1=yesoreyeram-infinity-datasource
-VERSION1=3.6.0
+VERSION1=3.7.0
 FILENAME1=yesoreyeram-infinity-datasource-$(VERSION1).linux_arm64.zip
 WEB_URL1=https://github.com/$(REPONAME1)/releases/download/v$(VERSION1)/$(FILENAME1)
 
