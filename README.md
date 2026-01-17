@@ -1,9 +1,10 @@
 # infra-pkg: build rpm/deb for observability stack
 
-Building Infra RPM & DEB packages for [Pigsty Infra](https://doc.pgsty.com).
+Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo/infra).
 
-- [Pigsty Infra Repo](https://pgext.cloud/repo/infra)
-- [Infra Change Log](https://pgext.cloud/release/infra)
+- [Pigsty Infra Repo](https://pigsty.io/docs/repo/infra)
+- [Infra Change List](https://pigsty.io/docs/repo/infra/list)
+- [Infra Change Log](https://pigsty.io/docs/repo/infra/log)
 
 Available in pigsty-infra [**YUM**](https://pgext.cloud/repo/infra#yum-repo) & [**APT**](https://pgext.cloud/repo/infra#apt-repo) repo
 
@@ -16,7 +17,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.8.1
+- [prometheus](https://github.com/prometheus/prometheus) : 3.9.1
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.30.0
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
@@ -29,7 +30,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.80.1
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.47.2
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.132.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.133.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.43.1
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.5.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.4.3
@@ -40,13 +41,13 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [dblab](https://github.com/danvergara/dblab) 0.34.2
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.2.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.65
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.68
 - [loki](https://github.com/grafana/loki) : 3.1.1 (deprecated, use vector)
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (deprecated, use VictoriaLogs)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.22.4
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.19.7
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.23.3
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.20.0
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
-- [kafka](https://kafka.apache.org/downloads) 4.0.0
+- [kafka](https://kafka.apache.org/downloads) 4.1.1
 - [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.23.0
 
 **Download Directly**:
@@ -58,7 +59,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   -  https://dl.grafana.com/grafana/release/12.3.1/grafana_12.3.1_20271043721_linux_arm64.rpm
   -  https://grafana.com/grafana/download?edition=oss
 
-- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.1.1
+- [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.1.2
     - amd64 & arm64: https://github.com/Vonng/pg_exporter/releases
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.52.0
     - amd64 & arm64: https://packages.timber.io/vector/latest/
@@ -74,17 +75,74 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
 - [rclone](https://github.com/rclone/rclone/releases/) 1.72.1
 
-- opencode 1.0.223
-- golang 1.25.5
-- nodejs 24.12.0
-- code 1.107.0 
-  - https://packages.microsoft.com/yumrepos/vscode/Packages/c/  
+- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.4.3
+- [postgrest](https://github.com/PostgREST/postgrest) 14.3
+- [asciinema](https://github.com/asciinema/asciinema) 3.1.0
+- [opencode](https://github.com/sst/opencode) 1.1.23
+  - x86_64: https://github.com/sst/opencode/releases/download/v1.1.23/opencode-linux-x64.tar.gz
+  - arm64: https://github.com/sst/opencode/releases/download/v1.1.23/opencode-linux-arm64.tar.gz
+- [golang](https://go.dev/dl/) 1.25.6
+  - x86_64: https://go.dev/dl/go1.25.6.linux-amd64.tar.gz
+  - arm64: https://go.dev/dl/go1.25.6.linux-arm64.tar.gz
+- [nodejs](https://nodejs.org/en/download/) 24.12.0
+  - x86_64: https://nodejs.org/dist/v24.12.0/node-v24.12.0-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.12.0/node-v24.12.0-linux-arm64.tar.xz
+- [code](https://code.visualstudio.com/) 1.108.0
+  - https://packages.microsoft.com/yumrepos/vscode/Packages/c/
   - https://packages.microsoft.com/repos/code/pool/main/c/code/
+- [code-server](https://github.com/coder/code-server) 4.108.0
+  - https://github.com/coder/code-server/releases/tag/v4.108.0 
 
 
 --------
 
 ## Changelog
+
+**2026-01-16**
+
+- prometheus 3.8.1 -> 3.9.1
+- victoria-metrics 1.132.0 -> 1.133.0
+- tigerbeetle 0.16.65 -> 0.16.68
+- kafka 4.0.0 -> 4.1.1
+- grafana-victoriametrics-ds 0.19.7 -> 0.20.0
+- grafana-victorialogs-ds 0.23.2 -> 0.23.3
+- grafana-infinity-ds 3.6.0 -> 3.7.0
+- uv 0.9.18 -> 0.9.26
+- seaweedfs 4.01 -> 4.06
+- rustfs alpha.71 -> alpha.80
+- v2ray 5.28.0 -> 5.44.1
+- sqlcmd 1.8.0 -> 1.9.0
+- opencode 1.0.223 -> 1.1.23
+- claude 2.1.1 -> 2.1.9
+- golang 1.25.5 -> 1.25.6
+- asciinema 3.0.1 -> 3.1.0
+- code 1.107.0 -> 1.108.0
+- code-server 4.107.0 -> 4.108.0
+- npgsqlrest 3.3.0 -> 3.4.3
+- genai-toolbox 0.24.0 -> 0.25.0
+- pg_exporter 1.1.1 -> 1.1.2
+- pig 0.9.0 0.9.1
+
+```bash
+make prometheus
+make victoria-metrics
+make tigerbeetle
+make kafka
+make grafana-victoriametrics-ds
+make grafana-victorialogs-ds
+make uv
+make seaweedfs
+make rustfs
+make v2ray
+make sqlcmd
+make opencode
+make claude
+make golang
+make asciinema
+make npgsqlrest
+make genai-toolbox
+```
+
 
 **2026-01-08**
 
