@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-12-24
-# Mtime     :   2025-12-24
+# Mtime     :   2026-01-16
 # Desc      :   Makefile shortcuts for uv rpm/deb building
 # Path      :   Makefile
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=astral-sh/uv
 PACKAGE=uv
-VERSION=0.9.18
+VERSION=0.9.26
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/$(VERSION)
 DIRNAME=$(PACKAGE)-aarch64-unknown-linux-musl
 FILENAME=$(DIRNAME).tar.gz
