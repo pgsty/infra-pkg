@@ -1,7 +1,7 @@
 name: "asciinema"
 arch: "amd64"
 platform: "linux"
-version: "v3.0.1"
+version: "v3.1.0"
 release: "1"
 version_schema: semver
 description: Terminal session recorder and player

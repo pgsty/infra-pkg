@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-12-25
-# Mtime     :   2025-12-25
+# Mtime     :   2026-01-16
 # Desc      :   Makefile shortcuts for asciinema rpm/deb building
 # Path      :   Makefile
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=asciinema/asciinema
 PACKAGE=asciinema
-VERSION=3.0.1
+VERSION=3.1.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME=$(PACKAGE)-aarch64-unknown-linux-gnu
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
