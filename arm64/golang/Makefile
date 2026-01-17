@@ -1,13 +1,13 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-01-05
-# Mtime     :   2025-01-05
+# Mtime     :   2026-01-16
 # Desc      :   Makefile shortcuts for golang rpm/deb building
 # Path      :   arm64/golang/Makefile
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=golang
-VERSION=1.25.5
+VERSION=1.25.6
 DIRNAME=go
 FILENAME=go$(VERSION).linux-arm64.tar.gz
 WEB_URL=https://go.dev/dl/$(FILENAME)
