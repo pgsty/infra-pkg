@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-01-04
-# Mtime     :   2025-01-04
+# Mtime     :   2026-01-16
 # Desc      :   Makefile shortcuts for rpm/deb building
 # Path      :   Makefile
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=anomalyco/opencode
 PACKAGE=opencode
-VERSION=1.0.223
+VERSION=1.1.23
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-linux-x64.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
