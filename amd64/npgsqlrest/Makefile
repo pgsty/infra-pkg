@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-01-08
-# Mtime     :   2025-01-08
+# Mtime     :   2026-01-16
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME="NpgsqlRest/NpgsqlRest"
 PACKAGE="npgsqlrest"
-VERSION=3.3.0
+VERSION=3.4.3
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME="$(PACKAGE)-linux64"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
