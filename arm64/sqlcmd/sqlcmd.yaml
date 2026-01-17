@@ -1,7 +1,7 @@
 name: "sqlcmd"
 arch: "arm64"
 platform: "linux"
-version: "v1.8.0"
+version: "v1.9.0"
 release: "1"
 version_schema: semver
 description: The new sqlcmd, CLI for SQL Server and Azure SQL (winget install sqlcmd / sqlcmd create mssql / sqlcmd open ads)

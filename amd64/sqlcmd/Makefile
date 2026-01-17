@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-08-23
-# Mtime     :   2024-08-23
+# Mtime     :   2026-01-16
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=microsoft/sqlcmd
 PACKAGE=sqlcmd
-VERSION=1.8.0
+VERSION=1.9.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-linux-amd64
 FILENAME=$(DIRNAME).tar.bz2
