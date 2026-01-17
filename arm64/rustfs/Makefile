@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-12-04
-# Mtime     :   2025-12-04
+# Mtime     :   2026-01-16
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=rustfs/rustfs
 PACKAGE=rustfs
-VERSION=1.0.0-alpha.71
+VERSION=1.0.0-alpha.80
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 FILENAME=$(PACKAGE)-linux-aarch64-musl-latest.zip
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
