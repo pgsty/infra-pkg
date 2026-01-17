@@ -1,14 +1,14 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-12-04
-# Mtime     :   2025-12-04
+# Mtime     :   2026-01-16
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 REPONAME=seaweedfs/seaweedfs
 PACKAGE=seaweedfs
-VERSION=4.01
+VERSION=4.06
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/$(VERSION)
 FILENAME=linux_arm64.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
