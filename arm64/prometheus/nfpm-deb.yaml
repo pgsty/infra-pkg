@@ -1,7 +1,7 @@
 name: "prometheus"
 arch: "arm64"
 platform: "linux"
-version: "v3.8.1"
+version: "v3.9.1"
 release: "1"
 version_schema: semver
 description: The Prometheus monitoring system and time series database.
