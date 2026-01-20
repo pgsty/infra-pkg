@@ -89,6 +89,9 @@ claude:
 asciinema:
 	cd amd64/asciinema && make
 	cd arm64/asciinema && make
+hugo:
+	cd amd64/hugo && make
+	cd arm64/hugo && make
 
 
 loki:
@@ -200,5 +203,5 @@ npgsqlrest:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv claude asciinema grafana_plugins pev2 opencode golang nodejs postgrest npgsqlrest
+	restic juicefs dblab garage seaweedfs rustfs uv claude asciinema hugo grafana_plugins pev2 opencode golang nodejs postgrest npgsqlrest
 

@@ -1,0 +1,26 @@
+name: "hugo"
+arch: "arm64"
+platform: "linux"
+version: "v0.154.5"
+release: "1"
+version_schema: semver
+description: The world's fastest framework for building websites
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "gohugoio"
+homepage: "https://github.com/gohugoio/hugo"
+license: "Apache-2.0"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: hugo
+    dst: /usr/bin/hugo
+    file_info:
+      mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/hugo/LICENSE
+    file_info:
+      mode: 0644
