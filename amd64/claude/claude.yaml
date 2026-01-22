@@ -1,7 +1,7 @@
 name: "claude"
 arch: "amd64"
 platform: "linux"
-version: "v2.1.9"
+version: "v2.1.15"
 release: "1"
 version_schema: semver
 description: Claude Code Switch
