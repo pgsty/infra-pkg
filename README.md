@@ -46,9 +46,9 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (deprecated, use VictoriaLogs)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.23.3
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.20.0
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.3.0
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.0
 - [kafka](https://kafka.apache.org/downloads) 4.1.1
-- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.23.0
+- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.25.0
 
 **Download Directly**:
 
