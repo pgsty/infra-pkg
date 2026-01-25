@@ -1,0 +1,33 @@
+name: "caddy"
+arch: "arm64"
+platform: "linux"
+version: "v2.10.2"
+release: "1"
+version_schema: semver
+description: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Caddy"
+homepage: "https://github.com/caddyserver/caddy"
+license: "Apache-2.0"
+
+contents:
+  - src: caddy/caddy
+    dst: /usr/bin/caddy
+    file_info:
+      mode: 0755
+
+  - dst: /etc/caddy/
+    type: dir
+    file_info:
+      mode: 0755
+
+  - src: src/Caddyfile
+    dst: /etc/caddy/Caddyfile
+    type: config|noreplace
+    file_info:
+      mode: 0644
+
+  - src: caddy/LICENSE
+    dst: /usr/share/doc/caddy/LICENSE
+    file_info:
+      mode: 0644
