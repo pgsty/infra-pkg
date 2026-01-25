@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="NpgsqlRest/NpgsqlRest"
 PACKAGE="npgsqlrest"
-VERSION=3.4.3
+VERSION=3.4.7
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME="$(PACKAGE)-linux64"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
