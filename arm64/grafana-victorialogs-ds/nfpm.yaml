@@ -1,7 +1,7 @@
 name: "grafana-victorialogs-ds"
 arch: "arm64"
 platform: "linux"
-version: "v0.23.3"
+version: "v0.23.5"
 version_schema: semver
 description: "Grafana datasource for VictoriaLogs"
 maintainer: Ruohang Feng <rh@vonng.com>
