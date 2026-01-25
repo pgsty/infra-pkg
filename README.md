@@ -19,7 +19,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 - [prometheus](https://github.com/prometheus/prometheus) : 3.9.1
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.30.0
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.30.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.10.2
@@ -30,9 +30,9 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.80.1
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.47.2
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.133.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.134.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.43.1
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.5.1
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.7.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.4.3
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.7
 - [mtail](https://github.com/google/mtail) : 3.0.8
@@ -44,10 +44,11 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.68
 - [loki](https://github.com/grafana/loki) : 3.1.1 (deprecated, use vector)
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0) : 3.0.0 (deprecated, use VictoriaLogs)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.23.3
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.20.0
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.23.5
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.20.1
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.0
 - [kafka](https://kafka.apache.org/downloads) 4.1.1
+- [caddy](https://github.com/caddyserver/caddy) 2.10.2
 - [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.25.0
 
 **Download Directly**:
@@ -78,9 +79,9 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.4.3
 - [postgrest](https://github.com/PostgREST/postgrest) 14.3
 - [asciinema](https://github.com/asciinema/asciinema) 3.1.0
-- [opencode](https://github.com/sst/opencode) 1.1.23
-  - x86_64: https://github.com/sst/opencode/releases/download/v1.1.23/opencode-linux-x64.tar.gz
-  - arm64: https://github.com/sst/opencode/releases/download/v1.1.23/opencode-linux-arm64.tar.gz
+- [opencode](https://github.com/sst/opencode) 1.1.34
+  - x86_64: https://github.com/sst/opencode/releases/download/v1.1.34/opencode-linux-x64.tar.gz
+  - arm64: https://github.com/sst/opencode/releases/download/v1.1.34/opencode-linux-arm64.tar.gz
 - [golang](https://go.dev/dl/) 1.25.6
   - x86_64: https://go.dev/dl/go1.25.6.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.25.6.linux-arm64.tar.gz
@@ -97,6 +98,23 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-01-25**
+
+- alertmanager 0.30.0 -> 0.30.1
+- victoria-metrics 1.133.0 -> 1.134.0
+- victoria-traces 0.5.1 -> 0.7.1
+- grafana-victorialogs-ds 0.23.3 -> 0.23.5
+- grafana-victoriametrics-ds 0.20.0 -> 0.20.1
+- npgsqlrest 3.4.3 -> 3.4.7
+- caddy new 2.10.2
+- claude 2.1.9 -> 2.1.19
+- opencode 1.1.23 -> 1.1.34
+- hugo new 0.154.5
+- cloudflared new 2026.1.1
+- headscale new 0.27.1
+
 
 **2026-01-16**
 
