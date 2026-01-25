@@ -1,0 +1,33 @@
+name: "headscale"
+arch: "arm64"
+platform: "linux"
+version: "v0.27.1"
+release: "1"
+version_schema: semver
+description: An open source, self-hosted implementation of the Tailscale control server
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Headscale"
+homepage: "https://github.com/juanfont/headscale"
+license: "BSD-3-Clause"
+
+contents:
+  - src: headscale/headscale
+    dst: /usr/bin/headscale
+    file_info:
+      mode: 0755
+
+  - dst: /etc/headscale/
+    type: dir
+    file_info:
+      mode: 0755
+
+  - dst: /var/lib/headscale/
+    type: dir
+    file_info:
+      mode: 0755
+
+  - src: src/config.yaml
+    dst: /etc/headscale/config.yaml
+    type: config|noreplace
+    file_info:
+      mode: 0644
