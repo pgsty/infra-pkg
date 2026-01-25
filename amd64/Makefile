@@ -12,7 +12,7 @@ build: dir all
 all: loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter \
 	pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
-	kafka sqlcmd tigerbeetle
+	kafka sqlcmd tigerbeetle caddy
 dir:
 	mkdir -p ../dist/deb.amd64 ../dist/rpm.x86_64
 
@@ -92,6 +92,10 @@ golang:
 	cd golang && make
 nodejs:
 	cd nodejs && make
+caddy:
+	cd caddy && make
+headscale:
+	cd headscale && make
 
 ds: grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
 grafana-infinity-ds:
@@ -111,4 +115,4 @@ timescaledb-event-streamer:
 	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema opencode golang nodejs
+	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema opencode golang nodejs caddy headscale
