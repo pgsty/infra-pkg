@@ -33,7 +33,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.134.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.43.1
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.7.1
-- [duckdb](https://github.com/duckdb/duckdb) : 1.4.3
+- [duckdb](https://github.com/duckdb/duckdb) : 1.4.4
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.7
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
