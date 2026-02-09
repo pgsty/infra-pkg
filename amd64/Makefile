@@ -11,7 +11,7 @@ default: build
 build: dir all
 all: loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter \
-	pg_exporter redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
+	redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
 	kafka sqlcmd tigerbeetle caddy
 dir:
 	mkdir -p ../dist/deb.amd64 ../dist/rpm.x86_64
@@ -83,7 +83,7 @@ rustfs:
 uv:
 	cd uv && make
 ccm:
-	cd ccm && make
+	@if [ -d ccm ]; then $(MAKE) -C ccm; else echo "ccm: skipped (ccm/ not present)"; fi
 asciinema:
 	cd asciinema && make
 opencode:
@@ -112,7 +112,7 @@ timescaledb-event-streamer:
 
 .PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
-	kafka_exporter pg_exporter redis_exporter pgbackrest_exporter \
+	kafka_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
 	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema opencode golang nodejs caddy headscale
