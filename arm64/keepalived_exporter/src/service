@@ -1,6 +1,6 @@
 [Unit]
 Description=Prometheus exporter for Keepalived metrics
-Documentation=https://github.com/gen2brain/keepalived_exporter
+Documentation=https://github.com/mehdy/keepalived-exporter
 After=network.target
 
 [Service]
