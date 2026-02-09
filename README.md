@@ -122,7 +122,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - uv 0.9.26 -> 0.10.0
 - garage 2.1.0 -> 2.2.0
 - headscale 0.27.1 -> 0.28.0
-- hugo 0.154.5 -> 0.155.2
+- hugo 0.154.5 -> 0.155.3
 - pev2 1.20.0 -> 1.20.1
 - postgrest 14.3 -> 14.4
 - npgsqlrest 3.4.7 -> 3.7.0
