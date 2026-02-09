@@ -3,7 +3,7 @@ arch: "arm64"
 platform: "linux"
 version: "v3.8.1"
 version_schema: semver
-description: Prometheus exporter for machine metrics
+description: Prometheus exporter for zfs metrics
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Peter Fern / Waitingsong"
 homepage: "https://github.com/waitingsong/zfs_exporter"
@@ -37,4 +37,3 @@ scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
-
