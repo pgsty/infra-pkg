@@ -19,7 +19,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 - [prometheus](https://github.com/prometheus/prometheus) : 3.9.1
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.31.0
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.31.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.10.2
@@ -41,12 +41,12 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [dblab](https://github.com/danvergara/dblab) 0.34.2
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.2.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.70
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.72
 - [loki](https://github.com/grafana/loki) : 3.6.5 (deprecated, use vector)
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.5) : 3.6.5 (deprecated, use VictoriaLogs)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.24.1
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.21.0
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.0
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.1
 - [kafka](https://kafka.apache.org/downloads) 4.1.1
 - [caddy](https://github.com/caddyserver/caddy) 2.10.2
 - [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.25.0
@@ -79,15 +79,15 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.7.0
 - [postgrest](https://github.com/PostgREST/postgrest) 14.4
 - [asciinema](https://github.com/asciinema/asciinema) 3.1.0
-- [opencode](https://github.com/anomalyco/opencode) 1.1.53
-  - x86_64: https://github.com/anomalyco/opencode/releases/download/v1.1.53/opencode-linux-x64.tar.gz
-  - arm64: https://github.com/anomalyco/opencode/releases/download/v1.1.53/opencode-linux-arm64.tar.gz
-- [golang](https://go.dev/dl/) 1.25.7
-  - x86_64: https://go.dev/dl/go1.25.7.linux-amd64.tar.gz
-  - arm64: https://go.dev/dl/go1.25.7.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.13.0
-  - x86_64: https://nodejs.org/dist/v24.13.0/node-v24.13.0-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.13.0/node-v24.13.0-linux-arm64.tar.xz
+- [opencode](https://github.com/anomalyco/opencode) 1.1.59
+  - x86_64: https://github.com/anomalyco/opencode/releases/download/v1.1.59/opencode-linux-x64.tar.gz
+  - arm64: https://github.com/anomalyco/opencode/releases/download/v1.1.59/opencode-linux-arm64.tar.gz
+- [golang](https://go.dev/dl/) 1.26.0
+  - x86_64: https://go.dev/dl/go1.26.0.linux-amd64.tar.gz
+  - arm64: https://go.dev/dl/go1.26.0.linux-arm64.tar.gz
+- [nodejs](https://nodejs.org/en/download/) 24.13.1
+  - x86_64: https://nodejs.org/dist/v24.13.1/node-v24.13.1-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.13.1/node-v24.13.1-linux-arm64.tar.xz
 - [code](https://code.visualstudio.com/) 1.109.0
   - https://packages.microsoft.com/yumrepos/vscode/Packages/c/
   - https://packages.microsoft.com/repos/code/pool/main/c/code/
