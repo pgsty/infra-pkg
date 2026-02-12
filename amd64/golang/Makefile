@@ -7,7 +7,7 @@
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=golang
-VERSION=1.25.7
+VERSION=1.26.0
 DIRNAME=go
 FILENAME=go$(VERSION).linux-amd64.tar.gz
 WEB_URL=https://mirrors.aliyun.com/golang/$(FILENAME)
