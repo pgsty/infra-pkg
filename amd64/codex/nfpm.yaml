@@ -1,0 +1,21 @@
+name: "codex"
+arch: "amd64"
+platform: "linux"
+version: "v0.104.0"
+release: "1"
+version_schema: semver
+description: OpenAI coding agent CLI
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "OpenAI"
+homepage: "https://github.com/openai/codex"
+license: "Apache-2.0"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: codex/codex
+    dst: /usr/bin/codex
+    file_info:
+      mode: 0755

@@ -88,6 +88,8 @@ asciinema:
 	cd asciinema && make
 opencode:
 	cd opencode && make
+codex:
+	cd codex && make
 golang:
 	cd golang && make
 nodejs:
@@ -115,4 +117,4 @@ timescaledb-event-streamer:
 	kafka_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema opencode golang nodejs caddy headscale
+	restic juicefs dblab garage seaweedfs rustfs uv ccm asciinema opencode codex golang nodejs caddy headscale
