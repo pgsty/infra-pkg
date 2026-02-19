@@ -85,3 +85,19 @@ At a minimum:
 make push   # rsync to build server
 make pull   # rsync from build server
 ```
+
+
+
+## Update Change log
+
+If you are asked to update the infra package change log, update accordingly: 
+
+- ~/pgsty/pigsty.cc/content/docs/repo/infra/log.md    # change log in Simplified chinese
+- ~/pgsty/pigsty.cc/content/docs/repo/infra/list.md   # current version in Simplified chinese
+
+- ~/pgsty/pigsty.io/content/docs/repo/infra/log.md    # change log in English
+- ~/pgsty/pigsty.io/content/docs/repo/infra/list.md   # current version in English
+
+- ~/pgsty/pgext/content/release/infra.md    # change log in English
+- ~/pgsty/pgext/content/release/infra.zh.md    # change log in Chinese
+- ./README.md 

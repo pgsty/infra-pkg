@@ -27,37 +27,37 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.0
 - [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.22.0
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.18.0
-- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.80.2
+- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.81.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.47.2
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.135.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.45.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.7.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.4.4
-- [etcd](https://github.com/etcd-io/etcd) : 3.6.7
+- [etcd](https://github.com/etcd-io/etcd) : 3.6.8
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.3.1
-- [dblab](https://github.com/danvergara/dblab) 0.34.2
+- [dblab](https://github.com/danvergara/dblab) 0.34.3
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.2.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.72
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.73
 - [loki](https://github.com/grafana/loki) : 3.6.5 (deprecated, use vector)
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.5) : 3.6.5 (deprecated, use VictoriaLogs)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.24.1
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.21.0
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.25.0
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.22.0
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.1
-- [kafka](https://kafka.apache.org/downloads) 4.1.1
+- [kafka](https://kafka.apache.org/downloads) 4.2.0
 - [caddy](https://github.com/caddyserver/caddy) 2.10.2
-- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.25.0
+- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.27.0
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 12.3.2
-  -  https://dl.grafana.com/grafana/release/12.3.2/grafana_12.3.2_21390657659_linux_amd64.deb
-  -  https://dl.grafana.com/grafana/release/12.3.2/grafana_12.3.2_21390657659_linux_arm64.deb
-  -  https://dl.grafana.com/grafana/release/12.3.2/grafana_12.3.2_21390657659_linux_amd64.rpm
-  -  https://dl.grafana.com/grafana/release/12.3.2/grafana_12.3.2_21390657659_linux_arm64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 12.3.3
+  -  https://dl.grafana.com/grafana/release/12.3.3/grafana_12.3.3_21957728731_linux_amd64.deb
+  -  https://dl.grafana.com/grafana/release/12.3.3/grafana_12.3.3_21957728731_linux_arm64.deb
+  -  https://dl.grafana.com/grafana/release/12.3.3/grafana_12.3.3_21957728731_linux_amd64.rpm
+  -  https://dl.grafana.com/grafana/release/12.3.3/grafana_12.3.3_21957728731_linux_arm64.rpm
   -  https://grafana.com/grafana/download?edition=oss
 
 - [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.2.0
@@ -66,7 +66,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - amd64 & arm64: https://packages.timber.io/vector/latest/
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.0.0
-- [minio](https://github.com/minio/minio): 20250422221226
+- [minio](https://github.com/pgsty/minio): 20260214120000
     - amd64: https://dl.min.io/server/minio/release/linux-amd64/
     - arm64: https://dl.min.io/server/minio/release/linux-arm64/
 - [mcli](https://github.com/minio/mc): 20250813083541
@@ -74,30 +74,54 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - arm64: https://dl.min.io/client/mc/release/linux-arm64/
 - [sealos](https://github.com/labring/sealos): 5.0.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
-- [rclone](https://github.com/rclone/rclone/releases/) 1.73.0
+- [rclone](https://github.com/rclone/rclone/releases/) 1.73.1
 
-- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.7.0
-- [postgrest](https://github.com/PostgREST/postgrest) 14.4
+- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.8.0
+- [postgrest](https://github.com/PostgREST/postgrest) 14.5
 - [asciinema](https://github.com/asciinema/asciinema) 3.1.0
-- [opencode](https://github.com/anomalyco/opencode) 1.1.59
-  - x86_64: https://github.com/anomalyco/opencode/releases/download/v1.1.59/opencode-linux-x64.tar.gz
-  - arm64: https://github.com/anomalyco/opencode/releases/download/v1.1.59/opencode-linux-arm64.tar.gz
+- [opencode](https://github.com/anomalyco/opencode) 1.2.6
+  - x86_64: https://github.com/anomalyco/opencode/releases/download/v1.2.6/opencode-linux-x64.tar.gz
+  - arm64: https://github.com/anomalyco/opencode/releases/download/v1.2.6/opencode-linux-arm64.tar.gz
 - [golang](https://go.dev/dl/) 1.26.0
   - x86_64: https://go.dev/dl/go1.26.0.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.26.0.linux-arm64.tar.gz
 - [nodejs](https://nodejs.org/en/download/) 24.13.1
   - x86_64: https://nodejs.org/dist/v24.13.1/node-v24.13.1-linux-x64.tar.xz
   - arm64: https://nodejs.org/dist/v24.13.1/node-v24.13.1-linux-arm64.tar.xz
-- [code](https://code.visualstudio.com/) 1.109.0
+- [code](https://code.visualstudio.com/) 1.109.4
   - https://packages.microsoft.com/yumrepos/vscode/Packages/c/
   - https://packages.microsoft.com/repos/code/pool/main/c/code/
-- [code-server](https://github.com/coder/code-server) 4.108.2
-  - https://github.com/coder/code-server/releases/tag/v4.108.0 
+- [code-server](https://github.com/coder/code-server) 4.109.2
+  - https://github.com/coder/code-server/releases/tag/v4.109.2
 
 
 --------
 
 ## Changelog
+
+**2026-02-18**
+
+- grafana 12.3.2 -> 12.3.3
+- grafana-victorialogs-ds 0.24.1 -> 0.25.0
+- grafana-victoriametrics-ds 0.21.0 -> 0.22.0
+- grafana-infinity-ds 3.7.0 -> 3.7.1
+- redis_exporter 1.80.2 -> 1.81.0
+- etcd 3.6.7 -> 3.6.8
+- dblab 0.34.2 -> 0.34.3
+- tigerbeetle 0.16.72 -> 0.16.73
+- seaweedfs 4.09 -> 4.13
+- rustfs 1.0.0-alpha.82 -> 1.0.0-alpha.83
+- uv 0.10.0 -> 0.10.4
+- kafka 4.1.1 -> 4.2.0
+- npgsqlrest 3.7.0 -> 3.8.0
+- postgrest 14.4 -> 14.5
+- opencode 1.1.59 -> 1.2.6
+- genai-toolbox 0.25.0 -> 0.27.0
+- claude 2.1.37 -> 2.1.45
+- rclone 1.73.0 -> 1.73.1
+- code-server 4.108.2 -> 4.109.2
+- code 1.109.2 -> 1.109.4
+- pig 1.1.1 -> 1.1.2
 
 
 **2026-02-08**

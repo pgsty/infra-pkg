@@ -183,6 +183,10 @@ opencode:
 	cd amd64/opencode && make
 	cd arm64/opencode && make
 
+codex:
+	cd amd64/codex && make
+	cd arm64/codex && make
+
 golang:
 	cd amd64/golang && make
 	cd arm64/golang && make
@@ -208,4 +212,4 @@ npgsqlrest:
 	kafka_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv claude asciinema hugo caddy headscale grafana_plugins pev2 opencode golang nodejs postgrest npgsqlrest
+	restic juicefs dblab garage seaweedfs rustfs uv claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex golang nodejs postgrest npgsqlrest

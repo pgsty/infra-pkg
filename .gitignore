@@ -14,7 +14,8 @@ arm64/claude
 amd64/ccm
 .claude
 CLAUDE.md
+AGENTS.md
 *.tar.gz
-CLAUDE.md
+
 
 bin/
