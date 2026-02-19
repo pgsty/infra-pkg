@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="kafka"
 PACKAGE="kafka"
-VERSION=4.1.1
+VERSION=4.2.0
 RELEASE_PAGE=https://downloads.apache.org/kafka/$(VERSION)/kafka_2.13-$(VERSION).tgz
 DIRNAME="kafka_2.13-$(VERSION)"
 FILENAME="$(DIRNAME).tgz"
