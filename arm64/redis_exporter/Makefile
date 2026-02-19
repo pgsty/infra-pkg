@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=oliver006/redis_exporter
 PACKAGE=redis_exporter
-VERSION=1.80.2
+VERSION=1.81.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-arm64
 FILENAME=$(DIRNAME).tar.gz
