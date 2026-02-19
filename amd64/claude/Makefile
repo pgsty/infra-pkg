@@ -7,7 +7,7 @@
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=claude
-VERSION=2.1.37
+VERSION=2.1.45
 TARBALL=claude-linux-amd64.gz
 WEB_URL=https://storage.googleapis.com/anthropic-public/claude-code/$(TARBALL)
 
