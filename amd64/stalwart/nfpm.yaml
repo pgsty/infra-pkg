@@ -1,0 +1,32 @@
+name: "stalwart"
+arch: "amd64"
+platform: "linux"
+version: "v0.15.5"
+release: "1"
+version_schema: semver
+description: Stalwart Mail Server static musl binaries
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Stalwart Labs"
+homepage: "https://github.com/stalwartlabs/stalwart"
+license: "AGPL-3.0-or-later"
+
+contents:
+  - src: stalwart/stalwart
+    dst: /usr/bin/stalwart
+    file_info:
+      mode: 0755
+
+  - src: stalwart/stalwart-cli
+    dst: /usr/bin/stalwart-cli
+    file_info:
+      mode: 0755
+
+  - dst: /etc/stalwart/
+    type: dir
+    file_info:
+      mode: 0755
+
+  - dst: /var/lib/stalwart/
+    type: dir
+    file_info:
+      mode: 0755
