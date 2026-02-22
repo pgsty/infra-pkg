@@ -203,6 +203,14 @@ npgsqlrest:
 	cd amd64/npgsqlrest && make
 	cd arm64/npgsqlrest && make
 
+stalwart:
+	cd amd64/stalwart && make
+	cd arm64/stalwart && make
+
+maddy:
+	cd amd64/maddy && make
+	cd arm64/maddy && make
+
 ###############################################################
 #                         Inventory                           #
 ###############################################################
@@ -212,4 +220,4 @@ npgsqlrest:
 	kafka_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex golang nodejs postgrest npgsqlrest
+	restic juicefs dblab garage seaweedfs rustfs uv claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex golang nodejs postgrest npgsqlrest stalwart maddy
