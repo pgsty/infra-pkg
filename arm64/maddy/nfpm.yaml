@@ -1,0 +1,28 @@
+name: "maddy"
+arch: "arm64"
+platform: "linux"
+version: "v0.8.2"
+release: "1"
+version_schema: semver
+description: Maddy mail server static musl binaries
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Maddy"
+homepage: "https://github.com/foxcpp/maddy"
+license: "GPL-3.0-or-later"
+
+contents:
+  - src: maddy/maddy
+    dst: /usr/bin/maddy
+    file_info:
+      mode: 0755
+
+  - dst: /etc/maddy/
+    type: dir
+    file_info:
+      mode: 0755
+
+  - src: maddy/maddy.conf
+    dst: /etc/maddy/maddy.conf
+    type: config|noreplace
+    file_info:
+      mode: 0644
