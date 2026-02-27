@@ -7,7 +7,7 @@
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=nodejs
-VERSION=24.13.1
+VERSION=24.14.0
 DIRNAME=node
 FILENAME=node-v$(VERSION)-linux-x64.tar.xz
 WEB_URL=https://nodejs.org/dist/v$(VERSION)/$(FILENAME)
