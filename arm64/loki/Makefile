@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="grafana/loki"
 PACKAGE="loki"
-VERSION=3.6.6
+VERSION=3.6.7
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-arm64"
 
