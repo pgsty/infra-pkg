@@ -1,12 +1,12 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2024-07-25
-# Mtime     :   2026-01-16
+# Mtime     :   2026-02-26
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-VERSION=1.20.1
+VERSION=1.20.2
 FILENAME=index.html
 WEB_URL=https://github.com/dalibo/pev2/releases/download/v$(VERSION)/$(FILENAME)
 
