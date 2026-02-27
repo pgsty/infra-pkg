@@ -17,7 +17,7 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.9.1
+- [prometheus](https://github.com/prometheus/prometheus) : 3.10.0
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.31.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
@@ -29,9 +29,9 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.18.0
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.81.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
-- [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.47.2
+- [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.49.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.136.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.45.0
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.47.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.7.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.4.4
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.8
@@ -41,25 +41,25 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [dblab](https://github.com/danvergara/dblab) 0.34.3
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.2.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.73
-- [loki](https://github.com/grafana/loki) : 3.6.6 (deprecated, use vector)
-- [promtail](https://github.com/grafana/loki/releases/tag/v3.6.6) : 3.6.6 (deprecated, use VictoriaLogs)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.25.0
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.22.0
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.1
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.74
+- [loki](https://github.com/grafana/loki) : 3.6.7 (deprecated, use vector)
+- [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (deprecated, use VictoriaLogs)
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.26.2
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.23.1
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.2
 - [kafka](https://kafka.apache.org/downloads) 4.2.0
-- [caddy](https://github.com/caddyserver/caddy) 2.10.2
+- [caddy](https://github.com/caddyserver/caddy) 2.11.1
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.15.5
 - [maddy](https://github.com/foxcpp/maddy) 0.8.2
 - [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.27.0
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 12.3.3
-  -  https://dl.grafana.com/grafana/release/12.3.3/grafana_12.3.3_21957728731_linux_amd64.deb
-  -  https://dl.grafana.com/grafana/release/12.3.3/grafana_12.3.3_21957728731_linux_arm64.deb
-  -  https://dl.grafana.com/grafana/release/12.3.3/grafana_12.3.3_21957728731_linux_amd64.rpm
-  -  https://dl.grafana.com/grafana/release/12.3.3/grafana_12.3.3_21957728731_linux_arm64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 12.4.0
+  -  https://dl.grafana.com/grafana/release/12.4.0/grafana_12.4.0_22325204712_linux_amd64.deb
+  -  https://dl.grafana.com/grafana/release/12.4.0/grafana_12.4.0_22325204712_linux_arm64.deb
+  -  https://dl.grafana.com/grafana/release/12.4.0/grafana_12.4.0_22325204712_linux_amd64.rpm
+  -  https://dl.grafana.com/grafana/release/12.4.0/grafana_12.4.0_22325204712_linux_arm64.rpm
   -  https://grafana.com/grafana/download?edition=oss
 
 - [pg_exporter](https://github.com/Vonng/pg_exporter) : 1.2.0
@@ -78,28 +78,55 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.0.1
 - [rclone](https://github.com/rclone/rclone/releases/) 1.73.1
 
-- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.8.0
+- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.10.0
 - [postgrest](https://github.com/PostgREST/postgrest) 14.5
 - [asciinema](https://github.com/asciinema/asciinema) 3.1.0
-- [opencode](https://github.com/anomalyco/opencode) 1.2.10
-  - x86_64: https://github.com/anomalyco/opencode/releases/download/v1.2.10/opencode-linux-x64.tar.gz
-  - arm64: https://github.com/anomalyco/opencode/releases/download/v1.2.10/opencode-linux-arm64.tar.gz
+- [opencode](https://github.com/anomalyco/opencode) 1.2.15
+  - x86_64: https://github.com/anomalyco/opencode/releases/download/v1.2.15/opencode-linux-x64.tar.gz
+  - arm64: https://github.com/anomalyco/opencode/releases/download/v1.2.15/opencode-linux-arm64.tar.gz
 - [golang](https://go.dev/dl/) 1.26.0
   - x86_64: https://go.dev/dl/go1.26.0.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.26.0.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.13.1
-  - x86_64: https://nodejs.org/dist/v24.13.1/node-v24.13.1-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.13.1/node-v24.13.1-linux-arm64.tar.xz
+- [nodejs](https://nodejs.org/en/download/) 24.14.0
+  - x86_64: https://nodejs.org/dist/v24.14.0/node-v24.14.0-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.14.0/node-v24.14.0-linux-arm64.tar.xz
 - [code](https://code.visualstudio.com/) 1.109.4
   - https://packages.microsoft.com/yumrepos/vscode/Packages/c/
   - https://packages.microsoft.com/repos/code/pool/main/c/code/
 - [code-server](https://github.com/coder/code-server) 4.109.2
   - https://github.com/coder/code-server/releases/tag/v4.109.2
+- [pev2](https://github.com/dalibo/pev2/releases) 1.20.2 
+  - https://github.com/dalibo/pev2/releases 
 
 
 --------
 
 ## Changelog
+
+**2026-02-26**
+
+- grafana 12.3.3 -> 12.4.0
+- prometheus 3.9.1 -> 3.10.0
+- mongodb_exporter 0.47.2 -> 0.49.0
+- victoria-logs 1.45.0 -> 1.47.0
+- vlagent 1.45.0 -> 1.47.0
+- vlogscli 1.45.0 -> 1.47.0
+- tigerbeetle 0.16.73 -> 0.16.74
+- loki 3.6.6 -> 3.6.7
+- promtail 3.6.6 -> 3.6.7
+- logcli 3.6.6 -> 3.6.7
+- grafana-victorialogs-ds 0.25.0 -> 0.26.2
+- grafana-victoriametrics-ds 0.22.0 -> 0.23.1
+- grafana-infinity-ds 3.7.1 -> 3.7.2
+- caddy 2.10.2 -> 2.11.1
+- npgsqlrest 3.8.0 -> 3.10.0
+- opencode 1.2.10 -> 1.2.15
+- nodejs 24.13.1 -> 24.14.0
+- pev2 1.20.1 -> 1.20.2
+- claude 2.1.45 -> 2.1.59
+- codex 0.104.0 -> 0.105.0
+- pig 1.2.0 -> 1.3.0
+
 
 **2026-02-22**
 
