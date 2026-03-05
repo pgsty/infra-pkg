@@ -62,6 +62,9 @@ tigerbeetle:
 v2ray:
 	cd amd64/v2ray && make
 	cd arm64/v2ray && make
+xray:
+	cd amd64/xray && make
+	cd arm64/xray && make
 juicefs:
 	cd amd64/juicefs && make
 	cd arm64/juicefs && make
@@ -86,6 +89,16 @@ uv:
 claude:
 	cd amd64/claude && make
 	cd arm64/claude && make
+agentsview:
+	cd amd64/agentsview && make
+	cd arm64/agentsview && make
+sabiql:
+	cd amd64/sabiql && make
+	cd arm64/sabiql && make
+gost:
+	cd amd64/gost && make
+	cd arm64/gost && make
+infer: claude codex opencode agentsview sabiql gost
 asciinema:
 	cd amd64/asciinema && make
 	cd arm64/asciinema && make
@@ -218,6 +231,6 @@ maddy:
 	loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter redis_exporter pgbackrest_exporter \
-	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray \
+	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab garage seaweedfs rustfs uv claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex golang nodejs postgrest npgsqlrest stalwart maddy
+	restic juicefs dblab garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy
