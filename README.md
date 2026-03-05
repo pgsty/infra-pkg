@@ -49,6 +49,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.3
 - [kafka](https://kafka.apache.org/downloads) 4.2.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.1
+- [xray](https://github.com/XTLS/Xray-core) 26.2.6
+- [gost](https://github.com/ginuerzh/gost) 2.12.0
+- [sabiql](https://github.com/riii111/sabiql) 1.6.2
+- [agentsview](https://github.com/wesm/agentsview) 0.10.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.15.5
 - [maddy](https://github.com/foxcpp/maddy) 0.8.2
 - [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.27.0
@@ -118,6 +122,10 @@ Prometheus & Grafana Stack RPM & DEB for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - uv 0.10.4 -> 0.10.8
 - codex 0.105.0 -> 0.110.0
 - claude 2.1.59 -> 2.1.68
+- xray new 26.2.6
+- gost new 2.12.0
+- sabiql new 1.6.2
+- agentsview new 0.10.0
 
 
 **2026-02-26**
