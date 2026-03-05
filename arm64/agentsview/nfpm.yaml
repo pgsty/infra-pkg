@@ -1,0 +1,21 @@
+name: "agentsview"
+arch: "arm64"
+platform: "linux"
+version: "v0.10.0"
+release: "1"
+version_schema: semver
+description: Browse and watch AI coding agent trajectories in your terminal.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "wesm"
+homepage: "https://github.com/wesm/agentsview"
+license: "MIT"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: agentsview/agentsview
+    dst: /usr/bin/agentsview
+    file_info:
+      mode: 0755

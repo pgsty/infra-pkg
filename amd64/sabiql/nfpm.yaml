@@ -1,0 +1,21 @@
+name: "sabiql"
+arch: "amd64"
+platform: "linux"
+version: "v1.6.2"
+release: "1"
+version_schema: semver
+description: A modern SQL client for PostgreSQL and MySQL.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "riii111"
+homepage: "https://github.com/riii111/sabiql"
+license: "MIT"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: sabiql/sabiql
+    dst: /usr/bin/sabiql
+    file_info:
+      mode: 0755
