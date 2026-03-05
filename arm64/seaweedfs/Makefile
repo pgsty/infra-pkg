@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=seaweedfs/seaweedfs
 PACKAGE=seaweedfs
-VERSION=4.13
+VERSION=4.15
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/$(VERSION)
 FILENAME=linux_arm64.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
