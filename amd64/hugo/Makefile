@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=gohugoio/hugo
 PACKAGE=hugo
-VERSION=0.155.3
+VERSION=0.157.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)_extended_$(VERSION)_linux-amd64
 FILENAME=$(DIRNAME).tar.gz

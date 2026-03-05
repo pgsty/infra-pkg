@@ -1,7 +1,7 @@
 name: "hugo"
 arch: "amd64"
 platform: "linux"
-version: "v0.155.3"
+version: "v0.157.0"
 release: "1"
 version_schema: semver
 description: The world's fastest framework for building websites
