@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=asciinema/asciinema
 PACKAGE=asciinema
-VERSION=3.1.0
+VERSION=3.2.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME=$(PACKAGE)-aarch64-unknown-linux-gnu
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
