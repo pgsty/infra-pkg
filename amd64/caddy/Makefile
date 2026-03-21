@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="caddyserver/caddy"
 PACKAGE="caddy"
-VERSION=2.11.1
+VERSION=2.11.2
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME="$(PACKAGE)_$(VERSION)_linux_amd64.tar.gz"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)

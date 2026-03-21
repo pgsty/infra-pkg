@@ -1,7 +1,7 @@
 name: "caddy"
 arch: "arm64"
 platform: "linux"
-version: "v2.11.1"
+version: "v2.11.2"
 release: "1"
 version_schema: semver
 description: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
