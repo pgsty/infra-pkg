@@ -1,0 +1,21 @@
+name: "pgstream"
+arch: "arm64"
+platform: "linux"
+version: "v1.0.1"
+release: "1"
+version_schema: semver
+description: PostgreSQL replication with DDL changes.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Xata"
+homepage: "https://github.com/xataio/pgstream"
+license: "Apache-2.0"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: pgstream/pgstream
+    dst: /usr/bin/pgstream
+    file_info:
+      mode: 0755
