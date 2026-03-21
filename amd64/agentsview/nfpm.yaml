@@ -1,7 +1,7 @@
 name: "agentsview"
 arch: "amd64"
 platform: "linux"
-version: "v0.10.0"
+version: "v0.15.0"
 release: "1"
 version_schema: semver
 description: Browse and watch AI coding agent trajectories in your terminal.
