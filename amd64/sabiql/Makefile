@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=riii111/sabiql
 PACKAGE=sabiql
-VERSION=1.6.2
+VERSION=1.8.2
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-x86_64-unknown-linux-gnu.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
