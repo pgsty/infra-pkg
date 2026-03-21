@@ -1,7 +1,7 @@
 name: "codex"
 arch: "amd64"
 platform: "linux"
-version: "v0.110.0"
+version: "v0.116.0"
 release: "1"
 version_schema: semver
 description: OpenAI coding agent CLI
