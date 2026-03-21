@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=v2fly/v2ray-core
 PACKAGE=v2ray
-VERSION=5.44.1
+VERSION=5.47.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-linux-64
 FILENAME=$(DIRNAME).zip
