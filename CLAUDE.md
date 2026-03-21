@@ -10,7 +10,6 @@ This repository builds RPM and DEB packages for the Pigsty observability stack (
 
 For any package update work (version discovery, proxy downloads, tarball caching, Makefile/nFPM bumps, building, artifact verification, README + external docs updates), follow:
 
-- `tmp/SOP.md`
 
 ## Build Commands
 
@@ -71,7 +70,6 @@ Each package follows a consistent structure under `{arch}/{package}/`:
 Packages use [nFPM](https://nfpm.goreleaser.com/) for building both RPM and DEB from a single configuration.
 
 ### Adding/Updating a Package
-Follow `tmp/SOP.md`.
 
 At a minimum:
 1. Confirm upstream latest version (and tag naming rules)
@@ -86,6 +84,39 @@ make push   # rsync to build server
 make pull   # rsync from build server
 ```
 
+## Build
+
+When you are asked to "build", it means, you have to run `make xxx` for the corresponding packages.
+
+We usually build in batch, around 1~3 build per month, and make those listed in the latest changelog.
+
+## Stash
+
+when you are asked to "stash", it means, you have to collect built / downloaded artifacts, and put it into tmp/stash directory
+
+- apt-infra: deb packages for amd64 and arm64, and noarch deb packages
+- yum-infra-x86_64: rpm packages for x86_64, and noarch rpm packages
+- yum-infra-aarch64: rpm packages for aarch64, and noarch rpm packages
+
+## Place
+
+when you are asked to "place", copy these stashed artifacts to the corresponding directories:
+
+- apt-infra -> ~/pgsty/repo/apt/infra/stash
+- yum-infra-x86_64 -> ~/pgsty/repo/yum/infra/x86_64/
+- yum-infra-aarch64 -> ~/pgsty/repo/yum/infra/aarch64/
+
+
+## Purge 
+
+when you are asked to "purge", you have to validate:
+
+- ~/pgsty/repo/yum/infra/x86_64/
+- ~/pgsty/repo/yum/infra/aarch64/
+
+always have one and only one latest version of each package.
+You shall not remove any existing rpm packages, but instead, list the obsolete versions to be removed, 
+generate a tmp/purge.sh script to remove them one by one explicitly, but never run that script without my confirmation even in YOLO mode.
 
 
 ## Update Change log

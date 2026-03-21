@@ -34,7 +34,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.48.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.8.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.0
-- [etcd](https://github.com/etcd-io/etcd) : 3.6.8
+- [etcd](https://github.com/etcd-io/etcd) : 3.6.9
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.3.1
@@ -171,6 +171,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - code-server 4.109.5 -> 4.112.0
 - code 1.109.4 -> 1.112.0
 - seaweedfs 4.15 -> 4.17
+- etcd 3.6.8 -> 3.6.9
 - uv 0.10.8 -> 0.10.12
 - codex 0.110.0 -> 0.116.0
 - vray 5.44.1 -> 5.47.0
