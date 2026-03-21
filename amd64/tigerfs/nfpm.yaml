@@ -1,0 +1,27 @@
+name: "tigerfs"
+arch: "amd64"
+platform: "linux"
+version: "v0.5.0"
+release: "1"
+version_schema: semver
+description: Mount PostgreSQL as a filesystem. Build apps with files, explore databases with ls and cat.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Timescale"
+homepage: "https://tigerfs.io/"
+license: "MIT"
+
+contents:
+  - src: tigerfs/tigerfs
+    dst: /usr/bin/tigerfs
+    file_info:
+      mode: 0755
+
+  - src: tigerfs/README.md
+    dst: /usr/share/doc/tigerfs/README.md
+    file_info:
+      mode: 0644
+
+  - src: tigerfs/docs/spec.md
+    dst: /usr/share/doc/tigerfs/spec.md
+    file_info:
+      mode: 0644

@@ -201,6 +201,10 @@ timescaledb-event-streamer:
 	cd amd64/timescaledb-event-streamer && make
 	cd arm64/timescaledb-event-streamer && make
 
+tigerfs:
+	cd amd64/tigerfs && make
+	cd arm64/tigerfs && make
+
 opencode:
 	cd amd64/opencode && make
 	cd arm64/opencode && make
@@ -241,5 +245,5 @@ maddy:
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
-	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
+	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer tigerfs \
 	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy

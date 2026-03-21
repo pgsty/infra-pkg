@@ -131,9 +131,12 @@ grafana-victorialogs-ds:
 timescaledb-event-streamer:
 	cd timescaledb-event-streamer && make
 
+tigerfs:
+	cd tigerfs && make
+
 .PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
-	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
+	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer tigerfs \
 	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude ccm asciinema opencode codex agentsview sabiql gost golang nodejs caddy headscale stalwart maddy
