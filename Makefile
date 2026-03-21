@@ -80,6 +80,9 @@ pgstream:
 sql-studio:
 	cd amd64/sql-studio && make
 	cd arm64/sql-studio && make
+rainfrog:
+	cd amd64/rainfrog && make
+	cd arm64/rainfrog && make
 garage:
 	cd amd64/garage && make
 	cd arm64/garage && make
@@ -239,4 +242,4 @@ maddy:
 	kafka_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer \
-	restic juicefs dblab pgstream sql-studio garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy
+	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy
