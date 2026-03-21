@@ -17,7 +17,12 @@ WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
 
 default: all
-all: clean download extract build clean
+all:
+	$(MAKE) clean
+	$(MAKE) download
+	$(MAKE) extract
+	$(MAKE) build
+	$(MAKE) clean
 get: download extract
 
 # print download link and download command
@@ -32,13 +37,13 @@ meta:
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	mkdir -p v2ray
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) v2ray/; else curl -SL $(WEB_URL) -o $(FILENAME); fi
+	mkdir -p $(PACKAGE)
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) $(PACKAGE)/; else curl -SL $(WEB_URL) -o $(PACKAGE)/$(FILENAME); fi
 
 # extract tarball content to current directory
 extract:
 	@echo $(FILENAME)
-	cd v2ray && unzip $(FILENAME)
+	cd $(PACKAGE) && unzip $(FILENAME)
 
 # remove tarball, build dir, rpm & deb files
 clean:
