@@ -1,0 +1,21 @@
+name: "sql-studio"
+arch: "amd64"
+platform: "linux"
+version: "v0.1.51"
+release: "1"
+version_schema: semver
+description: Terminal SQL database explorer for PostgreSQL, MySQL, SQLite, ClickHouse, and more.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "frectonz"
+homepage: "https://github.com/frectonz/sql-studio"
+license: "MIT"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: sql-studio/sql-studio
+    dst: /usr/bin/sql-studio
+    file_info:
+      mode: 0755

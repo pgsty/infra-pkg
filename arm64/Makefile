@@ -74,6 +74,8 @@ dblab:
 	cd dblab && make
 pgstream:
 	cd pgstream && make
+sql-studio:
+	cd sql-studio && make
 pgflo:
 	cd pgflo && make
 garage:
@@ -132,4 +134,4 @@ timescaledb-event-streamer:
 	kafka_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer \
-	restic juicefs dblab pgstream garage seaweedfs rustfs uv infer claude ccm asciinema opencode codex agentsview sabiql gost golang nodejs caddy headscale stalwart maddy
+	restic juicefs dblab pgstream sql-studio garage seaweedfs rustfs uv infer claude ccm asciinema opencode codex agentsview sabiql gost golang nodejs caddy headscale stalwart maddy
