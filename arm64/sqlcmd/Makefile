@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=microsoft/go-sqlcmd
 PACKAGE=sqlcmd
-VERSION=1.9.0
+VERSION=1.10.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=$(PACKAGE)-linux-arm64
 FILENAME=$(DIRNAME).tar.bz2
