@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=timescale/tigerfs
 PACKAGE=tigerfs
-VERSION=0.5.0
+VERSION=0.6.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=tigerfs_Linux_arm64.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
