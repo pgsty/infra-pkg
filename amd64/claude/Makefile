@@ -7,9 +7,12 @@
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=claude
-VERSION=2.1.81
-TARBALL=claude-linux-amd64.gz
-WEB_URL=https://storage.googleapis.com/anthropic-public/claude-code/$(TARBALL)
+VERSION=2.1.107
+PLATFORM=linux-x64
+INSTALLER_URL=https://claude.ai/install.sh
+BUCKET=$(shell curl -fsSL $(INSTALLER_URL) | sed -n 's/^GCS_BUCKET="\([^"]*\)"/\1/p')
+TARBALL=claude-$(VERSION)-linux-amd64.gz
+WEB_URL=$(BUCKET)/$(VERSION)/$(PLATFORM)/claude
 
 default: all
 all: download build clean
@@ -18,11 +21,11 @@ get: download
 # print download link and download command
 link:
 	@echo $(PACKAGE) $(VERSION)
-	@echo curl -fL $(WEB_URL) -o $(TARBALL)
+	@echo curl -fL $(WEB_URL) -o $(PACKAGE) '&&' gzip -c $(PACKAGE) '>' $(TARBALL)
 
 # download tarball and extract binary
 download:
-	if [ -f ../tarball/$(TARBALL) ]; then cp ../tarball/$(TARBALL) .; else curl -fL $(WEB_URL) -o $(TARBALL); fi
+	if [ -f ../tarball/$(TARBALL) ]; then cp ../tarball/$(TARBALL) .; else curl -fL $(WEB_URL) -o $(PACKAGE) && gzip -c $(PACKAGE) > $(TARBALL) && rm -f $(PACKAGE); fi
 	gunzip -c $(TARBALL) > $(PACKAGE) && chmod +x $(PACKAGE)
 
 # remove binary, tarball, rpm & deb files
