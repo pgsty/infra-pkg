@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="PostgREST/postgrest"
 PACKAGE="postgrest"
-VERSION=14.7
+VERSION=14.9
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-v$(VERSION)-ubuntu-aarch64"
 FILENAME="$(DIRNAME).tar.xz"
