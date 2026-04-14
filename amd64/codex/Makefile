@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=openai/codex
 PACKAGE=codex
-VERSION=0.116.0
+VERSION=0.121.0-alpha.7
 TAG=rust-v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=x86_64-unknown-linux-musl
