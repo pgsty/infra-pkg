@@ -1,7 +1,7 @@
 name: "xray"
 arch: "arm64"
 platform: "linux"
-version: "26.2.6"
+version: "26.3.27"
 release: "1"
 version_schema: semver
 description: Xray-core is a powerful platform for anti-censorship.

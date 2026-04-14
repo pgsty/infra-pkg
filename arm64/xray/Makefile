@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=XTLS/Xray-core
 PACKAGE=xray
-VERSION=26.2.6
+VERSION=26.3.27
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=Xray-linux-arm64-v8a
 FILENAME=$(DIRNAME).zip
