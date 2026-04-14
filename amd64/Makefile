@@ -80,8 +80,6 @@ sql-studio:
 	cd sql-studio && make
 rainfrog:
 	cd rainfrog && make
-pgflo:
-	cd pgflo && make
 garage:
 	cd garage && make
 seaweedfs:
