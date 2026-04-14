@@ -17,81 +17,81 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.10.0
+- [prometheus](https://github.com/prometheus/prometheus) : 3.11.2
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.31.1
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.32.0
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
-- [node_exporter](https://github.com/prometheus/node_exporter) : 1.10.2
+- [node_exporter](https://github.com/prometheus/node_exporter) : 1.11.1
 - [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.0
 - [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.23.0
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.19.0
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.82.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
-- [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.49.0
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.138.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.48.0
+- [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.50.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.140.0
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.49.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.8.0
-- [duckdb](https://github.com/duckdb/duckdb) : 1.5.0
-- [etcd](https://github.com/etcd-io/etcd) : 3.6.9
+- [duckdb](https://github.com/duckdb/duckdb) : 1.5.2
+- [etcd](https://github.com/etcd-io/etcd) : 3.6.8
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.3.1
-- [tigerfs](https://github.com/timescale/tigerfs) : 0.5.0
-- [dblab](https://github.com/danvergara/dblab) 0.34.3
+- [tigerfs](https://github.com/timescale/tigerfs) : 0.6.0
+- [dblab](https://github.com/danvergara/dblab) 0.37.1
 - [pgstream](https://github.com/xataio/pgstream) 1.0.1
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
-- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.3.17
+- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.3.18
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.3.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.16.77
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.0
 - [loki](https://github.com/grafana/loki) : 3.6.7 (deprecated, use vector)
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (deprecated, use VictoriaLogs)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.26.3
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.23.1
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.7.4
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.23.4
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.8.0
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins) 12.3.0 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.2.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.2
 - [headscale](https://github.com/juanfont/headscale) 0.28.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.17
+- [hugo](https://github.com/gohugoio/hugo) 0.160.1
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.20
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.2.0
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-alpha.89
-- [xray](https://github.com/XTLS/Xray-core) 26.2.6
-- [vray](https://github.com/v2fly/v2ray-core) 5.47.0
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-alpha.93
+- [xray](https://github.com/XTLS/Xray-core) 26.3.27
+- [vray](https://github.com/v2fly/v2ray-core) 5.48.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
-- [sabiql](https://github.com/riii111/sabiql) 1.8.2
-- [pgflo](https://github.com/pgflo/pg_flo) 0.0.15
+- [sabiql](https://github.com/riii111/sabiql) 1.10.0
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.18.2
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/wesm/agentsview) 0.15.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.81
-- [codex](https://github.com/openai/codex) 0.116.0
+- [agentsview](https://github.com/wesm/agentsview) 0.22.2
+- [claude](https://github.com/anthropics/claude-code) 2.1.107
+- [codex](https://github.com/openai/codex) 0.121.0-alpha.7
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.15.5
-- [maddy](https://github.com/foxcpp/maddy) 0.8.2
-- [genai-toolbox](https://github.com/googleapis/genai-toolbox) 0.27.0
-- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.11.1
-- [postgrest](https://github.com/PostgREST/postgrest) 14.7
-- [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.9.0
+- [maddy](https://github.com/foxcpp/maddy) 0.9.3
+- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.0.0 (metadata only)
+- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.12.0
+- [postgrest](https://github.com/PostgREST/postgrest) 14.9
+- [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.0
-- [opencode](https://github.com/anomalyco/opencode) 1.2.27
-- [uv](https://github.com/astral-sh/uv) 0.10.12
-- [golang](https://go.dev/dl/) 1.26.1
-  - x86_64: https://go.dev/dl/go1.26.1.linux-amd64.tar.gz
-  - arm64: https://go.dev/dl/go1.26.1.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.14.0
-  - x86_64: https://nodejs.org/dist/v24.14.0/node-v24.14.0-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.14.0/node-v24.14.0-linux-arm64.tar.xz
+- [opencode](https://github.com/anomalyco/opencode) 1.4.3
+- [uv](https://github.com/astral-sh/uv) 0.11.6
+- [golang](https://go.dev/dl/) 1.26.2
+  - x86_64: https://go.dev/dl/go1.26.2.linux-amd64.tar.gz
+  - arm64: https://go.dev/dl/go1.26.2.linux-arm64.tar.gz
+- [nodejs](https://nodejs.org/en/download/) 24.14.1
+  - x86_64: https://nodejs.org/dist/v24.14.1/node-v24.14.1-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.14.1/node-v24.14.1-linux-arm64.tar.xz
 
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 12.4.1
-  - deb amd64: https://dl.grafana.com/grafana/release/12.4.1/grafana_12.4.1_22846628243_linux_amd64.deb
-  - deb arm64: https://dl.grafana.com/grafana/release/12.4.1/grafana_12.4.1_22846628243_linux_arm64.deb
-  - rpm amd64: https://dl.grafana.com/grafana/release/12.4.1/grafana_12.4.1_22846628243_linux_amd64.rpm
-  - rpm arm64: https://dl.grafana.com/grafana/release/12.4.1/grafana_12.4.1_22846628243_linux_arm64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 13.0.0
+  - deb amd64: https://dl.grafana.com/grafana/release/13.0.0/grafana_13.0.0_24384745231_linux_amd64.deb
+  - deb arm64: https://dl.grafana.com/grafana/release/13.0.0/grafana_13.0.0_24384745231_linux_arm64.deb
+  - rpm amd64: https://dl.grafana.com/grafana/release/13.0.0/grafana_13.0.0_24384745231_linux_amd64.rpm
+  - rpm arm64: https://dl.grafana.com/grafana/release/13.0.0/grafana_13.0.0_24384745231_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.54.0
   - deb amd64: https://packages.timber.io/vector/0.54.0/vector_0.54.0-1_amd64.deb
@@ -100,43 +100,43 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://packages.timber.io/vector/0.54.0/vector-0.54.0-1.aarch64.rpm
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.0.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.0.0
-- [pgschema](https://github.com/pgplex/pgschema): 1.7.4
-  - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.7.4/pgschema_1.7.4_amd64.deb
-  - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.7.4/pgschema_1.7.4_arm64.deb
-  - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.7.4/pgschema-1.7.4-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.7.4/pgschema-1.7.4-1.aarch64.rpm
-- [crush](https://github.com/charmbracelet/crush): 0.51.2
-  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.51.2/crush_0.51.2_amd64.deb
-  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.51.2/crush_0.51.2_arm64.deb
-  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.51.2/crush-0.51.2-1.x86_64.rpm
-  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.51.2/crush-0.51.2-1.aarch64.rpm
-- [minio](https://github.com/pgsty/minio): 20260314120000
-  - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-14T12-00-00Z/minio_20260314120000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-14T12-00-00Z/minio_20260314120000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-14T12-00-00Z/minio-20260314120000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-14T12-00-00Z/minio-20260314120000.0.0-1.aarch64.rpm
-- [mcli](https://github.com/pgsty/mc): 20260313085732
-  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-13T08-57-32Z/mcli_RELEASE.2026-03-13T08-57-32Z_linux_amd64.deb
-  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-13T08-57-32Z/mcli_RELEASE.2026-03-13T08-57-32Z_linux_arm64.deb
-  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-13T08-57-32Z/mcli_RELEASE.2026-03-13T08-57-32Z_linux_amd64.rpm
-  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-13T08-57-32Z/mcli_RELEASE.2026-03-13T08-57-32Z_linux_arm64.rpm
+- [pgschema](https://github.com/pgplex/pgschema): 1.9.0
+  - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema_1.9.0_amd64.deb
+  - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema_1.9.0_arm64.deb
+  - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema-1.9.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema-1.9.0-1.aarch64.rpm
+- [crush](https://github.com/charmbracelet/crush): 0.57.0
+  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.57.0/crush_0.57.0_amd64.deb
+  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.57.0/crush_0.57.0_arm64.deb
+  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.57.0/crush-0.57.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.57.0/crush-0.57.0-1.aarch64.rpm
+- [minio](https://github.com/pgsty/minio): 20260325000000
+  - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-25T00-00-00Z/minio_20260325000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-25T00-00-00Z/minio_20260325000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-25T00-00-00Z/minio-20260325000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-25T00-00-00Z/minio-20260325000000.0.0-1.aarch64.rpm
+- [mcli](https://github.com/pgsty/mc): 20260321000000
+  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-21T00-00-00Z/mcli_20260321000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-21T00-00-00Z/mcli_20260321000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-21T00-00-00Z/mcli-20260321000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-21T00-00-00Z/mcli-20260321000000.0.0-1.aarch64.rpm
 - [sealos](https://github.com/labring/sealos): 5.1.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.1.1
-- [rclone](https://github.com/rclone/rclone/releases/) 1.73.2
-  - deb amd64: https://downloads.rclone.org/v1.73.2/rclone-v1.73.2-linux-amd64.deb
-  - deb arm64: https://downloads.rclone.org/v1.73.2/rclone-v1.73.2-linux-arm64.deb
-  - rpm amd64: https://downloads.rclone.org/v1.73.2/rclone-v1.73.2-linux-amd64.rpm
-  - rpm arm64: https://downloads.rclone.org/v1.73.2/rclone-v1.73.2-linux-arm64.rpm
-- [code](https://code.visualstudio.com/) 1.112.0
-  - deb amd64: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.112.0-1773778351_amd64.deb
-  - deb arm64: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.112.0-1773778346_arm64.deb
-  - rpm amd64: https://packages.microsoft.com/yumrepos/vscode/Packages/c/code-1.112.0-1773778396.el8.x86_64.rpm
-  - rpm arm64: https://packages.microsoft.com/yumrepos/vscode/Packages/c/code-1.112.0-1773778394.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server) 4.112.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.112.0/code-server_4.112.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.112.0/code-server_4.112.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.112.0/code-server-4.112.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.112.0/code-server-4.112.0-arm64.rpm
+- [rclone](https://github.com/rclone/rclone/releases/) 1.73.4
+  - deb amd64: https://downloads.rclone.org/v1.73.4/rclone-v1.73.4-linux-amd64.deb
+  - deb arm64: https://downloads.rclone.org/v1.73.4/rclone-v1.73.4-linux-arm64.deb
+  - rpm amd64: https://downloads.rclone.org/v1.73.4/rclone-v1.73.4-linux-amd64.rpm
+  - rpm arm64: https://downloads.rclone.org/v1.73.4/rclone-v1.73.4-linux-arm64.rpm
+- [code](https://code.visualstudio.com/) 1.115.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/41dd792b5e652393e7787322889ed5fdc58bd75b/code_1.115.0-1775600353_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/41dd792b5e652393e7787322889ed5fdc58bd75b/code_1.115.0-1775600335_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/41dd792b5e652393e7787322889ed5fdc58bd75b/code-1.115.0-1775600402.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/41dd792b5e652393e7787322889ed5fdc58bd75b/code-1.115.0-1775600385.el8.aarch64.rpm
+- [code-server](https://github.com/coder/code-server) 4.115.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.115.0/code-server_4.115.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.115.0/code-server_4.115.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.115.0/code-server-4.115.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.115.0/code-server-4.115.0-arm64.rpm
 - [pev2](https://github.com/dalibo/pev2/releases) 1.21.0
   - https://github.com/dalibo/pev2/releases
 - [pg_exporter](https://github.com/pgsty/pg_exporter) : 1.2.1
@@ -145,6 +145,57 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+**2026-04-14**
+
+| Name                       | Old            | New             | Comment                                      |
+|:---------------------------|:---------------|:----------------|:---------------------------------------------|
+| prometheus                 | 3.10.0         | 3.11.2          |                                              |
+| alertmanager               | 0.31.1         | 0.32.0          |                                              |
+| node_exporter              | 1.10.2         | 1.11.1          |                                              |
+| mongodb_exporter           | 0.49.0         | 0.50.0          |                                              |
+| victoria-metrics           | 1.138.0        | 1.140.0         |                                              |
+| victoria-metrics-cluster   | 1.138.0        | 1.140.0         | bundled with VictoriaMetrics                 |
+| vmutils                    | 1.138.0        | 1.140.0         | bundled with VictoriaMetrics                 |
+| victoria-logs              | 1.48.0         | 1.49.0          |                                              |
+| vlagent                    | 1.48.0         | 1.49.0          | bundled with VictoriaLogs                    |
+| vlogscli                   | 1.48.0         | 1.49.0          | bundled with VictoriaLogs                    |
+| grafana                    | 12.4.1         | 13.0.0          | major release                                |
+| duckdb                     | 1.5.0          | 1.5.2           |                                              |
+| dblab                      | 0.34.3         | 0.37.1          |                                              |
+| grafana-victoriametrics-ds | 0.23.1         | 0.23.4          |                                              |
+| grafana-infinity-ds        | 3.7.4          | 3.8.0           |                                              |
+| seaweedfs                  | 4.17           | 4.20            |                                              |
+| rustfs                     | 1.0.0-alpha.89 | 1.0.0-alpha.93  | switched to versioned release assets         |
+| v2ray                      | 5.47.0         | 5.48.0          |                                              |
+| xray                       | 26.2.6         | 26.3.27         |                                              |
+| agentsview                 | 0.15.0         | 0.22.2          |                                              |
+| claude                     | 2.1.81         | 2.1.107         | rebuilt; Makefile now pulls versioned bucket |
+| codex                      | 0.116.0        | 0.121.0-alpha.7 | prerelease chain; rebuilt                    |
+| maddy                      | 0.8.2          | 0.9.3           |                                              |
+| genai-toolbox              | 0.27.0         | 1.0.0           | metadata only; renamed to mcp-toolbox        |
+| npgsqlrest                 | 3.11.1         | 3.12.0          |                                              |
+| postgrest                  | 14.7           | 14.9            |                                              |
+| rainfrog                   | 0.3.17         | 0.3.18          |                                              |
+| sqlcmd                     | 1.9.0          | 1.10.0          |                                              |
+| opencode                   | 1.2.27         | 1.4.3           | rebuilt                                      |
+| uv                         | 0.10.12        | 0.11.6          |                                              |
+| golang                     | 1.26.1         | 1.26.2          |                                              |
+| nodejs                     | 24.14.0        | 24.14.1         | kept on 24.x line                            |
+| pgschema                   | 1.7.4          | 1.9.0           |                                              |
+| crush                      | 0.51.2         | 0.57.0          |                                              |
+| rclone                     | 1.73.2         | 1.73.4          |                                              |
+| code                       | 1.112.0        | 1.115.0         |                                              |
+| code-server                | 4.112.0        | 4.115.0         |                                              |
+| tigerbeetle                | 0.16.77        | 0.17.0          |                                              |
+| tigerfs                    | 0.5.0          | 0.6.0           |                                              |
+| sabiql                     | 1.8.2          | 1.10.0          |                                              |
+| hugo                       | 0.158.0        | 0.160.1         |                                              |
+| etcd                       | 3.6.9          | 3.6.8           | frozen at 3.6.8; README corrected            |
+| loki                       | 3.6.7          | 3.6.7           | deprecated; kept frozen                      |
+| promtail                   | 3.6.7          | 3.6.7           | deprecated; kept frozen                      |
+| pgflo                      | 0.0.15         | -               | removed                                      |
+
 
 **2026-03-21**
 
@@ -171,7 +222,6 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - code-server 4.109.5 -> 4.112.0
 - code 1.109.4 -> 1.112.0
 - seaweedfs 4.15 -> 4.17
-- etcd 3.6.8 -> 3.6.9
 - uv 0.10.8 -> 0.10.12
 - codex 0.110.0 -> 0.116.0
 - vray 5.44.1 -> 5.47.0
