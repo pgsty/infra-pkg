@@ -1,7 +1,7 @@
 name: "rainfrog"
 arch: "arm64"
 platform: "linux"
-version: "v0.3.17"
+version: "v0.3.18"
 release: "1"
 version_schema: semver
 description: Terminal database management tool for Postgres databases.

@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=achristmascarl/rainfrog
 PACKAGE=rainfrog
-VERSION=0.3.17
+VERSION=0.3.18
 TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=aarch64-unknown-linux-musl
