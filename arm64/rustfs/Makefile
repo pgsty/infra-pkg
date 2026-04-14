@@ -8,9 +8,9 @@
 #==============================================================#
 REPONAME=rustfs/rustfs
 PACKAGE=rustfs
-VERSION=1.0.0-alpha.89
+VERSION=1.0.0-alpha.93
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
-FILENAME=$(PACKAGE)-linux-aarch64-musl-latest.zip
+FILENAME=$(PACKAGE)-linux-aarch64-musl-v$(VERSION).zip
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
 
 default: all
