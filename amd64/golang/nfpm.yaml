@@ -1,7 +1,7 @@
 name: "golang"
 arch: "amd64"
 platform: "linux"
-version: "v1.26.1"
+version: "v1.26.2"
 version_schema: semver
 release: "1"
 description: The Go Programming Language
