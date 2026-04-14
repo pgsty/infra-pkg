@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=foxcpp/maddy
 PACKAGE=maddy
-VERSION=0.8.2
+VERSION=0.9.3
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=$(PACKAGE)-$(VERSION)-x86_64-linux-musl
 FILENAME=$(DIRNAME).tar.zst
