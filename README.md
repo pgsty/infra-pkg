@@ -139,7 +139,9 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://github.com/coder/code-server/releases/download/v4.115.0/code-server-4.115.0-arm64.rpm
 - [pev2](https://github.com/dalibo/pev2/releases) 1.21.0
   - https://github.com/dalibo/pev2/releases
-- [pg_exporter](https://github.com/pgsty/pg_exporter) : 1.2.1
+- [pig](https://github.com/pgsty/pig) : 1.3.4
+  - amd64 & arm64: https://github.com/pgsty/pig/releases
+- [pg_exporter](https://github.com/pgsty/pg_exporter) : 1.2.2
   - amd64 & arm64: https://github.com/pgsty/pg_exporter/releases
 
 --------
@@ -149,7 +151,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 **2026-04-14**
 
 | Name                       | Old            | New             | Comment                                      |
-|:---------------------------|:---------------|:----------------|:---------------------------------------------|
+| :------------------------- | :------------- | :-------------- | :------------------------------------------- |
 | prometheus                 | 3.10.0         | 3.11.2          |                                              |
 | alertmanager               | 0.31.1         | 0.32.0          |                                              |
 | node_exporter              | 1.10.2         | 1.11.1          |                                              |
@@ -194,7 +196,10 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | etcd                       | 3.6.9          | 3.6.8           | frozen at 3.6.8; README corrected            |
 | loki                       | 3.6.7          | 3.6.7           | deprecated; kept frozen                      |
 | promtail                   | 3.6.7          | 3.6.7           | deprecated; kept frozen                      |
+| pg_exporter                | 1.2.1          | 1.2.2           | direct-download metadata                     |
+| pig                        | 1.3.2          | 1.3.4           | direct-download metadata                     |
 | pgflo                      | 0.0.15         | -               | removed                                      |
+| grafana_plugins            | 12.3.0         | 13.0.0          |                                              |
 
 
 **2026-03-21**
