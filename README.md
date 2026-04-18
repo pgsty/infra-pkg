@@ -31,15 +31,15 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.50.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.140.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.49.0
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.8.0
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.50.0
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.8.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.2
-- [etcd](https://github.com/etcd-io/etcd) : 3.6.8
+- [etcd](https://github.com/etcd-io/etcd) : 3.6.10 (EL only; APT remains 3.6.8)
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.18.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.3.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.6.0
-- [dblab](https://github.com/danvergara/dblab) 0.37.1
+- [dblab](https://github.com/danvergara/dblab) 0.38.0
 - [pgstream](https://github.com/xataio/pgstream) 1.0.1
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.3.18
@@ -49,40 +49,40 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [loki](https://github.com/grafana/loki) : 3.6.7 (deprecated, use vector)
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (deprecated, use VictoriaLogs)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.26.3
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.23.4
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.24.0
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.8.0
-- [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins) 12.3.0 (noarch)
+- [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins) 13.0.0 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.2.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.2
 - [headscale](https://github.com/juanfont/headscale) 0.28.0
 - [hugo](https://github.com/gohugoio/hugo) 0.160.1
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.20
-- [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.2.0
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-alpha.93
+- [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-alpha.94
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27
 - [vray](https://github.com/v2fly/v2ray-core) 5.48.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
-- [sabiql](https://github.com/riii111/sabiql) 1.10.0
+- [sabiql](https://github.com/riii111/sabiql) 1.11.0
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.18.2
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/wesm/agentsview) 0.22.2
-- [claude](https://github.com/anthropics/claude-code) 2.1.107
-- [codex](https://github.com/openai/codex) 0.121.0-alpha.7
+- [claude](https://github.com/anthropics/claude-code) 2.1.114
+- [codex](https://github.com/openai/codex) 0.121.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.15.5
 - [maddy](https://github.com/foxcpp/maddy) 0.9.3
-- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.0.0 (metadata only)
+- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.1.0 (external build)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.12.0
-- [postgrest](https://github.com/PostgREST/postgrest) 14.9
+- [postgrest](https://github.com/PostgREST/postgrest) 14.10
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.0
-- [opencode](https://github.com/anomalyco/opencode) 1.4.3
-- [uv](https://github.com/astral-sh/uv) 0.11.6
+- [opencode](https://github.com/anomalyco/opencode) 1.4.11
+- [uv](https://github.com/astral-sh/uv) 0.11.7
 - [golang](https://go.dev/dl/) 1.26.2
   - x86_64: https://go.dev/dl/go1.26.2.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.26.2.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.14.1
-  - x86_64: https://nodejs.org/dist/v24.14.1/node-v24.14.1-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.14.1/node-v24.14.1-linux-arm64.tar.xz
+- [nodejs](https://nodejs.org/en/download/) 24.15.0
+  - x86_64: https://nodejs.org/dist/v24.15.0/node-v24.15.0-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.15.0/node-v24.15.0-linux-arm64.tar.xz
 
 
 **Download Directly**:
@@ -110,16 +110,16 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.57.0/crush_0.57.0_arm64.deb
   - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.57.0/crush-0.57.0-1.x86_64.rpm
   - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.57.0/crush-0.57.0-1.aarch64.rpm
-- [minio](https://github.com/pgsty/minio): 20260325000000
-  - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-25T00-00-00Z/minio_20260325000000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-25T00-00-00Z/minio_20260325000000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-25T00-00-00Z/minio-20260325000000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-03-25T00-00-00Z/minio-20260325000000.0.0-1.aarch64.rpm
-- [mcli](https://github.com/pgsty/mc): 20260321000000
-  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-21T00-00-00Z/mcli_20260321000000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-21T00-00-00Z/mcli_20260321000000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-21T00-00-00Z/mcli-20260321000000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-03-21T00-00-00Z/mcli-20260321000000.0.0-1.aarch64.rpm
+- [minio](https://github.com/pgsty/minio): 20260417000000
+  - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio_20260417000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio_20260417000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio-20260417000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio-20260417000000.0.0-1.aarch64.rpm
+- [mcli](https://github.com/pgsty/mc): 20260417000000
+  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.aarch64.rpm
 - [sealos](https://github.com/labring/sealos): 5.1.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.1.1
 - [rclone](https://github.com/rclone/rclone/releases/) 1.73.4
@@ -147,6 +147,31 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+**2026-04-18**
+
+| Name                       | Old            | New             | Comment                                     |
+| :------------------------- | :------------- | :-------------- | :------------------------------------------ |
+| victoria-logs              | 1.49.0         | 1.50.0          |                                                        |
+| vlagent                    | 1.49.0         | 1.50.0          | bundled with VictoriaLogs                              |
+| vlogscli                   | 1.49.0         | 1.50.0          | bundled with VictoriaLogs                              |
+| victoria-traces            | 0.8.0          | 0.8.1           |                                                        |
+| dblab                      | 0.37.1         | 0.38.0          |                                                        |
+| grafana-victoriametrics-ds | 0.23.4         | 0.24.0          |                                                        |
+| grafana-plugins            | 12.3.0         | 13.0.0          | noarch plugin bundle, manually consolidated            |
+| garage                     | 2.2.0          | 2.3.0           |                                                        |
+| rustfs                     | 1.0.0-alpha.93 | 1.0.0-alpha.94  |                                                        |
+| claude                     | 2.1.107        | 2.1.114         | rebuilt via versioned release template to latest stable |
+| codex                      | 0.121.0-alpha.7 | 0.121.0        | stable release, rebuilt                                |
+| genai-toolbox              | 1.0.0          | 1.1.0           | external build artifacts synced from genai-toolbox     |
+| postgrest                  | 14.9           | 14.10           |                                                        |
+| opencode                   | 1.4.3          | 1.4.11          | switched to versioned tarball cache and rebuilt        |
+| uv                         | 0.11.6         | 0.11.7          |                                                        |
+| nodejs                     | 24.14.1        | 24.15.0         | kept on 24.x line                                      |
+| minio                      | 20260325000000 | 20260417000000  | direct-download metadata; pgsty fork build refresh     |
+| mcli                       | 20260321000000 | 20260417000000  | direct-download metadata; pgsty fork build refresh     |
+| sabiql                     | 1.10.0         | 1.11.0          |                                                        |
+| etcd                       | 3.6.8          | 3.6.10          | EL only bump; APT deferred                             |
 
 **2026-04-14**
 
@@ -199,7 +224,6 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | pg_exporter                | 1.2.1          | 1.2.2           | direct-download metadata                     |
 | pig                        | 1.3.2          | 1.3.4           | direct-download metadata                     |
 | pgflo                      | 0.0.15         | -               | removed                                      |
-| grafana_plugins            | 12.3.0         | 13.0.0          |                                              |
 
 
 **2026-03-21**
