@@ -7,10 +7,10 @@
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=claude
-VERSION=2.1.107
+VERSION=2.1.114
 PLATFORM=linux-x64
 INSTALLER_URL=https://claude.ai/install.sh
-BUCKET=$(shell curl -fsSL $(INSTALLER_URL) | sed -n 's/^GCS_BUCKET="\([^"]*\)"/\1/p')
+BUCKET=https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases
 TARBALL=claude-$(VERSION)-linux-amd64.gz
 WEB_URL=$(BUCKET)/$(VERSION)/$(PLATFORM)/claude
 
