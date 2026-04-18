@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=astral-sh/uv
 PACKAGE=uv
-VERSION=0.11.6
+VERSION=0.11.7
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/$(VERSION)
 DIRNAME=$(PACKAGE)-aarch64-unknown-linux-musl
 FILENAME=$(DIRNAME).tar.gz
