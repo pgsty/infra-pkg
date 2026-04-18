@@ -8,10 +8,11 @@
 #==============================================================#
 REPONAME=anomalyco/opencode
 PACKAGE=opencode
-VERSION=1.4.3
+VERSION=1.4.11
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
-FILENAME=$(PACKAGE)-linux-x64.tar.gz
-WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
+ASSET=$(PACKAGE)-linux-x64.tar.gz
+FILENAME=$(PACKAGE)-$(VERSION)-linux-x64.tar.gz
+WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(ASSET)
 
 default: all
 all: download extract build clean
