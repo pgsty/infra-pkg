@@ -1,7 +1,7 @@
 name: "stalwart"
 arch: "amd64"
 platform: "linux"
-version: "v0.15.5"
+version: "v0.16.0"
 release: "1"
 version_schema: semver
 description: Stalwart Mail Server static musl binaries
@@ -13,11 +13,6 @@ license: "AGPL-3.0-or-later"
 contents:
   - src: stalwart/stalwart
     dst: /usr/bin/stalwart
-    file_info:
-      mode: 0755
-
-  - src: stalwart/stalwart-cli
-    dst: /usr/bin/stalwart-cli
     file_info:
       mode: 0755
 

@@ -8,12 +8,10 @@
 #==============================================================#
 REPONAME=stalwartlabs/stalwart
 PACKAGE=stalwart
-VERSION=0.15.5
+VERSION=0.16.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME1=$(PACKAGE)-aarch64-unknown-linux-musl.tar.gz
-FILENAME2=$(PACKAGE)-cli-aarch64-unknown-linux-musl.tar.gz
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
-WEB_URL2=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME2)
 
 
 default: all
@@ -24,7 +22,6 @@ get: download extract
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
 	@echo curl -SL $(WEB_URL1) -o $(FILENAME1)
-	@echo curl -SL $(WEB_URL2) -o $(FILENAME2)
 
 # get latest release info
 meta:
@@ -34,18 +31,16 @@ meta:
 # if already in ../tarball/ , just copy it
 download:
 	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else curl -SL $(WEB_URL1) -o $(FILENAME1); fi
-	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else curl -SL $(WEB_URL2) -o $(FILENAME2); fi
 
 # extract tarball content to current directory
 extract:
 	mkdir -p $(PACKAGE)
 	tar -xf $(FILENAME1) -C $(PACKAGE)
-	tar -xf $(FILENAME2) -C $(PACKAGE)
-	chmod +x $(PACKAGE)/stalwart $(PACKAGE)/stalwart-cli
+	chmod +x $(PACKAGE)/stalwart
 
 # remove tarball, build dir, rpm & deb files
 clean:
-	rm -rf $(PACKAGE) $(FILENAME1) $(FILENAME2) $(PACKAGE)*.rpm $(PACKAGE)*.deb
+	rm -rf $(PACKAGE) $(FILENAME1) $(PACKAGE)*.rpm $(PACKAGE)*.deb
 
 # build rpm & deb package
 build: rpm deb
