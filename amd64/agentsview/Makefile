@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=wesm/agentsview
 PACKAGE=agentsview
-VERSION=0.25.0
+VERSION=0.26.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)_$(VERSION)_linux_amd64.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)

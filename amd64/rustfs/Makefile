@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=rustfs/rustfs
 PACKAGE=rustfs
-VERSION=1.0.0-alpha.94
+VERSION=1.0.0-beta.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 FILENAME=$(PACKAGE)-linux-x86_64-musl-v$(VERSION).zip
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)

@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=anomalyco/opencode
 PACKAGE=opencode
-VERSION=1.14.24
+VERSION=1.14.30
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 ASSET=$(PACKAGE)-linux-x64.tar.gz
 FILENAME=$(PACKAGE)-$(VERSION)-linux-x64.tar.gz
