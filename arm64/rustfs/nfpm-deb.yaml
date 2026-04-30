@@ -1,8 +1,8 @@
 name: "rustfs"
 arch: "arm64"
 platform: "linux"
-version: "1.0.0-beta.1"
-release: "a94"
+version: "1.0.0"
+release: "b1"
 version_schema: semver
 description: RustFS is a high-performance, S3 compatible distributed object storage system
 maintainer: Ruohang Feng <rh@vonng.com>
