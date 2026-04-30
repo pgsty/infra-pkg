@@ -17,9 +17,9 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.11.2
+- [prometheus](https://github.com/prometheus/prometheus) : 3.11.3
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.32.0
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.32.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.11.1
@@ -30,9 +30,9 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.82.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.50.0
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.140.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.142.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.50.0
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.8.1
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.8.2
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.2
 - [etcd](https://github.com/etcd-io/etcd) : 3.6.10
 - [mtail](https://github.com/google/mtail) : 3.0.8
@@ -45,9 +45,9 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.3.18
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.3.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.1
-- [loki](https://github.com/grafana/loki) : 3.6.7
-- [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.2
+- [loki](https://github.com/grafana/loki) : 3.6.7 (obsolete, frozen)
+- [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.26.3
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.24.0
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.8.0
@@ -55,28 +55,28 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [kafka](https://kafka.apache.org/downloads) 4.2.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.2
 - [headscale](https://github.com/juanfont/headscale) 0.28.0
-- [hugo](https://github.com/gohugoio/hugo) 0.160.1
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.21
+- [hugo](https://github.com/gohugoio/hugo) 0.161.1
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.22
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-alpha.94
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.1
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27
 - [vray](https://github.com/v2fly/v2ray-core) 5.48.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
-- [sabiql](https://github.com/riii111/sabiql) 1.11.0
-- [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.18.2
+- [sabiql](https://github.com/riii111/sabiql) 1.11.1
+- [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/wesm/agentsview) 0.25.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.119
+- [agentsview](https://github.com/wesm/agentsview) 0.26.0
+- [claude](https://github.com/anthropics/claude-code) 2.1.123
 - [codex](https://github.com/openai/codex) 0.125.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.0
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.2
 - [maddy](https://github.com/foxcpp/maddy) 0.9.3
 - [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.1.0 (external build)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.12.0
 - [postgrest](https://github.com/PostgREST/postgrest) 14.10
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.0
-- [opencode](https://github.com/anomalyco/opencode) 1.14.24
-- [uv](https://github.com/astral-sh/uv) 0.11.7
+- [opencode](https://github.com/anomalyco/opencode) 1.14.30
+- [uv](https://github.com/astral-sh/uv) 0.11.8
 - [golang](https://go.dev/dl/) 1.26.2
   - x86_64: https://go.dev/dl/go1.26.2.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.26.2.linux-arm64.tar.gz
@@ -98,18 +98,18 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://packages.timber.io/vector/0.55.0/vector_0.55.0-1_arm64.deb
   - rpm amd64: https://packages.timber.io/vector/0.55.0/vector-0.55.0-1.x86_64.rpm
   - rpm arm64: https://packages.timber.io/vector/0.55.0/vector-0.55.0-1.aarch64.rpm
-- [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.0.0
-    - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.0.0
+- [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.2.0
+    - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.2.0
 - [pgschema](https://github.com/pgplex/pgschema): 1.9.0
   - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema_1.9.0_amd64.deb
   - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema_1.9.0_arm64.deb
   - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema-1.9.0-1.x86_64.rpm
   - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema-1.9.0-1.aarch64.rpm
-- [crush](https://github.com/charmbracelet/crush): 0.62.1
-  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.62.1/crush_0.62.1_amd64.deb
-  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.62.1/crush_0.62.1_arm64.deb
-  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.62.1/crush-0.62.1-1.x86_64.rpm
-  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.62.1/crush-0.62.1-1.aarch64.rpm
+- [crush](https://github.com/charmbracelet/crush): 0.64.0
+  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.64.0/crush_0.64.0_amd64.deb
+  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.64.0/crush_0.64.0_arm64.deb
+  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.64.0/crush-0.64.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.64.0/crush-0.64.0-1.aarch64.rpm
 - [minio](https://github.com/pgsty/minio): 20260417000000
   - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio_20260417000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio_20260417000000.0.0_arm64.deb
@@ -127,11 +127,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://downloads.rclone.org/v1.73.5/rclone-v1.73.5-linux-arm64.deb
   - rpm amd64: https://downloads.rclone.org/v1.73.5/rclone-v1.73.5-linux-amd64.rpm
   - rpm arm64: https://downloads.rclone.org/v1.73.5/rclone-v1.73.5-linux-arm64.rpm
-- [code](https://code.visualstudio.com/) 1.115.0
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/41dd792b5e652393e7787322889ed5fdc58bd75b/code_1.115.0-1775600353_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/41dd792b5e652393e7787322889ed5fdc58bd75b/code_1.115.0-1775600335_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/41dd792b5e652393e7787322889ed5fdc58bd75b/code-1.115.0-1775600402.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/41dd792b5e652393e7787322889ed5fdc58bd75b/code-1.115.0-1775600385.el8.aarch64.rpm
+- [code](https://code.visualstudio.com/) 1.118.1
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/034f571df509819cc10b0c8129f66ef77a542f0e/code_1.118.1-1777474985_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/034f571df509819cc10b0c8129f66ef77a542f0e/code_1.118.1-1777474997_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/034f571df509819cc10b0c8129f66ef77a542f0e/code-1.118.1-1777475026.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/034f571df509819cc10b0c8129f66ef77a542f0e/code-1.118.1-1777475039.el8.aarch64.rpm
 - [code-server](https://github.com/coder/code-server) 4.117.0
   - deb amd64: https://github.com/coder/code-server/releases/download/v4.117.0/code-server_4.117.0_amd64.deb
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.117.0/code-server_4.117.0_arm64.deb
@@ -147,6 +147,34 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+**2026-04-30**
+
+| Name                       | Old            | New             | Comment                                     |
+| :------------------------- | :------------- | :-------------- | :------------------------------------------ |
+| prometheus                 | 3.11.2         | 3.11.3          |                                             |
+| alertmanager               | 0.32.0         | 0.32.1          |                                             |
+| victoria-metrics           | 1.140.0        | 1.142.0         |                                             |
+| victoria-metrics-cluster   | 1.140.0        | 1.142.0         | bundled with VictoriaMetrics                |
+| vmutils                    | 1.140.0        | 1.142.0         | bundled with VictoriaMetrics                |
+| victoria-traces            | 0.8.1          | 0.8.2           |                                             |
+| tigerbeetle                | 0.17.1         | 0.17.2          |                                             |
+| loki                       | 3.6.7          | 3.6.7           | obsolete; kept frozen                       |
+| promtail                   | 3.6.7          | 3.6.7           | obsolete; kept frozen                       |
+| logcli                     | 3.6.7          | 3.6.7           | obsolete; kept frozen with Loki             |
+| hugo                       | 0.160.1        | 0.161.1         |                                             |
+| seaweedfs                  | 4.21           | 4.22            |                                             |
+| rustfs                     | 1.0.0-alpha.94 | 1.0.0-beta.1    | prerelease line                             |
+| sabiql                     | 1.11.0         | 1.11.1          |                                             |
+| timescaledb-tools          | 0.18.2         | 0.19.0          | rebuilt timescaledb-tune Linux binaries     |
+| agentsview                 | 0.25.0         | 0.26.0          |                                             |
+| claude                     | 2.1.119        | 2.1.123         | downloaded through 8118 proxy and verified  |
+| stalwart                   | 0.16.0         | 0.16.2          |                                             |
+| opencode                   | 1.14.24        | 1.14.30         |                                             |
+| uv                         | 0.11.7         | 0.11.8          |                                             |
+| vip-manager                | 4.0.0          | 4.2.0           | direct-download metadata refresh            |
+| crush                      | 0.62.1         | 0.64.0          | direct-download metadata refresh            |
+| code                       | 1.115.0        | 1.118.1         | direct-download metadata refresh            |
 
 **2026-04-25**
 
