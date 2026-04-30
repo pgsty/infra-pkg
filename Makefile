@@ -123,8 +123,7 @@ headscale:
 
 
 loki:
-	cd amd64/loki && make
-	cd arm64/loki && make
+	@echo "loki is obsolete; skipped"
 prometheus:
 	cd amd64/prometheus && make
 	cd arm64/prometheus && make

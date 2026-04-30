@@ -8,6 +8,7 @@
 #==============================================================#
 REPONAME="grafana/loki"
 PACKAGE="loki"
+# Obsolete: keep Loki/logcli/promtail frozen at 3.6.7.
 VERSION=3.6.7
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-amd64"
@@ -30,10 +31,10 @@ get: download extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -SL $(WEB_URL1) -o $(FILENAME1); fi
-	@echo curl -SL $(WEB_URL2) -o $(FILENAME2); fi
-	@echo curl -SL $(WEB_URL3) -o $(FILENAME3); fi
-	@echo curl -SL $(WEB_URL4) -o $(FILENAME4); fi
+	@echo curl -SL $(WEB_URL1) -o $(FILENAME1)
+	@echo curl -SL $(WEB_URL2) -o $(FILENAME2)
+	@echo curl -SL $(WEB_URL3) -o $(FILENAME3)
+	@echo curl -SL $(WEB_URL4) -o $(FILENAME4)
 
 # get latest release info
 meta:
