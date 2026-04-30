@@ -8,8 +8,8 @@
 #==============================================================#
 REPONAME=timescale/timescaledb-tune
 PACKAGE=timescaledb-tools
-VERSION=0.18.2
-RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v.$(VERSION)
+VERSION=0.19.0
+RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-arm64
 FILENAME1=timescaledb-tune
 FILENAME2=timescaledb-parallel-copy
