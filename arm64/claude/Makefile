@@ -7,10 +7,10 @@
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=claude
-VERSION=2.1.123
+VERSION=2.1.201
 PLATFORM=linux-arm64
 INSTALLER_URL=https://claude.ai/install.sh
-BUCKET=https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases
+BUCKET=https://downloads.claude.ai/claude-code-releases
 TARBALL=claude-$(VERSION)-linux-arm64.gz
 WEB_URL=$(BUCKET)/$(VERSION)/$(PLATFORM)/claude
 PROXY=http://127.0.0.1:8118
