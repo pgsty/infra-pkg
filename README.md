@@ -17,9 +17,9 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.11.3
-- [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.2
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.32.1
+- [prometheus](https://github.com/prometheus/prometheus) : 3.13.0
+- [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.33.0
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
 - [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
 - [node_exporter](https://github.com/prometheus/node_exporter) : 1.11.1
@@ -27,94 +27,94 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
 - [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.23.0
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.19.0
-- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.82.0
+- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.86.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
-- [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.50.0
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.142.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.50.0
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.8.2
-- [duckdb](https://github.com/duckdb/duckdb) : 1.5.2
-- [etcd](https://github.com/etcd-io/etcd) : 3.6.10
+- [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.51.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.146.0
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.51.0
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.9.4
+- [duckdb](https://github.com/duckdb/duckdb) : 1.5.4
+- [etcd](https://github.com/etcd-io/etcd) : 3.6.13
 - [mtail](https://github.com/google/mtail) : 3.0.8
-- [restic](https://github.com/restic/restic) : 0.18.1
+- [restic](https://github.com/restic/restic) : 0.19.0
 - [juicefs](https://github.com/juicedata/juicefs) : 1.3.1
-- [tigerfs](https://github.com/timescale/tigerfs) : 0.6.0
-- [dblab](https://github.com/danvergara/dblab) 0.38.0
-- [pgstream](https://github.com/xataio/pgstream) 1.0.1
+- [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
+- [dblab](https://github.com/danvergara/dblab) 0.42.1
+- [pgstream](https://github.com/xataio/pgstream) 1.1.0
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
-- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.3.18
+- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.3.19
 - [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable): 6.3.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
-- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.2
+- [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.8
 - [loki](https://github.com/grafana/loki) : 3.6.7 (obsolete, frozen)
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.26.3
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.24.0
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.29.0
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.25.1
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.8.0
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins) 13.0.0 (noarch)
-- [kafka](https://kafka.apache.org/downloads) 4.2.0
-- [caddy](https://github.com/caddyserver/caddy) 2.11.2
-- [headscale](https://github.com/juanfont/headscale) 0.28.0
-- [hugo](https://github.com/gohugoio/hugo) 0.161.1
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.22
+- [kafka](https://kafka.apache.org/downloads) 4.3.1
+- [caddy](https://github.com/caddyserver/caddy) 2.11.4
+- [headscale](https://github.com/juanfont/headscale) 0.29.2
+- [hugo](https://github.com/gohugoio/hugo) 0.163.3
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.37
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.1
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.8
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27
-- [vray](https://github.com/v2fly/v2ray-core) 5.48.0
+- [vray](https://github.com/v2fly/v2ray-core) 5.49.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
-- [sabiql](https://github.com/riii111/sabiql) 1.11.1
+- [sabiql](https://github.com/riii111/sabiql) 1.13.0
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/wesm/agentsview) 0.26.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.123
-- [codex](https://github.com/openai/codex) 0.125.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.2
-- [maddy](https://github.com/foxcpp/maddy) 0.9.3
-- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.1.0 (external build)
-- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.12.0
-- [postgrest](https://github.com/PostgREST/postgrest) 14.10
+- [agentsview](https://github.com/kenn-io/agentsview) 0.36.1
+- [claude](https://github.com/anthropics/claude-code) 2.1.201
+- [codex](https://github.com/openai/codex) 0.142.5
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.11
+- [maddy](https://github.com/foxcpp/maddy) 0.9.5
+- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.6.0 (external build)
+- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.19.0
+- [postgrest](https://github.com/PostgREST/postgrest) 14.14
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
-- [asciinema](https://github.com/asciinema/asciinema) 3.2.0
-- [opencode](https://github.com/anomalyco/opencode) 1.14.30
-- [uv](https://github.com/astral-sh/uv) 0.11.8
-- [golang](https://go.dev/dl/) 1.26.2
-  - x86_64: https://go.dev/dl/go1.26.2.linux-amd64.tar.gz
-  - arm64: https://go.dev/dl/go1.26.2.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.15.0
-  - x86_64: https://nodejs.org/dist/v24.15.0/node-v24.15.0-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.15.0/node-v24.15.0-linux-arm64.tar.xz
+- [asciinema](https://github.com/asciinema/asciinema) 3.2.1
+- [opencode](https://github.com/anomalyco/opencode) 1.17.13
+- [uv](https://github.com/astral-sh/uv) 0.11.26
+- [golang](https://go.dev/dl/) 1.26.4
+  - x86_64: https://go.dev/dl/go1.26.4.linux-amd64.tar.gz
+  - arm64: https://go.dev/dl/go1.26.4.linux-arm64.tar.gz
+- [nodejs](https://nodejs.org/en/download/) 24.18.0
+  - x86_64: https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.xz
 
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 13.0.1
-  - deb amd64: https://dl.grafana.com/oss/release/grafana_13.0.1_amd64.deb
-  - deb arm64: https://dl.grafana.com/oss/release/grafana_13.0.1_arm64.deb
-  - rpm amd64: https://dl.grafana.com/oss/release/grafana-13.0.1-1.x86_64.rpm
-  - rpm arm64: https://dl.grafana.com/oss/release/grafana-13.0.1-1.aarch64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 13.1.0
+  - deb amd64: https://dl.grafana.com/grafana/release/13.1.0/grafana_13.1.0_28013217238_linux_amd64.deb
+  - deb arm64: https://dl.grafana.com/grafana/release/13.1.0/grafana_13.1.0_28013217238_linux_arm64.deb
+  - rpm amd64: https://dl.grafana.com/grafana/release/13.1.0/grafana_13.1.0_28013217238_linux_amd64.rpm
+  - rpm arm64: https://dl.grafana.com/grafana/release/13.1.0/grafana_13.1.0_28013217238_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.55.0
-  - deb amd64: https://packages.timber.io/vector/0.55.0/vector_0.55.0-1_amd64.deb
-  - deb arm64: https://packages.timber.io/vector/0.55.0/vector_0.55.0-1_arm64.deb
-  - rpm amd64: https://packages.timber.io/vector/0.55.0/vector-0.55.0-1.x86_64.rpm
-  - rpm arm64: https://packages.timber.io/vector/0.55.0/vector-0.55.0-1.aarch64.rpm
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.56.0
+  - deb amd64: https://packages.timber.io/vector/0.56.0/vector_0.56.0-1_amd64.deb
+  - deb arm64: https://packages.timber.io/vector/0.56.0/vector_0.56.0-1_arm64.deb
+  - rpm amd64: https://packages.timber.io/vector/0.56.0/vector-0.56.0-1.x86_64.rpm
+  - rpm arm64: https://packages.timber.io/vector/0.56.0/vector-0.56.0-1.aarch64.rpm
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.2.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.2.0
-- [pgschema](https://github.com/pgplex/pgschema): 1.9.0
-  - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema_1.9.0_amd64.deb
-  - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema_1.9.0_arm64.deb
-  - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema-1.9.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.9.0/pgschema-1.9.0-1.aarch64.rpm
-- [crush](https://github.com/charmbracelet/crush): 0.64.0
-  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.64.0/crush_0.64.0_amd64.deb
-  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.64.0/crush_0.64.0_arm64.deb
-  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.64.0/crush-0.64.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.64.0/crush-0.64.0-1.aarch64.rpm
-- [minio](https://github.com/pgsty/minio): 20260417000000
-  - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio_20260417000000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio_20260417000000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio-20260417000000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-04-17T00-00-00Z/minio-20260417000000.0.0-1.aarch64.rpm
+- [pgschema](https://github.com/pgplex/pgschema): 1.11.1
+  - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.11.1/pgschema_1.11.1_amd64.deb
+  - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.11.1/pgschema_1.11.1_arm64.deb
+  - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.11.1/pgschema-1.11.1-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.11.1/pgschema-1.11.1-1.aarch64.rpm
+- [crush](https://github.com/charmbracelet/crush): 0.81.0
+  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.81.0/crush_0.81.0_amd64.deb
+  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.81.0/crush_0.81.0_arm64.deb
+  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.81.0/crush-0.81.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.81.0/crush-0.81.0-1.aarch64.rpm
+- [minio](https://github.com/pgsty/minio): 20260618000000
+  - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio-20260618000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio-20260618000000.0.0-1.aarch64.rpm
 - [mcli](https://github.com/pgsty/mc): 20260417000000
   - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_arm64.deb
@@ -122,31 +122,257 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.aarch64.rpm
 - [sealos](https://github.com/labring/sealos): 5.1.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.1.1
-- [rclone](https://github.com/rclone/rclone/releases/) 1.73.5
-  - deb amd64: https://downloads.rclone.org/v1.73.5/rclone-v1.73.5-linux-amd64.deb
-  - deb arm64: https://downloads.rclone.org/v1.73.5/rclone-v1.73.5-linux-arm64.deb
-  - rpm amd64: https://downloads.rclone.org/v1.73.5/rclone-v1.73.5-linux-amd64.rpm
-  - rpm arm64: https://downloads.rclone.org/v1.73.5/rclone-v1.73.5-linux-arm64.rpm
-- [code](https://code.visualstudio.com/) 1.118.1
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/034f571df509819cc10b0c8129f66ef77a542f0e/code_1.118.1-1777474985_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/034f571df509819cc10b0c8129f66ef77a542f0e/code_1.118.1-1777474997_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/034f571df509819cc10b0c8129f66ef77a542f0e/code-1.118.1-1777475026.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/034f571df509819cc10b0c8129f66ef77a542f0e/code-1.118.1-1777475039.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server) 4.117.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.117.0/code-server_4.117.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.117.0/code-server_4.117.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.117.0/code-server-4.117.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.117.0/code-server-4.117.0-arm64.rpm
-- [pev2](https://github.com/dalibo/pev2/releases) 1.21.0
+- [rclone](https://github.com/rclone/rclone/releases/) 1.74.3
+  - deb amd64: https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-amd64.deb
+  - deb arm64: https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-arm64.deb
+  - rpm amd64: https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-amd64.rpm
+  - rpm arm64: https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-arm64.rpm
+- [code](https://code.visualstudio.com/) 1.127.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/4fe60c8b1cdac1c4c174f2fb180d0d758272d713/code_1.127.0-1782814776_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/4fe60c8b1cdac1c4c174f2fb180d0d758272d713/code_1.127.0-1782811064_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/4fe60c8b1cdac1c4c174f2fb180d0d758272d713/code-1.127.0-1782814823.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/4fe60c8b1cdac1c4c174f2fb180d0d758272d713/code-1.127.0-1782811114.el8.aarch64.rpm
+- [code-server](https://github.com/coder/code-server) 4.127.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.127.0/code-server_4.127.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.127.0/code-server_4.127.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.127.0/code-server-4.127.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.127.0/code-server-4.127.0-arm64.rpm
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.6.1
+  - deb amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.6.1/cloudflared-linux-amd64.deb
+  - deb arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.6.1/cloudflared-linux-arm64.deb
+  - rpm amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.6.1/cloudflared-linux-x86_64.rpm
+  - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.6.1/cloudflared-linux-aarch64.rpm
+- [pev2](https://github.com/dalibo/pev2/releases) 1.22.0
   - https://github.com/dalibo/pev2/releases
-- [pig](https://github.com/pgsty/pig) : 1.4.1
+- [pig](https://github.com/pgsty/pig) : 1.4.2
   - amd64 & arm64: https://github.com/pgsty/pig/releases
-- [pg_exporter](https://github.com/pgsty/pg_exporter) : 1.2.2
+- [pg_exporter](https://github.com/pgsty/pg_exporter) : 1.3.0
   - amd64 & arm64: https://github.com/pgsty/pg_exporter/releases
 
 --------
 
 ## Changelog
+
+
+**2026-07-04**
+
+| Name                    | Old            | New            | Comment                                  |
+| :---------------------- | :------------- | :------------- | :--------------------------------------- |
+| prometheus              | 3.12.0         | 3.13.0         |                                          |
+| VictoriaTraces          | 0.9.3          | 0.9.4          |                                          |
+| etcd                    | 3.6.12         | 3.6.13         |                                          |
+| dblab                   | 0.42.0         | 0.42.1         |                                          |
+| grafana-victoriametrics-ds | 0.25.0      | 0.25.1         |                                          |
+| headscale               | 0.29.1         | 0.29.2         |                                          |
+| seaweedfs               | 4.35           | 4.37           |                                          |
+| agentsview              | 0.34.5         | 0.36.1         |                                          |
+| claude                  | 2.1.187        | 2.1.201        | downloaded through 8118 proxy            |
+| codex                   | 0.142.0        | 0.142.5        | release tag `rust-v0.142.5`              |
+| stalwart                | 0.16.10        | 0.16.11        |                                          |
+| genai-toolbox           | 1.5.0          | 1.6.0          | external build artifacts as mcp-toolbox  |
+| npgsqlrest              | 3.18.1         | 3.19.0         |                                          |
+| postgrest               | 14.13          | 14.14          |                                          |
+| opencode                | 1.17.9         | 1.17.13        |                                          |
+| uv                      | 0.11.24        | 0.11.26        |                                          |
+| grafana                 | 13.0.2         | 13.1.0         | downloaded directly                      |
+| crush                   | 0.79.1         | 0.81.0         | downloaded directly                      |
+| code                    | 1.125.1        | 1.127.0        | downloaded directly                      |
+| code-server             | 4.125.0        | 4.127.0        | downloaded directly                      |
+
+
+**2026-06-24**
+
+| Name                    | Old            | New            | Comment                                  |
+| :---------------------- | :------------- | :------------- | :--------------------------------------- |
+| VictoriaMetrics         | 1.145.0        | 1.146.0        | bundled cluster / vmutils                |
+| dblab                   | 0.40.2         | 0.42.0         |                                          |
+| tigerbeetle             | 0.17.7         | 0.17.8         |                                          |
+| grafana-victorialogs-ds | 0.28.0         | 0.29.0         |                                          |
+| kafka                   | 4.3.0          | 4.3.1          | noarch package                           |
+| headscale               | 0.29.0         | 0.29.1         |                                          |
+| hugo                    | 0.163.2        | 0.163.3        |                                          |
+| seaweedfs               | 4.34           | 4.35           |                                          |
+| agentsview              | 0.33.1         | 0.34.5         |                                          |
+| claude                  | 2.1.181        | 2.1.187        | downloaded through 8118 proxy            |
+| codex                   | 0.140.0        | 0.142.0        | release tag `rust-v0.142.0`              |
+| genai-toolbox           | 1.1.0          | 1.5.0          | external build artifacts synced          |
+| stalwart                | 0.16.9         | 0.16.10        |                                          |
+| npgsqlrest              | 3.17.0         | 3.18.1         |                                          |
+| opencode                | 1.17.8         | 1.17.9         |                                          |
+| uv                      | 0.11.21        | 0.11.24        |                                          |
+| nodejs                  | 24.16.0        | 24.18.0        |                                          |
+| pgschema                | 1.11.0         | 1.11.1         | downloaded directly                      |
+| crush                   | 0.77.0         | 0.79.1         | downloaded directly                      |
+| minio                   | 20260417000000 | 20260618000000 | already staged                           |
+| code                    | 1.125.0        | 1.125.1        | downloaded directly                      |
+| code-server             | 4.124.2        | 4.125.0        | downloaded directly                      |
+| cloudflared             | 2026.6.0       | 2026.6.1       | downloaded directly                      |
+| pev2                    | 1.21.0         | 1.22.0         | noarch package                           |
+| pig                     | 1.4.1          | 1.4.2          | already staged                           |
+| pg_exporter             | 1.2.2          | 1.3.0          | downloaded directly                      |
+
+
+**2026-06-18**
+
+| Name             | Old      | New      | Comment                                  |
+| :--------------- | :------- | :------- | :--------------------------------------- |
+| agentsview       | 0.32.1   | 0.33.1   |                                          |
+| alertmanager     | 0.32.2   | 0.33.0   |                                          |
+| asciinema        | 3.2.0    | 3.2.1    |                                          |
+| claude           | 2.1.172  | 2.1.181  | downloaded through 8118 proxy            |
+| codex            | 0.139.0  | 0.140.0  | release tag `rust-v0.140.0`              |
+| dblab            | 0.40.1   | 0.40.2   |                                          |
+| duckdb           | 1.5.3    | 1.5.4    |                                          |
+| headscale        | 0.28.0   | 0.29.0   |                                          |
+| hugo             | 0.163.0  | 0.163.2  |                                          |
+| npgsqlrest       | 3.16.3   | 3.17.0   |                                          |
+| opencode         | 1.17.3   | 1.17.8   |                                          |
+| pgstream         | 1.0.3    | 1.1.0    |                                          |
+| rainfrog         | 0.3.18   | 0.3.19   |                                          |
+| sabiql           | 1.12.3   | 1.13.0   |                                          |
+| seaweedfs        | 4.32     | 4.34     |                                          |
+| stalwart         | 0.16.8   | 0.16.9   |                                          |
+| tigerbeetle      | 0.17.6   | 0.17.7   |                                          |
+| uv               | 0.11.20  | 0.11.21  |                                          |
+| victoria-logs    | 1.50.0   | 1.51.0   | bundled `vlagent` / `vlogscli`           |
+| victoria-traces  | 0.9.2    | 0.9.3    |                                          |
+| crush            | 0.76.0   | 0.77.0   | direct-download artifact refresh         |
+| code             | 1.124.0  | 1.125.0  | direct-download artifact refresh         |
+| code-server      | 4.123.0  | 4.124.2  | direct-download artifact refresh         |
+
+
+**2026-06-11**
+
+| Name                     | Old            | New             | Comment                                  |
+| :----------------------- | :------------- | :-------------- | :--------------------------------------- |
+| alertmanager             | 0.32.1         | 0.32.2          |                                          |
+| redis_exporter           | 1.84.0         | 1.86.0          |                                          |
+| victoria-metrics         | 1.144.0        | 1.145.0         |                                          |
+| victoria-metrics-cluster | 1.144.0        | 1.145.0         | bundled with VictoriaMetrics             |
+| vmutils                  | 1.144.0        | 1.145.0         | bundled with VictoriaMetrics             |
+| restic                   | 0.18.1         | 0.19.0          |                                          |
+| tigerbeetle              | 0.17.5         | 0.17.6          |                                          |
+| hugo                     | 0.162.1        | 0.163.0         |                                          |
+| seaweedfs                | 4.31           | 4.32            |                                          |
+| rustfs                   | 1.0.0-b6       | 1.0.0-b8        | prerelease line                          |
+| sabiql                   | 1.12.2         | 1.12.3          |                                          |
+| agentsview               | 0.31.1         | 0.32.1          |                                          |
+| claude                   | 2.1.161        | 2.1.172         | downloaded through 8118 proxy            |
+| codex                    | 0.136.0        | 0.139.0         | release tag `rust-v0.139.0`              |
+| stalwart                 | 0.16.7         | 0.16.8          |                                          |
+| postgrest                | 14.12          | 14.13           |                                          |
+| opencode                 | 1.15.13        | 1.17.3          |                                          |
+| uv                       | 0.11.18        | 0.11.20         |                                          |
+| vector                   | 0.55.0         | 0.56.0          | direct-download artifact refresh         |
+| pgschema                 | 1.10.0         | 1.11.0          | direct-download artifact refresh         |
+| crush                    | 0.75.0         | 0.76.0          | direct-download artifact refresh         |
+| rclone                   | 1.74.2         | 1.74.3          | direct-download artifact refresh         |
+| code                     | 1.123.0        | 1.124.0         | direct-download artifact refresh         |
+| code-server              | 4.122.1        | 4.123.0         | direct-download artifact refresh         |
+| cloudflared              | 2026.5.2       | 2026.6.0        | direct-download artifact refresh         |
+
+
+
+**2026-06-03**
+
+| Name                       | Old            | New             | Comment                                     |
+| :------------------------- | :------------- | :-------------- | :------------------------------------------ |
+| prometheus                 | 3.11.3         | 3.12.0          |                                             |
+| pushgateway                | 1.11.2         | 1.11.3          |                                             |
+| victoria-metrics           | 1.143.0        | 1.144.0         |                                             |
+| victoria-metrics-cluster   | 1.143.0        | 1.144.0         | bundled with VictoriaMetrics                |
+| vmutils                    | 1.143.0        | 1.144.0         | bundled with VictoriaMetrics                |
+| victoria-traces            | 0.8.2          | 0.9.2           |                                             |
+| etcd                       | 3.6.11         | 3.6.12          |                                             |
+| tigerfs                    | 0.6.0          | 0.7.0           |                                             |
+| dblab                      | 0.40.0         | 0.40.1          |                                             |
+| tigerbeetle                | 0.17.4         | 0.17.5          |                                             |
+| grafana-victorialogs-ds    | 0.27.1         | 0.28.0          |                                             |
+| grafana-victoriametrics-ds | 0.24.0         | 0.25.0          |                                             |
+| caddy                      | 2.11.3         | 2.11.4          |                                             |
+| hugo                       | 0.161.1        | 0.162.1         |                                             |
+| seaweedfs                  | 4.28           | 4.31            |                                             |
+| rustfs                     | 1.0.0-b4       | 1.0.0-b6        | prerelease line                             |
+| agentsview                 | 0.30.0         | 0.31.1          | upstream moved to kenn-io/agentsview        |
+| claude                     | 2.1.150        | 2.1.161         | downloaded through 8118 proxy and verified  |
+| codex                      | 0.133.0        | 0.136.0         | release tag `rust-v0.136.0`                 |
+| stalwart                   | 0.16.6         | 0.16.7          |                                             |
+| npgsqlrest                 | 3.16.0         | 3.16.3          |                                             |
+| opencode                   | 1.15.10        | 1.15.13         |                                             |
+| uv                         | 0.11.16        | 0.11.18         |                                             |
+| golang                     | 1.26.3         | 1.26.4          |                                             |
+| grafana                    | 13.0.1+security-01 | 13.0.2     | direct-download artifact refresh; stable    |
+| pgschema                   | 1.9.0          | 1.10.0          | direct-download artifact refresh            |
+| crush                      | 0.71.0         | 0.75.0          | direct-download artifact refresh            |
+| code                       | 1.121.0        | 1.123.0         | direct-download artifact refresh            |
+| code-server                | 4.121.0        | 4.122.1         | direct-download artifact refresh            |
+| cloudflared                | 2026.5.0       | 2026.5.2        | direct-download artifact refresh            |
+
+
+
+
+**2026-05-24**
+
+| Name                       | Old            | New             | Comment                                     |
+| :------------------------- | :------------- | :-------------- | :------------------------------------------ |
+| redis_exporter             | 1.83.0         | 1.84.0          |                                             |
+| duckdb                     | 1.5.2          | 1.5.3           |                                             |
+| dblab                      | 0.38.0         | 0.40.0          |                                             |
+| pgstream                   | 1.0.2          | 1.0.3           |                                             |
+| grafana-victorialogs-ds    | 0.26.3         | 0.27.1          |                                             |
+| kafka                      | 4.2.0          | 4.3.0           |                                             |
+| caddy                      | 2.11.2         | 2.11.3          |                                             |
+| seaweedfs                  | 4.23           | 4.28            |                                             |
+| rustfs                     | 1.0.0-b2       | 1.0.0-b4        | prerelease line                             |
+| v2ray                      | 5.48.0         | 5.49.0          | README label remains `vray`                 |
+| agentsview                 | 0.29.0         | 0.30.0          |                                             |
+| claude                     | 2.1.138        | 2.1.150         | metadata updated; 8118 proxy unavailable    |
+| codex                      | 0.130.0        | 0.133.0         |                                             |
+| stalwart                   | 0.16.4         | 0.16.6          |                                             |
+| maddy                      | 0.9.4          | 0.9.5           |                                             |
+| npgsqlrest                 | 3.15.1         | 3.16.0          |                                             |
+| postgrest                  | 14.11          | 14.12           |                                             |
+| opencode                   | 1.14.48        | 1.15.10         |                                             |
+| uv                         | 0.11.13        | 0.11.16         |                                             |
+| nodejs                     | 24.15.0        | 24.16.0         | kept on 24.x line                           |
+| grafana                    | 13.0.1         | 13.0.1+security-01 | direct-download artifact refresh         |
+| crush                      | 0.66.1         | 0.71.0          | direct-download artifact refresh            |
+| rclone                     | 1.74.1         | 1.74.2          | direct-download artifact refresh            |
+| code                       | 1.118.1        | 1.121.0         | direct-download artifact refresh            |
+| code-server                | 4.118.0        | 4.121.0         | direct-download artifact refresh            |
+| cloudflared                | 2026.3.0       | 2026.5.0        | direct-download artifact refresh            |
+
+
+**2026-05-11**
+
+| Name                       | Old            | New             | Comment                                     |
+| :------------------------- | :------------- | :-------------- | :------------------------------------------ |
+| victoria-metrics           | 1.142.0        | 1.143.0         |                                             |
+| victoria-metrics-cluster   | 1.142.0        | 1.143.0         | bundled with VictoriaMetrics                |
+| vmutils                    | 1.142.0        | 1.143.0         | bundled with VictoriaMetrics                |
+| mongodb_exporter           | 0.50.0         | 0.51.0          |                                             |
+| redis_exporter             | 1.82.0         | 1.83.0          |                                             |
+| etcd                       | 3.6.10         | 3.6.11          |                                             |
+| pgstream                   | 1.0.1          | 1.0.2           |                                             |
+| seaweedfs                  | 4.22           | 4.23            |                                             |
+| rustfs                     | 1.0.0-b1       | 1.0.0-b2        | prerelease line                             |
+| tigerbeetle                | 0.17.2         | 0.17.4          |                                             |
+| sabiql                     | 1.11.1         | 1.12.2          |                                             |
+| agentsview                 | 0.26.0         | 0.29.0          |                                             |
+| claude                     | 2.1.123        | 2.1.138         | downloaded through 8118 proxy and verified  |
+| codex                      | 0.125.0        | 0.130.0         |                                             |
+| stalwart                   | 0.16.2         | 0.16.4          |                                             |
+| maddy                      | 0.9.3          | 0.9.4           |                                             |
+| npgsqlrest                 | 3.12.0         | 3.15.1          |                                             |
+| postgrest                  | 14.10          | 14.11           |                                             |
+| opencode                   | 1.14.30        | 1.14.48         |                                             |
+| uv                         | 0.11.8         | 0.11.13         |                                             |
+| golang                     | 1.26.2         | 1.26.3          |                                             |
+| crush                      | 0.64.0         | 0.66.1          | direct-download artifact refresh            |
+| rclone                     | 1.73.5         | 1.74.1          | direct-download artifact refresh            |
+| code-server                | 4.117.0        | 4.118.0         | direct-download artifact refresh            |
+| cloudflared                | 2026.2.0       | 2026.3.0        | direct-download artifact refresh            |
+
 
 **2026-04-30**
 
