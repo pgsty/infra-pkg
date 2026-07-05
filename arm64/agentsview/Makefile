@@ -6,9 +6,9 @@
 # Path      :   Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-REPONAME=wesm/agentsview
+REPONAME=kenn-io/agentsview
 PACKAGE=agentsview
-VERSION=0.26.0
+VERSION=0.36.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)_$(VERSION)_linux_arm64.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
