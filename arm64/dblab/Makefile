@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="danvergara/dblab"
 PACKAGE="dblab"
-VERSION=0.38.0
+VERSION=0.42.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)_$(VERSION)_linux_arm64"
 FILENAME="$(DIRNAME).tar.gz"
