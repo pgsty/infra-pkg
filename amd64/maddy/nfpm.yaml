@@ -1,7 +1,7 @@
 name: "maddy"
 arch: "amd64"
 platform: "linux"
-version: "v0.9.3"
+version: "v0.9.5"
 release: "1"
 version_schema: semver
 description: Maddy mail server static musl binaries
