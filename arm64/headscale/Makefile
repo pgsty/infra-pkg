@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME="juanfont/headscale"
 PACKAGE="headscale"
-VERSION=0.28.0
+VERSION=0.29.2
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 FILENAME="$(PACKAGE)_$(VERSION)_linux_arm64"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)

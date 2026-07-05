@@ -1,7 +1,7 @@
 name: "headscale"
 arch: "arm64"
 platform: "linux"
-version: "v0.28.0"
+version: "v0.29.2"
 release: "1"
 version_schema: semver
 description: An open source, self-hosted implementation of the Tailscale control server
