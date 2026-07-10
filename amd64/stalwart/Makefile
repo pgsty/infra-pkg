@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=stalwartlabs/stalwart
 PACKAGE=stalwart
-VERSION=0.16.11
+VERSION=0.16.12
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME1=$(PACKAGE)-x86_64-unknown-linux-musl.tar.gz
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
