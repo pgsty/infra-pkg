@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=v2fly/v2ray-core
 PACKAGE=v2ray
-VERSION=5.49.0
+VERSION=5.51.2
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-linux-arm64-v8a
 FILENAME=$(DIRNAME).zip
