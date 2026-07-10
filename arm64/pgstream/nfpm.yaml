@@ -1,7 +1,7 @@
 name: "pgstream"
 arch: "arm64"
 platform: "linux"
-version: "v1.1.0"
+version: "v1.1.1"
 release: "1"
 version_schema: semver
 description: PostgreSQL replication with DDL changes.
