@@ -17,7 +17,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.13.0
+- [prometheus](https://github.com/prometheus/prometheus) : 3.13.1
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.33.1
 - [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
@@ -56,7 +56,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4
 - [headscale](https://github.com/juanfont/headscale) 0.29.2
 - [hugo](https://github.com/gohugoio/hugo) 0.164.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.38
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.39
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.8
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27
@@ -65,17 +65,17 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [sabiql](https://github.com/riii111/sabiql) 1.14.0
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/kenn-io/agentsview) 0.36.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.204
-- [codex](https://github.com/openai/codex) 0.143.0
+- [agentsview](https://github.com/kenn-io/agentsview) 0.37.5
+- [claude](https://github.com/anthropics/claude-code) 2.1.206
+- [codex](https://github.com/openai/codex) 0.144.1
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.12
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.6.0 (external build)
-- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.19.0
+- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.20.0
 - [postgrest](https://github.com/PostgREST/postgrest) 14.14
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.17.15
+- [opencode](https://github.com/anomalyco/opencode) 1.17.18
 - [uv](https://github.com/astral-sh/uv) 0.11.28
 - [golang](https://go.dev/dl/) 1.26.5
   - x86_64: https://go.dev/dl/go1.26.5.linux-amd64.tar.gz
@@ -110,11 +110,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.0/pgschema_1.12.0_arm64.deb
   - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.0/pgschema-1.12.0-1.x86_64.rpm
   - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.0/pgschema-1.12.0-1.aarch64.rpm
-- [crush](https://github.com/charmbracelet/crush): 0.82.0
-  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.82.0/crush_0.82.0_amd64.deb
-  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.82.0/crush_0.82.0_arm64.deb
-  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.82.0/crush-0.82.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.82.0/crush-0.82.0-1.aarch64.rpm
+- [crush](https://github.com/charmbracelet/crush): 0.84.0
+  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.84.0/crush_0.84.0_amd64.deb
+  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.84.0/crush_0.84.0_arm64.deb
+  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.84.0/crush-0.84.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.84.0/crush-0.84.0-1.aarch64.rpm
 - [minio](https://github.com/pgsty/minio): 20260618000000
   - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_arm64.deb
@@ -127,11 +127,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.aarch64.rpm
 - [sealos](https://github.com/labring/sealos): 5.1.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.1.1
-- [rclone](https://github.com/rclone/rclone/releases/) 1.74.3
-  - deb amd64: https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-amd64.deb
-  - deb arm64: https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-arm64.deb
-  - rpm amd64: https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-amd64.rpm
-  - rpm arm64: https://downloads.rclone.org/v1.74.3/rclone-v1.74.3-linux-arm64.rpm
+- [rclone](https://github.com/rclone/rclone/releases/) 1.74.4
+  - deb amd64: https://downloads.rclone.org/v1.74.4/rclone-v1.74.4-linux-amd64.deb
+  - deb arm64: https://downloads.rclone.org/v1.74.4/rclone-v1.74.4-linux-arm64.deb
+  - rpm amd64: https://downloads.rclone.org/v1.74.4/rclone-v1.74.4-linux-amd64.rpm
+  - rpm arm64: https://downloads.rclone.org/v1.74.4/rclone-v1.74.4-linux-arm64.rpm
 - [code](https://code.visualstudio.com/) 1.128.0
   - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/fc3def6774c76082adf699d366f31a557ce5573f/code_1.128.0-1783465401_amd64.deb
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/fc3def6774c76082adf699d366f31a557ce5573f/code_1.128.0-1783465398_arm64.deb
@@ -142,11 +142,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.127.0/code-server_4.127.0_arm64.deb
   - rpm amd64: https://github.com/coder/code-server/releases/download/v4.127.0/code-server-4.127.0-amd64.rpm
   - rpm arm64: https://github.com/coder/code-server/releases/download/v4.127.0/code-server-4.127.0-arm64.rpm
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.6.1
-  - deb amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.6.1/cloudflared-linux-amd64.deb
-  - deb arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.6.1/cloudflared-linux-arm64.deb
-  - rpm amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.6.1/cloudflared-linux-x86_64.rpm
-  - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.6.1/cloudflared-linux-aarch64.rpm
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.7.1
+  - deb amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.1/cloudflared-linux-amd64.deb
+  - deb arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.1/cloudflared-linux-arm64.deb
+  - rpm amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.1/cloudflared-linux-x86_64.rpm
+  - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.1/cloudflared-linux-aarch64.rpm
 - [pev2](https://github.com/dalibo/pev2/releases) 1.22.0
   - https://github.com/dalibo/pev2/releases
 - [pig](https://github.com/pgsty/pig) : 1.5.1
@@ -157,6 +157,22 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-07-10**
+
+| Name        | Old      | New      | Comment                       |
+|:------------|:---------|:---------|:------------------------------|
+| prometheus  | 3.13.0   | 3.13.1   |                               |
+| seaweedfs   | 4.38     | 4.39     |                               |
+| agentsview  | 0.36.1   | 0.37.5   |                               |
+| claude      | 2.1.204  | 2.1.206  | downloaded through 8118 proxy |
+| codex       | 0.143.0  | 0.144.1  | release tag `rust-v0.144.1`   |
+| npgsqlrest  | 3.19.0   | 3.20.0   |                               |
+| opencode    | 1.17.15  | 1.17.18  |                               |
+| crush       | 0.82.0   | 0.84.0   | downloaded directly           |
+| rclone      | 1.74.3   | 1.74.4   | downloaded directly           |
+| cloudflared | 2026.6.1 | 2026.7.1 | downloaded directly           |
 
 
 **2026-07-08**
