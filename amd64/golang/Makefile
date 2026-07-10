@@ -7,7 +7,7 @@
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=golang
-VERSION=1.26.4
+VERSION=1.26.5
 DIRNAME=go
 FILENAME=go$(VERSION).linux-amd64.tar.gz
 WEB_URL=https://go.dev/dl/$(FILENAME)
