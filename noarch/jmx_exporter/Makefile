@@ -2,11 +2,11 @@
 # File      :   Makefile
 # Ctime     :   2026-07-16
 # Mtime     :   2026-07-16
-# Desc      :   Makefile shortcuts for jmx_exporter rpm/deb build
+# Desc      :   Makefile shortcuts for jmx-exporter rpm/deb build
 # Path      :   Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-PACKAGE=jmx_exporter
+PACKAGE=jmx-exporter
 VERSION=1.6.0
 FILENAME=jmx_prometheus_javaagent-$(VERSION).jar
 CHECKSUM_FILE=$(FILENAME).sha256
