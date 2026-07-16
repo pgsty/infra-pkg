@@ -29,6 +29,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.19.0
 - [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.86.0
 - [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
+- [jmx_exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.51.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.147.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.51.0
@@ -157,6 +158,13 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-07-16**
+
+| Name         | Old | New   | Comment            |
+|:-------------|:----|:------|:-------------------|
+| jmx_exporter | -   | 1.6.0 | new noarch package |
 
 
 **2026-07-10**

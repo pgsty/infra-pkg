@@ -2,7 +2,7 @@
 # File      :   Makefile
 # Desc      :   pgsty/pkg repo shortcuts
 # Ctime     :   2024-07-28
-# Mtime     :   2026-03-21
+# Mtime     :   2026-07-16
 # Path      :   Makefile
 # Author    :   Ruohang Feng (rh@vonng.com)
 # License   :   AGPLv3
@@ -160,6 +160,8 @@ redis_exporter:
 kafka_exporter:
 	cd amd64/kafka_exporter && make
 	cd arm64/kafka_exporter && make
+jmx_exporter:
+	cd noarch/jmx_exporter && make
 mongodb_exporter:
 	cd amd64/mongodb_exporter && make
 	cd arm64/mongodb_exporter && make
@@ -242,7 +244,7 @@ maddy:
 .PHONY: all amd64 arm64 push pushd pull pulld dir \
 	loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
-	kafka_exporter redis_exporter pgbackrest_exporter \
+	kafka_exporter jmx_exporter redis_exporter pgbackrest_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer tigerfs \
 	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy

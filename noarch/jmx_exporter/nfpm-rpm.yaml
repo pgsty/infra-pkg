@@ -1,0 +1,21 @@
+name: "jmx_exporter"
+arch: "noarch"
+platform: "linux"
+version: "v1.6.0"
+version_schema: semver
+description: "Prometheus JMX Exporter Java agent"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Prometheus"
+homepage: "https://github.com/prometheus/jmx_exporter"
+license: "Apache-2.0"
+
+contents:
+  - src: jmx_prometheus_javaagent-1.6.0.jar
+    dst: /usr/share/java/jmx_prometheus_javaagent-1.6.0.jar
+    type: file
+    file_info:
+      mode: 0644
+
+  - src: jmx_prometheus_javaagent-1.6.0.jar
+    dst: /usr/share/java/jmx_prometheus_javaagent.jar
+    type: symlink
