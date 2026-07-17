@@ -3,7 +3,7 @@
 # Ctime     :   2026-07-16
 # Mtime     :   2026-07-16
 # Desc      :   Makefile shortcuts for jmx-exporter rpm/deb build
-# Path      :   Makefile
+# Path      :   noarch/jmx-exporter/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=jmx-exporter
