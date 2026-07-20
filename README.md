@@ -36,6 +36,8 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.9.4
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.4
 - [etcd](https://github.com/etcd-io/etcd) : 3.7.0
+- [k3s](https://github.com/k3s-io/k3s) : 1.36.2 (upstream v1.36.2+k3s1)
+- [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.36.2%2Bk3s1) : 1.36.2 (amd64/arm64 system images)
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.0
@@ -158,6 +160,14 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-07-19**
+
+| Name              | Old | New    | Comment                                    |
+|:------------------|:----|:-------|:-------------------------------------------|
+| k3s               | -   | 1.36.2 | upstream `v1.36.2+k3s1`; amd64 and arm64   |
+| k3s-images        | -   | 1.36.2 | matching system images; amd64 and arm64    |
 
 
 **2026-07-16**

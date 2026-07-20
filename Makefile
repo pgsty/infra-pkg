@@ -2,7 +2,7 @@
 # File      :   Makefile
 # Desc      :   pgsty/pkg repo shortcuts
 # Ctime     :   2024-07-28
-# Mtime     :   2026-07-16
+# Mtime     :   2026-07-20
 # Path      :   Makefile
 # Author    :   Ruohang Feng (rh@vonng.com)
 # License   :   AGPLv3
@@ -44,6 +44,15 @@ duckdb:
 etcd:
 	cd amd64/etcd && make
 	cd arm64/etcd && make
+k3s:
+	cd amd64/k3s && make binary
+	cd arm64/k3s && make binary
+k3s-images:
+	cd amd64/k3s && make airgap
+	cd arm64/k3s && make airgap
+k3s-bundle:
+	cd amd64/k3s && make bundle
+	cd arm64/k3s && make bundle
 mtail:
 	cd amd64/mtail && make
 	cd arm64/mtail && make
@@ -245,6 +254,6 @@ maddy:
 	loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter jmx-exporter redis_exporter pgbackrest_exporter \
-	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
+	victoria-metrics victoria-logs pg_timetable duckdb etcd k3s k3s-images k3s-bundle mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer tigerfs \
 	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy

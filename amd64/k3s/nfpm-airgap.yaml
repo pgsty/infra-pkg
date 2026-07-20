@@ -1,0 +1,56 @@
+name: "k3s-images"
+arch: "amd64"
+platform: "linux"
+version: "1.36.2"
+release: "1"
+version_schema: semver
+description: "K3s v1.36.2+k3s1 system images for air-gapped amd64 nodes"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "K3s Project"
+homepage: "https://github.com/k3s-io/k3s"
+license: "Multiple"
+
+overrides:
+  deb:
+    depends:
+      - k3s (= 1.36.2-1)
+  rpm:
+    depends:
+      - k3s = 1.36.2-1
+
+contents:
+  - dst: /var/lib/rancher/k3s/agent/images/
+    type: dir
+    file_info:
+      mode: 0755
+
+  - src: k3s-airgap-images-amd64.tar.zst
+    dst: /var/lib/rancher/k3s/agent/images/k3s-airgap-images-amd64.tar.zst
+    file_info:
+      mode: 0644
+
+  - src: k3s-images.txt
+    dst: /usr/share/doc/k3s-images/k3s-images.txt
+    file_info:
+      mode: 0644
+
+  - src: sha256sum-amd64.txt
+    dst: /usr/share/doc/k3s-images/sha256sum-amd64.txt
+    file_info:
+      mode: 0644
+
+  - src: src/AIRGAP.md
+    dst: /usr/share/doc/k3s-images/AIRGAP.md
+    file_info:
+      mode: 0644
+
+  - src: src/LICENSE
+    dst: /usr/share/doc/k3s-images/LICENSE.k3s
+    file_info:
+      mode: 0644
+
+deb:
+  compression: none
+
+rpm:
+  compression: zstd:1

@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2025-04-23
+# Mtime     :   2026-07-20
 # Desc      :   Makefile shortcuts for prometheus arm64 build
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
@@ -52,6 +52,12 @@ duckdb:
 	cd duckdb && make
 etcd:
 	cd etcd && make
+k3s:
+	cd k3s && make binary
+k3s-images:
+	cd k3s && make airgap
+k3s-bundle:
+	cd k3s && make bundle
 mtail:
 	cd mtail && make
 pg_timetable:
@@ -135,6 +141,6 @@ tigerfs:
 .PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter redis_exporter pgbackrest_exporter \
-	victoria-metrics victoria-logs pg_timetable duckdb etcd mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
+	victoria-metrics victoria-logs pg_timetable duckdb etcd k3s k3s-images k3s-bundle mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer tigerfs \
 	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude ccm asciinema opencode codex agentsview sabiql gost golang nodejs caddy headscale stalwart maddy

@@ -1,0 +1,74 @@
+name: "k3s"
+arch: "amd64"
+platform: "linux"
+version: "1.36.2"
+release: "1"
+version_schema: semver
+description: "Lightweight Kubernetes, packaged from upstream v1.36.2+k3s1"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "K3s Project"
+homepage: "https://github.com/k3s-io/k3s"
+license: "Apache-2.0"
+
+depends:
+  - systemd
+
+contents:
+  - src: k3s
+    dst: /usr/bin/k3s
+    file_info:
+      mode: 0755
+
+  - dst: /etc/rancher/k3s/
+    type: dir
+    file_info:
+      mode: 0700
+
+  - dst: /etc/rancher/k3s/config.yaml.d/
+    type: dir
+    file_info:
+      mode: 0700
+
+  - src: src/k3s.service
+    dst: /usr/lib/systemd/system/k3s.service
+    packager: rpm
+    file_info:
+      mode: 0644
+
+  - src: src/k3s-agent.service
+    dst: /usr/lib/systemd/system/k3s-agent.service
+    packager: rpm
+    file_info:
+      mode: 0644
+
+  - src: src/k3s.service
+    dst: /lib/systemd/system/k3s.service
+    packager: deb
+    file_info:
+      mode: 0644
+
+  - src: src/k3s-agent.service
+    dst: /lib/systemd/system/k3s-agent.service
+    packager: deb
+    file_info:
+      mode: 0644
+
+  - src: src/k3s-killall.sh
+    dst: /usr/bin/k3s-killall.sh
+    file_info:
+      mode: 0755
+
+  - src: src/LICENSE
+    dst: /usr/share/doc/k3s/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: src/PACKAGING.md
+    dst: /usr/share/doc/k3s/PACKAGING.md
+    file_info:
+      mode: 0644
+
+scripts:
+  postinstall: src/postinstall.sh
+  preremove: src/preremove.sh
+  postremove: src/postremove.sh
