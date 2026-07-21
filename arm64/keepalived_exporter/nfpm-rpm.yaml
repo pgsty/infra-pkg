@@ -1,4 +1,4 @@
-name: "keepalived_exporter"
+name: "keepalived-exporter"
 arch: "arm64"
 platform: "linux"
 version: "v1.7.1"
@@ -8,6 +8,11 @@ maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Mehdy"
 homepage: https://github.com/mehdy/keepalived-exporter
 license: "GPL-3.0"
+
+provides:
+  - keepalived_exporter
+replaces:
+  - keepalived_exporter
 
 rpm:
   compression: gzip

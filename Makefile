@@ -160,6 +160,9 @@ keepalived_exporter:
 pgbackrest_exporter:
 	cd amd64/pgbackrest_exporter && make
 	cd arm64/pgbackrest_exporter && make
+pg_exporter:
+	cd amd64/pg_exporter && make
+	cd arm64/pg_exporter && make
 mysqld_exporter:
 	cd amd64/mysqld_exporter && make
 	cd arm64/mysqld_exporter && make
@@ -253,7 +256,7 @@ maddy:
 .PHONY: all amd64 arm64 push pushd pull pulld dir \
 	loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
-	kafka_exporter jmx-exporter redis_exporter pgbackrest_exporter \
+	kafka_exporter jmx-exporter redis_exporter pgbackrest_exporter pg_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd k3s k3s-images k3s-bundle mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer tigerfs \
 	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy

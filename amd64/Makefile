@@ -11,7 +11,7 @@ default: build
 build: dir all
 all: prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter \
-	redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
+	redis_exporter pgbackrest_exporter pg_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
 	kafka sqlcmd tigerbeetle caddy
 dir:
 	mkdir -p ../dist/deb.amd64 ../dist/rpm.x86_64
@@ -36,6 +36,8 @@ keepalived_exporter:
 	cd keepalived_exporter && make
 pgbackrest_exporter:
 	cd pgbackrest_exporter && make
+pg_exporter:
+	cd pg_exporter && make
 mysqld_exporter:
 	cd mysqld_exporter && make
 redis_exporter:
@@ -142,7 +144,7 @@ tigerfs:
 
 .PHONY: all build loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
-	kafka_exporter redis_exporter pgbackrest_exporter \
+	kafka_exporter redis_exporter pgbackrest_exporter pg_exporter \
 	victoria-metrics victoria-logs pg_timetable duckdb etcd k3s k3s-images k3s-bundle mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
 	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-event-streamer tigerfs \
 	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude ccm asciinema opencode codex agentsview sabiql gost golang nodejs caddy headscale stalwart maddy

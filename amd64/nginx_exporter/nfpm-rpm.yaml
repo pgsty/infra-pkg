@@ -1,4 +1,4 @@
-name: "nginx_exporter"
+name: "nginx-exporter"
 arch: "amd64"
 platform: "linux"
 version: "v1.5.1"
@@ -8,6 +8,11 @@ maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Prometheus"
 homepage: "https://github.com/nginxinc/nginx-prometheus-exporter"
 license: "Apache-2.0"
+
+provides:
+  - nginx_exporter
+replaces:
+  - nginx_exporter
 
 contents:
 

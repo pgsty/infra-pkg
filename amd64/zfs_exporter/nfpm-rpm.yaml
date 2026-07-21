@@ -1,4 +1,4 @@
-name: "zfs_exporter"
+name: "zfs-exporter"
 arch: "amd64"
 platform: "linux"
 version: "v3.8.1"
@@ -8,6 +8,11 @@ maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Peter Fern / Waitingsong"
 homepage: "https://github.com/waitingsong/zfs_exporter"
 license: "MIT"
+
+provides:
+  - zfs_exporter
+replaces:
+  - zfs_exporter
 
 contents:
 

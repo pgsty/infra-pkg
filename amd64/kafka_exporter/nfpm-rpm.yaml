@@ -1,4 +1,4 @@
-name: "kafka_exporter"
+name: "kafka-exporter"
 arch: "amd64"
 platform: "linux"
 version: "v1.9.0"
@@ -8,6 +8,11 @@ maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "danielqsj"
 homepage: "https://github.com/danielqsj/kafka_exporter"
 license: "Apache-2.0"
+
+provides:
+  - kafka_exporter
+replaces:
+  - kafka_exporter
 
 contents:
 

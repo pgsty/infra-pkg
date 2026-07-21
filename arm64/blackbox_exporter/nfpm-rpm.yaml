@@ -1,4 +1,4 @@
-name: "blackbox_exporter"
+name: "blackbox-exporter"
 arch: "arm64"
 platform: "linux"
 version: "v0.28.0"
@@ -8,6 +8,11 @@ maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Prometheus"
 homepage: "https://github.com/prometheus/blackbox_exporter"
 license: "Apache-2.0"
+
+provides:
+  - blackbox_exporter
+replaces:
+  - blackbox_exporter
 
 contents:
 

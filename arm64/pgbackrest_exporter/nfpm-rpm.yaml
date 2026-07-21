@@ -1,4 +1,4 @@
-name: "pgbackrest_exporter"
+name: "pgbackrest-exporter"
 arch: "arm64"
 platform: "linux"
 version: "v0.23.0"
@@ -9,6 +9,11 @@ description: Prometheus exporter for pgBackRest
 vendor: "woblerr"
 homepage: "https://github.com/woblerr/pgbackrest_exporter"
 license: "MIT"
+
+provides:
+  - pgbackrest_exporter
+replaces:
+  - pgbackrest_exporter
 
 contents:
   - src: pgbackrest_exporter/pgbackrest_exporter

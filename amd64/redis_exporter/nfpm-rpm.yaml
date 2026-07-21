@@ -1,4 +1,4 @@
-name: "redis_exporter"
+name: "redis-exporter"
 arch: "amd64"
 platform: "linux"
 version: "v1.87.0"
@@ -8,6 +8,11 @@ maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "oliver006"
 homepage: "https://github.com/oliver006/redis_exporter"
 license: "Apache-2.0"
+
+provides:
+  - redis_exporter
+replaces:
+  - redis_exporter
 
 contents:
 

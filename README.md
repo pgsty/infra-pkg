@@ -20,17 +20,18 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [prometheus](https://github.com/prometheus/prometheus) : 3.13.1
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.33.1
-- [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
-- [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
-- [node_exporter](https://github.com/prometheus/node_exporter) : 1.12.1
-- [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
-- [keepalived_exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
-- [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter) 0.23.0
-- [mysqld_exporter](https://github.com/prometheus/mysqld_exporter) : 0.19.0
-- [redis_exporter](https://github.com/oliver006/redis_exporter) : 1.87.0
-- [kafka_exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
+- [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
+- [nginx-exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
+- [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
+- [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
+- [keepalived-exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
+- [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.23.0
+- [pg-exporter](https://github.com/pgsty/pg_exporter) : 1.4.0
+- [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.19.0
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.87.0
+- [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
-- [mongodb_exporter](https://github.com/percona/mongodb_exporter) : 0.51.0
+- [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.51.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.147.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.51.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.9.4
@@ -154,9 +155,6 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - https://github.com/dalibo/pev2/releases
 - [pig](https://github.com/pgsty/pig) : 1.5.1
   - amd64 & arm64: https://github.com/pgsty/pig/releases
-- [pg_exporter](https://github.com/pgsty/pg_exporter) : 1.3.0
-  - amd64 & arm64: https://github.com/pgsty/pg_exporter/releases
-
 --------
 
 ## Changelog

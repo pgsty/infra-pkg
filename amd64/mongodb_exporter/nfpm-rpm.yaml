@@ -1,4 +1,4 @@
-name: "mongodb_exporter"
+name: "mongodb-exporter"
 arch: "amd64"
 platform: "linux"
 version: "v0.51.0"
@@ -8,6 +8,11 @@ maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Percona"
 homepage: "https://github.com/percona/mongodb_exporter"
 license: "Apache-2.0"
+
+provides:
+  - mongodb_exporter
+replaces:
+  - mongodb_exporter
 
 contents:
 

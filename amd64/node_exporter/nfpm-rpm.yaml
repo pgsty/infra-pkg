@@ -1,4 +1,4 @@
-name: "node_exporter"
+name: "node-exporter"
 arch: "amd64"
 platform: "linux"
 version: "v1.12.1"
@@ -8,6 +8,11 @@ maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Prometheus"
 homepage: "https://github.com/prometheus/node_exporter"
 license: "Apache-2.0"
+
+provides:
+  - node_exporter
+replaces:
+  - node_exporter
 
 contents:
 
