@@ -7,7 +7,7 @@
 # Copyright (C) 2018-2025 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=claude
-VERSION=2.1.211
+VERSION=2.1.218
 PLATFORM=linux-x64
 INSTALLER_URL=https://claude.ai/install.sh
 BUCKET=https://downloads.claude.ai/claude-code-releases
