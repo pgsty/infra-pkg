@@ -28,25 +28,25 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.23.0
 - [pg-exporter](https://github.com/pgsty/pg_exporter) : 1.4.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.19.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.87.0
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.88.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.51.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.148.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.9.4
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.10.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.5
-- [etcd](https://github.com/etcd-io/etcd) : 3.7.0
+- [etcd](https://github.com/etcd-io/etcd) : 3.7.1
 - [k3s](https://github.com/k3s-io/k3s) : 1.36.2 (upstream v1.36.2+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.36.2%2Bk3s1) : 1.36.2 (amd64/arm64 system images)
 - [mtail](https://github.com/google/mtail) : 3.0.8
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.0
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.46.0
-- [pgstream](https://github.com/xataio/pgstream) 1.2.2
+- [dblab](https://github.com/danvergara/dblab) 0.47.0
+- [pgstream](https://github.com/xataio/pgstream) 1.2.4
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
-- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.3.20
+- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.1
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.0.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
@@ -62,25 +62,25 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [hugo](https://github.com/gohugoio/hugo) 0.164.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.40
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.10
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.11
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27
 - [vray](https://github.com/v2fly/v2ray-core) 5.51.2
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
 - [sabiql](https://github.com/riii111/sabiql) 1.15.1
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0-2 (bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/kenn-io/agentsview) 0.38.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.218
+- [agentsview](https://github.com/kenn-io/agentsview) 0.39.0
+- [claude](https://github.com/anthropics/claude-code) 2.1.220
 - [codex](https://github.com/openai/codex) 0.145.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.14
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.15
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.7.0 (external build)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
-- [postgrest](https://github.com/PostgREST/postgrest) 14.15
+- [postgrest](https://github.com/PostgREST/postgrest) 14.16
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.18.4
-- [uv](https://github.com/astral-sh/uv) 0.11.31
+- [opencode](https://github.com/anomalyco/opencode) 1.18.7
+- [uv](https://github.com/astral-sh/uv) 0.11.32
 - [golang](https://go.dev/dl/) 1.26.5
   - x86_64: https://go.dev/dl/go1.26.5.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.26.5.linux-arm64.tar.gz
@@ -104,21 +104,21 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.aarch64.rpm
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.2.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.2.0
-- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.0.13
-  - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.13/pg-hardstorage_1.0.13_amd64.deb
-  - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.13/pg-hardstorage_1.0.13_arm64.deb
-  - rpm amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.13/pg-hardstorage-1.0.13-1.x86_64.rpm
-  - rpm arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.13/pg-hardstorage-1.0.13-1.aarch64.rpm
+- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.0.17
+  - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage_1.0.17_amd64.deb
+  - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage_1.0.17_arm64.deb
+  - rpm amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage-1.0.17-1.x86_64.rpm
+  - rpm arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage-1.0.17-1.aarch64.rpm
 - [pgschema](https://github.com/pgplex/pgschema): 1.12.0
   - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.0/pgschema_1.12.0_amd64.deb
   - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.0/pgschema_1.12.0_arm64.deb
   - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.0/pgschema-1.12.0-1.x86_64.rpm
   - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.0/pgschema-1.12.0-1.aarch64.rpm
-- [crush](https://github.com/charmbracelet/crush): 0.86.0
-  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.86.0/crush_0.86.0_amd64.deb
-  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.86.0/crush_0.86.0_arm64.deb
-  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.86.0/crush-0.86.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.86.0/crush-0.86.0-1.aarch64.rpm
+- [crush](https://github.com/charmbracelet/crush): 0.87.0
+  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.87.0/crush_0.87.0_amd64.deb
+  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.87.0/crush_0.87.0_arm64.deb
+  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.87.0/crush-0.87.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.87.0/crush-0.87.0-1.aarch64.rpm
 - [minio](https://github.com/pgsty/minio): 20260618000000
   - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_arm64.deb
@@ -141,16 +141,16 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/1b6a188127eeaf9194f945eb6eb89a657e93c54c/code_1.130.0-1784734546_arm64.deb
   - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/1b6a188127eeaf9194f945eb6eb89a657e93c54c/code-1.130.0-1784734628.el8.x86_64.rpm
   - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/1b6a188127eeaf9194f945eb6eb89a657e93c54c/code-1.130.0-1784734597.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server) 4.129.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.129.0/code-server_4.129.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.129.0/code-server_4.129.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.129.0/code-server-4.129.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.129.0/code-server-4.129.0-arm64.rpm
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.7.2
-  - deb amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.2/cloudflared-linux-amd64.deb
-  - deb arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.2/cloudflared-linux-arm64.deb
-  - rpm amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.2/cloudflared-linux-x86_64.rpm
-  - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.2/cloudflared-linux-aarch64.rpm
+- [code-server](https://github.com/coder/code-server) 4.130.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server_4.130.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server_4.130.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server-4.130.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server-4.130.0-arm64.rpm
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.7.3
+  - deb amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-amd64.deb
+  - deb arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-arm64.deb
+  - rpm amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-x86_64.rpm
+  - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-aarch64.rpm
 - [pev2](https://github.com/dalibo/pev2/releases) 1.23.0
   - https://github.com/dalibo/pev2/releases
 - [pig](https://github.com/pgsty/pig) : 1.5.1
@@ -158,6 +158,36 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-07-28**
+
+| Name            | Old      | New      | Comment                              |
+|:----------------|:---------|:---------|:-------------------------------------|
+| agentsview      | 0.38.1   | 0.39.0   |                                      |
+| claude          | 2.1.218  | 2.1.220  | official manifest verified via proxy |
+| dblab           | 0.46.0   | 0.47.0   |                                      |
+| opencode        | 1.18.4   | 1.18.7   |                                      |
+| pgstream        | 1.2.2    | 1.2.4    |                                      |
+| postgrest       | 14.15    | 14.16    |                                      |
+| rainfrog        | 0.3.20   | 0.4.1    | minor release                        |
+| stalwart        | 0.16.14  | 0.16.15  |                                      |
+| pg-hardstorage  | 1.0.16   | 1.0.17   | downloaded directly                  |
+| crush           | 0.86.0   | 0.87.0   | downloaded directly                  |
+
+
+**2026-07-24**
+
+| Name            | Old             | New             | Comment                              |
+|:----------------|:----------------|:----------------|:-------------------------------------|
+| etcd            | 3.7.0           | 3.7.1           |                                      |
+| redis-exporter  | 1.87.0          | 1.88.0          |                                      |
+| VictoriaTraces  | 0.9.4           | 0.10.0          |                                      |
+| rustfs          | 1.0.0-beta.10   | 1.0.0-beta.11   | prerelease line; preview excluded    |
+| uv              | 0.11.31         | 0.11.32         |                                      |
+| pg-hardstorage  | 1.0.13          | 1.0.16          | downloaded directly                  |
+| code-server     | 4.129.0         | 4.130.0         | downloaded directly                  |
+| cloudflared     | 2026.7.2        | 2026.7.3        | downloaded directly                  |
 
 
 **2026-07-23**
