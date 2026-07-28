@@ -1,7 +1,7 @@
 name: "opencode"
 arch: "amd64"
 platform: "linux"
-version: "v1.18.4"
+version: "v1.18.7"
 release: "1"
 version_schema: semver
 description: Open-source AI coding assistant
