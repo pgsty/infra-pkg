@@ -74,7 +74,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [codex](https://github.com/openai/codex) 0.145.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.15
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
-- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.7.0 (external build)
+- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (external build)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [postgrest](https://github.com/PostgREST/postgrest) 14.16
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
@@ -153,7 +153,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-aarch64.rpm
 - [pev2](https://github.com/dalibo/pev2/releases) 1.23.0
   - https://github.com/dalibo/pev2/releases
-- [pig](https://github.com/pgsty/pig) : 1.5.1
+- [pig](https://github.com/pgsty/pig) : 1.6.0 (unreleased)
   - amd64 & arm64: https://github.com/pgsty/pig/releases
 --------
 
@@ -162,18 +162,20 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2026-07-28**
 
-| Name            | Old      | New      | Comment                              |
-|:----------------|:---------|:---------|:-------------------------------------|
-| agentsview      | 0.38.1   | 0.39.0   |                                      |
-| claude          | 2.1.218  | 2.1.220  | official manifest verified via proxy |
-| dblab           | 0.46.0   | 0.47.0   |                                      |
-| opencode        | 1.18.4   | 1.18.7   |                                      |
-| pgstream        | 1.2.2    | 1.2.4    |                                      |
-| postgrest       | 14.15    | 14.16    |                                      |
-| rainfrog        | 0.3.20   | 0.4.1    | minor release                        |
-| stalwart        | 0.16.14  | 0.16.15  |                                      |
-| pg-hardstorage  | 1.0.16   | 1.0.17   | downloaded directly                  |
-| crush           | 0.86.0   | 0.87.0   | downloaded directly                  |
+| Name            | Old      | New      | Comment                                                |
+|:----------------|:---------|:---------|:-------------------------------------------------------|
+| agentsview      | 0.38.1   | 0.39.0   |                                                        |
+| claude          | 2.1.218  | 2.1.220  | official manifest verified via proxy                   |
+| dblab           | 0.46.0   | 0.47.0   |                                                        |
+| opencode        | 1.18.4   | 1.18.7   |                                                        |
+| pgstream        | 1.2.2    | 1.2.4    |                                                        |
+| postgrest       | 14.15    | 14.16    |                                                        |
+| rainfrog        | 0.3.20   | 0.4.1    | minor release                                          |
+| stalwart        | 0.16.14  | 0.16.15  |                                                        |
+| pig             | 1.5.1    | 1.6.0    | unreleased                                             |
+| genai-toolbox   | 1.7.0    | 1.8.0    | source-built RPM/DEB; Rocky 8/9 and Debian 12 verified |
+| pg-hardstorage  | 1.0.16   | 1.0.17   | downloaded directly                                    |
+| crush           | 0.86.0   | 0.87.0   | downloaded directly                                    |
 
 
 **2026-07-24**
