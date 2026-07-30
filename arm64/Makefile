@@ -11,7 +11,7 @@ default: build
 build: dir all
 all: prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter kafka_exporter \
-	redis_exporter pgbackrest_exporter pg_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
+	redis_exporter pgbackrest_exporter victoria-metrics pg_timetable duckdb etcd ferretdb \
 	sqlcmd tigerbeetle caddy
 dir:
 	mkdir -p ../dist/deb.arm64 ../dist/rpm.aarch64

@@ -8,11 +8,11 @@
 #==============================================================#
 REPONAME=pgsty/pg_exporter
 PACKAGE=pg_exporter
-VERSION=1.4.0
+VERSION=1.4.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-$(VERSION).linux-amd64.tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256=113dfe70d4f780a456c05ca6b731f96c1013bf35ecb87d75c443fe2bac7e333b
+SHA256=f2f952dbcf1ae09027bcee4ea4921d2b34f9f58ffbc7e3a2d42113f2cc94a340
 CURL=curl -fSL --retry 3
 
 
