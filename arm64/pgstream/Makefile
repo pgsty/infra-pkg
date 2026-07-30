@@ -8,7 +8,7 @@
 #==============================================================#
 REPONAME=xataio/pgstream
 PACKAGE=pgstream
-VERSION=1.2.4
+VERSION=1.2.5
 TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 FILENAME=$(PACKAGE).linux.arm64
