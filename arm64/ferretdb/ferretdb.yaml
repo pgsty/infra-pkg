@@ -1,4 +1,4 @@
-name: "ferretdb2"
+name: "ferretdb"
 arch: "arm64"
 platform: "linux"
 version: "v2.7.0"
