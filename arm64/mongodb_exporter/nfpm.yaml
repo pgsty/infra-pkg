@@ -1,7 +1,8 @@
 name: "mongodb-exporter"
 arch: "arm64"
 platform: "linux"
-version: "v0.51.0"
+version: "v0.52.0"
+release: "1"
 version_schema: semver
 description: A Prometheus exporter for MongoDB including sharding, replication and storage engines
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -9,32 +10,34 @@ vendor: "Percona"
 homepage: "https://github.com/percona/mongodb_exporter"
 license: "Apache-2.0"
 
-provides:
-  - mongodb_exporter
-replaces:
-  - mongodb_exporter
-
 contents:
 
+  # binaries
   - src: mongodb_exporter/mongodb_exporter
     dst: /usr/bin/mongodb_exporter
     file_info:
       mode: 0755
 
+  # configuration
   - src: src/default
     dst: /etc/default/mongodb_exporter
     type: config|noreplace
     file_info:
-      mode: 0700
-      owner: prometheus
-      group: prometheus
+      mode: 0640
+      owner: root
+      group: root
 
+  # service
   - src: src/service
     dst: /usr/lib/systemd/system/mongodb_exporter.service
-    type: config|noreplace
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
+  # documentation
   - src: mongodb_exporter/LICENSE
-    dst: /usr/share/doc/mongodb_exporter/LICENSE
+    dst: /usr/share/doc/mongodb-exporter/LICENSE
     file_info:
       mode: 0644
 
@@ -42,4 +45,11 @@ scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
-  # postremove:  src/postremove.sh
+  postremove:  src/postremove.sh
+
+overrides:
+  rpm:
+    provides:
+      - mongodb_exporter
+    replaces:
+      - mongodb_exporter

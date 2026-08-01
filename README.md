@@ -30,7 +30,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.88.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
-- [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.51.0
+- [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.52.0
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.148.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.10.0
@@ -169,9 +169,10 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2026-08-01**
 
-| Name       | Old    | New    | Comment                        |
-|:-----------|:-------|:-------|:-------------------------------|
-| prometheus | 3.13.1 | 3.13.2 | security and stability release |
+| Name             | Old    | New    | Comment                              |
+|:-----------------|:-------|:-------|:-------------------------------------|
+| prometheus       | 3.13.1 | 3.13.2 | security and stability release       |
+| mongodb-exporter | 0.51.0 | 0.52.0 | formal recipe update; build deferred |
 
 
 **2026-07-30**
