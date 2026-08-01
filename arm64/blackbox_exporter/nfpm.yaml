@@ -2,6 +2,7 @@ name: "blackbox-exporter"
 arch: "arm64"
 platform: "linux"
 version: "v0.28.0"
+release: "2"
 version_schema: semver
 description: Prometheus Blackbox prober exporter,  allows blackbox probing of endpoints over HTTP, HTTPS, DNS, TCP, ICMP and gRPC.
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -11,34 +12,57 @@ license: "Apache-2.0"
 
 contents:
 
+  # binaries
   - src: blackbox_exporter/blackbox_exporter
     dst: /usr/bin/blackbox_exporter
     file_info:
       mode: 0755
 
+  # configuration
   - src: blackbox_exporter/blackbox.yml
     dst: /etc/blackbox.yml
     type: config|noreplace
     file_info:
-      mode: 0700
-      owner: prometheus
+      mode: 0640
+      owner: root
       group: prometheus
 
   - src: src/default
     dst: /etc/default/blackbox_exporter
     type: config|noreplace
     file_info:
-      mode: 0700
-      owner: prometheus
-      group: prometheus
+      mode: 0644
+      owner: root
+      group: root
 
+  # service
   - src: src/service
-    dst: /lib/systemd/system/blackbox_exporter.service
-    type: config|noreplace
+    dst: /usr/lib/systemd/system/blackbox_exporter.service
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
+  # documentation
+  - src: blackbox_exporter/LICENSE
+    dst: /usr/share/doc/blackbox-exporter/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: blackbox_exporter/NOTICE
+    dst: /usr/share/doc/blackbox-exporter/NOTICE
+    file_info:
+      mode: 0644
 
 scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
-  # postremove:  src/postremove.sh
+  postremove:  src/postremove.sh
+
+overrides:
+  rpm:
+    provides:
+      - blackbox_exporter
+    replaces:
+      - blackbox_exporter
