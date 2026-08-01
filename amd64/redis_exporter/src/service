@@ -7,9 +7,7 @@ After=network.target
 EnvironmentFile=-/etc/default/redis_exporter
 User=prometheus
 ExecStart=/usr/bin/redis_exporter $REDIS_EXPORTER_OPTS
-ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
-
 
 [Install]
 WantedBy=multi-user.target

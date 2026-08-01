@@ -1,40 +1,43 @@
 name: "redis-exporter"
-arch: "amd64"
+arch: "arm64"
 platform: "linux"
 version: "v1.88.0"
+release: "2"
 version_schema: semver
 description: "Prometheus Exporter for Redis Metrics. Supports Redis 2.x, 3.x, 4.x, 5.x, 6.x, and 7.x"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "oliver006"
 homepage: "https://github.com/oliver006/redis_exporter"
-license: "Apache-2.0"
-
-provides:
-  - redis_exporter
-replaces:
-  - redis_exporter
+license: "MIT"
 
 contents:
 
+  # binaries
   - src: redis_exporter/redis_exporter
     dst: /usr/bin/redis_exporter
     file_info:
       mode: 0755
 
+  # configuration
   - src: src/default
     dst: /etc/default/redis_exporter
     type: config|noreplace
     file_info:
-      mode: 0700
-      owner: prometheus
-      group: prometheus
+      mode: 0640
+      owner: root
+      group: root
 
+  # service
   - src: src/service
     dst: /usr/lib/systemd/system/redis_exporter.service
-    type: config|noreplace
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
+  # documentation
   - src: redis_exporter/LICENSE
-    dst: /usr/share/doc/redis_exporter/LICENSE
+    dst: /usr/share/doc/redis-exporter/LICENSE
     file_info:
       mode: 0644
 
@@ -42,4 +45,11 @@ scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
-  # postremove:  src/postremove.sh
+  postremove:  src/postremove.sh
+
+overrides:
+  rpm:
+    provides:
+      - redis_exporter
+    replaces:
+      - redis_exporter
