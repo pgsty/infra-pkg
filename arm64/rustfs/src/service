@@ -11,7 +11,8 @@ User=rustfs
 Group=rustfs
 
 WorkingDirectory=/usr/bin
-EnvironmentFile=-/etc/default/rustfs
+EnvironmentFile=/etc/default/rustfs
+ExecStartPre=/usr/libexec/rustfs/check-config
 ExecStart=/usr/bin/rustfs $RUSTFS_VOLUMES
 
 LimitNOFILE=1048576

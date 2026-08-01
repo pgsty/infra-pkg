@@ -61,7 +61,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [hugo](https://github.com/gohugoio/hugo) 0.164.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.40
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.11
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.12
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27
 - [vray](https://github.com/v2fly/v2ray-core) 5.51.2
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
@@ -169,9 +169,10 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2026-08-02**
 
-| Name                | Old    | New    | Comment                              |
-|:--------------------|:-------|:-------|:-------------------------------------|
-| pgbackrest-exporter | 0.23.0 | 0.24.0 | formal recipe update; build deferred |
+| Name                | Old             | New             | Comment                                      |
+|:--------------------|:----------------|:----------------|:---------------------------------------------|
+| pgbackrest-exporter | 0.23.0          | 0.24.0          | formal recipe update; build deferred         |
+| rustfs              | 1.0.0-beta.11   | 1.0.0-beta.12   | prerelease line; binary/build deferred       |
 
 
 **2026-08-01**
