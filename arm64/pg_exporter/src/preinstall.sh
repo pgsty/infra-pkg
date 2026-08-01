@@ -1,8 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
-# create a group & user named prometheus if not exists
-# home is set to /var/lib/prometheus (where libpq looks for ~/.pgpass),
-# but the directory itself is not created by this package
-getent group prometheus >/dev/null || groupadd -r prometheus ; /bin/true
-getent passwd prometheus >/dev/null || useradd -r -g prometheus -s /sbin/nologin -c "Prometheus services" -d /var/lib/prometheus prometheus
+if [ "${DPKG_MAINTSCRIPT_NAME:-}" = "preinst" ] && command -v dpkg-maintscript-helper >/dev/null 2>&1; then
+    dpkg-maintscript-helper rm_conffile /lib/systemd/system/pg_exporter.service 1.4.1-2~ pg-exporter -- "$@" || exit 1
+fi
+
+if ! getent group prometheus >/dev/null 2>&1; then
+    groupadd -r prometheus || exit 1
+fi
+if ! getent passwd prometheus >/dev/null 2>&1; then
+    useradd -r -g prometheus -d /var/lib/prometheus -M -s /sbin/nologin -c "Prometheus services" prometheus || exit 1
+fi
+
 exit 0

@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2026-07-20
-# Mtime     :   2026-07-20
+# Mtime     :   2026-08-02
 # Desc      :   Makefile shortcuts for pg-exporter rpm/deb build
 # Path      :   arm64/pg_exporter/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
@@ -27,7 +27,7 @@ link:
 
 # get latest release info
 meta:
-	curl --silent "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # copy versioned tarball from the shared cache, or fetch it from upstream
 download:
@@ -50,9 +50,11 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config nfpm-rpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
 deb:
-	nfpm package --config nfpm-deb.yaml --packager deb --target ../../dist/deb.arm64/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.arm64/
 
+
+.NOTPARALLEL:
 
 .PHONY: all get link meta download verify extract clean build rpm deb
