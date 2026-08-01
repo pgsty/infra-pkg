@@ -7,7 +7,6 @@ After=network.target
 EnvironmentFile=-/etc/default/zfs_exporter
 User=prometheus
 ExecStart=/usr/bin/zfs_exporter $zfs_exporter_OPTS
-ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
 RestartSec=5s
 
