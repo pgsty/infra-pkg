@@ -21,7 +21,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.33.1
 - [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
-- [nginx-exporter](https://github.com/nginxinc/nginx-prometheus-exporter) : 1.5.1
+- [nginx-exporter](https://github.com/nginx/nginx-prometheus-exporter) : 1.5.1
 - [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
 - [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived-exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
