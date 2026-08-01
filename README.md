@@ -25,7 +25,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
 - [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived-exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
-- [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.23.0
+- [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.19.0
 - [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.88.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
@@ -165,6 +165,13 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-08-02**
+
+| Name                | Old    | New    | Comment                              |
+|:--------------------|:-------|:-------|:-------------------------------------|
+| pgbackrest-exporter | 0.23.0 | 0.24.0 | formal recipe update; build deferred |
 
 
 **2026-08-01**

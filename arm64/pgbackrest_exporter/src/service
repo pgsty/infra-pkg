@@ -6,8 +6,8 @@ After=network.target
 [Service]
 EnvironmentFile=-/etc/default/pgbackrest_exporter
 User=root
-ExecStart=/usr/bin/pgbackrest_exporter $EXPORTER_OPTS
-Restart=always
+ExecStart=/usr/bin/pgbackrest_exporter $PGBACKREST_EXPORTER_OPTS
+Restart=on-failure
 RestartSec=5s
 
 [Install]
