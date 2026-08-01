@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2024-10-15
+# Mtime     :   2026-08-01
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
@@ -9,6 +9,7 @@
 REPONAME="prometheus/pushgateway"
 PACKAGE="pushgateway"
 VERSION=1.11.3
+SHA256=727ff0098943657b44c21a029be9d9fcc4f249ec72dcb9f0a34aa66b2d5f1ecc
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME="$(PACKAGE)-$(VERSION).linux-arm64"
 FILENAME="$(DIRNAME).tar.gz"
@@ -22,16 +23,17 @@ get: download extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -SL $(WEB_URL) -o $(FILENAME)
+	@echo curl -fSL --retry 3 $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --silent "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -SL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL --retry 3 $(WEB_URL) -o $(FILENAME); fi
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 # extract tarball content to current directory
 extract:
@@ -45,9 +47,11 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config nfpm-rpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
 deb:
-	nfpm package --config nfpm-deb.yaml --packager deb --target ../../dist/deb.arm64/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.arm64/
 
+
+.NOTPARALLEL:
 
 .PHONY: all get link meta download extract clean build rpm deb

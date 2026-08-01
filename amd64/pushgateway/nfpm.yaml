@@ -2,6 +2,7 @@ name: "pushgateway"
 arch: "amd64"
 platform: "linux"
 version: "v1.11.3"
+release: "2"
 version_schema: semver
 description: Prometheus pushgateway
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -11,27 +12,37 @@ license: "Apache-2.0"
 
 contents:
 
-  # 1 binary files
+  # binaries
   - src: pushgateway/pushgateway
     dst: /usr/bin/pushgateway
     file_info:
       mode: 0755
 
-  # 2 Config files
+  # configuration
   - src: src/default
     dst: /etc/default/pushgateway
     type: config|noreplace
     file_info:
-      mode: 0700
-      owner: prometheus
-      group: prometheus
+      mode: 0644
+      owner: root
+      group: root
 
+  # service
   - src: src/service
     dst: /usr/lib/systemd/system/pushgateway.service
-    type: config|noreplace
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
+  # documentation
   - src: pushgateway/LICENSE
     dst: /usr/share/doc/pushgateway/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: pushgateway/NOTICE
+    dst: /usr/share/doc/pushgateway/NOTICE
     file_info:
       mode: 0644
 
@@ -39,4 +50,4 @@ scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
-  # postremove:  src/postremove.sh
+  postremove:  src/postremove.sh
