@@ -1,17 +1,18 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2023-10-05
-# Mtime     :   2023-10-05
+# Mtime     :   2026-08-01
 # Desc      :   Makefile shortcuts for rpm building
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-REPONAME="danielqsj/kafka_exporter"
-PACKAGE="kafka_exporter"
+REPONAME=danielqsj/kafka_exporter
+PACKAGE=kafka_exporter
 VERSION=1.9.0
-RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
-DIRNAME="$(PACKAGE)-$(VERSION).linux-arm64"
-FILENAME="$(DIRNAME).tar.gz"
+SHA256=b6991fcb50d2dc87fde02e003dc8c1b742022ab3becf30e4bb9979b22c1d37d8
+RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
+DIRNAME=$(PACKAGE)-$(VERSION).linux-arm64
+FILENAME=$(DIRNAME).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
 
@@ -22,16 +23,17 @@ get: download extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -SL $(WEB_URL) -o $(FILENAME)
+	@echo curl -fSL --retry 3 $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --silent "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -SL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL --retry 3 $(WEB_URL) -o $(FILENAME); fi
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 # extract tarball content to current directory
 extract:
@@ -45,9 +47,11 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config nfpm-rpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
 deb:
-	nfpm package --config nfpm-deb.yaml --packager deb --target ../../dist/deb.arm64/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.arm64/
 
+
+.NOTPARALLEL:
 
 .PHONY: all get link meta download extract clean build rpm deb
