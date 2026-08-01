@@ -17,7 +17,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.13.1
+- [prometheus](https://github.com/prometheus/prometheus) : 3.13.2
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.33.1
 - [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
@@ -165,6 +165,13 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-08-01**
+
+| Name       | Old    | New    | Comment                        |
+|:-----------|:-------|:-------|:-------------------------------|
+| prometheus | 3.13.1 | 3.13.2 | security and stability release |
 
 
 **2026-07-30**

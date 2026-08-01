@@ -8,6 +8,7 @@ After=network.target
 [Service]
 EnvironmentFile=-/etc/default/prometheus
 User=prometheus
+Group=prometheus
 ExecStart=/usr/bin/prometheus $PROMETHEUS_OPTS
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always

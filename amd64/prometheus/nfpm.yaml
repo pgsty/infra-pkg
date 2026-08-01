@@ -1,7 +1,7 @@
 name: "prometheus"
 arch: "amd64"
 platform: "linux"
-version: "v3.13.1"
+version: "v3.13.2"
 release: "1"
 version_schema: semver
 description: The Prometheus monitoring system and time series database.
@@ -12,7 +12,7 @@ license: "Apache-2.0"
 
 contents:
 
-  # 2 binary files
+  # binaries
   - src: prometheus/prometheus
     dst: /usr/bin/prometheus
     file_info:
@@ -23,38 +23,53 @@ contents:
     file_info:
       mode: 0755
 
-  # config directory
+  # configuration
   - dst: /etc/prometheus/
     type: dir
     file_info:
-      mode: 0700
-      owner: prometheus
+      mode: 0750
+      owner: root
       group: prometheus
 
-
-  # 3 Config files
   - src: prometheus/prometheus.yml
     dst: /etc/prometheus/prometheus.yml
     type: config|noreplace
     file_info:
-      mode: 0700
-      owner: prometheus
+      mode: 0640
+      owner: root
       group: prometheus
 
   - src: src/default
     dst: /etc/default/prometheus
     type: config|noreplace
     file_info:
-      mode: 0700
+      mode: 0644
+      owner: root
+      group: root
+
+  # data
+  - dst: /var/lib/prometheus/
+    type: dir
+    file_info:
+      mode: 0750
       owner: prometheus
       group: prometheus
 
   - src: src/service
-    dst: /lib/systemd/system/prometheus.service
-    type: config|noreplace
+    dst: /usr/lib/systemd/system/prometheus.service
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
+  # documentation
   - src: prometheus/LICENSE
     dst: /usr/share/doc/prometheus/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: prometheus/NOTICE
+    dst: /usr/share/doc/prometheus/NOTICE
     file_info:
       mode: 0644
 
@@ -63,4 +78,4 @@ scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
-  #postremove:  src/postremove.sh
+  postremove:  src/postremove.sh
