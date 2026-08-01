@@ -4,11 +4,12 @@ Documentation=https://github.com/XTLS/Xray-core
 After=network.target nss-lookup.target
 
 [Service]
-User=nobody
+User=xray
+Group=xray
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/xray run -config /etc/xray.json
+ExecStart=/usr/bin/xray run -config /etc/xray.json
 Restart=on-failure
 RestartPreventExitStatus=23
 
