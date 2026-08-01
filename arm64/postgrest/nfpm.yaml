@@ -2,49 +2,76 @@ name: "postgrest"
 arch: "arm64"
 platform: "linux"
 version: "v14.16"
-release: "1"
+release: "2"
 version_schema: semver
 description: PostgREST serves a fully RESTful API from any existing PostgreSQL database.
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "PostgREST"
 homepage: "https://github.com/PostgREST/postgrest"
 license: "MIT"
-recommends:
-  - libpq5
 
 contents:
 
-  # binary file
+  # binaries
   - src: postgrest/postgrest
     dst: /usr/bin/postgrest
     file_info:
       mode: 0755
 
-  # config directory
-  - dst: /etc/postgrest/
+  # configuration
+  - dst: /etc/postgrest
     type: dir
     file_info:
-      mode: 0755
+      mode: 0750
+      owner: root
+      group: postgrest
 
-  # config file
   - src: src/postgrest.conf
     dst: /etc/postgrest/postgrest.conf
     type: config|noreplace
     file_info:
       mode: 0640
+      owner: root
+      group: postgrest
 
-  # default environment file
   - src: src/default
     dst: /etc/default/postgrest
     type: config|noreplace
     file_info:
       mode: 0640
+      owner: root
+      group: root
 
-  # systemd service file
+  # service
   - src: src/service
-    dst: /lib/systemd/system/postgrest.service
-    type: config|noreplace
+    dst: /usr/lib/systemd/system/postgrest.service
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+  # documentation
+  - src: src/LICENSE
+    dst: /usr/share/doc/postgrest/LICENSE
+    file_info:
+      mode: 0644
 
 scripts:
+  preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
-  preremove: src/preremove.sh
+  preremove:   src/preremove.sh
+  postremove:  src/postremove.sh
+
+overrides:
+  deb:
+    depends:
+      - "libc6 (>= 2.34)"
+      - libgmp10
+      - libpq5
+      - zlib1g
+  rpm:
+    depends:
+      - "glibc >= 2.34"
+      - gmp
+      - libpq
+      - zlib
