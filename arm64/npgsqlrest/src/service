@@ -8,6 +8,8 @@ After=network.target postgresql.service
 [Service]
 Type=simple
 EnvironmentFile=-/etc/default/npgsqlrest
+User=npgsqlrest
+Group=npgsqlrest
 WorkingDirectory=/etc/npgsqlrest
 ExecStart=/usr/bin/npgsqlrest appsettings.json
 Restart=always

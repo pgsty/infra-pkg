@@ -2,7 +2,7 @@ name: "npgsqlrest"
 arch: "amd64"
 platform: "linux"
 version: "v3.21.0"
-release: "1"
+release: "2"
 version_schema: semver
 description: NpgsqlRest automatically generates REST API from PostgreSQL database.
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -12,37 +12,60 @@ license: "MIT"
 
 contents:
 
-  # binary file
+  # binaries
   - src: npgsqlrest/npgsqlrest
     dst: /usr/bin/npgsqlrest
     file_info:
       mode: 0755
 
-  # config directory
-  - dst: /etc/npgsqlrest/
+  # configuration
+  - dst: /etc/npgsqlrest
     type: dir
     file_info:
-      mode: 0755
+      mode: 0750
+      owner: root
+      group: npgsqlrest
 
-  # config file
   - src: src/appsettings.json
     dst: /etc/npgsqlrest/appsettings.json
     type: config|noreplace
     file_info:
       mode: 0640
+      owner: root
+      group: npgsqlrest
 
-  # default environment file
   - src: src/default
     dst: /etc/default/npgsqlrest
     type: config|noreplace
     file_info:
       mode: 0640
+      owner: root
+      group: root
 
-  # systemd service file
+  # service
   - src: src/service
-    dst: /lib/systemd/system/npgsqlrest.service
-    type: config|noreplace
+    dst: /usr/lib/systemd/system/npgsqlrest.service
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+  # documentation
+  - src: src/LICENSE
+    dst: /usr/share/doc/npgsqlrest/LICENSE
+    file_info:
+      mode: 0644
 
 scripts:
+  preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
-  preremove: src/preremove.sh
+  preremove:   src/preremove.sh
+  postremove:  src/postremove.sh
+
+overrides:
+  deb:
+    depends:
+      - "libc6 (>= 2.34)"
+  rpm:
+    depends:
+      - "glibc >= 2.34"
