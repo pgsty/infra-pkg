@@ -1,11 +1,15 @@
 #!/bin/sh
 
 case "$1" in
-    remove|0)
-        systemctl --no-reload disable --now mysqld_exporter.service &>/dev/null || :
+    remove)
+        if command -v systemctl >/dev/null 2>&1; then
+            systemctl stop mysqld_exporter.service >/dev/null 2>&1 || :
+        fi
         ;;
-    *)
-        exit 0
+    0)
+        if command -v systemctl >/dev/null 2>&1; then
+            systemctl --no-reload disable --now mysqld_exporter.service >/dev/null 2>&1 || :
+        fi
         ;;
 esac
 
