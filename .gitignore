@@ -16,6 +16,10 @@ amd64/ccm
 CLAUDE.md
 AGENTS.md
 *.tar.gz
+__pycache__/
+*.pyc
 
 
-bin/
+bin/*
+!bin/lint_specs.py
+!bin/nfpm

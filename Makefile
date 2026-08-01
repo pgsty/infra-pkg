@@ -2,7 +2,7 @@
 # File      :   Makefile
 # Desc      :   pgsty/pkg repo shortcuts
 # Ctime     :   2024-07-28
-# Mtime     :   2026-07-20
+# Mtime     :   2026-08-01
 # Path      :   Makefile
 # Author    :   Ruohang Feng (rh@vonng.com)
 # License   :   AGPLv3
@@ -19,6 +19,9 @@ amd64:
 arm64:
 	cd arm64 && make
 
+lint:
+	python3 bin/lint_specs.py
+
 
 ###############################################################
 #                        2. Syncing                           #
@@ -32,7 +35,7 @@ pull:
 pulld:
 	rsync -avc --delete $(DEVEL_PATH)/ ./
 dir:
-	mkdir -p dist dist/{rpm.x86_64,rpm.aarch64,deb.amd64,deb.arm64}
+	mkdir -p dist/rpm.x86_64 dist/rpm.aarch64 dist/deb.amd64 dist/deb.arm64 dist/noarch
 
 
 ###############################################################
@@ -253,10 +256,10 @@ maddy:
 ###############################################################
 #                         Inventory                           #
 ###############################################################
-.PHONY: all amd64 arm64 push pushd pull pulld dir \
+.PHONY: all amd64 arm64 lint push pushd pull pulld dir \
 	loki prometheus alertmanager pushgateway blackbox_exporter \
 	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
 	kafka_exporter jmx-exporter redis_exporter pgbackrest_exporter pg_exporter \
-	victoria-metrics victoria-logs pg_timetable duckdb etcd k3s k3s-images k3s-bundle mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
-	ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer tigerfs \
+	victoria victoria-metrics victoria-logs victoria-traces pg_timetable duckdb etcd k3s k3s-images k3s-bundle mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
+	grafana-ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer tigerfs \
 	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy

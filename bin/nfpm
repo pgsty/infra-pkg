@@ -1,0 +1,31 @@
+#!/bin/sh
+set -eu
+
+script_dir=$(CDPATH='' cd -P "$(dirname "$0")" && pwd)
+expected=$(sed -n '1p' "$script_dir/../.nfpm-version")
+nfpm_bin=${NFPM_BIN:-}
+if [ -z "$nfpm_bin" ]; then
+    nfpm_bin=$(command -v nfpm || true)
+fi
+if [ -z "$nfpm_bin" ]; then
+    echo "nfpm $expected is required but nfpm was not found" >&2
+    exit 127
+fi
+if [ "$nfpm_bin" -ef "$script_dir/nfpm" ]; then
+    echo "nfpm resolves to this wrapper; set NFPM_BIN to the real nfpm binary" >&2
+    exit 2
+fi
+
+version_output=$("$nfpm_bin" --version 2>&1)
+actual=$(printf '%s\n' "$version_output" | sed -n 's/^GitVersion:[[:space:]]*v\{0,1\}\([^[:space:]]*\).*/\1/p' | sed -n '1p')
+if [ -z "$actual" ] || [ "$actual" = "dev" ]; then
+    if command -v go >/dev/null 2>&1; then
+        actual=$(go version -m "$nfpm_bin" 2>/dev/null | awk '$1 == "mod" && $2 == "github.com/goreleaser/nfpm/v2" { sub(/^v/, "", $3); print $3; exit }')
+    fi
+fi
+if [ "$actual" != "$expected" ]; then
+    echo "nfpm version mismatch: expected $expected, found ${actual:-unknown} ($nfpm_bin)" >&2
+    exit 2
+fi
+
+exec "$nfpm_bin" "$@"
