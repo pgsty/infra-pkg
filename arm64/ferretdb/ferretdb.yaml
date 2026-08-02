@@ -1,17 +1,14 @@
-name: "ferretdb"
+name: "ferretdb2"
 arch: "arm64"
 platform: "linux"
 version: "v2.7.0"
+release: "2"
 version_schema: semver
 description: A truly Open Source MongoDB alternative
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "FerretDB"
 homepage: "https://github.com/FerretDB/FerretDB"
 license: "Apache-2.0"
-
-rpm:
-  prefixes:
-    - /usr/bin
 
 contents:
 
@@ -21,6 +18,6 @@ contents:
       mode: 0755
 
   - src: LICENSE
-    dst: /usr/share/doc/ferretdb/LICENSE
+    dst: /usr/share/doc/ferretdb2/LICENSE
     file_info:
       mode: 0644

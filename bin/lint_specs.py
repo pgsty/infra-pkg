@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ARCHES = ("amd64", "arm64", "noarch")
 SHARED_SOURCE_EXCEPTIONS = {("k3s", Path("AIRGAP.md"))}
 # Published package names are an upgrade ABI; v2ray historically shipped as vray.
-PACKAGE_NAME_ALIASES = {"v2ray": {"vray"}}
+PACKAGE_NAME_ALIASES = {"v2ray": {"vray"}, "ferretdb": {"ferretdb2"}}
 PACKAGE_FORMATS = {"deb", "rpm"}
 SINGLE_ARCH_PACKAGE_EXCEPTIONS = {"kafka"}
 OVERRIDE_LIST_FIELDS = {
