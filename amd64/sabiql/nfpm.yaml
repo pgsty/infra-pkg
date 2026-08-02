@@ -2,9 +2,9 @@ name: "sabiql"
 arch: "amd64"
 platform: "linux"
 version: "v1.15.1"
-release: "1"
+release: "2"
 version_schema: semver
-description: A modern SQL client for PostgreSQL and MySQL.
+description: A modern SQL client for PostgreSQL.
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "riii111"
 homepage: "https://github.com/riii111/sabiql"
@@ -19,3 +19,18 @@ contents:
     dst: /usr/bin/sabiql
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/sabiql/LICENSE
+    file_info:
+      mode: 0644
+
+overrides:
+  deb:
+    depends:
+      - postgresql-client
+      - "libc6 (>= 2.34)"
+  rpm:
+    depends:
+      - postgresql
+      - "glibc >= 2.34"
