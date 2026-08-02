@@ -156,11 +156,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code_1.131.0-1785237876_arm64.deb
   - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code-1.131.0-1785237908.el8.x86_64.rpm
   - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code-1.131.0-1785237927.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server) 4.130.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server_4.130.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server_4.130.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server-4.130.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server-4.130.0-arm64.rpm
+- [code-server](https://github.com/coder/code-server): 4.131.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server_4.131.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server_4.131.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server-4.131.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server-4.131.0-arm64.rpm
 - [cloudflared](https://github.com/cloudflare/cloudflared): 2026.7.3
   - deb amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-amd64.deb
   - deb arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-arm64.deb
@@ -177,6 +177,13 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-08-03**
+
+| Name        | Old     | New     | Comment                                      |
+|:------------|:--------|:--------|:---------------------------------------------|
+| code-server | 4.130.0 | 4.131.0 | direct-download metadata; artifacts deferred |
 
 
 **2026-08-02**
