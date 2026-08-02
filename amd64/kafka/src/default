@@ -1,1 +1,17 @@
-KAFKA_EXPORTER_OPTS=""
+# Runtime logs written by the Kafka launch scripts.
+LOG_DIR="/var/log/kafka"
+
+# Upgrade note: package release 1 stored KRaft data under /tmp/kafka. Before
+# the first release-2 start, stop Kafka and copy the contents of each old
+# kraft-combined-logs and kraft-metadata-logs directory into its matching
+# /var/lib/kafka directory, preserving kafka ownership. If a retained, locally
+# modified server.properties still points to /tmp/kafka, update log.dirs and
+# metadata.log.dir to the matching /var/lib paths before start. Custom paths
+# need no change.
+
+# KRaft storage is deliberately not initialized during package installation.
+# For the packaged single-node default, run these commands as user kafka:
+#   KAFKA_CLUSTER_ID=$(/opt/kafka/bin/kafka-storage.sh random-uuid)
+#   /opt/kafka/bin/kafka-storage.sh format \
+#     -t "$KAFKA_CLUSTER_ID" -c /etc/kafka/server.properties
+# Multi-node deployments must use their own shared cluster identity and voters.

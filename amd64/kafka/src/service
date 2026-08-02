@@ -1,12 +1,14 @@
 [Unit]
-Requires=network.target remote-fs.target
-After=network.target remote-fs.target
+Description=Apache Kafka KRaft Server
+Documentation=https://kafka.apache.org/documentation/
+After=network.target
 
 [Service]
 Type=simple
 User=kafka
+Group=kafka
+EnvironmentFile=-/etc/default/kafka
 ExecStart=/opt/kafka/bin/kafka-server-start.sh /etc/kafka/server.properties
-ExecStop=/opt/kafka/bin/kafka-server-stop.sh
 Restart=on-abnormal
 
 [Install]

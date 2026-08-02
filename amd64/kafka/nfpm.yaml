@@ -1,0 +1,89 @@
+name: "kafka"
+arch: "all"
+platform: "linux"
+version: "v4.3.1"
+release: "2"
+version_schema: semver
+description: An open-source distributed event streaming platform
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Apache Software Foundation"
+homepage: "https://kafka.apache.org/"
+license: "Apache-2.0"
+
+contents:
+
+  # application
+  - src: "kafka/"
+    dst: "/opt/kafka"
+    type: tree
+    file_info:
+      owner: root
+      group: root
+
+  # configuration
+  - dst: /etc/kafka/
+    type: dir
+    file_info:
+      mode: 0750
+      owner: root
+      group: kafka
+
+  - src: src/server.properties
+    dst: /etc/kafka/server.properties
+    type: config|noreplace
+    file_info:
+      mode: 0640
+      owner: root
+      group: kafka
+
+  - src: src/default
+    dst: /etc/default/kafka
+    type: config|noreplace
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+  # service
+  - src: src/service
+    dst: /usr/lib/systemd/system/kafka.service
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+  # data and logs
+  - dst: /var/lib/kafka/kraft-combined-logs/
+    type: dir
+    file_info:
+      mode: 0750
+      owner: kafka
+      group: kafka
+
+  - dst: /var/lib/kafka/kraft-metadata-logs/
+    type: dir
+    file_info:
+      mode: 0750
+      owner: kafka
+      group: kafka
+
+  - dst: /var/log/kafka/
+    type: dir
+    file_info:
+      mode: 0750
+      owner: kafka
+      group: kafka
+
+scripts:
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  postremove:  src/postremove.sh
+
+overrides:
+  deb:
+    depends:
+      - default-jre-headless (>= 2:1.17) | java17-runtime-headless
+  rpm:
+    depends:
+      - (java-17-openjdk-headless or java-21-openjdk-headless)
