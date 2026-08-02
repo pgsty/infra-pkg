@@ -135,7 +135,10 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.aarch64.rpm
 - [sealos](https://github.com/labring/sealos): 5.1.1
-    - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.1.1
+  - deb amd64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_amd64.deb
+  - deb arm64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_arm64.deb
+  - rpm amd64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_amd64.rpm
+  - rpm arm64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_arm64.rpm
 - [rclone](https://github.com/rclone/rclone/releases/) 1.75.0
   - deb amd64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-amd64.deb
   - deb arm64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-arm64.deb
