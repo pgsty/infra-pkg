@@ -2,16 +2,13 @@ name: "victoria-metrics-cluster"
 arch: "amd64"
 platform: "linux"
 version: "v1.148.0"
+release: "2"
 version_schema: semver
 description: fast, cost-effective monitoring solution and time series database, cluster version
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "VictoriaMetrics"
 homepage: "https://github.com/VictoriaMetrics/VictoriaMetrics"
 license: "Apache-2.0"
-
-rpm:
-  prefixes:
-    - /usr/bin
 
 contents:
   - src: victoria-metrics/vminsert-prod
@@ -25,6 +22,6 @@ contents:
     file_info: { mode: 0755 }
 
   - src: LICENSE
-    dst: /usr/share/doc/victoria-metrics/cluster.LICENSE
+    dst: /usr/share/doc/victoria-metrics-cluster/LICENSE
     file_info:
       mode: 0644
