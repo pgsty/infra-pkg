@@ -2,6 +2,7 @@ name: "victoria-traces"
 arch: "amd64"
 platform: "linux"
 version: "v0.10.0"
+release: "2"
 version_schema: semver
 description: Distributed tracing backend with native support for OpenTelemetry traces
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -9,13 +10,11 @@ vendor: "VictoriaMetrics"
 homepage: "https://docs.victoriametrics.com/victoriatraces/"
 license: "Apache-2.0"
 
-rpm:
-  prefixes:
-    - /usr/bin
-
 contents:
   - src: victoria-traces/victoria-traces-prod
     dst: /usr/bin/victoria-traces
+    file_info:
+      mode: 0755
 
   - src: LICENSE
     dst: /usr/share/doc/victoria-traces/LICENSE
