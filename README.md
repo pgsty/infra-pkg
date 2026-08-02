@@ -161,11 +161,12 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server_4.130.0_arm64.deb
   - rpm amd64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server-4.130.0-amd64.rpm
   - rpm arm64: https://github.com/coder/code-server/releases/download/v4.130.0/code-server-4.130.0-arm64.rpm
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.7.3
+- [cloudflared](https://github.com/cloudflare/cloudflared): 2026.7.3
   - deb amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-amd64.deb
   - deb arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-arm64.deb
   - rpm amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-x86_64.rpm
   - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-aarch64.rpm
+  - warning: upstream packages create unowned files under `/usr/local` and omit the Apache-2.0 license text; RPM upgrades then remove the compatibility symlink and package-manager marker in unconditional `%postun`
 - [pev2](https://github.com/dalibo/pev2/releases) 1.23.0
   - https://github.com/dalibo/pev2/releases
 - [pig](https://github.com/pgsty/pig) : 1.6.1
