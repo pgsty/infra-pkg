@@ -13,22 +13,26 @@ TAG=$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=x86_64-unknown-linux-gnu
 FILENAME=$(PACKAGE)-$(TARGET).tar.xz
+SHA256=b9eca85c0e5724357b3667afe8fc47456c244110316b0762c9f82142a5baae0e
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
 default: all
-all: download extract build clean
-get: download extract
+all: download verify extract build clean
+get: download verify extract
 
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
 	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 meta:
-	curl --silent "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 extract:
 	rm -rf $(PACKAGE)
@@ -41,9 +45,10 @@ clean:
 
 build: rpm deb
 rpm:
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
 deb:
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
 
+.NOTPARALLEL:
 
-.PHONY: all get link meta download extract clean build rpm deb
+.PHONY: all get link meta download verify extract clean build rpm deb
