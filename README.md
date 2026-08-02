@@ -80,7 +80,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.18.11
-- [uv](https://github.com/astral-sh/uv) 0.12.0
+- [uv](https://github.com/astral-sh/uv) 0.12.1
 - [golang](https://go.dev/dl/) 1.26.5
   - x86_64: https://go.dev/dl/go1.26.5.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.26.5.linux-arm64.tar.gz
@@ -179,6 +179,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | pig                 | 1.6.0           | 1.6.1           | official direct-download artifacts           |
 | rclone              | 1.74.4          | 1.75.0          | direct-download metadata; artifacts deferred |
 | rustfs              | 1.0.0-beta.11   | 1.0.0-beta.12   | prerelease line; binary/build deferred       |
+| uv                  | 0.12.0          | 0.12.1          | formal recipe update; build deferred         |
 
 
 **2026-08-01**
