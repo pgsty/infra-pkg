@@ -2,7 +2,7 @@ name: "k3s-images"
 arch: "amd64"
 platform: "linux"
 version: "1.36.2"
-release: "1"
+release: "1.1"
 version_schema: semver
 description: "K3s v1.36.2+k3s1 system images for air-gapped amd64 nodes"
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -13,12 +13,14 @@ license: "Multiple"
 overrides:
   deb:
     depends:
-      - k3s (= 1.36.2-1)
+      - k3s (= 1.36.2-1.1)
   rpm:
     depends:
-      - k3s = 1.36.2-1
+      - k3s = 1.36.2-1.1
 
 contents:
+
+  # image archive
   - dst: /var/lib/rancher/k3s/agent/images/
     type: dir
     file_info:
@@ -29,6 +31,7 @@ contents:
     file_info:
       mode: 0644
 
+  # documentation
   - src: k3s-images.txt
     dst: /usr/share/doc/k3s-images/k3s-images.txt
     file_info:
@@ -49,6 +52,7 @@ contents:
     file_info:
       mode: 0644
 
+# package compression (payload is already zstd-compressed)
 deb:
   compression: none
 
