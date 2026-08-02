@@ -158,11 +158,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-aarch64.rpm
 - [pev2](https://github.com/dalibo/pev2/releases) 1.23.0
   - https://github.com/dalibo/pev2/releases
-- [pig](https://github.com/pgsty/pig) : 1.6.0
-  - deb amd64: https://github.com/pgsty/pig/releases/download/v1.6.0/pig_1.6.0-1_amd64.deb
-  - deb arm64: https://github.com/pgsty/pig/releases/download/v1.6.0/pig_1.6.0-1_arm64.deb
-  - rpm amd64: https://github.com/pgsty/pig/releases/download/v1.6.0/pig-1.6.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/pig/releases/download/v1.6.0/pig-1.6.0-1.aarch64.rpm
+- [pig](https://github.com/pgsty/pig) : 1.6.1
+  - deb amd64: https://github.com/pgsty/pig/releases/download/v1.6.1/pig_1.6.1-1_amd64.deb
+  - deb arm64: https://github.com/pgsty/pig/releases/download/v1.6.1/pig_1.6.1-1_arm64.deb
+  - rpm amd64: https://github.com/pgsty/pig/releases/download/v1.6.1/pig-1.6.1-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/pig/releases/download/v1.6.1/pig-1.6.1-1.aarch64.rpm
 --------
 
 ## Changelog
@@ -173,6 +173,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | Name                | Old             | New             | Comment                                      |
 |:--------------------|:----------------|:----------------|:---------------------------------------------|
 | pgbackrest-exporter | 0.23.0          | 0.24.0          | formal recipe update; build deferred         |
+| pig                 | 1.6.0           | 1.6.1           | official direct-download artifacts           |
 | rustfs              | 1.0.0-beta.11   | 1.0.0-beta.12   | prerelease line; binary/build deferred       |
 
 
