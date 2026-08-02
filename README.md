@@ -79,7 +79,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [postgrest](https://github.com/PostgREST/postgrest) 14.16
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.18.9
+- [opencode](https://github.com/anomalyco/opencode) 1.18.11
 - [uv](https://github.com/astral-sh/uv) 0.12.0
 - [golang](https://go.dev/dl/) 1.26.5
   - x86_64: https://go.dev/dl/go1.26.5.linux-amd64.tar.gz
