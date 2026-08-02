@@ -105,7 +105,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.aarch64.rpm
   - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.2.0
-    - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.2.0
+  - deb amd64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_x86_64.deb
+  - deb arm64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_arm64.deb
+  - rpm amd64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_x86_64.rpm
+  - rpm arm64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_arm64.rpm
+  - warning: [v5.0.0](https://github.com/cybertec-postgresql/vip-manager/releases/tag/v5.0.0) is deferred because of breaking configuration and DCS-loss behavior changes; its packaged sample still uses the ignored `hosting-type` key (use `manager-type`)
 - [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.0.17
   - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage_1.0.17_amd64.deb
   - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage_1.0.17_arm64.deb
