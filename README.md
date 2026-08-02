@@ -97,6 +97,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm amd64: https://dl.grafana.com/grafana/release/13.1.1/grafana_13.1.1_29761037902_linux_amd64.rpm
   - rpm arm64: https://dl.grafana.com/grafana/release/13.1.1/grafana_13.1.1_29761037902_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
+  - warning: upstream 13.1.1 packages have a [known bundled-plugins upgrade regression](https://github.com/grafana/grafana/pull/129003); DEB upgrades may fail; the fix is merged for 13.1.2
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.57.0
   - deb amd64: https://packages.timber.io/vector/0.57.0/vector_0.57.0-1_amd64.deb
   - deb arm64: https://packages.timber.io/vector/0.57.0/vector_0.57.0-1_arm64.deb
