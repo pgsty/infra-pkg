@@ -2,6 +2,7 @@ name: "pg-timetable"
 arch: "amd64"
 platform: "linux"
 version: "v7.0.0"
+release: "2"
 version_schema: semver
 description: "Advanced scheduling for PostgreSQL"
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -20,3 +21,13 @@ contents:
     dst: /usr/share/doc/pg_timetable/LICENSE
     file_info:
       mode: 0644
+
+rpm:
+  prefixes:
+    - /usr/bin
+overrides:
+  rpm:
+    provides:
+      - pg_timetable
+    replaces:
+      - pg_timetable
