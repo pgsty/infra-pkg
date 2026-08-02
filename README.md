@@ -135,6 +135,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_arm64.deb
   - rpm amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio-20260618000000.0.0-1.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio-20260618000000.0.0-1.aarch64.rpm
+  - warning: current packages are Pigsty-managed rather than standalone: they install a legacy `/lib/systemd/system` unit but no service user, defaults, data directories, or lifecycle scripts
 - [mcli](https://github.com/pgsty/mc): 20260417000000
   - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_arm64.deb
