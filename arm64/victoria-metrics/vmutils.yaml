@@ -2,16 +2,13 @@ name: "vmutils"
 arch: "arm64"
 platform: "linux"
 version: "v1.148.0"
+release: "2"
 version_schema: semver
 description: fast, cost-effective monitoring solution and time series database, agent,alert,auth,backup,restore,ctl
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "VictoriaMetrics"
 homepage: "https://github.com/VictoriaMetrics/VictoriaMetrics"
 license: "Apache-2.0"
-
-rpm:
-  prefixes:
-    - /usr/bin
 
 contents:
   - src: victoria-metrics/vmagent-prod
@@ -36,6 +33,6 @@ contents:
     dst: /usr/bin/vmrestore
     file_info: { mode: 0755 }
   - src: LICENSE
-    dst: /usr/share/doc/victoria/utils.LICENSE
+    dst: /usr/share/doc/vmutils/LICENSE
     file_info:
       mode: 0644
