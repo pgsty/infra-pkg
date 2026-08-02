@@ -2,12 +2,13 @@ name: "restic"
 arch: "amd64"
 platform: "linux"
 version: "v0.19.1"
+release: "2"
 version_schema: semver
 description: Restic backup program
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Restic"
 homepage: "https://github.com/restic/restic"
-license: "BSD 2-Clause"
+license: "BSD-2-Clause"
 
 contents:
 
