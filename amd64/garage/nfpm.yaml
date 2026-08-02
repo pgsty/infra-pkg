@@ -2,7 +2,7 @@ name: "garage"
 arch: "amd64"
 platform: "linux"
 version: "v2.3.0"
-release: "1"
+release: "2"
 version_schema: semver
 description: S3-compatible distributed object storage designed for self-hosting
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -15,3 +15,8 @@ contents:
     dst: /usr/bin/garage
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/garage/LICENSE
+    file_info:
+      mode: 0644
