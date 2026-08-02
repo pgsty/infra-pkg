@@ -10,25 +10,30 @@ PACKAGE=plugins
 VERSION=13.0.0
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
 FILENAME=plugins-$(VERSION).tar.gz
-WEB_URL=https://repo.pigsty.io/etc/$(FILENAME)
+SHA256=3a4bfcbe1ea23ec5a1f3ceba35471c48d496fbfda451c55a65665a2b81193f86
 FILENAME2=chart.tgz
-WEB_URL=https://repo.pigsty.io/etc/$(FILENAME)
+SHA2562=b3aa73759d1890dd5be9e9527423ef1e92c76076f2aeb5476d5a6dbf7ecbc825
+WEB_URL2=https://repo.pigsty.io/etc/$(FILENAME2)
 
 
 default: all
-all: download extract build clean
-get: download extract
+all: download verify extract build clean
+get: download verify extract
 
-# print download link and download command
+# print input commands
 link:
-	@echo curl -SL $(WEB_URL) -o $(FILENAME)
+	@echo cp ../tarball/$(FILENAME) $(FILENAME)
+	@echo curl -fSL $(WEB_URL2) -o $(FILENAME2)
 
 
-# download latest release tarball to current directory
-# if already in ../tarball/ , just copy it
+# copy the manually consolidated plugin bundle and fetch the auxiliary assets
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -SL $(WEB_URL) -o $(FILENAME); fi
-	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else curl -SL $(WEB_URL2) -o $(FILENAME2); fi
+	cp ../tarball/$(FILENAME) .
+	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else curl -fSL $(WEB_URL2) -o $(FILENAME2); fi
+
+# verify cached or downloaded inputs before extraction
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then printf '%s  %s\n%s  %s\n' "$(SHA256)" "$(FILENAME)" "$(SHA2562)" "$(FILENAME2)" | sha256sum -c -; else printf '%s  %s\n%s  %s\n' "$(SHA256)" "$(FILENAME)" "$(SHA2562)" "$(FILENAME2)" | shasum -a 256 -c -; fi
 
 # extract tarball content to current directory
 extract:
@@ -42,9 +47,11 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/noarch/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/noarch/
 deb:
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/noarch/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/noarch/
 
 
-.PHONY: all get link meta download extract clean build rpm deb
+.NOTPARALLEL:
+
+.PHONY: all get link meta download verify extract clean build rpm deb

@@ -2,12 +2,13 @@ name: "grafana-plugins"
 arch: "all"
 platform: "linux"
 version: "13.0.0"
+release: "2"
 version_schema: semver
 description: "extra panels, datasources, resources for grafana"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Vonng"
 homepage: "https://pigsty.io"
-license: "Apache-2.0"
+license: "Apache-2.0 AND BSD-3-Clause"
 
 overrides:
   deb:
@@ -109,11 +110,13 @@ contents:
       owner: grafana
       group: grafana
   - src: chart/
-    dst:  /usr/share/grafana/public/
+    dst: /usr/share/grafana/public/
     type: tree
     file_info:
-      owner: grafana
-      group: grafana
+      owner: root
+      group: root
 
-
-
+  - src: LICENSE.echarts-gl
+    dst: /usr/share/doc/grafana-plugins/LICENSE.echarts-gl
+    file_info:
+      mode: 0644
