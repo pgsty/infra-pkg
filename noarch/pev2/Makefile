@@ -7,39 +7,46 @@
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 VERSION=1.23.0
-FILENAME=index.html
-WEB_URL=https://github.com/dalibo/pev2/releases/download/v$(VERSION)/$(FILENAME)
+ASSET=index.html
+FILENAME=pev2-$(VERSION).html
+SHA256=82b1577a4922050c9e12ebcc0bcfc69ba7e6dfcd0ecef19e88d31b1627d06a29
+WEB_URL=https://github.com/dalibo/pev2/releases/download/v$(VERSION)/$(ASSET)
 
 default: all
-all: download extract build clean
-get: download extract
+all: download verify extract build clean
+get: download verify extract
 
 # print download link and download command
 link:
-	@echo curl -SL $(WEB_URL) -o $(FILENAME)
+	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
 
 
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -SL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
 
-# extract tarball content to current directory
+# verify and prepare the release HTML
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
+
 extract:
-	mv index.html pev2.html
+	mv $(FILENAME) pev2.html
 
-# remove tarball, build dir, rpm & deb files
+# remove downloaded and prepared files
 clean:
-	rm -rf pev2.html index.html
+	rm -rf pev2.html $(FILENAME)
 
 # build rpm & deb package
 build: rpm deb
 rpm:
 	mkdir -p ../../dist/noarch/
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/noarch/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/noarch/
 deb:
 	mkdir -p ../../dist/noarch/
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/noarch/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/noarch/
 
 
-.PHONY: all get link meta download extract clean build rpm deb
+.NOTPARALLEL:
+
+.PHONY: all get link meta download verify extract clean build rpm deb
