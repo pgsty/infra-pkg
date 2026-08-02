@@ -2,7 +2,7 @@ name: "seaweedfs"
 arch: "arm64"
 platform: "linux"
 version: "4.40"
-release: "1"
+release: "2"
 version_schema: semver
 description: SeaweedFS is a fast distributed storage system for blobs, objects, files, and data lake
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -15,3 +15,8 @@ contents:
     dst: /usr/bin/weed
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/seaweedfs/LICENSE
+    file_info:
+      mode: 0644
