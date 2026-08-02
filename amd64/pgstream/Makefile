@@ -8,26 +8,31 @@
 #==============================================================#
 REPONAME=xataio/pgstream
 PACKAGE=pgstream
-VERSION=1.2.5
+VERSION=1.3.0
 TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
-FILENAME=$(PACKAGE).linux.amd64
-WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
+ASSET=$(PACKAGE).linux.amd64
+FILENAME=$(PACKAGE)-$(VERSION)-linux-amd64
+SHA256=ce523b40fccef1e05e8826ac40fc0db797076f49e8a728082c76d7b1ccf25cd8
+WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(ASSET)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
 default: all
-all: download extract build clean
-get: download extract
+all: download verify extract build clean
+get: download verify extract
 
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
 	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 meta:
-	curl --silent "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 extract:
 	rm -rf $(PACKAGE)
@@ -40,9 +45,11 @@ clean:
 
 build: rpm deb
 rpm:
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
 deb:
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
 
 
-.PHONY: all get link meta download extract clean build rpm deb
+.NOTPARALLEL:
+
+.PHONY: all get link meta download verify extract clean build rpm deb

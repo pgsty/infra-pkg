@@ -1,7 +1,7 @@
 name: "pgstream"
 arch: "arm64"
 platform: "linux"
-version: "v1.2.5"
+version: "v1.3.0"
 release: "1"
 version_schema: semver
 description: PostgreSQL replication with DDL changes.
@@ -19,3 +19,8 @@ contents:
     dst: /usr/bin/pgstream
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/pgstream/LICENSE
+    file_info:
+      mode: 0644

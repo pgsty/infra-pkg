@@ -43,7 +43,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.0
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
 - [dblab](https://github.com/danvergara/dblab) 0.47.2
-- [pgstream](https://github.com/xataio/pgstream) 1.2.5
+- [pgstream](https://github.com/xataio/pgstream) 1.3.0
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.2
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.0.0
