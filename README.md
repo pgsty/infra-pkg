@@ -136,11 +136,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.aarch64.rpm
 - [sealos](https://github.com/labring/sealos): 5.1.1
     - amd64 & arm64: https://github.com/labring/sealos/releases/tag/v5.1.1
-- [rclone](https://github.com/rclone/rclone/releases/) 1.74.4
-  - deb amd64: https://downloads.rclone.org/v1.74.4/rclone-v1.74.4-linux-amd64.deb
-  - deb arm64: https://downloads.rclone.org/v1.74.4/rclone-v1.74.4-linux-arm64.deb
-  - rpm amd64: https://downloads.rclone.org/v1.74.4/rclone-v1.74.4-linux-amd64.rpm
-  - rpm arm64: https://downloads.rclone.org/v1.74.4/rclone-v1.74.4-linux-arm64.rpm
+- [rclone](https://github.com/rclone/rclone/releases/) 1.75.0
+  - deb amd64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-amd64.deb
+  - deb arm64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-arm64.deb
+  - rpm amd64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-amd64.rpm
+  - rpm arm64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-arm64.rpm
 - [code](https://code.visualstudio.com/) 1.131.0
   - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code_1.131.0-1785237861_amd64.deb
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code_1.131.0-1785237876_arm64.deb
@@ -174,6 +174,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:--------------------|:----------------|:----------------|:---------------------------------------------|
 | pgbackrest-exporter | 0.23.0          | 0.24.0          | formal recipe update; build deferred         |
 | pig                 | 1.6.0           | 1.6.1           | official direct-download artifacts           |
+| rclone              | 1.74.4          | 1.75.0          | direct-download metadata; artifacts deferred |
 | rustfs              | 1.0.0-beta.11   | 1.0.0-beta.12   | prerelease line; binary/build deferred       |
 
 
