@@ -7,7 +7,7 @@ After=network.target
 
 [Service]
 User=root
-EnvironmentFile=-/etc/default/promtail
+EnvironmentFile=/etc/default/promtail
 ExecStart=/usr/bin/promtail $PROMTAIL_OPTS
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always

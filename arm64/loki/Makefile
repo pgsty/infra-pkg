@@ -69,12 +69,12 @@ rpm:
 	mkdir -p ../../dist/rpm.aarch64/
 	../../bin/nfpm package --config loki.yaml --packager rpm --target ../../dist/rpm.aarch64/
 	../../bin/nfpm package --config logcli.yaml --packager rpm --target ../../dist/rpm.aarch64/
-	../../bin/nfpm package --config promtail-rpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	../../bin/nfpm package --config promtail.yaml --packager rpm --target ../../dist/rpm.aarch64/
 deb:
 	mkdir -p ../../dist/deb.arm64/
 	../../bin/nfpm package --config loki.yaml --packager deb --target ../../dist/deb.arm64/
 	../../bin/nfpm package --config logcli.yaml --packager deb --target ../../dist/deb.arm64/
-	../../bin/nfpm package --config promtail-deb.yaml --packager deb --target ../../dist/deb.arm64/
+	../../bin/nfpm package --config promtail.yaml --packager deb --target ../../dist/deb.arm64/
 
 .NOTPARALLEL:
 
