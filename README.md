@@ -110,11 +110,12 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm amd64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_x86_64.rpm
   - rpm arm64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_arm64.rpm
   - warning: [v5.0.0](https://github.com/cybertec-postgresql/vip-manager/releases/tag/v5.0.0) is deferred because of breaking configuration and DCS-loss behavior changes; its packaged sample still uses the ignored `hosting-type` key (use `manager-type`)
-- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.0.17
-  - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage_1.0.17_amd64.deb
-  - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage_1.0.17_arm64.deb
-  - rpm amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage-1.0.17-1.x86_64.rpm
-  - rpm arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.0.17/pg-hardstorage-1.0.17-1.aarch64.rpm
+- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.1.0
+  - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage_1.1.0_amd64.deb
+  - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage_1.1.0_arm64.deb
+  - rpm amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage-1.1.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage-1.1.0-1.aarch64.rpm
+  - warning: vendor packages ship systemd, sysusers, and tmpfiles definitions but no lifecycle scripts; run `systemd-sysusers` and `systemd-tmpfiles --create` before first service start, and restart or stop the agent explicitly on upgrade or removal
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
   - deb amd64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter_1.4.1-1_amd64.deb
   - deb arm64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter_1.4.1-1_arm64.deb
@@ -181,9 +182,10 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2026-08-03**
 
-| Name        | Old     | New     | Comment                                      |
-|:------------|:--------|:--------|:---------------------------------------------|
-| code-server | 4.130.0 | 4.131.0 | direct-download metadata; artifacts deferred |
+| Name           | Old     | New     | Comment                                                |
+|:---------------|:--------|:--------|:-------------------------------------------------------|
+| code-server    | 4.130.0 | 4.131.0 | direct-download metadata; artifacts deferred           |
+| pg-hardstorage | 1.0.17  | 1.1.0   | official artifacts reviewed; repository intake deferred |
 
 
 **2026-08-02**
