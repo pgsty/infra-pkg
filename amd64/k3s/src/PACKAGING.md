@@ -1,6 +1,6 @@
 # K3s package notes
 
-Pigsty package `k3s 1.36.2-1` contains the upstream `v1.36.2+k3s1` binary.
+Pigsty package `k3s 1.36.2-1.1` contains the upstream `v1.36.2+k3s1` binary.
 The package release maps the upstream K3s revision: an upstream `+k3s2`
 rebuild would become package release `2`. If the packaging itself needs a
 rebuild without an upstream revision change, use a subordinate release such

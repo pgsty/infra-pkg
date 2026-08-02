@@ -11,7 +11,7 @@ PACKAGE=k3s
 IMAGE_PACKAGE=k3s-images
 VERSION=1.36.2
 UPSTREAM_REV=1
-RELEASE=1
+RELEASE=1.1
 UPSTREAM_VERSION=v$(VERSION)+k3s$(UPSTREAM_REV)
 URL_VERSION=v$(VERSION)%2Bk3s$(UPSTREAM_REV)
 ARCH=arm64
@@ -79,19 +79,21 @@ build-airgap: airgap-rpm airgap-deb
 
 rpm:
 	mkdir -p ../../dist/rpm.aarch64/
-	nfpm package --config nfpm-k3s.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	../../bin/nfpm package --config nfpm-k3s.yaml --packager rpm --target ../../dist/rpm.aarch64/
 
 deb:
 	mkdir -p ../../dist/deb.arm64/
-	nfpm package --config nfpm-k3s.yaml --packager deb --target ../../dist/deb.arm64/
+	../../bin/nfpm package --config nfpm-k3s.yaml --packager deb --target ../../dist/deb.arm64/
 
 airgap-rpm:
 	mkdir -p ../../dist/rpm.aarch64/
-	nfpm package --config nfpm-airgap.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	../../bin/nfpm package --config nfpm-airgap.yaml --packager rpm --target ../../dist/rpm.aarch64/
 
 airgap-deb:
 	mkdir -p ../../dist/deb.arm64/
-	nfpm package --config nfpm-airgap.yaml --packager deb --target ../../dist/deb.arm64/
+	../../bin/nfpm package --config nfpm-airgap.yaml --packager deb --target ../../dist/deb.arm64/
+
+.NOTPARALLEL:
 
 .PHONY: default all binary airgap bundle get link download-common download-binary download-airgap \
 	verify verify-binary verify-airgap clean build build-binary build-airgap rpm deb airgap-rpm airgap-deb

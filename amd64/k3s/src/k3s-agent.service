@@ -6,7 +6,7 @@ After=network-online.target
 Conflicts=k3s.service
 
 [Service]
-Type=exec
+Type=notify
 EnvironmentFile=-/etc/default/%p
 EnvironmentFile=-/etc/sysconfig/%p
 KillMode=process
