@@ -51,6 +51,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
 - [loki](https://github.com/grafana/loki) : 3.6.7 (obsolete, frozen)
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen)
+- [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.6.7 (obsolete, frozen with Loki)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.30.1
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.25.2
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.11.1

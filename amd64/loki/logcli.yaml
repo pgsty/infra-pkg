@@ -2,24 +2,29 @@ name: "logcli"
 arch: "amd64"
 platform: "linux"
 version: "v3.6.7"
+release: "2"
 version_schema: semver
-description: Loki Logging Service CLI
+description: Command-line interface for querying Grafana Loki
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: Grafana
 homepage: https://github.com/grafana/loki
-license: "AGPL-3.0"
-
-rpm:
-  prefixes:
-    - /usr/bin
+license: "AGPL-3.0-only"
 
 contents:
+
+  # binary
   - src: loki/logcli-linux-amd64
     dst: /usr/bin/logcli
+    file_info:
+      mode: 0755
 
-# add prometheus user/group
-scripts:
-  #preinstall:  src/preinstall.sh
-  #postinstall: src/postinstall.sh
-  #preremove:   src/preremove.sh
-  #postremove:  src/postremove.sh
+  # documentation
+  - src: src/LICENSE
+    dst: /usr/share/doc/logcli/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: src/LICENSING.md
+    dst: /usr/share/doc/logcli/LICENSING.md
+    file_info:
+      mode: 0644
