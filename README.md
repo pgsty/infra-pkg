@@ -38,7 +38,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [etcd](https://github.com/etcd-io/etcd) : 3.7.1
 - [k3s](https://github.com/k3s-io/k3s) : 1.36.2 (upstream v1.36.2+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.36.2%2Bk3s1) : 1.36.2 (amd64/arm64 system images)
-- [mtail](https://github.com/google/mtail) : 3.0.8
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.6
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.0
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0

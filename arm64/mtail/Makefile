@@ -6,32 +6,36 @@
 # Path      :   Makefile
 # Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-REPONAME="google/mtail"
+REPONAME="jaqx0r/mtail"
 PACKAGE="mtail"
-VERSION=3.0.8
-RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
+VERSION=3.4.6
+RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME="$(PACKAGE)_$(VERSION)_linux_arm64"
 FILENAME="$(DIRNAME).tar.gz"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
+SHA256=726e638a53df5039410e748f7bff82cbb3fc09246aa3d6d88013698d8a255dcc
 
 
 default: all
-all: download extract build clean
-get: download extract
+all: download verify extract build clean
+get: download verify extract
 
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -SL $(WEB_URL) -o $(FILENAME)
+	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --silent "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
-# download latest release tarball to current directory
+# download configured release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -SL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 # extract tarball content to current directory
 extract:
@@ -44,9 +48,11 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config mtail.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	../../bin/nfpm package --config mtail.yaml --packager rpm --target ../../dist/rpm.aarch64/
 deb:
-	nfpm package --config mtail.yaml --packager deb --target ../../dist/deb.arm64/
+	../../bin/nfpm package --config mtail.yaml --packager deb --target ../../dist/deb.arm64/
 
 
-.PHONY: all get link meta download extract clean build rpm deb
+.NOTPARALLEL:
+
+.PHONY: all get link meta download verify extract clean build rpm deb

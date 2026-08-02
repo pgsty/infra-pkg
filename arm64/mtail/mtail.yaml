@@ -1,12 +1,13 @@
 name: "mtail"
 arch: "arm64"
 platform: "linux"
-version: "v3.0.8"
+version: "v3.4.6"
+release: "1"
 version_schema: semver
 description: extract internal monitoring data from application logs for collection in a timeseries database
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "google"
-homepage: "https://github.com/google/mtail"
+vendor: "jaqx0r"
+homepage: "https://github.com/jaqx0r/mtail"
 license: "Apache-2.0"
 
 contents:
