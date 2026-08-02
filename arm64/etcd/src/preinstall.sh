@@ -1,5 +1,10 @@
 #!/bin/sh
 
-getent group etcd >/dev/null || groupadd -r etcd
-getent passwd etcd >/dev/null || useradd -r -g etcd -d /var/lib/etcd \
-    -s /sbin/nologin -c "etcd user" etcd
+if ! getent group etcd >/dev/null 2>&1; then
+    groupadd -r etcd || exit 1
+fi
+if ! getent passwd etcd >/dev/null 2>&1; then
+    useradd -r -g etcd -d /var/lib/etcd -M -s /sbin/nologin -c "etcd service" etcd || exit 1
+fi
+
+exit 0
