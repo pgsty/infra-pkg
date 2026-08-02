@@ -103,6 +103,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://packages.timber.io/vector/0.57.0/vector_0.57.0-1_arm64.deb
   - rpm amd64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.x86_64.rpm
   - rpm arm64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.aarch64.rpm
+  - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.2.0
     - amd64 & arm64: https://github.com/cybertec-postgresql/vip-manager/releases/tag/v4.2.0
 - [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.0.17
