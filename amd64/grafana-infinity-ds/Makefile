@@ -11,14 +11,23 @@ PACKAGE1=yesoreyeram-infinity-datasource
 VERSION1=3.11.1
 FILENAME1=yesoreyeram-infinity-datasource-$(VERSION1).linux_amd64.zip
 WEB_URL1=https://github.com/$(REPONAME1)/releases/download/v$(VERSION1)/$(FILENAME1)
+SHA2561=422668d177ff14de3c97f3b128cee09890d04aa767e4513bb7b6c5336fa737d7
 
 default: all
-all: download extract build clean
-get: download extract
+all: download verify extract build clean
+get: download verify extract
+
+# print download link and download command
+link:
+	@echo curl -fSL --retry 3 $(WEB_URL1) -o $(FILENAME1)
 
 # download latest release tarball to current directory
 download:
-	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else curl -SL $(WEB_URL1) -o $(FILENAME1); fi
+	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else curl -fSL --retry 3 $(WEB_URL1) -o $(FILENAME1); fi
+
+# verify cached or downloaded input before extraction
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA2561)  $(FILENAME1)" | sha256sum -c -; else echo "$(SHA2561)  $(FILENAME1)" | shasum -a 256 -c -; fi
 
 # extract tarball content to current directory
 extract:
@@ -31,9 +40,10 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
 deb:
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
 
+.NOTPARALLEL:
 
-.PHONY: all get link meta download extract clean build rpm deb
+.PHONY: all get link meta download verify extract clean build rpm deb

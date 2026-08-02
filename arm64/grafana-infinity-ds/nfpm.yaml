@@ -2,6 +2,7 @@ name: "grafana-infinity-ds"
 arch: "arm64"
 platform: "linux"
 version: "3.11.1"
+release: "2"
 version_schema: semver
 description: "CSV, JSON, GraphQL, XML and HTML datasource for grafana."
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -12,10 +13,10 @@ license: "Apache-2.0"
 overrides:
   deb:
     depends:
-      - grafana (>= 10.4.8)
+      - grafana (>= 11.6.0)
   rpm:
     depends:
-      - grafana >= 10.4.8
+      - grafana >= 11.6.0
 
 contents:
 
