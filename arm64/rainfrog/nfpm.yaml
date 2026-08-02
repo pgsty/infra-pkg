@@ -2,9 +2,9 @@ name: "rainfrog"
 arch: "arm64"
 platform: "linux"
 version: "v0.4.2"
-release: "1"
+release: "2"
 version_schema: semver
-description: Terminal database management tool for Postgres databases.
+description: Database tool for the terminal.
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "achristmascarl"
 homepage: "https://github.com/achristmascarl/rainfrog"
@@ -19,3 +19,8 @@ contents:
     dst: /usr/bin/rainfrog
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/rainfrog/LICENSE
+    file_info:
+      mode: 0644

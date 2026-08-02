@@ -13,31 +13,31 @@ TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=aarch64-unknown-linux-musl
 FILENAME=$(PACKAGE)-v$(VERSION)-$(TARGET).tar.gz
+SHA256=967a4adb1cdd6f551d1dc89fa4f8b57d160bee8a1687a1f86be445f64cf047de
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
 default: all
-all: download extract build clean
-get: download extract
+all: download verify extract build clean
+get: download verify extract
 
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
 	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 meta:
-	curl --silent "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 extract:
 	rm -rf $(PACKAGE)
 	mkdir -p $(PACKAGE)
 	tar -xf $(FILENAME) -C $(PACKAGE)
-	BIN="$$(find $(PACKAGE) -type f -name $(PACKAGE) | head -n 1)"; \
-	test -n "$$BIN"; \
-	if [ "$$BIN" != "$(PACKAGE)/$(PACKAGE)" ]; then mv -f "$$BIN" $(PACKAGE)/$(PACKAGE); fi; \
-	find $(PACKAGE) -mindepth 1 ! -path "$(PACKAGE)/$(PACKAGE)" -exec rm -rf {} +; \
 	chmod +x $(PACKAGE)/$(PACKAGE)
 
 clean:
@@ -45,9 +45,11 @@ clean:
 
 build: rpm deb
 rpm:
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.aarch64/
 deb:
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.arm64/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.arm64/
 
 
-.PHONY: all get link meta download extract clean build rpm deb
+.NOTPARALLEL:
+
+.PHONY: all get link meta download verify extract clean build rpm deb
