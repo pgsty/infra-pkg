@@ -126,11 +126,12 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.1/pgschema_1.12.1_arm64.deb
   - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.1/pgschema-1.12.1-1.x86_64.rpm
   - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.1/pgschema-1.12.1-1.aarch64.rpm
-- [crush](https://github.com/charmbracelet/crush): 0.87.0
-  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.87.0/crush_0.87.0_amd64.deb
-  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.87.0/crush_0.87.0_arm64.deb
-  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.87.0/crush-0.87.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.87.0/crush-0.87.0-1.aarch64.rpm
+- [crush](https://github.com/charmbracelet/crush): 0.88.0
+  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush_0.88.0_amd64.deb
+  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush_0.88.0_arm64.deb
+  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush-0.88.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush-0.88.0-1.aarch64.rpm
+  - warning: vendor DEB/RPM packages are licensed under `FSL-1.1-MIT` but omit the [license terms](https://github.com/charmbracelet/crush/blob/v0.88.0/LICENSE.md) or a direct link required for redistribution; use the official links above only and do not mirror them into Pigsty repositories until upstream fixes the packages or they are repacked with `LICENSE.md`
 - [minio](https://github.com/pgsty/minio): 20260618000000
   - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_arm64.deb
@@ -185,6 +186,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | Name           | Old     | New     | Comment                                                |
 |:---------------|:--------|:--------|:-------------------------------------------------------|
 | code-server    | 4.130.0 | 4.131.0 | direct-download metadata; artifacts deferred           |
+| crush          | 0.87.0  | 0.88.0  | official links; repository mirror blocked by license   |
 | pg-hardstorage | 1.0.17  | 1.1.0   | official artifacts reviewed; repository intake deferred |
 
 
