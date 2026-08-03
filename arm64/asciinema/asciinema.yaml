@@ -1,21 +1,36 @@
 name: "asciinema"
 arch: "arm64"
 platform: "linux"
-version: "v3.2.1"
-release: "1"
+version: "3.2.1"
+release: "2"
 version_schema: semver
-description: Terminal session recorder and player
+description: Terminal session recorder, streamer, and player
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "asciinema"
 homepage: "https://github.com/asciinema/asciinema"
-license: "GPL-3.0"
+license: "GPL-3.0-or-later"
 
 rpm:
   prefixes:
-    - /usr/bin
+    - /usr
 
 contents:
   - src: asciinema-aarch64-unknown-linux-gnu
     dst: /usr/bin/asciinema
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/asciinema/LICENSE
+    file_info:
+      mode: 0644
+
+overrides:
+  deb:
+    depends:
+      - "libc6 (>= 2.18)"
+      - "libgcc-s1 | libgcc1"
+  rpm:
+    depends:
+      - "glibc >= 2.18"
+      - "libgcc"
