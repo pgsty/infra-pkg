@@ -15,11 +15,12 @@ TARGET=x86_64-unknown-linux-musl
 FILENAME=$(PACKAGE)-$(TARGET).tar.gz
 BINARY=$(PACKAGE)-$(TARGET)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
+SHA256=5ba3b9405543953081f661d0854d266f76e2abbe51d41349355a36de7673776a
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
 default: all
-all: download extract build clean
-get: download extract
+all: download verify extract build clean
+get: download verify extract
 
 # print download link and download command
 link:
@@ -28,12 +29,16 @@ link:
 
 # get latest release info
 meta:
-	curl --silent "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+
+# verify the official release archive before extraction
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 # extract tarball content to current directory
 extract:
@@ -49,9 +54,11 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/rpm.x86_64/
 deb:
-	nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/deb.amd64/
 
 
-.PHONY: all get link meta download extract clean build rpm deb
+.NOTPARALLEL:
+
+.PHONY: all get link meta download verify extract clean build rpm deb
