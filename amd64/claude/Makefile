@@ -13,22 +13,27 @@ INSTALLER_URL=https://claude.ai/install.sh
 BUCKET=https://downloads.claude.ai/claude-code-releases
 TARBALL=claude-$(VERSION)-linux-amd64.gz
 WEB_URL=$(BUCKET)/$(VERSION)/$(PLATFORM)/claude
+SHA256=674f61f20ff306f3100cf9200e4c36c4b70278b5bef2884549819b942a89c863
 PROXY=http://127.0.0.1:8118
 CURL=curl --proxy $(PROXY) --retry 5 --retry-delay 2 --retry-connrefused -fL
 
 default: all
-all: download build clean
-get: download
+all: download verify build clean
+get: download verify
 
 # print download link and download command
 link:
 	@echo $(PACKAGE) $(VERSION)
-	@echo $(CURL) $(WEB_URL) -o $(PACKAGE) '&&' gzip -c $(PACKAGE) '>' $(TARBALL)
+	@echo $(CURL) $(WEB_URL) -o $(PACKAGE) '&&' gzip -n -c $(PACKAGE) '>' $(TARBALL)
 
 # download tarball and extract binary
 download:
-	if [ -f ../tarball/$(TARBALL) ]; then cp ../tarball/$(TARBALL) .; else $(CURL) $(WEB_URL) -o $(PACKAGE) && gzip -c $(PACKAGE) > $(TARBALL) && rm -f $(PACKAGE); fi
+	if [ -f ../tarball/$(TARBALL) ]; then cp ../tarball/$(TARBALL) .; else $(CURL) $(WEB_URL) -o $(PACKAGE) && gzip -n -c $(PACKAGE) > $(TARBALL) && rm -f $(PACKAGE); fi
 	gunzip -c $(TARBALL) > $(PACKAGE) && chmod +x $(PACKAGE)
+
+# verify the official release binary before packaging
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(PACKAGE)" | sha256sum -c -; else echo "$(SHA256)  $(PACKAGE)" | shasum -a 256 -c -; fi
 
 # remove binary, tarball, rpm & deb files
 clean:
@@ -37,9 +42,11 @@ clean:
 # build rpm & deb package
 build: rpm deb
 rpm:
-	nfpm package --config claude.yaml --packager rpm --target ../../dist/rpm.x86_64/
+	../../bin/nfpm package --config claude.yaml --packager rpm --target ../../dist/rpm.x86_64/
 deb:
-	nfpm package --config claude.yaml --packager deb --target ../../dist/deb.amd64/
+	../../bin/nfpm package --config claude.yaml --packager deb --target ../../dist/deb.amd64/
 
 
-.PHONY: all get link download clean build rpm deb
+.NOTPARALLEL:
+
+.PHONY: all get link download verify clean build rpm deb

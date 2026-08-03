@@ -1,21 +1,34 @@
 name: "claude"
 arch: "arm64"
 platform: "linux"
-version: "v2.1.220"
-release: "1"
+version: "2.1.220"
+release: "2"
 version_schema: semver
-description: Claude Code Switch
-maintainer: Some One <anon@coder.com>
+description: Anthropic's official CLI for Claude
+maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "Anthropic"
-homepage: "https://claude.ai/"
+homepage: "https://github.com/anthropics/claude-code"
 license: "Proprietary"
 
 rpm:
   prefixes:
-    - /usr/bin
+    - /usr
 
 contents:
   - src: claude
     dst: /usr/bin/claude
     file_info:
       mode: 0755
+
+  - src: LICENSE.md
+    dst: /usr/share/doc/claude/LICENSE.md
+    file_info:
+      mode: 0644
+
+overrides:
+  deb:
+    depends:
+      - "libc6 (>= 2.17)"
+  rpm:
+    depends:
+      - "glibc >= 2.17"

@@ -10,7 +10,8 @@ tmp/
 .codex/
 .cursor/
 
-arm64/claude
+amd64/claude/claude
+arm64/claude/claude
 amd64/ccm
 .claude
 CLAUDE.md
