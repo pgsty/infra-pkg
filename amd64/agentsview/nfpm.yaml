@@ -1,21 +1,36 @@
 name: "agentsview"
 arch: "amd64"
 platform: "linux"
-version: "v0.39.0"
-release: "1"
+version: "0.39.0"
+release: "2"
 version_schema: semver
-description: Browse and watch AI coding agent trajectories in your terminal.
+description: Browse, search, and track costs across all your AI coding agents.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "wesm"
-homepage: "https://github.com/wesm/agentsview"
+vendor: "Kenn Software LLC"
+homepage: "https://github.com/kenn-io/agentsview"
 license: "MIT"
 
 rpm:
   prefixes:
-    - /usr/bin
+    - /usr
 
 contents:
   - src: agentsview/agentsview
     dst: /usr/bin/agentsview
     file_info:
       mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/agentsview/LICENSE
+    file_info:
+      mode: 0644
+
+overrides:
+  deb:
+    depends:
+      - "libc6 (>= 2.28)"
+      - "libstdc++6"
+  rpm:
+    depends:
+      - "glibc >= 2.28"
+      - "libstdc++"
