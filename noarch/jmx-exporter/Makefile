@@ -11,8 +11,8 @@ VERSION=1.6.0
 FILENAME=jmx_prometheus_javaagent-$(VERSION).jar
 CHECKSUM_FILE=$(FILENAME).sha256
 SHA256=a95983fd96e865d2bcdf911cc500e7c82808c27ab9fd226bf96732b6c3d8c46e
-RELEASE_PAGE=https://github.com/prometheus/jmx_exporter/releases/tag/v$(VERSION)
-WEB_URL=https://github.com/prometheus/jmx_exporter/releases/download/v$(VERSION)/$(FILENAME)
+RELEASE_PAGE=https://github.com/prometheus/jmx_exporter/releases/tag/$(VERSION)
+WEB_URL=https://github.com/prometheus/jmx_exporter/releases/download/$(VERSION)/$(FILENAME)
 CHECKSUM_URL=$(WEB_URL).sha256
 CURL=curl -fSL --retry 3
 
@@ -46,10 +46,11 @@ clean:
 build: rpm deb
 rpm:
 	mkdir -p ../../dist/noarch/
-	nfpm package --config nfpm-rpm.yaml --packager rpm --target ../../dist/noarch/
+	../../bin/nfpm package --config nfpm.yaml --packager rpm --target ../../dist/noarch/
 deb:
 	mkdir -p ../../dist/noarch/
-	nfpm package --config nfpm-deb.yaml --packager deb --target ../../dist/noarch/
+	../../bin/nfpm package --config nfpm.yaml --packager deb --target ../../dist/noarch/
 
+.NOTPARALLEL:
 
 .PHONY: all get link download verify clean build rpm deb
