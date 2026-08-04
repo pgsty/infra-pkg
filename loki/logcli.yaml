@@ -1,0 +1,30 @@
+name: "logcli"
+arch: "${ARCH}"
+platform: "linux"
+version: "v3.6.7"
+release: "2"
+version_schema: semver
+description: Command-line interface for querying Grafana Loki
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: Grafana
+homepage: https://github.com/grafana/loki
+license: "AGPL-3.0-only"
+
+contents:
+
+  # binary
+  - src: loki/logcli.bin
+    dst: /usr/bin/logcli
+    file_info:
+      mode: 0755
+
+  # documentation
+  - src: src/LICENSE
+    dst: /usr/share/doc/logcli/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: src/LICENSING.md
+    dst: /usr/share/doc/logcli/LICENSING.md
+    file_info:
+      mode: 0644

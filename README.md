@@ -55,7 +55,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.30.1
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.25.2
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.11.1
-- [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins) 13.0.0 (noarch)
+- [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.0.0 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4
 - [headscale](https://github.com/juanfont/headscale) 0.29.3
@@ -281,26 +281,26 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **2026-07-20**
 
-| Name          | Old           | New            | Comment                                                   |
-|:--------------|:--------------|:---------------|:----------------------------------------------------------|
-| RPM exporters | `*_exporter`  | `*-exporter`   | old names kept via unversioned `Provides` / `Obsoletes`   |
-| pg-timetable  | `pg_timetable` | `pg-timetable` | old name kept via unversioned `Provides` / `Obsoletes`    |
-| pg-exporter   | 1.3.0         | 1.4.0          | now rebuilt from the upstream Linux tarball               |
-| VictoriaMetrics | 1.147.0    | 1.148.0        | includes cluster and vmutils packages                     |
-| VictoriaLogs  | 1.51.0       | 1.52.0         | includes vlagent and vlogscli packages                    |
-| grafana-victorialogs-ds | 0.29.0 | 0.30.0    |                                                          |
-| seaweedfs     | 4.39          | 4.40           |                                                          |
-| rustfs        | 1.0.0-beta.9  | 1.0.0-beta.10  | prerelease line; preview releases excluded                |
-| sabiql        | 1.14.0        | 1.15.1         |                                                          |
-| claude        | 2.1.211       | 2.1.215        | downloaded through 8118 proxy                            |
-| codex         | 0.144.4       | 0.144.6        | release tag `rust-v0.144.6`                              |
-| opencode      | 1.18.2        | 1.18.3         |                                                          |
-| pev2          | 1.22.0        | 1.23.0         | noarch package                                            |
-| timescaledb-tools | 0.19.0-1 | 0.19.0-2       | bundles timescaledb-parallel-copy 0.12.0 -> 0.13.0       |
-| pg-hardstorage | 1.0.10      | 1.0.12         | downloaded directly                                      |
-| code          | 1.129.0       | 1.129.1        | downloaded directly                                      |
-| code-server   | 4.128.0       | 4.129.0        | downloaded directly                                      |
-| genai-toolbox | 1.6.0         | 1.7.0          | external build; amd64 binary + arm64 container artifact  |
+| Name                    | Old            | New            | Comment                                                 |
+|:------------------------|:---------------|:---------------|:--------------------------------------------------------|
+| RPM exporters           | `*_exporter`   | `*-exporter`   | old names kept via unversioned `Provides` / `Obsoletes` |
+| pg-timetable            | `pg_timetable` | `pg-timetable` | old name kept via unversioned `Provides` / `Obsoletes`  |
+| pg-exporter             | 1.3.0          | 1.4.0          | now rebuilt from the upstream Linux tarball             |
+| VictoriaMetrics         | 1.147.0        | 1.148.0        | includes cluster and vmutils packages                   |
+| VictoriaLogs            | 1.51.0         | 1.52.0         | includes vlagent and vlogscli packages                  |
+| grafana-victorialogs-ds | 0.29.0         | 0.30.0         |                                                         |
+| seaweedfs               | 4.39           | 4.40           |                                                         |
+| rustfs                  | 1.0.0-beta.9   | 1.0.0-beta.10  | prerelease line; preview releases excluded              |
+| sabiql                  | 1.14.0         | 1.15.1         |                                                         |
+| claude                  | 2.1.211        | 2.1.215        | downloaded through 8118 proxy                           |
+| codex                   | 0.144.4        | 0.144.6        | release tag `rust-v0.144.6`                             |
+| opencode                | 1.18.2         | 1.18.3         |                                                         |
+| pev2                    | 1.22.0         | 1.23.0         | noarch package                                          |
+| timescaledb-tools       | 0.19.0-1       | 0.19.0-2       | bundles timescaledb-parallel-copy 0.12.0 -> 0.13.0      |
+| pg-hardstorage          | 1.0.10         | 1.0.12         | downloaded directly                                     |
+| code                    | 1.129.0        | 1.129.1        | downloaded directly                                     |
+| code-server             | 4.128.0        | 4.129.0        | downloaded directly                                     |
+| genai-toolbox           | 1.6.0          | 1.7.0          | external build; amd64 binary + arm64 container artifact |
 
 
 **2026-07-19**

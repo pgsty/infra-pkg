@@ -3,16 +3,12 @@ infra-pkg.iml
 .idea/
 .code/
 .DS_Store
-arm64/tarball
-amd64/tarball
-noarch/tarball
+tarball/
 tmp/
 .codex/
 .cursor/
 
-amd64/claude/claude
-arm64/claude/claude
-amd64/ccm
+claude/claude
 .claude
 CLAUDE.md
 AGENTS.md

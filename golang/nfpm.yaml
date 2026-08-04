@@ -1,0 +1,36 @@
+name: "golang"
+arch: "${ARCH}"
+platform: "linux"
+version: "v1.26.5"
+version_schema: semver
+release: "2"
+description: The Go Programming Language
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Google"
+homepage: "https://go.dev"
+license: "BSD-3-Clause"
+
+replaces:
+  - golang-go
+  - go
+  - go-toolset
+conflicts:
+  - golang-go
+  - go
+  - go-toolset
+
+contents:
+  - src: go/
+    dst: /usr/lib/go
+
+  - src: ../lib/go/bin/go
+    dst: /usr/bin/go
+    type: symlink
+
+  - src: ../lib/go/bin/gofmt
+    dst: /usr/bin/gofmt
+    type: symlink
+
+rpm:
+  scripts:
+    posttrans: cleanup-legacy.sh

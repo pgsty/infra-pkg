@@ -1,0 +1,42 @@
+name: "nodejs"
+arch: "${ARCH}"
+platform: "linux"
+version: "v24.18.1"
+version_schema: semver
+release: "2"
+description: Node.js JavaScript runtime
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Node.js Foundation"
+homepage: "https://nodejs.org"
+license: "MIT"
+
+provides:
+  - npm
+replaces:
+  - npm
+conflicts:
+  - npm
+
+contents:
+  - src: node/
+    dst: /usr/lib/nodejs
+
+  - src: ../lib/nodejs/bin/node
+    dst: /usr/bin/node
+    type: symlink
+  - src: ../lib/nodejs/bin/node
+    dst: /usr/bin/nodejs
+    type: symlink
+  - src: ../lib/nodejs/bin/npm
+    dst: /usr/bin/npm
+    type: symlink
+  - src: ../lib/nodejs/bin/npx
+    dst: /usr/bin/npx
+    type: symlink
+  - src: ../lib/nodejs/bin/corepack
+    dst: /usr/bin/corepack
+    type: symlink
+
+rpm:
+  scripts:
+    posttrans: cleanup-legacy.sh

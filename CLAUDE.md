@@ -13,69 +13,77 @@ For any package update work (version discovery, proxy downloads, tarball caching
 
 ## Build Commands
 
-Build all packages for both architectures:
+Build all packages (each package builds every architecture it declares):
 ```bash
 make all
 ```
 
-Build for a specific architecture:
+Build every package for a single architecture:
 ```bash
 make amd64
 make arm64
 ```
 
-Build a specific component (builds for both architectures):
+Build a specific package (both architectures, or once for noarch):
 ```bash
 make prometheus
 make victoria-metrics
 make duckdb
 make etcd
-# See Makefile for full list of components
+# every top-level directory with a Makefile is a package target
 ```
 
 Build a single package for one architecture:
 ```bash
-cd amd64/prometheus && make
-cd arm64/prometheus && make
+cd prometheus && make one ARCH=amd64
+cd prometheus && make one ARCH=arm64
 ```
 
 ## Architecture
 
-### Directory Structure
-- `amd64/` - Package definitions for x86_64 architecture
-- `arm64/` - Package definitions for aarch64 architecture
-- `noarch/` - Architecture-independent packages (grafana-plugins, pev2)
+### Directory Structure (single tree)
+- `<package>/` - One top-level directory per package (any dir with a `Makefile`)
+- `bin/` - All helper scripts: pinned `nfpm` wrapper (version in `.nfpm-version`),
+  `lint_specs.py`, `pkg_update.py`, `check_update.py`, `infra_update_all.py`,
+  upgrade test scripts (`check-deb-unit-upgrade`, `check-rpm-unit-upgrade`, `fake-systemctl`)
+- `tarball/` - Shared download cache for all architectures (filenames are arch-qualified)
 - `dist/` - Build output directory
-  - `rpm.x86_64/`, `rpm.aarch64/` - Built RPM packages
-  - `deb.amd64/`, `deb.arm64/` - Built DEB packages
-  - `noarch/` - Architecture-independent packages
+  - `rpm/` - All RPM packages (x86_64 + aarch64 + noarch)
+  - `deb/` - All DEB packages (amd64 + arm64 + all)
 
 ### Package Build Pattern
-Each package follows a consistent structure under `{arch}/{package}/`:
-- `Makefile` - Defines version, download URL, and build targets
-- `nfpm-rpm.yaml` - nFPM configuration for RPM packaging
-- `nfpm-deb.yaml` - nFPM configuration for DEB packaging (sometimes `nfpm.yaml` for noarch)
+Each package follows a consistent structure under `<package>/`:
+- `Makefile` - ARCH-parameterized: `ARCH ?= amd64`, `ARCHS ?= amd64 arm64`,
+  `RARCH` (x86_64/aarch64), per-arch variables as `VAR_amd64=`/`VAR_arm64=` +
+  `VAR=$(VAR_$(ARCH))` selectors; `make` loops `ARCHS`, `make one ARCH=x` builds one arch.
+  Noarch-style packages (kafka, jmx-exporter, pev2, grafana-plugins) have no ARCH loop.
+- `nfpm.yaml` - single nFPM config with `arch: "${ARCH}"` (env-expanded by nfpm);
+  noarch packages use `arch: "all"`. Packages with genuinely different per-arch
+  metadata split into `<base>.amd64.yaml` + `<base>.arm64.yaml` (asciinema, postgrest).
 - `src/` - Package resources (systemd units, config files, install scripts)
   - `preinstall.sh`, `postinstall.sh` - Install hooks
   - `preremove.sh`, `postremove.sh` - Uninstall hooks
-  - `service` - systemd service file
-  - `default` - Default environment config
+  - `service` - systemd service file (installed to /usr/lib/systemd/system)
+  - `default` - Default environment config (installed to /etc/default/<name>)
 
 ### Build Process
-1. `download` - Fetch upstream tarball (checks `../tarball/` cache first)
-2. `extract` - Extract tarball contents
-3. `build` - Run nFPM to create RPM and DEB packages
-4. `clean` - Remove temporary files
+1. `download` - Fetch upstream artifact (checks `../tarball/` cache first)
+2. `verify` - Check pinned SHA256 where configured
+3. `extract` - Extract tarball contents
+4. `build` - Run `../bin/nfpm` (version-pinned wrapper) with `ARCH`/`RARCH` exported,
+   output to `../dist/rpm/` and `../dist/deb/`
+5. `clean` - Remove temporary files
 
-Packages use [nFPM](https://nfpm.goreleaser.com/) for building both RPM and DEB from a single configuration.
+Packages use [nFPM](https://nfpm.goreleaser.com/) for building both RPM and DEB from a single configuration. Run `make lint` (bin/lint_specs.py) after any packaging change.
 
 ### Adding/Updating a Package
 
 At a minimum:
 1. Confirm upstream latest version (and tag naming rules)
-2. Download artifacts through proxy into `amd64/tarball/` + `arm64/tarball/` (and `noarch/tarball/` if needed)
+2. Download artifacts through proxy into the shared `tarball/` cache
+   (cache filenames must be architecture-qualified, e.g. `foo-v1.2.3-linux-arm64`)
 3. Update versions in `Makefile` + `nfpm*.yaml`
-4. Build and verify output versions/architectures
+4. Build and verify output versions/architectures, run `make lint`
 5. Update README + external docs release notes
 
 ### Claude Package Notes
@@ -98,11 +106,12 @@ We usually build in batch, around 1~3 build per month, and make those listed in 
 
 ## Stash
 
-when you are asked to "stash", it means, you have to collect built / downloaded artifacts, and put it into tmp/stash directory
+when you are asked to "stash", it means, you have to collect built / downloaded artifacts, and put it into tmp/stash directory.
+All artifacts now live in `dist/deb/` and `dist/rpm/`; split them by filename arch suffix:
 
-- apt-infra: deb packages for amd64 and arm64, and noarch deb packages
-- yum-infra-x86_64: rpm packages for x86_64, and noarch rpm packages
-- yum-infra-aarch64: rpm packages for aarch64, and noarch rpm packages
+- apt-infra: `dist/deb/*_{amd64,arm64,all}.deb`
+- yum-infra-x86_64: `dist/rpm/*.{x86_64,noarch}.rpm`
+- yum-infra-aarch64: `dist/rpm/*.{aarch64,noarch}.rpm`
 
 ## Place
 

@@ -1,8 +1,8 @@
 #==============================================================#
 # File      :   Makefile
-# Desc      :   pgsty/pkg repo shortcuts
+# Desc      :   pgsty/infra-pkg build shortcuts (single-tree layout)
 # Ctime     :   2024-07-28
-# Mtime     :   2026-08-01
+# Mtime     :   2026-08-04
 # Path      :   Makefile
 # Author    :   Ruohang Feng (rh@vonng.com)
 # License   :   AGPLv3
@@ -10,14 +10,31 @@
 
 DEVEL_PATH = sv:/data/pgsty/infra-pkg
 
+# every top-level directory holding a Makefile is a package
+PKGS := $(sort $(patsubst %/,%,$(dir $(wildcard */Makefile))))
+
 ###############################################################
 #                        1. Building                          #
 ###############################################################
-all: amd64 arm64
-amd64:
-	cd amd64 && make
-arm64:
-	cd arm64 && make
+default: all
+all: $(PKGS)
+
+# build one package (both architectures / noarch): make <pkg>
+$(PKGS): | dir
+	cd $@ && $(MAKE)
+
+# build every package for a single architecture: make amd64 / make arm64
+amd64 arm64: | dir
+	@set -e; for p in $(PKGS); do \
+		if grep -q '^one:' $$p/Makefile; then $(MAKE) -C $$p ARCH=$@ one; fi; \
+	done
+
+# k3s airgap image packages are big and built on demand
+k3s-images:
+	cd k3s && $(MAKE) images
+
+dir:
+	mkdir -p dist/rpm dist/deb
 
 lint:
 	python3 bin/lint_specs.py
@@ -34,232 +51,7 @@ pull:
 	rsync -avc $(DEVEL_PATH)/ ./
 pulld:
 	rsync -avc --delete $(DEVEL_PATH)/ ./
-dir:
-	mkdir -p dist/rpm.x86_64 dist/rpm.aarch64 dist/deb.amd64 dist/deb.arm64 dist/noarch
 
 
-###############################################################
-#                       3. Component                          #
-###############################################################
-duckdb:
-	cd amd64/duckdb && make
-	cd arm64/duckdb && make
-etcd:
-	cd amd64/etcd && make
-	cd arm64/etcd && make
-k3s:
-	cd amd64/k3s && make binary
-	cd arm64/k3s && make binary
-k3s-images:
-	cd amd64/k3s && make airgap
-	cd arm64/k3s && make airgap
-k3s-bundle:
-	cd amd64/k3s && make bundle
-	cd arm64/k3s && make bundle
-mtail:
-	cd amd64/mtail && make
-	cd arm64/mtail && make
-pg_timetable:
-	cd amd64/pg_timetable && make
-	cd arm64/pg_timetable && make
-ferretdb:
-	cd amd64/ferretdb && make
-	cd arm64/ferretdb && make
-sqlcmd:
-	cd amd64/sqlcmd && make
-	cd arm64/sqlcmd && make
-tigerbeetle:
-	cd amd64/tigerbeetle && make
-	cd arm64/tigerbeetle && make
-v2ray:
-	cd amd64/v2ray && make
-	cd arm64/v2ray && make
-xray:
-	cd amd64/xray && make
-	cd arm64/xray && make
-juicefs:
-	cd amd64/juicefs && make
-	cd arm64/juicefs && make
-restic:
-	cd amd64/restic && make
-	cd arm64/restic && make
-dblab:
-	cd amd64/dblab && make
-	cd arm64/dblab && make
-pgstream:
-	cd amd64/pgstream && make
-	cd arm64/pgstream && make
-sql-studio:
-	cd amd64/sql-studio && make
-	cd arm64/sql-studio && make
-rainfrog:
-	cd amd64/rainfrog && make
-	cd arm64/rainfrog && make
-garage:
-	cd amd64/garage && make
-	cd arm64/garage && make
-seaweedfs:
-	cd amd64/seaweedfs && make
-	cd arm64/seaweedfs && make
-rustfs:
-	cd amd64/rustfs && make
-	cd arm64/rustfs && make
-uv:
-	cd amd64/uv && make
-	cd arm64/uv && make
-claude:
-	cd amd64/claude && make
-	cd arm64/claude && make
-agentsview:
-	cd amd64/agentsview && make
-	cd arm64/agentsview && make
-sabiql:
-	cd amd64/sabiql && make
-	cd arm64/sabiql && make
-gost:
-	cd amd64/gost && make
-	cd arm64/gost && make
-infer: claude codex opencode agentsview sabiql gost
-asciinema:
-	cd amd64/asciinema && make
-	cd arm64/asciinema && make
-hugo:
-	cd amd64/hugo && make
-	cd arm64/hugo && make
-caddy:
-	cd amd64/caddy && make
-	cd arm64/caddy && make
-headscale:
-	cd amd64/headscale && make
-	cd arm64/headscale && make
-
-
-loki:
-	@echo "loki is obsolete; skipped"
-prometheus:
-	cd amd64/prometheus && make
-	cd arm64/prometheus && make
-pushgateway:
-	cd amd64/pushgateway && make
-	cd arm64/pushgateway && make
-alertmanager:
-	cd amd64/alertmanager && make
-	cd arm64/alertmanager && make
-blackbox_exporter:
-	cd amd64/blackbox_exporter && make
-	cd arm64/blackbox_exporter && make
-nginx_exporter:
-	cd amd64/nginx_exporter && make
-	cd arm64/nginx_exporter && make
-node_exporter:
-	cd amd64/node_exporter && make
-	cd arm64/node_exporter && make
-zfs_exporter:
-	cd amd64/zfs_exporter && make
-	cd arm64/zfs_exporter && make
-keepalived_exporter:
-	cd amd64/keepalived_exporter && make
-	cd arm64/keepalived_exporter && make
-pgbackrest_exporter:
-	cd amd64/pgbackrest_exporter && make
-	cd arm64/pgbackrest_exporter && make
-pg_exporter:
-	cd amd64/pg_exporter && make
-	cd arm64/pg_exporter && make
-mysqld_exporter:
-	cd amd64/mysqld_exporter && make
-	cd arm64/mysqld_exporter && make
-redis_exporter:
-	cd amd64/redis_exporter && make
-	cd arm64/redis_exporter && make
-kafka_exporter:
-	cd amd64/kafka_exporter && make
-	cd arm64/kafka_exporter && make
-jmx-exporter:
-	cd noarch/jmx-exporter && make
-mongodb_exporter:
-	cd amd64/mongodb_exporter && make
-	cd arm64/mongodb_exporter && make
-victoria: victoria-metrics victoria-logs victoria-traces
-victoria-metrics:
-	cd amd64/victoria-metrics && make
-	cd arm64/victoria-metrics && make
-victoria-logs:
-	cd amd64/victoria-logs && make
-	cd arm64/victoria-logs && make
-victoria-traces:
-	cd amd64/victoria-traces && make
-	cd arm64/victoria-traces && make
-grafana_plugins:
-	cd noarch/grafana-plugins && make
-pev2:
-	cd noarch/pev2 && make
-
-kafka:
-	cd amd64/kafka && make
-
-grafana-ds:  grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds
-grafana-infinity-ds:
-	cd amd64/grafana-infinity-ds && make
-	cd arm64/grafana-infinity-ds && make
-grafana-victoriametrics-ds:
-	cd amd64/grafana-victoriametrics-ds && make
-	cd arm64/grafana-victoriametrics-ds && make
-grafana-victorialogs-ds:
-	cd amd64/grafana-victorialogs-ds && make
-	cd arm64/grafana-victorialogs-ds && make
-
-timescaledb-tools:
-	cd amd64/timescaledb-tools && make
-	cd arm64/timescaledb-tools && make
-
-timescaledb-event-streamer:
-	cd amd64/timescaledb-event-streamer && make
-	cd arm64/timescaledb-event-streamer && make
-
-tigerfs:
-	cd amd64/tigerfs && make
-	cd arm64/tigerfs && make
-
-opencode:
-	cd amd64/opencode && make
-	cd arm64/opencode && make
-
-codex:
-	cd amd64/codex && make
-	cd arm64/codex && make
-
-golang:
-	cd amd64/golang && make
-	cd arm64/golang && make
-
-nodejs:
-	cd amd64/nodejs && make
-	cd arm64/nodejs && make
-
-postgrest:
-	cd amd64/postgrest && make
-	cd arm64/postgrest && make
-
-npgsqlrest:
-	cd amd64/npgsqlrest && make
-	cd arm64/npgsqlrest && make
-
-stalwart:
-	cd amd64/stalwart && make
-	cd arm64/stalwart && make
-
-maddy:
-	cd amd64/maddy && make
-	cd arm64/maddy && make
-
-###############################################################
-#                         Inventory                           #
-###############################################################
-.PHONY: all amd64 arm64 lint push pushd pull pulld dir \
-	loki prometheus alertmanager pushgateway blackbox_exporter \
-	node_exporter zfs_exporter nginx_exporter keepalived_exporter mysqld_exporter mongodb_exporter \
-	kafka_exporter jmx-exporter redis_exporter pgbackrest_exporter pg_exporter \
-	victoria victoria-metrics victoria-logs victoria-traces pg_timetable duckdb etcd k3s k3s-images k3s-bundle mtail ferretdb sqlcmd tigerbeetle kafka v2ray xray \
-	grafana-ds grafana-infinity-ds grafana-victoriametrics-ds grafana-victorialogs-ds timescaledb-tools timescaledb-event-streamer tigerfs \
-	restic juicefs dblab pgstream sql-studio rainfrog garage seaweedfs rustfs uv infer claude asciinema hugo caddy headscale grafana_plugins pev2 opencode codex agentsview sabiql gost golang nodejs postgrest npgsqlrest stalwart maddy
+.NOTPARALLEL:
+.PHONY: default all amd64 arm64 k3s-images dir lint push pushd pull pulld $(PKGS)

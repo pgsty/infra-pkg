@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Static invariants for infra-pkg nFPM recipes and shared package sources."""
+"""Static invariants for infra-pkg nFPM recipes (single-tree layout).
+
+Every top-level directory holding a Makefile is a package. Arch-parameterized
+packages build via `make one ARCH=<amd64|arm64>` with manifests using
+`arch: "${ARCH}"`; noarch-style packages (kafka, jmx-exporter, pev2,
+grafana-plugins) build once with `arch: "all"`. Packages with genuinely
+different per-arch metadata split into `<base>.amd64.yaml` + `<base>.arm64.yaml`.
+"""
 
 from __future__ import annotations
 
@@ -17,12 +24,10 @@ except ImportError:
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHES = ("amd64", "arm64", "noarch")
-SHARED_SOURCE_EXCEPTIONS = {("k3s", Path("AIRGAP.md"))}
+ARCHS = ("amd64", "arm64")
 # Published package names are an upgrade ABI; v2ray historically shipped as vray.
 PACKAGE_NAME_ALIASES = {"v2ray": {"vray"}, "ferretdb": {"ferretdb2"}}
 PACKAGE_FORMATS = {"deb", "rpm"}
-SINGLE_ARCH_PACKAGE_EXCEPTIONS = {"kafka"}
 OVERRIDE_LIST_FIELDS = {
     "conflicts",
     "depends",
@@ -31,9 +36,17 @@ OVERRIDE_LIST_FIELDS = {
     "replaces",
     "suggests",
 }
+
+SPLIT_RE = re.compile(r"^(?P<base>.+)\.(?P<arch>amd64|arm64)\.ya?ml$")
+
+
+def package_dirs() -> List[Path]:
+    return sorted(p.parent for p in ROOT.glob("*/Makefile"))
+
+
 def package_manifests() -> Iterable[Path]:
-    for arch in ARCHES:
-        yield from sorted((ROOT / arch).glob("*/*.yaml"))
+    for pkg in package_dirs():
+        yield from sorted(pkg.glob("*.yaml"))
 
 
 def parse_mode(value: Any) -> Optional[int]:
@@ -52,13 +65,30 @@ def file_info(entry: Dict[str, Any]) -> Tuple[Optional[str], Optional[str], Opti
     return info.get("owner"), info.get("group"), parse_mode(info.get("mode"))
 
 
-def lint_manifest(path: Path, data: Dict[str, Any], errors: List[str]) -> Tuple[str, str, str]:
+def is_arch_parameterized(makefile_text: str) -> bool:
+    return bool(re.search(r"^ARCH\s*\?=", makefile_text, re.M))
+
+
+def lint_manifest(path: Path, data: Dict[str, Any], errors: List[str],
+                  arch_pkg: bool) -> Tuple[str, str, str]:
     rel = path.relative_to(ROOT)
     name = str(data.get("name", ""))
     version = str(data.get("version", ""))
     release = data.get("release")
     if release is None or str(release).strip() == "":
         errors.append(f"{rel}: missing release")
+
+    arch = str(data.get("arch", ""))
+    split = SPLIT_RE.match(path.name)
+    if split:
+        if arch != split.group("arch"):
+            errors.append(f"{rel}: split manifest must declare arch: {split.group('arch')}")
+    elif arch_pkg:
+        if arch != "${ARCH}":
+            errors.append(f'{rel}: arch must be "${{ARCH}}" (found {arch!r})')
+    else:
+        if arch != "all":
+            errors.append(f'{rel}: noarch-style manifest must use arch: all (found {arch!r})')
 
     for field in ("conflicts", "replaces"):
         if name in (data.get(field) or []):
@@ -109,6 +139,7 @@ def lint_manifest(path: Path, data: Dict[str, Any], errors: List[str]) -> Tuple[
 
     destinations = set()
     units: List[str] = []
+    uses_arch_var = False
     contents = data.get("contents") or []
     if not isinstance(contents, list):
         errors.append(f"{rel}: contents must be a list")
@@ -117,7 +148,11 @@ def lint_manifest(path: Path, data: Dict[str, Any], errors: List[str]) -> Tuple[
         if not isinstance(entry, dict):
             errors.append(f"{rel}: content entry must be a mapping")
             continue
+        source = str(entry.get("src", ""))
         destination = str(entry.get("dst", ""))
+        if "${ARCH}" in source or "${RARCH}" in source \
+                or "${ARCH}" in destination or "${RARCH}" in destination:
+            uses_arch_var = True
         if not destination:
             errors.append(f"{rel}: content entry has no destination")
             continue
@@ -152,6 +187,11 @@ def lint_manifest(path: Path, data: Dict[str, Any], errors: List[str]) -> Tuple[
         ):
             errors.append(f"{rel}: executable payload must declare mode 0755: {destination}")
 
+    if (arch == "${ARCH}" or uses_arch_var):
+        makefile = (path.parent / "Makefile").read_text(encoding="utf-8")
+        if not re.search(r"^export ARCH RARCH\s*$", makefile, re.M):
+            errors.append(f"{rel}: manifest uses ${{ARCH}}/${{RARCH}} but Makefile lacks `export ARCH RARCH`")
+
     if units:
         required_phases = {"postinstall", "preremove", "postremove"}
         missing_phases = sorted(required_phases - set(scripts))
@@ -172,70 +212,26 @@ def lint_manifest(path: Path, data: Dict[str, Any], errors: List[str]) -> Tuple[
     return name, version, "" if release is None else str(release)
 
 
-def source_files(directory: Path, package: str) -> Dict[Path, bytes]:
-    result: Dict[Path, bytes] = {}
-    for path in sorted(directory.rglob("*")):
-        if not path.is_file():
-            continue
-        relative = path.relative_to(directory)
-        if (package, relative) in SHARED_SOURCE_EXCEPTIONS:
-            continue
-        result[relative] = path.read_bytes()
-    return result
-
-
-def lint_shared_sources(errors: List[str]) -> None:
-    common = sorted(
-        {p.name for p in (ROOT / "amd64").iterdir() if p.is_dir()}
-        & {p.name for p in (ROOT / "arm64").iterdir() if p.is_dir()}
-    )
-    for package in common:
-        left = ROOT / "amd64" / package / "src"
-        right = ROOT / "arm64" / package / "src"
-        if not left.is_dir() and not right.is_dir():
-            continue
-        if not left.is_dir() or not right.is_dir():
-            errors.append(f"{package}: src directory exists for only one architecture")
-            continue
-        left_files = source_files(left, package)
-        right_files = source_files(right, package)
-        for relative in sorted(set(left_files) | set(right_files)):
-            if relative not in left_files:
-                errors.append(f"{package}: source only in arm64: {relative}")
-            elif relative not in right_files:
-                errors.append(f"{package}: source only in amd64: {relative}")
-            elif left_files[relative] != right_files[relative]:
-                errors.append(f"{package}: shared source differs by architecture: {relative}")
-
-
-def lint_package_directories(errors: List[str]) -> None:
-    packages = {
-        arch: {
-            path.parent.name
-            for path in (ROOT / arch).glob("*/Makefile")
-        }
-        for arch in ("amd64", "arm64")
-    }
-    for package in sorted(packages["amd64"] ^ packages["arm64"]):
-        present_arch = "amd64" if package in packages["amd64"] else "arm64"
-        if package not in SINGLE_ARCH_PACKAGE_EXCEPTIONS:
-            errors.append(f"{package}: package directory exists only in {present_arch}")
-            continue
-        manifests = []
-        for path in sorted((ROOT / present_arch / package).glob("*.yaml")):
-            try:
-                data = yaml.safe_load(path.read_text(encoding="utf-8"))
-            except Exception:
-                continue
-            if isinstance(data, dict) and {"name", "version", "contents"}.issubset(data):
-                manifests.append((path, data))
-        if not manifests or any(data.get("arch") != "all" for _path, data in manifests):
-            errors.append(f"{package}: single-architecture directory must package arch: all")
+def lint_split_manifests(errors: List[str]) -> None:
+    """<base>.amd64.yaml and <base>.arm64.yaml must come in pairs."""
+    for pkg in package_dirs():
+        bases: Dict[str, set] = defaultdict(set)
+        for path in pkg.glob("*.yaml"):
+            match = SPLIT_RE.match(path.name)
+            if match:
+                bases[match.group("base")].add(match.group("arch"))
+        for base, archs in sorted(bases.items()):
+            missing = set(ARCHS) - archs
+            if missing:
+                errors.append(
+                    f"{pkg.relative_to(ROOT)}: split manifest {base} missing arch variants: "
+                    + ", ".join(sorted(missing))
+                )
 
 
 def lint_shell(errors: List[str]) -> None:
-    for arch in ARCHES:
-        for path in sorted((ROOT / arch).glob("**/*.sh")):
+    for pkg in package_dirs():
+        for path in sorted(pkg.glob("**/*.sh")):
             text = path.read_text(encoding="utf-8")
             if not text.startswith("#!/bin/sh"):
                 continue
@@ -266,71 +262,96 @@ def comparable_version(package: str, version: str) -> str:
     return version
 
 
+def resolve_config_names(config: str, text: str) -> List[str]:
+    """Resolve --config argument to concrete filenames (handles $(NFPM_CONFIG))."""
+    if "$(" not in config:
+        return [config]
+    match = re.match(r"\$\(([A-Za-z_][A-Za-z0-9_]*)\)$", config)
+    if not match:
+        return []
+    value = make_variable(text, match.group(1))
+    if value is None:
+        return []
+    if "$(ARCH)" in value:
+        return [value.replace("$(ARCH)", arch) for arch in ARCHS]
+    return [value]
+
+
 def lint_makefiles(errors: List[str]) -> None:
-    for arch in ARCHES:
-        for path in sorted((ROOT / arch).glob("*/Makefile")):
-            text = path.read_text(encoding="utf-8")
-            configs: Dict[str, set] = {"rpm": set(), "deb": set()}
-            if not re.search(r"^\.NOTPARALLEL:\s*$", text, re.M):
-                errors.append(f"{path.relative_to(ROOT)}: missing .NOTPARALLEL build-race guard")
-            for number, line in enumerate(text.splitlines(), 1):
-                if "nfpm package" in line and not line.strip().startswith("../../bin/nfpm package"):
-                    errors.append(f"{path.relative_to(ROOT)}:{number}: bypasses pinned nFPM wrapper")
-                if "nfpm package" in line:
-                    config_match = re.search(r"--config\s+(\S+)", line)
-                    packager_match = re.search(r"--packager\s+(rpm|deb)", line)
-                    if not config_match or not packager_match:
-                        errors.append(f"{path.relative_to(ROOT)}:{number}: incomplete nFPM command")
-                    else:
-                        config = config_match.group(1)
-                        packager = packager_match.group(1)
-                        configs[packager].add(config)
-                        if not (path.parent / config).is_file():
-                            errors.append(
-                                f"{path.relative_to(ROOT)}:{number}: missing nFPM config {config}"
-                            )
-                if "curl" in line and not line.lstrip().startswith(("#", "@echo")):
-                    curl_args = line.split("curl", 1)[1]
-                    has_fail = "--fail" in curl_args or re.search(r"(?:^|\s)-[A-Za-z]*f[A-Za-z]*", curl_args)
-                    if not has_fail:
-                        errors.append(f"{path.relative_to(ROOT)}:{number}: curl download must fail on HTTP errors")
+    for pkg in package_dirs():
+        path = pkg / "Makefile"
+        text = path.read_text(encoding="utf-8")
+        rel = path.relative_to(ROOT)
+        arch_pkg = is_arch_parameterized(text)
+        configs: Dict[str, set] = {"rpm": set(), "deb": set()}
+        if not re.search(r"^\.NOTPARALLEL:\s*$", text, re.M):
+            errors.append(f"{rel}: missing .NOTPARALLEL build-race guard")
+        if arch_pkg:
+            if not re.search(r"^ARCH\s*\?=", text, re.M) or not re.search(r"^ARCHS\s*\?=", text, re.M):
+                errors.append(f"{rel}: arch-parameterized Makefile must declare ARCH ?= and ARCHS ?=")
+        for number, line in enumerate(text.splitlines(), 1):
+            if "nfpm package" in line and not line.strip().startswith("../bin/nfpm package"):
+                errors.append(f"{rel}:{number}: bypasses pinned nFPM wrapper")
+            if "nfpm package" in line:
+                config_match = re.search(r"--config\s+(\S+)", line)
+                packager_match = re.search(r"--packager\s+(rpm|deb)", line)
+                if not config_match or not packager_match:
+                    errors.append(f"{rel}:{number}: incomplete nFPM command")
+                else:
+                    config = config_match.group(1)
+                    packager = packager_match.group(1)
+                    configs[packager].add(config)
+                    resolved = resolve_config_names(config, text)
+                    if not resolved:
+                        errors.append(f"{rel}:{number}: cannot resolve nFPM config {config}")
+                    for concrete in resolved:
+                        if not (pkg / concrete).is_file():
+                            errors.append(f"{rel}:{number}: missing nFPM config {concrete}")
+                target_match = re.search(r"--target\s+(\S+)", line)
+                if target_match and packager_match:
+                    expected = f"../dist/{packager_match.group(1)}/"
+                    if target_match.group(1) != expected:
+                        errors.append(f"{rel}:{number}: build target must be {expected}")
+            if "curl" in line and not line.lstrip().startswith(("#", "@echo")):
+                curl_args = line.split("curl", 1)[1]
+                has_fail = "--fail" in curl_args or re.search(r"(?:^|\s)-[A-Za-z]*f[A-Za-z]*", curl_args)
+                if not has_fail:
+                    errors.append(f"{rel}:{number}: curl download must fail on HTTP errors")
 
-            if configs["rpm"] != configs["deb"]:
-                errors.append(
-                    f"{path.relative_to(ROOT)}: RPM and DEB builds must use the same nFPM configs"
-                )
+        if configs["rpm"] != configs["deb"]:
+            errors.append(f"{rel}: RPM and DEB builds must use the same nFPM configs")
 
-            package = make_variable(text, "PACKAGE")
-            version = make_variable(text, "VERSION")
-            release = make_variable(text, "RELEASE")
-            if not package:
+        package = make_variable(text, "PACKAGE")
+        version = make_variable(text, "VERSION")
+        release = make_variable(text, "RELEASE")
+        if not package:
+            continue
+        for manifest in sorted(pkg.glob("*.yaml")):
+            try:
+                data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
+            except Exception:
                 continue
-            for manifest in sorted(path.parent.glob("*.yaml")):
-                try:
-                    data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
-                except Exception:
-                    continue
-                if not isinstance(data, dict) or not {"name", "version", "contents"}.issubset(data):
-                    continue
-                manifest_name = str(data["name"])
-                aliases = PACKAGE_NAME_ALIASES.get(path.parent.name, set())
-                if (
-                    manifest_name != package
-                    and manifest_name.replace("-", "_") != package
-                    and manifest_name not in aliases
-                ):
-                    continue
-                rel = manifest.relative_to(ROOT)
-                manifest_version = str(data["version"])
-                if version and comparable_version(package, version) != comparable_version(package, manifest_version):
-                    errors.append(
-                        f"{rel}: version {manifest_version} differs from Makefile VERSION={version}"
-                    )
-                manifest_release = str(data.get("release", ""))
-                if release and release != manifest_release:
-                    errors.append(
-                        f"{rel}: release {manifest_release} differs from Makefile RELEASE={release}"
-                    )
+            if not isinstance(data, dict) or not {"name", "version", "contents"}.issubset(data):
+                continue
+            manifest_name = str(data["name"])
+            aliases = PACKAGE_NAME_ALIASES.get(pkg.name, set())
+            if (
+                manifest_name != package
+                and manifest_name.replace("-", "_") != package
+                and manifest_name not in aliases
+            ):
+                continue
+            mrel = manifest.relative_to(ROOT)
+            manifest_version = str(data["version"])
+            if version and comparable_version(package, version) != comparable_version(package, manifest_version):
+                errors.append(
+                    f"{mrel}: version {manifest_version} differs from Makefile VERSION={version}"
+                )
+            manifest_release = str(data.get("release", ""))
+            if release and release != manifest_release:
+                errors.append(
+                    f"{mrel}: release {manifest_release} differs from Makefile RELEASE={release}"
+                )
 
 
 def main() -> int:
@@ -347,21 +368,30 @@ def main() -> int:
         if not isinstance(data, dict) or not {"name", "version", "contents"}.issubset(data):
             continue
         count += 1
-        name, version, release = lint_manifest(path, data, errors)
+        makefile_text = (path.parent / "Makefile").read_text(encoding="utf-8")
+        arch_pkg = is_arch_parameterized(makefile_text)
+        name, version, release = lint_manifest(path, data, errors, arch_pkg)
         versions[name].add((version, release))
-        artifacts[(path.parent, name)].append(path)
+        # split per-arch manifests describe one logical artifact
+        split = SPLIT_RE.match(path.name)
+        key_name = f"{split.group('base')}:{name}" if split else path.name + ":" + name
+        artifacts[(path.parent, key_name)].append(path)
         if path.name.endswith(("-deb.yaml", "-rpm.yaml")):
             errors.append(
                 f"{path.relative_to(ROOT)}: split RPM/DEB manifests are forbidden; use one config with overrides"
             )
-        if path.parts[-3] == "noarch" and data.get("arch") != "all":
-            errors.append(f"{path.relative_to(ROOT)}: noarch manifest must use arch: all")
 
-    for (directory, name), paths in sorted(artifacts.items()):
-        if len(paths) > 1:
+    for (directory, key), paths in sorted(artifacts.items()):
+        split_variants = [p for p in paths if SPLIT_RE.match(p.name)]
+        if split_variants and len(paths) > len(ARCHS):
             rendered = ", ".join(path.name for path in paths)
             errors.append(
-                f"{directory.relative_to(ROOT)}/{name}: one artifact has multiple nFPM manifests: {rendered}"
+                f"{directory.relative_to(ROOT)}/{key}: too many manifests for one artifact: {rendered}"
+            )
+        if not split_variants and len(paths) > 1:
+            rendered = ", ".join(path.name for path in paths)
+            errors.append(
+                f"{directory.relative_to(ROOT)}/{key}: one artifact has multiple nFPM manifests: {rendered}"
             )
 
     for name, values in sorted(versions.items()):
@@ -369,8 +399,7 @@ def main() -> int:
             rendered = ", ".join(f"{version}-{release}" for version, release in sorted(values))
             errors.append(f"{name}: inconsistent manifest versions: {rendered}")
 
-    lint_shared_sources(errors)
-    lint_package_directories(errors)
+    lint_split_manifests(errors)
     lint_shell(errors)
     lint_makefiles(errors)
 
@@ -379,7 +408,7 @@ def main() -> int:
             print(f"ERROR: {error}", file=sys.stderr)
         print(f"lint failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
-    print(f"lint passed: {count} nFPM manifests")
+    print(f"lint passed: {count} nFPM manifests across {len(package_dirs())} packages")
     return 0
 
 

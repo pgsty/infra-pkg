@@ -1,3 +1,0 @@
-LOKI_OPTS='-config.file=/etc/loki.yml -config.expand-env=true'
-LOKI_DATA=/var/lib/loki
-LOKI_RETENTION_PERIOD=15d

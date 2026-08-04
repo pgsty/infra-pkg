@@ -1,0 +1,26 @@
+name: "tigerbeetle"
+arch: "${ARCH}"
+platform: "linux"
+version: "v0.17.9"
+release: "1"
+version_schema: semver
+description: The financial transactions database designed for mission critical safety and performance
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "tigerbeetle"
+homepage: "https://github.com/tigerbeetle/tigerbeetle"
+license: "Apache-2.0"
+
+rpm:
+  prefixes:
+    - /usr/bin
+
+contents:
+  - src: tigerbeetle
+    dst: /usr/bin/tigerbeetle
+    file_info:
+      mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/tigerbeetle/LICENSE
+    file_info:
+      mode: 0644

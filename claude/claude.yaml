@@ -1,0 +1,34 @@
+name: "claude"
+arch: "${ARCH}"
+platform: "linux"
+version: "2.1.220"
+release: "2"
+version_schema: semver
+description: Anthropic's official CLI for Claude
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Anthropic"
+homepage: "https://github.com/anthropics/claude-code"
+license: "Proprietary"
+
+rpm:
+  prefixes:
+    - /usr
+
+contents:
+  - src: claude
+    dst: /usr/bin/claude
+    file_info:
+      mode: 0755
+
+  - src: LICENSE.md
+    dst: /usr/share/doc/claude/LICENSE.md
+    file_info:
+      mode: 0644
+
+overrides:
+  deb:
+    depends:
+      - "libc6 (>= 2.17)"
+  rpm:
+    depends:
+      - "glibc >= 2.17"

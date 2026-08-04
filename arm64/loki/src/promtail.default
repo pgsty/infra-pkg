@@ -1,3 +1,0 @@
-PROMTAIL_OPTS='-config.file=/etc/promtail.yml -config.expand-env=true'
-PROMTAIL_POSITIONS=/var/log/positions.yaml
-PROMTAIL_SEND_URL=http://localhost:3100/loki/api/v1/push

@@ -1,0 +1,37 @@
+name: "timescaledb-tools"
+arch: "${ARCH}"
+platform: "linux"
+version: "v0.19.0"
+release: "3"
+version_schema: semver
+description: "TimescaleDB tuning and parallel copy tools"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "Timescale"
+homepage: "https://github.com/timescale/timescaledb-tune"
+license: "Apache-2.0"
+
+contents:
+  - src: timescaledb-tune
+    dst: /usr/bin/timescaledb-tune
+    file_info:
+      mode: 0755
+
+  - src: timescaledb-parallel-copy
+    dst: /usr/bin/timescaledb-parallel-copy
+    file_info:
+      mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/timescaledb-tools/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: NOTICE.timescaledb-tune
+    dst: /usr/share/doc/timescaledb-tools/NOTICE.timescaledb-tune
+    file_info:
+      mode: 0644
+
+  - src: NOTICE.timescaledb-parallel-copy
+    dst: /usr/share/doc/timescaledb-tools/NOTICE.timescaledb-parallel-copy
+    file_info:
+      mode: 0644
