@@ -105,11 +105,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm amd64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.x86_64.rpm
   - rpm arm64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.aarch64.rpm
   - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
-- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.1.0
-  - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage_1.1.0_amd64.deb
-  - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage_1.1.0_arm64.deb
-  - rpm amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage-1.1.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage-1.1.0-1.aarch64.rpm
+- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.1.1
+  - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.1/pg-hardstorage_1.1.1_amd64.deb
+  - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.1/pg-hardstorage_1.1.1_arm64.deb
+  - rpm amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.1/pg-hardstorage-1.1.1-1.x86_64.rpm
+  - rpm arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.1/pg-hardstorage-1.1.1-1.aarch64.rpm
   - warning: vendor packages ship systemd, sysusers, and tmpfiles definitions but no lifecycle scripts; run `systemd-sysusers` and `systemd-tmpfiles --create` before first service start, and restart or stop the agent explicitly on upgrade or removal
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
   - deb amd64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter_1.4.1-1_amd64.deb
@@ -218,6 +218,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
 | nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
 | opencode       | 1.18.11        | 1.18.13        | upstream release assets                          |
+| pg-hardstorage | 1.1.0          | 1.1.1          | official RPM/DEB assets                          |
 | pgstream       | 1.3.0          | 1.3.1          | upstream release assets                          |
 | stalwart       | 0.16.15        | 0.16.16        | upstream release assets                          |
 | vray           | 5.51.2         | 5.52.0         | latest stable release                            |
@@ -230,7 +231,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:---------------|:--------|:--------|:-------------------------------------------------------|
 | code-server    | 4.130.0 | 4.131.0 | direct-download metadata; artifacts deferred           |
 | crush          | 0.87.0  | 0.88.0  | official links; repository mirror blocked by license   |
-| pg-hardstorage | 1.0.17  | 1.1.0   | official artifacts reviewed; repository intake deferred |
+| pg-hardstorage | 1.0.17  | 1.1.0   | superseded by 1.1.1; artifacts downloaded 2026-08-05  |
 
 
 **2026-08-02**
