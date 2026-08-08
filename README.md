@@ -76,7 +76,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (external build)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
-- [postgrest](https://github.com/PostgREST/postgrest) 14.16
+- [postgrest](https://github.com/PostgREST/postgrest) 16.0 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.18.15
@@ -188,6 +188,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | claude   | 2.1.223 | 2.1.226 | official manifest verified; dual-arch RPM/DEB built |
 | codex    | 0.146.1 | 0.147.0 | stable tag `rust-v0.147.0`; dual-arch RPM/DEB built |
 | opencode | 1.18.14 | 1.18.15 | dual-architecture RPM/DEB built                     |
+| postgrest | 14.16   | 16.0    | static dual-arch RPM/DEB built; PostgreSQL 14+      |
 
 
 **2026-08-07**
