@@ -93,13 +93,12 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Download Directly**:
 
-- [grafana](https://github.com/grafana/grafana/) : 13.1.1
-  - deb amd64: https://dl.grafana.com/grafana/release/13.1.1/grafana_13.1.1_29761037902_linux_amd64.deb
-  - deb arm64: https://dl.grafana.com/grafana/release/13.1.1/grafana_13.1.1_29761037902_linux_arm64.deb
-  - rpm amd64: https://dl.grafana.com/grafana/release/13.1.1/grafana_13.1.1_29761037902_linux_amd64.rpm
-  - rpm arm64: https://dl.grafana.com/grafana/release/13.1.1/grafana_13.1.1_29761037902_linux_arm64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 13.1.3
+  - deb amd64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_amd64.deb
+  - deb arm64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_arm64.deb
+  - rpm amd64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_amd64.rpm
+  - rpm arm64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
-  - warning: upstream 13.1.1 packages have a [known bundled-plugins upgrade regression](https://github.com/grafana/grafana/pull/129003); DEB upgrades may fail; the fix is merged for 13.1.2
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.57.0
   - deb amd64: https://packages.timber.io/vector/0.57.0/vector_0.57.0-1_amd64.deb
   - deb arm64: https://packages.timber.io/vector/0.57.0/vector_0.57.0-1_arm64.deb
@@ -183,6 +182,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:---------|:--------|:--------|:----------------------------------------------------|
 | claude   | 2.1.223 | 2.1.226 | official manifest verified; dual-arch RPM/DEB built |
 | codex    | 0.146.1 | 0.147.0 | stable tag `rust-v0.147.0`; dual-arch RPM/DEB built |
+| grafana  | 13.1.2  | 13.1.3  | official dual-architecture RPM/DEB verified         |
 | opencode | 1.18.14 | 1.18.15 | dual-architecture RPM/DEB built                     |
 | postgrest | 14.16   | 16.0    | static dual-arch RPM/DEB built; PostgreSQL 14+      |
 | rainfrog | 0.4.2   | 0.4.3   | dual-architecture RPM/DEB built                     |
@@ -214,6 +214,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:---------------|:---------------|:---------------|:-------------------------------------------------|
 | agentsview     | 0.39.0         | 0.40.1         | upstream release assets                          |
 | claude         | 2.1.220        | 2.1.222        | official manifest verified via proxy             |
+| grafana        | 13.1.1         | 13.1.2         | fixes bundled-plugin upgrades and CVE-2026-13438 |
 | juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
 | nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
 | opencode       | 1.18.11        | 1.18.13        | upstream release assets                          |
