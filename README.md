@@ -153,11 +153,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-arm64.deb
   - rpm amd64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-amd64.rpm
   - rpm arm64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-arm64.rpm
-- [code](https://code.visualstudio.com/) 1.131.0
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code_1.131.0-1785237861_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code_1.131.0-1785237876_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code-1.131.0-1785237908.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e4c7e7b1d6d060162f4aa7f8225271b67ce1df75/code-1.131.0-1785237927.el8.aarch64.rpm
+- [code](https://code.visualstudio.com/) 1.132.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code_1.132.0-1785860022_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code_1.132.0-1785860155_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code-1.132.0-1785860072.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code-1.132.0-1785860207.el8.aarch64.rpm
 - [code-server](https://github.com/coder/code-server): 4.131.0
   - deb amd64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server_4.131.0_amd64.deb
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server_4.131.0_arm64.deb
@@ -204,6 +204,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:---------------------------|:---------------|:---------------|:---------------------------------------------|
 | claude                     | 2.1.222        | 2.1.223        | official manifest verified via proxy         |
 | codex                      | 0.146.0        | 0.146.1        | stable release tag `rust-v0.146.1`           |
+| code                       | 1.131.0        | 1.132.0        | official RPM/DEB artifacts                   |
 | dblab                      | 0.47.2         | 0.47.4         | upstream release assets                      |
 | grafana-infinity-ds        | 3.11.1         | 3.11.2         | upstream release assets                      |
 | grafana-victorialogs-ds    | 0.30.1         | 0.31.0         | upstream release assets                      |
