@@ -138,11 +138,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.aarch64.rpm
   - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
-- [mcli](https://github.com/pgsty/mc): 20260417000000
-  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli-20260417000000.0.0-1.aarch64.rpm
+- [mcli](https://github.com/pgsty/mc): 20260806000000
+  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-08-06T00-00-00Z/mcli_20260806000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-08-06T00-00-00Z/mcli_20260806000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-08-06T00-00-00Z/mcli-20260806000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-08-06T00-00-00Z/mcli-20260806000000.0.0-1.aarch64.rpm
 - [sealos](https://github.com/labring/sealos): 5.1.1
   - deb amd64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_amd64.deb
   - deb arm64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_arm64.deb
@@ -209,6 +209,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | grafana-victorialogs-ds    | 0.30.1         | 0.31.0         | upstream release assets                      |
 | k3s                        | 1.36.2         | 1.36.3         | official stable channel `v1.36.3+k3s1`       |
 | k3s-images                 | 1.36.2         | 1.36.3         | matching dual-architecture airgap images     |
+| mcli                       | 20260804000000 | 20260806000000 | pgsty fork release                           |
 | opencode                   | 1.18.13        | 1.18.14        | upstream release assets                      |
 | pgschema                   | 1.12.1         | 1.12.2         | official RPM/DEB artifacts                   |
 | seaweedfs                  | 4.40           | 4.41           | upstream release assets                      |
@@ -225,6 +226,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | claude         | 2.1.220        | 2.1.222        | official manifest verified via proxy             |
 | grafana        | 13.1.1         | 13.1.2         | fixes bundled-plugin upgrades and CVE-2026-13438 |
 | juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
+| mcli           | 20260417000000 | 20260804000000 | pgsty fork release                               |
 | minio          | 20260618000000 | 20260804000000 | pgsty fork release                               |
 | nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
 | opencode       | 1.18.11        | 1.18.13        | upstream release assets                          |
