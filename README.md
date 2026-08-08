@@ -79,7 +79,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [postgrest](https://github.com/PostgREST/postgrest) 14.16
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.18.11
+- [opencode](https://github.com/anomalyco/opencode) 1.18.15
 - [uv](https://github.com/astral-sh/uv) 0.12.1
 - [golang](https://go.dev/dl/) 1.26.5
   - x86_64: https://go.dev/dl/go1.26.5.linux-amd64.tar.gz
@@ -187,6 +187,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:---------|:--------|:--------|:----------------------------------------------------|
 | claude   | 2.1.223 | 2.1.226 | official manifest verified; dual-arch RPM/DEB built |
 | codex    | 0.146.1 | 0.147.0 | stable tag `rust-v0.147.0`; dual-arch RPM/DEB built |
+| opencode | 1.18.14 | 1.18.15 | dual-architecture RPM/DEB built                     |
 
 
 **2026-08-07**
@@ -200,6 +201,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | grafana-victorialogs-ds    | 0.30.1         | 0.31.0         | upstream release assets                      |
 | k3s                        | 1.36.2         | 1.36.3         | official stable channel `v1.36.3+k3s1`       |
 | k3s-images                 | 1.36.2         | 1.36.3         | matching dual-architecture airgap images     |
+| opencode                   | 1.18.13        | 1.18.14        | upstream release assets                      |
 
 
 **2026-08-05**
@@ -210,6 +212,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | claude         | 2.1.220        | 2.1.222        | official manifest verified via proxy             |
 | juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
 | nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
+| opencode       | 1.18.11        | 1.18.13        | upstream release assets                          |
 
 
 **2026-08-03**
