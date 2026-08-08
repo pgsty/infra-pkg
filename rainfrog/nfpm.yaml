@@ -1,7 +1,7 @@
 name: "rainfrog"
 arch: "${ARCH}"
 platform: "linux"
-version: "v0.4.2"
+version: "v0.4.3"
 release: "2"
 version_schema: semver
 description: Database tool for the terminal.

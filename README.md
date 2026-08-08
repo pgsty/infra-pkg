@@ -45,7 +45,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [dblab](https://github.com/danvergara/dblab) 0.47.4
 - [pgstream](https://github.com/xataio/pgstream) 1.3.1
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
-- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.2
+- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.3
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.0.0
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
@@ -189,6 +189,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | codex    | 0.146.1 | 0.147.0 | stable tag `rust-v0.147.0`; dual-arch RPM/DEB built |
 | opencode | 1.18.14 | 1.18.15 | dual-architecture RPM/DEB built                     |
 | postgrest | 14.16   | 16.0    | static dual-arch RPM/DEB built; PostgreSQL 14+      |
+| rainfrog | 0.4.2   | 0.4.3   | dual-architecture RPM/DEB built                     |
 
 
 **2026-08-07**
