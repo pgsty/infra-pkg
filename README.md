@@ -116,11 +116,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter_1.4.1-1_arm64.deb
   - rpm amd64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter-1.4.1-1.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter-1.4.1-1.aarch64.rpm
-- [pgschema](https://github.com/pgplex/pgschema): 1.12.1
-  - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.1/pgschema_1.12.1_amd64.deb
-  - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.1/pgschema_1.12.1_arm64.deb
-  - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.1/pgschema-1.12.1-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.1/pgschema-1.12.1-1.aarch64.rpm
+- [pgschema](https://github.com/pgplex/pgschema): 1.12.2
+  - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema_1.12.2_amd64.deb
+  - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema_1.12.2_arm64.deb
+  - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema-1.12.2-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema-1.12.2-1.aarch64.rpm
 - [crush](https://github.com/charmbracelet/crush): 0.88.0
   - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush_0.88.0_amd64.deb
   - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush_0.88.0_arm64.deb
@@ -203,6 +203,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | k3s                        | 1.36.2         | 1.36.3         | official stable channel `v1.36.3+k3s1`       |
 | k3s-images                 | 1.36.2         | 1.36.3         | matching dual-architecture airgap images     |
 | opencode                   | 1.18.13        | 1.18.14        | upstream release assets                      |
+| pgschema                   | 1.12.1         | 1.12.2         | official RPM/DEB artifacts                   |
 | seaweedfs                  | 4.40           | 4.41           | upstream release assets                      |
 | uv                         | 0.12.1         | 0.12.2         | upstream release assets                      |
 | victoria-metrics           | 1.148.0        | 1.149.0        | single-node, cluster, and vmutils artifacts  |
