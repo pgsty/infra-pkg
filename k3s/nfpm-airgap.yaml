@@ -1,10 +1,10 @@
 name: "k3s-images"
 arch: "${ARCH}"
 platform: "linux"
-version: "1.36.2"
+version: "1.36.3"
 release: "1.1"
 version_schema: semver
-description: "K3s v1.36.2+k3s1 system images for air-gapped nodes"
+description: "K3s v1.36.3+k3s1 system images for air-gapped nodes"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "K3s Project"
 homepage: "https://github.com/k3s-io/k3s"
@@ -13,10 +13,10 @@ license: "Multiple"
 overrides:
   deb:
     depends:
-      - k3s (= 1.36.2-1.1)
+      - k3s (= 1.36.3-1.1)
   rpm:
     depends:
-      - k3s = 1.36.2-1.1
+      - k3s = 1.36.3-1.1
 
 contents:
 

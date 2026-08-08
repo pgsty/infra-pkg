@@ -1,10 +1,10 @@
 name: "k3s"
 arch: "${ARCH}"
 platform: "linux"
-version: "1.36.2"
+version: "1.36.3"
 release: "1.1"
 version_schema: semver
-description: "Lightweight Kubernetes, packaged from upstream v1.36.2+k3s1"
+description: "Lightweight Kubernetes, packaged from upstream v1.36.3+k3s1"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "K3s Project"
 homepage: "https://github.com/k3s-io/k3s"

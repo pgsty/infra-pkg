@@ -36,8 +36,8 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.10.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.5
 - [etcd](https://github.com/etcd-io/etcd) : 3.7.1
-- [k3s](https://github.com/k3s-io/k3s) : 1.36.2 (upstream v1.36.2+k3s1)
-- [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.36.2%2Bk3s1) : 1.36.2 (amd64/arm64 system images)
+- [k3s](https://github.com/k3s-io/k3s) : 1.36.3 (upstream v1.36.3+k3s1)
+- [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.36.3%2Bk3s1) : 1.36.3 (amd64/arm64 system images)
 - [mtail](https://github.com/jaqx0r/mtail) : 3.4.6
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
@@ -198,6 +198,8 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | dblab                      | 0.47.2         | 0.47.4         | upstream release assets                      |
 | grafana-infinity-ds        | 3.11.1         | 3.11.2         | upstream release assets                      |
 | grafana-victorialogs-ds    | 0.30.1         | 0.31.0         | upstream release assets                      |
+| k3s                        | 1.36.2         | 1.36.3         | official stable channel `v1.36.3+k3s1`       |
+| k3s-images                 | 1.36.2         | 1.36.3         | matching dual-architecture airgap images     |
 
 
 **2026-08-05**
