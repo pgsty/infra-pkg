@@ -42,7 +42,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.0
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.47.2
+- [dblab](https://github.com/danvergara/dblab) 0.47.4
 - [pgstream](https://github.com/xataio/pgstream) 1.3.0
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.2
@@ -195,6 +195,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:---------------------------|:---------------|:---------------|:---------------------------------------------|
 | claude                     | 2.1.222        | 2.1.223        | official manifest verified via proxy         |
 | codex                      | 0.146.0        | 0.146.1        | stable release tag `rust-v0.146.1`           |
+| dblab                      | 0.47.2         | 0.47.4         | upstream release assets                      |
 
 
 **2026-08-05**
