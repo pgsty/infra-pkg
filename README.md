@@ -43,7 +43,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
 - [dblab](https://github.com/danvergara/dblab) 0.47.4
-- [pgstream](https://github.com/xataio/pgstream) 1.3.0
+- [pgstream](https://github.com/xataio/pgstream) 1.3.1
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.2
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.0.0
@@ -213,6 +213,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
 | nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
 | opencode       | 1.18.11        | 1.18.13        | upstream release assets                          |
+| pgstream       | 1.3.0          | 1.3.1          | upstream release assets                          |
 
 
 **2026-08-03**
