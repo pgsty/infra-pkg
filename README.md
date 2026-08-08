@@ -70,7 +70,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0-2 (bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.40.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.220
+- [claude](https://github.com/anthropics/claude-code) 2.1.226
 - [codex](https://github.com/openai/codex) 0.146.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.15
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
@@ -181,11 +181,26 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 ## Changelog
 
 
+**2026-08-08**
+
+| Name     | Old     | New     | Comment                                             |
+|:---------|:--------|:--------|:----------------------------------------------------|
+| claude   | 2.1.223 | 2.1.226 | official manifest verified; dual-arch RPM/DEB built |
+
+
+**2026-08-07**
+
+| Name                       | Old            | New            | Comment                                      |
+|:---------------------------|:---------------|:---------------|:---------------------------------------------|
+| claude                     | 2.1.222        | 2.1.223        | official manifest verified via proxy         |
+
+
 **2026-08-05**
 
 | Name           | Old            | New            | Comment                                          |
 |:---------------|:---------------|:---------------|:-------------------------------------------------|
 | agentsview     | 0.39.0         | 0.40.1         | upstream release assets                          |
+| claude         | 2.1.220        | 2.1.222        | official manifest verified via proxy             |
 
 
 **2026-08-03**
