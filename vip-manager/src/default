@@ -1,0 +1,22 @@
+# vip-manager 5 configuration
+
+interval: 1000
+
+trigger-key: "/service/pgcluster/leader"
+trigger-value: "pgcluster_member1"
+
+ip: 192.168.0.123
+netmask: 24
+interface: eth0
+
+# basic or hetzner
+manager-type: basic
+
+# etcd, consul, or patroni
+dcs-type: etcd
+dcs-endpoints:
+  - http://127.0.0.1:2379
+
+retry-num: 3
+retry-after: 250
+verbose: false

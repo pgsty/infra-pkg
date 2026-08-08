@@ -76,6 +76,8 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (external build)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
+- [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (package recipe only; not built or published)
+  - warning: breaking configuration and DCS-loss behavior changes; the recipe uses `manager-type`, correcting the ignored `hosting-type` key still shipped in the upstream sample
 - [postgrest](https://github.com/PostgREST/postgrest) 16.0 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
@@ -104,12 +106,6 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm amd64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.x86_64.rpm
   - rpm arm64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.aarch64.rpm
   - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
-- [vip-manager](https://github.com/cybertec-postgresql/vip-manager): 4.2.0
-  - deb amd64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_x86_64.deb
-  - deb arm64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_arm64.deb
-  - rpm amd64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_x86_64.rpm
-  - rpm arm64: https://github.com/cybertec-postgresql/vip-manager/releases/download/v4.2.0/vip-manager_4.2.0_Linux_arm64.rpm
-  - warning: [v5.0.0](https://github.com/cybertec-postgresql/vip-manager/releases/tag/v5.0.0) is deferred because of breaking configuration and DCS-loss behavior changes; its packaged sample still uses the ignored `hosting-type` key (use `manager-type`)
 - [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.1.0
   - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage_1.1.0_amd64.deb
   - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.0/pg-hardstorage_1.1.0_arm64.deb
@@ -192,6 +188,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | rainfrog | 0.4.2   | 0.4.3   | dual-architecture RPM/DEB built                     |
 | rustfs   | 1.0.0-beta.12 | 1.0.0-rc1 | upstream `rc.1-preview.1`; dual-arch RPM/DEB built |
 | uv       | 0.12.2  | 0.12.3  | dual-architecture RPM/DEB built                     |
+| vip-manager | 4.2.0 | 5.0.0 | package recipe only; not built or published         |
 
 
 **2026-08-07**

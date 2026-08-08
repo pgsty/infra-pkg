@@ -1,0 +1,42 @@
+name: "vip-manager"
+arch: "${ARCH}"
+platform: "linux"
+version: "5.0.0"
+release: "1"
+version_schema: semver
+description: Manages a virtual IP based on state kept in etcd, Consul, or Patroni
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "CYBERTEC PostgreSQL International GmbH"
+homepage: "https://github.com/cybertec-postgresql/vip-manager"
+license: "BSD-2-Clause"
+
+contents:
+  - src: vip-manager/vip-manager
+    dst: /usr/bin/vip-manager
+    file_info:
+      mode: 0755
+
+  - src: src/default
+    dst: /etc/default/vip-manager.yml
+    type: config|noreplace
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+  - src: src/service
+    dst: /usr/lib/systemd/system/vip-manager.service
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+  - src: src/LICENSE
+    dst: /usr/share/doc/vip-manager/LICENSE
+    file_info:
+      mode: 0644
+
+scripts:
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  postremove:  src/postremove.sh
