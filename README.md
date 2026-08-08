@@ -60,7 +60,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4
 - [headscale](https://github.com/juanfont/headscale) 0.29.3
 - [hugo](https://github.com/gohugoio/hugo) 0.164.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.40
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.41
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.0-rc.1-preview.1 (package 1.0.0-rc1)
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27
@@ -205,6 +205,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | k3s                        | 1.36.2         | 1.36.3         | official stable channel `v1.36.3+k3s1`       |
 | k3s-images                 | 1.36.2         | 1.36.3         | matching dual-architecture airgap images     |
 | opencode                   | 1.18.13        | 1.18.14        | upstream release assets                      |
+| seaweedfs                  | 4.40           | 4.41           | upstream release assets                      |
 
 
 **2026-08-05**
