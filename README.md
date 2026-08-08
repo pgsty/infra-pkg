@@ -84,9 +84,9 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [golang](https://go.dev/dl/) 1.26.5
   - x86_64: https://go.dev/dl/go1.26.5.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.26.5.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.18.1
-  - x86_64: https://nodejs.org/dist/v24.18.1/node-v24.18.1-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.18.1/node-v24.18.1-linux-arm64.tar.xz
+- [nodejs](https://nodejs.org/en/download/) 24.19.0
+  - x86_64: https://nodejs.org/dist/v24.19.0/node-v24.19.0-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.19.0/node-v24.19.0-linux-arm64.tar.xz
 
 
 **Download Directly**:
@@ -209,6 +209,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | agentsview     | 0.39.0         | 0.40.1         | upstream release assets                          |
 | claude         | 2.1.220        | 2.1.222        | official manifest verified via proxy             |
 | juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
+| nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
 
 
 **2026-08-03**

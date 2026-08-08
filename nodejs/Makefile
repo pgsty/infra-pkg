@@ -12,7 +12,7 @@ RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
 export ARCH RARCH
 
 PACKAGE=nodejs
-VERSION=24.18.1
+VERSION=24.19.0
 DIRNAME=node
 FILENAME_amd64=node-v$(VERSION)-linux-x64.tar.xz
 FILENAME_arm64=node-v$(VERSION)-linux-arm64.tar.xz

@@ -1,7 +1,7 @@
 name: "nodejs"
 arch: "${ARCH}"
 platform: "linux"
-version: "v24.18.1"
+version: "v24.19.0"
 version_schema: semver
 release: "2"
 description: Node.js JavaScript runtime
