@@ -62,7 +62,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [hugo](https://github.com/gohugoio/hugo) 0.164.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.40
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-beta.12
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-rc.1-preview.1 (package 1.0.0-rc1)
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27
 - [vray](https://github.com/v2fly/v2ray-core) 5.51.2
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
@@ -190,6 +190,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | opencode | 1.18.14 | 1.18.15 | dual-architecture RPM/DEB built                     |
 | postgrest | 14.16   | 16.0    | static dual-arch RPM/DEB built; PostgreSQL 14+      |
 | rainfrog | 0.4.2   | 0.4.3   | dual-architecture RPM/DEB built                     |
+| rustfs   | 1.0.0-beta.12 | 1.0.0-rc1 | upstream `rc.1-preview.1`; dual-arch RPM/DEB built |
 
 
 **2026-08-07**
@@ -234,7 +235,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | pgbackrest-exporter | 0.23.0          | 0.24.0          | formal recipe update; build deferred         |
 | pig                 | 1.6.0           | 1.6.1           | official direct-download artifacts           |
 | rclone              | 1.74.4          | 1.75.0          | direct-download metadata; artifacts deferred |
-| rustfs              | 1.0.0-beta.11   | 1.0.0-beta.12   | prerelease line; binary/build deferred       |
+| rustfs              | 1.0.0-beta.11   | 1.0.0-beta.12   | prerelease line; built 2026-08-05            |
 | uv                  | 0.12.0          | 0.12.1          | formal recipe update; build deferred         |
 
 

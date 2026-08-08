@@ -258,7 +258,7 @@ def comparable_version(package: str, version: str) -> str:
     if re.match(r"^[vV]\d", version):
         version = version[1:]
     if package == "rustfs":
-        version = re.sub(r"-(?:alpha|beta|rc)\.\d+$", "", version)
+        version = re.sub(r"-(?:alpha|beta|rc)\.\d+(?:-preview\.\d+)?$", "", version)
     return version
 
 

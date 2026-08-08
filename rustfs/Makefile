@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2025-12-04
-# Mtime     :   2026-08-02
+# Mtime     :   2026-08-08
 # Desc      :   Makefile shortcuts for rustfs rpm/deb build
 # Path      :   rustfs/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
@@ -13,12 +13,13 @@ export ARCH RARCH
 
 REPONAME=rustfs/rustfs
 PACKAGE=rustfs
-VERSION=1.0.0-beta.12
+VERSION=1.0.0-rc.1-preview.1
+RELEASE=rc1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 FILENAME=$(PACKAGE)-linux-$(RARCH)-musl-v$(VERSION).zip
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
-SHA256_amd64=683bef16247ab04bedb76d0444736f286d21943375d2d57d2ded9ec277498427
-SHA256_arm64=1a6425145977c55a05549aa72f9af5bd314893a7424e352bfe852fe68fc2b50c
+SHA256_amd64=2660133114881dd4524f38fe8b41cc8456d7990bab0b88938620f1200f0d3725
+SHA256_arm64=e1178cd8335b124ebe4b3e647b22127ed7a48565040b6913596cf82fcba0ab3f
 SHA256=$(SHA256_$(ARCH))
 CURL=curl -fSL --retry 3
 
