@@ -71,7 +71,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.40.1
 - [claude](https://github.com/anthropics/claude-code) 2.1.226
-- [codex](https://github.com/openai/codex) 0.146.0
+- [codex](https://github.com/openai/codex) 0.147.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.15
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (external build)
@@ -186,6 +186,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | Name     | Old     | New     | Comment                                             |
 |:---------|:--------|:--------|:----------------------------------------------------|
 | claude   | 2.1.223 | 2.1.226 | official manifest verified; dual-arch RPM/DEB built |
+| codex    | 0.146.1 | 0.147.0 | stable tag `rust-v0.147.0`; dual-arch RPM/DEB built |
 
 
 **2026-08-07**
@@ -193,6 +194,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | Name                       | Old            | New            | Comment                                      |
 |:---------------------------|:---------------|:---------------|:---------------------------------------------|
 | claude                     | 2.1.222        | 2.1.223        | official manifest verified via proxy         |
+| codex                      | 0.146.0        | 0.146.1        | stable release tag `rust-v0.146.1`           |
 
 
 **2026-08-05**
