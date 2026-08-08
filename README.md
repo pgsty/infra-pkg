@@ -40,7 +40,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.36.2%2Bk3s1) : 1.36.2 (amd64/arm64 system images)
 - [mtail](https://github.com/jaqx0r/mtail) : 3.4.6
 - [restic](https://github.com/restic/restic) : 0.19.1
-- [juicefs](https://github.com/juicedata/juicefs) : 1.4.0
+- [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
 - [dblab](https://github.com/danvergara/dblab) 0.47.4
 - [pgstream](https://github.com/xataio/pgstream) 1.3.0
@@ -206,6 +206,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:---------------|:---------------|:---------------|:-------------------------------------------------|
 | agentsview     | 0.39.0         | 0.40.1         | upstream release assets                          |
 | claude         | 2.1.220        | 2.1.222        | official manifest verified via proxy             |
+| juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
 
 
 **2026-08-03**

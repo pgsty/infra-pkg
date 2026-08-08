@@ -13,7 +13,7 @@ export ARCH RARCH
 
 REPONAME=juicedata/juicefs
 PACKAGE=juicefs
-VERSION=1.4.0
+VERSION=1.4.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)-$(VERSION)-linux-$(ARCH)
 FILENAME=$(DIRNAME).tar.gz
