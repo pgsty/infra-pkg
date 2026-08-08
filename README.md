@@ -132,12 +132,12 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush-0.88.1-1.x86_64.rpm
   - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush-0.88.1-1.aarch64.rpm
   - note: vendor DEB/RPM packages omit the [FSL-1.1-MIT license terms](https://github.com/charmbracelet/crush/blob/v0.88.1/LICENSE.md); Pigsty mirrors only the `0.88.1-1PGSTY` packages repacked from the official Linux tarballs with `/usr/share/doc/crush/LICENSE.md`
-- [minio](https://github.com/pgsty/minio): 20260618000000
-  - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio-20260618000000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio-20260618000000.0.0-1.aarch64.rpm
-  - warning: current packages are Pigsty-managed rather than standalone: they install a legacy `/lib/systemd/system` unit but no service user, defaults, data directories, or lifecycle scripts
+- [silo](https://github.com/pgsty/silo): 20260806000000
+  - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo_20260806000000.0.0-1PGSTY_amd64.deb
+  - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo_20260806000000.0.0-1PGSTY_arm64.deb
+  - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.aarch64.rpm
+  - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
 - [mcli](https://github.com/pgsty/mc): 20260417000000
   - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-04-17T00-00-00Z/mcli_20260417000000.0.0_arm64.deb
@@ -212,6 +212,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | opencode                   | 1.18.13        | 1.18.14        | upstream release assets                      |
 | pgschema                   | 1.12.1         | 1.12.2         | official RPM/DEB artifacts                   |
 | seaweedfs                  | 4.40           | 4.41           | upstream release assets                      |
+| silo                       | minio 20260804000000 | 20260806000000 | official package rename and replacement      |
 | uv                         | 0.12.1         | 0.12.2         | upstream release assets                      |
 | victoria-metrics           | 1.148.0        | 1.149.0        | single-node, cluster, and vmutils artifacts  |
 
@@ -224,6 +225,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | claude         | 2.1.220        | 2.1.222        | official manifest verified via proxy             |
 | grafana        | 13.1.1         | 13.1.2         | fixes bundled-plugin upgrades and CVE-2026-13438 |
 | juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
+| minio          | 20260618000000 | 20260804000000 | pgsty fork release                               |
 | nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
 | opencode       | 1.18.11        | 1.18.13        | upstream release assets                          |
 | pg-hardstorage | 1.1.0          | 1.1.1          | official RPM/DEB assets                          |
