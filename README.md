@@ -253,7 +253,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:--------------------|:----------------|:----------------|:---------------------------------------------|
 | pgbackrest-exporter | 0.23.0          | 0.24.0          | formal recipe update; build deferred         |
 | pig                 | 1.6.0           | 1.6.1           | official direct-download artifacts           |
-| rclone              | 1.74.4          | 1.75.0          | direct-download metadata; artifacts deferred |
+| rclone              | 1.74.4          | 1.75.0          | official artifacts downloaded 2026-08-05     |
 | rustfs              | 1.0.0-beta.11   | 1.0.0-beta.12   | prerelease line; built 2026-08-05            |
 | uv                  | 0.12.0          | 0.12.1          | built for both architectures 2026-08-05      |
 
