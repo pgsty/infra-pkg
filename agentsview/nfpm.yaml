@@ -1,7 +1,7 @@
 name: "agentsview"
 arch: "${ARCH}"
 platform: "linux"
-version: "0.39.0"
+version: "0.40.1"
 release: "2"
 version_schema: semver
 description: Browse, search, and track costs across all your AI coding agents.

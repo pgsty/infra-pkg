@@ -69,7 +69,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [sabiql](https://github.com/riii111/sabiql) 1.15.1
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0-2 (bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/kenn-io/agentsview) 0.39.0
+- [agentsview](https://github.com/kenn-io/agentsview) 0.40.1
 - [claude](https://github.com/anthropics/claude-code) 2.1.220
 - [codex](https://github.com/openai/codex) 0.146.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.15
@@ -179,6 +179,13 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 --------
 
 ## Changelog
+
+
+**2026-08-05**
+
+| Name           | Old            | New            | Comment                                          |
+|:---------------|:---------------|:---------------|:-------------------------------------------------|
+| agentsview     | 0.39.0         | 0.40.1         | upstream release assets                          |
 
 
 **2026-08-03**
