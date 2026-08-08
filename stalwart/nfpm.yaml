@@ -1,7 +1,7 @@
 name: "stalwart"
 arch: "${ARCH}"
 platform: "linux"
-version: "v0.16.15"
+version: "v0.16.16"
 release: "2"
 version_schema: semver
 description: Stalwart Mail Server static musl binaries

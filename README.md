@@ -72,7 +72,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [agentsview](https://github.com/kenn-io/agentsview) 0.40.1
 - [claude](https://github.com/anthropics/claude-code) 2.1.226
 - [codex](https://github.com/openai/codex) 0.147.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.15
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.16
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (external build)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
@@ -218,6 +218,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
 | opencode       | 1.18.11        | 1.18.13        | upstream release assets                          |
 | pgstream       | 1.3.0          | 1.3.1          | upstream release assets                          |
+| stalwart       | 0.16.15        | 0.16.16        | upstream release assets                          |
 
 
 **2026-08-03**
