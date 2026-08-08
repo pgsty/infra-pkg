@@ -263,7 +263,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | Name             | Old    | New    | Comment                              |
 |:-----------------|:-------|:-------|:-------------------------------------|
 | prometheus       | 3.13.1 | 3.13.2 | security and stability release       |
-| mongodb-exporter | 0.51.0 | 0.52.0 | formal recipe update; build deferred |
+| mongodb-exporter | 0.51.0 | 0.52.0 | built for both architectures 2026-08-05 |
 
 
 **2026-07-30**
