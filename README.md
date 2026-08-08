@@ -54,7 +54,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.6.7 (obsolete, frozen with Loki)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.30.1
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.25.2
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.11.1
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.11.2
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.0.0 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4
@@ -196,6 +196,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | claude                     | 2.1.222        | 2.1.223        | official manifest verified via proxy         |
 | codex                      | 0.146.0        | 0.146.1        | stable release tag `rust-v0.146.1`           |
 | dblab                      | 0.47.2         | 0.47.4         | upstream release assets                      |
+| grafana-infinity-ds        | 3.11.1         | 3.11.2         | upstream release assets                      |
 
 
 **2026-08-05**
