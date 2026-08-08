@@ -242,7 +242,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 | Name           | Old     | New     | Comment                                                |
 |:---------------|:--------|:--------|:-------------------------------------------------------|
-| code-server    | 4.130.0 | 4.131.0 | direct-download metadata; artifacts deferred           |
+| code-server    | 4.130.0 | 4.131.0 | official artifacts downloaded and verified 2026-08-05 |
 | crush          | 0.87.0  | 0.88.0  | official links; repository mirror blocked by license   |
 | pg-hardstorage | 1.0.17  | 1.1.0   | superseded by 1.1.1; artifacts downloaded 2026-08-05  |
 
