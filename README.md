@@ -121,6 +121,11 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema_1.12.2_arm64.deb
   - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema-1.12.2-1.x86_64.rpm
   - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema-1.12.2-1.aarch64.rpm
+- [sow](https://github.com/pgsty/sow/releases): 0.2.0
+  - deb amd64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow_0.2.0-1PGSTY_amd64.deb
+  - deb arm64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow_0.2.0-1PGSTY_arm64.deb
+  - rpm amd64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow-0.2.0-1PGSTY.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow-0.2.0-1PGSTY.aarch64.rpm
 - [crush](https://github.com/charmbracelet/crush): 0.88.0
   - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush_0.88.0_amd64.deb
   - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush_0.88.0_arm64.deb
@@ -187,6 +192,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | postgrest | 14.16   | 16.0    | static dual-arch RPM/DEB built; PostgreSQL 14+      |
 | rainfrog | 0.4.2   | 0.4.3   | dual-architecture RPM/DEB built                     |
 | rustfs   | 1.0.0-beta.12 | 1.0.0-rc1 | upstream `rc.1-preview.1`; dual-arch RPM/DEB built |
+| sow      | -       | 0.2.0   | official direct-download artifacts                  |
 | uv       | 0.12.2  | 0.12.3  | dual-architecture RPM/DEB built                     |
 | vip-manager | 4.2.0 | 5.0.0 | package recipe only; not built or published         |
 
