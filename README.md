@@ -126,12 +126,12 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - deb arm64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow_0.2.0-1PGSTY_arm64.deb
   - rpm amd64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow-0.2.0-1PGSTY.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow-0.2.0-1PGSTY.aarch64.rpm
-- [crush](https://github.com/charmbracelet/crush): 0.88.0
-  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush_0.88.0_amd64.deb
-  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush_0.88.0_arm64.deb
-  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush-0.88.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.0/crush-0.88.0-1.aarch64.rpm
-  - warning: vendor DEB/RPM packages are licensed under `FSL-1.1-MIT` but omit the [license terms](https://github.com/charmbracelet/crush/blob/v0.88.0/LICENSE.md) or a direct link required for redistribution; use the official links above only and do not mirror them into Pigsty repositories until upstream fixes the packages or they are repacked with `LICENSE.md`
+- [crush](https://github.com/charmbracelet/crush): 0.88.1
+  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush_0.88.1_amd64.deb
+  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush_0.88.1_arm64.deb
+  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush-0.88.1-1.x86_64.rpm
+  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush-0.88.1-1.aarch64.rpm
+  - note: vendor DEB/RPM packages omit the [FSL-1.1-MIT license terms](https://github.com/charmbracelet/crush/blob/v0.88.1/LICENSE.md); Pigsty mirrors only the `0.88.1-1PGSTY` packages repacked from the official Linux tarballs with `/usr/share/doc/crush/LICENSE.md`
 - [minio](https://github.com/pgsty/minio): 20260618000000
   - deb amd64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/minio/releases/download/RELEASE.2026-06-18T00-00-00Z/minio_20260618000000.0.0_arm64.deb
@@ -187,6 +187,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 |:---------|:--------|:--------|:----------------------------------------------------|
 | claude   | 2.1.223 | 2.1.226 | official manifest verified; dual-arch RPM/DEB built |
 | codex    | 0.146.1 | 0.147.0 | stable tag `rust-v0.147.0`; dual-arch RPM/DEB built |
+| crush    | 0.88.0  | 0.88.1  | official tarballs repacked as `1PGSTY` with license  |
 | grafana  | 13.1.2  | 13.1.3  | official dual-architecture RPM/DEB verified         |
 | opencode | 1.18.14 | 1.18.15 | dual-architecture RPM/DEB built                     |
 | postgrest | 14.16   | 16.0    | static dual-arch RPM/DEB built; PostgreSQL 14+      |
