@@ -31,7 +31,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.52.0
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.148.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.149.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.10.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.5
@@ -208,6 +208,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | opencode                   | 1.18.13        | 1.18.14        | upstream release assets                      |
 | seaweedfs                  | 4.40           | 4.41           | upstream release assets                      |
 | uv                         | 0.12.1         | 0.12.2         | upstream release assets                      |
+| victoria-metrics           | 1.148.0        | 1.149.0        | single-node, cluster, and vmutils artifacts  |
 
 
 **2026-08-05**
