@@ -63,7 +63,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.41
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.0-rc.1-preview.1 (package 1.0.0-rc1)
-- [xray](https://github.com/XTLS/Xray-core) 26.3.27
+- [xray](https://github.com/XTLS/Xray-core) 26.7.28
 - [vray](https://github.com/v2fly/v2ray-core) 5.52.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
 - [sabiql](https://github.com/riii111/sabiql) 1.15.1
@@ -223,6 +223,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 | pgstream       | 1.3.0          | 1.3.1          | upstream release assets                          |
 | stalwart       | 0.16.15        | 0.16.16        | upstream release assets                          |
 | vray           | 5.51.2         | 5.52.0         | latest stable release                            |
+| xray           | 26.3.27        | 26.7.28        | latest dated release                             |
 
 
 **2026-08-03**
