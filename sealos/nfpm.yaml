@@ -1,0 +1,41 @@
+name: "sealos"
+arch: "${ARCH}"
+platform: "linux"
+section: "admin"
+priority: "optional"
+version: "5.0.1"
+release: "1PGSTY"
+version_schema: semver
+description: |
+  Sealos Kubernetes distribution CLI.
+  Obsolete and intentionally locked at v5.0.1, the last stable Apache-2.0 release.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/labring/sealos"
+license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: sealos/sealos
+    dst: /usr/bin/sealos
+    file_info:
+      mode: 0755
+
+  - src: ../LICENSES/Apache-2.0.txt
+    dst: /usr/share/doc/sealos/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: LOCKED.md
+    dst: /usr/share/doc/sealos/LOCKED.md
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/sealos/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
