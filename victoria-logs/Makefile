@@ -1,10 +1,8 @@
 #==============================================================#
 # File      :   Makefile
-# Ctime     :   2025-07-16
-# Mtime     :   2025-12-05
-# Desc      :   Makefile shortcuts for rpm building
-# Path      :   Makefile
-# Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
+# Desc      :   Build the VictoriaLogs RPM/DEB package group
+# Path      :   victoria-logs/Makefile
+# Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 ARCH  ?= amd64
 ARCHS ?= amd64 arm64
@@ -14,6 +12,7 @@ export ARCH RARCH
 REPONAME=VictoriaMetrics/VictoriaLogs
 PACKAGE=victoria-logs
 VERSION=1.52.0
+RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME1=victoria-logs-linux-$(ARCH)-v$(VERSION).tar.gz
 FILENAME2=vlutils-linux-$(ARCH)-v$(VERSION).tar.gz
@@ -25,7 +24,7 @@ SHA2562_arm64=82c776d2cd58410aff63c95a36f398b7d50c2e178566bcaa56996dfdfccff794
 SHA2562=$(SHA2562_$(ARCH))
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
 WEB_URL2=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME2)
-
+CURL=curl -fSL --retry 3
 
 default: all
 all:
@@ -33,48 +32,35 @@ all:
 one: download verify extract build clean
 get: download verify extract
 
-# print download link and download command
 link:
-	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL1) -o $(FILENAME1)
-	@echo curl -fSL $(WEB_URL2) -o $(FILENAME2)
-
-# get latest release info
+	@echo $(PACKAGE) package group $(VERSION)-$(RELEASE) on $(RELEASE_PAGE)
+	@echo $(CURL) $(WEB_URL1) -o $(FILENAME1)
+	@echo $(CURL) $(WEB_URL2) -o $(FILENAME2)
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
-
-# download configured release tarballs to current directory
-# if already in ../tarball/ , just copy it
+	curl --fail --silent --show-error "https://api.github.com/repos/$(REPONAME)/releases/tags/v$(VERSION)" | tee meta.json
 download:
-	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else curl -fSL $(WEB_URL1) -o $(FILENAME1); fi
-	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else curl -fSL $(WEB_URL2) -o $(FILENAME2); fi
-
+	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else $(CURL) $(WEB_URL1) -o $(FILENAME1); fi
+	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else $(CURL) $(WEB_URL2) -o $(FILENAME2); fi
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA2561)  $(FILENAME1)" | sha256sum -c -; else echo "$(SHA2561)  $(FILENAME1)" | shasum -a 256 -c -; fi
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA2562)  $(FILENAME2)" | sha256sum -c -; else echo "$(SHA2562)  $(FILENAME2)" | shasum -a 256 -c -; fi
-
-# extract tarball content to current directory
 extract:
 	mkdir -p $(PACKAGE)
-	tar -xf $(FILENAME1)  -C $(PACKAGE)
-	tar -xf $(FILENAME2)  -C $(PACKAGE)
-
-# remove tarball, build dir, rpm & deb files
+	tar -xf $(FILENAME1) -C $(PACKAGE)
+	tar -xf $(FILENAME2) -C $(PACKAGE)
 clean:
-	rm -rf $(PACKAGE) $(FILENAME1) $(FILENAME2)
-
-# build rpm & deb package
+	rm -rf $(PACKAGE) $(FILENAME1) $(FILENAME2) $(PACKAGE)*.rpm $(PACKAGE)*.deb
 build: rpm deb
 rpm:
-	../bin/nfpm package --config victoria-logs.yaml  --packager rpm --target ../dist/rpm/
-	../bin/nfpm package --config vlogscli.yaml       --packager rpm --target ../dist/rpm/
-	../bin/nfpm package --config vlagent.yaml        --packager rpm --target ../dist/rpm/
-
+	mkdir -p ../dist/rpm/
+	../bin/nfpm package --config nfpm.yaml --packager rpm --target ../dist/rpm/
+	../bin/nfpm package --config vlogscli.yaml --packager rpm --target ../dist/rpm/
+	../bin/nfpm package --config vlagent.yaml --packager rpm --target ../dist/rpm/
 deb:
-	../bin/nfpm package --config victoria-logs.yaml  --packager deb --target ../dist/deb/
-	../bin/nfpm package --config vlogscli.yaml       --packager deb --target ../dist/deb/
-	../bin/nfpm package --config vlagent.yaml        --packager deb --target ../dist/deb/
+	mkdir -p ../dist/deb/
+	../bin/nfpm package --config nfpm.yaml --packager deb --target ../dist/deb/
+	../bin/nfpm package --config vlogscli.yaml --packager deb --target ../dist/deb/
+	../bin/nfpm package --config vlagent.yaml --packager deb --target ../dist/deb/
 
 .NOTPARALLEL:
-
-.PHONY: all get link meta download verify extract clean build rpm deb one
+.PHONY: default all one get link meta download verify extract clean build rpm deb

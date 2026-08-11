@@ -1,14 +1,17 @@
 name: "victoria-logs"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v1.52.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Fast and easy to use database for logs, which can efficiently handle terabytes of logs
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "VictoriaMetrics"
+vendor: "PGSTY"
 homepage: "https://docs.victoriametrics.com/victorialogs/"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: victoria-logs/victoria-logs-prod
@@ -20,3 +23,12 @@ contents:
     dst: /usr/share/doc/victoria-logs/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/victoria-logs/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
