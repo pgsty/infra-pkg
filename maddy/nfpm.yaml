@@ -1,14 +1,17 @@
 name: "maddy"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v0.9.5"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Maddy mail server static musl binaries
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Maddy"
+vendor: "PGSTY"
 homepage: "https://github.com/foxcpp/maddy"
 license: "GPL-3.0-or-later"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: maddy/maddy
@@ -27,7 +30,16 @@ contents:
     file_info:
       mode: 0644
 
-  - src: LICENSE
+  - src: ../LICENSES/GPL-3.0.txt
     dst: /usr/share/doc/maddy/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/maddy/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
