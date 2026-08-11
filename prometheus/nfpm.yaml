@@ -1,14 +1,17 @@
 name: "prometheus"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v3.13.2"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: The Prometheus monitoring system and time series database.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Prometheus"
+vendor: "PGSTY"
 homepage: "https://github.com/prometheus/prometheus"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -47,6 +50,16 @@ contents:
       owner: root
       group: root
 
+  # Prometheus 3.x retains console support but no longer ships examples.
+  # Vendor the final upstream example set from Prometheus v2.55.1.
+  - src: src/console_libraries/
+    dst: /usr/share/prometheus/console_libraries/
+    type: tree
+
+  - src: src/consoles/
+    dst: /usr/share/prometheus/consoles/
+    type: tree
+
   # data
   - dst: /var/lib/prometheus/
     type: dir
@@ -73,7 +86,22 @@ contents:
     file_info:
       mode: 0644
 
+  - src: src/CONSOLES.md
+    dst: /usr/share/doc/prometheus/CONSOLES.md
+    file_info:
+      mode: 0644
+
 # add prometheus user/group
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/prometheus/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
 scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
