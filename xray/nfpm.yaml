@@ -1,14 +1,17 @@
 name: "xray"
 arch: "${ARCH}"
 platform: "linux"
-version: "26.7.28"
-release: "2"
+section: "net"
+priority: "optional"
+version: "26.3.27"
+release: "1PGSTY"
 version_schema: semver
 description: Xray-core is a powerful platform for anti-censorship.
-maintainer: XTLS
-vendor: "XTLS"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
 homepage: "https://github.com/XTLS/Xray-core"
 license: "MPL-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -73,6 +76,15 @@ contents:
     dst: /usr/share/doc/xray/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/xray/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 scripts:
   preinstall:  src/preinstall.sh
