@@ -1,19 +1,22 @@
 name: "promtail"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v3.6.7"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Promtail Logging Agent
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: Grafana
+vendor: "PGSTY"
 homepage: https://github.com/grafana/loki
 license: "AGPL-3.0-only"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
   # binaries
-  - src: loki/promtail.bin
+  - src: promtail/promtail.bin
     dst: /usr/bin/promtail
     file_info:
       mode: 0755
@@ -27,7 +30,7 @@ contents:
       owner: root
       group: root
 
-  - src: src/promtail.default
+  - src: src/default
     dst: /etc/default/promtail
     type: config|noreplace
     file_info:
@@ -36,15 +39,23 @@ contents:
       group: root
 
   # service
-  - src: src/promtail.service
+  - src: src/service
     dst: /usr/lib/systemd/system/promtail.service
     file_info:
       mode: 0644
       owner: root
       group: root
 
+  # state (promtail runs as root so it can read system logs)
+  - dst: /var/lib/promtail
+    type: dir
+    file_info:
+      mode: 0750
+      owner: root
+      group: root
+
   # documentation
-  - src: src/LICENSE
+  - src: ../LICENSES/AGPL-3.0.txt
     dst: /usr/share/doc/promtail/LICENSE
     file_info:
       mode: 0644
@@ -54,11 +65,20 @@ contents:
     file_info:
       mode: 0644
 
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/promtail/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
 scripts:
-  preinstall:  src/promtail-preinstall.sh
-  postinstall: src/promtail-postinstall.sh
-  preremove:   src/promtail-preremove.sh
-  postremove:  src/promtail-postremove.sh
+  preinstall:  src/preinstall.sh
+  postinstall: src/postinstall.sh
+  preremove:   src/preremove.sh
+  postremove:  src/postremove.sh
 
 overrides:
   deb:

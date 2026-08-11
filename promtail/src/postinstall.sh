@@ -1,15 +1,11 @@
 #!/bin/sh
 
-if [ "${DPKG_MAINTSCRIPT_NAME:-}" = "postinst" ] && command -v dpkg-maintscript-helper >/dev/null 2>&1; then
-    dpkg-maintscript-helper rm_conffile /lib/systemd/system/promtail.service 3.6.7-2~ promtail -- "$@" || exit 1
-fi
-
 if command -v systemctl >/dev/null 2>&1; then
     systemctl daemon-reload >/dev/null 2>&1 || :
 fi
 
-case "$1" in
-    1)
+case "${1:-}:${2:-}" in
+    1:*|configure:)
         if command -v systemctl >/dev/null 2>&1; then
             systemctl --no-reload preset promtail.service >/dev/null 2>&1 || :
         fi
