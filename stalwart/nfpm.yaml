@@ -1,14 +1,17 @@
 name: "stalwart"
 arch: "${ARCH}"
 platform: "linux"
-version: "v0.16.16"
-release: "2"
+section: "net"
+priority: "optional"
+version: "v0.16.17"
+release: "1PGSTY"
 version_schema: semver
 description: Stalwart Mail Server static musl binaries
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Stalwart Labs"
+vendor: "PGSTY"
 homepage: "https://github.com/stalwartlabs/stalwart"
 license: "AGPL-3.0-only"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: stalwart/stalwart
@@ -16,7 +19,16 @@ contents:
     file_info:
       mode: 0755
 
-  - src: LICENSE
+  - src: ../LICENSES/AGPL-3.0.txt
     dst: /usr/share/doc/stalwart/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/stalwart/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
