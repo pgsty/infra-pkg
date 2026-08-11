@@ -30,7 +30,7 @@ make prometheus
 make victoria-metrics
 make duckdb
 make etcd
-# every top-level directory with a Makefile is a package target
+# every top-level directory with a Makefile is a package recipe target
 ```
 
 Build a single package for one architecture:
@@ -42,9 +42,11 @@ cd prometheus && make one ARCH=arm64
 ## Architecture
 
 ### Directory Structure (single tree)
-- `<package>/` - One top-level directory per package (any dir with a `Makefile`)
+- `<package>/` - One top-level recipe directory per package (any dir with a
+  `Makefile`); `victoria-logs` and `victoria-metrics` are intentional grouped
+  recipes for their version-locked upstream artifact families
 - `bin/` - All helper scripts: pinned `nfpm` wrapper (version in `.nfpm-version`),
-  `lint_specs.py`, `pkg_update.py`, `check_update.py`, `infra_update_all.py`,
+  `lint_specs.py`, `render_debian_docs.py`, `pkg_update.py`, `check_update.py`, `infra_update_all.py`,
   upgrade test scripts (`check-deb-unit-upgrade`, `check-rpm-unit-upgrade`, `fake-systemctl`)
 - `tarball/` - Shared download cache for all architectures (filenames are arch-qualified)
 - `dist/` - Build output directory
@@ -60,6 +62,8 @@ Each package follows a consistent structure under `<package>/`:
 - `nfpm.yaml` - single nFPM config with `arch: "${ARCH}"` (env-expanded by nfpm);
   noarch packages use `arch: "all"`. Packages with genuinely different per-arch
   metadata split into `<base>.amd64.yaml` + `<base>.arm64.yaml` (asciinema, postgrest).
+  The two Victoria grouped recipes contain one manifest per produced package. Every
+  manifest declares Debian section/priority plus generated changelog/copyright entries.
 - `src/` - Package resources (systemd units, config files, install scripts)
   - `preinstall.sh`, `postinstall.sh` - Install hooks
   - `preremove.sh`, `postremove.sh` - Uninstall hooks
@@ -71,7 +75,8 @@ Each package follows a consistent structure under `<package>/`:
 2. `verify` - Check pinned SHA256 where configured
 3. `extract` - Extract tarball contents
 4. `build` - Run `../bin/nfpm` (version-pinned wrapper) with `ARCH`/`RARCH` exported,
-   output to `../dist/rpm/` and `../dist/deb/`
+   output to `../dist/rpm/` and `../dist/deb/`; for DEB builds the wrapper derives
+   `copyright` and `changelog.Debian.gz` from manifest metadata and packaged legal files
 5. `clean` - Remove temporary files
 
 Packages use [nFPM](https://nfpm.goreleaser.com/) for building both RPM and DEB from a single configuration. Run `make lint` (bin/lint_specs.py) after any packaging change.
@@ -82,9 +87,23 @@ At a minimum:
 1. Confirm upstream latest version (and tag naming rules)
 2. Download artifacts through proxy into the shared `tarball/` cache
    (cache filenames must be architecture-qualified, e.g. `foo-v1.2.3-linux-arm64`)
-3. Update versions in `Makefile` + `nfpm*.yaml`
+3. Update versions and the matching pinned checksums in `Makefile` + `nfpm*.yaml`;
+   every externally downloaded artifact must be verified before extraction
 4. Build and verify output versions/architectures, run `make lint`
 5. Update README + external docs release notes
+
+### Package policy
+
+- Monitoring packages must not hard-depend on the component they monitor. An
+  exporter may be installed independently; document the monitored command or
+  service as a runtime deployment prerequisite instead of an RPM/DEB dependency.
+- Intentionally curated or one-shot artifacts may be consumed only from the
+  shared cache. For these packages, a versioned cache name plus a pinned checksum
+  is the accepted provenance boundary; a general upstream reconstruction recipe
+  is not required.
+- Upstream release binaries are normally packaged unmodified. A known incorrect
+  upstream version string may be documented and accepted rather than locally
+  patching or rebuilding an otherwise checksum-matching release asset.
 
 ### Claude Package Notes
 

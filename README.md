@@ -11,13 +11,24 @@ Artifact available in [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT/
 
 --------
 
+## Packaging invariants
+
+- Package recipe directories and package names use lowercase hyphen-separated names. `victoria-logs` and `victoria-metrics` intentionally remain grouped recipes because each upstream release supplies several version-locked artifacts.
+- Locally rebuilt packages use vendor `PGSTY`, maintainer `Ruohang Feng <rh@vonng.com>`, SPDX license expressions, and release `1PGSTY`.
+- Package payloads do not write to `/usr/local`; environment files use `/etc/default/<name>`, vendor units use `/usr/lib/systemd/system`, and LICENSE/NOTICE files use `/usr/share/doc/<package>/`.
+- Service units stay portable by avoiding nonessential, compatibility-sensitive systemd directives. There is no repository-wide minimum systemd version.
+
 ## What's inside?
 
 Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Building From Tarball**:
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.13.2
+All local recipes in this section are rebuilt with nFPM and use the package
+release `1PGSTY` for both RPM and DEB artifacts. Explicit external-build
+exceptions are called out inline.
+
+- [prometheus](https://github.com/prometheus/prometheus) : 3.13.2 (includes version-pinned upstream console templates and libraries)
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.33.1
 - [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
@@ -25,12 +36,14 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
 - [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived-exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
+- [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.19.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.88.0
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.89.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.52.0
+- [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.149.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.10.0
@@ -38,7 +51,8 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [etcd](https://github.com/etcd-io/etcd) : 3.7.1
 - [k3s](https://github.com/k3s-io/k3s) : 1.36.3 (upstream v1.36.3+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.36.3%2Bk3s1) : 1.36.3 (amd64/arm64 system images)
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.6
+- [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.7
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
@@ -47,6 +61,7 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.51
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.3
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.0.0
+- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.2.1 (binary-only package; service lifecycle managed by Pigsty)
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
 - [loki](https://github.com/grafana/loki) : 3.6.7 (obsolete, frozen)
@@ -54,35 +69,44 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 - [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.6.7 (obsolete, frozen with Loki)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.31.0
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.25.2
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.11.2
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.11.3
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.0.0 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
-- [caddy](https://github.com/caddyserver/caddy) 2.11.4
+- [caddy](https://github.com/caddyserver/caddy) 2.11.4 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.3
 - [hugo](https://github.com/gohugoio/hugo) 0.164.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.41
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-rc.1-preview.1 (package 1.0.0-rc1)
-- [xray](https://github.com/XTLS/Xray-core) 26.7.28
-- [vray](https://github.com/v2fly/v2ray-core) 5.52.0
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-rc.1 (release `1PGSTY`)
+- [xray](https://github.com/XTLS/Xray-core) 26.3.27 (stable release)
+- [v2ray](https://github.com/v2fly/v2ray-core) 5.52.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
 - [sabiql](https://github.com/riii111/sabiql) 1.15.1
-- [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0-2 (bundles timescaledb-parallel-copy 0.13.0)
+- [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.40.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.226
+- [claude](https://github.com/anthropics/claude-code) 2.1.227
 - [codex](https://github.com/openai/codex) 0.147.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.16
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.17
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
-- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (external build)
+- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (external build; upstream Linux binary is amd64-only)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
-- [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (package recipe only; not built or published)
-  - warning: breaking configuration and DCS-loss behavior changes; the recipe uses `manager-type`, correcting the ignored `hosting-type` key still shipped in the upstream sample
-- [postgrest](https://github.com/PostgREST/postgrest) 16.0 (requires PostgreSQL 14+)
+- [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
+  - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
+- [postgrest](https://github.com/PostgREST/postgrest) 16.1 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.18.15
+- [opencode](https://github.com/anomalyco/opencode) 1.18.16
 - [uv](https://github.com/astral-sh/uv) 0.12.3
+- [pgschema](https://github.com/pgplex/pgschema) 1.12.2
+- [crush](https://github.com/charmbracelet/crush) 0.88.1
+  - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
+- [mcli](https://github.com/pgsty/mc) 20260806000000.0.0
+- [rclone](https://github.com/rclone/rclone) 1.75.0
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.7.3
+- [pev2](https://github.com/dalibo/pev2/releases) 1.23.0 (noarch)
+- [pig](https://github.com/pgsty/pig) 1.6.2
+- [sow](https://github.com/pgsty/sow) 0.3.0
 - [golang](https://go.dev/dl/) 1.26.5
   - x86_64: https://go.dev/dl/go1.26.5.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.26.5.linux-arm64.tar.gz
@@ -92,6 +116,9 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 
 **Download Directly**:
+
+These are complex or multi-binary vendor packages that remain byte-for-byte
+upstream artifacts; their vendor release values are intentionally preserved.
 
 - [grafana](https://github.com/grafana/grafana/) : 13.1.3
   - deb amd64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_amd64.deb
@@ -105,165 +132,97 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
   - rpm amd64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.x86_64.rpm
   - rpm arm64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.aarch64.rpm
   - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
-- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.1.1
-  - deb amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.1/pg-hardstorage_1.1.1_amd64.deb
-  - deb arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.1/pg-hardstorage_1.1.1_arm64.deb
-  - rpm amd64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.1/pg-hardstorage-1.1.1-1.x86_64.rpm
-  - rpm arm64: https://github.com/cybertec-postgresql/pg_hardstorage/releases/download/v1.1.1/pg-hardstorage-1.1.1-1.aarch64.rpm
-  - warning: vendor packages ship systemd, sysusers, and tmpfiles definitions but no lifecycle scripts; run `systemd-sysusers` and `systemd-tmpfiles --create` before first service start, and restart or stop the agent explicitly on upgrade or removal
-- [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
-  - deb amd64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter_1.4.1-1_amd64.deb
-  - deb arm64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter_1.4.1-1_arm64.deb
-  - rpm amd64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter-1.4.1-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/pg_exporter/releases/download/v1.4.1/pg-exporter-1.4.1-1.aarch64.rpm
-- [pgschema](https://github.com/pgplex/pgschema): 1.12.2
-  - deb amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema_1.12.2_amd64.deb
-  - deb arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema_1.12.2_arm64.deb
-  - rpm amd64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema-1.12.2-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgplex/pgschema/releases/download/v1.12.2/pgschema-1.12.2-1.aarch64.rpm
-- [sow](https://github.com/pgsty/sow/releases): 0.2.0
-  - deb amd64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow_0.2.0-1PGSTY_amd64.deb
-  - deb arm64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow_0.2.0-1PGSTY_arm64.deb
-  - rpm amd64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow-0.2.0-1PGSTY.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/sow/releases/download/v0.2.0/sow-0.2.0-1PGSTY.aarch64.rpm
-- [crush](https://github.com/charmbracelet/crush): 0.88.1
-  - deb amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush_0.88.1_amd64.deb
-  - deb arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush_0.88.1_arm64.deb
-  - rpm amd64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush-0.88.1-1.x86_64.rpm
-  - rpm arm64: https://github.com/charmbracelet/crush/releases/download/v0.88.1/crush-0.88.1-1.aarch64.rpm
-  - note: vendor DEB/RPM packages omit the [FSL-1.1-MIT license terms](https://github.com/charmbracelet/crush/blob/v0.88.1/LICENSE.md); Pigsty mirrors only the `0.88.1-1PGSTY` packages repacked from the official Linux tarballs with `/usr/share/doc/crush/LICENSE.md`
 - [silo](https://github.com/pgsty/silo): 20260806000000
   - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo_20260806000000.0.0-1PGSTY_amd64.deb
   - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo_20260806000000.0.0-1PGSTY_arm64.deb
   - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.aarch64.rpm
   - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
-- [mcli](https://github.com/pgsty/mc): 20260806000000
-  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-08-06T00-00-00Z/mcli_20260806000000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-08-06T00-00-00Z/mcli_20260806000000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-08-06T00-00-00Z/mcli-20260806000000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-08-06T00-00-00Z/mcli-20260806000000.0.0-1.aarch64.rpm
-- [sealos](https://github.com/labring/sealos): 5.1.1
-  - deb amd64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_amd64.deb
-  - deb arm64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_arm64.deb
-  - rpm amd64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_amd64.rpm
-  - rpm arm64: https://github.com/labring/sealos/releases/download/v5.1.1/sealos_5.1.1_linux_arm64.rpm
-- [rclone](https://github.com/rclone/rclone/releases/) 1.75.0
-  - deb amd64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-amd64.deb
-  - deb arm64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-arm64.deb
-  - rpm amd64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-amd64.rpm
-  - rpm arm64: https://downloads.rclone.org/v1.75.0/rclone-v1.75.0-linux-arm64.rpm
 - [code](https://code.visualstudio.com/) 1.132.0
   - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code_1.132.0-1785860022_amd64.deb
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code_1.132.0-1785860155_arm64.deb
   - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code-1.132.0-1785860072.el8.x86_64.rpm
   - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code-1.132.0-1785860207.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.131.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server_4.131.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server_4.131.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server-4.131.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.131.0/code-server-4.131.0-arm64.rpm
-- [cloudflared](https://github.com/cloudflare/cloudflared): 2026.7.3
-  - deb amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-amd64.deb
-  - deb arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-arm64.deb
-  - rpm amd64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-x86_64.rpm
-  - rpm arm64: https://github.com/cloudflare/cloudflared/releases/download/2026.7.3/cloudflared-linux-aarch64.rpm
-  - warning: upstream packages create unowned files under `/usr/local` and omit the Apache-2.0 license text; RPM upgrades then remove the compatibility symlink and package-manager marker in unconditional `%postun`
-- [pev2](https://github.com/dalibo/pev2/releases) 1.23.0
-  - https://github.com/dalibo/pev2/releases
-- [pig](https://github.com/pgsty/pig) : 1.6.1
-  - deb amd64: https://github.com/pgsty/pig/releases/download/v1.6.1/pig_1.6.1-1_amd64.deb
-  - deb arm64: https://github.com/pgsty/pig/releases/download/v1.6.1/pig_1.6.1-1_arm64.deb
-  - rpm amd64: https://github.com/pgsty/pig/releases/download/v1.6.1/pig-1.6.1-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/pig/releases/download/v1.6.1/pig-1.6.1-1.aarch64.rpm
+- [code-server](https://github.com/coder/code-server): 4.132.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server_4.132.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server_4.132.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server-4.132.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server-4.132.0-arm64.rpm
+
 --------
 
 ## Changelog
 
 
+**2026-08-11**
+
+All locally rebuilt RPM/DEB packages now use release `1PGSTY`. Simple
+dual-architecture binary distributions previously downloaded as vendor packages
+are now rebuilt from pinned, checksummed upstream archives.
+
+| Name                    | Old      | New      | Comment                                                       |
+|:------------------------|:---------|:---------|:--------------------------------------------------------------|
+| claude                  | 2.1.226  | 2.1.227  | official manifest verified via proxy; dual-arch RPM/DEB built |
+| code-server             | 4.131.0  | 4.132.0  | official dual-architecture RPM/DEB downloaded and verified    |
+| grafana-infinity-ds     | 3.11.2   | 3.11.3   | dual-architecture RPM/DEB built                               |
+| mtail                   | 3.4.6    | 3.4.7    | dual-architecture RPM/DEB built                               |
+| opencode                | 1.18.15  | 1.18.16  | dual-architecture RPM/DEB built                               |
+| pg-hardstorage          | 1.1.1    | 1.2.1    | static binaries repacked as binary-only 1PGSTY RPM/DEB        |
+| pig                     | 1.6.1    | 1.6.2    | pinned tarballs rebuilt as dual-architecture RPM/DEB          |
+| postgrest               | 16.0     | 16.1     | static dual-architecture RPM/DEB built; PostgreSQL 14+        |
+| redis-exporter          | 1.88.0   | 1.89.0   | dual-architecture RPM/DEB built                               |
+| promscale               | vendor   | 0.17.0   | final upstream binary archived as locked 1PGSTY RPM/DEB       |
+| sealos                  | 5.1.1    | 5.0.1    | locked to last Apache-2.0 stable; rebuilt as 1PGSTY RPM/DEB   |
+| sow                     | 0.2.0    | 0.3.0    | pinned tarballs rebuilt as dual-architecture RPM/DEB          |
+| stalwart                | 0.16.16  | 0.16.17  | dual-architecture RPM/DEB built                               |
+| package release         | mixed    | 1PGSTY   | enforced across all local nFPM manifests                      |
+| cloudflared             | vendor   | 1PGSTY   | raw dual-architecture binaries repacked with Apache license   |
+| crush                   | manual   | 1PGSTY   | reproducible tarball recipe with license, completions, man    |
+| mcli                    | vendor   | 1PGSTY   | official tarballs repacked under `/usr/bin` with docs         |
+| pgschema                | vendor   | 1PGSTY   | raw dual-architecture binaries repacked with license          |
+| rclone                  | vendor   | 1PGSTY   | official zip archives repacked with docs and man page         |
+
+
 **2026-08-08**
 
-| Name     | Old     | New     | Comment                                             |
-|:---------|:--------|:--------|:----------------------------------------------------|
-| claude   | 2.1.223 | 2.1.226 | official manifest verified; dual-arch RPM/DEB built |
-| codex    | 0.146.1 | 0.147.0 | stable tag `rust-v0.147.0`; dual-arch RPM/DEB built |
-| crush    | 0.88.0  | 0.88.1  | official tarballs repacked as `1PGSTY` with license  |
-| grafana  | 13.1.2  | 13.1.3  | official dual-architecture RPM/DEB verified         |
-| opencode | 1.18.14 | 1.18.15 | dual-architecture RPM/DEB built                     |
-| postgrest | 14.16   | 16.0    | static dual-arch RPM/DEB built; PostgreSQL 14+      |
-| rainfrog | 0.4.2   | 0.4.3   | dual-architecture RPM/DEB built                     |
-| rustfs   | 1.0.0-beta.12 | 1.0.0-rc1 | upstream `rc.1-preview.1`; dual-arch RPM/DEB built |
-| sow      | -       | 0.2.0   | official direct-download artifacts                  |
-| uv       | 0.12.2  | 0.12.3  | dual-architecture RPM/DEB built                     |
-| vip-manager | 4.2.0 | 5.0.0 | package recipe only; not built or published         |
-
-
-**2026-08-07**
-
-| Name                       | Old            | New            | Comment                                      |
-|:---------------------------|:---------------|:---------------|:---------------------------------------------|
-| claude                     | 2.1.222        | 2.1.223        | official manifest verified via proxy         |
-| codex                      | 0.146.0        | 0.146.1        | stable release tag `rust-v0.146.1`           |
-| code                       | 1.131.0        | 1.132.0        | official RPM/DEB artifacts                   |
-| dblab                      | 0.47.2         | 0.47.4         | upstream release assets                      |
-| grafana-infinity-ds        | 3.11.1         | 3.11.2         | upstream release assets                      |
-| grafana-victorialogs-ds    | 0.30.1         | 0.31.0         | upstream release assets                      |
-| k3s                        | 1.36.2         | 1.36.3         | official stable channel `v1.36.3+k3s1`       |
-| k3s-images                 | 1.36.2         | 1.36.3         | matching dual-architecture airgap images     |
-| mcli                       | 20260804000000 | 20260806000000 | pgsty fork release                           |
-| opencode                   | 1.18.13        | 1.18.14        | upstream release assets                      |
-| pgschema                   | 1.12.1         | 1.12.2         | official RPM/DEB artifacts                   |
-| seaweedfs                  | 4.40           | 4.41           | upstream release assets                      |
-| silo                       | minio 20260804000000 | 20260806000000 | official package rename and replacement      |
-| uv                         | 0.12.1         | 0.12.2         | upstream release assets                      |
-| victoria-metrics           | 1.148.0        | 1.149.0        | single-node, cluster, and vmutils artifacts  |
-
-
-**2026-08-05**
-
-| Name           | Old            | New            | Comment                                          |
-|:---------------|:---------------|:---------------|:-------------------------------------------------|
-| agentsview     | 0.39.0         | 0.40.1         | upstream release assets                          |
-| claude         | 2.1.220        | 2.1.222        | official manifest verified via proxy             |
-| grafana        | 13.1.1         | 13.1.2         | fixes bundled-plugin upgrades and CVE-2026-13438 |
-| juicefs        | 1.4.0          | 1.4.1          | upstream release assets                          |
-| mcli           | 20260417000000 | 20260804000000 | pgsty fork release                               |
-| minio          | 20260618000000 | 20260804000000 | pgsty fork release                               |
-| nodejs         | 24.18.1        | 24.19.0        | Node.js 24.x LTS                                 |
-| opencode       | 1.18.11        | 1.18.13        | upstream release assets                          |
-| pg-hardstorage | 1.1.0          | 1.1.1          | official RPM/DEB assets                          |
-| pgstream       | 1.3.0          | 1.3.1          | upstream release assets                          |
-| stalwart       | 0.16.15        | 0.16.16        | upstream release assets                          |
-| vray           | 5.51.2         | 5.52.0         | latest stable release                            |
-| xray           | 26.3.27        | 26.7.28        | latest dated release                             |
-
-
-**2026-08-03**
-
-| Name           | Old     | New     | Comment                                                |
-|:---------------|:--------|:--------|:-------------------------------------------------------|
-| code-server    | 4.130.0 | 4.131.0 | official artifacts downloaded and verified 2026-08-05 |
-| crush          | 0.87.0  | 0.88.0  | official links; repository mirror blocked by license   |
-| pg-hardstorage | 1.0.17  | 1.1.0   | superseded by 1.1.1; artifacts downloaded 2026-08-05  |
-
-
-**2026-08-02**
-
-| Name                | Old             | New             | Comment                                      |
-|:--------------------|:----------------|:----------------|:---------------------------------------------|
-| pgbackrest-exporter | 0.23.0          | 0.24.0          | built for both architectures 2026-08-05      |
-| pig                 | 1.6.0           | 1.6.1           | official direct-download artifacts           |
-| rclone              | 1.74.4          | 1.75.0          | official artifacts downloaded 2026-08-05     |
-| rustfs              | 1.0.0-beta.11   | 1.0.0-beta.12   | prerelease line; built 2026-08-05            |
-| uv                  | 0.12.0          | 0.12.1          | built for both architectures 2026-08-05      |
-
-
-**2026-08-01**
-
-| Name             | Old    | New    | Comment                              |
-|:-----------------|:-------|:-------|:-------------------------------------|
-| prometheus       | 3.13.1 | 3.13.2 | security and stability release       |
-| mongodb-exporter | 0.51.0 | 0.52.0 | built for both architectures 2026-08-05 |
+| Name                    | Old                  | New            | Comment                                                       |
+|:------------------------|:---------------------|:---------------|:--------------------------------------------------------------|
+| agentsview              | 0.39.0               | 0.40.1         | upstream release assets                                       |
+| claude                  | 2.1.220              | 2.1.226        | official manifest verified via proxy; dual-arch RPM/DEB built |
+| code                    | 1.131.0              | 1.132.0        | official RPM/DEB artifacts                                    |
+| code-server             | 4.130.0              | 4.131.0        | official artifacts downloaded and verified                    |
+| codex                   | 0.146.0              | 0.147.0        | stable tag `rust-v0.147.0`; dual-arch RPM/DEB built           |
+| crush                   | 0.87.0               | 0.88.1         | official tarballs repacked as `1PGSTY` with license           |
+| dblab                   | 0.47.2               | 0.47.4         | upstream release assets                                       |
+| grafana                 | 13.1.1               | 13.1.3         | official dual-arch packages; includes CVE-2026-13438 fix      |
+| grafana-infinity-ds     | 3.11.1               | 3.11.2         | upstream release assets                                       |
+| grafana-victorialogs-ds | 0.30.1               | 0.31.0         | upstream release assets                                       |
+| juicefs                 | 1.4.0                | 1.4.1          | upstream release assets                                       |
+| k3s                     | 1.36.2               | 1.36.3         | official stable channel `v1.36.3+k3s1`                        |
+| k3s-images              | 1.36.2               | 1.36.3         | matching dual-architecture airgap images                      |
+| mcli                    | 20260417000000       | 20260806000000 | pgsty fork release                                            |
+| mongodb-exporter        | 0.51.0               | 0.52.0         | dual-architecture RPM/DEB built                               |
+| nodejs                  | 24.18.1              | 24.19.0        | Node.js 24.x LTS                                              |
+| opencode                | 1.18.11              | 1.18.15        | dual-architecture RPM/DEB built                               |
+| pg-hardstorage          | 1.0.17               | 1.1.1          | official RPM/DEB artifacts                                    |
+| pgbackrest-exporter     | 0.23.0               | 0.24.0         | dual-architecture RPM/DEB built                               |
+| pgschema                | 1.12.1               | 1.12.2         | official RPM/DEB artifacts                                    |
+| pgstream                | 1.3.0                | 1.3.1          | upstream release assets                                       |
+| pig                     | 1.6.0                | 1.6.1          | official direct-download artifacts                            |
+| postgrest               | 14.16                | 16.0           | static dual-arch RPM/DEB built; PostgreSQL 14+                |
+| prometheus              | 3.13.1               | 3.13.2         | console examples restored from pinned upstream v2.55.1 files  |
+| rainfrog                | 0.4.2                | 0.4.3          | dual-architecture RPM/DEB built                               |
+| rclone                  | 1.74.4               | 1.75.0         | official artifacts downloaded and verified                    |
+| rustfs                  | 1.0.0-beta.11        | 1.0.0-rc.1     | official RC1 assets; dual-architecture RPM/DEB built          |
+| seaweedfs               | 4.40                 | 4.41           | upstream release assets                                       |
+| silo                    | minio 20260618000000 | 20260806000000 | pgsty fork; official package rename and replacement           |
+| sow                     | -                    | 0.2.0          | official direct-download artifacts                            |
+| stalwart                | 0.16.15              | 0.16.16        | upstream release assets                                       |
+| uv                      | 0.12.0               | 0.12.3         | dual-architecture RPM/DEB built                               |
+| victoria-metrics        | 1.148.0              | 1.149.0        | single-node, cluster, and vmutils artifacts                   |
+| vip-manager             | 4.2.0                | 5.0.0          | dual-arch RPM/DEB built; service remains disabled on install  |
+| v2ray                   | 5.51.2               | 5.52.0         | package name restored to the upstream project name            |
+| xray                    | 26.7.28              | 26.3.27        | prerelease replaced by the current stable release             |
 
 
 **2026-07-30**
