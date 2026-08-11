@@ -10,8 +10,11 @@
 
 DEVEL_PATH = sv:/data/pgsty/infra-pkg
 
-# every top-level directory holding a Makefile is a package
-PKGS := $(sort $(patsubst %/,%,$(dir $(wildcard */Makefile))))
+# every top-level directory holding a Makefile is a package recipe target
+PACKAGE_RECIPES := $(sort $(patsubst %/,%,$(dir $(wildcard */Makefile))))
+# Keep the large air-gap image archives out of the default batch build.
+ON_DEMAND_PKGS := k3s-images
+PKGS := $(filter-out $(ON_DEMAND_PKGS),$(PACKAGE_RECIPES))
 
 ###############################################################
 #                        1. Building                          #
@@ -20,7 +23,7 @@ default: all
 all: $(PKGS)
 
 # build one package (both architectures / noarch): make <pkg>
-$(PKGS): | dir
+$(PACKAGE_RECIPES): | dir
 	cd $@ && $(MAKE)
 
 # build every package for a single architecture: make amd64 / make arm64
@@ -28,10 +31,6 @@ amd64 arm64: | dir
 	@set -e; for p in $(PKGS); do \
 		if grep -q '^one:' $$p/Makefile; then $(MAKE) -C $$p ARCH=$@ one; fi; \
 	done
-
-# k3s airgap image packages are big and built on demand
-k3s-images:
-	cd k3s && $(MAKE) images
 
 dir:
 	mkdir -p dist/rpm dist/deb
@@ -54,4 +53,4 @@ pulld:
 
 
 .NOTPARALLEL:
-.PHONY: default all amd64 arm64 k3s-images dir lint push pushd pull pulld $(PKGS)
+.PHONY: default all amd64 arm64 dir lint push pushd pull pulld $(PACKAGE_RECIPES)
