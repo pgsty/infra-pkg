@@ -22,6 +22,10 @@ SHA256_arm64=79e9e87400bb8f3935c67172f48fa49120d4148ea71bfe5613ab78ccfac9df3b
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
+# Upstream v0.20.0 binaries self-report 0.12.1-dev. They are intentionally
+# packaged unmodified; the archive checksum and package metadata identify the
+# selected upstream release.
+
 default: all
 all:
 	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a one; done

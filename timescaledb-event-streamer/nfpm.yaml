@@ -1,14 +1,17 @@
 name: "timescaledb-event-streamer"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v0.20.0"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: CLI program to create a stream of CDC (Change Data Capture) TimescaleDB Hypertable events from a PostgreSQL installation running the TimescaleDB extension.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "noctarius"
+vendor: "PGSTY"
 homepage: "https://github.com/noctarius/timescaledb-event-streamer"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: timescaledb-event-streamer/timescaledb-event-streamer
@@ -20,3 +23,12 @@ contents:
     dst: /usr/share/doc/timescaledb-event-streamer/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/timescaledb-event-streamer/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
