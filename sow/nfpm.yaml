@@ -1,0 +1,34 @@
+name: "sow"
+arch: "${ARCH}"
+platform: "linux"
+section: "devel"
+priority: "optional"
+version: "0.3.0"
+release: "1PGSTY"
+version_schema: semver
+description: Local RPM and DEB repository manager
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/pgsty/sow"
+license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: sow/sow
+    dst: /usr/bin/sow
+    file_info:
+      mode: 0755
+
+  - src: ../LICENSES/Apache-2.0.txt
+    dst: /usr/share/doc/sow/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/sow/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
