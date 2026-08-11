@@ -1,1 +1,0 @@
-PGBACKREST_EXPORTER_OPTS='--log.level=info --backrest.config=/etc/pgbackrest/pgbackrest.conf'
