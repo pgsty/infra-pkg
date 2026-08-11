@@ -1,14 +1,17 @@
 name: "postgrest"
 arch: "amd64"
 platform: "linux"
-version: "v16.0"
-release: "2"
+section: "database"
+priority: "optional"
+version: "v16.1"
+release: "1PGSTY"
 version_schema: semver
 description: PostgREST serves a fully RESTful API from any existing PostgreSQL database.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "PostgREST"
+vendor: "PGSTY"
 homepage: "https://github.com/PostgREST/postgrest"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -55,6 +58,15 @@ contents:
     dst: /usr/share/doc/postgrest/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/postgrest/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 scripts:
   preinstall:  src/preinstall.sh
