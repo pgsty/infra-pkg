@@ -17,18 +17,22 @@ VERSION=1.5.5
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)_cli-linux-$(ARCH)
 FILENAME=$(DIRNAME).zip
+SHA256_amd64=08c0ca117111fcede14239d0093792352befdc174218c344d232c13279643d05
+SHA256_arm64=02163197027a42149147364d31fa67cac82108517a4be43304a1cc226eaef07a
+SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
+CURL=curl -fSL --retry 3
 
 default: all
 all:
 	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a one; done
-one: download extract build clean
-get: download extract
+one: download verify extract build clean
+get: download verify extract
 
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
+	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
@@ -37,7 +41,10 @@ meta:
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 # extract tarball content to current directory
 extract:
@@ -58,4 +65,4 @@ deb:
 
 .NOTPARALLEL:
 
-.PHONY: all get link meta download extract clean build rpm deb one
+.PHONY: all get link meta download verify extract clean build rpm deb one
