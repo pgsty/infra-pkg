@@ -1,14 +1,17 @@
 name: "agentsview"
 arch: "${ARCH}"
 platform: "linux"
+section: "devel"
+priority: "optional"
 version: "0.40.1"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Browse, search, and track costs across all your AI coding agents.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Kenn Software LLC"
+vendor: "PGSTY"
 homepage: "https://github.com/kenn-io/agentsview"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 rpm:
   prefixes:
@@ -24,6 +27,15 @@ contents:
     dst: /usr/share/doc/agentsview/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/agentsview/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 overrides:
   deb:
