@@ -1,0 +1,39 @@
+name: "rclone"
+arch: "${ARCH}"
+platform: "linux"
+section: "net"
+priority: "optional"
+version: "1.75.0"
+release: "1PGSTY"
+version_schema: semver
+description: Rclone syncs files and directories to and from cloud storage
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://rclone.org"
+license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: rclone/rclone
+    dst: /usr/bin/rclone
+    file_info:
+      mode: 0755
+
+  - src: rclone/rclone.1
+    dst: /usr/share/man/man1/rclone.1
+    file_info:
+      mode: 0644
+
+  - src: COPYING
+    dst: /usr/share/doc/rclone/COPYING
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/rclone/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
