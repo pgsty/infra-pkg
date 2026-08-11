@@ -1,14 +1,17 @@
 name: "sabiql"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v1.15.1"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: A modern SQL client for PostgreSQL.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "riii111"
+vendor: "PGSTY"
 homepage: "https://github.com/riii111/sabiql"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 rpm:
   prefixes:
@@ -25,12 +28,21 @@ contents:
     file_info:
       mode: 0644
 
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/sabiql/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
 overrides:
   deb:
     depends:
       - postgresql-client
-      - "libc6 (>= 2.34)"
+      - "libc6 (>= 2.39)"
   rpm:
     depends:
       - postgresql
-      - "glibc >= 2.34"
+      - "glibc >= 2.39"
