@@ -1,14 +1,17 @@
 name: "tigerbeetle"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v0.17.9"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: The financial transactions database designed for mission critical safety and performance
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "tigerbeetle"
+vendor: "PGSTY"
 homepage: "https://github.com/tigerbeetle/tigerbeetle"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 rpm:
   prefixes:
@@ -20,7 +23,16 @@ contents:
     file_info:
       mode: 0755
 
-  - src: LICENSE
+  - src: ../LICENSES/Apache-2.0.txt
     dst: /usr/share/doc/tigerbeetle/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/tigerbeetle/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
