@@ -1,14 +1,17 @@
 name: "hugo"
 arch: "${ARCH}"
 platform: "linux"
+section: "devel"
+priority: "optional"
 version: "v0.164.0"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: The world's fastest framework for building websites
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "gohugoio"
+vendor: "PGSTY"
 homepage: "https://github.com/gohugoio/hugo"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 rpm:
   prefixes:
@@ -20,7 +23,16 @@ contents:
     file_info:
       mode: 0755
 
-  - src: LICENSE
+  - src: ../LICENSES/Apache-2.0.txt
     dst: /usr/share/doc/hugo/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/hugo/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
