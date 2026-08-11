@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME="jaqx0r/mtail"
 PACKAGE="mtail"
-VERSION=3.4.6
+VERSION=3.4.7
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME="$(PACKAGE)_$(VERSION)_linux_$(ARCH)"
 FILENAME="$(DIRNAME).tar.gz"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=6d7f462c826c1c5e1fbc18626feb729cc472868317728ef95938f6b034350b9b
-SHA256_arm64=726e638a53df5039410e748f7bff82cbb3fc09246aa3d6d88013698d8a255dcc
+SHA256_amd64=199e92a63ea397c764befad36daac32cb54ddc61903b72416e34b4331c42d5b0
+SHA256_arm64=046e7dd4f4207d68469bbdc146e8a2ddaa245e3154e2f2b76131c2034547ae96
 SHA256=$(SHA256_$(ARCH))
 
 
@@ -52,7 +52,7 @@ extract:
 
 # remove tarball, build dir, rpm & deb files
 clean:
-	rm -rf $(PACKAGE) $(FILENAME) $(PACKAGE)*.rpm $(PACKAGE)*.deb README.md
+	rm -rf $(PACKAGE) $(FILENAME) $(PACKAGE)*.rpm $(PACKAGE)*.deb LICENSE README.md
 
 # build rpm & deb package
 build: rpm deb

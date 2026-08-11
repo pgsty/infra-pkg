@@ -1,14 +1,17 @@
 name: "mtail"
 arch: "${ARCH}"
 platform: "linux"
-version: "v3.4.6"
-release: "1"
+section: "net"
+priority: "optional"
+version: "v3.4.7"
+release: "1PGSTY"
 version_schema: semver
 description: extract internal monitoring data from application logs for collection in a timeseries database
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "jaqx0r"
+vendor: "PGSTY"
 homepage: "https://github.com/jaqx0r/mtail"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -17,7 +20,16 @@ contents:
     file_info:
       mode: 0755
 
-  - src: LICENSE
+  - src: ../LICENSES/Apache-2.0.txt
     dst: /usr/share/doc/mtail/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/mtail/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
