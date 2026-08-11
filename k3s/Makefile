@@ -1,120 +1,70 @@
 #==============================================================#
 # File      :   Makefile
-# Ctime     :   2026-07-19
-# Mtime     :   2026-07-20
-# Desc      :   Makefile shortcuts for K3s RPM/DEB building
+# Desc      :   Build the K3s RPM/DEB package
 # Path      :   k3s/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
+ARCH  ?= amd64
+ARCHS ?= amd64 arm64
+RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
+export ARCH RARCH
+
 REPONAME=k3s-io/k3s
 PACKAGE=k3s
-IMAGE_PACKAGE=k3s-images
 VERSION=1.36.3
 UPSTREAM_REV=1
-RELEASE=1.1
+RELEASE=1PGSTY
 UPSTREAM_VERSION=v$(VERSION)+k3s$(UPSTREAM_REV)
 URL_VERSION=v$(VERSION)%2Bk3s$(UPSTREAM_REV)
-ARCH ?= amd64
-ARCHS ?= amd64 arm64
-RARCH = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
-export ARCH RARCH
-BINARY_ASSET=k3s
-UPSTREAM_BINARY_ASSET_amd64=k3s
-UPSTREAM_BINARY_ASSET_arm64=k3s-arm64
-UPSTREAM_BINARY_ASSET=$(UPSTREAM_BINARY_ASSET_$(ARCH))
+UPSTREAM_ASSET_amd64=k3s
+UPSTREAM_ASSET_arm64=k3s-arm64
+UPSTREAM_ASSET=$(UPSTREAM_ASSET_$(ARCH))
 FILE_MAGIC_amd64=x86-64
 FILE_MAGIC_arm64=ARM aarch64
 FILE_MAGIC=$(FILE_MAGIC_$(ARCH))
-IMAGE_ASSET=k3s-airgap-images.tar.zst
-UPSTREAM_IMAGE_ASSET=k3s-airgap-images-$(ARCH).tar.zst
 CHECKSUM_ASSET=sha256sum.txt
 UPSTREAM_CHECKSUM_ASSET=sha256sum-$(ARCH).txt
-IMAGE_LIST_ASSET=k3s-images.txt
 CACHE_BINARY=k3s-$(UPSTREAM_VERSION)-linux-$(ARCH)
-CACHE_IMAGE=k3s-airgap-images-$(UPSTREAM_VERSION)-$(ARCH).tar.zst
 CACHE_CHECKSUM=k3s-sha256sum-$(UPSTREAM_VERSION)-$(ARCH).txt
-CACHE_IMAGE_LIST=k3s-images-$(UPSTREAM_VERSION).txt
-BINARY_SHA256_amd64=2f98a9f8fe5782479ee2d54e70a1b10a7f6fd4cae8d38ed3098452dc6eed76b5
-BINARY_SHA256_arm64=c9a209103f480f163b7c6a56f00862b4481927b284dc29a3716bb70d886691a8
-BINARY_SHA256=$(BINARY_SHA256_$(ARCH))
-IMAGE_SHA256_amd64=a197d79e979cc3f4fa9bca8f500bd70092b25c1b5ebda68b35a25f792abd42b0
-IMAGE_SHA256_arm64=856feb047453cd697c2bc4dcf20127448554c8366be992a211558a13d830a038
-IMAGE_SHA256=$(IMAGE_SHA256_$(ARCH))
+SHA256_amd64=2f98a9f8fe5782479ee2d54e70a1b10a7f6fd4cae8d38ed3098452dc6eed76b5
+SHA256_arm64=c9a209103f480f163b7c6a56f00862b4481927b284dc29a3716bb70d886691a8
+SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(URL_VERSION)
 RELEASE_BASE=https://github.com/$(REPONAME)/releases/download/$(URL_VERSION)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-all-errors --continue-at - -fL
 
 default: all
 all:
-	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a binary; done
-images:
-	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a airgap; done
-bundle-all:
-	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a bundle; done
-one: binary
-binary: download-common download-binary verify-binary build-binary clean
-airgap: download-common download-airgap verify-airgap build-airgap clean
-bundle: download-common download-binary download-airgap verify build clean
-get: download-common download-binary download-airgap verify
+	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a one; done
+one: download verify build clean
+get: download verify
 
 link:
 	@echo $(PACKAGE) $(VERSION)-$(RELEASE) from upstream $(UPSTREAM_VERSION) on $(RELEASE_PAGE)
-	@echo $(CURL) $(RELEASE_BASE)/$(UPSTREAM_BINARY_ASSET) -o $(BINARY_ASSET)
-	@echo $(CURL) $(RELEASE_BASE)/$(UPSTREAM_IMAGE_ASSET) -o $(IMAGE_ASSET)
-	@echo $(CURL) $(RELEASE_BASE)/$(UPSTREAM_CHECKSUM_ASSET) -o $(CHECKSUM_ASSET)
-	@echo $(CURL) $(RELEASE_BASE)/$(IMAGE_LIST_ASSET) -o $(IMAGE_LIST_ASSET)
+	@echo $(CURL) $(RELEASE_BASE)/$(UPSTREAM_ASSET) -o $(PACKAGE)
 
-download-common:
+download:
 	if [ -f ../tarball/$(CACHE_CHECKSUM) ]; then cp ../tarball/$(CACHE_CHECKSUM) $(CHECKSUM_ASSET); else $(CURL) $(RELEASE_BASE)/$(UPSTREAM_CHECKSUM_ASSET) -o $(CHECKSUM_ASSET); fi
-	if [ -f ../tarball/$(CACHE_IMAGE_LIST) ]; then cp ../tarball/$(CACHE_IMAGE_LIST) $(IMAGE_LIST_ASSET); else $(CURL) $(RELEASE_BASE)/$(IMAGE_LIST_ASSET) -o $(IMAGE_LIST_ASSET); fi
+	if [ -f ../tarball/$(CACHE_BINARY) ]; then cp ../tarball/$(CACHE_BINARY) $(PACKAGE); else $(CURL) $(RELEASE_BASE)/$(UPSTREAM_ASSET) -o $(PACKAGE); fi
+	chmod 0755 $(PACKAGE)
 
-download-binary:
-	if [ -f ../tarball/$(CACHE_BINARY) ]; then cp ../tarball/$(CACHE_BINARY) $(BINARY_ASSET); else $(CURL) $(RELEASE_BASE)/$(UPSTREAM_BINARY_ASSET) -o $(BINARY_ASSET); fi
-	chmod 0755 $(BINARY_ASSET)
-
-download-airgap:
-	if [ -f ../tarball/$(CACHE_IMAGE) ]; then cp ../tarball/$(CACHE_IMAGE) $(IMAGE_ASSET); else $(CURL) $(RELEASE_BASE)/$(UPSTREAM_IMAGE_ASSET) -o $(IMAGE_ASSET); fi
-	cp -f src/AIRGAP.$(ARCH).md AIRGAP.md
-
-verify: verify-binary verify-airgap
-
-verify-binary:
-	test "$$(awk '$$2 == "$(UPSTREAM_BINARY_ASSET)" { print $$1 }' $(CHECKSUM_ASSET))" = "$(BINARY_SHA256)"
-	if command -v sha256sum >/dev/null 2>&1; then echo "$(BINARY_SHA256)  $(BINARY_ASSET)" | sha256sum -c -; else echo "$(BINARY_SHA256)  $(BINARY_ASSET)" | shasum -a 256 -c -; fi
-	file $(BINARY_ASSET) | grep -q '$(FILE_MAGIC)'
-	if [ "$$(uname -s)-$$(uname -m)" = "Linux-$(RARCH)" ]; then ./$(BINARY_ASSET) --version | grep -Fq 'k3s version $(UPSTREAM_VERSION) '; fi
-
-verify-airgap:
-	test "$$(awk '$$2 == "$(UPSTREAM_IMAGE_ASSET)" { print $$1 }' $(CHECKSUM_ASSET))" = "$(IMAGE_SHA256)"
-	if command -v sha256sum >/dev/null 2>&1; then echo "$(IMAGE_SHA256)  $(IMAGE_ASSET)" | sha256sum -c -; else echo "$(IMAGE_SHA256)  $(IMAGE_ASSET)" | shasum -a 256 -c -; fi
-	if command -v zstd >/dev/null 2>&1; then zstd -t $(IMAGE_ASSET); fi
-	test "$$(wc -l < $(IMAGE_LIST_ASSET))" -gt 0
+verify:
+	test "$$(awk '$$2 == "$(UPSTREAM_ASSET)" { print $$1 }' $(CHECKSUM_ASSET))" = "$(SHA256)"
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(PACKAGE)" | sha256sum -c -; else echo "$(SHA256)  $(PACKAGE)" | shasum -a 256 -c -; fi
+	file $(PACKAGE) | grep -q '$(FILE_MAGIC)'
+	if [ "$$(uname -s)-$$(uname -m)" = "Linux-$(RARCH)" ]; then ./$(PACKAGE) --version | grep -Fq 'k3s version $(UPSTREAM_VERSION) '; fi
 
 clean:
-	rm -f $(BINARY_ASSET) $(IMAGE_ASSET) $(CHECKSUM_ASSET) $(IMAGE_LIST_ASSET) AIRGAP.md
-	rm -f $(PACKAGE)*.rpm $(PACKAGE)*.deb $(IMAGE_PACKAGE)*.rpm $(IMAGE_PACKAGE)*.deb
+	rm -f $(PACKAGE) $(CHECKSUM_ASSET) $(PACKAGE)*.rpm $(PACKAGE)*.deb
 
-build: build-binary build-airgap
-build-binary: rpm deb
-build-airgap: airgap-rpm airgap-deb
-
+build: rpm deb
 rpm:
 	mkdir -p ../dist/rpm/
-	../bin/nfpm package --config nfpm-k3s.yaml --packager rpm --target ../dist/rpm/
-
+	../bin/nfpm package --config nfpm.yaml --packager rpm --target ../dist/rpm/
 deb:
 	mkdir -p ../dist/deb/
-	../bin/nfpm package --config nfpm-k3s.yaml --packager deb --target ../dist/deb/
-
-airgap-rpm:
-	mkdir -p ../dist/rpm/
-	../bin/nfpm package --config nfpm-airgap.yaml --packager rpm --target ../dist/rpm/
-
-airgap-deb:
-	mkdir -p ../dist/deb/
-	../bin/nfpm package --config nfpm-airgap.yaml --packager deb --target ../dist/deb/
+	../bin/nfpm package --config nfpm.yaml --packager deb --target ../dist/deb/
 
 .NOTPARALLEL:
 
-.PHONY: default all images bundle-all one binary airgap bundle get link download-common download-binary download-airgap \
-	verify verify-binary verify-airgap clean build build-binary build-airgap rpm deb airgap-rpm airgap-deb
+.PHONY: default all one get link download verify clean build rpm deb

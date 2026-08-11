@@ -2,8 +2,12 @@
 
 case "$1" in
     purge)
-        rm -f /etc/systemd/system/multi-user.target.wants/k3s.service
-        rm -f /etc/systemd/system/multi-user.target.wants/k3s-agent.service
+        if [ -L /etc/systemd/system/multi-user.target.wants/k3s.service ]; then
+            rm -f /etc/systemd/system/multi-user.target.wants/k3s.service || exit 1
+        fi
+        if [ -L /etc/systemd/system/multi-user.target.wants/k3s-agent.service ]; then
+            rm -f /etc/systemd/system/multi-user.target.wants/k3s-agent.service || exit 1
+        fi
         ;;
 esac
 
