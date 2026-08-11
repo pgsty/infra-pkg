@@ -1,14 +1,17 @@
 name: "npgsqlrest"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v3.21.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: NpgsqlRest automatically generates REST API from PostgreSQL database.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "NpgsqlRest"
+vendor: "PGSTY"
 homepage: "https://github.com/NpgsqlRest/NpgsqlRest"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -55,6 +58,15 @@ contents:
     dst: /usr/share/doc/npgsqlrest/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/npgsqlrest/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 scripts:
   preinstall:  src/preinstall.sh
