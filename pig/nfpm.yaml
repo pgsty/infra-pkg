@@ -1,0 +1,34 @@
+name: "pig"
+arch: "${ARCH}"
+platform: "linux"
+section: "database"
+priority: "optional"
+version: "1.6.2"
+release: "1PGSTY"
+version_schema: semver
+description: PostgreSQL extension package manager and CLI tool
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://pgext.cloud/pig"
+license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: pig/pig
+    dst: /usr/bin/pig
+    file_info:
+      mode: 0755
+
+  - src: pig/LICENSE
+    dst: /usr/share/doc/pig/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pig/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
