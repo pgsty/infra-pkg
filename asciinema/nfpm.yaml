@@ -1,0 +1,50 @@
+name: "asciinema"
+arch: "${ARCH}"
+platform: "linux"
+section: "utils"
+priority: "optional"
+version: "3.2.1"
+release: "1PGSTY"
+version_schema: semver
+description: Terminal session recorder, streamer, and player
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/asciinema/asciinema"
+license: "GPL-3.0-or-later"
+changelog: "${NFPM_CHANGELOG}"
+
+rpm:
+  prefixes:
+    - /usr
+
+contents:
+  - src: asciinema/asciinema
+    dst: /usr/bin/asciinema
+    file_info:
+      mode: 0755
+
+  - src: ../LICENSES/GPL-3.0.txt
+    dst: /usr/share/doc/asciinema/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/asciinema/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+# nFPM drops empty expanded dependencies, so these apply only to the
+# dynamically linked arm64 GNU binary selected by the Makefile.
+overrides:
+  deb:
+    depends:
+      - "${ASCIINEMA_DEB_LIBC}"
+      - "${ASCIINEMA_DEB_LIBGCC}"
+  rpm:
+    depends:
+      - "${ASCIINEMA_RPM_LIBC}"
+      - "${ASCIINEMA_RPM_LIBGCC}"
