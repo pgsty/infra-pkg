@@ -1,0 +1,39 @@
+name: "mcli"
+arch: "${ARCH}"
+platform: "linux"
+section: "utils"
+priority: "optional"
+version: "20260806000000.0.0"
+release: "1PGSTY"
+version_schema: semver
+description: Silo object storage client, a community-maintained fork of MinIO Client
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://silo.pgsty.com"
+license: "AGPL-3.0-or-later"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: mcli/mcli
+    dst: /usr/bin/mcli
+    file_info:
+      mode: 0755
+
+  - src: ../LICENSES/AGPL-3.0.txt
+    dst: /usr/share/doc/mcli/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/mcli/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+  - src: NOTICE
+    dst: /usr/share/doc/mcli/NOTICE
+    file_info:
+      mode: 0644
