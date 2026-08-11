@@ -1,14 +1,17 @@
 name: "pushgateway"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v1.11.3"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Prometheus pushgateway
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Prometheus"
+vendor: "PGSTY"
 homepage: "https://github.com/prometheus/pushgateway"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -35,6 +38,14 @@ contents:
       owner: root
       group: root
 
+  # state
+  - dst: /var/lib/pushgateway
+    type: dir
+    file_info:
+      mode: 0750
+      owner: prometheus
+      group: prometheus
+
   # documentation
   - src: pushgateway/LICENSE
     dst: /usr/share/doc/pushgateway/LICENSE
@@ -45,6 +56,15 @@ contents:
     dst: /usr/share/doc/pushgateway/NOTICE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pushgateway/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 scripts:
   preinstall:  src/preinstall.sh
