@@ -1,14 +1,17 @@
 name: "victoria-metrics"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v1.149.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: fast, cost-effective monitoring solution and time series database
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "VictoriaMetrics"
+vendor: "PGSTY"
 homepage: "https://github.com/VictoriaMetrics/VictoriaMetrics"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: victoria-metrics/victoria-metrics-prod
@@ -19,3 +22,12 @@ contents:
     dst: /usr/share/doc/victoria-metrics/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/victoria-metrics/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root

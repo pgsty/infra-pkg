@@ -1,10 +1,8 @@
 #==============================================================#
 # File      :   Makefile
-# Ctime     :   2023-10-05
-# Mtime     :   2026-01-16
-# Desc      :   Makefile shortcuts for rpm building
-# Path      :   Makefile
-# Copyright (C) 2018-2023 Ruohang Feng (rh@vonng.com)
+# Desc      :   Build the VictoriaMetrics RPM/DEB package group
+# Path      :   victoria-metrics/Makefile
+# Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 ARCH  ?= amd64
 ARCHS ?= amd64 arm64
@@ -14,7 +12,7 @@ export ARCH RARCH
 REPONAME=VictoriaMetrics/VictoriaMetrics
 PACKAGE=victoria-metrics
 VERSION=1.149.0
-
+RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME1=victoria-metrics-linux-$(ARCH)-v$(VERSION).tar.gz
 FILENAME2=victoria-metrics-linux-$(ARCH)-v$(VERSION)-cluster.tar.gz
@@ -28,64 +26,49 @@ SHA2562=$(SHA2562_$(ARCH))
 SHA2563_amd64=1ccaa92acf4f2fcba03d8c197f1b1da7194cc4777ecf45ab5b212bd6ed52be58
 SHA2563_arm64=98fb165f439410b4538d45242192f9916639e73adf8ed2407e0c89bc59f3bf5a
 SHA2563=$(SHA2563_$(ARCH))
-
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
 WEB_URL2=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME2)
 WEB_URL3=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME3)
-
+CURL=curl -fSL --retry 3
 
 default: all
 all:
 	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a one; done
 one: download verify extract build clean
 get: download verify extract
-
-# print download link and download command
 link:
-	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL1) -o $(FILENAME1)
-	@echo curl -fSL $(WEB_URL2) -o $(FILENAME2)
-	@echo curl -fSL $(WEB_URL3) -o $(FILENAME3)
-
-# get configured release info
+	@echo $(PACKAGE) package group $(VERSION)-$(RELEASE) on $(RELEASE_PAGE)
+	@echo $(CURL) $(WEB_URL1) -o $(FILENAME1)
+	@echo $(CURL) $(WEB_URL2) -o $(FILENAME2)
+	@echo $(CURL) $(WEB_URL3) -o $(FILENAME3)
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/tags/v$(VERSION)" | tee meta.json
-
-# download configured release tarballs to current directory
-# if already in ../tarball/ , just copy it
+	curl --fail --silent --show-error "https://api.github.com/repos/$(REPONAME)/releases/tags/v$(VERSION)" | tee meta.json
 download:
-	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else curl -fSL $(WEB_URL1) -o $(FILENAME1); fi
-	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else curl -fSL $(WEB_URL2) -o $(FILENAME2); fi
-	if [ -f ../tarball/$(FILENAME3) ]; then cp ../tarball/$(FILENAME3) .; else curl -fSL $(WEB_URL3) -o $(FILENAME3); fi
-
+	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else $(CURL) $(WEB_URL1) -o $(FILENAME1); fi
+	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else $(CURL) $(WEB_URL2) -o $(FILENAME2); fi
+	if [ -f ../tarball/$(FILENAME3) ]; then cp ../tarball/$(FILENAME3) .; else $(CURL) $(WEB_URL3) -o $(FILENAME3); fi
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA2561)  $(FILENAME1)" | sha256sum -c -; else echo "$(SHA2561)  $(FILENAME1)" | shasum -a 256 -c -; fi
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA2562)  $(FILENAME2)" | sha256sum -c -; else echo "$(SHA2562)  $(FILENAME2)" | shasum -a 256 -c -; fi
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA2563)  $(FILENAME3)" | sha256sum -c -; else echo "$(SHA2563)  $(FILENAME3)" | shasum -a 256 -c -; fi
-
-# extract tarball content to current directory
 extract:
 	mkdir -p $(PACKAGE)
-	tar -xf $(FILENAME1)  -C $(PACKAGE)
-	tar -xf $(FILENAME2)  -C $(PACKAGE)
-	tar -xf $(FILENAME3)  -C $(PACKAGE)
-
-# remove tarball, build dir, rpm & deb files
+	tar -xf $(FILENAME1) -C $(PACKAGE)
+	tar -xf $(FILENAME2) -C $(PACKAGE)
+	tar -xf $(FILENAME3) -C $(PACKAGE)
 clean:
-	rm -rf $(PACKAGE) $(FILENAME1) $(FILENAME2) $(FILENAME3)
-
-# build rpm & deb package
+	rm -rf $(PACKAGE) $(FILENAME1) $(FILENAME2) $(FILENAME3) $(PACKAGE)*.rpm $(PACKAGE)*.deb
 build: rpm deb
 rpm:
-	../bin/nfpm package --config victoria-metrics.yaml         --packager rpm --target ../dist/rpm/
+	mkdir -p ../dist/rpm/
+	../bin/nfpm package --config nfpm.yaml --packager rpm --target ../dist/rpm/
 	../bin/nfpm package --config victoria-metrics-cluster.yaml --packager rpm --target ../dist/rpm/
-	../bin/nfpm package --config vmutils.yaml                  --packager rpm --target ../dist/rpm/
-
+	../bin/nfpm package --config vmutils.yaml --packager rpm --target ../dist/rpm/
 deb:
-	../bin/nfpm package --config victoria-metrics.yaml         --packager deb --target ../dist/deb/
+	mkdir -p ../dist/deb/
+	../bin/nfpm package --config nfpm.yaml --packager deb --target ../dist/deb/
 	../bin/nfpm package --config victoria-metrics-cluster.yaml --packager deb --target ../dist/deb/
-	../bin/nfpm package --config vmutils.yaml                  --packager deb --target ../dist/deb/
+	../bin/nfpm package --config vmutils.yaml --packager deb --target ../dist/deb/
 
 .NOTPARALLEL:
-
-.PHONY: all get link meta download verify extract clean build rpm deb one
+.PHONY: default all one get link meta download verify extract clean build rpm deb
