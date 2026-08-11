@@ -1,0 +1,34 @@
+name: "pg-hardstorage"
+arch: "${ARCH}"
+platform: "linux"
+section: "database"
+priority: "optional"
+version: "1.2.1"
+release: "1PGSTY"
+version_schema: semver
+description: PostgreSQL backup and continuous WAL streaming command-line tool
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/cybertec-postgresql/pg_hardstorage"
+license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: payload/pg_hardstorage
+    dst: /usr/bin/pg_hardstorage
+    file_info:
+      mode: 0755
+
+  - src: payload/LICENSE
+    dst: /usr/share/doc/pg-hardstorage/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pg-hardstorage/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
