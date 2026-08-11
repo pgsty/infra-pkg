@@ -1,5 +1,9 @@
 # Grafana Plugins
 
+`plugins-13.0.0.tar.gz` is an intentionally curated one-shot archive. The
+package recipe verifies the archive's pinned checksum but does not attempt to
+reconstruct it from individual upstream releases.
+
 ```bash
 grafana cli plugins install grafana-exploretraces-app
 grafana cli plugins install grafana-lokiexplore-app
@@ -43,6 +47,6 @@ cp -rf /var/lib/grafana/plugins/volkovlabs-table-panel             /tmp/plugins/
 cp -rf /var/lib/grafana/plugins/volkovlabs-variable-panel          /tmp/plugins/                  
 
 tar -cvf /tmp/plugins-13.0.0.tar.gz plugins
-scp meta:/tmp/plugins-13.0.0.tar.gz noarch/tarball/
-cd noarch make grafana-plugins
+scp meta:/tmp/plugins-13.0.0.tar.gz tarball/
+make grafana-plugins
 ```

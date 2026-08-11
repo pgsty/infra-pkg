@@ -15,6 +15,10 @@ FILENAME2=chart.tgz
 SHA2562=b3aa73759d1890dd5be9e9527423ef1e92c76076f2aeb5476d5a6dbf7ecbc825
 WEB_URL2=https://repo.pigsty.io/etc/$(FILENAME2)
 
+# plugins-$(VERSION).tar.gz is an intentionally curated, one-shot archive.
+# Its pinned checksum is the acceptance boundary; it is not reconstructed from
+# individual upstream plugin releases by this recipe.
+
 
 default: all
 all: download verify extract build clean
