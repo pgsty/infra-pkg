@@ -1,14 +1,17 @@
 name: "pg-timetable"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v7.0.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: "Advanced scheduling for PostgreSQL"
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "cybertec"
+vendor: "PGSTY"
 homepage: "https://github.com/cybertec-postgresql/pg_timetable"
 license: "PostgreSQL"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -18,16 +21,19 @@ contents:
       mode: 0755
 
   - src: pg_timetable/LICENSE
-    dst: /usr/share/doc/pg_timetable/LICENSE
+    dst: /usr/share/doc/pg-timetable/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pg-timetable/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 rpm:
   prefixes:
     - /usr/bin
-overrides:
-  rpm:
-    provides:
-      - pg_timetable
-    replaces:
-      - pg_timetable
