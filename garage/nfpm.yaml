@@ -1,14 +1,17 @@
 name: "garage"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v2.3.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: S3-compatible distributed object storage designed for self-hosting
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Deuxfleurs"
+vendor: "PGSTY"
 homepage: "https://garagehq.deuxfleurs.fr/"
-license: "AGPL-3.0"
+license: "AGPL-3.0-only"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: garage
@@ -16,7 +19,16 @@ contents:
     file_info:
       mode: 0755
 
-  - src: LICENSE
+  - src: ../LICENSES/AGPL-3.0.txt
     dst: /usr/share/doc/garage/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/garage/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
