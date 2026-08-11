@@ -1,14 +1,17 @@
 name: "dblab"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v0.47.4"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: The database client every command line junkie deserves.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "danvergara"
+vendor: "PGSTY"
 homepage: "https://github.com/danvergara/dblab"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -21,3 +24,12 @@ contents:
     dst: /usr/share/doc/dblab/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/dblab/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
