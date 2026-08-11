@@ -1,25 +1,26 @@
 name: "nodejs"
 arch: "${ARCH}"
 platform: "linux"
+section: "devel"
+priority: "optional"
 version: "v24.19.0"
 version_schema: semver
-release: "2"
+release: "1PGSTY"
 description: Node.js JavaScript runtime
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Node.js Foundation"
+vendor: "PGSTY"
 homepage: "https://nodejs.org"
 license: "MIT"
-
-provides:
-  - npm
-replaces:
-  - npm
-conflicts:
-  - npm
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: node/
     dst: /usr/lib/nodejs
+
+  - src: node/LICENSE
+    dst: /usr/share/doc/nodejs/LICENSE
+    file_info:
+      mode: 0644
 
   - src: ../lib/nodejs/bin/node
     dst: /usr/bin/node
@@ -37,6 +38,11 @@ contents:
     dst: /usr/bin/corepack
     type: symlink
 
-rpm:
-  scripts:
-    posttrans: cleanup-legacy.sh
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/nodejs/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root

@@ -17,21 +17,28 @@ DIRNAME=node
 FILENAME_amd64=node-v$(VERSION)-linux-x64.tar.xz
 FILENAME_arm64=node-v$(VERSION)-linux-arm64.tar.xz
 FILENAME=$(FILENAME_$(ARCH))
+SHA256_amd64=14b342e71204f811bde6153be8e04b62aef63c236fef92b55f9c83154b409647
+SHA256_arm64=01443c1e1a29e531ccad5a46fefa6df490d2189c49f7955904aecdbb0fe86fdc
+SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://nodejs.org/dist/v$(VERSION)/$(FILENAME)
+CURL=curl -fSL --retry 3
 
 
 default: all
 all:
 	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a one; done
-one: download extract build clean
-get: download extract
+one: download verify extract build clean
+get: download verify extract
 
 link:
 	@echo $(PACKAGE) $(VERSION)
-	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
+	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+
+verify:
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 extract:
 	mkdir -p $(DIRNAME)
@@ -49,4 +56,4 @@ deb:
 
 .NOTPARALLEL:
 
-.PHONY: all get link download extract clean build rpm deb one
+.PHONY: all get link download verify extract clean build rpm deb one
