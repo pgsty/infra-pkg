@@ -1,14 +1,17 @@
 name: "etcd"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v3.7.1"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Distributed reliable key-value store for the most critical data of a distributed system
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "etcd.io"
+vendor: "PGSTY"
 homepage: "https://github.com/etcd-io/etcd"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -50,5 +53,15 @@ contents:
       mode: 0644
 
 # add etcd user/group
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/etcd/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
 scripts:
   preinstall:  src/preinstall.sh
