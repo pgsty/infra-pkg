@@ -1,0 +1,35 @@
+name: "cloudflared"
+arch: "${ARCH}"
+platform: "linux"
+section: "net"
+priority: "optional"
+version: "2026.7.3"
+release: "1PGSTY"
+version_schema: semver
+description: Cloudflare Tunnel client
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/cloudflare/cloudflared"
+license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+
+  - src: cloudflared/cloudflared
+    dst: /usr/bin/cloudflared
+    file_info:
+      mode: 0755
+
+  - src: ../LICENSES/Apache-2.0.txt
+    dst: /usr/share/doc/cloudflared/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/cloudflared/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
