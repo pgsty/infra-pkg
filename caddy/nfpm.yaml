@@ -1,14 +1,17 @@
 name: "caddy"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v2.11.4"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Caddy"
+vendor: "PGSTY"
 homepage: "https://github.com/caddyserver/caddy"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: caddy/caddy
@@ -27,7 +30,25 @@ contents:
     file_info:
       mode: 0644
 
+  # Default document root referenced by the packaged Caddyfile. Site content
+  # is supplied by the operator; this package intentionally ships no service.
+  - dst: /usr/share/caddy/
+    type: dir
+    file_info:
+      mode: 0755
+      owner: root
+      group: root
+
   - src: caddy/LICENSE
     dst: /usr/share/doc/caddy/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/caddy/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
