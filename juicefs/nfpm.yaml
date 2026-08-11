@@ -1,14 +1,17 @@
 name: "juicefs"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v1.4.1"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: Distributed POSIX file system built on top of Redis and S3.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "JuiceData"
+vendor: "PGSTY"
 homepage: "https://github.com/juicedata/juicefs"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: juicefs/juicefs
@@ -24,3 +27,12 @@ contents:
     dst: /usr/share/doc/juicefs/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/juicefs/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
