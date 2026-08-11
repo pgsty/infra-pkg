@@ -30,6 +30,10 @@ SHA2562_arm64=5ac61d17cf26c905f44623598032f95f49482238bf65953cee9441fa902f6760
 SHA2562=$(SHA2562_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --fail --silent --show-error --location
 
+# These four Linux binaries are intentional one-shot build artifacts. This
+# recipe consumes only their versioned cache names and pinned checksums; it does
+# not rebuild them during routine package assembly.
+
 
 default: all
 all:

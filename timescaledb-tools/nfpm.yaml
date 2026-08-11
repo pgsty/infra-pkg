@@ -1,14 +1,17 @@
 name: "timescaledb-tools"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v0.19.0"
-release: "3"
+release: "1PGSTY"
 version_schema: semver
 description: "TimescaleDB tuning and parallel copy tools"
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Timescale"
+vendor: "PGSTY"
 homepage: "https://github.com/timescale/timescaledb-tune"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: timescaledb-tune
@@ -21,7 +24,7 @@ contents:
     file_info:
       mode: 0755
 
-  - src: LICENSE
+  - src: ../LICENSES/Apache-2.0.txt
     dst: /usr/share/doc/timescaledb-tools/LICENSE
     file_info:
       mode: 0644
@@ -35,3 +38,12 @@ contents:
     dst: /usr/share/doc/timescaledb-tools/NOTICE.timescaledb-parallel-copy
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/timescaledb-tools/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
