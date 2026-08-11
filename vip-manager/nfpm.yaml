@@ -1,14 +1,17 @@
 name: "vip-manager"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "5.0.0"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: Manages a virtual IP based on state kept in etcd, Consul, or Patroni
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "CYBERTEC PostgreSQL International GmbH"
+vendor: "PGSTY"
 homepage: "https://github.com/cybertec-postgresql/vip-manager"
 license: "BSD-2-Clause"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: vip-manager/vip-manager
@@ -16,11 +19,18 @@ contents:
     file_info:
       mode: 0755
 
-  - src: src/default
-    dst: /etc/default/vip-manager.yml
+  - dst: /etc/vip-manager
+    type: dir
+    file_info:
+      mode: 0755
+      owner: root
+      group: root
+
+  - src: src/vip-manager.yml
+    dst: /etc/vip-manager/vip-manager.yml
     type: config|noreplace
     file_info:
-      mode: 0644
+      mode: 0640
       owner: root
       group: root
 
@@ -35,6 +45,15 @@ contents:
     dst: /usr/share/doc/vip-manager/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/vip-manager/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 scripts:
   postinstall: src/postinstall.sh

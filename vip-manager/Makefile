@@ -14,7 +14,7 @@ export ARCH RARCH
 REPONAME=cybertec-postgresql/vip-manager
 PACKAGE=vip-manager
 VERSION=5.0.0
-RELEASE=1
+RELEASE=1PGSTY
 TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 DIRNAME=$(PACKAGE)_$(VERSION)_Linux_$(RARCH)
