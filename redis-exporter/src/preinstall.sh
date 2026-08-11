@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ "${DPKG_MAINTSCRIPT_NAME:-}" = "preinst" ] && command -v dpkg-maintscript-helper >/dev/null 2>&1; then
-    dpkg-maintscript-helper rm_conffile /lib/systemd/system/redis_exporter.service 1.88.0-2~ redis-exporter -- "$@" || exit 1
-fi
-
 if ! getent group prometheus >/dev/null 2>&1; then
     groupadd -r prometheus || exit 1
 fi

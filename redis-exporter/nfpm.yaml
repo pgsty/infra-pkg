@@ -1,14 +1,17 @@
 name: "redis-exporter"
 arch: "${ARCH}"
 platform: "linux"
-version: "v1.88.0"
-release: "2"
+section: "net"
+priority: "optional"
+version: "v1.89.0"
+release: "1PGSTY"
 version_schema: semver
 description: "Prometheus Exporter for Redis Metrics. Supports Redis 2.x, 3.x, 4.x, 5.x, 6.x, and 7.x"
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "oliver006"
+vendor: "PGSTY"
 homepage: "https://github.com/oliver006/redis_exporter"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -41,15 +44,17 @@ contents:
     file_info:
       mode: 0644
 
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/redis-exporter/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
 scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
   postremove:  src/postremove.sh
-
-overrides:
-  rpm:
-    provides:
-      - redis_exporter
-    replaces:
-      - redis_exporter
