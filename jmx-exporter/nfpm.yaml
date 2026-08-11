@@ -1,14 +1,17 @@
 name: "jmx-exporter"
 arch: "all"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "1.6.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: "Prometheus JMX Exporter Java agent"
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Prometheus"
+vendor: "PGSTY"
 homepage: "https://github.com/prometheus/jmx_exporter"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: jmx_prometheus_javaagent-1.6.0.jar
@@ -17,11 +20,21 @@ contents:
     file_info:
       mode: 0644
 
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/jmx-exporter/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+
   - src: jmx_prometheus_javaagent-1.6.0.jar
     dst: /usr/share/java/jmx_prometheus_javaagent.jar
     type: symlink
 
-  - src: LICENSE
+  - src: ../LICENSES/Apache-2.0.txt
     dst: /usr/share/doc/jmx-exporter/LICENSE
     type: file
     file_info:
