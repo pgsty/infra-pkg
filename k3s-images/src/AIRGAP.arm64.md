@@ -1,15 +1,16 @@
 # K3s air-gap image package notes
 
-This package contains the upstream `v1.36.2+k3s1` system image archive for
-amd64 nodes. It is installed without extraction at:
+This package contains the upstream `v1.36.3+k3s1` system image archive for
+arm64 nodes. It is installed without extraction at:
 
-`/var/lib/rancher/k3s/agent/images/k3s-airgap-images-amd64.tar.zst`
+`/var/lib/rancher/k3s/agent/images/k3s-airgap-images.tar.zst`
 
 The package does not import images or restart K3s. K3s imports the archive on
 its next start. Conditional image imports can be enabled separately by
 creating `.cache.json` in the image directory.
 
-`k3s-images 1.36.2-1.1` has an exact dependency on `k3s 1.36.2-1.1`, so
+`k3s-images 1.36.3-1PGSTY` has an exact dependency on
+`k3s 1.36.3-1PGSTY`, so
 the binary and bootstrap image set cannot be mixed across package revisions.
 
 This archive contains the K3s bootstrap system images only. Additional CNI,
