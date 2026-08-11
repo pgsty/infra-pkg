@@ -1,14 +1,17 @@
 name: "mongodb-exporter"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v0.52.0"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: A Prometheus exporter for MongoDB including sharding, replication and storage engines
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Percona"
+vendor: "PGSTY"
 homepage: "https://github.com/percona/mongodb_exporter"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -41,15 +44,17 @@ contents:
     file_info:
       mode: 0644
 
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/mongodb-exporter/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
 scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
   postremove:  src/postremove.sh
-
-overrides:
-  rpm:
-    provides:
-      - mongodb_exporter
-    replaces:
-      - mongodb_exporter
