@@ -1,14 +1,17 @@
-name: "vray"
+name: "v2ray"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v5.52.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: A platform for building proxies to bypass network restrictions.
-maintainer: V2fly Teams
-vendor: "v2fly"
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
 homepage: "https://github.com/v2fly/v2ray-core"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -70,9 +73,18 @@ contents:
 
   # documentation
   - src: src/LICENSE
-    dst: /usr/share/doc/vray/LICENSE
+    dst: /usr/share/doc/v2ray/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/v2ray/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 scripts:
   preinstall:  src/preinstall.sh
