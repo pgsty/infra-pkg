@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ "${DPKG_MAINTSCRIPT_NAME:-}" = "postrm" ] && command -v dpkg-maintscript-helper >/dev/null 2>&1; then
-    dpkg-maintscript-helper rm_conffile /lib/systemd/system/alertmanager.service 0.33.1-2~ alertmanager -- "$@" || exit 1
-fi
-
 case "$1" in
     purge)
         if [ -L /etc/systemd/system/multi-user.target.wants/alertmanager.service ]; then
