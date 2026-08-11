@@ -10,14 +10,13 @@ NotifyAccess=main
 User=rustfs
 Group=rustfs
 
-WorkingDirectory=/usr/bin
+WorkingDirectory=/var/lib/rustfs
 EnvironmentFile=/etc/default/rustfs
 ExecStartPre=/usr/libexec/rustfs/check-config
 ExecStart=/usr/bin/rustfs $RUSTFS_VOLUMES
 
 LimitNOFILE=1048576
 LimitNPROC=32768
-TasksMax=infinity
 
 Restart=always
 RestartSec=10s
@@ -33,16 +32,8 @@ NoNewPrivileges=true
 ProtectHome=true
 PrivateTmp=true
 PrivateDevices=true
-ProtectClock=true
-ProtectKernelTunables=true
-ProtectKernelModules=true
-ProtectControlGroups=true
-RestrictSUIDSGID=true
-RestrictRealtime=true
-
-# service log configuration
-StandardOutput=append:/var/logs/rustfs/rustfs.log
-StandardError=append:/var/logs/rustfs/rustfs-err.log
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target

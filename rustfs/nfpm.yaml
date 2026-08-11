@@ -1,14 +1,21 @@
 name: "rustfs"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "1.0.0"
-release: "rc1"
+prerelease: "rc1"
+release: "1PGSTY"
 version_schema: semver
 description: RustFS is a high-performance, S3 compatible distributed object storage system
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "RustFS"
+vendor: "PGSTY"
 homepage: "https://github.com/rustfs/rustfs"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+
+depends:
+  - ca-certificates
 
 contents:
 
@@ -42,15 +49,15 @@ contents:
       owner: root
       group: root
 
-  # data and logs
-  - dst: /data/rustfs
+  # state and application logs
+  - dst: /var/lib/rustfs
     type: dir
     file_info:
       mode: 0750
       owner: rustfs
       group: rustfs
 
-  - dst: /var/logs/rustfs
+  - dst: /var/log/rustfs
     type: dir
     file_info:
       mode: 0750
@@ -62,6 +69,15 @@ contents:
     dst: /usr/share/doc/rustfs/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/rustfs/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 scripts:
   preinstall:  src/preinstall.sh
