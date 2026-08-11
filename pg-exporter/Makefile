@@ -3,7 +3,7 @@
 # Ctime     :   2026-07-20
 # Mtime     :   2026-08-02
 # Desc      :   Makefile shortcuts for pg-exporter rpm/deb build
-# Path      :   pg_exporter/Makefile
+# Path      :   pg-exporter/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 ARCH  ?= amd64
