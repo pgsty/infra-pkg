@@ -1,14 +1,17 @@
 name: "restic"
 arch: "${ARCH}"
 platform: "linux"
+section: "utils"
+priority: "optional"
 version: "v0.19.1"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Restic backup program
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Restic"
+vendor: "PGSTY"
 homepage: "https://github.com/restic/restic"
 license: "BSD-2-Clause"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -22,3 +25,12 @@ contents:
     dst: /usr/share/doc/restic/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/restic/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
