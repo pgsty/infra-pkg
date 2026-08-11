@@ -1,14 +1,17 @@
 name: "tigerfs"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v0.7.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Mount PostgreSQL as a filesystem. Build apps with files, explore databases with ls and cat.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Timescale"
+vendor: "PGSTY"
 homepage: "https://tigerfs.io/"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 depends:
   - fuse3
@@ -24,15 +27,14 @@ contents:
     file_info:
       mode: 0644
 
-  - src: tigerfs/README.md
-    dst: /usr/share/doc/tigerfs/README.md
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/tigerfs/copyright
+    packager: deb
     file_info:
       mode: 0644
-
-  - src: tigerfs/docs/spec.md
-    dst: /usr/share/doc/tigerfs/spec.md
-    file_info:
-      mode: 0644
+      owner: root
+      group: root
 
 overrides:
   rpm:
