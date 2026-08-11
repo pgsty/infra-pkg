@@ -1,14 +1,17 @@
 name: "grafana-victorialogs-ds"
 arch: "${ARCH}"
 platform: "linux"
+section: "web"
+priority: "optional"
 version: "0.31.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: "Grafana datasource for VictoriaLogs"
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "VictoriaMetrics"
+vendor: "PGSTY"
 homepage: "https://github.com/VictoriaMetrics/victorialogs-datasource"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 overrides:
   deb:
@@ -40,3 +43,17 @@ contents:
     file_info:
       owner: grafana
       group: grafana
+
+  - src: victoriametrics-logs-datasource/LICENSE
+    dst: /usr/share/doc/grafana-victorialogs-ds/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/grafana-victorialogs-ds/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
