@@ -1,27 +1,26 @@
 name: "golang"
 arch: "${ARCH}"
 platform: "linux"
+section: "devel"
+priority: "optional"
 version: "v1.26.5"
 version_schema: semver
-release: "2"
+release: "1PGSTY"
 description: The Go Programming Language
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Google"
+vendor: "PGSTY"
 homepage: "https://go.dev"
 license: "BSD-3-Clause"
-
-replaces:
-  - golang-go
-  - go
-  - go-toolset
-conflicts:
-  - golang-go
-  - go
-  - go-toolset
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: go/
     dst: /usr/lib/go
+
+  - src: go/LICENSE
+    dst: /usr/share/doc/golang/LICENSE
+    file_info:
+      mode: 0644
 
   - src: ../lib/go/bin/go
     dst: /usr/bin/go
@@ -31,6 +30,11 @@ contents:
     dst: /usr/bin/gofmt
     type: symlink
 
-rpm:
-  scripts:
-    posttrans: cleanup-legacy.sh
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/golang/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
