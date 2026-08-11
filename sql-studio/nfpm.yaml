@@ -1,14 +1,17 @@
 name: "sql-studio"
 arch: "${ARCH}"
 platform: "linux"
+section: "web"
+priority: "optional"
 version: "v0.1.51"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: Terminal SQL database explorer for PostgreSQL, MySQL, SQLite, ClickHouse, and more.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "frectonz"
+vendor: "PGSTY"
 homepage: "https://github.com/frectonz/sql-studio"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 rpm:
   prefixes:
@@ -24,6 +27,15 @@ contents:
     dst: /usr/share/doc/sql-studio/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/sql-studio/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
 
 overrides:
   deb:
