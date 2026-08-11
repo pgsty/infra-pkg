@@ -28,4 +28,59 @@ if [ "$actual" != "$expected" ]; then
     exit 2
 fi
 
-exec "$nfpm_bin" "$@"
+config_path=
+packager=
+next_arg=
+for arg in "$@"; do
+    case "$next_arg" in
+        config)
+            config_path=$arg
+            next_arg=
+            continue
+            ;;
+        packager)
+            packager=$arg
+            next_arg=
+            continue
+            ;;
+    esac
+    case "$arg" in
+        --config)
+            next_arg=config
+            ;;
+        --config=*)
+            config_path=${arg#--config=}
+            ;;
+        --packager)
+            next_arg=packager
+            ;;
+        --packager=*)
+            packager=${arg#--packager=}
+            ;;
+    esac
+done
+
+docs_dir=
+cleanup() {
+    if [ -n "$docs_dir" ] && [ -d "$docs_dir" ]; then
+        rm -rf -- "$docs_dir"
+    fi
+}
+trap cleanup 0
+
+if [ "$packager" = deb ] || [ "$packager" = rpm ]; then
+    if [ -z "$config_path" ] || [ ! -f "$config_path" ]; then
+        echo "a readable --config is required for package documentation" >&2
+        exit 2
+    fi
+    docs_dir=$(mktemp -d "${TMPDIR:-/tmp}/infra-pkg-docs.XXXXXX")
+    python3 "$script_dir/render_debian_docs.py" "$config_path" "$docs_dir" "$packager"
+fi
+
+status=0
+if [ -n "$docs_dir" ]; then
+    "$nfpm_bin" "$@" --config "$docs_dir/manifest.yaml" || status=$?
+else
+    "$nfpm_bin" "$@" || status=$?
+fi
+exit "$status"

@@ -20,3 +20,4 @@ __pycache__/
 bin/*
 !bin/lint_specs.py
 !bin/nfpm
+!bin/render_debian_docs.py
