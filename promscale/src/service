@@ -1,0 +1,23 @@
+[Unit]
+Description=Promscale service (obsolete, locked at 0.17.0)
+Documentation=https://github.com/timescale/promscale
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=promscale
+Group=promscale
+EnvironmentFile=-/etc/default/promscale
+ExecStart=/usr/bin/promscale $OPTIONS
+Restart=on-failure
+RestartSec=10s
+KillMode=mixed
+KillSignal=SIGINT
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+# Promscale is discontinued and this package is intentionally locked at 0.17.0.
+# It requires a compatible PostgreSQL, TimescaleDB, and promscale_extension.
+
+# PROMSCALE_DB_HOST="localhost"
+# PROMSCALE_DB_PORT="5432"
+# PROMSCALE_DB_NAME="timescale"
+# PROMSCALE_DB_USER="postgres"
+# PROMSCALE_DB_PASSWORD=""
+PROMSCALE_DB_SSL_MODE="prefer"
+
+# PROMSCALE_STARTUP_INSTALL_EXTENSIONS="true"
+# PROMSCALE_WEB_LISTEN_ADDRESS=":9201"
+# PROMSCALE_WEB_TELEMETRY_PATH="/metrics"
+
+OPTIONS=""
