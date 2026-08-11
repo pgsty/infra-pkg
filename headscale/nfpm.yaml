@@ -1,14 +1,17 @@
 name: "headscale"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v0.29.3"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: An open source, self-hosted implementation of the Tailscale control server
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Headscale"
+vendor: "PGSTY"
 homepage: "https://github.com/juanfont/headscale"
 license: "BSD-3-Clause"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: headscale/headscale
@@ -36,3 +39,12 @@ contents:
     type: config|noreplace
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/headscale/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
