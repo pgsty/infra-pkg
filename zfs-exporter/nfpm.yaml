@@ -1,14 +1,17 @@
 name: "zfs-exporter"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v3.8.1"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Prometheus exporter for zfs metrics
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Peter Fern / Waitingsong"
+vendor: "PGSTY"
 homepage: "https://github.com/waitingsong/zfs_exporter"
 license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -41,15 +44,17 @@ contents:
     file_info:
       mode: 0644
 
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/zfs-exporter/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
 scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
   postremove:  src/postremove.sh
-
-overrides:
-  rpm:
-    provides:
-      - zfs_exporter
-    replaces:
-      - zfs_exporter
