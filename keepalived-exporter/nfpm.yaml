@@ -1,14 +1,17 @@
 name: "keepalived-exporter"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v1.7.1"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Prometheus exporter for keepalived metrics
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Mehdy"
+vendor: "PGSTY"
 homepage: https://github.com/mehdy/keepalived-exporter
-license: "GPL-3.0"
+license: "GPL-3.0-only"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
 
@@ -41,15 +44,17 @@ contents:
     file_info:
       mode: 0644
 
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/keepalived-exporter/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
 scripts:
   preinstall:  src/preinstall.sh
   postinstall: src/postinstall.sh
   preremove:   src/preremove.sh
   postremove:  src/postremove.sh
-
-overrides:
-  rpm:
-    provides:
-      - keepalived_exporter
-    replaces:
-      - keepalived_exporter

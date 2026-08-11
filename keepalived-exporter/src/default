@@ -1,0 +1,3 @@
+# The exporter package intentionally does not depend on keepalived. Install and
+# configure keepalived separately on hosts where its metrics should be exposed.
+KEEPALIVED_EXPORTER_OPTS=""
