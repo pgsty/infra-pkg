@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ "${DPKG_MAINTSCRIPT_NAME:-}" = "postinst" ] && command -v dpkg-maintscript-helper >/dev/null 2>&1; then
-    dpkg-maintscript-helper rm_conffile /lib/systemd/system/kafka.service 4.3.1-2~ kafka -- "$@" || exit 1
-fi
-
 if command -v systemctl >/dev/null 2>&1; then
     systemctl daemon-reload >/dev/null 2>&1 || :
 fi
