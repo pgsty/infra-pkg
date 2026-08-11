@@ -1,14 +1,17 @@
 name: "victoria-traces"
 arch: "${ARCH}"
 platform: "linux"
+section: "net"
+priority: "optional"
 version: "v0.10.0"
-release: "2"
+release: "1PGSTY"
 version_schema: semver
 description: Distributed tracing backend with native support for OpenTelemetry traces
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "VictoriaMetrics"
+vendor: "PGSTY"
 homepage: "https://docs.victoriametrics.com/victoriatraces/"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 contents:
   - src: victoria-traces/victoria-traces-prod
@@ -20,3 +23,12 @@ contents:
     dst: /usr/share/doc/victoria-traces/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/victoria-traces/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
