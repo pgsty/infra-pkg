@@ -1,14 +1,17 @@
 name: "pgstream"
 arch: "${ARCH}"
 platform: "linux"
+section: "database"
+priority: "optional"
 version: "v1.3.1"
-release: "1"
+release: "1PGSTY"
 version_schema: semver
 description: PostgreSQL replication with DDL changes.
 maintainer: Ruohang Feng <rh@vonng.com>
-vendor: "Xata"
+vendor: "PGSTY"
 homepage: "https://github.com/xataio/pgstream"
 license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
 
 rpm:
   prefixes:
@@ -20,7 +23,16 @@ contents:
     file_info:
       mode: 0755
 
-  - src: LICENSE
+  - src: ../LICENSES/Apache-2.0.txt
     dst: /usr/share/doc/pgstream/LICENSE
     file_info:
       mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pgstream/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
