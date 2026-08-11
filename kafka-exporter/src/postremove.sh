@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ "${DPKG_MAINTSCRIPT_NAME:-}" = "postrm" ] && command -v dpkg-maintscript-helper >/dev/null 2>&1; then
-    dpkg-maintscript-helper rm_conffile /lib/systemd/system/kafka_exporter.service 1.9.0-2~ kafka-exporter -- "$@" || exit 1
-fi
-
 case "$1" in
     purge)
         if [ -L /etc/systemd/system/multi-user.target.wants/kafka_exporter.service ]; then
