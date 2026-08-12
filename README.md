@@ -6,7 +6,7 @@ Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo
 - [Infra Change List](https://pigsty.io/docs/repo/infra/list)
 - [Infra Change Log](https://pigsty.io/docs/repo/infra/log)
 
-Artifact available in [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT/DNF repo
+Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT and DNF repositories.
 
 
 --------
@@ -15,6 +15,7 @@ Artifact available in [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT/
 
 - Package recipe directories and package names use lowercase hyphen-separated names. `victoria-logs` and `victoria-metrics` intentionally remain grouped recipes because each upstream release supplies several version-locked artifacts.
 - Locally rebuilt packages use vendor `PGSTY`, maintainer `Ruohang Feng <rh@vonng.com>`, SPDX license expressions, and release `1PGSTY`.
+- Vendor-direct recipes preserve upstream DEB/RPM bytes and release metadata; all four architecture/format inputs are URL- and SHA256-pinned and default to the local proxy on port `8118`.
 - Package payloads do not write to `/usr/local`; environment files use `/etc/default/<name>`, vendor units use `/usr/lib/systemd/system`, and LICENSE/NOTICE files use `/usr/share/doc/<package>/`.
 - Service units stay portable by avoiding nonessential, compatibility-sensitive systemd directives. There is no repository-wide minimum systemd version.
 
@@ -22,7 +23,7 @@ Artifact available in [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT/
 
 Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
-**Building From Tarball**:
+**Rebuilt packages**:
 
 All local recipes in this section are rebuilt with nFPM and use the package
 release `1PGSTY` for both RPM and DEB artifacts. Explicit external-build
@@ -64,9 +65,10 @@ exceptions are called out inline.
 - [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.2.1 (binary-only package; service lifecycle managed by Pigsty)
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
-- [loki](https://github.com/grafana/loki) : 3.6.7 (obsolete, frozen)
-- [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen)
-- [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.6.7 (obsolete, frozen with Loki)
+- [loki](https://github.com/grafana/loki) : 3.7.6
+- [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.7.6
+- [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.6
+- [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen; final upstream artifact, absent from Loki 3.7 source and releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.31.0
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.25.2
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 3.11.3
@@ -89,7 +91,7 @@ exceptions are called out inline.
 - [codex](https://github.com/openai/codex) 0.147.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.17
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
-- [genai-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (external build; upstream Linux binary is amd64-only)
+- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (source-built in the standalone `mcp-toolbox` repository; local RPM/DEB artifacts imported here)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
@@ -115,43 +117,59 @@ exceptions are called out inline.
   - arm64: https://nodejs.org/dist/v24.19.0/node-v24.19.0-linux-arm64.tar.xz
 
 
-**Download Directly**:
+**Vendor-direct packages**:
 
-These are complex or multi-binary vendor packages that remain byte-for-byte
-upstream artifacts; their vendor release values are intentionally preserved.
+These recipes preserve the vendor-published native DEB/RPM packages byte for
+byte, including their original release metadata.
 
+- [code](https://code.visualstudio.com/) 1.133.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a5b500951314efd502d07465bd138dfbd714a960/code_1.133.0-1786487972_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a5b500951314efd502d07465bd138dfbd714a960/code_1.133.0-1786487973_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a5b500951314efd502d07465bd138dfbd714a960/code-1.133.0-1786488022.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a5b500951314efd502d07465bd138dfbd714a960/code-1.133.0-1786488026.el8.aarch64.rpm
+- [code-server](https://github.com/coder/code-server): 4.132.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server_4.132.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server_4.132.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server-4.132.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server-4.132.0-arm64.rpm
 - [grafana](https://github.com/grafana/grafana/) : 13.1.3
   - deb amd64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_amd64.deb
   - deb arm64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_arm64.deb
   - rpm amd64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_amd64.rpm
   - rpm arm64: https://dl.grafana.com/grafana/release/13.1.3/grafana_13.1.3_31135815010_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.57.0
-  - deb amd64: https://packages.timber.io/vector/0.57.0/vector_0.57.0-1_amd64.deb
-  - deb arm64: https://packages.timber.io/vector/0.57.0/vector_0.57.0-1_arm64.deb
-  - rpm amd64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.x86_64.rpm
-  - rpm arm64: https://packages.timber.io/vector/0.57.0/vector-0.57.0-1.aarch64.rpm
-  - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
-- [silo](https://github.com/pgsty/silo): 20260806000000
+- [silo](https://github.com/pgsty/silo): 20260806000000.0.0
   - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo_20260806000000.0.0-1PGSTY_amd64.deb
   - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo_20260806000000.0.0-1PGSTY_arm64.deb
   - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.aarch64.rpm
   - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
-- [code](https://code.visualstudio.com/) 1.132.0
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code_1.132.0-1785860022_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code_1.132.0-1785860155_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code-1.132.0-1785860072.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/df53daabb18cd157bdb08c7f01c34df936cf12f4/code-1.132.0-1785860207.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.132.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server_4.132.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server_4.132.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server-4.132.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.132.0/code-server-4.132.0-arm64.rpm
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.57.0
+  - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.57.0/vector_0.57.0-1_amd64.deb
+  - deb arm64: https://github.com/vectordotdev/vector/releases/download/v0.57.0/vector_0.57.0-1_arm64.deb
+  - rpm amd64: https://github.com/vectordotdev/vector/releases/download/v0.57.0/vector-0.57.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/vectordotdev/vector/releases/download/v0.57.0/vector-0.57.0-1.aarch64.rpm
+  - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
 
 --------
 
 ## Changelog
+
+
+**2026-08-12**
+
+| Name         | Old     | New     | Comment                                                                 |
+|:-------------|:--------|:--------|:------------------------------------------------------------------------|
+| loki         | 3.6.7   | 3.7.6   | dual-architecture RPM/DEB rebuilt from checksummed upstream archives    |
+| logcli       | 3.6.7   | 3.7.6   | dual-architecture RPM/DEB rebuilt from checksummed upstream archives    |
+| loki-canary  | -       | 3.7.6   | new binary-only dual-architecture RPM/DEB                               |
+| promtail     | 3.6.7   | 3.6.7   | obsolete final artifact retained; absent from Loki 3.7 source/releases  |
+| code         | 1.132.0 | 1.133.0 | official native DEB/RPM preserved byte-for-byte                         |
+| code-server  | 4.132.0 | 4.132.0 | checksum-pinned official native DEB/RPM recipe added                     |
+| grafana      | 13.1.3  | 13.1.3  | checksum-pinned official OSS native DEB/RPM recipe added                 |
+| mcp-toolbox  | 1.8.0   | 1.8.0   | standalone source build imported locally; no infra-pkg download recipe  |
+| silo         | 20260806000000 | 20260806000000.0.0 | checksum-pinned native DEB/RPM recipe added       |
+| vector       | 0.57.0  | 0.57.0  | checksum-pinned official native DEB/RPM recipe added                     |
 
 
 **2026-08-11**
