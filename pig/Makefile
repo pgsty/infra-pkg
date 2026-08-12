@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2026-08-11
-# Mtime     :   2026-08-11
+# Mtime     :   2026-08-12
 # Desc      :   Makefile shortcuts for pig rpm/deb build
 # Path      :   pig/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=pgsty/pig
 PACKAGE=pig
-VERSION=1.6.2
+VERSION=1.7.0
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-v$(VERSION).linux-$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=7b69214e115e6815e772b7e179aa4070bd8553e585b164ba3a0f69a1d53a0294
-SHA256_arm64=b511e727642987867be5921d72e8019e9c6186b82e63ddc34ad653773abed5a8
+SHA256_amd64=40295b64a2423094fa6f4e6d31da8d8ad5b26698c397d8916c0289591522d0bf
+SHA256_arm64=7929091732957d85751ef3381285a1e5b0c3c7f82c0e00fc24ed085c496012d5
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
