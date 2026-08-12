@@ -1,4 +1,4 @@
-name: "logcli"
+name: "loki-canary"
 arch: "${ARCH}"
 platform: "linux"
 section: "net"
@@ -6,7 +6,7 @@ priority: "optional"
 version: "v3.7.6"
 release: "1PGSTY"
 version_schema: semver
-description: Command-line interface for querying Grafana Loki
+description: Synthetic log writer and reader for validating Loki availability
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "PGSTY"
 homepage: https://github.com/grafana/loki
@@ -16,25 +16,25 @@ changelog: "${NFPM_CHANGELOG}"
 contents:
 
   # binary
-  - src: logcli/logcli.bin
-    dst: /usr/bin/logcli
+  - src: loki-canary/loki-canary.bin
+    dst: /usr/bin/loki-canary
     file_info:
       mode: 0755
 
   # documentation
   - src: ../LICENSES/AGPL-3.0.txt
-    dst: /usr/share/doc/logcli/LICENSE
+    dst: /usr/share/doc/loki-canary/LICENSE
     file_info:
       mode: 0644
 
   - src: src/LICENSING.md
-    dst: /usr/share/doc/logcli/LICENSING.md
+    dst: /usr/share/doc/loki-canary/LICENSING.md
     file_info:
       mode: 0644
 
   # Debian documentation
   - src: "${NFPM_COPYRIGHT}"
-    dst: /usr/share/doc/logcli/copyright
+    dst: /usr/share/doc/loki-canary/copyright
     packager: deb
     file_info:
       mode: 0644

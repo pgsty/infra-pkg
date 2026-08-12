@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
-# Desc      :   Build the Promtail RPM/DEB package
-# Path      :   promtail/Makefile
+# Desc      :   Build the Loki Canary RPM/DEB package
+# Path      :   loki-canary/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 ARCH  ?= amd64
@@ -10,13 +10,13 @@ RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
 export ARCH RARCH
 
 REPONAME=grafana/loki
-PACKAGE=promtail
-VERSION=3.6.7
+PACKAGE=loki-canary
+VERSION=3.7.6
 RELEASE=1PGSTY
-ASSET=promtail-linux-$(ARCH).zip
-FILENAME=promtail-$(VERSION)-linux-$(ARCH).zip
-SHA256_amd64=330f97bf7ef7e97cc2e42649ce7299129ab09dbffe5a2f5c515188502220987c
-SHA256_arm64=25a154fe2dd6708c1215b978014630d9dd040c061ebb46bad6c69b6cf88a2e27
+ASSET=loki-canary-linux-$(ARCH).zip
+FILENAME=loki-canary-$(VERSION)-linux-$(ARCH).zip
+SHA256_amd64=8f09c6b234c5a99659c41e7c65a91c0e1773461aeb75b1ab6234bb7ffd1ea8b1
+SHA256_arm64=2f2665ab8a5cdd0d6359f54eb74370dfcc15d11aa85352f7536fa0f5eb383faa
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(ASSET)
@@ -45,7 +45,7 @@ verify:
 extract:
 	mkdir -p $(PACKAGE)
 	unzip -o $(FILENAME) -d $(PACKAGE)
-	mv $(PACKAGE)/promtail-linux-$(ARCH) $(PACKAGE)/promtail.bin
+	mv $(PACKAGE)/loki-canary-linux-$(ARCH) $(PACKAGE)/loki-canary.bin
 
 clean:
 	rm -rf $(PACKAGE) $(FILENAME) $(PACKAGE)*.rpm $(PACKAGE)*.deb

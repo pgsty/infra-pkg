@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v3.6.7"
+version: "v3.7.6"
 release: "1PGSTY"
 version_schema: semver
 description: Loki Logging Service

@@ -11,15 +11,17 @@ export ARCH RARCH
 
 REPONAME=grafana/loki
 PACKAGE=logcli
-VERSION=3.6.7
+VERSION=3.7.6
 RELEASE=1PGSTY
-FILENAME=logcli-linux-$(ARCH).zip
-SHA256_amd64=b68f02dbd3e85a4259770098247000794caceec27a24e7653152545e6faaae21
-SHA256_arm64=88eb1939c1a45f72ae31e65124317c77d4f84b371d3fd27db1ba782c33542bcd
+ASSET=logcli-linux-$(ARCH).zip
+FILENAME=logcli-$(VERSION)-linux-$(ARCH).zip
+SHA256_amd64=948d70f5a64a15f16e120cea5d9521c65f69c6bc96b360b4c05832b474c66b65
+SHA256_arm64=9223db8936987910a39d3063945e7024e1abe454fea25b5bf7dc1f429c8ab246
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
-WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-CURL=curl -fSL --retry 3
+WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(ASSET)
+PROXY ?= http://127.0.0.1:8118
+CURL=curl --fail --show-error --location --retry 3 --proxy $(PROXY)
 
 default: all
 all:
@@ -32,7 +34,7 @@ link:
 	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/$(REPONAME)/releases/tags/v$(VERSION)" | tee meta.json
+	curl --fail --silent --show-error --proxy $(PROXY) "https://api.github.com/repos/$(REPONAME)/releases/tags/v$(VERSION)" | tee meta.json
 
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
