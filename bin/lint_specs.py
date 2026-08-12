@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static invariants for infra-pkg nFPM recipes (single-tree layout).
+"""Static invariants for infra-pkg package recipes (single-tree layout).
 
 Every top-level directory holding a Makefile is a package recipe. Most recipes
 produce the same-named package; the two Victoria recipes intentionally build a
@@ -7,7 +7,8 @@ small, version-locked package group. Arch-parameterized packages build via
 `make one ARCH=<amd64|arm64>` with manifests using `arch: "${ARCH}"`;
 noarch-style packages build once with `arch: "all"`. Packages with genuinely
 different per-arch metadata split into `<base>.amd64.yaml` +
-`<base>.arm64.yaml`.
+`<base>.arm64.yaml`. Vendor-direct recipes are an explicit exception: they
+download checksum-pinned native DEB/RPM artifacts and never run nFPM.
 """
 
 from __future__ import annotations
@@ -93,6 +94,7 @@ OVERRIDE_LIST_FIELDS = {
 }
 
 SPLIT_RE = re.compile(r"^(?P<base>.+)\.(?P<arch>amd64|arm64)\.ya?ml$")
+VENDOR_DIRECT_INCLUDE = "include ../mk/vendor-direct.mk"
 
 
 def package_dirs() -> List[Path]:
@@ -106,6 +108,10 @@ def package_manifests() -> Iterable[Path]:
 
 def allowed_package_names(directory: str) -> set[str]:
     return PACKAGE_GROUPS.get(directory, {directory})
+
+
+def is_vendor_direct(text: str) -> bool:
+    return bool(re.search(r"^VENDOR_DIRECT\s*=\s*1\s*$", text, re.M))
 
 
 def valid_spdx_expression(value: str) -> bool:
@@ -516,13 +522,29 @@ def resolve_config_names(config: str, text: str) -> List[str]:
 def lint_package_layout(errors: List[str]) -> None:
     for pkg in package_dirs():
         rel = pkg.relative_to(ROOT)
+        makefile_text = (pkg / "Makefile").read_text(encoding="utf-8")
         if not PACKAGE_DIR_RE.fullmatch(pkg.name):
             errors.append(
                 f"{rel}: package recipe directory must use lowercase hyphen-separated names"
             )
 
+        manifests = sorted(pkg.glob("*.yaml"))
+        if is_vendor_direct(makefile_text):
+            if manifests:
+                errors.append(
+                    f"{rel}: vendor-direct recipe must not contain nFPM manifests"
+                )
+            package = make_variable(makefile_text, "PACKAGE")
+            expected = allowed_package_names(pkg.name)
+            if package not in expected:
+                errors.append(
+                    f"{rel}: vendor-direct PACKAGE must match its recipe; expected one of "
+                    + ", ".join(sorted(expected))
+                )
+            continue
+
         names = set()
-        for manifest in sorted(pkg.glob("*.yaml")):
+        for manifest in manifests:
             try:
                 data = yaml.safe_load(manifest.read_text(encoding="utf-8"))
             except Exception:
@@ -539,6 +561,54 @@ def lint_package_layout(errors: List[str]) -> None:
             if unexpected:
                 details.append("unexpected " + ", ".join(unexpected))
             errors.append(f"{rel}: recipe artifact set mismatch ({'; '.join(details)})")
+
+
+def lint_vendor_direct_makefile(
+    pkg: Path, text: str, errors: List[str]
+) -> None:
+    rel = (pkg / "Makefile").relative_to(ROOT)
+    if VENDOR_DIRECT_INCLUDE not in text.splitlines():
+        errors.append(f"{rel}: vendor-direct recipe must include ../mk/vendor-direct.mk")
+    if not re.search(r"^one:\s+download\s+verify\s+build\s+clean\s*$", text, re.M):
+        errors.append(f"{rel}: vendor-direct one target must download, verify, build, then clean")
+    if make_variable(text, "PROXY") != "http://127.0.0.1:8118":
+        errors.append(f"{rel}: vendor-direct downloads must default to proxy port 8118")
+    if not make_variable(text, "VERSION"):
+        errors.append(f"{rel}: vendor-direct recipe must declare VERSION")
+
+    for arch in ARCHS:
+        for packager, suffix in (("DEB", ".deb"), ("RPM", ".rpm")):
+            filename_var = f"{packager}_FILE_{arch}"
+            url_var = f"{packager}_URL_{arch}"
+            checksum_var = f"SHA256_{packager}_{arch}"
+            filename = make_variable(text, filename_var)
+            url = make_variable(text, url_var)
+            checksum = make_variable(text, checksum_var)
+            if not filename or not filename.endswith(suffix):
+                errors.append(f"{rel}: {filename_var} must name a {suffix} artifact")
+            if not url or not url.startswith("https://"):
+                errors.append(f"{rel}: {url_var} must use HTTPS")
+            if not checksum or not re.fullmatch(r"[0-9a-f]{64}", checksum):
+                errors.append(f"{rel}: {checksum_var} must be a pinned lowercase SHA256")
+
+
+def lint_vendor_direct_shared(errors: List[str]) -> None:
+    path = ROOT / "mk/vendor-direct.mk"
+    if not path.is_file():
+        errors.append("mk/vendor-direct.mk: missing shared vendor-direct implementation")
+        return
+    text = path.read_text(encoding="utf-8")
+    required = {
+        "curl failure handling": r"curl\s+--fail\b",
+        "proxy use": r"--proxy\s+\$\(PROXY\)",
+        "checksum verification": r"(?:sha256sum|shasum\s+-a\s+256).*?-c",
+        "DEB output": r"\.\./dist/deb/",
+        "RPM output": r"\.\./dist/rpm/",
+        "cleanup": r"^clean:\s*$",
+    }
+    for label, pattern in required.items():
+        if not re.search(pattern, text, re.M | re.S):
+            errors.append(f"mk/vendor-direct.mk: missing {label}")
 
 
 def lint_makefiles(errors: List[str]) -> None:
@@ -593,6 +663,10 @@ def lint_makefiles(errors: List[str]) -> None:
 
         if configs["rpm"] != configs["deb"]:
             errors.append(f"{rel}: RPM and DEB builds must use the same nFPM configs")
+
+        if is_vendor_direct(text):
+            lint_vendor_direct_makefile(pkg, text, errors)
+            continue
 
         package = make_variable(text, "PACKAGE")
         version = make_variable(text, "VERSION")
@@ -736,6 +810,7 @@ def main() -> int:
             errors.append(f"{name}: inconsistent manifest versions: {rendered}")
 
     lint_package_layout(errors)
+    lint_vendor_direct_shared(errors)
     lint_split_manifests(errors)
     lint_shell(errors)
     lint_runtime_paths(errors)
@@ -747,7 +822,14 @@ def main() -> int:
             print(f"ERROR: {error}", file=sys.stderr)
         print(f"lint failed with {len(errors)} error(s)", file=sys.stderr)
         return 1
-    print(f"lint passed: {count} nFPM manifests across {len(package_dirs())} packages")
+    direct_count = sum(
+        is_vendor_direct((pkg / "Makefile").read_text(encoding="utf-8"))
+        for pkg in package_dirs()
+    )
+    print(
+        f"lint passed: {count} nFPM manifests and {direct_count} vendor-direct "
+        f"recipes across {len(package_dirs())} packages"
+    )
     return 0
 
 
