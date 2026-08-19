@@ -20,7 +20,7 @@ version_le() {
 needed=$(readelf -d "$binary" | sed -n 's/.*Shared library: \[\(.*\)\].*/\1/p')
 for library in $needed; do
     case "$library" in
-        libc.so.6|libdl.so.2|libgcc_s.so.1|libm.so.6|libpthread.so.0|librt.so.1) ;;
+        ld-linux-aarch64.so.1|ld-linux-x86-64.so.2|libc.so.6|libdl.so.2|libgcc_s.so.1|libm.so.6|libpthread.so.0|librt.so.1) ;;
         *) echo "unexpected cargo-pgrx dependency: $library" >&2; exit 1 ;;
     esac
 done
