@@ -1,0 +1,23 @@
+.TH RUST-TOOLCHAIN 1 "2026-08-19" "PGSTY" "User Commands"
+.SH NAME
+rust-toolchain \- run a command with the current PGSTY Rust toolchain
+.SH SYNOPSIS
+.B rust-toolchain
+.I command
+.RI [ arguments ...]
+.SH DESCRIPTION
+.B rust-toolchain
+prepends the private PGSTY Rust binary directory to PATH and executes the
+requested command. It does not change the system Rust toolchain or rustup
+configuration.
+.SH EXAMPLES
+.TP
+.B rust-toolchain rustc -vV
+Display compiler build information.
+.TP
+.B rust-toolchain cargo build --locked
+Build the current Cargo project with the packaged toolchain.
+.SH FILES
+.TP
+.I /usr/lib/pgsty/rust
+Current PGSTY Rust toolchain root.

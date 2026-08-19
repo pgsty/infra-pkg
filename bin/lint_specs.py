@@ -82,7 +82,8 @@ SYSTEMD_FILE_OUTPUT_RE = re.compile(
     r"^\s*Standard(?:Output|Error)\s*=\s*(?:append|file|truncate):", re.M
 )
 LICENSE_BASENAME_RE = re.compile(
-    r"^(?:licen[cs]e|copying)(?:[._-].*)?$", re.IGNORECASE
+    r"^(?:licen[cs]e|copying|copyright|third-party-licenses)(?:[._-].*)?$",
+    re.IGNORECASE,
 )
 OVERRIDE_LIST_FIELDS = {
     "conflicts",
@@ -286,7 +287,7 @@ def lint_manifest(path: Path, data: Dict[str, Any], errors: List[str],
             continue
         source = str(entry.get("src", ""))
         destination = str(entry.get("dst", ""))
-        is_license_entry = any(
+        is_license_entry = source != "${NFPM_COPYRIGHT}" and any(
             LICENSE_BASENAME_RE.fullmatch(Path(value.rstrip("/")).name)
             for value in (source, destination)
         )

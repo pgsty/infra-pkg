@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+
+rust_root=/usr/lib/pgsty/rust
+pgrx_root=/usr/lib/pgsty/cargo-pgrx/0.19.1
+
+if [ -z "${PGRX_HOME:-}" ]; then
+    if [ -z "${HOME:-}" ]; then
+        echo "HOME or PGRX_HOME must be set" >&2
+        exit 2
+    fi
+    PGRX_HOME="$HOME/.pgrx/0.19.1"
+fi
+
+PATH="$pgrx_root/bin:$rust_root/bin:$PATH"
+CARGO="$rust_root/bin/cargo"
+RUSTC="$rust_root/bin/rustc"
+RUSTDOC="$rust_root/bin/rustdoc"
+RUSTFMT="$rust_root/bin/rustfmt"
+export PATH CARGO RUSTC RUSTDOC RUSTFMT PGRX_HOME
+
+exec "$pgrx_root/bin/cargo-pgrx" pgrx "$@"

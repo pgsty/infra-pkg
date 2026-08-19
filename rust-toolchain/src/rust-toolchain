@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+
+toolchain=/usr/lib/pgsty/rust
+
+if [ "$#" -eq 0 ]; then
+    echo "usage: rust-toolchain <rustc|cargo|rustfmt|command> [args...]" >&2
+    exit 2
+fi
+
+PATH="$toolchain/bin:$PATH"
+export PATH
+exec "$@"

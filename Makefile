@@ -13,7 +13,7 @@ DEVEL_PATH = sv:/data/pgsty/infra-pkg
 # every top-level directory holding a Makefile is a package recipe target
 PACKAGE_RECIPES := $(sort $(patsubst %/,%,$(dir $(wildcard */Makefile))))
 # Keep the large air-gap image archives out of the default batch build.
-ON_DEMAND_PKGS := k3s-images
+ON_DEMAND_PKGS := k3s-images rust-toolchain cargo-pgrx-0191
 PKGS := $(filter-out $(ON_DEMAND_PKGS),$(PACKAGE_RECIPES))
 
 ###############################################################

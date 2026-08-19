@@ -22,7 +22,10 @@ except ImportError:
     raise SystemExit(2)
 
 
-LEGAL_DOCUMENT_RE = re.compile(r"^(?:licen[cs]e(?:s)?|copying|notice)(?:[._-].*)?$", re.I)
+LEGAL_DOCUMENT_RE = re.compile(
+    r"^(?:licen[cs]e(?:s)?|copying|copyright|notice|third-party-licenses)(?:[._-].*)?$",
+    re.I,
+)
 SEMVER_RE = re.compile(
     r"^[vV]?(\d+)(?:\.(\d+))?(?:\.(\d+))?"
     r"(?:-([0-9A-Za-z.-]+))?(?:\+([0-9A-Za-z.-]+))?$"
@@ -86,7 +89,10 @@ def legal_documents(manifest: Path, data: Dict[str, Any]) -> List[Tuple[str, str
         basename = Path(destination.rstrip("/")).name
         if not destination.startswith(prefix) or not LEGAL_DOCUMENT_RE.fullmatch(basename):
             continue
-        source = os.path.expandvars(str(entry.get("src", "")))
+        raw_source = str(entry.get("src", ""))
+        if raw_source == "${NFPM_COPYRIGHT}":
+            continue
+        source = os.path.expandvars(raw_source)
         if not source or "$" in source:
             fail(f"{manifest}: unresolved legal document source for {destination}")
         source_path = Path(source)

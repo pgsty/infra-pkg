@@ -1,0 +1,87 @@
+name: "rust-toolchain"
+arch: "${ARCH}"
+platform: "linux"
+section: "devel"
+priority: "optional"
+version: "1.97.1"
+release: "1PGSTY"
+version_schema: semver
+description: |
+  Current Rust compiler toolchain for PGSTY builds
+  Installs rustc, the native standard library, Cargo, and rustfmt in a private
+  package-managed prefix without conflicting with distro Rust or rustup.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://www.rust-lang.org"
+license: "(Apache-2.0 OR MIT) AND LicenseRef-Rust-Bundled-Third-Party"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: stage/usr/lib/pgsty/rust/
+    dst: /usr/lib/pgsty/rust
+
+  - src: src/rust-toolchain
+    dst: /usr/bin/rust-toolchain
+    file_info:
+      mode: 0755
+
+  - src: stage/usr/share/doc/rust-toolchain/LICENSE-APACHE
+    dst: /usr/share/doc/rust-toolchain/LICENSE-APACHE
+    file_info:
+      mode: 0644
+
+  - src: stage/usr/share/doc/rust-toolchain/LICENSE-MIT
+    dst: /usr/share/doc/rust-toolchain/LICENSE-MIT
+    file_info:
+      mode: 0644
+
+  - src: stage/usr/share/doc/rust-toolchain/COPYRIGHT
+    dst: /usr/share/doc/rust-toolchain/COPYRIGHT
+    file_info:
+      mode: 0644
+
+  - src: stage/usr/share/doc/rust-toolchain/BUILDINFO
+    dst: /usr/share/doc/rust-toolchain/BUILDINFO
+    file_info:
+      mode: 0644
+
+  - src: stage/usr/share/doc/rust-toolchain/ELF-ABI.txt
+    dst: /usr/share/doc/rust-toolchain/ELF-ABI.txt
+    file_info:
+      mode: 0644
+
+  - src: stage/usr/share/doc/rust-toolchain/upstream/
+    dst: /usr/share/doc/rust-toolchain/upstream
+
+  - src: stage/usr/share/man/man1/rust-toolchain.1.gz
+    dst: /usr/share/man/man1/rust-toolchain.1.gz
+    file_info:
+      mode: 0644
+
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/rust-toolchain/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
+
+overrides:
+  deb:
+    depends:
+      - "binutils"
+      - "ca-certificates"
+      - "gcc"
+      - "libc6 (>= ${GLIBC_FLOOR})"
+      - "libgcc-s1"
+      - "libstdc++6"
+      - "zlib1g"
+  rpm:
+    depends:
+      - "binutils"
+      - "ca-certificates"
+      - "gcc"
+      - "glibc >= ${GLIBC_FLOOR}"
+      - "libgcc"
+      - "libstdc++"
+      - "zlib"
