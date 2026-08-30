@@ -76,6 +76,7 @@ exceptions are called out inline.
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.3
+- [tailcat](https://github.com/tailscale/tailcat) 0.0.0-20260830010511-7c2a6ea60429 (pinned source snapshot `7c2a6ea60429`; upstream has no tagged release yet)
 - [hugo](https://github.com/gohugoio/hugo) 0.164.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.41
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
@@ -154,6 +155,13 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+
+**2026-08-30**
+
+| Name    | Old | New                                        | Comment                                                                    |
+|:--------|:----|:-------------------------------------------|:---------------------------------------------------------------------------|
+| tailcat | -   | 0.0.0-20260830010511-7c2a6ea60429         | pinned source and offline vendor bundle; dual-architecture static RPM/DEB  |
 
 
 **2026-08-12**

@@ -1,0 +1,38 @@
+name: "tailcat"
+arch: "${ARCH}"
+platform: "linux"
+section: "net"
+priority: "optional"
+version: "0.0.0-20260830010511-7c2a6ea60429"
+release: "1PGSTY"
+version_schema: semver
+description: Netcat-like tool over Tailscale's data plane, without Tailscale's control plane
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/tailscale/tailcat"
+license: "BSD-3-Clause"
+changelog: "${NFPM_CHANGELOG}"
+
+rpm:
+  prefixes:
+    - /usr
+
+contents:
+  - src: stage/usr/bin/tailcat
+    dst: /usr/bin/tailcat
+    file_info:
+      mode: 0755
+
+  - src: stage/usr/share/doc/tailcat/LICENSE
+    dst: /usr/share/doc/tailcat/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/tailcat/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
