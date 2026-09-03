@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "v0.4.3"
+version: "v0.4.5"
 release: "1PGSTY"
 version_schema: semver
 description: Database tool for the terminal.
