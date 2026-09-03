@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "1.2.1"
+version: "1.3.4"
 release: "1PGSTY"
 version_schema: semver
 description: PostgreSQL backup and continuous WAL streaming command-line tool
