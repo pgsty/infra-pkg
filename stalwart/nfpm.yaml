@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v0.16.17"
+version: "v0.16.20"
 release: "1PGSTY"
 version_schema: semver
 description: Stalwart Mail Server static musl binaries

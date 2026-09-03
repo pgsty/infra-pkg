@@ -13,12 +13,12 @@ export ARCH RARCH
 
 REPONAME=stalwartlabs/stalwart
 PACKAGE=stalwart
-VERSION=0.16.17
+VERSION=0.16.20
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME1=$(PACKAGE)-$(RARCH)-unknown-linux-musl.tar.gz
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
-SHA256_amd64=d0cda8fb3d9bad3284c2e60a069e08d6e6f9bfe646c7d8a004d04926b3f86f9d
-SHA256_arm64=ba8b9eed37990209bc1e4e7f51b237ba052c4f3966497572d482ea6ae2798159
+SHA256_amd64=d95912cb0efde1e248a40fd3ffcf4a67d512479190ab2e5ccaf68f7e3ea36d77
+SHA256_arm64=4bf9378703042b7baae5ba220fd20e27c7917b0a9d28b482c373cc139ffc0731
 SHA256=$(SHA256_$(ARCH))
 
 
