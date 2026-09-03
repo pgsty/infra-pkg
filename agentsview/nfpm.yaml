@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "0.40.1"
+version: "0.41.1"
 release: "1PGSTY"
 version_schema: semver
 description: Browse, search, and track costs across all your AI coding agents.
