@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "v0.164.0"
+version: "v0.165.0"
 release: "1PGSTY"
 version_schema: semver
 description: The world's fastest framework for building websites
