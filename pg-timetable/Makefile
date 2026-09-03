@@ -13,15 +13,15 @@ export ARCH RARCH
 
 REPONAME=cybertec-postgresql/pg_timetable
 PACKAGE=pg_timetable
-VERSION=7.0.0
+VERSION=7.1.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-$(ARCH)
 FILENAME_amd64=$(PACKAGE)_Linux_x86_64.tar.gz
 FILENAME_arm64=$(PACKAGE)_Linux_arm64.tar.gz
 FILENAME=$(FILENAME_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=f9130b086ae25613ea5718949060b05321e4ab46d0fedf6ee855014452f84fd7
-SHA256_arm64=c3a9bd766ade4ae3152be27a47f92900b3f55dbceb8743a377ed55ca7ddff2ec
+SHA256_amd64=5fb9151bae1bae83d33ed4499e7cdb674d47b0d278a5b1940e12fac7f1089a15
+SHA256_arm64=3710cffcf94b585bf4fee3dd50f864138d31eca251d49b5063a3c55e6adbd6f5
 SHA256=$(SHA256_$(ARCH))
 
 default: all

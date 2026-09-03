@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "v7.0.0"
+version: "v7.1.0"
 release: "1PGSTY"
 version_schema: semver
 description: "Advanced scheduling for PostgreSQL"
