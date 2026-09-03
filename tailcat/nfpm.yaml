@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "0.0.0-20260830010511-7c2a6ea60429"
+version: "0.4.0"
 release: "1PGSTY"
 version_schema: semver
 description: Netcat-like tool over Tailscale's data plane, without Tailscale's control plane
