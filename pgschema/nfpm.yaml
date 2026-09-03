@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "1.12.2"
+version: "1.12.5"
 release: "1PGSTY"
 version_schema: semver
 description: PostgreSQL declarative schema migration tool
