@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "4.41"
+version: "4.45"
 release: "1PGSTY"
 version_schema: semver
 description: SeaweedFS is a fast distributed storage system for blobs, objects, files, and data lake
