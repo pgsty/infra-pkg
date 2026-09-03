@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=frectonz/sql-studio
 PACKAGE=sql-studio
-VERSION=0.1.51
+VERSION=0.1.53
 TAG=$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=$(RARCH)-unknown-linux-gnu
 FILENAME=$(PACKAGE)-$(TARGET).tar.xz
-SHA256_amd64=b9eca85c0e5724357b3667afe8fc47456c244110316b0762c9f82142a5baae0e
-SHA256_arm64=11b4a86b999b06497737449f2d931c7762b7134b989bb812a30c57af80a4b120
+SHA256_amd64=55323af39b8acac55afb03a36c43922855e09d09feedde4f40415f1ee59311a3
+SHA256_arm64=88de523a6c36dffbbcc68770bb55665626c904bdfb45b1fbc2a2943a47c03a7e
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL

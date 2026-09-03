@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "web"
 priority: "optional"
-version: "v0.1.51"
+version: "v0.1.53"
 release: "1PGSTY"
 version_schema: semver
 description: Terminal SQL database explorer for PostgreSQL, MySQL, SQLite, ClickHouse, and more.
