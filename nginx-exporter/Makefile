@@ -13,9 +13,9 @@ export ARCH RARCH
 
 REPONAME="nginx/nginx-prometheus-exporter"
 PACKAGE="nginx_exporter"
-VERSION=1.5.1
-SHA256_amd64=42ddc7ac31c70021d2a5c10414d473526490769632c1ef430b95d76dd1e3c187
-SHA256_arm64=8bea88fe912c63791de1fd35c8829f89c2e18b87fdb001c9b65fc371b2ebef3c
+VERSION=1.5.3
+SHA256_amd64=3a0dd1ea6db57cd360544d0aed38df4adabcfeb31e931dc481d535c66f92641d
+SHA256_arm64=a0b1a5f5bba09483bd2e04c759c1a75fffe46ca72c0314ee2bb925d1742ff23b
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME="nginx-prometheus-exporter_$(VERSION)_linux_$(ARCH)"
