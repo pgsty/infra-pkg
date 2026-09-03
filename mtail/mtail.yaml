@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v3.4.7"
+version: "v3.4.10"
 release: "1PGSTY"
 version_schema: semver
 description: extract internal monitoring data from application logs for collection in a timeseries database
