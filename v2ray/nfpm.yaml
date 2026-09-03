@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v5.52.0"
+version: "v5.53.0"
 release: "1PGSTY"
 version_schema: semver
 description: A platform for building proxies to bypass network restrictions.
