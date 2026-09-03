@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "2.1.227"
+version: "2.1.252"
 release: "1PGSTY"
 version_schema: semver
 description: Anthropic's official CLI for Claude
