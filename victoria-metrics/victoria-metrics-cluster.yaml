@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v1.149.0"
+version: "v1.151.0"
 release: "1PGSTY"
 version_schema: semver
 description: fast, cost-effective monitoring solution and time series database, cluster version
