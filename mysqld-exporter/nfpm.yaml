@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v0.19.0"
+version: "v0.20.0"
 release: "1PGSTY"
 version_schema: semver
 description: Prometheus exporter for MySQL server metrics.
