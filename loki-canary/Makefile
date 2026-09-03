@@ -11,12 +11,12 @@ export ARCH RARCH
 
 REPONAME=grafana/loki
 PACKAGE=loki-canary
-VERSION=3.7.6
+VERSION=3.7.7
 RELEASE=1PGSTY
 ASSET=loki-canary-linux-$(ARCH).zip
 FILENAME=loki-canary-$(VERSION)-linux-$(ARCH).zip
-SHA256_amd64=8f09c6b234c5a99659c41e7c65a91c0e1773461aeb75b1ab6234bb7ffd1ea8b1
-SHA256_arm64=2f2665ab8a5cdd0d6359f54eb74370dfcc15d11aa85352f7536fa0f5eb383faa
+SHA256_amd64=1ba114e3838fbcc36daa7dbb35c6cb07e33030e1d0a68573527ca86300871f2d
+SHA256_arm64=d3d73fa4c6c88a667342d2dc0ed9218874235a8ef87b410a789a8f5add37e734
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(ASSET)
