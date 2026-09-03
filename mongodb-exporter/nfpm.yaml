@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v0.52.0"
+version: "v0.53.0"
 release: "1PGSTY"
 version_schema: semver
 description: A Prometheus exporter for MongoDB including sharding, replication and storage engines
