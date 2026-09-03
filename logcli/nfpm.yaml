@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v3.7.6"
+version: "v3.7.7"
 release: "1PGSTY"
 version_schema: semver
 description: Command-line interface for querying Grafana Loki
