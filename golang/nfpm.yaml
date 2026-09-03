@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "v1.26.5"
+version: "v1.27.0"
 version_schema: semver
 release: "1PGSTY"
 description: The Go Programming Language
