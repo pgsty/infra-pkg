@@ -1,7 +1,7 @@
 # K3s package notes
 
-Pigsty package `k3s 1.36.3-1PGSTY` contains the upstream
-`v1.36.3+k3s1` binary. The upstream K3s revision is recorded explicitly in
+Pigsty package `k3s 1.36.4-1PGSTY` contains the upstream
+`v1.36.4+k3s1` binary. The upstream K3s revision is recorded explicitly in
 the package description and build recipe; `1PGSTY` identifies this Pigsty
 packaging revision.
 
