@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "1.8.0"
+version: "1.8.1"
 release: "1PGSTY"
 version_schema: semver
 description: PostgreSQL extension package manager and CLI tool

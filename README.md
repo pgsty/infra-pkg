@@ -108,7 +108,7 @@ exceptions are called out inline.
 - [rclone](https://github.com/rclone/rclone) 1.75.0
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.1
 - [pev2](https://github.com/dalibo/pev2/releases) 1.24.0 (noarch)
-- [pig](https://github.com/pgsty/pig) 1.8.0
+- [pig](https://github.com/pgsty/pig) 1.8.1
 - [sow](https://github.com/pgsty/sow) 0.4.0
 - [golang](https://go.dev/dl/) 1.27.1
   - x86_64: https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
@@ -208,6 +208,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | pg-hardstorage | 1.3.4 | 1.4.2 | Verified and built dual-architecture RPM/DEB |
 | pgschema | 1.12.5 | 1.13.0 | Verified and built dual-architecture RPM/DEB |
 | pgstream | 1.4.1 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
+| pig | 1.8.0 | 1.8.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
