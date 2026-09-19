@@ -127,11 +127,11 @@ exceptions are called out inline.
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [code](https://code.visualstudio.com/) 1.135.0
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/code_1.135.0-1787669172_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/code_1.135.0-1787669187_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/code-1.135.0-1787669223.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/08d4889f9ec4a1685d257b9b95de036c8e1ce1e5/code-1.135.0-1787669237.el8.aarch64.rpm
+- [code](https://code.visualstudio.com/) 1.138.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/7debcd0e2acdea1c52de81bf9ee1620444407dda/code_1.138.0-1789458761_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/7debcd0e2acdea1c52de81bf9ee1620444407dda/code_1.138.0-1789458676_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/7debcd0e2acdea1c52de81bf9ee1620444407dda/code-1.138.0-1789458812.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/7debcd0e2acdea1c52de81bf9ee1620444407dda/code-1.138.0-1789458729.el8.aarch64.rpm
 - [code-server](https://github.com/coder/code-server): 4.135.0
   - deb amd64: https://github.com/coder/code-server/releases/download/v4.135.0/code-server_4.135.0_amd64.deb
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.135.0/code-server_4.135.0_arm64.deb
@@ -181,6 +181,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | cargo-pgrx-0192 | - | 0.19.2 | New exact 0.19.2 slot; 0191 retained; native EL8 builds |
 | claude | 2.1.252 | 2.1.278 | Downloaded through port 8118, manifest verified; version executed on both Linux architectures |
 | cloudflared | 2026.8.3 | 2026.9.1 | Verified and built dual-architecture RPM/DEB |
+| code | 1.135.0 | 1.138.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
