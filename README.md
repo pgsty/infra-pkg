@@ -69,7 +69,7 @@ exceptions are called out inline.
 - [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.7.7
 - [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.7
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen; final upstream artifact, absent from Loki 3.7 source and releases)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.31.0
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.32.0
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.25.2
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.0.0
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.2 (noarch)
@@ -190,6 +190,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | golang | 1.27.0 | 1.27.1 | Verified and built dual-architecture RPM/DEB |
 | grafana | 13.2.0 | 13.2.2 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | grafana-plugins | 13.0.0 | 13.2.2 | Curated bundle: 10 plugins updated, 4 retained; official ZIP SHA256 verified |
+| grafana-victorialogs-ds | 0.31.0 | 0.32.0 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
