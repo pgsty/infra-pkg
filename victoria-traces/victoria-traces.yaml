@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v0.10.0"
+version: "v0.11.1"
 release: "1PGSTY"
 version_schema: semver
 description: Distributed tracing backend with native support for OpenTelemetry traces

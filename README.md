@@ -47,7 +47,7 @@ exceptions are called out inline.
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.152.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.10.0
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.11.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.5
 - [etcd](https://github.com/etcd-io/etcd) : 3.7.1
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.0 (upstream v1.37.0+k3s1)
@@ -221,6 +221,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | tailcat | 0.4.0 | 0.6.0 | Verified and built dual-architecture RPM/DEB |
 | uv | 0.12.8 | 0.12.17 | Verified and built dual-architecture RPM/DEB |
 | victoria-metrics | 1.151.0 | 1.152.0 | Single-node, cluster, and vmutils packages updated together |
+| victoria-traces | 0.10.0 | 0.11.1 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-01**
 
