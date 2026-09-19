@@ -80,7 +80,7 @@ exceptions are called out inline.
 - [hugo](https://github.com/gohugoio/hugo) 0.166.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.45
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0-rc.4 (release `1PGSTY`)
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.0 (stable release; `1PGSTY`)
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27 (stable release)
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
@@ -213,6 +213,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | rclone | 1.75.0 | 1.75.1 | Verified and built dual-architecture RPM/DEB |
 | redis-exporter | 1.90.0 | 1.91.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
+| rustfs | 1.0.0-rc.4 | 1.0.0 | Stable 1.0.0 replaces rc.4; prerelease package metadata removed |
 
 **2026-09-01**
 

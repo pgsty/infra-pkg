@@ -4,7 +4,6 @@ platform: "linux"
 section: "net"
 priority: "optional"
 version: "1.0.0"
-prerelease: "rc4"
 release: "1PGSTY"
 version_schema: semver
 description: RustFS is a high-performance, S3 compatible distributed object storage system
