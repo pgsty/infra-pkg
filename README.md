@@ -58,7 +58,7 @@ exceptions are called out inline.
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
 - [dblab](https://github.com/danvergara/dblab) 0.50.0
-- [pgstream](https://github.com/xataio/pgstream) 1.4.1
+- [pgstream](https://github.com/xataio/pgstream) 1.5.0
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.5
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.1.0
@@ -207,6 +207,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | pev2 | 1.23.0 | 1.24.0 | Verified and built noarch RPM/DEB |
 | pg-hardstorage | 1.3.4 | 1.4.2 | Verified and built dual-architecture RPM/DEB |
 | pgschema | 1.12.5 | 1.13.0 | Verified and built dual-architecture RPM/DEB |
+| pgstream | 1.4.1 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**

@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=xataio/pgstream
 PACKAGE=pgstream
-VERSION=1.4.1
+VERSION=1.5.0
 TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 ASSET=$(PACKAGE).linux.$(ARCH)
 FILENAME=$(PACKAGE)-$(VERSION)-linux-$(ARCH)
-SHA256_amd64=4ba79089057f3f4786a43b53d5243b357d1be7ea0a44935bb3aa93f8db65e63e
-SHA256_arm64=9fbb49a09f81a8ec026c37262a4f5ffee0530a92523917bbe7df54023f7f70d8
+SHA256_amd64=80cb61cf3a218ec0a94f5f98d7c8015f7fdacb700910f0474cba8dde9f9b8ad5
+SHA256_arm64=cfad86d75b92d4a30af2e7d5f6c805f27df749034473291b3c83387be856fa6f
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(ASSET)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL

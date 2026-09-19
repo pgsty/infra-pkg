@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "v1.4.1"
+version: "v1.5.0"
 release: "1PGSTY"
 version_schema: semver
 description: PostgreSQL replication with DDL changes.
