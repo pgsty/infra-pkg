@@ -77,7 +77,7 @@ exceptions are called out inline.
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.3
 - [tailcat](https://github.com/tailscale/tailcat) 0.4.0
-- [hugo](https://github.com/gohugoio/hugo) 0.165.0
+- [hugo](https://github.com/gohugoio/hugo) 0.166.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.45
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.0-rc.4 (release `1PGSTY`)
@@ -192,6 +192,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | grafana-plugins | 13.0.0 | 13.2.2 | Curated bundle: 10 plugins updated, 4 retained; official ZIP SHA256 verified |
 | grafana-victorialogs-ds | 0.31.0 | 0.32.0 | Verified and built dual-architecture RPM/DEB |
 | grafana-victoriametrics-ds | 0.25.2 | 0.26.1 | Verified and built dual-architecture RPM/DEB |
+| hugo | 0.165.0 | 0.166.0 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
