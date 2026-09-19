@@ -40,7 +40,7 @@ exceptions are called out inline.
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.20.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.90.0
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.91.1
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.10.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
@@ -211,6 +211,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | pig | 1.8.0 | 1.8.1 | Verified and built dual-architecture RPM/DEB |
 | postgrest | 16.2 | 16.3 | Verified and built dual-architecture RPM/DEB |
 | rclone | 1.75.0 | 1.75.1 | Verified and built dual-architecture RPM/DEB |
+| redis-exporter | 1.90.0 | 1.91.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
