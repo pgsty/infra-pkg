@@ -137,11 +137,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server_4.137.0_arm64.deb
   - rpm amd64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server-4.137.0-amd64.rpm
   - rpm arm64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server-4.137.0-arm64.rpm
-- [grafana](https://github.com/grafana/grafana/) : 13.2.0
-  - deb amd64: https://dl.grafana.com/grafana/release/13.2.0/grafana_13.2.0_32077357341_linux_amd64.deb
-  - deb arm64: https://dl.grafana.com/grafana/release/13.2.0/grafana_13.2.0_32077357341_linux_arm64.deb
-  - rpm amd64: https://dl.grafana.com/grafana/release/13.2.0/grafana_13.2.0_32077357341_linux_amd64.rpm
-  - rpm arm64: https://dl.grafana.com/grafana/release/13.2.0/grafana_13.2.0_32077357341_linux_arm64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 13.2.2
+  - deb amd64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_amd64.deb
+  - deb arm64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_arm64.deb
+  - rpm amd64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_amd64.rpm
+  - rpm arm64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
 - [OpenBao](https://github.com/openbao/openbao) : 2.6.2
   - deb amd64: https://github.com/openbao/openbao/releases/download/v2.6.2/openbao_2.6.2_linux_amd64.deb
@@ -188,6 +188,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | dblab | 0.49.0 | 0.50.0 | Verified and built dual-architecture RPM/DEB |
 | garage | 2.3.0 | 2.4.1 | Verified and built dual-architecture RPM/DEB |
 | golang | 1.27.0 | 1.27.1 | Verified and built dual-architecture RPM/DEB |
+| grafana | 13.2.0 | 13.2.2 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
