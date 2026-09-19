@@ -99,7 +99,7 @@ exceptions are called out inline.
 - [postgrest](https://github.com/PostgREST/postgrest) 16.2 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.18.25
+- [opencode](https://github.com/anomalyco/opencode) 1.18.31
 - [uv](https://github.com/astral-sh/uv) 0.12.8
 - [pgschema](https://github.com/pgplex/pgschema) 1.12.5
 - [crush](https://github.com/charmbracelet/crush) 0.95.0
@@ -203,6 +203,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | mcp-toolbox | 1.8.0 | 1.12.0 | New cached-binary recipe; dual-arch CGO source builds targeting glibc 2.28 |
 | mtail | 3.4.10 | 3.4.12 | Verified and built dual-architecture RPM/DEB |
 | nodejs | 24.20.0 | 24.21.0 | Node.js 24 LTS |
+| opencode | 1.18.25 | 1.18.31 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
