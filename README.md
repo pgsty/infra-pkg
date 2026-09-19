@@ -153,11 +153,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_arm64.deb
   - rpm amd64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_amd64.rpm
   - rpm arm64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_arm64.rpm
-- [silo](https://github.com/pgsty/silo): 20260806000000.0.0
-  - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo_20260806000000.0.0-1PGSTY_amd64.deb
-  - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo_20260806000000.0.0-1PGSTY_arm64.deb
-  - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-08-06T00-00-00Z/silo-20260806000000.0.0-1PGSTY.aarch64.rpm
+- [silo](https://github.com/pgsty/silo): 20260916000000.0.0
+  - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-09-16T00-00-00Z/silo_20260916000000.0.0-1PGSTY_amd64.deb
+  - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-09-16T00-00-00Z/silo_20260916000000.0.0-1PGSTY_arm64.deb
+  - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-09-16T00-00-00Z/silo-20260916000000.0.0-1PGSTY.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-09-16T00-00-00Z/silo-20260916000000.0.0-1PGSTY.aarch64.rpm
   - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.58.0
   - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.58.0/vector_0.58.0-1_amd64.deb
@@ -216,6 +216,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | rustfs | 1.0.0-rc.4 | 1.0.0 | Stable 1.0.0 replaces rc.4; prerelease package metadata removed |
 | sabiql | 2.0.1 | 3.0.1 | Adds MySQL support; Oracle MySQL CLI 8.4 is required for MySQL connections |
 | seaweedfs | 4.45 | 4.47 | Verified and built dual-architecture RPM/DEB |
+| silo | 20260806000000.0.0 | 20260916000000.0.0 | Official native dual-arch RPM/DEB; upstream security and correctness release |
 
 **2026-09-01**
 

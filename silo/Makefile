@@ -10,8 +10,8 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=silo
-VERSION=20260806000000.0.0
-TAG=RELEASE.2026-08-06T00-00-00Z
+VERSION=20260916000000.0.0
+TAG=RELEASE.2026-09-16T00-00-00Z
 RELEASE=1PGSTY
 PROXY ?= http://127.0.0.1:8118
 
@@ -23,10 +23,10 @@ DEB_URL_amd64=https://github.com/pgsty/silo/releases/download/$(TAG)/$(DEB_FILE_
 DEB_URL_arm64=https://github.com/pgsty/silo/releases/download/$(TAG)/$(DEB_FILE_arm64)
 RPM_URL_amd64=https://github.com/pgsty/silo/releases/download/$(TAG)/$(RPM_FILE_amd64)
 RPM_URL_arm64=https://github.com/pgsty/silo/releases/download/$(TAG)/$(RPM_FILE_arm64)
-SHA256_DEB_amd64=aaa3d3d6090115beb093c150c165ae3ec44c199d359093cdf28de3a8f113a6fd
-SHA256_DEB_arm64=e42214949b9a2b2ee30b6cb1012b60d8365a247a4ba4e81906053cac77fc3565
-SHA256_RPM_amd64=da6e9c4ce3548bff3d2fd8c812657fd51e1533c8d0f9a6646816ab889abcdebf
-SHA256_RPM_arm64=4ec6b47b4b6e4f724ea2b1881b742ab0b469f81e70d6da5e353a7d2f1e0eeefd
+SHA256_DEB_amd64=176aad3944d9e9f949baf47bcea86e62a3271094be075c6547c056f652ae7e5f
+SHA256_DEB_arm64=32f7fab06f38a90920bf7295017b031da0eb03fcb1e54fd948f109fd30e3a711
+SHA256_RPM_amd64=cb4d6690d386e43dca0b9c6ae4e3abb1fad49c75f9df7d36502c5f8742ef3a77
+SHA256_RPM_arm64=e7fa4c2fcf49a9d7632e91b4aceef3225c5330571cb19116e5ba59c8d2dc031c
 
 default: all
 all:
