@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v1.9.0"
+version: "v1.10.0"
 release: "1PGSTY"
 version_schema: semver
 description: Prometheus Exporter for Kafka

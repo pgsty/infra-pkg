@@ -41,7 +41,7 @@ exceptions are called out inline.
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.20.0
 - [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.90.0
-- [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.9.0
+- [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.10.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
@@ -195,6 +195,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | hugo | 0.165.0 | 0.166.0 | Verified and built dual-architecture RPM/DEB |
 | k3s | 1.36.4 | 1.37.0 | Upstream v1.37.0+k3s1; images updated together; stable channel remains 1.36.4 |
 | k3s-images | 1.36.4 | 1.37.0 | Dual-architecture air-gap images pinned to v1.37.0+k3s1 |
+| kafka-exporter | 1.9.0 | 1.10.0 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
