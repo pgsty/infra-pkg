@@ -66,7 +66,7 @@ exceptions are called out inline.
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
 - [loki](https://github.com/grafana/loki) : 3.7.7
-- [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.7.7
+- [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.7.8
 - [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.7
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen; final upstream artifact, absent from Loki 3.7 source and releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.32.0
@@ -196,6 +196,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | k3s | 1.36.4 | 1.37.0 | Upstream v1.37.0+k3s1; images updated together; stable channel remains 1.36.4 |
 | k3s-images | 1.36.4 | 1.37.0 | Dual-architecture air-gap images pinned to v1.37.0+k3s1 |
 | kafka-exporter | 1.9.0 | 1.10.0 | Verified and built dual-architecture RPM/DEB |
+| logcli | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
