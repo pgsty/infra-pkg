@@ -13,14 +13,14 @@ export ARCH RARCH
 
 REPONAME=rclone/rclone
 PACKAGE=rclone
-VERSION=1.75.0
+VERSION=1.75.1
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION)-linux-$(ARCH)
 FILENAME=$(DIRNAME).zip
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=aa2804e08f48250e71009c727124b6341cd0288465804a9a09d14663cabafbaa
-SHA256_arm64=d0ad88ba4c8e285b7c9efa591e0ab643280a91741e13c27f3a9c0957ccfa5203
+SHA256_amd64=982b5aa772841168f8e380f139e9e787b2a105403e32b94da8676a0e1c0a13ab
+SHA256_arm64=03f2504174034b6d004152ed7369251c9a9ec1f7e0836eda420f5c7a5ec0dff9
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 

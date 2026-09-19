@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "1.75.0"
+version: "1.75.1"
 release: "1PGSTY"
 version_schema: semver
 description: Rclone syncs files and directories to and from cloud storage

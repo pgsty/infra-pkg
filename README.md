@@ -105,7 +105,7 @@ exceptions are called out inline.
 - [crush](https://github.com/charmbracelet/crush) 0.95.0
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
-- [rclone](https://github.com/rclone/rclone) 1.75.0
+- [rclone](https://github.com/rclone/rclone) 1.75.1
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.1
 - [pev2](https://github.com/dalibo/pev2/releases) 1.24.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.8.1
@@ -210,6 +210,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | pgstream | 1.4.1 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
 | pig | 1.8.0 | 1.8.1 | Verified and built dual-architecture RPM/DEB |
 | postgrest | 16.2 | 16.3 | Verified and built dual-architecture RPM/DEB |
+| rclone | 1.75.0 | 1.75.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
