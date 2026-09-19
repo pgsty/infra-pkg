@@ -7,10 +7,10 @@
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=plugins
-VERSION=13.0.0
+VERSION=13.2.2
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
 FILENAME=plugins-$(VERSION).tar.gz
-SHA256=3a4bfcbe1ea23ec5a1f3ceba35471c48d496fbfda451c55a65665a2b81193f86
+SHA256=fe1ea45f04fdd77b9d694bd04051101bab6eeade86e8d8b878f4e2948d120cba
 FILENAME2=chart.tgz
 SHA2562=b3aa73759d1890dd5be9e9527423ef1e92c76076f2aeb5476d5a6dbf7ecbc825
 WEB_URL2=https://repo.pigsty.io/etc/$(FILENAME2)

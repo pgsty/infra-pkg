@@ -3,7 +3,7 @@ arch: "all"
 platform: "linux"
 section: "web"
 priority: "optional"
-version: "13.0.0"
+version: "13.2.2"
 release: "1PGSTY"
 version_schema: semver
 description: "extra panels, datasources, resources for grafana"
