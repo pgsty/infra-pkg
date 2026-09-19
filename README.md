@@ -96,7 +96,7 @@ exceptions are called out inline.
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
-- [postgrest](https://github.com/PostgREST/postgrest) 16.2 (requires PostgreSQL 14+)
+- [postgrest](https://github.com/PostgREST/postgrest) 16.3 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.18.31
@@ -209,6 +209,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | pgschema | 1.12.5 | 1.13.0 | Verified and built dual-architecture RPM/DEB |
 | pgstream | 1.4.1 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
 | pig | 1.8.0 | 1.8.1 | Verified and built dual-architecture RPM/DEB |
+| postgrest | 16.2 | 16.3 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
