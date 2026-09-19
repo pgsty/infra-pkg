@@ -53,7 +53,7 @@ exceptions are called out inline.
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.0 (upstream v1.37.0+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.0%2Bk3s1) : 1.37.0 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.10
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.12
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
@@ -201,6 +201,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | loki-canary | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
 | mcli | 20260901000000.0.0 | 20260916000000.0.0 | Maps to RELEASE.2026-09-16T00-00-00Z |
 | mcp-toolbox | 1.8.0 | 1.12.0 | New cached-binary recipe; dual-arch CGO source builds targeting glibc 2.28 |
+| mtail | 3.4.10 | 3.4.12 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
