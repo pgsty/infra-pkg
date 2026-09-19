@@ -106,7 +106,7 @@ exceptions are called out inline.
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260901000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.0
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.8.3
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.1
 - [pev2](https://github.com/dalibo/pev2/releases) 1.23.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.8.0
 - [sow](https://github.com/pgsty/sow) 0.4.0
@@ -180,6 +180,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | alertmanager | 0.34.0 | 0.34.1 | Verified and built dual-architecture RPM/DEB |
 | cargo-pgrx-0192 | - | 0.19.2 | New exact 0.19.2 slot; 0191 retained; native EL8 builds |
 | claude | 2.1.252 | 2.1.278 | Downloaded through port 8118, manifest verified; version executed on both Linux architectures |
+| cloudflared | 2026.8.3 | 2026.9.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**

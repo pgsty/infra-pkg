@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "2026.8.3"
+version: "2026.9.1"
 release: "1PGSTY"
 version_schema: semver
 description: Cloudflare Tunnel client
