@@ -100,7 +100,7 @@ exceptions are called out inline.
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.18.31
-- [uv](https://github.com/astral-sh/uv) 0.12.8
+- [uv](https://github.com/astral-sh/uv) 0.12.17
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.0
 - [crush](https://github.com/charmbracelet/crush) 0.95.0
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
@@ -219,6 +219,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | silo | 20260806000000.0.0 | 20260916000000.0.0 | Official native dual-arch RPM/DEB; upstream security and correctness release |
 | stalwart | 0.16.20 | 0.16.22 | Verified and built dual-architecture RPM/DEB |
 | tailcat | 0.4.0 | 0.6.0 | Verified and built dual-architecture RPM/DEB |
+| uv | 0.12.8 | 0.12.17 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-01**
 

@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "v0.12.8"
+version: "v0.12.17"
 release: "1PGSTY"
 version_schema: semver
 description: An extremely fast Python package and project manager, written in Rust.
