@@ -88,7 +88,7 @@ exceptions are called out inline.
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.43.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.252
+- [claude](https://github.com/anthropics/claude-code) 2.1.278
 - [codex](https://github.com/openai/codex) 0.152.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.20
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
@@ -179,6 +179,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | agentsview | 0.41.1 | 0.43.0 | Verified and built dual-architecture RPM/DEB |
 | alertmanager | 0.34.0 | 0.34.1 | Verified and built dual-architecture RPM/DEB |
 | cargo-pgrx-0192 | - | 0.19.2 | New exact 0.19.2 slot; 0191 retained; native EL8 builds |
+| claude | 2.1.252 | 2.1.278 | Downloaded through port 8118, manifest verified; version executed on both Linux architectures |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
