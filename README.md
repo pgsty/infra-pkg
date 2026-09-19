@@ -76,7 +76,7 @@ exceptions are called out inline.
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.3
-- [tailcat](https://github.com/tailscale/tailcat) 0.4.0
+- [tailcat](https://github.com/tailscale/tailcat) 0.6.0
 - [hugo](https://github.com/gohugoio/hugo) 0.166.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.47
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
@@ -218,6 +218,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | seaweedfs | 4.45 | 4.47 | Verified and built dual-architecture RPM/DEB |
 | silo | 20260806000000.0.0 | 20260916000000.0.0 | Official native dual-arch RPM/DEB; upstream security and correctness release |
 | stalwart | 0.16.20 | 0.16.22 | Verified and built dual-architecture RPM/DEB |
+| tailcat | 0.4.0 | 0.6.0 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-01**
 
