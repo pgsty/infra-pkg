@@ -45,7 +45,7 @@ exceptions are called out inline.
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.151.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.152.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.10.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.5
@@ -220,6 +220,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | stalwart | 0.16.20 | 0.16.22 | Verified and built dual-architecture RPM/DEB |
 | tailcat | 0.4.0 | 0.6.0 | Verified and built dual-architecture RPM/DEB |
 | uv | 0.12.8 | 0.12.17 | Verified and built dual-architecture RPM/DEB |
+| victoria-metrics | 1.151.0 | 1.152.0 | Single-node, cluster, and vmutils packages updated together |
 
 **2026-09-01**
 
