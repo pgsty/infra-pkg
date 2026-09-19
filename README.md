@@ -57,7 +57,7 @@ exceptions are called out inline.
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.49.0
+- [dblab](https://github.com/danvergara/dblab) 0.50.0
 - [pgstream](https://github.com/xataio/pgstream) 1.4.1
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.5
@@ -185,6 +185,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | code-server | 4.135.0 | 4.137.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | codex | 0.152.0 | 0.155.1 | Verified and built dual-architecture RPM/DEB |
 | crush | 0.92.0 | 0.95.0 | Verified and built dual-architecture RPM/DEB |
+| dblab | 0.49.0 | 0.50.0 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
