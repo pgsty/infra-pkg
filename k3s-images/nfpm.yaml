@@ -3,10 +3,10 @@ arch: "${ARCH}"
 platform: "linux"
 section: "admin"
 priority: "optional"
-version: "1.36.4"
+version: "1.37.0"
 release: "1PGSTY"
 version_schema: semver
-description: "K3s v1.36.4+k3s1 system images for air-gapped nodes"
+description: "K3s v1.37.0+k3s1 system images for air-gapped nodes"
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "PGSTY"
 homepage: "https://github.com/k3s-io/k3s"
@@ -16,10 +16,10 @@ changelog: "${NFPM_CHANGELOG}"
 overrides:
   deb:
     depends:
-      - k3s (= 1.36.4-1PGSTY)
+      - k3s (= 1.37.0-1PGSTY)
   rpm:
     depends:
-      - k3s = 1.36.4-1PGSTY
+      - k3s = 1.37.0-1PGSTY
 
 contents:
 
