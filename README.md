@@ -132,11 +132,11 @@ byte, including their original release metadata.
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/7debcd0e2acdea1c52de81bf9ee1620444407dda/code_1.138.0-1789458676_arm64.deb
   - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/7debcd0e2acdea1c52de81bf9ee1620444407dda/code-1.138.0-1789458812.el8.x86_64.rpm
   - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/7debcd0e2acdea1c52de81bf9ee1620444407dda/code-1.138.0-1789458729.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.135.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.135.0/code-server_4.135.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.135.0/code-server_4.135.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.135.0/code-server-4.135.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.135.0/code-server-4.135.0-arm64.rpm
+- [code-server](https://github.com/coder/code-server): 4.137.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server_4.137.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server_4.137.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server-4.137.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server-4.137.0-arm64.rpm
 - [grafana](https://github.com/grafana/grafana/) : 13.2.0
   - deb amd64: https://dl.grafana.com/grafana/release/13.2.0/grafana_13.2.0_32077357341_linux_amd64.deb
   - deb arm64: https://dl.grafana.com/grafana/release/13.2.0/grafana_13.2.0_32077357341_linux_arm64.deb
@@ -182,6 +182,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | claude | 2.1.252 | 2.1.278 | Downloaded through port 8118, manifest verified; version executed on both Linux architectures |
 | cloudflared | 2026.8.3 | 2026.9.1 | Verified and built dual-architecture RPM/DEB |
 | code | 1.135.0 | 1.138.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| code-server | 4.135.0 | 4.137.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
