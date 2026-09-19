@@ -84,7 +84,7 @@ exceptions are called out inline.
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27 (stable release)
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
-- [sabiql](https://github.com/riii111/sabiql) 2.0.1
+- [sabiql](https://github.com/riii111/sabiql) 3.0.1
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.43.0
@@ -214,6 +214,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | redis-exporter | 1.90.0 | 1.91.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 | rustfs | 1.0.0-rc.4 | 1.0.0 | Stable 1.0.0 replaces rc.4; prerelease package metadata removed |
+| sabiql | 2.0.1 | 3.0.1 | Adds MySQL support; Oracle MySQL CLI 8.4 is required for MySQL connections |
 
 **2026-09-01**
 

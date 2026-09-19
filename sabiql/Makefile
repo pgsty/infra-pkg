@@ -13,14 +13,16 @@ export ARCH RARCH
 
 REPONAME=riii111/sabiql
 PACKAGE=sabiql
-VERSION=2.0.1
+VERSION=3.0.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-$(RARCH)-unknown-linux-gnu.tar.gz
-SHA256_amd64=f88a643120d8d403cda97beb480c49383a484778e1434e96b82dfa9609a0cae0
-SHA256_arm64=9be5a8836961211b8438b24d037670684cae468cf59375a014f94248db04ccbc
+SHA256_amd64=c26b87d93e8bbfe8d1a25b8fd6506f869679395980dac1c188c9428d189cf6aa
+SHA256_arm64=86faf38c2fe8c31fecab672f734b306759377d516c96d50700c41c8d702b2939
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
+
+CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.gz
 
 default: all
 all:
@@ -40,7 +42,7 @@ meta:
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME); else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi

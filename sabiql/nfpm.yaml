@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "v2.0.1"
+version: "v3.0.1"
 release: "1PGSTY"
 version_schema: semver
 description: A modern SQL client for PostgreSQL.
