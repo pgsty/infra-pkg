@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "admin"
 priority: "optional"
-version: "1.36.4"
+version: "1.37.0"
 release: "1PGSTY"
 version_schema: semver
 description: "Lightweight Kubernetes, packaged from upstream v1.36.4+k3s1"

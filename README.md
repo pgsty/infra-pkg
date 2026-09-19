@@ -50,7 +50,7 @@ exceptions are called out inline.
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.10.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.5
 - [etcd](https://github.com/etcd-io/etcd) : 3.7.1
-- [k3s](https://github.com/k3s-io/k3s) : 1.36.4 (upstream v1.36.4+k3s1)
+- [k3s](https://github.com/k3s-io/k3s) : 1.37.0 (upstream v1.37.0+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.36.4%2Bk3s1) : 1.36.4 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
 - [mtail](https://github.com/jaqx0r/mtail) : 3.4.10
@@ -193,6 +193,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | grafana-victorialogs-ds | 0.31.0 | 0.32.0 | Verified and built dual-architecture RPM/DEB |
 | grafana-victoriametrics-ds | 0.25.2 | 0.26.1 | Verified and built dual-architecture RPM/DEB |
 | hugo | 0.165.0 | 0.166.0 | Verified and built dual-architecture RPM/DEB |
+| k3s | 1.36.4 | 1.37.0 | Upstream v1.37.0+k3s1; images updated together; stable channel remains 1.36.4 |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
