@@ -13,17 +13,19 @@ export ARCH RARCH
 
 REPONAME=openai/codex
 PACKAGE=codex
-VERSION=0.152.0
+VERSION=0.155.1
 TAG=rust-v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=$(RARCH)-unknown-linux-musl
 FILENAME=$(PACKAGE)-$(TARGET).tar.gz
 BINARY=$(PACKAGE)-$(TARGET)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
-SHA256_amd64=05f942d3d3c5b5acd9edad56ce2797b6fe72dbb1462b24e5c9bf7dcec9a28a11
-SHA256_arm64=37da6b486503c8a42cc4604d2a3d80d388df896dd251e9225f4f3d49b08c2e8c
+SHA256_amd64=a0ef8b2debc3bf747e07b1a039354de31300ac0dcc2276498ba281470b5d9115
+SHA256_arm64=d6c7e62fbd688d52ee04f3929d0613705d32a920a42db7a139e366eaf1f4a2d7
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
+
+CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.gz
 
 default: all
 all:
@@ -43,7 +45,7 @@ meta:
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME); else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 # verify the official release archive before extraction
 verify:

@@ -89,7 +89,7 @@ exceptions are called out inline.
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.43.0
 - [claude](https://github.com/anthropics/claude-code) 2.1.278
-- [codex](https://github.com/openai/codex) 0.152.0
+- [codex](https://github.com/openai/codex) 0.155.1
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.20
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (source-built externally; upstream 1.10.0 has no release assets and is pending a standalone rebuild)
@@ -183,6 +183,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | cloudflared | 2026.8.3 | 2026.9.1 | Verified and built dual-architecture RPM/DEB |
 | code | 1.135.0 | 1.138.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | code-server | 4.135.0 | 4.137.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| codex | 0.152.0 | 0.155.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
