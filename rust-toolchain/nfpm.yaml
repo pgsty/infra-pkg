@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "1.97.1"
+version: "1.98.1"
 release: "1PGSTY"
 version_schema: semver
 description: |

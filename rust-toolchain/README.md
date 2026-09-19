@@ -1,6 +1,6 @@
 # rust-toolchain
 
-This recipe repackages the checksum-pinned and GPG-verified Rust 1.97.1
+This recipe repackages the checksum-pinned and GPG-verified Rust 1.98.1
 standalone GNU/Linux toolchain. It installs `rustc`, the native standard
 library, Cargo, and rustfmt under the stable private prefix:
 

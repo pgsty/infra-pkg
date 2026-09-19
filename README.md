@@ -118,6 +118,8 @@ exceptions are called out inline.
   - arm64: https://nodejs.org/dist/v24.20.0/node-v24.20.0-linux-arm64.tar.xz
 
 
+- [rust-toolchain](https://www.rust-lang.org/) 1.98.1 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
+
 **Vendor-direct packages**:
 
 These recipes preserve the vendor-published native DEB/RPM packages byte for
@@ -166,6 +168,13 @@ byte, including their original release metadata.
 
 ## Changelog
 
+**2026-09-19**
+
+Local build batch; all downloads used the port 8118 proxy. This entry does not imply publication to the live repository.
+
+| Name | Old | New | Comment |
+|---|---|---|---|
+| rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
 
