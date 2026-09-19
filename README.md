@@ -79,7 +79,7 @@ exceptions are called out inline.
 - [tailcat](https://github.com/tailscale/tailcat) 0.4.0
 - [hugo](https://github.com/gohugoio/hugo) 0.165.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.45
-- [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.3.0
+- [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.0-rc.4 (release `1PGSTY`)
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27 (stable release)
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
@@ -186,6 +186,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | codex | 0.152.0 | 0.155.1 | Verified and built dual-architecture RPM/DEB |
 | crush | 0.92.0 | 0.95.0 | Verified and built dual-architecture RPM/DEB |
 | dblab | 0.49.0 | 0.50.0 | Verified and built dual-architecture RPM/DEB |
+| garage | 2.3.0 | 2.4.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**

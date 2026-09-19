@@ -12,14 +12,14 @@ RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
 export ARCH RARCH
 
 PACKAGE=garage
-VERSION=2.3.0
+VERSION=2.4.1
 RELEASE_PAGE=https://git.deuxfleurs.fr/Deuxfleurs/garage/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)
 CACHE=$(PACKAGE)-v$(VERSION)-linux-$(ARCH)
 PLATFORM=$(RARCH)-unknown-linux-musl
 WEB_URL=https://garagehq.deuxfleurs.fr/_releases/v$(VERSION)/$(PLATFORM)/garage
-SHA256_amd64=f98d317942bb341151a2775162016bb50cf86b865d0108de03eb5db16e2120cd
-SHA256_arm64=8ced2ad3040262571de08aa600959aa51f97576d55da7946fcde6f66140705e2
+SHA256_amd64=ae49f8de4aaee6b5ca305f7cbdccc8cd8a29b2804aac074649f18bfb83d0a2b6
+SHA256_arm64=004b6081c6e3cccbb80317c69e3c5749fbb3fc889e217cc9b89c215bf0dd7ded
 SHA256=$(SHA256_$(ARCH))
 
 default: all
