@@ -67,7 +67,7 @@ exceptions are called out inline.
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
 - [loki](https://github.com/grafana/loki) : 3.7.8
 - [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.7.8
-- [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.7
+- [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.8
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen; final upstream artifact, absent from Loki 3.7 source and releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.32.0
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.26.1
@@ -198,6 +198,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | kafka-exporter | 1.9.0 | 1.10.0 | Verified and built dual-architecture RPM/DEB |
 | logcli | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
 | loki | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
+| loki-canary | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
