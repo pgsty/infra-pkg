@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "utils"
 priority: "optional"
-version: "20260901000000.0.0"
+version: "20260916000000.0.0"
 release: "1PGSTY"
 version_schema: semver
 description: Silo object storage client, a community-maintained fork of MinIO Client

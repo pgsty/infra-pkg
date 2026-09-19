@@ -104,7 +104,7 @@ exceptions are called out inline.
 - [pgschema](https://github.com/pgplex/pgschema) 1.12.5
 - [crush](https://github.com/charmbracelet/crush) 0.95.0
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
-- [mcli](https://github.com/pgsty/mc) 20260901000000.0.0
+- [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.0
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.1
 - [pev2](https://github.com/dalibo/pev2/releases) 1.23.0 (noarch)
@@ -199,6 +199,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | logcli | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
 | loki | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
 | loki-canary | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
+| mcli | 20260901000000.0.0 | 20260916000000.0.0 | Maps to RELEASE.2026-09-16T00-00-00Z |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
