@@ -110,9 +110,9 @@ exceptions are called out inline.
 - [pev2](https://github.com/dalibo/pev2/releases) 1.23.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.8.0
 - [sow](https://github.com/pgsty/sow) 0.4.0
-- [golang](https://go.dev/dl/) 1.27.0
-  - x86_64: https://go.dev/dl/go1.27.0.linux-amd64.tar.gz
-  - arm64: https://go.dev/dl/go1.27.0.linux-arm64.tar.gz
+- [golang](https://go.dev/dl/) 1.27.1
+  - x86_64: https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
+  - arm64: https://go.dev/dl/go1.27.1.linux-arm64.tar.gz
 - [nodejs](https://nodejs.org/en/download/) 24.20.0
   - x86_64: https://nodejs.org/dist/v24.20.0/node-v24.20.0-linux-x64.tar.xz
   - arm64: https://nodejs.org/dist/v24.20.0/node-v24.20.0-linux-arm64.tar.xz
@@ -187,6 +187,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | crush | 0.92.0 | 0.95.0 | Verified and built dual-architecture RPM/DEB |
 | dblab | 0.49.0 | 0.50.0 | Verified and built dual-architecture RPM/DEB |
 | garage | 2.3.0 | 2.4.1 | Verified and built dual-architecture RPM/DEB |
+| golang | 1.27.0 | 1.27.1 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
