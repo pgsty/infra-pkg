@@ -13,13 +13,15 @@ export ARCH RARCH
 
 REPONAME=seaweedfs/seaweedfs
 PACKAGE=seaweedfs
-VERSION=4.45
+VERSION=4.47
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 FILENAME=linux_$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
-SHA256_amd64=c408894668aeaa74d4f251e20b350fd72195cbe596ddc3f48658709714f7be36
-SHA256_arm64=8b40d7f2c72765a0f2fef785e51bee186475526d01415276e641164652209269
+SHA256_amd64=31fb804858885f9e7f18b6d3b1da09e824baac3e6a55b5a62c3c4c77e6ed6d7d
+SHA256_arm64=ba5c9def9ff98f78becdf309a50a9f906922f6383a7c4c772d01ede3cc012e16
 SHA256=$(SHA256_$(ARCH))
+
+CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.gz
 
 default: all
 all:
@@ -39,7 +41,7 @@ meta:
 # download configured release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME); else curl -fSL $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi

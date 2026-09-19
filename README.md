@@ -78,7 +78,7 @@ exceptions are called out inline.
 - [headscale](https://github.com/juanfont/headscale) 0.29.3
 - [tailcat](https://github.com/tailscale/tailcat) 0.4.0
 - [hugo](https://github.com/gohugoio/hugo) 0.166.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.45
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.47
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.0 (stable release; `1PGSTY`)
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27 (stable release)
@@ -215,6 +215,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 | rustfs | 1.0.0-rc.4 | 1.0.0 | Stable 1.0.0 replaces rc.4; prerelease package metadata removed |
 | sabiql | 2.0.1 | 3.0.1 | Adds MySQL support; Oracle MySQL CLI 8.4 is required for MySQL connections |
+| seaweedfs | 4.45 | 4.47 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-01**
 
