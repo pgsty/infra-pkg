@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "v24.20.0"
+version: "v24.21.0"
 version_schema: semver
 release: "1PGSTY"
 description: Node.js JavaScript runtime

@@ -113,9 +113,9 @@ exceptions are called out inline.
 - [golang](https://go.dev/dl/) 1.27.1
   - x86_64: https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.27.1.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.20.0
-  - x86_64: https://nodejs.org/dist/v24.20.0/node-v24.20.0-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.20.0/node-v24.20.0-linux-arm64.tar.xz
+- [nodejs](https://nodejs.org/en/download/) 24.21.0
+  - x86_64: https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-arm64.tar.xz
 
 
 - [rust-toolchain](https://www.rust-lang.org/) 1.98.1 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
@@ -202,6 +202,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | mcli | 20260901000000.0.0 | 20260916000000.0.0 | Maps to RELEASE.2026-09-16T00-00-00Z |
 | mcp-toolbox | 1.8.0 | 1.12.0 | New cached-binary recipe; dual-arch CGO source builds targeting glibc 2.28 |
 | mtail | 3.4.10 | 3.4.12 | Verified and built dual-architecture RPM/DEB |
+| nodejs | 24.20.0 | 24.21.0 | Node.js 24 LTS |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
