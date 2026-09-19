@@ -90,7 +90,7 @@ exceptions are called out inline.
 - [agentsview](https://github.com/kenn-io/agentsview) 0.43.0
 - [claude](https://github.com/anthropics/claude-code) 2.1.278
 - [codex](https://github.com/openai/codex) 0.155.1
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.20
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.22
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.12.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
@@ -217,6 +217,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | sabiql | 2.0.1 | 3.0.1 | Adds MySQL support; Oracle MySQL CLI 8.4 is required for MySQL connections |
 | seaweedfs | 4.45 | 4.47 | Verified and built dual-architecture RPM/DEB |
 | silo | 20260806000000.0.0 | 20260916000000.0.0 | Official native dual-arch RPM/DEB; upstream security and correctness release |
+| stalwart | 0.16.20 | 0.16.22 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-01**
 
