@@ -1,0 +1,29 @@
+.TH CARGO-PGRX-0192 1 "2026-08-19" "PGSTY" "User Commands"
+.SH NAME
+cargo-pgrx-0192 \- run cargo-pgrx 0.19.2 with the current PGSTY Rust toolchain
+.SH SYNOPSIS
+.B cargo-pgrx-0192
+.I subcommand
+.RI [ arguments ...]
+.SH DESCRIPTION
+.B cargo-pgrx-0192
+runs cargo-pgrx 0.19.2 with the current packaged Rust toolchain. Unless
+PGRX_HOME is already set, configuration is isolated under
+$HOME/.pgrx/0.19.2.
+.SH EXAMPLES
+.TP
+.B cargo-pgrx-0192 --version
+Display the cargo-pgrx version.
+.TP
+.B cargo-pgrx-0192 init --pg17=/usr/pgsql-17/bin/pg_config --no-run
+Initialize an RPM-style PostgreSQL 17 development configuration.
+.TP
+.B cargo-pgrx-0192 package --pg-config=/usr/lib/postgresql/17/bin/pg_config
+Build a Debian-style PostgreSQL 17 extension package directory.
+.SH FILES
+.TP
+.I /usr/lib/pgsty/cargo-pgrx/0.19.2
+Versioned cargo-pgrx program root.
+.TP
+.I $HOME/.pgrx/0.19.2
+Default per-user configuration directory.

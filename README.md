@@ -119,6 +119,8 @@ exceptions are called out inline.
 
 
 - [rust-toolchain](https://www.rust-lang.org/) 1.98.1 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
+- [cargo-pgrx-0191](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.1) 0.19.1 (retained exact version slot)
+- [cargo-pgrx-0192](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.2) 0.19.2 (new exact version slot; native EL8 builds)
 
 **Vendor-direct packages**:
 
@@ -174,6 +176,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 
 | Name | Old | New | Comment |
 |---|---|---|---|
+| cargo-pgrx-0192 | - | 0.19.2 | New exact 0.19.2 slot; 0191 retained; native EL8 builds |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
