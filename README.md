@@ -31,7 +31,7 @@ exceptions are called out inline.
 
 - [prometheus](https://github.com/prometheus/prometheus) : 3.14.0 (includes version-pinned upstream console templates and libraries)
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.34.0
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.34.1
 - [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
 - [nginx-exporter](https://github.com/nginx/nginx-prometheus-exporter) : 1.5.3
 - [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
@@ -177,6 +177,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | Name | Old | New | Comment |
 |---|---|---|---|
 | agentsview | 0.41.1 | 0.43.0 | Verified and built dual-architecture RPM/DEB |
+| alertmanager | 0.34.0 | 0.34.1 | Verified and built dual-architecture RPM/DEB |
 | cargo-pgrx-0192 | - | 0.19.2 | New exact 0.19.2 slot; 0191 retained; native EL8 builds |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
