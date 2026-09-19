@@ -1,0 +1,11 @@
+upstream=https://github.com/googleapis/mcp-toolbox
+tag=v1.12.0
+source_url=https://codeload.github.com/googleapis/mcp-toolbox/tar.gz/refs/tags/v1.12.0
+source_sha256=c3665c21ac7671e9fe8582f8fda956e41daa46991f7f1fba1c717a39534e1f1e
+go=1.27.1
+zig=0.15.2
+cgo=1
+glibc_target=2.28
+build_type=binary
+commit_label=v1.12.0
+source_commit=c97ca4dee4529436ca08cbd6d2ad859d0aa7b60c

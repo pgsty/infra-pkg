@@ -1,0 +1,52 @@
+name: "mcp-toolbox"
+arch: "${ARCH}"
+platform: "linux"
+section: "database"
+priority: "optional"
+version: "1.12.0"
+release: "1PGSTY"
+version_schema: semver
+description: MCP server for databases and data sources
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/googleapis/mcp-toolbox"
+license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+
+overrides:
+  deb:
+    depends:
+      - "ca-certificates"
+      - "libc6 (>= 2.28)"
+  rpm:
+    depends:
+      - "ca-certificates"
+      - "glibc >= 2.28"
+
+contents:
+  - src: mcp-toolbox.bin
+    dst: /usr/bin/mcp-toolbox
+    file_info:
+      mode: 0755
+  - src: /usr/bin/mcp-toolbox
+    dst: /usr/bin/toolbox
+    type: symlink
+  - src: LICENSE
+    dst: /usr/share/doc/mcp-toolbox/LICENSE
+    file_info:
+      mode: 0644
+  - src: BUILDINFO
+    dst: /usr/share/doc/mcp-toolbox/BUILDINFO
+    file_info:
+      mode: 0644
+  - src: README.md
+    dst: /usr/share/doc/mcp-toolbox/README.md
+    file_info:
+      mode: 0644
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/mcp-toolbox/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root

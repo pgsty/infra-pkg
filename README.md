@@ -92,7 +92,7 @@ exceptions are called out inline.
 - [codex](https://github.com/openai/codex) 0.155.1
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.20
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
-- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.8.0 (source-built externally; upstream 1.10.0 has no release assets and is pending a standalone rebuild)
+- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.12.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
@@ -200,6 +200,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | loki | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
 | loki-canary | 3.7.7 | 3.7.8 | Verified and built dual-architecture RPM/DEB |
 | mcli | 20260901000000.0.0 | 20260916000000.0.0 | Maps to RELEASE.2026-09-16T00-00-00Z |
+| mcp-toolbox | 1.8.0 | 1.12.0 | New cached-binary recipe; dual-arch CGO source builds targeting glibc 2.28 |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
