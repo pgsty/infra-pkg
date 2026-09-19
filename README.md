@@ -62,7 +62,7 @@ exceptions are called out inline.
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.5
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.1.0
-- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.3.4 (binary-only package; service lifecycle managed by Pigsty)
+- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.4.2 (binary-only package; service lifecycle managed by Pigsty)
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
 - [loki](https://github.com/grafana/loki) : 3.7.8
@@ -205,6 +205,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | nodejs | 24.20.0 | 24.21.0 | Node.js 24 LTS |
 | opencode | 1.18.25 | 1.18.31 | Verified and built dual-architecture RPM/DEB |
 | pev2 | 1.23.0 | 1.24.0 | Verified and built noarch RPM/DEB |
+| pg-hardstorage | 1.3.4 | 1.4.2 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
