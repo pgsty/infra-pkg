@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "0.92.0"
+version: "0.95.0"
 release: "1PGSTY"
 version_schema: semver
 description: Glamorous AI coding agent for the terminal

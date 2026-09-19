@@ -102,7 +102,7 @@ exceptions are called out inline.
 - [opencode](https://github.com/anomalyco/opencode) 1.18.25
 - [uv](https://github.com/astral-sh/uv) 0.12.8
 - [pgschema](https://github.com/pgplex/pgschema) 1.12.5
-- [crush](https://github.com/charmbracelet/crush) 0.92.0
+- [crush](https://github.com/charmbracelet/crush) 0.95.0
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260901000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.0
@@ -184,6 +184,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | code | 1.135.0 | 1.138.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | code-server | 4.135.0 | 4.137.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | codex | 0.152.0 | 0.155.1 | Verified and built dual-architecture RPM/DEB |
+| crush | 0.92.0 | 0.95.0 | Verified and built dual-architecture RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
