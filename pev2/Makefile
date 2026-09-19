@@ -6,10 +6,10 @@
 # Path      :   Makefile
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
-VERSION=1.23.0
+VERSION=1.24.0
 ASSET=index.html
 FILENAME=pev2-$(VERSION).html
-SHA256=82b1577a4922050c9e12ebcc0bcfc69ba7e6dfcd0ecef19e88d31b1627d06a29
+SHA256=b3edca750f1508a9ede9b1df0cfa8c0f3566b78ee4cfc50d3de45dd20f846df4
 WEB_URL=https://github.com/dalibo/pev2/releases/download/v$(VERSION)/$(ASSET)
 
 default: all

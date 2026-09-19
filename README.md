@@ -107,7 +107,7 @@ exceptions are called out inline.
 - [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.0
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.1
-- [pev2](https://github.com/dalibo/pev2/releases) 1.23.0 (noarch)
+- [pev2](https://github.com/dalibo/pev2/releases) 1.24.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.8.0
 - [sow](https://github.com/pgsty/sow) 0.4.0
 - [golang](https://go.dev/dl/) 1.27.1
@@ -204,6 +204,7 @@ Local build batch; all downloads used the port 8118 proxy. This entry does not i
 | mtail | 3.4.10 | 3.4.12 | Verified and built dual-architecture RPM/DEB |
 | nodejs | 24.20.0 | 24.21.0 | Node.js 24 LTS |
 | opencode | 1.18.25 | 1.18.31 | Verified and built dual-architecture RPM/DEB |
+| pev2 | 1.23.0 | 1.24.0 | Verified and built noarch RPM/DEB |
 | rust-toolchain | 1.97.1 | 1.98.1 | Upstream signature verification and dual-architecture ELF ABI checks |
 
 **2026-09-01**
