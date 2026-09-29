@@ -106,7 +106,7 @@ exceptions are called out inline.
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.1
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.1
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.3
 - [pev2](https://github.com/dalibo/pev2/releases) 1.24.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.8.1
 - [sow](https://github.com/pgsty/sow) 0.4.0
@@ -173,13 +173,14 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 2 recipes upgraded and cargo-pgrx-0193 added, producing 12 RPM/DEB artifacts for 3 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 3 recipes upgraded and cargo-pgrx-0193 added, producing 16 RPM/DEB artifacts for 4 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
 | agentsview | 0.43.0 | 0.44.0 | Verified and built dual-architecture RPM/DEB |
 | cargo-pgrx-0193 | - | 0.19.3 | New exact 0.19.3 slot; 0191/0192 retained; native EL8 source builds for both architectures |
 | claude | 2.1.278 | 2.1.284 | Downloaded via port 8888; official manifest SHA256 and both Linux binary versions verified |
+| cloudflared | 2026.9.1 | 2026.9.3 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
