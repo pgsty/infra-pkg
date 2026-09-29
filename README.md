@@ -76,7 +76,7 @@ exceptions are called out inline.
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.4
-- [tailcat](https://github.com/tailscale/tailcat) 0.6.0
+- [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.167.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.48
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 23 recipes upgraded and cargo-pgrx-0193 added, producing 96 RPM/DEB artifacts for 24 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 24 recipes upgraded and cargo-pgrx-0193 added, producing 100 RPM/DEB artifacts for 25 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -201,6 +201,7 @@ Local build batch: 23 recipes upgraded and cargo-pgrx-0193 added, producing 96 R
 | seaweedfs | 4.47 | 4.48 | Verified and built dual-architecture RPM/DEB |
 | sow | 0.4.0 | 0.5.0 | Existing 0.3/0.4 Managed workspaces require explicit migration |
 | stalwart | 0.16.22 | 0.16.24 | Verified and built dual-architecture RPM/DEB |
+| tailcat | 0.6.0 | 0.7.0 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
