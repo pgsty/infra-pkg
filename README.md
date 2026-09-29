@@ -100,7 +100,7 @@ exceptions are called out inline.
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.18.33
-- [uv](https://github.com/astral-sh/uv) 0.12.17
+- [uv](https://github.com/astral-sh/uv) 0.12.20
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.1
 - [crush](https://github.com/charmbracelet/crush) 0.96.1
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 24 recipes upgraded and cargo-pgrx-0193 added, producing 100 RPM/DEB artifacts for 25 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 25 recipes upgraded and cargo-pgrx-0193 added, producing 104 RPM/DEB artifacts for 26 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -202,6 +202,7 @@ Local build batch: 24 recipes upgraded and cargo-pgrx-0193 added, producing 100 
 | sow | 0.4.0 | 0.5.0 | Existing 0.3/0.4 Managed workspaces require explicit migration |
 | stalwart | 0.16.22 | 0.16.24 | Verified and built dual-architecture RPM/DEB |
 | tailcat | 0.6.0 | 0.7.0 | Verified and built dual-architecture RPM/DEB |
+| uv | 0.12.17 | 0.12.20 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
