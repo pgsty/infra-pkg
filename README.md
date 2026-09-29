@@ -40,7 +40,7 @@ exceptions are called out inline.
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.20.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.91.1
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.92.1
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.10.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 19 recipes upgraded and cargo-pgrx-0193 added, producing 80 RPM/DEB artifacts for 20 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 20 recipes upgraded and cargo-pgrx-0193 added, producing 84 RPM/DEB artifacts for 21 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -197,6 +197,7 @@ Local build batch: 19 recipes upgraded and cargo-pgrx-0193 added, producing 80 R
 | postgrest | 16.3 | 16.4 | Verified and built dual-architecture RPM/DEB |
 | prometheus | 3.14.0 | 3.15.0 | Verified and built dual-architecture RPM/DEB |
 | rainfrog | 0.4.5 | 0.4.6 | Verified and built dual-architecture RPM/DEB |
+| redis-exporter | 1.91.1 | 1.92.1 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
