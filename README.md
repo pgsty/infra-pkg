@@ -78,7 +78,7 @@ exceptions are called out inline.
 - [headscale](https://github.com/juanfont/headscale) 0.29.4
 - [tailcat](https://github.com/tailscale/tailcat) 0.6.0
 - [hugo](https://github.com/gohugoio/hugo) 0.167.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.47
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.48
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.0 (stable release; `1PGSTY`)
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27 (stable release)
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 20 recipes upgraded and cargo-pgrx-0193 added, producing 84 RPM/DEB artifacts for 21 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 21 recipes upgraded and cargo-pgrx-0193 added, producing 88 RPM/DEB artifacts for 22 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -198,6 +198,7 @@ Local build batch: 20 recipes upgraded and cargo-pgrx-0193 added, producing 84 R
 | prometheus | 3.14.0 | 3.15.0 | Verified and built dual-architecture RPM/DEB |
 | rainfrog | 0.4.5 | 0.4.6 | Verified and built dual-architecture RPM/DEB |
 | redis-exporter | 1.91.1 | 1.92.1 | Verified and built dual-architecture RPM/DEB |
+| seaweedfs | 4.47 | 4.48 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
