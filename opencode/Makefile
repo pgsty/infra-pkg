@@ -13,7 +13,7 @@ export ARCH RARCH
 
 REPONAME=anomalyco/opencode
 PACKAGE=opencode
-VERSION=1.18.31
+VERSION=1.18.33
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 ASSET_amd64=$(PACKAGE)-linux-x64-baseline.tar.gz
 ASSET_arm64=$(PACKAGE)-linux-arm64.tar.gz
@@ -21,8 +21,8 @@ ASSET=$(ASSET_$(ARCH))
 FILENAME_amd64=$(PACKAGE)-$(VERSION)-linux-x64-baseline.tar.gz
 FILENAME_arm64=$(PACKAGE)-$(VERSION)-linux-arm64.tar.gz
 FILENAME=$(FILENAME_$(ARCH))
-SHA256_amd64=b283e8dbe9e6fc224bb4b79992ce3bd2174b8b7b0c3e7d1b4e6024a1d11edc84
-SHA256_arm64=d4e332f46b227448582c0d9fc75f6f826dfe95c9f751bc2011fc4d937a042be6
+SHA256_amd64=440ca65423e99505cf285f8660684503cc54f6f9e6b64cfcd11bf412369be6d5
+SHA256_arm64=c63486624621924bf43be5c01abd252885661a734814224f6d70188a33aea858
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(ASSET)
 
