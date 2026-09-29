@@ -121,6 +121,7 @@ exceptions are called out inline.
 - [rust-toolchain](https://www.rust-lang.org/) 1.98.1 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
 - [cargo-pgrx-0191](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.1) 0.19.1 (retained exact version slot)
 - [cargo-pgrx-0192](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.2) 0.19.2 (new exact version slot; native EL8 builds)
+- [cargo-pgrx-0193](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.3) 0.19.3 (new exact version slot; 0191/0192 retained; native EL8 builds)
 
 **Vendor-direct packages**:
 
@@ -172,11 +173,12 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 1 recipe upgraded, producing 4 RPM/DEB artifacts for 1 package. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 1 recipe upgraded and cargo-pgrx-0193 added, producing 8 RPM/DEB artifacts for 2 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
 | agentsview | 0.43.0 | 0.44.0 | Verified and built dual-architecture RPM/DEB |
+| cargo-pgrx-0193 | - | 0.19.3 | New exact 0.19.3 slot; 0191/0192 retained; native EL8 source builds for both architectures |
 
 **2026-09-19**
 
