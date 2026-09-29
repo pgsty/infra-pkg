@@ -13,12 +13,13 @@ export ARCH RARCH
 
 REPONAME=duckdb/duckdb
 PACKAGE=duckdb
-VERSION=1.5.5
+VERSION=1.5.6
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
 DIRNAME=$(PACKAGE)_cli-linux-$(ARCH)
 FILENAME=$(DIRNAME).zip
-SHA256_amd64=08c0ca117111fcede14239d0093792352befdc174218c344d232c13279643d05
-SHA256_arm64=02163197027a42149147364d31fa67cac82108517a4be43304a1cc226eaef07a
+CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).zip
+SHA256_amd64=6e89deac1ebbc36eed0291caf8b567b030c7b86ac35998f71854e22b3c5d5e2f
+SHA256_arm64=c544e92c9b7c31fc53c2139802cabd8e2d1b2b3e3f933117f31611239c1402db
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 CURL=curl -fSL --retry 3
@@ -41,7 +42,7 @@ meta:
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME); else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi

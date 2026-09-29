@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "v1.5.5"
+version: "v1.5.6"
 release: "1PGSTY"
 version_schema: semver
 description: In-process SQL OLAP Database Management System
