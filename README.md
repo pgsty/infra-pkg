@@ -101,7 +101,7 @@ exceptions are called out inline.
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.18.33
 - [uv](https://github.com/astral-sh/uv) 0.12.17
-- [pgschema](https://github.com/pgplex/pgschema) 1.13.0
+- [pgschema](https://github.com/pgplex/pgschema) 1.13.1
 - [crush](https://github.com/charmbracelet/crush) 0.96.1
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 15 recipes upgraded and cargo-pgrx-0193 added, producing 64 RPM/DEB artifacts for 16 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 16 recipes upgraded and cargo-pgrx-0193 added, producing 68 RPM/DEB artifacts for 17 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -193,6 +193,7 @@ Local build batch: 15 recipes upgraded and cargo-pgrx-0193 added, producing 64 R
 | mtail | 3.4.12 | 3.4.14 | Verified and built dual-architecture RPM/DEB |
 | openbao | 2.6.2 | 2.7.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | opencode | 1.18.31 | 1.18.33 | Verified and built dual-architecture RPM/DEB |
+| pgschema | 1.13.0 | 1.13.1 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
