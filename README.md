@@ -90,7 +90,7 @@ exceptions are called out inline.
 - [agentsview](https://github.com/kenn-io/agentsview) 0.44.0
 - [claude](https://github.com/anthropics/claude-code) 2.1.284
 - [codex](https://github.com/openai/codex) 0.159.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.22
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.24
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.12.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 22 recipes upgraded and cargo-pgrx-0193 added, producing 92 RPM/DEB artifacts for 23 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 23 recipes upgraded and cargo-pgrx-0193 added, producing 96 RPM/DEB artifacts for 24 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -200,6 +200,7 @@ Local build batch: 22 recipes upgraded and cargo-pgrx-0193 added, producing 92 R
 | redis-exporter | 1.91.1 | 1.92.1 | Verified and built dual-architecture RPM/DEB |
 | seaweedfs | 4.47 | 4.48 | Verified and built dual-architecture RPM/DEB |
 | sow | 0.4.0 | 0.5.0 | Existing 0.3/0.4 Managed workspaces require explicit migration |
+| stalwart | 0.16.22 | 0.16.24 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
