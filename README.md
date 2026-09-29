@@ -144,11 +144,11 @@ byte, including their original release metadata.
   - rpm amd64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_amd64.rpm
   - rpm arm64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
-- [OpenBao](https://github.com/openbao/openbao) : 2.6.2
-  - deb amd64: https://github.com/openbao/openbao/releases/download/v2.6.2/openbao_2.6.2_linux_amd64.deb
-  - deb arm64: https://github.com/openbao/openbao/releases/download/v2.6.2/openbao_2.6.2_linux_arm64.deb
-  - rpm amd64: https://github.com/openbao/openbao/releases/download/v2.6.2/openbao_2.6.2_linux_amd64.rpm
-  - rpm arm64: https://github.com/openbao/openbao/releases/download/v2.6.2/openbao_2.6.2_linux_arm64.rpm
+- [OpenBao](https://github.com/openbao/openbao) : 2.7.0
+  - deb amd64: https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_linux_amd64.deb
+  - deb arm64: https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_linux_arm64.deb
+  - rpm amd64: https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_linux_amd64.rpm
+  - rpm arm64: https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_linux_arm64.rpm
 - [OpenTofu](https://github.com/opentofu/opentofu) : 1.12.6
   - deb amd64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_amd64.deb
   - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_arm64.deb
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 13 recipes upgraded and cargo-pgrx-0193 added, producing 56 RPM/DEB artifacts for 14 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 14 recipes upgraded and cargo-pgrx-0193 added, producing 60 RPM/DEB artifacts for 15 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -191,6 +191,7 @@ Local build batch: 13 recipes upgraded and cargo-pgrx-0193 added, producing 56 R
 | headscale | 0.29.3 | 0.29.4 | Verified and built dual-architecture RPM/DEB |
 | hugo | 0.166.0 | 0.167.0 | Verified and built dual-architecture RPM/DEB |
 | mtail | 3.4.12 | 3.4.14 | Verified and built dual-architecture RPM/DEB |
+| openbao | 2.6.2 | 2.7.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 
 **2026-09-19**
 
