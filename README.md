@@ -87,7 +87,7 @@ exceptions are called out inline.
 - [sabiql](https://github.com/riii111/sabiql) 3.0.1
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/kenn-io/agentsview) 0.43.0
+- [agentsview](https://github.com/kenn-io/agentsview) 0.44.0
 - [claude](https://github.com/anthropics/claude-code) 2.1.278
 - [codex](https://github.com/openai/codex) 0.155.1
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.22
@@ -169,6 +169,14 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-09-29**
+
+Local build batch: 1 recipe upgraded, producing 4 RPM/DEB artifacts for 1 package. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+
+| Name | Old | New | Comment |
+|---|---|---|---|
+| agentsview | 0.43.0 | 0.44.0 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
