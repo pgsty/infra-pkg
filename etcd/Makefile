@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME="etcd-io/etcd"
 PACKAGE="etcd"
-VERSION=3.7.1
+VERSION=3.7.2
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME="$(PACKAGE)-v$(VERSION)-linux-$(ARCH)"
 FILENAME="$(DIRNAME).tar.gz"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=e8cd3fa8064c98137c5dbd78b76f969417ace84efb83c481041d7a52ffdd8fb9
-SHA256_arm64=d7e25e08f694b6ed7792fc7b7a891fe2c3f3d3dccfe2f3bfdb1547b0eb75b6da
+SHA256_amd64=3a3679bc51a4ee9d30bccea1da7cd4fe62c6fc1d2ca1255068d2c53bf3026135
+SHA256_arm64=5e3ff99d428fabfcefdc95348f6560d1efe835f7b2d1ab3334fe0831076966b7
 SHA256=$(SHA256_$(ARCH))
 
 

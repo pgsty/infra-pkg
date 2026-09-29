@@ -49,7 +49,7 @@ exceptions are called out inline.
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.11.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.6
-- [etcd](https://github.com/etcd-io/etcd) : 3.7.1
+- [etcd](https://github.com/etcd-io/etcd) : 3.7.2
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.0 (upstream v1.37.0+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.0%2Bk3s1) : 1.37.0 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 9 recipes upgraded and cargo-pgrx-0193 added, producing 40 RPM/DEB artifacts for 10 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 10 recipes upgraded and cargo-pgrx-0193 added, producing 44 RPM/DEB artifacts for 11 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -187,6 +187,7 @@ Local build batch: 9 recipes upgraded and cargo-pgrx-0193 added, producing 40 RP
 | crush | 0.95.0 | 0.96.1 | Verified and built dual-architecture RPM/DEB |
 | dblab | 0.50.0 | 0.51.0 | Verified and built dual-architecture RPM/DEB |
 | duckdb | 1.5.5 | 1.5.6 | Verified and built dual-architecture RPM/DEB |
+| etcd | 3.7.1 | 3.7.2 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
