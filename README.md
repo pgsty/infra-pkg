@@ -96,7 +96,7 @@ exceptions are called out inline.
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
-- [postgrest](https://github.com/PostgREST/postgrest) 16.3 (requires PostgreSQL 14+)
+- [postgrest](https://github.com/PostgREST/postgrest) 16.4 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.18.33
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 16 recipes upgraded and cargo-pgrx-0193 added, producing 68 RPM/DEB artifacts for 17 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 17 recipes upgraded and cargo-pgrx-0193 added, producing 72 RPM/DEB artifacts for 18 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -194,6 +194,7 @@ Local build batch: 16 recipes upgraded and cargo-pgrx-0193 added, producing 68 R
 | openbao | 2.6.2 | 2.7.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | opencode | 1.18.31 | 1.18.33 | Verified and built dual-architecture RPM/DEB |
 | pgschema | 1.13.0 | 1.13.1 | Verified and built dual-architecture RPM/DEB |
+| postgrest | 16.3 | 16.4 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
