@@ -109,7 +109,7 @@ exceptions are called out inline.
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.3
 - [pev2](https://github.com/dalibo/pev2/releases) 1.24.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.8.1
-- [sow](https://github.com/pgsty/sow) 0.4.0
+- [sow](https://github.com/pgsty/sow) 0.5.0
 - [golang](https://go.dev/dl/) 1.27.1
   - x86_64: https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.27.1.linux-arm64.tar.gz
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 21 recipes upgraded and cargo-pgrx-0193 added, producing 88 RPM/DEB artifacts for 22 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 22 recipes upgraded and cargo-pgrx-0193 added, producing 92 RPM/DEB artifacts for 23 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -199,6 +199,7 @@ Local build batch: 21 recipes upgraded and cargo-pgrx-0193 added, producing 88 R
 | rainfrog | 0.4.5 | 0.4.6 | Verified and built dual-architecture RPM/DEB |
 | redis-exporter | 1.91.1 | 1.92.1 | Verified and built dual-architecture RPM/DEB |
 | seaweedfs | 4.47 | 4.48 | Verified and built dual-architecture RPM/DEB |
+| sow | 0.4.0 | 0.5.0 | Existing 0.3/0.4 Managed workspaces require explicit migration |
 
 **2026-09-19**
 
