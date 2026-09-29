@@ -77,7 +77,7 @@ exceptions are called out inline.
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.4
 - [tailcat](https://github.com/tailscale/tailcat) 0.6.0
-- [hugo](https://github.com/gohugoio/hugo) 0.166.0
+- [hugo](https://github.com/gohugoio/hugo) 0.167.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.47
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.0 (stable release; `1PGSTY`)
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 11 recipes upgraded and cargo-pgrx-0193 added, producing 48 RPM/DEB artifacts for 12 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 12 recipes upgraded and cargo-pgrx-0193 added, producing 52 RPM/DEB artifacts for 13 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -189,6 +189,7 @@ Local build batch: 11 recipes upgraded and cargo-pgrx-0193 added, producing 48 R
 | duckdb | 1.5.5 | 1.5.6 | Verified and built dual-architecture RPM/DEB |
 | etcd | 3.7.1 | 3.7.2 | Verified and built dual-architecture RPM/DEB |
 | headscale | 0.29.3 | 0.29.4 | Verified and built dual-architecture RPM/DEB |
+| hugo | 0.166.0 | 0.167.0 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
