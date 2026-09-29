@@ -57,7 +57,7 @@ exceptions are called out inline.
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.50.0
+- [dblab](https://github.com/danvergara/dblab) 0.51.0
 - [pgstream](https://github.com/xataio/pgstream) 1.5.0
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.5
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 7 recipes upgraded and cargo-pgrx-0193 added, producing 32 RPM/DEB artifacts for 8 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 8 recipes upgraded and cargo-pgrx-0193 added, producing 36 RPM/DEB artifacts for 9 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -185,6 +185,7 @@ Local build batch: 7 recipes upgraded and cargo-pgrx-0193 added, producing 32 RP
 | code-server | 4.137.0 | 4.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | codex | 0.155.1 | 0.159.0 | Verified and built dual-architecture RPM/DEB |
 | crush | 0.95.0 | 0.96.1 | Verified and built dual-architecture RPM/DEB |
+| dblab | 0.50.0 | 0.51.0 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
