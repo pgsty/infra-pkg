@@ -45,7 +45,7 @@ exceptions are called out inline.
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.152.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.153.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.11.1
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.6
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 25 recipes upgraded and cargo-pgrx-0193 added, producing 104 RPM/DEB artifacts for 26 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 26 recipes upgraded and cargo-pgrx-0193 added, producing 116 RPM/DEB artifacts for 29 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -203,6 +203,7 @@ Local build batch: 25 recipes upgraded and cargo-pgrx-0193 added, producing 104 
 | stalwart | 0.16.22 | 0.16.24 | Verified and built dual-architecture RPM/DEB |
 | tailcat | 0.6.0 | 0.7.0 | Verified and built dual-architecture RPM/DEB |
 | uv | 0.12.17 | 0.12.20 | Verified and built dual-architecture RPM/DEB |
+| victoria-metrics | 1.152.0 | 1.153.0 | Single-node, cluster, and vmutils packages updated together |
 
 **2026-09-19**
 
