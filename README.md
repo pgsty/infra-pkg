@@ -88,7 +88,7 @@ exceptions are called out inline.
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.44.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.278
+- [claude](https://github.com/anthropics/claude-code) 2.1.284
 - [codex](https://github.com/openai/codex) 0.155.1
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.22
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
@@ -173,12 +173,13 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 1 recipe upgraded and cargo-pgrx-0193 added, producing 8 RPM/DEB artifacts for 2 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 2 recipes upgraded and cargo-pgrx-0193 added, producing 12 RPM/DEB artifacts for 3 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
 | agentsview | 0.43.0 | 0.44.0 | Verified and built dual-architecture RPM/DEB |
 | cargo-pgrx-0193 | - | 0.19.3 | New exact 0.19.3 slot; 0191/0192 retained; native EL8 source builds for both architectures |
+| claude | 2.1.278 | 2.1.284 | Downloaded via port 8888; official manifest SHA256 and both Linux binary versions verified |
 
 **2026-09-19**
 
