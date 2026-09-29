@@ -89,7 +89,7 @@ exceptions are called out inline.
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.44.0
 - [claude](https://github.com/anthropics/claude-code) 2.1.284
-- [codex](https://github.com/openai/codex) 0.155.1
+- [codex](https://github.com/openai/codex) 0.159.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.22
 - [maddy](https://github.com/foxcpp/maddy) 0.9.5
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.12.0 (dual-architecture CGO source build; checksum-pinned local recipe)
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 5 recipes upgraded and cargo-pgrx-0193 added, producing 24 RPM/DEB artifacts for 6 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 6 recipes upgraded and cargo-pgrx-0193 added, producing 28 RPM/DEB artifacts for 7 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -183,6 +183,7 @@ Local build batch: 5 recipes upgraded and cargo-pgrx-0193 added, producing 24 RP
 | cloudflared | 2026.9.1 | 2026.9.3 | Verified and built dual-architecture RPM/DEB |
 | code | 1.138.0 | 1.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | code-server | 4.137.0 | 4.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| codex | 0.155.1 | 0.159.0 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
