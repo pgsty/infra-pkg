@@ -133,11 +133,11 @@ byte, including their original release metadata.
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/04c0d99f4fb0d8afe6ce4f0c58e31e183ac3e4b1/code_1.139.1-1790309508_arm64.deb
   - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/04c0d99f4fb0d8afe6ce4f0c58e31e183ac3e4b1/code-1.139.1-1790309585.el8.x86_64.rpm
   - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/04c0d99f4fb0d8afe6ce4f0c58e31e183ac3e4b1/code-1.139.1-1790309561.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.137.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server_4.137.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server_4.137.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server-4.137.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.137.0/code-server-4.137.0-arm64.rpm
+- [code-server](https://github.com/coder/code-server): 4.139.1
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.139.1/code-server_4.139.1_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.139.1/code-server_4.139.1_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.139.1/code-server-4.139.1-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.139.1/code-server-4.139.1-arm64.rpm
 - [grafana](https://github.com/grafana/grafana/) : 13.2.2
   - deb amd64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_amd64.deb
   - deb arm64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_arm64.deb
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 4 recipes upgraded and cargo-pgrx-0193 added, producing 20 RPM/DEB artifacts for 5 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 5 recipes upgraded and cargo-pgrx-0193 added, producing 24 RPM/DEB artifacts for 6 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -182,6 +182,7 @@ Local build batch: 4 recipes upgraded and cargo-pgrx-0193 added, producing 20 RP
 | claude | 2.1.278 | 2.1.284 | Downloaded via port 8888; official manifest SHA256 and both Linux binary versions verified |
 | cloudflared | 2026.9.1 | 2026.9.3 | Verified and built dual-architecture RPM/DEB |
 | code | 1.138.0 | 1.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| code-server | 4.137.0 | 4.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 
 **2026-09-19**
 
