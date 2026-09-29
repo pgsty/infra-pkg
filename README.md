@@ -60,7 +60,7 @@ exceptions are called out inline.
 - [dblab](https://github.com/danvergara/dblab) 0.51.0
 - [pgstream](https://github.com/xataio/pgstream) 1.5.0
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
-- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.5
+- [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.6
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.1.0
 - [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.4.2 (binary-only package; service lifecycle managed by Pigsty)
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 18 recipes upgraded and cargo-pgrx-0193 added, producing 76 RPM/DEB artifacts for 19 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 19 recipes upgraded and cargo-pgrx-0193 added, producing 80 RPM/DEB artifacts for 20 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -196,6 +196,7 @@ Local build batch: 18 recipes upgraded and cargo-pgrx-0193 added, producing 76 R
 | pgschema | 1.13.0 | 1.13.1 | Verified and built dual-architecture RPM/DEB |
 | postgrest | 16.3 | 16.4 | Verified and built dual-architecture RPM/DEB |
 | prometheus | 3.14.0 | 3.15.0 | Verified and built dual-architecture RPM/DEB |
+| rainfrog | 0.4.5 | 0.4.6 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
