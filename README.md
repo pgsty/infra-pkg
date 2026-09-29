@@ -53,7 +53,7 @@ exceptions are called out inline.
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.0 (upstream v1.37.0+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.0%2Bk3s1) : 1.37.0 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.12
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.14
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 12 recipes upgraded and cargo-pgrx-0193 added, producing 52 RPM/DEB artifacts for 13 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 13 recipes upgraded and cargo-pgrx-0193 added, producing 56 RPM/DEB artifacts for 14 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -190,6 +190,7 @@ Local build batch: 12 recipes upgraded and cargo-pgrx-0193 added, producing 52 R
 | etcd | 3.7.1 | 3.7.2 | Verified and built dual-architecture RPM/DEB |
 | headscale | 0.29.3 | 0.29.4 | Verified and built dual-architecture RPM/DEB |
 | hugo | 0.166.0 | 0.167.0 | Verified and built dual-architecture RPM/DEB |
+| mtail | 3.4.12 | 3.4.14 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
