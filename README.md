@@ -102,7 +102,7 @@ exceptions are called out inline.
 - [opencode](https://github.com/anomalyco/opencode) 1.18.31
 - [uv](https://github.com/astral-sh/uv) 0.12.17
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.0
-- [crush](https://github.com/charmbracelet/crush) 0.95.0
+- [crush](https://github.com/charmbracelet/crush) 0.96.1
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.1
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 6 recipes upgraded and cargo-pgrx-0193 added, producing 28 RPM/DEB artifacts for 7 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 7 recipes upgraded and cargo-pgrx-0193 added, producing 32 RPM/DEB artifacts for 8 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -184,6 +184,7 @@ Local build batch: 6 recipes upgraded and cargo-pgrx-0193 added, producing 28 RP
 | code | 1.138.0 | 1.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | code-server | 4.137.0 | 4.139.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
 | codex | 0.155.1 | 0.159.0 | Verified and built dual-architecture RPM/DEB |
+| crush | 0.95.0 | 0.96.1 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
