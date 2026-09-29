@@ -75,7 +75,7 @@ exceptions are called out inline.
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.2 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
 - [caddy](https://github.com/caddyserver/caddy) 2.11.4 (creates `/usr/share/caddy` as the default document root)
-- [headscale](https://github.com/juanfont/headscale) 0.29.3
+- [headscale](https://github.com/juanfont/headscale) 0.29.4
 - [tailcat](https://github.com/tailscale/tailcat) 0.6.0
 - [hugo](https://github.com/gohugoio/hugo) 0.166.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.47
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 10 recipes upgraded and cargo-pgrx-0193 added, producing 44 RPM/DEB artifacts for 11 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 11 recipes upgraded and cargo-pgrx-0193 added, producing 48 RPM/DEB artifacts for 12 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -188,6 +188,7 @@ Local build batch: 10 recipes upgraded and cargo-pgrx-0193 added, producing 44 R
 | dblab | 0.50.0 | 0.51.0 | Verified and built dual-architecture RPM/DEB |
 | duckdb | 1.5.5 | 1.5.6 | Verified and built dual-architecture RPM/DEB |
 | etcd | 3.7.1 | 3.7.2 | Verified and built dual-architecture RPM/DEB |
+| headscale | 0.29.3 | 0.29.4 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
