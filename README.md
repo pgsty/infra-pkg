@@ -29,7 +29,7 @@ All local recipes in this section are rebuilt with nFPM and use the package
 release `1PGSTY` for both RPM and DEB artifacts. Explicit external-build
 exceptions are called out inline.
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.14.0 (includes version-pinned upstream console templates and libraries)
+- [prometheus](https://github.com/prometheus/prometheus) : 3.15.0 (includes version-pinned upstream console templates and libraries)
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.34.1
 - [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
@@ -173,7 +173,7 @@ byte, including their original release metadata.
 
 **2026-09-29**
 
-Local build batch: 17 recipes upgraded and cargo-pgrx-0193 added, producing 72 RPM/DEB artifacts for 18 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
+Local build batch: 18 recipes upgraded and cargo-pgrx-0193 added, producing 76 RPM/DEB artifacts for 19 packages. Downloads used the port 8888 Xray proxy. MCP Toolbox is handled separately. This entry does not imply publication to the live repository.
 
 | Name | Old | New | Comment |
 |---|---|---|---|
@@ -195,6 +195,7 @@ Local build batch: 17 recipes upgraded and cargo-pgrx-0193 added, producing 72 R
 | opencode | 1.18.31 | 1.18.33 | Verified and built dual-architecture RPM/DEB |
 | pgschema | 1.13.0 | 1.13.1 | Verified and built dual-architecture RPM/DEB |
 | postgrest | 16.3 | 16.4 | Verified and built dual-architecture RPM/DEB |
+| prometheus | 3.14.0 | 3.15.0 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-19**
 
