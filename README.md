@@ -15,7 +15,7 @@ Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/
 
 - Package recipe directories and package names use lowercase hyphen-separated names. `victoria-logs` and `victoria-metrics` intentionally remain grouped recipes because each upstream release supplies several version-locked artifacts.
 - Locally rebuilt packages use vendor `PGSTY`, maintainer `Ruohang Feng <rh@vonng.com>`, SPDX license expressions, and release `1PGSTY`.
-- Vendor-direct recipes preserve upstream DEB/RPM bytes and release metadata; all four architecture/format inputs are URL- and SHA256-pinned and default to the local proxy on port `8118`.
+- Vendor-direct recipes preserve upstream DEB/RPM bytes and release metadata; all four architecture/format inputs are URL- and SHA256-pinned and use the local Xray proxy on port `8888` for overseas downloads. Set `PROXY=` to download directly when a proxy is unnecessary; cached inputs require no network.
 - Package payloads do not write to `/usr/local`; environment files use `/etc/default/<name>`, vendor units use `/usr/lib/systemd/system`, and LICENSE/NOTICE files use `/usr/share/doc/<package>/`.
 - Service units stay portable by avoiding nonessential, compatibility-sensitive systemd directives. There is no repository-wide minimum systemd version.
 
@@ -40,20 +40,20 @@ exceptions are called out inline.
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.20.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.92.1
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.93.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.10.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.153.0
-- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.52.0
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.11.1
+- [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.53.0
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.12.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.6
 - [etcd](https://github.com/etcd-io/etcd) : 3.7.2
-- [k3s](https://github.com/k3s-io/k3s) : 1.37.0 (upstream v1.37.0+k3s1)
-- [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.0%2Bk3s1) : 1.37.0 (amd64/arm64 system images)
+- [k3s](https://github.com/k3s-io/k3s) : 1.37.1 (upstream v1.37.1+k3s1)
+- [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.1%2Bk3s1) : 1.37.1 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.14
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.15
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
@@ -62,7 +62,7 @@ exceptions are called out inline.
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.6
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.1.0
-- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.4.2 (binary-only package; service lifecycle managed by Pigsty)
+- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.5.0 (binary-only package; service lifecycle managed by Pigsty)
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
 - [loki](https://github.com/grafana/loki) : 3.7.8
@@ -74,13 +74,13 @@ exceptions are called out inline.
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.0.0
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.2 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
-- [caddy](https://github.com/caddyserver/caddy) 2.11.4 (creates `/usr/share/caddy` as the default document root)
+- [caddy](https://github.com/caddyserver/caddy) 2.11.7 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.4
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.167.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.48
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.0 (stable release; `1PGSTY`)
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.1 (stable release; `1PGSTY`)
 - [xray](https://github.com/XTLS/Xray-core) 26.3.27 (stable release)
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
@@ -88,21 +88,21 @@ exceptions are called out inline.
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.44.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.284
-- [codex](https://github.com/openai/codex) 0.159.0
+- [claude](https://github.com/anthropics/claude-code) 2.1.289
+- [codex](https://github.com/openai/codex) 0.160.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.24
-- [maddy](https://github.com/foxcpp/maddy) 0.9.5
-- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.12.0 (dual-architecture CGO source build; checksum-pinned local recipe)
+- [maddy](https://github.com/foxcpp/maddy) 0.9.6
+- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.13.1 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
 - [postgrest](https://github.com/PostgREST/postgrest) 16.4 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.18.33
-- [uv](https://github.com/astral-sh/uv) 0.12.20
+- [opencode](https://github.com/anomalyco/opencode) 1.18.34
+- [uv](https://github.com/astral-sh/uv) 0.12.23
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.1
-- [crush](https://github.com/charmbracelet/crush) 0.96.1
+- [crush](https://github.com/charmbracelet/crush) 0.97.1
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.1
@@ -118,7 +118,7 @@ exceptions are called out inline.
   - arm64: https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-arm64.tar.xz
 
 
-- [rust-toolchain](https://www.rust-lang.org/) 1.98.1 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
+- [rust-toolchain](https://www.rust-lang.org/) 1.99.0 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
 - [cargo-pgrx-0191](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.1) 0.19.1 (retained exact version slot)
 - [cargo-pgrx-0192](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.2) 0.19.2 (new exact version slot; native EL8 builds)
 - [cargo-pgrx-0193](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.3) 0.19.3 (new exact version slot; 0191/0192 retained; native EL8 builds)
@@ -128,32 +128,32 @@ exceptions are called out inline.
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [code](https://code.visualstudio.com/) 1.139.1
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/04c0d99f4fb0d8afe6ce4f0c58e31e183ac3e4b1/code_1.139.1-1790309529_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/04c0d99f4fb0d8afe6ce4f0c58e31e183ac3e4b1/code_1.139.1-1790309508_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/04c0d99f4fb0d8afe6ce4f0c58e31e183ac3e4b1/code-1.139.1-1790309585.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/04c0d99f4fb0d8afe6ce4f0c58e31e183ac3e4b1/code-1.139.1-1790309561.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.139.1
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.139.1/code-server_4.139.1_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.139.1/code-server_4.139.1_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.139.1/code-server-4.139.1-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.139.1/code-server-4.139.1-arm64.rpm
-- [grafana](https://github.com/grafana/grafana/) : 13.2.2
-  - deb amd64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_amd64.deb
-  - deb arm64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_arm64.deb
-  - rpm amd64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_amd64.rpm
-  - rpm arm64: https://dl.grafana.com/grafana/release/13.2.2/grafana_13.2.2_34846740809_linux_arm64.rpm
+- [code](https://code.visualstudio.com/) 1.140.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/code_1.140.0-1790759618_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/code_1.140.0-1790759479_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/code-1.140.0-1790759678.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/code-1.140.0-1790759531.el8.aarch64.rpm
+- [code-server](https://github.com/coder/code-server): 4.140.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.140.0/code-server_4.140.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.140.0/code-server_4.140.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.140.0/code-server-4.140.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.140.0/code-server-4.140.0-arm64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 13.2.3
+  - deb amd64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_amd64.deb
+  - deb arm64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_arm64.deb
+  - rpm amd64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_amd64.rpm
+  - rpm arm64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
-- [OpenBao](https://github.com/openbao/openbao) : 2.7.0
-  - deb amd64: https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_linux_amd64.deb
-  - deb arm64: https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_linux_arm64.deb
-  - rpm amd64: https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_linux_amd64.rpm
-  - rpm arm64: https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_linux_arm64.rpm
-- [OpenTofu](https://github.com/opentofu/opentofu) : 1.12.6
-  - deb amd64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_amd64.deb
-  - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_arm64.deb
-  - rpm amd64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_amd64.rpm
-  - rpm arm64: https://github.com/opentofu/opentofu/releases/download/v1.12.6/tofu_1.12.6_arm64.rpm
+- [OpenBao](https://github.com/openbao/openbao) : 2.7.1
+  - deb amd64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_amd64.deb
+  - deb arm64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_arm64.deb
+  - rpm amd64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_amd64.rpm
+  - rpm arm64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_arm64.rpm
+- [OpenTofu](https://github.com/opentofu/opentofu) : 1.13.1
+  - deb amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.1/tofu_1.13.1_amd64.deb
+  - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.1/tofu_1.13.1_arm64.deb
+  - rpm amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.1/tofu_1.13.1_amd64.rpm
+  - rpm arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.1/tofu_1.13.1_arm64.rpm
 - [silo](https://github.com/pgsty/silo): 20260916000000.0.0
   - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-09-16T00-00-00Z/silo_20260916000000.0.0-1PGSTY_amd64.deb
   - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-09-16T00-00-00Z/silo_20260916000000.0.0-1PGSTY_arm64.deb
@@ -170,6 +170,35 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-10-05**
+
+Local build batch: 22 recipes upgraded, producing 96 RPM/DEB artifacts for 24 packages. All downloads used the port 8888 Xray proxy; MCP Toolbox was built from source for both architectures with CGO enabled. All 96 artifacts were imported into the local `repo/apt/infra` and `repo/yum/infra` repositories, with Pigsty RPM/metadata signatures and dual-architecture APT/DNF client verification. Vendor byte preservation below refers to the cached/build artifacts; repository RPM copies are signed separately. Online upload has not been performed.
+
+| Name | Old | New | Comment |
+|---|---|---|---|
+| caddy | 2.11.4 | 2.11.7 | Verified and built dual-architecture RPM/DEB |
+| claude | 2.1.284 | 2.1.289 | Official manifest SHA256 and both Linux binary versions verified |
+| code | 1.139.1 | 1.140.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| code-server | 4.139.1 | 4.140.0 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| codex | 0.159.0 | 0.160.0 | Verified and built dual-architecture RPM/DEB |
+| crush | 0.96.1 | 0.97.1 | Verified and built dual-architecture RPM/DEB |
+| grafana | 13.2.2 | 13.2.3 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| k3s | 1.37.0 | 1.37.1 | Upstream v1.37.1+k3s1; stable channel remains 1.36.5+k3s1 |
+| k3s-images | 1.37.0 | 1.37.1 | Dual-arch air-gap images and exact K3s dependency updated together |
+| maddy | 0.9.5 | 0.9.6 | Verified and built dual-architecture RPM/DEB |
+| mcp-toolbox | 1.12.0 | 1.13.1 | Dual-arch source build with Go 1.27.1, CGO and Zig 0.15.2; glibc 2.28 target; release 2PGSTY preserves the existing repository build |
+| mtail | 3.4.14 | 3.4.15 | Verified and built dual-architecture RPM/DEB |
+| openbao | 2.7.0 | 2.7.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| opencode | 1.18.33 | 1.18.34 | Verified and built dual-architecture RPM/DEB |
+| opentofu | 1.12.6 | 1.13.1 | Official native dual-arch DEB/RPM preserved byte-for-byte |
+| pg-hardstorage | 1.4.2 | 1.5.0 | Verified and built dual-architecture RPM/DEB |
+| redis-exporter | 1.92.1 | 1.93.0 | Verified and built dual-architecture RPM/DEB |
+| rust-toolchain | 1.98.1 | 1.99.0 | Upstream signatures and dual-architecture ELF ABI checks passed |
+| rustfs | 1.0.0 | 1.0.1 | Verified and built dual-architecture RPM/DEB |
+| uv | 0.12.20 | 0.12.23 | Verified and built dual-architecture RPM/DEB |
+| victoria-logs | 1.52.0 | 1.53.0 | victoria-logs, vlogscli and vlagent updated together |
+| victoria-traces | 0.11.1 | 0.12.0 | Verified and built dual-architecture RPM/DEB |
 
 **2026-09-29**
 
