@@ -8,7 +8,7 @@ DEB_URL = $(DEB_URL_$(ARCH))
 RPM_URL = $(RPM_URL_$(ARCH))
 SHA256_DEB = $(SHA256_DEB_$(ARCH))
 SHA256_RPM = $(SHA256_RPM_$(ARCH))
-CURL = curl --fail --show-error --location --retry 3 --proxy $(PROXY)
+CURL = curl --fail --show-error --location --retry 3 --proxy "$(PROXY)"
 
 download:
 	@if [ -f ../tarball/$(DEB_FILE) ]; then \

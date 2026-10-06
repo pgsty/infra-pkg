@@ -28,7 +28,8 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHS = ("amd64", "arm64")
-PACKAGE_RELEASE = "1PGSTY"
+# Rebuilds of an already published upstream version need a higher release.
+PACKAGE_RELEASE_RE = re.compile(r"^[1-9][0-9]*PGSTY$")
 PACKAGE_VENDOR = "PGSTY"
 PACKAGE_MAINTAINER = "Ruohang Feng <rh@vonng.com>"
 DEBIAN_PRIORITY = "optional"
@@ -200,9 +201,9 @@ def lint_manifest(path: Path, data: Dict[str, Any], errors: List[str],
             f"{rel}: prerelease must use alphaN, betaN, or rcN syntax (found {prerelease!r})"
         )
     release_text = "" if release is None else str(release).strip()
-    if release_text != PACKAGE_RELEASE:
+    if not PACKAGE_RELEASE_RE.fullmatch(release_text):
         errors.append(
-            f"{rel}: release must be {PACKAGE_RELEASE} (found {release_text or 'missing'})"
+            f"{rel}: release must be a positive integer followed by PGSTY (found {release_text or 'missing'})"
         )
 
     arch = str(data.get("arch", ""))
@@ -572,8 +573,8 @@ def lint_vendor_direct_makefile(
         errors.append(f"{rel}: vendor-direct recipe must include ../mk/vendor-direct.mk")
     if not re.search(r"^one:\s+download\s+verify\s+build\s+clean\s*$", text, re.M):
         errors.append(f"{rel}: vendor-direct one target must download, verify, build, then clean")
-    if make_variable(text, "PROXY") != "http://127.0.0.1:8118":
-        errors.append(f"{rel}: vendor-direct downloads must default to proxy port 8118")
+    if make_variable(text, "PROXY") != "http://127.0.0.1:8888":
+        errors.append(f"{rel}: vendor-direct downloads must default to Xray proxy port 8888")
     if not make_variable(text, "VERSION"):
         errors.append(f"{rel}: vendor-direct recipe must declare VERSION")
 
@@ -601,7 +602,7 @@ def lint_vendor_direct_shared(errors: List[str]) -> None:
     text = path.read_text(encoding="utf-8")
     required = {
         "curl failure handling": r"curl\s+--fail\b",
-        "proxy use": r"--proxy\s+\$\(PROXY\)",
+        "quoted optional proxy": r'--proxy\s+"\$\(PROXY\)"',
         "checksum verification": r"(?:sha256sum|shasum\s+-a\s+256).*?-c",
         "DEB output": r"\.\./dist/deb/",
         "RPM output": r"\.\./dist/rpm/",
