@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v0.9.5"
+version: "v0.9.6"
 release: "1PGSTY"
 version_schema: semver
 description: Maddy mail server static musl binaries
