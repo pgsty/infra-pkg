@@ -12,7 +12,7 @@ VENDOR_DIRECT=1
 PACKAGE=vector
 VERSION=0.58.0
 RELEASE=1
-PROXY ?= http://127.0.0.1:8118
+PROXY ?= http://127.0.0.1:8888
 
 DEB_FILE_amd64=vector_$(VERSION)-$(RELEASE)_amd64.deb
 DEB_FILE_arm64=vector_$(VERSION)-$(RELEASE)_arm64.deb
