@@ -10,9 +10,9 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=grafana
-VERSION=13.2.2
-BUILD=34846740809
-PROXY ?= http://127.0.0.1:8118
+VERSION=13.2.3
+BUILD=36482603486
+PROXY ?= http://127.0.0.1:8888
 
 DEB_FILE_amd64=grafana_$(VERSION)_$(BUILD)_linux_amd64.deb
 DEB_FILE_arm64=grafana_$(VERSION)_$(BUILD)_linux_arm64.deb
@@ -22,10 +22,10 @@ DEB_URL_amd64=https://dl.grafana.com/grafana/release/$(VERSION)/$(DEB_FILE_amd64
 DEB_URL_arm64=https://dl.grafana.com/grafana/release/$(VERSION)/$(DEB_FILE_arm64)
 RPM_URL_amd64=https://dl.grafana.com/grafana/release/$(VERSION)/$(RPM_FILE_amd64)
 RPM_URL_arm64=https://dl.grafana.com/grafana/release/$(VERSION)/$(RPM_FILE_arm64)
-SHA256_DEB_amd64=ffbce0e8c097e778c5f7881a248ce82aa05c2de03f7a95881c70add472ba1e57
-SHA256_DEB_arm64=0a8bb67d13e522747c00456ae1747f6616edac99d4a2b00c3dde073c3e8f9fe3
-SHA256_RPM_amd64=75f5c9bf2abadc9969d11475f8a51f18d499ee289780bd94cb87ea20e07ab05a
-SHA256_RPM_arm64=ca6cf6a38cfd6ddaf654f374603bb7adb6ec87e0e7188651846e13b673635a8f
+SHA256_DEB_amd64=55ec511999f9c56f3c26b633d0dc31b750c77a682a5ef379edf0d3fe634a7a2f
+SHA256_DEB_arm64=c7d1247182e6da5ffed2ffe6c07382d354ec65be2161724aa37c147f430167b7
+SHA256_RPM_amd64=4fc2adc0912421b630696423d5c05ee2df560347fdb5e906a927fffc3201d066
+SHA256_RPM_arm64=bc4d1750b8ded97caa8ca688a65644b68ba468292d9953aebdcb816aa2f0a817
 
 default: all
 all:
