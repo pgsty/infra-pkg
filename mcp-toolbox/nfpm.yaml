@@ -3,8 +3,8 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "1.12.0"
-release: "1PGSTY"
+version: "1.13.1"
+release: "2PGSTY"
 version_schema: semver
 description: MCP server for databases and data sources
 maintainer: Ruohang Feng <rh@vonng.com>
