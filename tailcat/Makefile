@@ -23,8 +23,8 @@ SHA256_arm64=bbb1ab50f24f00effe1e1fd86d0501803fb80793a90785a2a16ff3428f03d8ef
 SHA256=$(SHA256_$(ARCH))
 SOURCE=source
 STAGE=stage
-PROXY ?= http://127.0.0.1:8118
-PROXY_ARG=$(if $(strip $(PROXY)),--proxy $(PROXY),)
+PROXY ?= http://127.0.0.1:8888
+PROXY_ARG=$(if $(strip $(PROXY)),--proxy "$(PROXY)",)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - $(PROXY_ARG) -fL
 
 default: all
