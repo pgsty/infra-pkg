@@ -13,11 +13,11 @@ export ARCH RARCH
 
 REPONAME=VictoriaMetrics/VictoriaTraces
 PACKAGE=victoria-traces
-VERSION=0.11.1
+VERSION=0.12.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=victoria-traces-linux-$(ARCH)-v$(VERSION).tar.gz
-SHA256_amd64=ac831f2ed12806caa29b8369bb9e0a0fcd8153029f631e4784f51f83420c7f30
-SHA256_arm64=c258b0b26276b80654635d667ca0aff0d61f546ea591b9de95f0127636e351ad
+SHA256_amd64=67be031fb00635929b2d02a6e2ce7e5ebc8b2929f8e0d79fb54ab48bff0ca966
+SHA256_arm64=cb9756793fd0f19cc3ce1adecf6e0d1d4c8c88f1d084e96da02d266bdd96c814
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
