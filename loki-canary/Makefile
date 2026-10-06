@@ -20,8 +20,8 @@ SHA256_arm64=f21dbf9629d85963bed76e1974c1ffabc87f6cf21c58c6895699f4945be32acf
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(ASSET)
-PROXY ?= http://127.0.0.1:8118
-CURL=curl --fail --show-error --location --retry 3 --proxy $(PROXY)
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --fail --show-error --location --retry 3 --proxy "$(PROXY)"
 
 default: all
 all:
@@ -34,7 +34,7 @@ link:
 	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 meta:
-	curl --fail --silent --show-error --proxy $(PROXY) "https://api.github.com/repos/$(REPONAME)/releases/tags/v$(VERSION)" | tee meta.json
+	curl --fail --silent --show-error --proxy "$(PROXY)" "https://api.github.com/repos/$(REPONAME)/releases/tags/v$(VERSION)" | tee meta.json
 
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
