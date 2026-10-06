@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v2.11.4"
+version: "v2.11.7"
 release: "1PGSTY"
 version_schema: semver
 description: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
