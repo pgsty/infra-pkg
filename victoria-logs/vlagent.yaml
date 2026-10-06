@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "v1.52.0"
+version: "v1.53.0"
 release: "1PGSTY"
 version_schema: semver
 description: A tiny agent which helps you collect logs from various sources and store them in VictoriaLogs
