@@ -13,15 +13,15 @@ export ARCH RARCH
 
 REPONAME=openai/codex
 PACKAGE=codex
-VERSION=0.159.0
+VERSION=0.160.0
 TAG=rust-v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=$(RARCH)-unknown-linux-musl
 FILENAME=$(PACKAGE)-$(TARGET).tar.gz
 BINARY=$(PACKAGE)-$(TARGET)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
-SHA256_amd64=6e587a08cb39599816c598b07e17b4bcbf9d41b5c1c0793a4b632b6741e9cbc0
-SHA256_arm64=16a4e75d80e7628fa23daa3d949442fbcff955875519d7d5788f341ee85fc16d
+SHA256_amd64=306865417d4ee7a927785852910a527f41e1e159add390ac5ae3accb67d44a13
+SHA256_arm64=883620139925f677e5a12c95ba87a1d7f421388ebb797b1c10aba42a04ede9d7
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
