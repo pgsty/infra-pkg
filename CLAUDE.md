@@ -108,7 +108,7 @@ At a minimum:
 ### Claude Package Notes
 
 For the `claude` package:
-1. Always download versioned Claude artifacts through the local proxy on port `8118`, for example `curl --proxy http://127.0.0.1:8118 ...`.
+1. For versioned artifact downloads that need an overseas proxy, use Xray on port `8888`, for example `curl --proxy http://127.0.0.1:8888 ...`. The m1/m5 port `8118` proxy is reserved for AI dispatch or model calls.
 2. Verify the downloaded binary really matches the intended Claude version before building packages.
 
 ### Sync with Build Server
