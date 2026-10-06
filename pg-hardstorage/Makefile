@@ -15,13 +15,13 @@ REPONAME=cybertec-postgresql/pg_hardstorage
 PACKAGE=pg-hardstorage
 BINARY=pg_hardstorage
 STAGING=payload
-VERSION=1.4.2
+VERSION=1.5.0
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(BINARY)_$(VERSION)_linux_$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=8f831d46308e7d143019ea13eb142b872e75aaccea03117d3b648724b428f5bd
-SHA256_arm64=47e5119b59e626254e7d9e4dd5bc1bddb3f7a96aa3af44d3208e5d9595252c02
+SHA256_amd64=509dd07333fb307b7b954d6b6b08c94d74c647f5d483d26ae88f0ec980f53569
+SHA256_arm64=b7b9b888c8bb4dd8a44da21ed7e27522e423f222155109bed32cee99cb4a14e7
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
