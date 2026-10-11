@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=astral-sh/uv
 PACKAGE=uv
-VERSION=0.12.23
+VERSION=0.13.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 DIRNAME=$(PACKAGE)-$(RARCH)-unknown-linux-musl
 FILENAME=$(DIRNAME).tar.gz
 CACHE=$(PACKAGE)-v$(VERSION)-linux-$(ARCH).tar.gz
-SHA256_amd64=1cff8783850e794470aadb73f54b749542a511fc57b0ce6468b64bd3852e0ade
-SHA256_arm64=b536543cc4d50661986b165c76ee8aa9056e4fa332edcd153ff2e98760f9359b
+SHA256_amd64=b0828fc4cdc47d65951e94b5f0a15a5364420e8dcd88723f3b21e7a2eb30bbc3
+SHA256_arm64=281ca6cf43f4e26e35474839ad4861be86de42af2682f74134460f5b2071b96d
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
