@@ -1,6 +1,6 @@
 # Grafana Plugins
 
-`plugins-13.2.2.tar.gz` is an intentionally curated one-shot archive. The
+`plugins-13.2.3.tar.gz` is an intentionally curated one-shot archive. The
 package recipe verifies the archive's pinned checksum but does not attempt to
 reconstruct it from individual upstream releases.
 
@@ -46,8 +46,8 @@ cp -rf /var/lib/grafana/plugins/volkovlabs-rss-datasource          /tmp/plugins/
 cp -rf /var/lib/grafana/plugins/volkovlabs-table-panel             /tmp/plugins/               
 cp -rf /var/lib/grafana/plugins/volkovlabs-variable-panel          /tmp/plugins/                  
 
-tar -cvf /tmp/plugins-13.2.2.tar.gz plugins
-scp meta:/tmp/plugins-13.2.2.tar.gz tarball/
+tar -cvf /tmp/plugins-13.2.3.tar.gz plugins
+scp meta:/tmp/plugins-13.2.3.tar.gz tarball/
 make grafana-plugins
 ```
 
@@ -71,3 +71,13 @@ Pinned Grafana catalog releases; each downloaded ZIP was verified against the ca
 | volkovlabs-rss-datasource | 4.4.1 | 49a4b3aed02207dec8336b1ed512c1924a597858cc9af4bda394a2d9a18ebfe7 |
 | volkovlabs-table-panel | 3.6.8 | 89322330f4ebe7c0aeff76dc3ae1f3f48ada36e1dd1162a772fcf2fa8303a1ab |
 | volkovlabs-variable-panel | 5.2.0 | 333c4a389843734aa88083c29e17f96c6fc6712cd3e916f063153cd508ff34ef |
+
+## 2026-10-10 bundle
+
+Updated `marcusolsson-json-datasource` from 1.4.2 to 1.4.3 using the official catalog ZIP and SHA256. The other 13 plugins retain the files from the checksum-pinned 13.2.2 bundle.
+
+| Plugin | Version | SHA256 of downloaded ZIP |
+|---|---|---|
+| marcusolsson-json-datasource | 1.4.3 | cc10e0bf7a1083aeb23013a089b508071c12688ca2a87d4ae2e04ee1f3f201ac |
+
+Archive SHA256: `7a29f5b909f0bd529fa61eec834803d78d733e87d8c76e90c4ba83930fb5a709`.
