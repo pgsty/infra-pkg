@@ -7,10 +7,10 @@
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=jmx-exporter
-VERSION=1.6.0
+VERSION=1.7.0
 FILENAME=jmx_prometheus_javaagent-$(VERSION).jar
 CHECKSUM_FILE=$(FILENAME).sha256
-SHA256=a95983fd96e865d2bcdf911cc500e7c82808c27ab9fd226bf96732b6c3d8c46e
+SHA256=0ad843261c567d1924a017d542e14c40f2afff523d940c25ee000742fde4b3a9
 RELEASE_PAGE=https://github.com/prometheus/jmx_exporter/releases/tag/$(VERSION)
 WEB_URL=https://github.com/prometheus/jmx_exporter/releases/download/$(VERSION)/$(FILENAME)
 CHECKSUM_URL=$(WEB_URL).sha256
