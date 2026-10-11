@@ -30,9 +30,9 @@ release `1PGSTY` for both RPM and DEB artifacts. Explicit external-build
 exceptions are called out inline.
 
 - [prometheus](https://github.com/prometheus/prometheus) : 3.15.0 (includes version-pinned upstream console templates and libraries)
-- [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.3
+- [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.4
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.34.1
-- [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.28.0
+- [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.29.0
 - [nginx-exporter](https://github.com/nginx/nginx-prometheus-exporter) : 1.5.3
 - [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
 - [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
@@ -42,7 +42,7 @@ exceptions are called out inline.
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.20.0
 - [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.93.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.10.0
-- [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.6.0 (noarch)
+- [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.7.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.153.0
@@ -57,7 +57,7 @@ exceptions are called out inline.
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.51.0
+- [dblab](https://github.com/danvergara/dblab) 0.52.1
 - [pgstream](https://github.com/xataio/pgstream) 1.5.0
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.6
@@ -71,8 +71,8 @@ exceptions are called out inline.
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen; final upstream artifact, absent from Loki 3.7 source and releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.32.0
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.26.1
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.0.0
-- [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.2 (noarch)
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.1
+- [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.3.1
 - [caddy](https://github.com/caddyserver/caddy) 2.11.7 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.4
@@ -87,32 +87,32 @@ exceptions are called out inline.
 - [sabiql](https://github.com/riii111/sabiql) 3.0.1
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.0)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/kenn-io/agentsview) 0.44.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.289
-- [codex](https://github.com/openai/codex) 0.160.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.24
+- [agentsview](https://github.com/kenn-io/agentsview) 0.45.0
+- [claude](https://github.com/anthropics/claude-code) 2.1.296
+- [codex](https://github.com/openai/codex) 0.162.1
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.25
 - [maddy](https://github.com/foxcpp/maddy) 0.9.6
-- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.13.1 (dual-architecture CGO source build; checksum-pinned local recipe)
+- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.14.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
 - [postgrest](https://github.com/PostgREST/postgrest) 16.4 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.18.34
-- [uv](https://github.com/astral-sh/uv) 0.12.23
+- [opencode](https://github.com/anomalyco/opencode) 1.18.35
+- [uv](https://github.com/astral-sh/uv) 0.13.0
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.1
-- [crush](https://github.com/charmbracelet/crush) 0.97.1
+- [crush](https://github.com/charmbracelet/crush) 0.98.1
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
-- [rclone](https://github.com/rclone/rclone) 1.75.1
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.9.3
+- [rclone](https://github.com/rclone/rclone) 1.75.2
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.0
 - [pev2](https://github.com/dalibo/pev2/releases) 1.24.0 (noarch)
-- [pig](https://github.com/pgsty/pig) 1.8.1
+- [pig](https://github.com/pgsty/pig) 1.9.0
 - [sow](https://github.com/pgsty/sow) 0.5.0
-- [golang](https://go.dev/dl/) 1.27.1
-  - x86_64: https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
-  - arm64: https://go.dev/dl/go1.27.1.linux-arm64.tar.gz
+- [golang](https://go.dev/dl/) 1.27.2
+  - x86_64: https://go.dev/dl/go1.27.2.linux-amd64.tar.gz
+  - arm64: https://go.dev/dl/go1.27.2.linux-arm64.tar.gz
 - [nodejs](https://nodejs.org/en/download/) 24.21.0
   - x86_64: https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.xz
   - arm64: https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-arm64.tar.xz
@@ -128,16 +128,16 @@ exceptions are called out inline.
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [code](https://code.visualstudio.com/) 1.140.0
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/code_1.140.0-1790759618_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/code_1.140.0-1790759479_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/code-1.140.0-1790759678.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/07f806f999227108933c2e30515b26eecc1fda74/code-1.140.0-1790759531.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.140.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.140.0/code-server_4.140.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.140.0/code-server_4.140.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.140.0/code-server-4.140.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.140.0/code-server-4.140.0-arm64.rpm
+- [code](https://code.visualstudio.com/) 1.141.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/code_1.141.0-1791276758_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/code_1.141.0-1791276699_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/code-1.141.0-1791276813.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/code-1.141.0-1791276751.el8.aarch64.rpm
+- [code-server](https://github.com/coder/code-server): 4.141.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server_4.141.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server_4.141.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server-4.141.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server-4.141.0-arm64.rpm
 - [grafana](https://github.com/grafana/grafana/) : 13.2.3
   - deb amd64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_amd64.deb
   - deb arm64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_arm64.deb
@@ -160,16 +160,42 @@ byte, including their original release metadata.
   - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-09-16T00-00-00Z/silo-20260916000000.0.0-1PGSTY.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-09-16T00-00-00Z/silo-20260916000000.0.0-1PGSTY.aarch64.rpm
   - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.58.0
-  - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.58.0/vector_0.58.0-1_amd64.deb
-  - deb arm64: https://github.com/vectordotdev/vector/releases/download/v0.58.0/vector_0.58.0-1_arm64.deb
-  - rpm amd64: https://github.com/vectordotdev/vector/releases/download/v0.58.0/vector-0.58.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/vectordotdev/vector/releases/download/v0.58.0/vector-0.58.0-1.aarch64.rpm
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.59.0
+  - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.59.0/vector_0.59.0-1_amd64.deb
+  - deb arm64: https://github.com/vectordotdev/vector/releases/download/v0.59.0/vector_0.59.0-1_arm64.deb
+  - rpm amd64: https://github.com/vectordotdev/vector/releases/download/v0.59.0/vector-0.59.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/vectordotdev/vector/releases/download/v0.59.0/vector-0.59.0-1.aarch64.rpm
   - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
 
 --------
 
 ## Changelog
+
+**2026-10-11**
+
+| Name | Old | New | Comment |
+|:---|:---|:---|:---|
+| agentsview | 0.44.0 | 0.45.0 | Both architectures; imported locally |
+| blackbox-exporter | 0.28.0 | 0.29.0 | Both architectures; imported locally |
+| claude | 2.1.289 | 2.1.296 | Both architectures; imported locally |
+| cloudflared | 2026.9.3 | 2026.10.0 | Both architectures; imported locally |
+| code | 1.140.0 | 1.141.0 | Upstream DEB/RPM; imported locally |
+| code-server | 4.140.0 | 4.141.0 | Upstream DEB/RPM; imported locally |
+| codex | 0.160.0 | 0.162.1 | Both architectures; imported locally |
+| crush | 0.97.1 | 0.98.1 | Both architectures; imported locally |
+| dblab | 0.51.0 | 0.52.1 | Both architectures; imported locally |
+| golang | 1.27.1 | 1.27.2 | Both architectures; imported locally |
+| grafana-infinity-ds | 4.0.0 | 4.1.1 | Both architectures; imported locally |
+| grafana-plugins | 13.2.2 | 13.2.3 | Noarch; JSON datasource 1.4.3; imported locally |
+| jmx-exporter | 1.6.0 | 1.7.0 | Noarch; imported locally |
+| mcp-toolbox | 1.13.1 | 1.14.0 | CGO source build; glibc 2.28; imported locally |
+| opencode | 1.18.34 | 1.18.35 | Both architectures; imported locally |
+| pig | 1.8.1 | 1.9.0 | Both architectures; imported locally |
+| pushgateway | 1.11.3 | 1.11.4 | Both architectures; imported locally |
+| rclone | 1.75.1 | 1.75.2 | Both architectures; imported locally |
+| stalwart | 0.16.24 | 0.16.25 | Both architectures; imported locally |
+| uv | 0.12.23 | 0.13.0 | Both architectures; imported locally |
+| vector | 0.58.0 | 0.59.0 | Upstream DEB/RPM; imported locally |
 
 **2026-10-05**
 
