@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=pgsty/pig
 PACKAGE=pig
-VERSION=1.8.1
+VERSION=1.9.0
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-v$(VERSION).linux-$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=9219e87433ebd239e0773ae7417fdd08e97bb511312e6747542bf46b6b1bbf2b
-SHA256_arm64=b30924880f21126ece3afc77ca75794a0ceb77964cdfd8bc20da72d9d3273078
+SHA256_amd64=a4b5ffca540bc4f924f86398bcad6cb7221ac7520b54b1d3fd32c9877d9cafd2
+SHA256_arm64=ddfa80fbb34f6738dd68e0d04cd92355711330f6896cd650df7d71b012788def
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
