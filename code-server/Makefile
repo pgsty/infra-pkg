@@ -10,21 +10,21 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=code-server
-VERSION=4.140.0
+VERSION=4.141.0
 PROXY ?= http://127.0.0.1:8888
 
-DEB_FILE_amd64=code-server_4.140.0_amd64.deb
-DEB_FILE_arm64=code-server_4.140.0_arm64.deb
-RPM_FILE_amd64=code-server-4.140.0-amd64.rpm
-RPM_FILE_arm64=code-server-4.140.0-arm64.rpm
+DEB_FILE_amd64=code-server_4.141.0_amd64.deb
+DEB_FILE_arm64=code-server_4.141.0_arm64.deb
+RPM_FILE_amd64=code-server-4.141.0-amd64.rpm
+RPM_FILE_arm64=code-server-4.141.0-arm64.rpm
 DEB_URL_amd64=https://github.com/coder/code-server/releases/download/v$(VERSION)/$(DEB_FILE_amd64)
 DEB_URL_arm64=https://github.com/coder/code-server/releases/download/v$(VERSION)/$(DEB_FILE_arm64)
 RPM_URL_amd64=https://github.com/coder/code-server/releases/download/v$(VERSION)/$(RPM_FILE_amd64)
 RPM_URL_arm64=https://github.com/coder/code-server/releases/download/v$(VERSION)/$(RPM_FILE_arm64)
-SHA256_DEB_amd64=281742720604c6654147186d54d1712f833ed7e41a734cc501ca00d4f20301aa
-SHA256_DEB_arm64=455dece4da82a6f43f455879992d11769137114dbd340611fdea2299cf8566fd
-SHA256_RPM_amd64=fad681aeef70b7a17280d79bb0f22b2f985aac8204af291608e7f762cb6c193d
-SHA256_RPM_arm64=daabc9c85f464d208c9a1a6491087b4e715ae467ba6ba2b8655399466e94c2aa
+SHA256_DEB_amd64=f384beb4f3ba207e0bca27d0dbd36dd825d5aa909d78c6d4baa8703eaf6b77ba
+SHA256_DEB_arm64=0bca33a9b01180ad88f0b8969a8e34ae1c76417df471697e7cd65c20ef5dd60d
+SHA256_RPM_amd64=d0f4c56888795abfe92f3e058f555b43fd9f3c65b4397394e09c12303b0360aa
+SHA256_RPM_arm64=b2d597808b89bdca19f730157eba3ea7279258ffbb0426f860a98f27d427f872
 
 default: all
 all:
