@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=pgplex/pgschema
 PACKAGE=pgschema
-VERSION=1.13.1
+VERSION=1.13.3
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-$(VERSION)-linux-$(ARCH)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=f726513e19d12f7667ba0b6a24e7a3a568e576708de030ef88f4ba3790e85946
-SHA256_arm64=8202d3e2cba000872627472549dbfb4618d2b256b22e7144b4ff6ecd476f36c1
+SHA256_amd64=83d5c6c08e19cdf09bbc00c44aa60ae7fd6047760e4107f17182a60915f2ae14
+SHA256_arm64=12a439ef4fb02fce845470f0dec57e4b031aee30c17103e52e94814f725d9a8f
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
