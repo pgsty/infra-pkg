@@ -13,14 +13,14 @@ export ARCH RARCH
 
 REPONAME=cloudflare/cloudflared
 PACKAGE=cloudflared
-VERSION=2026.10.0
+VERSION=2026.10.1
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 ASSET=$(PACKAGE)-linux-$(ARCH)
 FILENAME=$(PACKAGE)-$(VERSION)-linux-$(ARCH)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(ASSET)
-SHA256_amd64=d33ff2d14475178d2012c2c56beba87389ac5ded27649519f198a7d3134a99db
-SHA256_arm64=e6422b9d4f72d3194bc5a38676f13667c06666523217b842a877d72a80b5ac08
+SHA256_amd64=3bfc539f45d2620c71debb7a86be0efa737ed5ccbad9eb85c787116900e5c586
+SHA256_arm64=2c65dfabf616c40efc7545d107d7a57ad5e21377e2964b7e88af19a238074a46
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
