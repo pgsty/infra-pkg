@@ -8,12 +8,12 @@
 #==============================================================#
 REPONAME=kafka
 PACKAGE=kafka
-VERSION=4.3.1
+VERSION=4.4.0
 RELEASE_PAGE=https://downloads.apache.org/kafka/$(VERSION)/
 DIRNAME=kafka_2.13-$(VERSION)
 FILENAME=$(DIRNAME).tgz
 WEB_URL=$(RELEASE_PAGE)$(FILENAME)
-SHA512=c7d7b2318cb51aa0c61d3246a51c349210073c5c9b754947ef965a439f2f939e8600f204e134a75ac31faf3829c9370960ef7c6a9886c8a1dbf0339a21f4c54c
+SHA512=f5ceba8a265ab6bb2d68362b1f6859a95e15d60ef92ba83b43fdf065b557dc18e98d6383c15b9977320e25b3a2c8b6f11decb17b0fa6c0f163423793a0eb95cb
 CURL=curl -fSL --retry 3
 
 

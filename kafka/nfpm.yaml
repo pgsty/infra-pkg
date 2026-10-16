@@ -3,7 +3,7 @@ arch: "all"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "v4.3.1"
+version: "v4.4.0"
 release: "1PGSTY"
 version_schema: semver
 description: An open-source distributed event streaming platform
