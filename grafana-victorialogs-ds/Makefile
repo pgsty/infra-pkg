@@ -14,10 +14,10 @@ PRUNE_SUFFIX = $(if $(filter arm64,$(ARCH)),linux_amd64,linux_arm64)
 
 REPONAME1=VictoriaMetrics/victorialogs-datasource
 PACKAGE1=victoriametrics-logs-datasource
-VERSION1=0.32.0
+VERSION1=0.33.0
 FILENAME1=$(PACKAGE1)-v$(VERSION1).tar.gz
 WEB_URL1=https://github.com/$(REPONAME1)/releases/download/v$(VERSION1)/$(FILENAME1)
-SHA2561=e100b767f19cd614ac8ac3860458a3fb33f5aa7a876e924d0340010e40d1c0d4
+SHA2561=3bf63659d2256d710a668921179725052eece9690e0362091daf10cb035c55c9
 
 
 default: all
