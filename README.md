@@ -14,7 +14,7 @@ Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/
 ## Packaging invariants
 
 - Package recipe directories and package names use lowercase hyphen-separated names. `victoria-logs` and `victoria-metrics` intentionally remain grouped recipes because each upstream release supplies several version-locked artifacts.
-- Locally rebuilt packages use vendor `PGSTY`, maintainer `Ruohang Feng <rh@vonng.com>`, SPDX license expressions, and release `1PGSTY`.
+- Locally rebuilt packages use vendor `PGSTY`, maintainer `Ruohang Feng <rh@vonng.com>`, SPDX license expressions, and default release `1PGSTY`; rebuilds of the same upstream version increment the release.
 - Vendor-direct recipes preserve upstream DEB/RPM bytes and release metadata; all four architecture/format inputs are URL- and SHA256-pinned and use the local Xray proxy on port `8888` for overseas downloads. Set `PROXY=` to download directly when a proxy is unnecessary; cached inputs require no network.
 - Package payloads do not write to `/usr/local`; environment files use `/etc/default/<name>`, vendor units use `/usr/lib/systemd/system`, and LICENSE/NOTICE files use `/usr/share/doc/<package>/`.
 - Service units stay portable by avoiding nonessential, compatibility-sensitive systemd directives. There is no repository-wide minimum systemd version.
@@ -25,9 +25,9 @@ Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
 **Rebuilt packages**:
 
-All local recipes in this section are rebuilt with nFPM and use the package
-release `1PGSTY` for both RPM and DEB artifacts. Explicit external-build
-exceptions are called out inline.
+Local recipes in this section are rebuilt with nFPM. The default RPM/DEB
+release is `1PGSTY`; rebuilds of an existing upstream version use a higher
+release, called out inline. External-build exceptions are also noted inline.
 
 - [prometheus](https://github.com/prometheus/prometheus) : 3.15.0 (includes version-pinned upstream console templates and libraries)
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.4
@@ -40,12 +40,12 @@ exceptions are called out inline.
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.20.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.93.0
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.94.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.10.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.7.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.153.0
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.154.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.53.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.12.0
 - [duckdb](https://github.com/duckdb/duckdb) : 1.5.6
@@ -53,11 +53,11 @@ exceptions are called out inline.
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.1 (upstream v1.37.1+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.1%2Bk3s1) : 1.37.1 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.15
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.16
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.1
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.52.1
+- [dblab](https://github.com/danvergara/dblab) 0.53.0
 - [pgstream](https://github.com/xataio/pgstream) 1.5.0
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.6
@@ -69,15 +69,15 @@ exceptions are called out inline.
 - [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.7.8
 - [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.8
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen; final upstream artifact, absent from Loki 3.7 source and releases)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.32.0
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.33.0
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.26.1
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.1
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
-- [kafka](https://kafka.apache.org/downloads) 4.3.1
+- [kafka](https://kafka.apache.org/downloads) 4.4.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.7 (creates `/usr/share/caddy` as the default document root)
-- [headscale](https://github.com/juanfont/headscale) 0.29.4
+- [headscale](https://github.com/juanfont/headscale) 0.29.5
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
-- [hugo](https://github.com/gohugoio/hugo) 0.167.0
+- [hugo](https://github.com/gohugoio/hugo) 0.168.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.48
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.1 (stable release; `1PGSTY`)
@@ -85,12 +85,12 @@ exceptions are called out inline.
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
 - [sabiql](https://github.com/riii111/sabiql) 3.0.1
-- [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.0)
+- [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `2PGSTY`; bundles timescaledb-parallel-copy 0.13.1)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.45.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.296
-- [codex](https://github.com/openai/codex) 0.162.1
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.25
+- [claude](https://github.com/anthropics/claude-code) 2.1.301
+- [codex](https://github.com/openai/codex) 0.163.0
+- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.26
 - [maddy](https://github.com/foxcpp/maddy) 0.9.6
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.14.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
@@ -99,26 +99,26 @@ exceptions are called out inline.
 - [postgrest](https://github.com/PostgREST/postgrest) 16.4 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.18.35
-- [uv](https://github.com/astral-sh/uv) 0.13.0
-- [pgschema](https://github.com/pgplex/pgschema) 1.13.1
+- [opencode](https://github.com/anomalyco/opencode) 1.19.2
+- [uv](https://github.com/astral-sh/uv) 0.13.1
+- [pgschema](https://github.com/pgplex/pgschema) 1.13.3
 - [crush](https://github.com/charmbracelet/crush) 0.98.1
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20260916000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.2
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.0
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.1
 - [pev2](https://github.com/dalibo/pev2/releases) 1.24.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.9.0
 - [sow](https://github.com/pgsty/sow) 0.5.0
 - [golang](https://go.dev/dl/) 1.27.2
   - x86_64: https://go.dev/dl/go1.27.2.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.27.2.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.21.0
-  - x86_64: https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-arm64.tar.xz
+- [nodejs](https://nodejs.org/en/download/) 24.22.0
+  - x86_64: https://nodejs.org/dist/v24.22.0/node-v24.22.0-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v24.22.0/node-v24.22.0-linux-arm64.tar.xz
 
 
-- [rust-toolchain](https://www.rust-lang.org/) 1.99.0 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
+- [rust-toolchain](https://www.rust-lang.org/) 1.99.1 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
 - [cargo-pgrx-0191](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.1) 0.19.1 (retained exact version slot)
 - [cargo-pgrx-0192](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.2) 0.19.2 (new exact version slot; native EL8 builds)
 - [cargo-pgrx-0193](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.3) 0.19.3 (new exact version slot; 0191/0192 retained; native EL8 builds)
@@ -128,21 +128,21 @@ exceptions are called out inline.
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [code](https://code.visualstudio.com/) 1.141.0
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/code_1.141.0-1791276758_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/code_1.141.0-1791276699_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/code-1.141.0-1791276813.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/code-1.141.0-1791276751.el8.aarch64.rpm
+- [code](https://code.visualstudio.com/) 1.142.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/code_1.142.0-1792035033_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/code_1.142.0-1792034974_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/code-1.142.0-1792035085.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/code-1.142.0-1792035024.el8.aarch64.rpm
 - [code-server](https://github.com/coder/code-server): 4.141.0
   - deb amd64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server_4.141.0_amd64.deb
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server_4.141.0_arm64.deb
   - rpm amd64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server-4.141.0-amd64.rpm
   - rpm arm64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server-4.141.0-arm64.rpm
-- [grafana](https://github.com/grafana/grafana/) : 13.2.3
-  - deb amd64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_amd64.deb
-  - deb arm64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_arm64.deb
-  - rpm amd64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_amd64.rpm
-  - rpm arm64: https://dl.grafana.com/grafana/release/13.2.3/grafana_13.2.3_36482603486_linux_arm64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 13.2.4
+  - deb amd64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_amd64.deb
+  - deb arm64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_arm64.deb
+  - rpm amd64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_amd64.rpm
+  - rpm arm64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
 - [OpenBao](https://github.com/openbao/openbao) : 2.7.1
   - deb amd64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_amd64.deb
@@ -170,6 +170,31 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-10-16**
+
+| Name | Old | New | Comment |
+|:---|:---|:---|:---|
+| claude | 2.1.296 | 2.1.301 | Official checksums and actual Linux binary versions verified for both architectures; imported locally |
+| cloudflared | 2026.10.0 | 2026.10.1 | Both architectures; imported locally |
+| code | 1.141.0 | 1.142.0 | Upstream native DEB/RPM for both architectures; imported locally; repository RPM copies signed |
+| codex | 0.162.1 | 0.163.0 | Both architectures; imported locally |
+| dblab | 0.52.1 | 0.53.0 | Both architectures; imported locally |
+| grafana | 13.2.3 | 13.2.4 | Upstream native DEB/RPM for both architectures; imported locally; repository RPM copies signed |
+| grafana-victorialogs-ds | 0.32.0 | 0.33.0 | Both architectures; imported locally |
+| headscale | 0.29.4 | 0.29.5 | Both architectures; imported locally |
+| hugo | 0.167.0 | 0.168.0 | Both architectures; imported locally |
+| kafka | 4.3.1 | 4.4.0 | Noarch RPM and all DEB; upstream SHA512 verified; imported locally |
+| mtail | 3.4.15 | 3.4.16 | Both architectures; imported locally |
+| nodejs | 24.21.0 | 24.22.0 | Both architectures; imported locally |
+| opencode | 1.18.35 | 1.19.2 | Both architectures; imported locally |
+| pgschema | 1.13.1 | 1.13.3 | Both architectures; imported locally |
+| redis-exporter | 1.93.0 | 1.94.0 | Both architectures; imported locally |
+| rust-toolchain | 1.99.0 | 1.99.1 | Upstream signatures and dual-architecture ELF ABI checks passed; imported locally |
+| stalwart | 0.16.25 | 0.16.26 | Both architectures; imported locally |
+| timescaledb-tools | 0.19.0-1PGSTY | 0.19.0-2PGSTY | parallel-copy 0.13.0 to 0.13.1, built with Go 1.27.2; tune remains 0.19.0; package release incremented; imported locally |
+| uv | 0.13.0 | 0.13.1 | Both architectures; imported locally |
+| victoria-metrics | 1.153.0 | 1.154.0 | Updates victoria-metrics, victoria-metrics-cluster and vmutils together; imported locally |
 
 **2026-10-11**
 
