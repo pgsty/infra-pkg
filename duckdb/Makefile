@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=duckdb/duckdb
 PACKAGE=duckdb
-VERSION=1.5.6
+VERSION=2.0.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/v$(VERSION)
-DIRNAME=$(PACKAGE)_cli-linux-$(ARCH)
-FILENAME=$(DIRNAME).zip
-CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).zip
-SHA256_amd64=6e89deac1ebbc36eed0291caf8b567b030c7b86ac35998f71854e22b3c5d5e2f
-SHA256_arm64=c544e92c9b7c31fc53c2139802cabd8e2d1b2b3e3f933117f31611239c1402db
+DIRNAME=$(PACKAGE)-cli-linux-$(ARCH)
+FILENAME=$(DIRNAME).tar.gz
+CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.gz
+SHA256_amd64=c6507206baf7793c6013dbd82368469a45f20dc0e17a6f92f204602f652ed2bc
+SHA256_arm64=859e1875d2a9515fbb4bf8871061437a14af82320da68c753f094c4b776348fe
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 CURL=curl -fSL --retry 3
@@ -50,7 +50,7 @@ verify:
 # extract tarball content to current directory
 extract:
 	@echo $(FILENAME)
-	unzip $(FILENAME)
+	tar -xf $(FILENAME)
 
 # remove tarball, build dir, rpm & deb files
 clean:
