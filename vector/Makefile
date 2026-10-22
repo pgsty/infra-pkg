@@ -10,7 +10,7 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=vector
-VERSION=0.59.0
+VERSION=0.60.0
 RELEASE=1
 PROXY ?= http://127.0.0.1:8888
 
@@ -22,10 +22,10 @@ DEB_URL_amd64=https://github.com/vectordotdev/vector/releases/download/v$(VERSIO
 DEB_URL_arm64=https://github.com/vectordotdev/vector/releases/download/v$(VERSION)/$(DEB_FILE_arm64)
 RPM_URL_amd64=https://github.com/vectordotdev/vector/releases/download/v$(VERSION)/$(RPM_FILE_amd64)
 RPM_URL_arm64=https://github.com/vectordotdev/vector/releases/download/v$(VERSION)/$(RPM_FILE_arm64)
-SHA256_DEB_amd64=1dd9f52bda25d2364ab04d496a3b7edbc775b1a3cd02d9985eb81f3c174a245f
-SHA256_DEB_arm64=5779afdc9abf08373c09b6656c933c8e1da34926c9b646cd80e76d96d7d64133
-SHA256_RPM_amd64=133225386e4401800dcdef0ce4d600510cf4780bddc2fd7b8f34c8f66411fee4
-SHA256_RPM_arm64=436fdef32e58041b306982ccec834fd4135dc3920b2aaa2e12686386f1f23088
+SHA256_DEB_amd64=985f74a8e07ac8efabc891324435451823e77da5b98b636bd7594f402db41219
+SHA256_DEB_arm64=da915a1acb2723af0502149c780b956b2e560920c188b8453281a5fac5c0d979
+SHA256_RPM_amd64=cc04fb81dae39877ac10d447a8b14f3c5c1c928c00dd6f96e5365472ad9a1394
+SHA256_RPM_arm64=8cd45d602feb6e0bfda5b663028f0e33dc1c09dba50eb4fc32475a73f495aee3
 
 default: all
 all:
