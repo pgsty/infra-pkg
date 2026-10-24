@@ -1,0 +1,44 @@
+name: "pggo"
+arch: "${ARCH}"
+platform: "linux"
+section: "database"
+priority: "optional"
+version: "0.1.1"
+release: "1PGSTY"
+version_schema: semver
+description: PostgreSQL command-line client with JSON output for scripts and agents.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/pgrundev/pggo"
+license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: pggo/pggo
+    dst: /usr/bin/pggo
+    file_info:
+      mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/pggo/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: pggo/README.md
+    dst: /usr/share/doc/pggo/README.md
+    file_info:
+      mode: 0644
+
+  - src: README.md
+    dst: /usr/share/doc/pggo/README.PGSTY.md
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pggo/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
