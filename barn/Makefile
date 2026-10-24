@@ -1,5 +1,5 @@
 # Download upstream Barn native packages without repacking.
-# The 0.9.0 upstream prerelease is explicitly included in this batch.
+# Barn 0.x releases use the upstream prerelease channel; v0.9.1 is selected explicitly.
 ARCH  ?= amd64
 ARCHS ?= amd64 arm64
 RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
@@ -8,21 +8,21 @@ export ARCH RARCH
 VENDOR_DIRECT=1
 REPONAME=pgsty/barn
 PACKAGE=barn
-VERSION=0.9.0
+VERSION=0.9.1
 PROXY ?= http://127.0.0.1:8888
 
-DEB_FILE_amd64=barn_0.9.0_linux_amd64.deb
-DEB_FILE_arm64=barn_0.9.0_linux_arm64.deb
-RPM_FILE_amd64=barn_0.9.0_linux_amd64.rpm
-RPM_FILE_arm64=barn_0.9.0_linux_arm64.rpm
-DEB_URL_amd64=https://github.com/pgsty/barn/releases/download/v0.9.0/barn_0.9.0_linux_amd64.deb
-DEB_URL_arm64=https://github.com/pgsty/barn/releases/download/v0.9.0/barn_0.9.0_linux_arm64.deb
-RPM_URL_amd64=https://github.com/pgsty/barn/releases/download/v0.9.0/barn_0.9.0_linux_amd64.rpm
-RPM_URL_arm64=https://github.com/pgsty/barn/releases/download/v0.9.0/barn_0.9.0_linux_arm64.rpm
-SHA256_DEB_amd64=7e434efc55d918a101b97a219fab8a724a11064dca40420528827a23539a11ef
-SHA256_DEB_arm64=7edb264ce032a1da5fac861040b8320f97150cafd42beedd0758ed25e83d24fc
-SHA256_RPM_amd64=413c8cbc1df675c37d2e37ea21bc085a77c6bf094fd7b58aa629a9d0e2fa10e3
-SHA256_RPM_arm64=011940162fa94474a5e8926c9483a4b61c1f4171b99dba6a4466687e75d9b75a
+DEB_FILE_amd64=barn_0.9.1_linux_amd64.deb
+DEB_FILE_arm64=barn_0.9.1_linux_arm64.deb
+RPM_FILE_amd64=barn_0.9.1_linux_amd64.rpm
+RPM_FILE_arm64=barn_0.9.1_linux_arm64.rpm
+DEB_URL_amd64=https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.deb
+DEB_URL_arm64=https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.deb
+RPM_URL_amd64=https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.rpm
+RPM_URL_arm64=https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.rpm
+SHA256_DEB_amd64=30d4210db3fc3f92c4bbb8d677e5508c25ba365e8fcc0cbf19351f38f2918406
+SHA256_DEB_arm64=7acdf2522ad5e47fa8766bbdd590b5b964a4a3f574c6292240f981821cd97ecb
+SHA256_RPM_amd64=e78a43f9d5da30ca1db79b533f57e1d1809454bfb2991e2676b3f9d44ed56792
+SHA256_RPM_arm64=48b332d8370d00c6a0717c8d27a7d3a51d79ea4dbf9fa709294bc46eb5aa9fab
 
 default: all
 all:
