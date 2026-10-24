@@ -1,0 +1,50 @@
+name: "pgterm"
+arch: "${ARCH}"
+platform: "linux"
+section: "database"
+priority: "optional"
+version: "0.4.0"
+release: "1PGSTY"
+version_schema: semver
+description: |
+  PostgreSQL terminal workspace with diagnostics, SQL and data browsing.
+  Install pgbot for diagnostics and the normal database-add workflow.
+  PGRun branch management and SSH jump hosts are optional integrations.
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/pgrundev/pgterm"
+license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+recommends:
+  - pgbot
+
+contents:
+  - src: pgterm/pgterm
+    dst: /usr/bin/pgterm
+    file_info:
+      mode: 0755
+
+  - src: ../LICENSES/Apache-2.0.txt
+    dst: /usr/share/doc/pgterm/LICENSE
+    file_info:
+      mode: 0644
+
+  # Upstream ships an abbreviated license notice; preserve it verbatim.
+  - src: pgterm/LICENSE
+    dst: /usr/share/doc/pgterm/NOTICE
+    file_info:
+      mode: 0644
+
+  - src: pgterm/README.md
+    dst: /usr/share/doc/pgterm/README.md
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pgterm/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
