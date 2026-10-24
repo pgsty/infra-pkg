@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "v1.19.3"
+version: "v1.19.4"
 release: "1PGSTY"
 version_schema: semver
 description: Open-source AI coding assistant
