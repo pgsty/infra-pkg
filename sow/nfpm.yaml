@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "0.6.0"
+version: "0.6.1"
 release: "1PGSTY"
 version_schema: semver
 description: Local RPM and DEB repository manager
