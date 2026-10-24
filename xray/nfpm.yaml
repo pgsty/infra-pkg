@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "net"
 priority: "optional"
-version: "26.3.27"
+version: "26.10.21"
 release: "1PGSTY"
 version_schema: semver
 description: Xray-core is a powerful platform for anti-censorship.

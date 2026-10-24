@@ -13,15 +13,16 @@ export ARCH RARCH
 
 REPONAME=XTLS/Xray-core
 PACKAGE=xray
-VERSION=26.3.27
+VERSION=26.10.21
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME_amd64=Xray-linux-64
 DIRNAME_arm64=Xray-linux-arm64-v8a
 DIRNAME=$(DIRNAME_$(ARCH))
 FILENAME=$(DIRNAME).zip
+CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).zip
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=23cd9af937744d97776ee35ecad4972cf4b2109d1e0fe6be9930467608f7c8ae
-SHA256_arm64=4d30283ae614e3057f730f67cd088a42be6fdf91f8639d82cb69e48cde80413c
+SHA256_amd64=0eec3ed4163c273d8c8bf821f7d219e257921cf584aa3fb970715e458e631978
+SHA256_arm64=d1304946c486d98e6b886e9b931eaaaebb23835b30e217638037b7f2721d4e9c
 SHA256=$(SHA256_$(ARCH))
 CURL=curl -fSL --retry 3
 
@@ -55,7 +56,7 @@ meta:
 # if already in ../tarball/ , just copy it
 download:
 	mkdir -p $(PACKAGE)
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) $(PACKAGE)/; else $(CURL) $(WEB_URL) -o $(PACKAGE)/$(FILENAME); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(PACKAGE)/$(FILENAME); else $(CURL) $(WEB_URL) -o $(PACKAGE)/$(FILENAME); fi
 
 # validate the pinned upstream archive before extraction
 verify:
