@@ -1,0 +1,5 @@
+/pgbot/
+/meta.json
+/*.tar.gz
+/*.rpm
+/*.deb
