@@ -1,0 +1,49 @@
+name: "pgsync"
+arch: "${ARCH}"
+platform: "linux"
+section: "database"
+priority: "optional"
+version: "0.1.1"
+release: "1PGSTY"
+version_schema: semver
+description: PostgreSQL snapshot and logical replication CLI by PGRun (controlled beta).
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://github.com/pgrundev/pgsync"
+license: "Apache-2.0"
+changelog: "${NFPM_CHANGELOG}"
+
+contents:
+  - src: pgsync/pgsync
+    dst: /usr/bin/pgsync
+    file_info:
+      mode: 0755
+
+  - src: LICENSE
+    dst: /usr/share/doc/pgsync/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: pgsync/README.md
+    dst: /usr/share/doc/pgsync/README.md
+    file_info:
+      mode: 0644
+
+  - src: pgsync/examples/pgsync.yaml
+    dst: /usr/share/doc/pgsync/examples/pgsync.yaml
+    file_info:
+      mode: 0644
+
+  - src: README.md
+    dst: /usr/share/doc/pgsync/README.PGSTY.md
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pgsync/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
