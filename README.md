@@ -8,6 +8,8 @@ Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo
 
 Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT and DNF repositories.
 
+On 2026-10-24, 178 artifacts for 45 packages were imported into the local APT/YUM INFRA repositories, including MCP Toolbox 1.15.0 and four new PGRun tools. Repository signatures, indexes and APT/DNF version resolution passed for both architectures; online publication is pending.
+
 
 --------
 
@@ -37,19 +39,19 @@ release, called out inline. External-build exceptions are also noted inline.
 - [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
 - [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived-exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
-- [pg-exporter](https://github.com/pgsty/pg_exporter): 1.4.1
+- [pg-exporter](https://github.com/pgsty/pg_exporter): 1.5.0
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
-- [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.20.0
+- [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.21.0
 - [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.95.0
-- [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.10.0
+- [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.11.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.7.0 (noarch)
-- [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.53.0
+- [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.54.0
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.154.1
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.53.0
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.12.0
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.12.1
 - [duckdb](https://github.com/duckdb/duckdb) : 2.0.0
-- [etcd](https://github.com/etcd-io/etcd) : 3.7.2
+- [etcd](https://github.com/etcd-io/etcd) : 3.7.3
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.1 (upstream v1.37.1+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.1%2Bk3s1) : 1.37.1 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
@@ -59,6 +61,10 @@ release, called out inline. External-build exceptions are also noted inline.
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
 - [dblab](https://github.com/danvergara/dblab) 0.53.0
 - [pgstream](https://github.com/xataio/pgstream) 1.5.0
+- [pgbot](https://github.com/pgrundev/pgbot) 0.9.0 (PostgreSQL diagnostics, JSON/MCP; optional AI; upstream beta)
+- [pgterm](https://github.com/pgrundev/pgterm) 0.4.0 (database TUI; pairs with pgbot; upstream beta)
+- [pggo](https://github.com/pgrundev/pggo) 0.1.1 (JSON SQL CLI for scripts and agents)
+- [pgsync](https://github.com/pgrundev/pgsync) 0.1.1 (PostgreSQL snapshot and CDC; upstream prerelease / controlled beta; schema bootstrap requires `pg_dump`)
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.6
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.1.0
@@ -68,7 +74,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [loki](https://github.com/grafana/loki) : 3.7.9
 - [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.7.9
 - [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.9
-- [promtail](https://github.com/grafana/loki/releases/tag/v3.6.7) : 3.6.7 (obsolete, frozen; final upstream artifact, absent from Loki 3.7 source and releases)
+- [promtail](https://github.com/grafana/loki/releases/tag/v3.6.11) : 3.6.11 (obsolete, EOL; 3.6.11 artifacts remain available; absent from Loki 3.7 releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.33.1
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.26.1
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.3
@@ -78,38 +84,38 @@ release, called out inline. External-build exceptions are also noted inline.
 - [headscale](https://github.com/juanfont/headscale) 0.29.5
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.168.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.48
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.49
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.3 (stable release; `1PGSTY`)
-- [xray](https://github.com/XTLS/Xray-core) 26.3.27 (stable release)
+- [xray](https://github.com/XTLS/Xray-core) 26.10.21 (upstream Latest; emergency security release)
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
 - [sabiql](https://github.com/riii111/sabiql) 3.0.2
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `2PGSTY`; bundles timescaledb-parallel-copy 0.13.1)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/kenn-io/agentsview) 0.45.0
-- [claude](https://github.com/anthropics/claude-code) 2.1.308
-- [codex](https://github.com/openai/codex) 0.163.0
+- [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
+- [claude](https://github.com/anthropics/claude-code) 2.1.310
+- [codex](https://github.com/openai/codex) 0.164.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.27
 - [maddy](https://github.com/foxcpp/maddy) 0.9.6
-- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.14.0 (dual-architecture CGO source build; checksum-pinned local recipe)
+- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.15.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
 - [postgrest](https://github.com/PostgREST/postgrest) 16.5 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.19.3
+- [opencode](https://github.com/anomalyco/opencode) 1.19.4
 - [uv](https://github.com/astral-sh/uv) 0.13.5
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.3
-- [crush](https://github.com/charmbracelet/crush) 0.98.1
+- [crush](https://github.com/charmbracelet/crush) 0.98.2
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [mcli](https://github.com/pgsty/mc) 20261018000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.2
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.3
 - [pev2](https://github.com/dalibo/pev2/releases) 1.25.0 (noarch)
-- [pig](https://github.com/pgsty/pig) 1.10.0
-- [sow](https://github.com/pgsty/sow) 0.6.0
+- [pig](https://github.com/pgsty/pig) 1.10.1
+- [sow](https://github.com/pgsty/sow) 0.6.1
 - [golang](https://go.dev/dl/) 1.27.3
   - x86_64: https://go.dev/dl/go1.27.3.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.27.3.linux-arm64.tar.gz
@@ -128,17 +134,17 @@ release, called out inline. External-build exceptions are also noted inline.
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [barn](https://github.com/pgsty/barn) 0.9.0 (upstream prerelease; native packages)
-  - deb amd64: https://github.com/pgsty/barn/releases/download/v0.9.0/barn_0.9.0_linux_amd64.deb
-  - deb arm64: https://github.com/pgsty/barn/releases/download/v0.9.0/barn_0.9.0_linux_arm64.deb
-  - rpm amd64: https://github.com/pgsty/barn/releases/download/v0.9.0/barn_0.9.0_linux_amd64.rpm
-  - rpm arm64: https://github.com/pgsty/barn/releases/download/v0.9.0/barn_0.9.0_linux_arm64.rpm
-- [code](https://code.visualstudio.com/) 1.143.0
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2d0b7506a36c1d6db9a466440131a8e01eab2289/code_1.143.0-1792533444_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2d0b7506a36c1d6db9a466440131a8e01eab2289/code_1.143.0-1792533331_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2d0b7506a36c1d6db9a466440131a8e01eab2289/code-1.143.0-1792533501.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/2d0b7506a36c1d6db9a466440131a8e01eab2289/code-1.143.0-1792533380.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.141.0
+- [barn](https://github.com/pgsty/barn) 0.9.1 (upstream prerelease; native packages)
+  - deb amd64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.deb
+  - deb arm64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.deb
+  - rpm amd64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.rpm
+  - rpm arm64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.rpm
+- [code](https://code.visualstudio.com/) 1.143.1
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code_1.143.1-1792691907_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code_1.143.1-1792691836_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code-1.143.1-1792691956.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code-1.143.1-1792691890.el8.aarch64.rpm
+- [code-server](https://github.com/coder/code-server): 4.143.1
   - deb amd64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server_4.141.0_amd64.deb
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server_4.141.0_arm64.deb
   - rpm amd64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server-4.141.0-amd64.rpm
@@ -182,31 +188,60 @@ byte, including their original release metadata.
 
 ## Changelog
 
-**2026-10-22**
+**2026-10-24**
 
-| Name | Old | New | Comment |
-|:---|:---|:---|:---|
-| blackbox-exporter | 0.29.0 | 0.29.1 | RPM/DEB built locally for both architectures |
-| claude | 2.1.303 | 2.1.308 | Official checksums and actual Linux binary versions verified for both architectures; built locally |
-| cloudflared | 2026.10.1 | 2026.10.3 | RPM/DEB built locally for both architectures |
-| code | 1.142.0 | 1.143.0 | Upstream native DEB/RPM for both architectures; original bytes and checksums verified; prepared locally |
-| duckdb | 1.5.6 | 2.0.0 | 2.0 formal release; adopts the new upstream tar.gz assets; built locally for both architectures |
-| golang | 1.27.2 | 1.27.3 | RPM/DEB built locally for both architectures |
-| grafana-infinity-ds | 4.1.1 | 4.1.3 | RPM/DEB built locally for both architectures |
-| juicefs | 1.4.1 | 1.4.2 | RPM/DEB built locally for both architectures |
-| logcli | 3.7.8 | 3.7.9 | RPM/DEB built locally for both architectures |
-| loki | 3.7.8 | 3.7.9 | RPM/DEB built locally for both architectures |
-| loki-canary | 3.7.8 | 3.7.9 | RPM/DEB built locally for both architectures |
-| nodejs | 24.22.0 | 24.22.1 | Security release; built locally for both architectures |
-| opentofu | 1.13.1 | 1.13.2 | Upstream native DEB/RPM for both architectures; original bytes and checksums verified; prepared locally |
-| pev2 | 1.24.0 | 1.25.0 | Noarch RPM / all DEB; upstream HTML checksum verified; built locally |
-| postgrest | 16.4 | 16.5 | RPM/DEB built locally for both architectures |
-| prometheus | 3.15.0 | 3.15.1 | RPM/DEB built locally for both architectures |
-| redis-exporter | 1.94.0 | 1.95.0 | RPM/DEB built locally for both architectures |
-| sabiql | 3.0.1 | 3.0.2 | RPM/DEB built locally for both architectures |
-| uv | 0.13.1 | 0.13.5 | RPM/DEB built locally for both architectures |
-| vector | 0.59.0 | 0.60.0 | Upstream native DEB/RPM for both architectures; original bytes and checksums verified; prepared locally |
-| victoria-metrics | 1.154.0 | 1.154.1 | Updates victoria-metrics, victoria-metrics-cluster and vmutils together; built locally |
+On 2026-10-24, 178 artifacts for 45 packages were imported into the local APT/YUM INFRA repositories, including MCP Toolbox 1.15.0 and four new PGRun tools. Repository signatures, indexes and APT/DNF version resolution passed for both architectures; online publication is pending.
+
+| Name                     | Old            | New            | Comment                                                                    |
+|:-------------------------|:---------------|:---------------|:---------------------------------------------------------------------------|
+| agentsview               | 0.45.0         | 0.46.1         | RPM/DEB for both architectures                                             |
+| barn                     | 0.9.0          | 0.9.1          | Native upstream packages; retains the 0.x prerelease label                 |
+| blackbox-exporter        | 0.29.0         | 0.29.1         | RPM/DEB for both architectures                                             |
+| claude                   | 2.1.303        | 2.1.310        | Latest channel; official checksums and both binary versions verified       |
+| cloudflared              | 2026.10.1      | 2026.10.3      | RPM/DEB for both architectures                                             |
+| code                     | 1.142.0        | 1.143.1        | Native upstream DEB/RPM; original bytes and checksums verified             |
+| code-server              | 4.141.0        | 4.143.1        | Native upstream DEB/RPM for both architectures                             |
+| codex                    | 0.163.0        | 0.164.0        | RPM/DEB for both architectures                                             |
+| crush                    | 0.98.1         | 0.98.2         | RPM/DEB for both architectures                                             |
+| duckdb                   | 1.5.6          | 2.0.0          | 2.0 stable release; uses the new upstream tar.gz artifacts                 |
+| etcd                     | 3.7.2          | 3.7.3          | RPM/DEB for both architectures                                             |
+| golang                   | 1.27.2         | 1.27.3         | RPM/DEB for both architectures                                             |
+| grafana-infinity-ds      | 4.1.1          | 4.1.3          | RPM/DEB for both architectures                                             |
+| juicefs                  | 1.4.1          | 1.4.2          | RPM/DEB for both architectures                                             |
+| kafka-exporter           | 1.10.0         | 1.11.0         | RPM/DEB for both architectures                                             |
+| kes                      | 20261018000000 | 20261024000000 | Key encryption service; native RPM/DEB for both architectures              |
+| logcli                   | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
+| loki                     | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
+| loki-canary              | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
+| mcli                     | 20261018000000 | 20261024000000 | mc object storage command-line client                                      |
+| mcp-toolbox              | 1.14.0         | 1.15.0         | CGO source build; glibc 2.28; installation and upgrade checks passed       |
+| mongodb-exporter         | 0.53.0         | 0.54.0         | RPM/DEB for both architectures                                             |
+| mysqld-exporter          | 0.20.0         | 0.21.0         | Some Untyped metrics become Counter/Gauge; review metric type changes      |
+| nodejs                   | 24.22.0        | 24.22.1        | 24.x LTS security update                                                   |
+| opencode                 | 1.19.3         | 1.19.4         | Includes Bun security fixes; amd64 uses the baseline artifact              |
+| opentofu                 | 1.13.1         | 1.13.2         | Native upstream DEB/RPM; package name is tofu                              |
+| pev2                     | 1.24.0         | 1.25.0         | Architecture independent: noarch RPM / all DEB                             |
+| pg-exporter              | 1.4.1          | 1.5.0          | RPM/DEB for both architectures                                             |
+| pgbot                    | —              | 0.9.0          | New; PostgreSQL diagnostics and JSON/MCP; optional AI; beta                |
+| pggo                     | —              | 0.1.1          | New; JSON SQL CLI for scripts and agents                                   |
+| pgsync                   | —              | 0.1.1          | New; PostgreSQL snapshot and CDC; controlled beta; bootstrap needs pg_dump |
+| pgterm                   | —              | 0.4.0          | New; database TUI, SQL and diagnostics; pairs with pgbot; beta             |
+| pig                      | 1.10.0         | 1.10.1         | Maintenance update; Go 1.27.3; RPM/DEB for both architectures              |
+| postgrest                | 16.4           | 16.5           | RPM/DEB for both architectures                                             |
+| prometheus               | 3.15.0         | 3.15.1         | Includes matching console templates and libraries                          |
+| promtail                 | 3.6.7          | 3.6.11         | Backfills the 3.6.11 artifacts; remains EOL                                |
+| redis-exporter           | 1.94.0         | 1.95.0         | RPM/DEB for both architectures                                             |
+| sabiql                   | 3.0.1          | 3.0.2          | RPM/DEB for both architectures                                             |
+| seaweedfs                | 4.48           | 4.49           | RPM/DEB for both architectures; upstream Linux assets now available        |
+| silo                     | 20261018000000 | 20261024000000 | S3 object storage service; native RPM/DEB for both architectures           |
+| sow                      | 0.6.0          | 0.6.1          | RPM/DEB for both architectures                                             |
+| uv                       | 0.13.1         | 0.13.5         | RPM/DEB for both architectures                                             |
+| vector                   | 0.59.0         | 0.60.0         | Native upstream DEB/RPM for both architectures                             |
+| victoria-metrics         | 1.154.0        | 1.154.1        | VictoriaMetrics single-node server                                         |
+| victoria-metrics-cluster | 1.154.0        | 1.154.1        | VictoriaMetrics cluster components; upgraded with the single-node server   |
+| victoria-traces          | 0.12.0         | 0.12.1         | RPM/DEB for both architectures                                             |
+| vmutils                  | 1.154.0        | 1.154.1        | VictoriaMetrics utilities; upgraded with the main package                  |
+| xray                     | 26.3.27        | 26.10.21       | Upstream Latest emergency security update; versioned cache filenames       |
 
 **2026-10-19**
 
