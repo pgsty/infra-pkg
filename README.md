@@ -8,7 +8,7 @@ Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo
 
 Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT and DNF repositories.
 
-On 2026-10-24, 178 artifacts for 45 packages were imported into the local APT/YUM INFRA repositories, including MCP Toolbox 1.15.0 and four new PGRun tools. Repository signatures, indexes and APT/DNF version resolution passed for both architectures; online publication is pending.
+The 2026-10-27 batch consolidates 56 package updates in the local APT/YUM INFRA repositories. Repository RPMs and metadata use the PGSTY signing key; online publication is pending.
 
 
 --------
@@ -42,12 +42,12 @@ release, called out inline. External-build exceptions are also noted inline.
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.5.0
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.21.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.95.0
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.96.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.11.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.7.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.54.0
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
-- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.154.1
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.155.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.53.0
 - [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.12.1
 - [duckdb](https://github.com/duckdb/duckdb) : 2.0.0
@@ -55,11 +55,11 @@ release, called out inline. External-build exceptions are also noted inline.
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.1 (upstream v1.37.1+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.1%2Bk3s1) : 1.37.1 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.17
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.18
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.2
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.53.0
+- [dblab](https://github.com/danvergara/dblab) 0.54.0
 - [pgstream](https://github.com/xataio/pgstream) 1.5.0
 - [pgbot](https://github.com/pgrundev/pgbot) 0.9.0 (PostgreSQL diagnostics, JSON/MCP; optional AI; upstream beta)
 - [pgterm](https://github.com/pgrundev/pgterm) 0.4.0 (database TUI; pairs with pgbot; upstream beta)
@@ -81,12 +81,12 @@ release, called out inline. External-build exceptions are also noted inline.
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.4.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.7 (creates `/usr/share/caddy` as the default document root)
-- [headscale](https://github.com/juanfont/headscale) 0.29.5
+- [headscale](https://github.com/juanfont/headscale) 0.29.6
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.168.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.49
-- [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.4.1
-- [rustfs](https://github.com/rustfs/rustfs) 1.0.3 (stable release; `1PGSTY`)
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.51
+- [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.5.0
+- [rustfs](https://github.com/rustfs/rustfs) 1.0.4 (stable release; `1PGSTY`)
 - [xray](https://github.com/XTLS/Xray-core) 26.10.21 (upstream Latest; emergency security release)
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
@@ -94,9 +94,9 @@ release, called out inline. External-build exceptions are also noted inline.
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `2PGSTY`; bundles timescaledb-parallel-copy 0.13.1)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.310
+- [claude](https://github.com/anthropics/claude-code) 2.1.311
 - [codex](https://github.com/openai/codex) 0.164.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 0.16.27
+- [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.0 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
 - [maddy](https://github.com/foxcpp/maddy) 0.9.6
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.15.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
@@ -110,11 +110,10 @@ release, called out inline. External-build exceptions are also noted inline.
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.3
 - [crush](https://github.com/charmbracelet/crush) 0.98.2
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
-- [mcli](https://github.com/pgsty/mc) 20261018000000.0.0
 - [rclone](https://github.com/rclone/rclone) 1.75.2
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.3
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.4
 - [pev2](https://github.com/dalibo/pev2/releases) 1.25.0 (noarch)
-- [pig](https://github.com/pgsty/pig) 1.10.1
+- [pig](https://github.com/pgsty/pig) 1.10.2
 - [sow](https://github.com/pgsty/sow) 0.6.1
 - [golang](https://go.dev/dl/) 1.27.3
   - x86_64: https://go.dev/dl/go1.27.3.linux-amd64.tar.gz
@@ -145,38 +144,49 @@ byte, including their original release metadata.
   - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code-1.143.1-1792691956.el8.x86_64.rpm
   - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code-1.143.1-1792691890.el8.aarch64.rpm
 - [code-server](https://github.com/coder/code-server): 4.143.1
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server_4.141.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server_4.141.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server-4.141.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.141.0/code-server-4.141.0-arm64.rpm
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server_4.143.1_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server_4.143.1_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server-4.143.1-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server-4.143.1-arm64.rpm
 - [grafana](https://github.com/grafana/grafana/) : 13.2.4
   - deb amd64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_amd64.deb
   - deb arm64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_arm64.deb
   - rpm amd64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_amd64.rpm
   - rpm arm64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
-- [OpenBao](https://github.com/openbao/openbao) : 2.7.1
-  - deb amd64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_amd64.deb
-  - deb arm64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_arm64.deb
-  - rpm amd64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_amd64.rpm
-  - rpm arm64: https://github.com/openbao/openbao/releases/download/v2.7.1/openbao_2.7.1_linux_arm64.rpm
+- [OpenBao](https://github.com/openbao/openbao) : 2.7.2
+  - deb amd64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_amd64.deb
+  - deb arm64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_arm64.deb
+  - rpm amd64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_amd64.rpm
+  - rpm arm64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_arm64.rpm
 - [OpenTofu](https://github.com/opentofu/opentofu) : 1.13.2
   - deb amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.2/tofu_1.13.2_amd64.deb
   - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.2/tofu_1.13.2_arm64.deb
   - rpm amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.2/tofu_1.13.2_amd64.rpm
   - rpm arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.2/tofu_1.13.2_arm64.rpm
-- [kes](https://github.com/pgsty/kes): 20261018000000.0.0 (AGPL-3.0-only; upstream native packages)
-  - deb amd64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-18T00-00-00Z/kes_20261018000000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-18T00-00-00Z/kes_20261018000000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-18T00-00-00Z/kes-20261018000000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-18T00-00-00Z/kes-20261018000000.0.0-1.aarch64.rpm
-  - native layout: `/usr/local/bin/kes`; preserves upstream paths, legal files, RPM release `1`, and DEB version without a release suffix; upstream RPM signatures verified
-- [silo](https://github.com/pgsty/silo): 20261018000000.0.0
-  - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-18T00-00-00Z/silo_20261018000000.0.0-1PGSTY_amd64.deb
-  - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-18T00-00-00Z/silo_20261018000000.0.0-1PGSTY_arm64.deb
-  - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-18T00-00-00Z/silo-20261018000000.0.0-1PGSTY.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-18T00-00-00Z/silo-20261018000000.0.0-1PGSTY.aarch64.rpm
+- [kes](https://github.com/pgsty/kes): 20261026000000.0.0 (AGPL-3.0-only; upstream native packages)
+  - deb amd64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes_20261026000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes_20261026000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes-20261026000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes-20261026000000.0.0-1.aarch64.rpm
+  - native layout: `/usr/local/bin/kes`; preserves upstream paths, legal files, RPM release `1`, and DEB version without a release suffix; repository RPMs use the PGSTY signing key
+- [mcli](https://github.com/pgsty/mc) 20261026000000.0.0 (upstream native packages)
+  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-10-26T00-00-00Z/mcli_20261026000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-10-26T00-00-00Z/mcli_20261026000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-10-26T00-00-00Z/mcli-20261026000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-10-26T00-00-00Z/mcli-20261026000000.0.0-1.aarch64.rpm
+  - native layout: `/usr/local/bin/mcli` (previous repack: `/usr/bin/mcli`); preserves upstream legal files, RPM release `1`, DEB version without a release suffix; repository RPMs use the PGSTY signing key
+- [silo](https://github.com/pgsty/silo): 20261026000000.0.0
+  - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo_20261026000000.0.0-1PGSTY_amd64.deb
+  - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo_20261026000000.0.0-1PGSTY_arm64.deb
+  - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo-20261026000000.0.0-1PGSTY.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo-20261026000000.0.0-1PGSTY.aarch64.rpm
   - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
+- [silo-console](https://github.com/pgsty/silo-console) 2.5.1 (standalone console; upstream native packages)
+  - deb amd64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_amd64.deb
+  - deb arm64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_arm64.deb
+  - rpm amd64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_amd64.rpm
+  - rpm arm64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_arm64.rpm
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.60.0
   - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.60.0/vector_0.60.0-1_amd64.deb
   - deb arm64: https://github.com/vectordotdev/vector/releases/download/v0.60.0/vector_0.60.0-1_arm64.deb
@@ -188,60 +198,70 @@ byte, including their original release metadata.
 
 ## Changelog
 
-**2026-10-24**
+**2026-10-27**
 
-On 2026-10-24, 178 artifacts for 45 packages were imported into the local APT/YUM INFRA repositories, including MCP Toolbox 1.15.0 and four new PGRun tools. Repository signatures, indexes and APT/DNF version resolution passed for both architectures; online publication is pending.
+Consolidates the October 24 and 27 updates: 56 packages, including 5 additions. RPM/DEB artifacts are available locally for amd64 and arm64 (pev2: noarch/all); online publication is pending.
 
-| Name                     | Old            | New            | Comment                                                                    |
-|:-------------------------|:---------------|:---------------|:---------------------------------------------------------------------------|
-| agentsview               | 0.45.0         | 0.46.1         | RPM/DEB for both architectures                                             |
-| barn                     | 0.9.0          | 0.9.1          | Native upstream packages; retains the 0.x prerelease label                 |
-| blackbox-exporter        | 0.29.0         | 0.29.1         | RPM/DEB for both architectures                                             |
-| claude                   | 2.1.303        | 2.1.310        | Latest channel; official checksums and both binary versions verified       |
-| cloudflared              | 2026.10.1      | 2026.10.3      | RPM/DEB for both architectures                                             |
-| code                     | 1.142.0        | 1.143.1        | Native upstream DEB/RPM; original bytes and checksums verified             |
-| code-server              | 4.141.0        | 4.143.1        | Native upstream DEB/RPM for both architectures                             |
-| codex                    | 0.163.0        | 0.164.0        | RPM/DEB for both architectures                                             |
-| crush                    | 0.98.1         | 0.98.2         | RPM/DEB for both architectures                                             |
-| duckdb                   | 1.5.6          | 2.0.0          | 2.0 stable release; uses the new upstream tar.gz artifacts                 |
-| etcd                     | 3.7.2          | 3.7.3          | RPM/DEB for both architectures                                             |
-| golang                   | 1.27.2         | 1.27.3         | RPM/DEB for both architectures                                             |
-| grafana-infinity-ds      | 4.1.1          | 4.1.3          | RPM/DEB for both architectures                                             |
-| juicefs                  | 1.4.1          | 1.4.2          | RPM/DEB for both architectures                                             |
-| kafka-exporter           | 1.10.0         | 1.11.0         | RPM/DEB for both architectures                                             |
-| kes                      | 20261018000000 | 20261024000000 | Key encryption service; native RPM/DEB for both architectures              |
-| logcli                   | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
-| loki                     | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
-| loki-canary              | 3.7.8          | 3.7.9          | RPM/DEB for both architectures                                             |
-| mcli                     | 20261018000000 | 20261024000000 | mc object storage command-line client                                      |
-| mcp-toolbox              | 1.14.0         | 1.15.0         | CGO source build; glibc 2.28; installation and upgrade checks passed       |
-| mongodb-exporter         | 0.53.0         | 0.54.0         | RPM/DEB for both architectures                                             |
-| mysqld-exporter          | 0.20.0         | 0.21.0         | Some Untyped metrics become Counter/Gauge; review metric type changes      |
-| nodejs                   | 24.22.0        | 24.22.1        | 24.x LTS security update                                                   |
-| opencode                 | 1.19.3         | 1.19.4         | Includes Bun security fixes; amd64 uses the baseline artifact              |
-| opentofu                 | 1.13.1         | 1.13.2         | Native upstream DEB/RPM; package name is tofu                              |
-| pev2                     | 1.24.0         | 1.25.0         | Architecture independent: noarch RPM / all DEB                             |
-| pg-exporter              | 1.4.1          | 1.5.0          | RPM/DEB for both architectures                                             |
-| pgbot                    | —              | 0.9.0          | New; PostgreSQL diagnostics and JSON/MCP; optional AI; beta                |
-| pggo                     | —              | 0.1.1          | New; JSON SQL CLI for scripts and agents                                   |
-| pgsync                   | —              | 0.1.1          | New; PostgreSQL snapshot and CDC; controlled beta; bootstrap needs pg_dump |
-| pgterm                   | —              | 0.4.0          | New; database TUI, SQL and diagnostics; pairs with pgbot; beta             |
-| pig                      | 1.10.0         | 1.10.1         | Maintenance update; Go 1.27.3; RPM/DEB for both architectures              |
-| postgrest                | 16.4           | 16.5           | RPM/DEB for both architectures                                             |
-| prometheus               | 3.15.0         | 3.15.1         | Includes matching console templates and libraries                          |
-| promtail                 | 3.6.7          | 3.6.11         | Backfills the 3.6.11 artifacts; remains EOL                                |
-| redis-exporter           | 1.94.0         | 1.95.0         | RPM/DEB for both architectures                                             |
-| sabiql                   | 3.0.1          | 3.0.2          | RPM/DEB for both architectures                                             |
-| seaweedfs                | 4.48           | 4.49           | RPM/DEB for both architectures; upstream Linux assets now available        |
-| silo                     | 20261018000000 | 20261024000000 | S3 object storage service; native RPM/DEB for both architectures           |
-| sow                      | 0.6.0          | 0.6.1          | RPM/DEB for both architectures                                             |
-| uv                       | 0.13.1         | 0.13.5         | RPM/DEB for both architectures                                             |
-| vector                   | 0.59.0         | 0.60.0         | Native upstream DEB/RPM for both architectures                             |
-| victoria-metrics         | 1.154.0        | 1.154.1        | VictoriaMetrics single-node server                                         |
-| victoria-metrics-cluster | 1.154.0        | 1.154.1        | VictoriaMetrics cluster components; upgraded with the single-node server   |
-| victoria-traces          | 0.12.0         | 0.12.1         | RPM/DEB for both architectures                                             |
-| vmutils                  | 1.154.0        | 1.154.1        | VictoriaMetrics utilities; upgraded with the main package                  |
-| xray                     | 26.3.27        | 26.10.21       | Upstream Latest emergency security update; versioned cache filenames       |
+Repository RPMs use PGSTY signatures in place of upstream signatures. APT/YUM metadata is also signed with the PGSTY key.
+
+| Name | Old | New | Comment |
+|:-----|:----|:----|:--------|
+| silo | 20261018000000.0.0 | 20261026000000.0.0 | S3 object storage |
+| silo-console | — | 2.5.1 | New standalone console |
+| mcli | 20261018000000.0.0 | 20261026000000.0.0 | Native package; /usr/local/bin/mcli |
+| kes | 20261018000000.0.0 | 20261026000000.0.0 | Key management service |
+| pig | 1.10.0 | 1.10.2 |  |
+| barn | 0.9.0 | 0.9.1 | 0.x prerelease |
+| sow | 0.6.0 | 0.6.1 |  |
+| agentsview | 0.45.0 | 0.46.1 |  |
+| blackbox-exporter | 0.29.0 | 0.29.1 |  |
+| claude | 2.1.303 | 2.1.311 | Official native binary |
+| cloudflared | 2026.10.1 | 2026.10.4 |  |
+| code | 1.142.0 | 1.143.1 |  |
+| code-server | 4.141.0 | 4.143.1 |  |
+| codex | 0.163.0 | 0.164.0 |  |
+| crush | 0.98.1 | 0.98.2 |  |
+| dblab | 0.53.0 | 0.54.0 |  |
+| duckdb | 1.5.6 | 2.0.0 |  |
+| etcd | 3.7.2 | 3.7.3 |  |
+| garage | 2.4.1 | 2.5.0 |  |
+| golang | 1.27.2 | 1.27.3 |  |
+| grafana-infinity-ds | 4.1.1 | 4.1.3 |  |
+| headscale | 0.29.5 | 0.29.6 |  |
+| juicefs | 1.4.1 | 1.4.2 |  |
+| kafka-exporter | 1.10.0 | 1.11.0 |  |
+| logcli | 3.7.8 | 3.7.9 |  |
+| loki | 3.7.8 | 3.7.9 |  |
+| loki-canary | 3.7.8 | 3.7.9 |  |
+| mcp-toolbox | 1.14.0 | 1.15.0 | CGO; glibc 2.28 |
+| mongodb-exporter | 0.53.0 | 0.54.0 |  |
+| mtail | 3.4.17 | 3.4.18 |  |
+| mysqld-exporter | 0.20.0 | 0.21.0 | Metric type changes |
+| nodejs | 24.22.0 | 24.22.1 | 24.x LTS security update |
+| openbao | 2.7.1 | 2.7.2 |  |
+| opencode | 1.19.3 | 1.19.4 | Bun security fixes |
+| opentofu | 1.13.1 | 1.13.2 | Package: tofu |
+| pev2 | 1.24.0 | 1.25.0 | noarch RPM / all DEB |
+| pg-exporter | 1.4.1 | 1.5.0 |  |
+| pgbot | — | 0.9.0 | New; beta |
+| pggo | — | 0.1.1 | New |
+| pgsync | — | 0.1.1 | New; beta |
+| pgterm | — | 0.4.0 | New; beta |
+| postgrest | 16.4 | 16.5 |  |
+| prometheus | 3.15.0 | 3.15.1 |  |
+| promtail | 3.6.7 | 3.6.11 | EOL artifact backfill |
+| redis-exporter | 1.94.0 | 1.96.0 |  |
+| rustfs | 1.0.3 | 1.0.4 |  |
+| sabiql | 3.0.1 | 3.0.2 |  |
+| seaweedfs | 4.48 | 4.51 |  |
+| stalwart | 0.16.27 | 1.0.0 | Major release |
+| uv | 0.13.1 | 0.13.5 |  |
+| vector | 0.59.0 | 0.60.0 |  |
+| victoria-metrics | 1.154.0 | 1.155.0 | Updated with cluster and vmutils |
+| victoria-metrics-cluster | 1.154.0 | 1.155.0 |  |
+| vmutils | 1.154.0 | 1.155.0 |  |
+| victoria-traces | 0.12.0 | 0.12.1 |  |
+| xray | 26.3.27 | 26.10.21 | Security update |
 
 **2026-10-19**
 

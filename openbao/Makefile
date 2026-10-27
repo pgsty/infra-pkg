@@ -10,7 +10,7 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=openbao
-VERSION=2.7.1
+VERSION=2.7.2
 PROXY ?= http://127.0.0.1:8888
 
 DEB_FILE_amd64=openbao_$(VERSION)_linux_amd64.deb
@@ -21,10 +21,10 @@ DEB_URL_amd64=https://github.com/openbao/openbao/releases/download/v$(VERSION)/$
 DEB_URL_arm64=https://github.com/openbao/openbao/releases/download/v$(VERSION)/$(DEB_FILE_arm64)
 RPM_URL_amd64=https://github.com/openbao/openbao/releases/download/v$(VERSION)/$(RPM_FILE_amd64)
 RPM_URL_arm64=https://github.com/openbao/openbao/releases/download/v$(VERSION)/$(RPM_FILE_arm64)
-SHA256_DEB_amd64=aa5dd78f590a89256dffae7c7f8664b11e4380478da86454d8030020f6af0add
-SHA256_DEB_arm64=b46dfc7e72b9e1f7fea68713748ca170c3ea9b4946fd2142d9a6c3323b4b85b1
-SHA256_RPM_amd64=698970b7e58590bd0ceb55043ce6f5e5d53e67b4a825e296cc197b21d6a6d700
-SHA256_RPM_arm64=3ea0d10a9a44a2cda37d43ad6d1adf80dd4a1c72a1fe0de890b07d0af5354a34
+SHA256_DEB_amd64=42bd0890a8e2060e5f29410ea828ee047aa2de21028045731a0516d5a532928c
+SHA256_DEB_arm64=f9f40f906aaf673f536e59e45be3f485408b36cdb75697e89bb5201b8545dc46
+SHA256_RPM_amd64=24cf378047cd759d0a8b4da645e694b2f6af320ef20ac5536ad91fa050d18d34
+SHA256_RPM_arm64=251d6d49582d726452a531a90e8bc9f6f51f20b4b207fb9c80caf49c05da9f73
 
 default: all
 all:

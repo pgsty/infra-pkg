@@ -1,62 +1,40 @@
 #==============================================================#
 # File      :   Makefile
-# Ctime     :   2026-08-11
-# Mtime     :   2026-08-11
-# Desc      :   Makefile shortcuts for mcli rpm/deb build
+# Desc      :   Download official mcli DEB/RPM packages
 # Path      :   mcli/Makefile
-# Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 ARCH  ?= amd64
 ARCHS ?= amd64 arm64
 RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
 export ARCH RARCH
 
-REPONAME=pgsty/mc
+VENDOR_DIRECT=1
 PACKAGE=mcli
-VERSION=20261018000000.0.0
-RELEASE=1PGSTY
-TAG=RELEASE.2026-10-18T00-00-00Z
-RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
-FILENAME=$(PACKAGE)_$(VERSION)_linux_$(ARCH).tar.gz
-WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
-SHA256_amd64=b5392a642dbc9685b517ee901f032d1d5e88f41704436f0f08dde6060b577db3
-SHA256_arm64=17f3eb694ed34e155b331b1215832140749656d8d4b60e2e3a4d0573b8f320d7
-SHA256=$(SHA256_$(ARCH))
-CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
+VERSION=20261026000000.0.0
+TAG=RELEASE.2026-10-26T00-00-00Z
+RELEASE=1
+PROXY ?= http://127.0.0.1:8888
+
+DEB_FILE_amd64=mcli_$(VERSION)_amd64.deb
+DEB_FILE_arm64=mcli_$(VERSION)_arm64.deb
+RPM_FILE_amd64=mcli-$(VERSION)-$(RELEASE).x86_64.rpm
+RPM_FILE_arm64=mcli-$(VERSION)-$(RELEASE).aarch64.rpm
+DEB_URL_amd64=https://github.com/pgsty/mc/releases/download/$(TAG)/$(DEB_FILE_amd64)
+DEB_URL_arm64=https://github.com/pgsty/mc/releases/download/$(TAG)/$(DEB_FILE_arm64)
+RPM_URL_amd64=https://github.com/pgsty/mc/releases/download/$(TAG)/$(RPM_FILE_amd64)
+RPM_URL_arm64=https://github.com/pgsty/mc/releases/download/$(TAG)/$(RPM_FILE_arm64)
+SHA256_DEB_amd64=801cd199d1aef6afaac3be3dc9012f9b399e388dbde28f0e52f68eef6c40834c
+SHA256_DEB_arm64=b8ac31a2f5dac19486ba6155f8020fa9cd9255b603b3b4f3ea426d3b17e61ea2
+SHA256_RPM_amd64=315dfaecb176f85d5c45f64a4476608cc95e17630934792af4d90fffc1e48df2
+SHA256_RPM_arm64=43f268716fdbe7b96b5b3eef581811b1b9c31140b7dc26d336efffe565074fda
 
 default: all
 all:
 	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a one; done
-one: download verify extract build clean
-get: download verify extract
+one: download verify build clean
 
-link:
-	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
-
-meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/tags/$(TAG)" | tee meta.json
-
-download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
-
-verify:
-	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
-	tar -tzf $(FILENAME) >/dev/null
-
-extract:
-	mkdir -p $(PACKAGE)
-	tar -xf $(FILENAME) -C $(PACKAGE)
-
-clean:
-	rm -rf $(PACKAGE) $(FILENAME) $(PACKAGE)*.rpm $(PACKAGE)*.deb
-
-build: rpm deb
-rpm:
-	../bin/nfpm package --config nfpm.yaml --packager rpm --target ../dist/rpm/
-deb:
-	../bin/nfpm package --config nfpm.yaml --packager deb --target ../dist/deb/
+include ../mk/vendor-direct.mk
 
 .NOTPARALLEL:
 
-.PHONY: all get link meta download verify extract clean build rpm deb one
+.PHONY: default all one get link download verify build clean

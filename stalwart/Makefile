@@ -13,13 +13,15 @@ export ARCH RARCH
 
 REPONAME=stalwartlabs/stalwart
 PACKAGE=stalwart
-VERSION=0.16.27
+VERSION=1.0.0
+PROXY ?= http://127.0.0.1:8888
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME1=$(PACKAGE)-$(RARCH)-unknown-linux-musl.tar.gz
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
-SHA256_amd64=5b43ba92aef509c861cc1d358dfab86ea680a43d25c14f0aabf0f10494cd5e9f
-SHA256_arm64=5065744b214c8d142b80dee53647ac1a1ba9a9725eeded7a98e60369f07d22fa
+SHA256_amd64=00a57f268881128878d394133b58fd67878613bba0ee447ecb40b5eb2eeb5495
+SHA256_arm64=5abb735d566b57428d67c94afef5d6717690ec3efba95c86dafe748750e0725a
 SHA256=$(SHA256_$(ARCH))
+CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
 
 CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.gz
@@ -33,7 +35,7 @@ get: download verify extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL1) -o $(FILENAME1)
+	@echo $(CURL) $(WEB_URL1) -o $(FILENAME1)
 
 # get latest release info
 meta:
@@ -42,7 +44,7 @@ meta:
 # download configured release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME1); else curl -fSL $(WEB_URL1) -o $(FILENAME1); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME1); else $(CURL) $(WEB_URL1) -o $(FILENAME1); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME1)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME1)" | shasum -a 256 -c -; fi

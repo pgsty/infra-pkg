@@ -13,12 +13,12 @@ export ARCH RARCH
 
 REPONAME=juanfont/headscale
 PACKAGE=headscale
-VERSION=0.29.5
+VERSION=0.29.6
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)_$(VERSION)_linux_$(ARCH)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=e979d27fe17d924d33bb6ab7504f6338d0635989a0cfdcfbc0ceb637dbcbe980
-SHA256_arm64=3afddd207b89ac22cfad4235cc163c6e538cc59ada139e7c0bf47640c5d9e945
+SHA256_amd64=7477c374949eea6fb7cf3cbff14dbef49e4d118d9a33557d6764a77ece617e53
+SHA256_arm64=7b3c792ebe10e1a81a0c8d9674aee8eb540e7dbb7ccb80a98b71024da4c72a48
 SHA256=$(SHA256_$(ARCH))
 
 
