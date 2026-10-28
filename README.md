@@ -8,7 +8,7 @@ Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo
 
 Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT and DNF repositories.
 
-The 2026-10-27 batch consolidates 56 package updates in the local APT/YUM INFRA repositories. Repository RPMs and metadata use the PGSTY signing key; online publication is pending.
+The 2026-10-28 batch updates 10 packages for amd64 and arm64 in the local APT/YUM INFRA repositories. Online publication is pending.
 
 
 --------
@@ -68,7 +68,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [sql-studio](https://github.com/frectonz/sql-studio) 0.1.53
 - [rainfrog](https://github.com/achristmascarl/rainfrog) 0.4.6
 - [pg-timetable](https://github.com/cybertec-postgresql/pg_timetable): 7.1.0
-- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.5.0 (binary-only package; service lifecycle managed by Pigsty)
+- [pg-hardstorage](https://github.com/cybertec-postgresql/pg_hardstorage): 1.6.0 (binary-only package; service lifecycle managed by Pigsty)
 - [ferretdb](https://github.com/FerretDB/FerretDB): 2.7.0
 - [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) 0.17.9
 - [loki](https://github.com/grafana/loki) : 3.7.9
@@ -77,13 +77,13 @@ release, called out inline. External-build exceptions are also noted inline.
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.11) : 3.6.11 (obsolete, EOL; 3.6.11 artifacts remain available; absent from Loki 3.7 releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.33.1
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.26.1
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.3
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.4
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.4.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.7 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.6
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
-- [hugo](https://github.com/gohugoio/hugo) 0.168.0
+- [hugo](https://github.com/gohugoio/hugo) 0.169.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.51
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.5.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.4 (stable release; `1PGSTY`)
@@ -94,8 +94,8 @@ release, called out inline. External-build exceptions are also noted inline.
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `2PGSTY`; bundles timescaledb-parallel-copy 0.13.1)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.311
-- [codex](https://github.com/openai/codex) 0.164.0
+- [claude](https://github.com/anthropics/claude-code) 2.1.312
+- [codex](https://github.com/openai/codex) 0.165.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.0 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
 - [maddy](https://github.com/foxcpp/maddy) 0.9.6
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.15.0 (dual-architecture CGO source build; checksum-pinned local recipe)
@@ -105,13 +105,13 @@ release, called out inline. External-build exceptions are also noted inline.
 - [postgrest](https://github.com/PostgREST/postgrest) 16.5 (requires PostgreSQL 14+)
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
-- [opencode](https://github.com/anomalyco/opencode) 1.19.4
-- [uv](https://github.com/astral-sh/uv) 0.13.5
-- [pgschema](https://github.com/pgplex/pgschema) 1.13.3
+- [opencode](https://github.com/anomalyco/opencode) 1.19.5
+- [uv](https://github.com/astral-sh/uv) 0.13.6
+- [pgschema](https://github.com/pgplex/pgschema) 1.13.4
 - [crush](https://github.com/charmbracelet/crush) 0.98.2
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [rclone](https://github.com/rclone/rclone) 1.75.2
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.4
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.5
 - [pev2](https://github.com/dalibo/pev2/releases) 1.25.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.10.2
 - [sow](https://github.com/pgsty/sow) 0.6.1
@@ -148,11 +148,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server_4.143.1_arm64.deb
   - rpm amd64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server-4.143.1-amd64.rpm
   - rpm arm64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server-4.143.1-arm64.rpm
-- [grafana](https://github.com/grafana/grafana/) : 13.2.4
-  - deb amd64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_amd64.deb
-  - deb arm64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_arm64.deb
-  - rpm amd64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_amd64.rpm
-  - rpm arm64: https://dl.grafana.com/grafana/release/13.2.4/grafana_13.2.4_38252365904_linux_arm64.rpm
+- [grafana](https://github.com/grafana/grafana/) : 13.3.0
+  - deb amd64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_amd64.deb
+  - deb arm64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_arm64.deb
+  - rpm amd64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_amd64.rpm
+  - rpm arm64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_arm64.rpm
   - upstream: https://grafana.com/grafana/download?edition=oss
 - [OpenBao](https://github.com/openbao/openbao) : 2.7.2
   - deb amd64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_amd64.deb
@@ -197,6 +197,22 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-10-28**
+
+| Name | Old | New | Comment |
+|:-----|:----|:----|:--------|
+| grafana | 13.2.4 | 13.3.0 |  |
+| grafana-infinity-ds | 4.1.3 | 4.1.4 |  |
+| pg-hardstorage | 1.5.0 | 1.6.0 |  |
+| pgschema | 1.13.3 | 1.13.4 |  |
+| cloudflared | 2026.10.4 | 2026.10.5 |  |
+| hugo | 0.168.0 | 0.169.0 |  |
+| uv | 0.13.5 | 0.13.6 |  |
+| claude | 2.1.311 | 2.1.312 |  |
+| codex | 0.164.0 | 0.165.0 |  |
+| opencode | 1.19.4 | 1.19.5 |  |
+
 
 **2026-10-27**
 
