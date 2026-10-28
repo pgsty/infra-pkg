@@ -13,11 +13,11 @@ export ARCH RARCH
 
 REPONAME1=grafana/grafana-infinity-datasource
 PACKAGE1=yesoreyeram-infinity-datasource
-VERSION1=4.1.3
+VERSION1=4.1.4
 FILENAME1=yesoreyeram-infinity-datasource-$(VERSION1).linux_$(ARCH).zip
 WEB_URL1=https://github.com/$(REPONAME1)/releases/download/v$(VERSION1)/$(FILENAME1)
-SHA2561_amd64=e46468637ceedda3e2f1e27097476c6de2906d4377247df0a79867ec71ddfddf
-SHA2561_arm64=a3b01174d82bc98b65b663456939a1b785f331c19f343fd3da329d34b373a310
+SHA2561_amd64=5d0301597b70ff6e88b70f71cef67c857f51f8cb9f182943b06a33103b9f8b43
+SHA2561_arm64=ae5352315d1e5537ec95b21c4fb066d23885795f6e33c600d0cec0556399746e
 SHA2561=$(SHA2561_$(ARCH))
 
 default: all
