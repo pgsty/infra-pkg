@@ -8,7 +8,7 @@ Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo
 
 Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT and DNF repositories.
 
-The 2026-10-28 batch updates 10 packages for amd64 and arm64 in the local APT/YUM INFRA repositories. Online publication is pending.
+The 2026-10-30 batch updates seven packages for amd64 and arm64, producing 28 new RPM/DEB artifacts under `dist/`. Downloads used the local Xray proxy on port `8888`; the artifacts were built and verified locally, but have not been placed in APT/YUM repositories or published online.
 
 
 --------
@@ -33,14 +33,14 @@ release, called out inline. External-build exceptions are also noted inline.
 
 - [prometheus](https://github.com/prometheus/prometheus) : 3.15.1 (includes version-pinned upstream console templates and libraries)
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.4
-- [alertmanager](https://github.com/prometheus/alertmanager) : 0.34.1
+- [alertmanager](https://github.com/prometheus/alertmanager) : 0.34.2
 - [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.29.1
 - [nginx-exporter](https://github.com/nginx/nginx-prometheus-exporter) : 1.5.3
 - [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
 - [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived-exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.5.0
-- [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0
+- [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0 (upstream 0.25.0 has no usable binary assets yet)
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.21.0
 - [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.96.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.11.0
@@ -87,7 +87,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.51
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.5.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.4 (stable release; `1PGSTY`)
-- [xray](https://github.com/XTLS/Xray-core) 26.10.21 (upstream Latest; emergency security release)
+- [xray](https://github.com/XTLS/Xray-core) 26.10.29
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
 - [sabiql](https://github.com/riii111/sabiql) 3.0.2
@@ -96,7 +96,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
 - [claude](https://github.com/anthropics/claude-code) 2.1.312
 - [codex](https://github.com/openai/codex) 0.165.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.0 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
+- [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.1 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
 - [maddy](https://github.com/foxcpp/maddy) 0.9.6
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.15.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
@@ -111,16 +111,16 @@ release, called out inline. External-build exceptions are also noted inline.
 - [crush](https://github.com/charmbracelet/crush) 0.98.2
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [rclone](https://github.com/rclone/rclone) 1.75.2
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.5
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.6
 - [pev2](https://github.com/dalibo/pev2/releases) 1.25.0 (noarch)
-- [pig](https://github.com/pgsty/pig) 1.10.2
+- [pig](https://github.com/pgsty/pig) 1.10.3
 - [sow](https://github.com/pgsty/sow) 0.6.1
 - [golang](https://go.dev/dl/) 1.27.3
   - x86_64: https://go.dev/dl/go1.27.3.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.27.3.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 24.22.1
-  - x86_64: https://nodejs.org/dist/v24.22.1/node-v24.22.1-linux-x64.tar.xz
-  - arm64: https://nodejs.org/dist/v24.22.1/node-v24.22.1-linux-arm64.tar.xz
+- [nodejs](https://nodejs.org/en/download/) 26.13.0
+  - x86_64: https://nodejs.org/dist/v26.13.0/node-v26.13.0-linux-x64.tar.xz
+  - arm64: https://nodejs.org/dist/v26.13.0/node-v26.13.0-linux-arm64.tar.xz
 
 
 - [rust-toolchain](https://www.rust-lang.org/) 1.99.1 (signed upstream toolchain, private prefix `/usr/lib/pgsty/rust`)
@@ -143,11 +143,11 @@ byte, including their original release metadata.
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code_1.143.1-1792691836_arm64.deb
   - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code-1.143.1-1792691956.el8.x86_64.rpm
   - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code-1.143.1-1792691890.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.143.1
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server_4.143.1_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server_4.143.1_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server-4.143.1-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.143.1/code-server-4.143.1-arm64.rpm
+- [code-server](https://github.com/coder/code-server): 4.144.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server_4.144.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server_4.144.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server-4.144.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server-4.144.0-arm64.rpm
 - [grafana](https://github.com/grafana/grafana/) : 13.3.0
   - deb amd64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_amd64.deb
   - deb arm64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_arm64.deb
