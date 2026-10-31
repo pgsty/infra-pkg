@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "v24.22.1"
+version: "v26.13.0"
 version_schema: semver
 release: "1PGSTY"
 description: Node.js JavaScript runtime
@@ -34,10 +34,6 @@ contents:
   - src: ../lib/nodejs/bin/npx
     dst: /usr/bin/npx
     type: symlink
-  - src: ../lib/nodejs/bin/corepack
-    dst: /usr/bin/corepack
-    type: symlink
-
   # Debian documentation
   - src: "${NFPM_COPYRIGHT}"
     dst: /usr/share/doc/nodejs/copyright
