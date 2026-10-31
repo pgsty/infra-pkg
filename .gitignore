@@ -13,6 +13,7 @@ claude/claude
 CLAUDE.md
 AGENTS.md
 *.tar.gz
+*.tar.zst
 __pycache__/
 *.pyc
 
