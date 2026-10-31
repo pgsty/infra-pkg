@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=stalwartlabs/stalwart
 PACKAGE=stalwart
-VERSION=1.0.0
+VERSION=1.0.1
 PROXY ?= http://127.0.0.1:8888
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME1=$(PACKAGE)-$(RARCH)-unknown-linux-musl.tar.gz
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
-SHA256_amd64=00a57f268881128878d394133b58fd67878613bba0ee447ecb40b5eb2eeb5495
-SHA256_arm64=5abb735d566b57428d67c94afef5d6717690ec3efba95c86dafe748750e0725a
+SHA256_amd64=6f7cd7926b4744e3cc53cd6201154edacc92217ba64135ccb88e7b12c4c196af
+SHA256_arm64=41e1c176c8098463629f75f125b5e0d193b0920d8366272717c52d9e48bac4f4
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
