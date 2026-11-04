@@ -13,12 +13,14 @@ export ARCH RARCH
 
 REPONAME=seaweedfs/seaweedfs
 PACKAGE=seaweedfs
-VERSION=4.51
+VERSION=4.52
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 FILENAME=linux_$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
-SHA256_amd64=c03be37416a8ee672c77766e20b22a4e1430744c3af2668599a4b6eeaec14cee
-SHA256_arm64=4772e7de6a3b8711eb53587a1c156aee67ebfc24536d15d85cd74a0d70ad53ec
+SHA256_amd64=8b538c22d47d0c3fb6792adaa6b0c735a967401270a53427d5a476dcaca9b7ae
+SHA256_arm64=b70a09540bf8aa2b9ea2a48b3b16abe27e162e90a0c3bf041f8d414caf52de8a
 SHA256=$(SHA256_$(ARCH))
 
 CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.gz
@@ -32,16 +34,16 @@ get: download verify extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
+	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download configured release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME); else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME); else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi

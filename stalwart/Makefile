@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=stalwartlabs/stalwart
 PACKAGE=stalwart
-VERSION=1.0.1
+VERSION=1.0.3
 PROXY ?= http://127.0.0.1:8888
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME1=$(PACKAGE)-$(RARCH)-unknown-linux-musl.tar.gz
 WEB_URL1=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME1)
-SHA256_amd64=6f7cd7926b4744e3cc53cd6201154edacc92217ba64135ccb88e7b12c4c196af
-SHA256_arm64=41e1c176c8098463629f75f125b5e0d193b0920d8366272717c52d9e48bac4f4
+SHA256_amd64=f861f7fd498f986bc62a0d6d99b4993e3449cded7ee57a4ec4738c11d95db013
+SHA256_arm64=32195793e35a0c043e253236646bd2d98095a0a8d76528d7dc04ca021f567183
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
@@ -39,7 +39,7 @@ link:
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download configured release tarball to current directory
 # if already in ../tarball/ , just copy it

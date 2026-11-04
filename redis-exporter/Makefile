@@ -13,15 +13,17 @@ export ARCH RARCH
 
 REPONAME=oliver006/redis_exporter
 PACKAGE=redis_exporter
-VERSION=1.96.0
-SHA256_amd64=7e828c0edd05e0984c3be380aacb389c230463db1c1f72141ec67267fc2b7510
-SHA256_arm64=7adddb1d3f20afd096f8effa28b95b5f3fdc79347c0dc2c5d82ba253a4f9c782
+VERSION=1.97.0
+SHA256_amd64=492b849dfb359b619115b8f4d122eb59d1d8e666e366fbdeb9b5848732551557
+SHA256_arm64=e49655203d1035aebef7acef7f08117288c33c3e43acf5c8f491c8eed20f199b
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-$(ARCH)
 FILENAME=$(DIRNAME).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
 default: all
 all:
@@ -32,16 +34,16 @@ get: download extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL --retry 3 $(WEB_URL) -o $(FILENAME)
+	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL --retry 3 $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 # extract tarball content to current directory

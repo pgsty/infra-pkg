@@ -13,15 +13,17 @@ export ARCH RARCH
 
 REPONAME="danvergara/dblab"
 PACKAGE="dblab"
-VERSION=0.54.0
+VERSION=0.55.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME="$(PACKAGE)_$(VERSION)_linux_$(ARCH)"
 FILENAME="$(DIRNAME).tar.gz"
-SHA256_amd64=9703d1562bc2326ca39b61bf82658e1e3af1b03f68e74176c2ea758c84fac68d
-SHA256_arm64=b8100c85b3e629a141ea38047549aec0a7a72afbc890a986cbc7e5019d0c0e83
+SHA256_amd64=1f38259e31b91305f96a1464a13a6c4d451a261ec4fe5e02eb1c4e7289822661
+SHA256_arm64=ba0f8021a6a90c52e37a795e9bb20105244c5aab33be6d398b6290aeafb152a2
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
 default: all
 all:
@@ -32,16 +34,16 @@ get: download verify extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
+	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi

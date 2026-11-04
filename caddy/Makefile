@@ -13,14 +13,16 @@ export ARCH RARCH
 
 REPONAME="caddyserver/caddy"
 PACKAGE="caddy"
-VERSION=2.11.7
+VERSION=2.11.8
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME="$(PACKAGE)_$(VERSION)_linux_$(ARCH).tar.gz"
-SHA256_amd64=727b91701a392de6ebc5027509f548bf39979e5216340d0faed8fa5e69c84f8b
-SHA256_arm64=d8fc6d179a5d283028a472a5618564f6ad8a86fed513e64f032b3b0b7cc45e42
+SHA256_amd64=f032f8805e4df2ce5e1a8a624495c91e9ff763d8ff3ceddadd4784a07c472f40
+SHA256_arm64=6781a68e090fecda8c563b5a3b00115e18d7134084099ae804a017622471bed1
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
 default: all
 all:
@@ -31,16 +33,16 @@ get: download verify extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
+	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download configured release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi

@@ -13,16 +13,17 @@ export ARCH RARCH
 
 REPONAME=astral-sh/uv
 PACKAGE=uv
-VERSION=0.13.6
+VERSION=0.13.7
+PROXY ?= http://127.0.0.1:8888
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 DIRNAME=$(PACKAGE)-$(RARCH)-unknown-linux-musl
 FILENAME=$(DIRNAME).tar.gz
 CACHE=$(PACKAGE)-v$(VERSION)-linux-$(ARCH).tar.gz
-SHA256_amd64=5d61f26b6c7213779eda90edc6971ea6b0b796bfb8d49a574c8ad69b59838548
-SHA256_arm64=819692e404d23e5aae6bc44c0e260f1f5492fd1910ab4693b2c650f926dbe800
+SHA256_amd64=287491da03f2a785c70fa75b13e1f849918c2f2b5415fe84876b8214eeb792f9
+SHA256_arm64=2d3ec076a0c4c0e8250bb6418c44080828b544f1a3be0b6e46adf9fb6923de45
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
-CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
+CURL=curl --proxy "$(PROXY)" --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
 default: all
 all:
@@ -37,7 +38,7 @@ link:
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it

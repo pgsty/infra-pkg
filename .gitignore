@@ -17,6 +17,20 @@ AGENTS.md
 __pycache__/
 *.pyc
 
+# Per-recipe build inputs and extracted vendor payloads.
+/claude/claude-*-linux-*.gz
+/code/*.deb
+/code/*.rpm
+/code/*.part
+/grafana-victoriametrics-ds/victoriametrics-metrics-datasource/
+/seaweedfs/seaweedfs/
+/stalwart/stalwart/
+/uv/uv/
+/caddy/caddy/
+/dblab/dblab/
+/redis-exporter/redis_exporter/
+/pgbackrest-exporter/pgbackrest_exporter/
+
 
 bin/*
 !bin/lint_specs.py

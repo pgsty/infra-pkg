@@ -8,6 +8,10 @@ Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo
 
 Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT and DNF repositories.
 
+The 2026-11-04 scan found eight updates across 99 recipes. This batch produces 32 verified artifacts (16 DEB and 16 RPM); combined with the remaining 2026-11-03 updates, 40 latest-version artifacts cover ten packages. Downloads use the port `8888` Xray proxy. Both batches are built locally; APT/YUM import and online publication are pending. See the [VictoriaMetrics datasource upgrade notes](grafana-victoriametrics-ds/README.md) and the [pgBackRest exporter source-build notes](pgbackrest-exporter/README.md).
+
+The 2026-11-03 batch updates six packages for both architectures and produces 24 verified artifacts (12 DEB and 12 RPM) under `dist/`. Downloads use the port `8888` Xray proxy. This batch is built locally; APT/YUM import and online publication are pending. See the [VictoriaMetrics datasource upgrade notes](grafana-victoriametrics-ds/README.md) for the 1.0.0 compatibility and runtime checks.
+
 The 2026-10-30 batch updates seven packages for amd64 and arm64, producing 28 new RPM/DEB artifacts under `dist/`. Downloads used the local Xray proxy on port `8888`; the artifacts were built and verified locally, but have not been placed in APT/YUM repositories or published online.
 
 
@@ -40,9 +44,9 @@ release, called out inline. External-build exceptions are also noted inline.
 - [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived-exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.5.0
-- [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.24.0 (upstream 0.25.0 has no usable binary assets yet)
+- [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.25.0 (reproducible build from pinned upstream source; no upstream binary assets)
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.21.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.96.0
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.97.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.11.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.7.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.54.0
@@ -59,7 +63,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.2
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.54.0
+- [dblab](https://github.com/danvergara/dblab) 0.55.0
 - [pgstream](https://github.com/xataio/pgstream) 1.5.0
 - [pgbot](https://github.com/pgrundev/pgbot) 0.9.0 (PostgreSQL diagnostics, JSON/MCP; optional AI; upstream beta)
 - [pgterm](https://github.com/pgrundev/pgterm) 0.4.0 (database TUI; pairs with pgbot; upstream beta)
@@ -76,15 +80,15 @@ release, called out inline. External-build exceptions are also noted inline.
 - [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.9
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.11) : 3.6.11 (obsolete, EOL; 3.6.11 artifacts remain available; absent from Loki 3.7 releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.33.1
-- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 0.26.1
+- [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 1.0.1
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.4
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.4.0
-- [caddy](https://github.com/caddyserver/caddy) 2.11.7 (creates `/usr/share/caddy` as the default document root)
+- [caddy](https://github.com/caddyserver/caddy) 2.11.8 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.6
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.169.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.51
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.52
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.5.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.4 (stable release; `1PGSTY`)
 - [xray](https://github.com/XTLS/Xray-core) 26.10.29
@@ -94,9 +98,9 @@ release, called out inline. External-build exceptions are also noted inline.
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `2PGSTY`; bundles timescaledb-parallel-copy 0.13.1)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.312
+- [claude](https://github.com/anthropics/claude-code) 2.1.318
 - [codex](https://github.com/openai/codex) 0.165.0
-- [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.1 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
+- [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.3 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
 - [maddy](https://github.com/foxcpp/maddy) 0.9.6
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.15.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
@@ -106,7 +110,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [sqlcmd](https://github.com/microsoft/go-sqlcmd) 1.10.0
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.19.5
-- [uv](https://github.com/astral-sh/uv) 0.13.6
+- [uv](https://github.com/astral-sh/uv) 0.13.7
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.4
 - [crush](https://github.com/charmbracelet/crush) 0.98.2
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
@@ -138,11 +142,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.deb
   - rpm amd64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.rpm
   - rpm arm64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.rpm
-- [code](https://code.visualstudio.com/) 1.143.1
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code_1.143.1-1792691907_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code_1.143.1-1792691836_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code-1.143.1-1792691956.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/e646868227c3e3a9e3f24277c8c7220be42c0be7/code-1.143.1-1792691890.el8.aarch64.rpm
+- [code](https://code.visualstudio.com/) 1.145.0
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code_1.145.0-1793749366_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code_1.145.0-1793748906_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code-1.145.0-1793749416.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code-1.145.0-1793748956.el8.aarch64.rpm
 - [code-server](https://github.com/coder/code-server): 4.144.0
   - deb amd64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server_4.144.0_amd64.deb
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server_4.144.0_arm64.deb
@@ -197,6 +201,48 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-11-04**
+
+Local build batch: eight packages produce 32 artifacts for amd64 and arm64 (16 DEB and 16 RPM). Downloads use the port `8888` Xray proxy. Fifteen upstream binary inputs were checked against official SHA256 values. Since pgbackrest-exporter 0.25.0 has no binary release assets, its pinned source and vendor dependencies were built offline with Go 1.27.3; independent rebuilds produced identical binaries. This batch has not been imported into APT/YUM repositories or published online.
+
+| Name                       | Old     | New     | Comment                                                             |
+| :------------------------- | :------ | :------ | :------------------------------------------------------------------ |
+| caddy                      | 2.11.7  | 2.11.8  | Security and configuration fixes; bundled Caddyfile validated       |
+| claude                     | 2.1.317 | 2.1.318 | Official manifest and both Linux binary versions verified           |
+| code                       | 1.144.1 | 1.145.0 | Upstream native DEB/RPM bytes preserved                             |
+| dblab                      | 0.54.0  | 0.55.0  | Table-cell sizing and text inspection improvements                  |
+| grafana-victoriametrics-ds | 1.0.0   | 1.0.1   | Isolated editor settings; vmui validation; redacted errors          |
+| pgbackrest-exporter        | 0.24.0  | 0.25.0  | Pinned source build with vendor dependencies; reproducible binaries |
+| redis-exporter             | 1.96.0  | 1.97.0  | Opt-in Redis 8 KEYSIZES; slowlog/commandlog exclusion options       |
+| stalwart                   | 1.0.2   | 1.0.3   | OAuth scopes, role-permission updates and blob storage features     |
+
+`grafana-victoriametrics-ds` 1.0.1 preserves the 1.0.0 plugin identity and Grafana constraints. The [release](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.1) isolates query-editor browser settings, rejects empty or invalid `vmui` requests, redacts sensitive request URLs from errors, and updates `golang.org/x/net`. Both architectures passed real Grafana 13.3.0 + VictoriaMetrics 1.155.0 upgrade tests, including datasource identity, POST request bodies, long queries, malformed `vmui` requests and query-error redaction. Interactive editor and WITH-template UI behavior has not been browser-tested.
+
+[Caddy 2.11.8](https://github.com/caddyserver/caddy/releases/tag/v2.11.8) includes stricter host/configuration validation, earlier request-size rejection, and PHP/file-matching behavior changes. The packaged default Caddyfile passed validation on both architectures; custom configurations need their own validation.
+
+[Stalwart 1.0.3](https://github.com/stalwartlabs/stalwart/releases/tag/v1.0.3) introduces OAuth scopes for third-party apps to manage security and account settings. Upgraded installations can add the new permissions to default roles by starting once with `STALWART_UPDATE_ROLE_PERMISSIONS=true`, then removing the variable. The WebUI needs no OAuth-scope changes. Existing 0.16.x-to-1.0 migration requirements still apply.
+
+The scan covered 99 recipes. `barn` remains at 0.9.3 on its existing prerelease channel; `codex` remains at 0.166.0 (`rust-v0.166.0` is the upstream tag). `sealos` stays pinned at 5.0.1. Versioned cargo-pgrx snapshots, the curated grafana-plugins bundle, and the retired Promtail package are retained.
+
+--------
+
+**2026-11-03**
+
+Local build batch: six packages were downloaded through the port `8888` Xray proxy and verified against upstream SHA256 checksums. The batch produces 24 artifacts for amd64 and arm64: 12 DEB and 12 RPM. VS Code retains the upstream native package bytes. This batch has not been imported into the APT/YUM repositories or published online. `sealos` remains pinned at `5.0.1`.
+
+| Name                       | Old     | New     | Comment                                                            |
+| :------------------------- | :------ | :------ | :----------------------------------------------------------------- |
+| claude                     | 2.1.316 | 2.1.317 | Official manifest and both Linux binary versions verified          |
+| code                       | 1.143.1 | 1.144.1 | Upstream native DEB/RPM bytes preserved                            |
+| grafana-victoriametrics-ds | 0.26.1  | 1.0.0   | POST/WITH fixes; unchanged requirements; both architectures tested |
+| seaweedfs                  | 4.51    | 4.52    | RPM/DEB version normalized to 4.52.0                               |
+| stalwart                   | 1.0.1   | 1.0.2   | RPM/DEB for both architectures                                     |
+| uv                         | 0.13.6  | 0.13.7  | RPM/DEB for both architectures                                     |
+
+`grafana-victoriametrics-ds` 1.0.0 keeps the plugin ID, install path, and Grafana requirements from 0.26.1. The [upstream release](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.0) fixes POST request bodies and WITH-template handling. Both architectures passed backend/API upgrade tests with Grafana 13.3.0 and VictoriaMetrics 1.155.0, including preserved datasource identity and long POST queries through a proxy with a 4,096-byte URL limit. The existing unsigned-plugin allowlist is still required; the interactive WITH-template UI was not exercised.
+
+--------
 
 **2026-10-28**
 
