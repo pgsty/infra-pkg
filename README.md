@@ -12,7 +12,7 @@ The 2026-11-04 scan found eight updates across 99 recipes. This batch produces 3
 
 The 2026-11-03 batch updates six packages for both architectures and produces 24 verified artifacts (12 DEB and 12 RPM) under `dist/`. Downloads use the port `8888` Xray proxy. This batch is built locally; APT/YUM import and online publication are pending. See the [VictoriaMetrics datasource upgrade notes](grafana-victoriametrics-ds/README.md) for the 1.0.0 compatibility and runtime checks.
 
-The 2026-10-30 batch updates seven packages for amd64 and arm64, producing 28 new RPM/DEB artifacts under `dist/`. Downloads used the local Xray proxy on port `8888`; the artifacts were built and verified locally, but have not been placed in APT/YUM repositories or published online.
+The 2026-11-01 batch updates ten packages for amd64 and arm64, producing 40 new RPM/DEB artifacts under `dist/`. Downloads used the local Xray proxy on port `8888`; the artifacts were built, verified, and imported into the local APT/YUM repositories. Online publication remains pending.
 
 
 --------
@@ -241,6 +241,25 @@ Local build batch: six packages were downloaded through the port `8888` Xray pro
 | uv                         | 0.13.6  | 0.13.7  | RPM/DEB for both architectures                                     |
 
 `grafana-victoriametrics-ds` 1.0.0 keeps the plugin ID, install path, and Grafana requirements from 0.26.1. The [upstream release](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.0) fixes POST request bodies and WITH-template handling. Both architectures passed backend/API upgrade tests with Grafana 13.3.0 and VictoriaMetrics 1.155.0, including preserved datasource identity and long POST queries through a proxy with a 4,096-byte URL limit. The existing unsigned-plugin allowlist is still required; the interactive WITH-template UI was not exercised.
+
+--------
+
+**2026-11-01**
+
+Local build batch: ten packages were downloaded through the port `8888` Xray proxy, verified against upstream digests, and built for both architectures as RPM/DEB, then imported into the local APT/YUM repositories, producing 40 artifacts. Online publication remains pending. `sealos` remains pinned at `5.0.1`; `promtail` and `pgbackrest-exporter` remain deferred.
+
+| Name                | Old       | New       | Comment                                       |
+| :------------------ | :-------- | :-------- | :-------------------------------------------- |
+| barn                | 0.9.1     | 0.9.3     | Upstream prerelease; native DEB/RPM bytes     |
+| claude              | 2.1.312   | 2.1.316   | Official manifest verified; dual-architecture |
+| cloudflared         | 2026.10.6 | 2026.10.7 | Dual-architecture RPM/DEB                     |
+| codex               | 0.165.0   | 0.166.0   | Dual-architecture RPM/DEB                     |
+| crush               | 0.98.2    | 0.99.0    | Dual-architecture RPM/DEB                     |
+| grafana-infinity-ds | 4.1.4     | 4.1.5     | Dual-architecture RPM/DEB                     |
+| headscale           | 0.29.6    | 0.29.7    | Dual-architecture RPM/DEB                     |
+| mtail               | 3.4.18    | 3.4.19    | Dual-architecture RPM/DEB                     |
+| vector              | 0.60.0    | 0.61.0    | Upstream native DEB/RPM bytes                 |
+| xray                | 26.10.29  | 26.10.31  | Dual-architecture RPM/DEB                     |
 
 --------
 
