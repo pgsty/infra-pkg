@@ -137,11 +137,11 @@ release, called out inline. External-build exceptions are also noted inline.
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [barn](https://github.com/pgsty/barn) 0.9.1 (upstream prerelease; native packages)
-  - deb amd64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.deb
-  - deb arm64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.deb
-  - rpm amd64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.rpm
-  - rpm arm64: https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.rpm
+- [barn](https://github.com/pgsty/barn) 0.9.3 (upstream prerelease; native packages)
+  - deb amd64: https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_amd64.deb
+  - deb arm64: https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_arm64.deb
+  - rpm amd64: https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_amd64.rpm
+  - rpm arm64: https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_arm64.rpm
 - [code](https://code.visualstudio.com/) 1.145.0
   - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code_1.145.0-1793749366_amd64.deb
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code_1.145.0-1793748906_arm64.deb

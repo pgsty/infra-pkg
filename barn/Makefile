@@ -8,21 +8,21 @@ export ARCH RARCH
 VENDOR_DIRECT=1
 REPONAME=pgsty/barn
 PACKAGE=barn
-VERSION=0.9.1
+VERSION=0.9.3
 PROXY ?= http://127.0.0.1:8888
 
-DEB_FILE_amd64=barn_0.9.1_linux_amd64.deb
-DEB_FILE_arm64=barn_0.9.1_linux_arm64.deb
-RPM_FILE_amd64=barn_0.9.1_linux_amd64.rpm
-RPM_FILE_arm64=barn_0.9.1_linux_arm64.rpm
-DEB_URL_amd64=https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.deb
-DEB_URL_arm64=https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.deb
-RPM_URL_amd64=https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_amd64.rpm
-RPM_URL_arm64=https://github.com/pgsty/barn/releases/download/v0.9.1/barn_0.9.1_linux_arm64.rpm
-SHA256_DEB_amd64=30d4210db3fc3f92c4bbb8d677e5508c25ba365e8fcc0cbf19351f38f2918406
-SHA256_DEB_arm64=7acdf2522ad5e47fa8766bbdd590b5b964a4a3f574c6292240f981821cd97ecb
-SHA256_RPM_amd64=e78a43f9d5da30ca1db79b533f57e1d1809454bfb2991e2676b3f9d44ed56792
-SHA256_RPM_arm64=48b332d8370d00c6a0717c8d27a7d3a51d79ea4dbf9fa709294bc46eb5aa9fab
+DEB_FILE_amd64=barn_0.9.3_linux_amd64.deb
+DEB_FILE_arm64=barn_0.9.3_linux_arm64.deb
+RPM_FILE_amd64=barn_0.9.3_linux_amd64.rpm
+RPM_FILE_arm64=barn_0.9.3_linux_arm64.rpm
+DEB_URL_amd64=https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_amd64.deb
+DEB_URL_arm64=https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_arm64.deb
+RPM_URL_amd64=https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_amd64.rpm
+RPM_URL_arm64=https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_arm64.rpm
+SHA256_DEB_amd64=5e124a21774ffadfcfae375fe1a568f157ebec4acb6645efb2e3833c8fe313e7
+SHA256_DEB_arm64=c5b305a89c16d2f3d9dec42a8de1c1b303f7f9fb5efe833a0db306109aadd939
+SHA256_RPM_amd64=c1f0c15ee3e1ed5fec5a74211fcbb00847ab077cbd461ac9c1ca41be973f6adb
+SHA256_RPM_arm64=5f0e50b5f8499d1605d2f49bb05f6c3d0a8db1e3aa6f7c7efaff6d8d7ddf8729
 
 default: all
 all:
