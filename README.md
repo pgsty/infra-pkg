@@ -59,7 +59,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.1 (upstream v1.37.1+k3s1)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.1%2Bk3s1) : 1.37.1 (amd64/arm64 system images)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.18
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.19
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.2
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
