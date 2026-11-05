@@ -85,7 +85,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.4.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.8 (creates `/usr/share/caddy` as the default document root)
-- [headscale](https://github.com/juanfont/headscale) 0.29.6
+- [headscale](https://github.com/juanfont/headscale) 0.29.7
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.169.0
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.52
