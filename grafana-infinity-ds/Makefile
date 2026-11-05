@@ -13,12 +13,15 @@ export ARCH RARCH
 
 REPONAME1=grafana/grafana-infinity-datasource
 PACKAGE1=yesoreyeram-infinity-datasource
-VERSION1=4.1.5
+VERSION1=4.1.6
 FILENAME1=yesoreyeram-infinity-datasource-$(VERSION1).linux_$(ARCH).zip
 WEB_URL1=https://github.com/$(REPONAME1)/releases/download/v$(VERSION1)/$(FILENAME1)
-SHA2561_amd64=e316b139a7cc4e3c2347eb0b4c783c0641a755b6e3486bce407739fc8b027bba
-SHA2561_arm64=1e6f594f473a23b74fc7e41452dab635847826e3ed015161c60136569a68d361
+SHA2561_amd64=b534f46bdf169068a86f58f5b37f6d6adf603906c6755a66bbaa76ab789442c8
+SHA2561_arm64=0ecff45845b6aace166d1e1308e9f9bb8e5cd63cafae6bee6a9afcc415280a66
 SHA2561=$(SHA2561_$(ARCH))
+
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
 default: all
 all:
@@ -28,11 +31,11 @@ get: download verify extract
 
 # print download link and download command
 link:
-	@echo curl -fSL --retry 3 $(WEB_URL1) -o $(FILENAME1)
+	@echo $(CURL) $(WEB_URL1) -o $(FILENAME1)
 
 # download latest release tarball to current directory
 download:
-	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else curl -fSL --retry 3 $(WEB_URL1) -o $(FILENAME1); fi
+	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else $(CURL) $(WEB_URL1) -o $(FILENAME1); fi
 
 # verify cached or downloaded input before extraction
 verify:

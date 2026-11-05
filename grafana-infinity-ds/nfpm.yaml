@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "web"
 priority: "optional"
-version: "4.1.5"
+version: "4.1.6"
 release: "1PGSTY"
 version_schema: semver
 description: "CSV, JSON, GraphQL, XML and HTML datasource for grafana."
@@ -16,10 +16,16 @@ changelog: "${NFPM_CHANGELOG}"
 overrides:
   deb:
     depends:
-      - grafana (>= 11.6.0)
+      - grafana (>= 11.6.11)
+      - grafana (<< 12) | grafana (>= 12.0.10)
+      - grafana (<< 12.1) | grafana (>= 12.1.7)
+      - grafana (<< 12.2) | grafana (>= 12.2.5)
   rpm:
     depends:
-      - grafana >= 11.6.0
+      - grafana >= 11.6.11
+      - (grafana < 12 or grafana >= 12.0.10)
+      - (grafana < 12.1 or grafana >= 12.1.7)
+      - (grafana < 12.2 or grafana >= 12.2.5)
 
 contents:
 

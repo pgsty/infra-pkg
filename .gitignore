@@ -31,6 +31,27 @@ __pycache__/
 /redis-exporter/redis_exporter/
 /pgbackrest-exporter/pgbackrest_exporter/
 
+/barn/*.deb
+/barn/*.rpm
+/barn/*.part
+/code-server/*.deb
+/code-server/*.rpm
+/code-server/*.part
+/opentofu/*.deb
+/opentofu/*.rpm
+/opentofu/*.part
+/silo-console/*.deb
+/silo-console/*.rpm
+/silo-console/*.part
+/grafana-infinity-ds/*.zip
+/grafana-infinity-ds/yesoreyeram-infinity-datasource/
+/k3s/k3s
+/k3s/sha256sum.txt
+/k3s-images/sha256sum.txt
+/k3s-images/k3s-images.txt
+/k3s-images/AIRGAP.md
+/victoria-traces/victoria-traces/
+
 
 bin/*
 !bin/lint_specs.py

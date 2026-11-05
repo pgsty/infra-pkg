@@ -13,14 +13,17 @@ export ARCH RARCH
 
 REPONAME=VictoriaMetrics/VictoriaTraces
 PACKAGE=victoria-traces
-VERSION=0.12.1
+VERSION=0.13.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=victoria-traces-linux-$(ARCH)-v$(VERSION).tar.gz
-SHA256_amd64=966c01559cc3f3452bae136106ec24c484f2383c4c4f9b51ebf2f6c4163721ba
-SHA256_arm64=c08454c06f6db0a22f70c7d35ab0611e9dfee9db4143228ea56f4987399fece3
+SHA256_amd64=789e006d076f3c8b99de7bb1d0277024a7db776db0294d1c27fcc5422d98c4bc
+SHA256_arm64=210bc863666865ba9a4ff0a19901318042da0c474d248fec69ca71c07b1e5f7a
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 
+
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
 default: all
 all:
@@ -31,16 +34,16 @@ get: download verify extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
+	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download configured release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi

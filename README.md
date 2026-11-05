@@ -8,9 +8,9 @@ Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo
 
 Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT and DNF repositories.
 
-The 2026-11-04 scan found eight updates across 99 recipes. This batch produces 32 verified artifacts (16 DEB and 16 RPM); combined with the remaining 2026-11-03 updates, 40 latest-version artifacts cover ten packages. Downloads use the port `8888` Xray proxy. Both batches are built locally; APT/YUM import and online publication are pending. See the [VictoriaMetrics datasource upgrade notes](grafana-victoriametrics-ds/README.md) and the [pgBackRest exporter source-build notes](pgbackrest-exporter/README.md).
+The 2026-11-05 scan found ten updates across 99 recipes, including Barn 1.0.0. The 31 upstream inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests. All 40 packages (20 DEB and 20 RPM) passed dual-architecture verification and are imported into the local APT/YUM repositories with verified package and repository signatures. Online publication remains pending.
 
-The 2026-11-03 batch updates six packages for both architectures and produces 24 verified artifacts (12 DEB and 12 RPM) under `dist/`. Downloads use the port `8888` Xray proxy. This batch is built locally; APT/YUM import and online publication are pending. See the [VictoriaMetrics datasource upgrade notes](grafana-victoriametrics-ds/README.md) for the 1.0.0 compatibility and runtime checks.
+This batch supersedes the earlier Caddy and dblab builds; the other November 3 and 4 builds still await repository import. See the [VictoriaMetrics datasource upgrade notes](grafana-victoriametrics-ds/README.md) and [pgBackRest exporter source-build notes](pgbackrest-exporter/README.md).
 
 The 2026-11-01 batch updates ten packages for amd64 and arm64, producing 40 new RPM/DEB artifacts under `dist/`. Downloads used the local Xray proxy on port `8888`; the artifacts were built, verified, and imported into the local APT/YUM repositories. Online publication remains pending.
 
@@ -53,17 +53,17 @@ release, called out inline. External-build exceptions are also noted inline.
 - [promscale](https://github.com/timescale/promscale) : 0.17.0 (obsolete, frozen; upstream discontinued)
 - [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) : 1.155.0
 - [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaLogs) : 1.53.0
-- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.12.1
+- [VictoriaTraces](https://github.com/VictoriaMetrics/VictoriaTraces) : 0.13.0
 - [duckdb](https://github.com/duckdb/duckdb) : 2.0.0
 - [etcd](https://github.com/etcd-io/etcd) : 3.7.3
-- [k3s](https://github.com/k3s-io/k3s) : 1.37.1 (upstream v1.37.1+k3s1)
-- [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.1%2Bk3s1) : 1.37.1 (amd64/arm64 system images)
+- [k3s](https://github.com/k3s-io/k3s) : 1.37.2 (upstream v1.37.2+k3s1) (release 2PGSTY)
+- [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.2%2Bk3s1) : 1.37.2 (amd64/arm64 system images) (release 2PGSTY)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
 - [mtail](https://github.com/jaqx0r/mtail) : 3.4.19
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.2
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
-- [dblab](https://github.com/danvergara/dblab) 0.55.0
+- [dblab](https://github.com/danvergara/dblab) 0.55.1
 - [pgstream](https://github.com/xataio/pgstream) 1.5.0
 - [pgbot](https://github.com/pgrundev/pgbot) 0.9.0 (PostgreSQL diagnostics, JSON/MCP; optional AI; upstream beta)
 - [pgterm](https://github.com/pgrundev/pgterm) 0.4.0 (database TUI; pairs with pgbot; upstream beta)
@@ -81,10 +81,10 @@ release, called out inline. External-build exceptions are also noted inline.
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.11) : 3.6.11 (obsolete, EOL; 3.6.11 artifacts remain available; absent from Loki 3.7 releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.33.1
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 1.0.1
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.5
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.6
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.4.0
-- [caddy](https://github.com/caddyserver/caddy) 2.11.8 (creates `/usr/share/caddy` as the default document root)
+- [caddy](https://github.com/caddyserver/caddy) 2.11.9 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.7
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.169.0
@@ -137,21 +137,21 @@ release, called out inline. External-build exceptions are also noted inline.
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [barn](https://github.com/pgsty/barn) 0.9.3 (upstream prerelease; native packages)
-  - deb amd64: https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_amd64.deb
-  - deb arm64: https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_arm64.deb
-  - rpm amd64: https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_amd64.rpm
-  - rpm arm64: https://github.com/pgsty/barn/releases/download/v0.9.3/barn_0.9.3_linux_arm64.rpm
+- [barn](https://github.com/pgsty/barn) 1.0.0 (first stable release; native packages)
+  - deb amd64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_amd64.deb
+  - deb arm64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_arm64.deb
+  - rpm amd64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_amd64.rpm
+  - rpm arm64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_arm64.rpm
 - [code](https://code.visualstudio.com/) 1.145.0
   - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code_1.145.0-1793749366_amd64.deb
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code_1.145.0-1793748906_arm64.deb
   - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code-1.145.0-1793749416.el8.x86_64.rpm
   - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code-1.145.0-1793748956.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.144.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server_4.144.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server_4.144.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server-4.144.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.144.0/code-server-4.144.0-arm64.rpm
+- [code-server](https://github.com/coder/code-server): 4.145.0
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server_4.145.0_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server_4.145.0_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server-4.145.0-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server-4.145.0-arm64.rpm
 - [grafana](https://github.com/grafana/grafana/) : 13.3.0
   - deb amd64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_amd64.deb
   - deb arm64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_arm64.deb
@@ -163,11 +163,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_arm64.deb
   - rpm amd64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_amd64.rpm
   - rpm arm64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_arm64.rpm
-- [OpenTofu](https://github.com/opentofu/opentofu) : 1.13.2
-  - deb amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.2/tofu_1.13.2_amd64.deb
-  - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.2/tofu_1.13.2_arm64.deb
-  - rpm amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.2/tofu_1.13.2_amd64.rpm
-  - rpm arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.2/tofu_1.13.2_arm64.rpm
+- [OpenTofu](https://github.com/opentofu/opentofu) : 1.13.8
+  - deb amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.8/tofu_1.13.8_amd64.deb
+  - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.8/tofu_1.13.8_arm64.deb
+  - rpm amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.8/tofu_1.13.8_amd64.rpm
+  - rpm arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.8/tofu_1.13.8_arm64.rpm
 - [kes](https://github.com/pgsty/kes): 20261026000000.0.0 (AGPL-3.0-only; upstream native packages)
   - deb amd64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes_20261026000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes_20261026000000.0.0_arm64.deb
@@ -186,11 +186,11 @@ byte, including their original release metadata.
   - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo-20261026000000.0.0-1PGSTY.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo-20261026000000.0.0-1PGSTY.aarch64.rpm
   - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
-- [silo-console](https://github.com/pgsty/silo-console) 2.5.1 (standalone console; upstream native packages)
-  - deb amd64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_amd64.deb
-  - deb arm64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_arm64.deb
-  - rpm amd64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_amd64.rpm
-  - rpm arm64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_arm64.rpm
+- [silo-console](https://github.com/pgsty/silo-console) 2.6.0 (standalone console; upstream native packages)
+  - deb amd64: https://github.com/pgsty/silo-console/releases/download/v2.6.0/silo-console_2.6.0_linux_amd64.deb
+  - deb arm64: https://github.com/pgsty/silo-console/releases/download/v2.6.0/silo-console_2.6.0_linux_arm64.deb
+  - rpm amd64: https://github.com/pgsty/silo-console/releases/download/v2.6.0/silo-console_2.6.0_linux_amd64.rpm
+  - rpm arm64: https://github.com/pgsty/silo-console/releases/download/v2.6.0/silo-console_2.6.0_linux_arm64.rpm
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.61.0
   - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.61.0/vector_0.61.0-1_amd64.deb
   - deb arm64: https://github.com/vectordotdev/vector/releases/download/v0.61.0/vector_0.61.0-1_arm64.deb
@@ -201,6 +201,35 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-11-05**
+
+Ten recipes produce 40 verified packages for amd64 and arm64 (20 DEB and 20 RPM). All 31 upstream inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests. This batch is imported into the local APT/YUM repositories; package architectures, indexed checksums, APT Release/InRelease signatures, and both YUM repomd signatures passed verification. Local YUM copies are signed with the PGSTY key; cached inputs and vendor-direct `dist/` packages retain their original bytes. Online publication remains pending.
+
+| Name                | Old     | New     | Comment                                           |
+| :------------------ | :------ | :------ | :------------------------------------------------ |
+| barn                | 0.9.3   | 1.0.0   | First stable release; native packages             |
+| caddy               | 2.11.8  | 2.11.9  | PHP/FastCGI regression and security fixes         |
+| code-server         | 4.144.0 | 4.145.0 | Upstream native DEB/RPM packages                  |
+| dblab               | 0.55.0  | 0.55.1  | Patch release; both architectures verified        |
+| grafana-infinity-ds | 4.1.5   | 4.1.6   | Signed plugin; csv-parse and gRPC fixes           |
+| k3s                 | 1.37.1  | 1.37.2  | Upstream v1.37.2+k3s1; corrected metadata, 2PGSTY |
+| k3s-images          | 1.37.1  | 1.37.2  | Air-gap images pinned to k3s 1.37.2-2PGSTY        |
+| opentofu            | 1.13.2  | 1.13.8  | Restores -v; state encryption panic fix           |
+| silo-console        | 2.5.1   | 2.6.0   | Usage scans and optional PostgreSQL worker        |
+| victoria-traces     | 0.12.1  | 0.13.0  | OTLP gRPC TLS default changes; healthcheck flag   |
+
+[Barn 1.0.0](https://github.com/pgsty/barn/releases/tag/v1.0.0) is the first stable release and reads 0.9.3 state without recreating VMs. Catalog signature/revision integrity failures now exit with code `7`. Whole-deployment `recreate` refuses an inventory that omits existing nodes and exits with code `4`; terminal host preparation and purge have additional confirmations. Both architectures passed version/help/JSON checks; destructive VM operations were not exercised.
+
+[Infinity 4.1.6](https://github.com/grafana/grafana-infinity-datasource/releases/tag/v4.1.6) updates csv-parse to 7.0.2 and gRPC to 1.85.0, fixing a security issue and plugin connection freezes under heavy query load. RPM/DEB dependencies now follow the plugin's Grafana compatibility range: `11.6.11 <= v < 12`, `12.0.10 <= v < 12.1`, `12.1.7 <= v < 12.2`, or `v >= 12.2.5`. The complete official ZIP tree is preserved. Grafana 13.3.0 reported a valid signature and a successful backend JSON query on both architectures.
+
+[Caddy 2.11.9](https://github.com/caddyserver/caddy/releases/tag/v2.11.9) fixes the 2.11.8 PHP directory-index/trailing-slash regression and a FastCGI security issue. The packaged default Caddyfile passed validation on both architectures. [OpenTofu 1.13.8](https://github.com/opentofu/opentofu/releases/tag/v1.13.8) restores `-v` and fixes a panic with invalid state encryption configuration.
+
+[SILO Console 2.6.0](https://github.com/pgsty/silo-console/releases/tag/v2.6.0) adds usage scans and an optional durable PostgreSQL usage worker, with administration validation and security fixes. Installing this standalone console does not replace the 2.5.1 frontend embedded in SILO Server 20261026 or add newer server APIs.
+
+[VictoriaTraces 0.13.0](https://github.com/VictoriaMetrics/VictoriaTraces/releases/tag/v0.13.0) disables OTLP gRPC TLS by default: set `-otlpGRPC.tls` explicitly when required. Upstream vtagent now forwards OTLP/HTTP protobuf; its `-remoteWrite.url` must target `/insert/opentelemetry/v1/traces`, and `-remoteWrite.format` and its `/insert/native` endpoint are removed. This recipe packages only single-node VictoriaTraces, not vtagent. It also gains `-healthcheck` and uses Go 1.27.3.
+
+The scan covered 99 recipes with ten updates. `grafana-victoriametrics-ds` remains at 1.0.1; its 1.0 upgrade notes are retained in the November 3 and 4 entries. `sealos` remains pinned at 5.0.1. This batch supersedes the earlier Caddy and dblab builds; the other November 3 and 4 builds still await repository import.
 
 **2026-11-04**
 

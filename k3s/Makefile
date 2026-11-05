@@ -11,9 +11,9 @@ export ARCH RARCH
 
 REPONAME=k3s-io/k3s
 PACKAGE=k3s
-VERSION=1.37.1
+VERSION=1.37.2
 UPSTREAM_REV=1
-RELEASE=1PGSTY
+RELEASE=2PGSTY
 UPSTREAM_VERSION=v$(VERSION)+k3s$(UPSTREAM_REV)
 URL_VERSION=v$(VERSION)%2Bk3s$(UPSTREAM_REV)
 UPSTREAM_ASSET_amd64=k3s
@@ -26,12 +26,13 @@ CHECKSUM_ASSET=sha256sum.txt
 UPSTREAM_CHECKSUM_ASSET=sha256sum-$(ARCH).txt
 CACHE_BINARY=k3s-$(UPSTREAM_VERSION)-linux-$(ARCH)
 CACHE_CHECKSUM=k3s-sha256sum-$(UPSTREAM_VERSION)-$(ARCH).txt
-SHA256_amd64=92b94582eb7b34a8cf532e6006842b9ed215a6783cf56a3dd6271fd35243b2c0
-SHA256_arm64=a1561ca4aef8b99f5588a840d4468ac39c8c1cd92470bbcb9634823fa221741a
+SHA256_amd64=265b3ee6a3198ef14033c63ef46cbb32370d83795199fb6d1b01f21575eddbda
+SHA256_arm64=a779ccf1e5e2e33a62f5a29c2f1c0bbf99431e100579d4c10f0aa0742a6aa84b
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(URL_VERSION)
 RELEASE_BASE=https://github.com/$(REPONAME)/releases/download/$(URL_VERSION)
-CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-all-errors --continue-at - -fL
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" --http1.1 --retry 5 --retry-delay 2 --retry-all-errors --continue-at - -fL
 
 default: all
 all:

@@ -11,9 +11,9 @@ export ARCH RARCH
 
 REPONAME=k3s-io/k3s
 PACKAGE=k3s-images
-VERSION=1.37.1
+VERSION=1.37.2
 UPSTREAM_REV=1
-RELEASE=1PGSTY
+RELEASE=2PGSTY
 UPSTREAM_VERSION=v$(VERSION)+k3s$(UPSTREAM_REV)
 URL_VERSION=v$(VERSION)%2Bk3s$(UPSTREAM_REV)
 IMAGE_ASSET=k3s-airgap-images.tar.zst
@@ -24,12 +24,13 @@ IMAGE_LIST_ASSET=k3s-images.txt
 CACHE_IMAGE=k3s-airgap-images-$(UPSTREAM_VERSION)-$(ARCH).tar.zst
 CACHE_CHECKSUM=k3s-sha256sum-$(UPSTREAM_VERSION)-$(ARCH).txt
 CACHE_IMAGE_LIST=k3s-images-$(UPSTREAM_VERSION).txt
-SHA256_amd64=865b2a63ad7a63fc0db17b7fc2985bf4ae11d5ae93ca1472be6218d20aeb6b23
-SHA256_arm64=b3bd28d3a20144927b25ebb1d255a16ce55bb050b9af5e63abd1bf91c0838fe5
+SHA256_amd64=35a5af1e69b57b8b627a4f6b1c29ea104209b661067b8c97fd40dc3f860bfcd2
+SHA256_arm64=ca384f1a77aa83024bd82ad26fa4774971adb038e656a3b5b9af926be445a442
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(URL_VERSION)
 RELEASE_BASE=https://github.com/$(REPONAME)/releases/download/$(URL_VERSION)
-CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-all-errors --continue-at - -fL
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" --http1.1 --retry 5 --retry-delay 2 --retry-all-errors --continue-at - -fL
 
 default: all
 all:
