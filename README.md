@@ -99,7 +99,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
 - [claude](https://github.com/anthropics/claude-code) 2.1.318
-- [codex](https://github.com/openai/codex) 0.165.0
+- [codex](https://github.com/openai/codex) 0.166.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.3 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
 - [maddy](https://github.com/foxcpp/maddy) 0.9.6
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.15.0 (dual-architecture CGO source build; checksum-pinned local recipe)
