@@ -81,7 +81,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.11) : 3.6.11 (obsolete, EOL; 3.6.11 artifacts remain available; absent from Loki 3.7 releases)
 - [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.33.1
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 1.0.1
-- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.4
+- [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.5
 - [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.4.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.8 (creates `/usr/share/caddy` as the default document root)
