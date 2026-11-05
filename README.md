@@ -112,7 +112,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [opencode](https://github.com/anomalyco/opencode) 1.19.5
 - [uv](https://github.com/astral-sh/uv) 0.13.7
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.4
-- [crush](https://github.com/charmbracelet/crush) 0.98.2
+- [crush](https://github.com/charmbracelet/crush) 0.99.0
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [rclone](https://github.com/rclone/rclone) 1.75.2
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.7
