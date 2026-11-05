@@ -91,7 +91,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.52
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.5.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.4 (stable release; `1PGSTY`)
-- [xray](https://github.com/XTLS/Xray-core) 26.10.29
+- [xray](https://github.com/XTLS/Xray-core) 26.10.31
 - [v2ray](https://github.com/v2fly/v2ray-core) 5.53.0
 - [gost](https://github.com/ginuerzh/gost) 2.12.0
 - [sabiql](https://github.com/riii111/sabiql) 3.0.2
