@@ -115,7 +115,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [crush](https://github.com/charmbracelet/crush) 0.98.2
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [rclone](https://github.com/rclone/rclone) 1.75.2
-- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.6
+- [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.7
 - [pev2](https://github.com/dalibo/pev2/releases) 1.25.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.10.3
 - [sow](https://github.com/pgsty/sow) 0.6.1
