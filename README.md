@@ -191,11 +191,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_arm64.deb
   - rpm amd64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_amd64.rpm
   - rpm arm64: https://github.com/pgsty/silo-console/releases/download/v2.5.1/silo-console_2.5.1_linux_arm64.rpm
-- [vector](https://github.com/vectordotdev/vector/releases) : 0.60.0
-  - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.60.0/vector_0.60.0-1_amd64.deb
-  - deb arm64: https://github.com/vectordotdev/vector/releases/download/v0.60.0/vector_0.60.0-1_arm64.deb
-  - rpm amd64: https://github.com/vectordotdev/vector/releases/download/v0.60.0/vector-0.60.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/vectordotdev/vector/releases/download/v0.60.0/vector-0.60.0-1.aarch64.rpm
+- [vector](https://github.com/vectordotdev/vector/releases) : 0.61.0
+  - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.61.0/vector_0.61.0-1_amd64.deb
+  - deb arm64: https://github.com/vectordotdev/vector/releases/download/v0.61.0/vector_0.61.0-1_arm64.deb
+  - rpm amd64: https://github.com/vectordotdev/vector/releases/download/v0.61.0/vector-0.61.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/vectordotdev/vector/releases/download/v0.61.0/vector-0.61.0-1.aarch64.rpm
   - warning: vendor 0.57.0 DEB upgrades may restart Vector; binaries require glibc 2.28 and are not EL7-compatible
 
 --------
