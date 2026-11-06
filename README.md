@@ -110,7 +110,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [rclone](https://github.com/rclone/rclone) 1.75.2
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.7
 - [pev2](https://github.com/dalibo/pev2/releases) 1.25.0 (noarch)
-- [pig](https://github.com/pgsty/pig) 1.10.3
+- [pig](https://github.com/pgsty/pig) 1.10.4
 - [sow](https://github.com/pgsty/sow) 0.6.1
 - [golang](https://go.dev/dl/) 1.27.3
   - x86_64: https://go.dev/dl/go1.27.3.linux-amd64.tar.gz
@@ -215,6 +215,7 @@ byte, including their original release metadata.
 | mcp-toolbox                | 1.15.0  | 1.16.0  | CGO; glibc 2.28            |
 | opentofu                   | 1.13.2  | 1.13.9  | State persistence fix      |
 | pgbackrest-exporter        | 0.24.0  | 0.25.0  | Source build               |
+| pig                        | 1.10.3  | 1.10.4  | 626 entries; alias fix     |
 | prometheus                 | 3.15.1  | 3.16.0  | TLS / Remote Write changes |
 | redis-exporter             | 1.96.0  | 1.97.0  | Redis 8 KEYSIZES           |
 | seaweedfs                  | 4.51    | 4.52    | Package: 4.52.0            |

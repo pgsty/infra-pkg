@@ -32,6 +32,7 @@ __pycache__/
 /seaweedfs/seaweedfs/
 /stalwart/stalwart/
 /uv/uv/
+/pig/pig/
 /caddy/caddy/
 /dblab/dblab/
 /redis-exporter/redis_exporter/
