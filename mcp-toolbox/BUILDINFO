@@ -1,13 +1,18 @@
 upstream=https://github.com/googleapis/mcp-toolbox
-tag=v1.15.0
-source_url=https://github.com/googleapis/mcp-toolbox/tree/8e8e569594a4a864def8598fd3f4977a8d65e431
-source_tree=04a6eedb3b34a4143dac1eddbbb3a9690e2afa93
+tag=v1.16.0
+source_url=https://github.com/googleapis/mcp-toolbox/tree/06ea49d9a487a72c22419b5a8d5c22c11f0d7485
+source_tree=47581141118a0cd6a2b62a6bb940346c7d181e66
 go=1.27.3
 zig=0.15.2
 cgo=1
 glibc_target=2.28
 build_type=binary
-commit_label=8e8e569594a
-source_commit=8e8e569594a4a864def8598fd3f4977a8d65e431
-imported_package_nfpm=2.48.0
+commit_label=06ea49d9a48
+source_commit=06ea49d9a487a72c22419b5a8d5c22c11f0d7485
+nfpm=2.43.1
 builder_image=sha256:28f970d809e011eca034d1707a16e8a9095e173d2f4c51082180501b827f6f01
+module_verification=go mod verify
+build_flags=-mod=readonly -buildvcs=false -p=6 -trimpath
+ldflags=-s -w -X github.com/googleapis/mcp-toolbox/cmd.buildType=binary -X github.com/googleapis/mcp-toolbox/cmd.commitSha=06ea49d9a48
+sha256_amd64=758191b5afca81ff3c6af2497bffa70a4bf75d1364610f9d01ea48f28ea720b4
+sha256_arm64=e702180cb6bded7a48d44a4b7a20c26846e94c88b83b0a0944733904528d6c44

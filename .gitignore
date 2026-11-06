@@ -18,6 +18,12 @@ __pycache__/
 *.pyc
 
 # Per-recipe build inputs and extracted vendor payloads.
+/codex/codex/
+/crush/crush/
+/crush/crush_*/
+/maddy/maddy/
+/mcp-toolbox/*.bin
+/prometheus/prometheus/
 /claude/claude-*-linux-*.gz
 /code/*.deb
 /code/*.rpm

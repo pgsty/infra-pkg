@@ -10,7 +10,7 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=opentofu
-VERSION=1.13.8
+VERSION=1.13.9
 PROXY ?= http://127.0.0.1:8888
 
 DEB_FILE_amd64=tofu_$(VERSION)_amd64.deb
@@ -21,10 +21,10 @@ DEB_URL_amd64=https://github.com/opentofu/opentofu/releases/download/v$(VERSION)
 DEB_URL_arm64=https://github.com/opentofu/opentofu/releases/download/v$(VERSION)/$(DEB_FILE_arm64)
 RPM_URL_amd64=https://github.com/opentofu/opentofu/releases/download/v$(VERSION)/$(RPM_FILE_amd64)
 RPM_URL_arm64=https://github.com/opentofu/opentofu/releases/download/v$(VERSION)/$(RPM_FILE_arm64)
-SHA256_DEB_amd64=de3e77484cecd9c67494725cb4f9b1bb73c863462486d9a54f44efe49f2e5a63
-SHA256_DEB_arm64=dafeb9848e5446cce2e6282b5c325e99c011263fbfaf80a0c941e19da269a515
-SHA256_RPM_amd64=fb2633cce93ccc187f774a918cb50942c6dea0ab9fdf0d8856d6dc38be5b36b2
-SHA256_RPM_arm64=fbdefd3235c1ebf14edd96e4152e5c5f6b080740068158d3c87e75e0678b604f
+SHA256_DEB_amd64=dcc51f35f3a909e5daa616059c61b3ef1c157e54a2786d457ab6ef19d03a6dfb
+SHA256_DEB_arm64=bf77bc8cdada8dec9ce3dc0af16c5ab891a8c03068cd74493ca105c72f8c78d5
+SHA256_RPM_amd64=b61bb46f7bf77c8b8279d757eee83e35d4b11ebc57049129a68bfc1387251321
+SHA256_RPM_arm64=23b9cf63c935c47eaa398a924f530950236f6772bb9686772e5e83e79e814b2c
 
 default: all
 all:

@@ -8,6 +8,8 @@ Building Infra RPM & DEB packages for [Pigsty Infra](https://pigsty.io/docs/repo
 
 Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/infra) APT and DNF repositories.
 
+The 2026-11-06 batch builds seven updated recipes into 28 verified packages (14 DEB and 14 RPM). Downloads and source-build dependencies used the port `8888` Xray proxy. Both architectures passed payload and CLI checks; MCP Toolbox 1.16.0 also passed installation, upgrade, and unprivileged MCP/SQLite tests on Debian 12 and EL8. APT/YUM import and online publication of this batch remain pending.
+
 The 2026-11-05 scan found ten updates across 99 recipes, including Barn 1.0.0. The 31 upstream inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests. All 40 packages (20 DEB and 20 RPM) passed dual-architecture verification and are imported into the local APT/YUM repositories with verified package and repository signatures. Online publication remains pending.
 
 This batch supersedes the earlier Caddy and dblab builds; the other November 3 and 4 builds still await repository import. See the [VictoriaMetrics datasource upgrade notes](grafana-victoriametrics-ds/README.md) and [pgBackRest exporter source-build notes](pgbackrest-exporter/README.md).
@@ -35,7 +37,7 @@ Local recipes in this section are rebuilt with nFPM. The default RPM/DEB
 release is `1PGSTY`; rebuilds of an existing upstream version use a higher
 release, called out inline. External-build exceptions are also noted inline.
 
-- [prometheus](https://github.com/prometheus/prometheus) : 3.15.1 (includes version-pinned upstream console templates and libraries)
+- [prometheus](https://github.com/prometheus/prometheus) : 3.16.0 (includes version-pinned upstream console templates and libraries)
 - [pushgateway](https://github.com/prometheus/pushgateway) : 1.11.4
 - [alertmanager](https://github.com/prometheus/alertmanager) : 0.34.2
 - [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) : 0.29.1
@@ -99,10 +101,10 @@ release, called out inline. External-build exceptions are also noted inline.
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
 - [claude](https://github.com/anthropics/claude-code) 2.1.318
-- [codex](https://github.com/openai/codex) 0.166.0
+- [codex](https://github.com/openai/codex) 0.167.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.3 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
-- [maddy](https://github.com/foxcpp/maddy) 0.9.6
-- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.15.0 (dual-architecture CGO source build; checksum-pinned local recipe)
+- [maddy](https://github.com/foxcpp/maddy) 0.9.7
+- [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.16.0 (dual-architecture CGO source build; checksum-pinned local recipe)
 - [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 3.21.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
@@ -112,7 +114,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [opencode](https://github.com/anomalyco/opencode) 1.19.5
 - [uv](https://github.com/astral-sh/uv) 0.13.7
 - [pgschema](https://github.com/pgplex/pgschema) 1.13.4
-- [crush](https://github.com/charmbracelet/crush) 0.99.0
+- [crush](https://github.com/charmbracelet/crush) 0.100.0
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [rclone](https://github.com/rclone/rclone) 1.75.2
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.7
@@ -142,11 +144,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_arm64.deb
   - rpm amd64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_amd64.rpm
   - rpm arm64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_arm64.rpm
-- [code](https://code.visualstudio.com/) 1.145.0
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code_1.145.0-1793749366_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code_1.145.0-1793748906_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code-1.145.0-1793749416.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/a717861c07586a53d83b80d742cd3f59b20a6273/code-1.145.0-1793748956.el8.aarch64.rpm
+- [code](https://code.visualstudio.com/) 1.145.1
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code_1.145.1-1793903106_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code_1.145.1-1793903186_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code-1.145.1-1793903156.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code-1.145.1-1793903239.el8.aarch64.rpm
 - [code-server](https://github.com/coder/code-server): 4.145.0
   - deb amd64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server_4.145.0_amd64.deb
   - deb arm64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server_4.145.0_arm64.deb
@@ -163,11 +165,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_arm64.deb
   - rpm amd64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_amd64.rpm
   - rpm arm64: https://github.com/openbao/openbao/releases/download/v2.7.2/openbao_2.7.2_linux_arm64.rpm
-- [OpenTofu](https://github.com/opentofu/opentofu) : 1.13.8
-  - deb amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.8/tofu_1.13.8_amd64.deb
-  - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.8/tofu_1.13.8_arm64.deb
-  - rpm amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.8/tofu_1.13.8_amd64.rpm
-  - rpm arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.8/tofu_1.13.8_arm64.rpm
+- [OpenTofu](https://github.com/opentofu/opentofu) : 1.13.9
+  - deb amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.9/tofu_1.13.9_amd64.deb
+  - deb arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.9/tofu_1.13.9_arm64.deb
+  - rpm amd64: https://github.com/opentofu/opentofu/releases/download/v1.13.9/tofu_1.13.9_amd64.rpm
+  - rpm arm64: https://github.com/opentofu/opentofu/releases/download/v1.13.9/tofu_1.13.9_arm64.rpm
 - [kes](https://github.com/pgsty/kes): 20261026000000.0.0 (AGPL-3.0-only; upstream native packages)
   - deb amd64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes_20261026000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes_20261026000000.0.0_arm64.deb
@@ -201,6 +203,28 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-11-06**
+
+Seven recipes produce 28 verified packages for amd64 and arm64 (14 DEB and 14 RPM). All 16 upstream binary inputs were downloaded through the port `8888` Xray proxy and checked against official SHA256 digests; MCP Toolbox source and dependencies used the same proxy. VS Code and OpenTofu retain their upstream native packages. This batch has not been imported into the APT/YUM repositories or published online.
+
+| Name        | Old     | New     | Comment                                                    |
+| :---------- | :------ | :------ | :--------------------------------------------------------- |
+| maddy       | 0.9.6   | 0.9.7   | DMARC bypass and IMAP fixes; review existing config        |
+| prometheus  | 3.15.1  | 3.16.0  | TLS external URL default and Remote Write metric changes   |
+| crush       | 0.99.0  | 0.100.0 | Version and payload verified on both architectures         |
+| codex       | 0.166.0 | 0.167.0 | Upstream rust-v0.167.0; both architectures verified        |
+| opentofu    | 1.13.8  | 1.13.9  | Fixes state persistence after a first-apply crash          |
+| code        | 1.145.0 | 1.145.1 | Preserves upstream native DEB/RPM bytes and versions       |
+| mcp-toolbox | 1.15.0  | 1.16.0  | CGO source build; glibc 2.28; install/upgrade tests passed |
+
+[Maddy 0.9.7](https://github.com/foxcpp/maddy/releases/tag/v0.9.7) fixes two DMARC verification bypasses, other security issues, and IMAP storage bugs. The new packaged default enables `dmarc_reject_invalid_from yes`; upgrades preserve existing configuration, so existing deployments must enable this option explicitly.
+
+[Prometheus 3.16.0](https://github.com/prometheus/prometheus/releases/tag/v3.16.0) defaults the external URL to HTTPS when the web configuration enables TLS and stops exposing four deprecated metadata metrics for Remote Write 2.0 queues. Version checks and `promtool check config` for the packaged default passed on both architectures.
+
+[MCP Toolbox 1.16.0](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0) adds the MCP skills extension and dynamic resource support, and fixes BigQuery protected-write behavior. Both architectures were compiled from upstream commit `06ea49d9a487a72c22419b5a8d5c22c11f0d7485` with Go 1.27.3, Zig 0.15.2, and CGO targeting glibc 2.28, then packaged with the repository's pinned nFPM 2.43.1. Debian 12 and EL8 passed fresh installation, upgrade from 1.15.0, and unprivileged MCP/SQLite query tests on both architectures; the parameterized query returned 42.
+
+`barn` remains at 1.0.0, `grafana-victoriametrics-ds` at 1.0.1, and `sealos` stays pinned at 5.0.1 as requested. VS Code package metadata, application version, architecture, and original upstream bytes were verified; its GUI was not tested. Full upstream or cloud-service integration suites were not run.
 
 **2026-11-05**
 
