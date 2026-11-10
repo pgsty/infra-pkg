@@ -5,7 +5,10 @@ section: "devel"
 priority: "optional"
 version: "v26.13.0"
 version_schema: semver
-release: "1PGSTY"
+# EL AppStream ships nodejs with epoch 1, which outranks any epoch-less build
+# regardless of version; without this, `dnf install nodejs` picks Node 10/16/22.
+epoch: 2
+release: "4PGSTY"
 description: Node.js JavaScript runtime
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "PGSTY"
@@ -13,9 +16,23 @@ homepage: "https://nodejs.org"
 license: "MIT"
 changelog: "${NFPM_CHANGELOG}"
 
+overrides:
+  deb:
+    depends:
+      - libatomic1
+  rpm:
+    depends:
+      - libatomic
+
 contents:
   - src: node/
     dst: /usr/lib/nodejs
+
+  # Keep global npm installs in the administrator-managed local prefix.
+  - src: npmrc
+    dst: /usr/lib/nodejs/lib/node_modules/npm/npmrc
+    file_info:
+      mode: 0644
 
   - src: node/LICENSE
     dst: /usr/share/doc/nodejs/LICENSE
