@@ -4,7 +4,7 @@ platform: "linux"
 section: "devel"
 priority: "optional"
 version: "0.167.0"
-release: "1PGSTY"
+release: "2PGSTY"
 version_schema: semver
 description: OpenAI coding agent CLI
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -16,6 +16,22 @@ changelog: "${NFPM_CHANGELOG}"
 rpm:
   prefixes:
     - /usr
+
+# This package ships the bare CLI, not upstream's codex-package directory with
+# its bundled bwrap and rg. The Linux sandbox needs bwrap from the system; rg is
+# only a faster search tool for the model, so it stays a weak dependency (EL
+# needs EPEL for it).
+overrides:
+  deb:
+    depends:
+      - bubblewrap
+    recommends:
+      - ripgrep
+  rpm:
+    depends:
+      - bubblewrap
+    recommends:
+      - ripgrep
 
 contents:
   - src: codex/codex
