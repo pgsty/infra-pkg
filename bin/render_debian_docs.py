@@ -158,6 +158,10 @@ def render_manifest(manifest: Path, output_dir: Path, packager: str) -> None:
     copyright_file = str(output_dir / "copyright") if packager == "deb" else "/dev/null"
     text = text.replace("${NFPM_CHANGELOG}", changelog)
     text = text.replace("${NFPM_COPYRIGHT}", copyright_file)
+    if packager == "deb":
+        # nFPM applies `epoch` to every packager and cannot scope it. Here it only
+        # exists to outrank EL distribution packages, so DEB builds drop it.
+        text = re.sub(r"^epoch:.*\n", "", text, flags=re.M)
     (output_dir / "manifest.yaml").write_text(text, encoding="utf-8")
 
 
