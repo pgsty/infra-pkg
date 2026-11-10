@@ -13,21 +13,23 @@ export ARCH RARCH
 
 REPONAME=xataio/pgstream
 PACKAGE=pgstream
-VERSION=1.5.0
+VERSION=1.6.0
 TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
-ASSET=$(PACKAGE).linux.$(ARCH)
-FILENAME=$(PACKAGE)-$(VERSION)-linux-$(ARCH)
-SHA256_amd64=80cb61cf3a218ec0a94f5f98d7c8015f7fdacb700910f0474cba8dde9f9b8ad5
-SHA256_arm64=cfad86d75b92d4a30af2e7d5f6c805f27df749034473291b3c83387be856fa6f
-SHA256=$(SHA256_$(ARCH))
-WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(ASSET)
-CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
+# v1.6.0 has no upstream binaries. Pin the release commit and source archive.
+SOURCE_COMMIT=97d7ab464f0accf6cf1373b3c3f7b328debae4b9
+FILENAME=$(PACKAGE)-$(VERSION)-source.tar.gz
+SHA256_SOURCE=765679852af40cc607935fb63f754172270c98f50369270ab689fe2cca22020c
+WEB_URL=https://codeload.github.com/$(REPONAME)/tar.gz/$(SOURCE_COMMIT)
+GO_VERSION=1.27.3
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 5 --retry-all-errors --retry-delay 2
+LDFLAGS=-s -w -buildid= -X github.com/xataio/pgstream/cmd.Version=$(VERSION)
 
 default: all
 all:
 	@set -e; for a in $(ARCHS); do $(MAKE) ARCH=$$a one; done
-one: download verify extract build clean
+one: download verify extract deps compile build clean
 get: download verify extract
 
 link:
@@ -35,22 +37,29 @@ link:
 	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
-	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
+	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256_SOURCE)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256_SOURCE)  $(FILENAME)" | shasum -a 256 -c -; fi
 
 extract:
-	rm -rf $(PACKAGE)
-	mkdir -p $(PACKAGE)
-	cp $(FILENAME) $(PACKAGE)/$(PACKAGE)
-	chmod +x $(PACKAGE)/$(PACKAGE)
+	rm -rf source $(PACKAGE)
+	mkdir -p source $(PACKAGE)
+	tar -xf $(FILENAME) --strip-components 1 -C source
+
+deps:
+	@test "$$(GOTOOLCHAIN=local go env GOVERSION)" = "go$(GO_VERSION)" || { echo "Go $(GO_VERSION) is required" >&2; exit 1; }
+	cd source && HTTP_PROXY="$(PROXY)" HTTPS_PROXY="$(PROXY)" http_proxy="$(PROXY)" https_proxy="$(PROXY)" GOTOOLCHAIN=local go mod download
+	cd source && GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off go mod verify
+
+compile:
+	cd source && CGO_ENABLED=0 GOOS=linux GOARCH=$(ARCH) GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off go build -mod=readonly -trimpath -buildvcs=false -ldflags '$(LDFLAGS)' -o ../$(PACKAGE)/$(PACKAGE) .
 
 clean:
-	rm -rf $(PACKAGE) $(FILENAME) $(PACKAGE)*.rpm $(PACKAGE)*.deb
+	rm -rf source $(PACKAGE) $(FILENAME) $(PACKAGE)*.rpm $(PACKAGE)*.deb
 
 build: rpm deb
 rpm:
@@ -61,4 +70,4 @@ deb:
 
 .NOTPARALLEL:
 
-.PHONY: all get link meta download verify extract clean build rpm deb one
+.PHONY: all get link meta download verify extract deps compile clean build rpm deb one

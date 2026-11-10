@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "v1.5.0"
+version: "v1.6.0"
 release: "1PGSTY"
 version_schema: semver
 description: PostgreSQL replication with DDL changes.
@@ -25,6 +25,11 @@ contents:
 
   - src: ../LICENSES/Apache-2.0.txt
     dst: /usr/share/doc/pgstream/LICENSE
+    file_info:
+      mode: 0644
+
+  - src: BUILDINFO
+    dst: /usr/share/doc/pgstream/BUILDINFO
     file_info:
       mode: 0644
 
