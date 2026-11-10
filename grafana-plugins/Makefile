@@ -7,12 +7,13 @@
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=plugins
-VERSION=13.2.3
+VERSION=13.3.0
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
 FILENAME=plugins-$(VERSION).tar.gz
-SHA256=7a29f5b909f0bd529fa61eec834803d78d733e87d8c76e90c4ba83930fb5a709
+SHA256=570d16041f1a222f8aeb0169fce34e17729cda0460c68894a1d4caf5c61d0935
 FILENAME2=chart.tgz
 SHA2562=b3aa73759d1890dd5be9e9527423ef1e92c76076f2aeb5476d5a6dbf7ecbc825
+PROXY ?= http://127.0.0.1:8888
 WEB_URL2=https://repo.pigsty.io/etc/$(FILENAME2)
 
 # plugins-$(VERSION).tar.gz is an intentionally curated, one-shot archive.
@@ -27,13 +28,13 @@ get: download verify extract
 # print input commands
 link:
 	@echo cp ../tarball/$(FILENAME) $(FILENAME)
-	@echo curl -fSL $(WEB_URL2) -o $(FILENAME2)
+	@echo curl --proxy "$(PROXY)" -fSL $(WEB_URL2) -o $(FILENAME2)
 
 
 # copy the manually consolidated plugin bundle and fetch the auxiliary assets
 download:
 	cp ../tarball/$(FILENAME) .
-	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else curl -fSL $(WEB_URL2) -o $(FILENAME2); fi
+	if [ -f ../tarball/$(FILENAME2) ]; then cp ../tarball/$(FILENAME2) .; else curl --proxy "$(PROXY)" -fSL $(WEB_URL2) -o $(FILENAME2); fi
 
 # verify cached or downloaded inputs before extraction
 verify:

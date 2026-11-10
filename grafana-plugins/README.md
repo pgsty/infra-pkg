@@ -1,6 +1,6 @@
 # Grafana Plugins
 
-`plugins-13.2.3.tar.gz` is an intentionally curated one-shot archive. The
+`plugins-13.3.0.tar.gz` is an intentionally curated one-shot archive. The
 package recipe verifies the archive's pinned checksum but does not attempt to
 reconstruct it from individual upstream releases.
 
@@ -81,3 +81,18 @@ Updated `marcusolsson-json-datasource` from 1.4.2 to 1.4.3 using the official ca
 | marcusolsson-json-datasource | 1.4.3 | cc10e0bf7a1083aeb23013a089b508071c12688ca2a87d4ae2e04ee1f3f201ac |
 
 Archive SHA256: `7a29f5b909f0bd529fa61eec834803d78d733e87d8c76e90c4ba83930fb5a709`.
+
+## 2026-11-09 bundle
+
+Updated six plugins from the official Grafana catalog through the port 8888 proxy. All ZIPs match the catalog SHA256; the other eight plugin directories are byte-for-byte preserved from the checksum-pinned 13.2.3 bundle. The curated bundle contains 14 plugins.
+
+| Plugin | Version | SHA256 of downloaded ZIP |
+|---|---|---|
+| marcusolsson-dynamictext-panel | 6.3.1 | ed6f7e8b07fa6bc6922c3e6a41948408833bb0c60a2a867579437048718dc5d5 |
+| marcusolsson-json-datasource | 1.4.4 | 89082937497a3d2dd9c57f05fb8b6f6f453af6accae557086fc727691dfb97df |
+| volkovlabs-echarts-panel | 7.3.0 | b3255abba531d1c9878354dc59e393edd337019b4305c123a5ed42b4b10ce921 |
+| volkovlabs-form-panel | 6.3.6 | 4e9d8b05b5ccee22fcba47f518a34888a96f0a0c884ccd218b0ae4bddfa11a34 |
+| volkovlabs-image-panel | 7.3.4 | debf607e24b3eddb2c50005df6f5f54bd82e263d76ae080ef69860d06e506253 |
+| volkovlabs-table-panel | 3.6.9 | 33202b75f1f940b6a2789fdf3f89d9a75141f8560a8247dfb7244890d649763f |
+
+Archive SHA256: `570d16041f1a222f8aeb0169fce34e17729cda0460c68894a1d4caf5c61d0935`.
