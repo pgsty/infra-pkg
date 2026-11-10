@@ -1,0 +1,51 @@
+name: "pi-coding-agent"
+arch: "${ARCH}"
+platform: "linux"
+section: "devel"
+priority: "optional"
+version: "1.5.1"
+release: "1PGSTY"
+version_schema: semver
+description: Minimal, extensible coding agent harness for the terminal
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://pi.dev"
+license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
+
+# Without rg / fd on PATH, pi downloads them from GitHub into ~/.pi/agent/bin,
+# which fails on air-gapped hosts. Weak dependencies: EL needs EPEL for both.
+overrides:
+  deb:
+    recommends:
+      - ripgrep
+      - fd-find
+  rpm:
+    recommends:
+      - ripgrep
+      - fd-find
+
+contents:
+  # pi resolves its resources relative to its own executable, so the upstream
+  # directory is installed as-is and exposed through a symlink.
+  - src: pi/
+    dst: /usr/lib/pi
+
+  - src: ../lib/pi/pi
+    dst: /usr/bin/pi
+    type: symlink
+
+  # the release archive carries no license file; this is upstream's LICENSE
+  - src: LICENSE
+    dst: /usr/share/doc/pi-coding-agent/LICENSE
+    file_info:
+      mode: 0644
+
+  # Debian documentation
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/pi-coding-agent/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
