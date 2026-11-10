@@ -13,14 +13,17 @@ export ARCH RARCH
 
 REPONAME="jaqx0r/mtail"
 PACKAGE="mtail"
-VERSION=3.4.19
+VERSION=3.4.20
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME="$(PACKAGE)_$(VERSION)_linux_$(ARCH)"
 FILENAME="$(DIRNAME).tar.gz"
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=4527fd9567f43d729ceab96442a2836f78fb3555c4427090086b20297c46d8c3
-SHA256_arm64=024acc2ca6948783476786b1e7b244d09febf9b31b8ff613704bb9e4e091bf64
+SHA256_amd64=771d5ea22c53ec4c1eb9932a27b91fdacc2d0c8a7c7f94d516437e78f7e69dd5
+SHA256_arm64=d6c47cc000e921e294dc00453584958b8f2875f75db225a7873778ed42b4bf6a
 SHA256=$(SHA256_$(ARCH))
+
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 5 --retry-all-errors
 
 
 default: all
@@ -32,16 +35,16 @@ get: download verify extract
 # print download link and download command
 link:
 	@echo $(REPONAME) $(VERSION) on $(RELEASE_PAGE)
-	@echo curl -fSL $(WEB_URL) -o $(FILENAME)
+	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # download configured release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else curl -fSL $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
