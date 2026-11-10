@@ -91,7 +91,6 @@ release, called out inline. External-build exceptions are also noted inline.
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `2PGSTY`; bundles timescaledb-parallel-copy 0.13.1)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.319
 - [codex](https://github.com/openai/codex) 0.167.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.3 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
 - [maddy](https://github.com/foxcpp/maddy) 0.9.7
@@ -135,6 +134,11 @@ byte, including their original release metadata.
   - deb arm64: https://github.com/pgsty/barn/releases/download/v1.1.0/barn_1.1.0_linux_arm64.deb
   - rpm amd64: https://github.com/pgsty/barn/releases/download/v1.1.0/barn_1.1.0_linux_amd64.rpm
   - rpm arm64: https://github.com/pgsty/barn/releases/download/v1.1.0/barn_1.1.0_linux_arm64.rpm
+- [claude-code](https://github.com/anthropics/claude-code) 2.1.322 (downloaded directly from Anthropic's signed apt/dnf repositories and preserved byte-for-byte; replaces the obsolete self-maintained `claude` package)
+  - deb amd64: https://downloads.claude.ai/claude-code/apt/latest/pool/main/c/claude-code/claude-code_2.1.322-1_amd64.deb
+  - deb arm64: https://downloads.claude.ai/claude-code/apt/latest/pool/main/c/claude-code/claude-code_2.1.322-1_arm64.deb
+  - rpm amd64: https://downloads.claude.ai/claude-code/rpm/latest/Packages/claude-code-2.1.322-1.x86_64.rpm
+  - rpm arm64: https://downloads.claude.ai/claude-code/rpm/latest/Packages/claude-code-2.1.322-1.aarch64.rpm
 - [code](https://code.visualstudio.com/) 1.145.2
   - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code_1.145.2-1793945276_amd64.deb
   - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code_1.145.2-1793945203_arm64.deb
@@ -200,6 +204,10 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-11-10**
+
+Claude Code now uses Anthropic's signed native DEB/RPM packages from the official `apt` and `dnf` repositories. The old self-maintained `claude` package is archived as obsolete and was replaced by the checksum-pinned `claude-code` vendor-direct recipe; the four package hashes match the official repository indexes.
 
 **2026-11-09**
 

@@ -5,10 +5,13 @@
 #==============================================================#
 # Anthropic publishes signed apt/dnf repositories for claude-code:
 #   https://code.claude.com/docs/en/setup#install-with-linux-package-managers
-# The pinned SHA256 values come from the signed repository indexes
+# This recipe follows the latest channel. The pinned SHA256 values come from
+# the signed repository indexes
 # (key 31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE), not from the downloads:
 #   apt: dists/latest/InRelease -> main/binary-<arch>/Packages
 #   rpm: repodata/repomd.xml(.asc) -> repodata/*-primary.xml.gz
+# It replaces the obsolete self-maintained claude package and preserves the
+# upstream package bytes without nFPM repacking.
 # To bump: change VERSION and the four SHA256 values.
 ARCH  ?= amd64
 ARCHS ?= amd64 arm64

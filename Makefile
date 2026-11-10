@@ -26,6 +26,9 @@ all: $(PKGS)
 $(PACKAGE_RECIPES): | dir
 	cd $@ && $(MAKE)
 
+# Deprecated compatibility alias; the package output is now claude-code.
+claude: claude-code
+
 # build every package for a single architecture: make amd64 / make arm64
 amd64 arm64: | dir
 	@set -e; for p in $(PKGS); do \
@@ -53,4 +56,4 @@ pulld:
 
 
 .NOTPARALLEL:
-.PHONY: default all amd64 arm64 dir lint push pushd pull pulld $(PACKAGE_RECIPES)
+.PHONY: default all amd64 arm64 dir lint push pushd pull pulld claude $(PACKAGE_RECIPES)

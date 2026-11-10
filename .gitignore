@@ -8,7 +8,6 @@ tmp/
 .codex/
 .cursor/
 
-claude/claude
 .claude
 CLAUDE.md
 AGENTS.md
@@ -24,7 +23,6 @@ __pycache__/
 /maddy/maddy/
 /mcp-toolbox/*.bin
 /prometheus/prometheus/
-/claude/claude-*-linux-*.gz
 /code/*.deb
 /code/*.rpm
 /code/*.part
