@@ -10,21 +10,21 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=code
-VERSION=1.145.1
+VERSION=1.145.2
 PROXY ?= http://127.0.0.1:8888
 
-DEB_FILE_amd64=code_1.145.1-1793903106_amd64.deb
-DEB_FILE_arm64=code_1.145.1-1793903186_arm64.deb
-RPM_FILE_amd64=code-1.145.1-1793903156.el8.x86_64.rpm
-RPM_FILE_arm64=code-1.145.1-1793903239.el8.aarch64.rpm
-DEB_URL_amd64=https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code_1.145.1-1793903106_amd64.deb
-DEB_URL_arm64=https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code_1.145.1-1793903186_arm64.deb
-RPM_URL_amd64=https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code-1.145.1-1793903156.el8.x86_64.rpm
-RPM_URL_arm64=https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code-1.145.1-1793903239.el8.aarch64.rpm
-SHA256_DEB_amd64=be75503122edad52d2146c8fb29c1a32b733e179da86e4793e878b67cb27b018
-SHA256_DEB_arm64=1d445dc03cb22f7467fd774e07d8c3fca5fada572ea9d54ffb5ed3330503d77c
-SHA256_RPM_amd64=8f29b08bcb8c57ee1486bcab23c5c8c2d307566a406d1c3925673b291a9f0c4e
-SHA256_RPM_arm64=43e9e6fab9f62d6bc4789496e0fbf105673328db2a93becd1e584703e4da17b4
+DEB_FILE_amd64=code_1.145.2-1793945276_amd64.deb
+DEB_FILE_arm64=code_1.145.2-1793945203_arm64.deb
+RPM_FILE_amd64=code-1.145.2-1793945328.el8.x86_64.rpm
+RPM_FILE_arm64=code-1.145.2-1793945254.el8.aarch64.rpm
+DEB_URL_amd64=https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code_1.145.2-1793945276_amd64.deb
+DEB_URL_arm64=https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code_1.145.2-1793945203_arm64.deb
+RPM_URL_amd64=https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code-1.145.2-1793945328.el8.x86_64.rpm
+RPM_URL_arm64=https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code-1.145.2-1793945254.el8.aarch64.rpm
+SHA256_DEB_amd64=aa2bfc5a3db4f0971e8b50ce08d07b1849894a9caca2b0f8ea5b07ac8d68da8d
+SHA256_DEB_arm64=a224279b3651eac641bae9e9c9bd3977d93c46af799393f3f368aa1ec55c7c7f
+SHA256_RPM_amd64=fb0e0563fd3977e77e53fa46e5da18d52cb04b3bb5be24fd2366ff2008becc02
+SHA256_RPM_arm64=9f9a744d717e1ce1f28931e5ce2d1ba146ad87863806acedb2786b39384916e6
 
 default: all
 all:
