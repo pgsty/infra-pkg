@@ -13,14 +13,15 @@ export ARCH RARCH
 
 REPONAME=pgsty/pg_exporter
 PACKAGE=pg_exporter
-VERSION=1.5.0
+VERSION=1.6.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-$(VERSION).linux-$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=e372f6defb844b4bfbe3286b40dba3d4aae2ce72c4bed9980e3b9a56507aef56
-SHA256_arm64=19f34db9e034d1437791af52676cf32e60a669d4a5036e0cc3efbe14efb61cde
+SHA256_amd64=296a26bf83acd7024f4de8fdeac0ee31baffa01e3153cf5c694e90ed8268719a
+SHA256_arm64=ea6d1dbe0820d599e81ed702e128b4fe4a557e2afb5b5c157de222576c1d7ce7
 SHA256=$(SHA256_$(ARCH))
-CURL=curl -fSL --retry 3
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 
 
 default: all
@@ -36,7 +37,7 @@ link:
 
 # get latest release info
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 # copy versioned tarball from the shared cache, or fetch it from upstream
 download:
