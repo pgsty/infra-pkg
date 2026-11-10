@@ -36,7 +36,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [node-exporter](https://github.com/prometheus/node_exporter) : 1.12.1
 - [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/) : 3.8.1
 - [keepalived-exporter](https://github.com/mehdy/keepalived-exporter) : 1.7.1
-- [pg-exporter](https://github.com/pgsty/pg_exporter): 1.5.0
+- [pg-exporter](https://github.com/pgsty/pg_exporter): 1.6.0
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.25.0 (reproducible build from pinned upstream source; no upstream binary assets)
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.21.0
 - [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.97.0
@@ -52,12 +52,12 @@ release, called out inline. External-build exceptions are also noted inline.
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.2 (upstream v1.37.2+k3s1) (release 2PGSTY)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.2%2Bk3s1) : 1.37.2 (amd64/arm64 system images) (release 2PGSTY)
 - [sealos](https://github.com/labring/sealos) : 5.0.1 (obsolete, locked; last Apache-2.0 stable release)
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.19
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.20
 - [restic](https://github.com/restic/restic) : 0.19.1
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.2
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
 - [dblab](https://github.com/danvergara/dblab) 0.55.1
-- [pgstream](https://github.com/xataio/pgstream) 1.5.0
+- [pgstream](https://github.com/xataio/pgstream) 1.6.0 (pinned source build; no upstream binaries)
 - [pgbot](https://github.com/pgrundev/pgbot) 0.9.0 (PostgreSQL diagnostics, JSON/MCP; optional AI; upstream beta)
 - [pgterm](https://github.com/pgrundev/pgterm) 0.4.0 (database TUI; pairs with pgbot; upstream beta)
 - [pggo](https://github.com/pgrundev/pggo) 0.1.1 (JSON SQL CLI for scripts and agents)
@@ -72,16 +72,16 @@ release, called out inline. External-build exceptions are also noted inline.
 - [logcli](https://grafana.com/docs/loki/latest/query/logcli/) : 3.7.9
 - [loki-canary](https://grafana.com/docs/loki/latest/operations/loki-canary/) : 3.7.9
 - [promtail](https://github.com/grafana/loki/releases/tag/v3.6.11) : 3.6.11 (obsolete, EOL; 3.6.11 artifacts remain available; absent from Loki 3.7 releases)
-- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.33.1
+- [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/) 0.34.0
 - [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) 1.0.1
 - [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/) 4.1.6
-- [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.2.3 (noarch)
+- [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/grafana-plugins) 13.3.0 (noarch)
 - [kafka](https://kafka.apache.org/downloads) 4.4.0
 - [caddy](https://github.com/caddyserver/caddy) 2.11.9 (creates `/usr/share/caddy` as the default document root)
 - [headscale](https://github.com/juanfont/headscale) 0.29.7
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.169.0
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.52
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.53
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.5.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.4 (stable release; `1PGSTY`)
 - [xray](https://github.com/XTLS/Xray-core) 26.10.31
@@ -91,7 +91,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.0 (release `2PGSTY`; bundles timescaledb-parallel-copy 0.13.1)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
 - [agentsview](https://github.com/kenn-io/agentsview) 0.46.1
-- [claude](https://github.com/anthropics/claude-code) 2.1.318
+- [claude](https://github.com/anthropics/claude-code) 2.1.319
 - [codex](https://github.com/openai/codex) 0.167.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 1.0.3 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
 - [maddy](https://github.com/foxcpp/maddy) 0.9.7
@@ -104,18 +104,18 @@ release, called out inline. External-build exceptions are also noted inline.
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.19.5
 - [uv](https://github.com/astral-sh/uv) 0.13.7
-- [pgschema](https://github.com/pgplex/pgschema) 1.13.4
+- [pgschema](https://github.com/pgplex/pgschema) 1.14.1
 - [crush](https://github.com/charmbracelet/crush) 0.100.0
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
-- [rclone](https://github.com/rclone/rclone) 1.75.2
+- [rclone](https://github.com/rclone/rclone) 1.76.0
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.10.7
 - [pev2](https://github.com/dalibo/pev2/releases) 1.25.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.10.4
-- [sow](https://github.com/pgsty/sow) 0.6.1
+- [sow](https://github.com/pgsty/sow) 0.7.0
 - [golang](https://go.dev/dl/) 1.27.3
   - x86_64: https://go.dev/dl/go1.27.3.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.27.3.linux-arm64.tar.gz
-- [nodejs](https://nodejs.org/en/download/) 26.13.0
+- [nodejs](https://nodejs.org/en/download/) 26.13.0 (release 3PGSTY; npm global prefix `/usr/local`; requires `libatomic`)
   - x86_64: https://nodejs.org/dist/v26.13.0/node-v26.13.0-linux-x64.tar.xz
   - arm64: https://nodejs.org/dist/v26.13.0/node-v26.13.0-linux-arm64.tar.xz
 
@@ -130,21 +130,21 @@ release, called out inline. External-build exceptions are also noted inline.
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [barn](https://github.com/pgsty/barn) 1.0.0 (first stable release; native packages)
-  - deb amd64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_amd64.deb
-  - deb arm64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_arm64.deb
-  - rpm amd64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_amd64.rpm
-  - rpm arm64: https://github.com/pgsty/barn/releases/download/v1.0.0/barn_1.0.0_linux_arm64.rpm
-- [code](https://code.visualstudio.com/) 1.145.1
-  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code_1.145.1-1793903106_amd64.deb
-  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code_1.145.1-1793903186_arm64.deb
-  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code-1.145.1-1793903156.el8.x86_64.rpm
-  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/6bab64e2d12b04d04c0d99c27ff166023efd1dda/code-1.145.1-1793903239.el8.aarch64.rpm
-- [code-server](https://github.com/coder/code-server): 4.145.0
-  - deb amd64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server_4.145.0_amd64.deb
-  - deb arm64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server_4.145.0_arm64.deb
-  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server-4.145.0-amd64.rpm
-  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.145.0/code-server-4.145.0-arm64.rpm
+- [barn](https://github.com/pgsty/barn) 1.1.0 (native packages)
+  - deb amd64: https://github.com/pgsty/barn/releases/download/v1.1.0/barn_1.1.0_linux_amd64.deb
+  - deb arm64: https://github.com/pgsty/barn/releases/download/v1.1.0/barn_1.1.0_linux_arm64.deb
+  - rpm amd64: https://github.com/pgsty/barn/releases/download/v1.1.0/barn_1.1.0_linux_amd64.rpm
+  - rpm arm64: https://github.com/pgsty/barn/releases/download/v1.1.0/barn_1.1.0_linux_arm64.rpm
+- [code](https://code.visualstudio.com/) 1.145.2
+  - deb amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code_1.145.2-1793945276_amd64.deb
+  - deb arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code_1.145.2-1793945203_arm64.deb
+  - rpm amd64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code-1.145.2-1793945328.el8.x86_64.rpm
+  - rpm arm64: https://vscode.download.prss.microsoft.com/dbazure/download/stable/c4453f8ea430795f941c1b2ff6c9321135a74a02/code-1.145.2-1793945254.el8.aarch64.rpm
+- [code-server](https://github.com/coder/code-server): 4.145.2
+  - deb amd64: https://github.com/coder/code-server/releases/download/v4.145.2/code-server_4.145.2_amd64.deb
+  - deb arm64: https://github.com/coder/code-server/releases/download/v4.145.2/code-server_4.145.2_arm64.deb
+  - rpm amd64: https://github.com/coder/code-server/releases/download/v4.145.2/code-server-4.145.2-amd64.rpm
+  - rpm arm64: https://github.com/coder/code-server/releases/download/v4.145.2/code-server-4.145.2-arm64.rpm
 - [grafana](https://github.com/grafana/grafana/) : 13.3.0
   - deb amd64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_amd64.deb
   - deb arm64: https://dl.grafana.com/grafana/release/13.3.0/grafana_13.3.0_40412481033_linux_arm64.deb
@@ -167,23 +167,29 @@ byte, including their original release metadata.
   - rpm amd64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes-20261026000000.0.0-1.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/kes/releases/download/RELEASE.2026-10-26T00-00-00Z/kes-20261026000000.0.0-1.aarch64.rpm
   - native layout: `/usr/local/bin/kes`; preserves upstream paths, legal files, RPM release `1`, and DEB version without a release suffix; repository RPMs use the PGSTY signing key
-- [mcli](https://github.com/pgsty/mc) 20261026000000.0.0 (upstream native packages)
-  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-10-26T00-00-00Z/mcli_20261026000000.0.0_amd64.deb
-  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-10-26T00-00-00Z/mcli_20261026000000.0.0_arm64.deb
-  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-10-26T00-00-00Z/mcli-20261026000000.0.0-1.x86_64.rpm
-  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-10-26T00-00-00Z/mcli-20261026000000.0.0-1.aarch64.rpm
+- [mcli](https://github.com/pgsty/mc) 20261109000000.0.0 (upstream native packages)
+  - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-11-09T00-00-00Z/mcli_20261109000000.0.0_amd64.deb
+  - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-11-09T00-00-00Z/mcli_20261109000000.0.0_arm64.deb
+  - rpm amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-11-09T00-00-00Z/mcli-20261109000000.0.0-1.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-11-09T00-00-00Z/mcli-20261109000000.0.0-1.aarch64.rpm
   - native layout: `/usr/local/bin/mcli` (previous repack: `/usr/bin/mcli`); preserves upstream legal files, RPM release `1`, DEB version without a release suffix; repository RPMs use the PGSTY signing key
+- [pgext](https://github.com/pgsty/pgext) 1.6.0 (PostgreSQL extension catalog CLI and web app; upstream native packages)
+  - deb amd64: https://github.com/pgsty/pgext/releases/download/v1.6.0/pgext_1.6.0-1PGSTY_amd64.deb
+  - deb arm64: https://github.com/pgsty/pgext/releases/download/v1.6.0/pgext_1.6.0-1PGSTY_arm64.deb
+  - rpm amd64: https://github.com/pgsty/pgext/releases/download/v1.6.0/pgext-1.6.0-1PGSTY.x86_64.rpm
+  - rpm arm64: https://github.com/pgsty/pgext/releases/download/v1.6.0/pgext-1.6.0-1PGSTY.aarch64.rpm
 - [silo](https://github.com/pgsty/silo): 20261026000000.0.0
   - deb amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo_20261026000000.0.0-1PGSTY_amd64.deb
   - deb arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo_20261026000000.0.0-1PGSTY_arm64.deb
   - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo-20261026000000.0.0-1PGSTY.x86_64.rpm
   - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-10-26T00-00-00Z/silo-20261026000000.0.0-1PGSTY.aarch64.rpm
   - migration: `silo` replaces `minio` as the package, binary, and systemd service name while preserving S3/Admin APIs, `/minio/*`, `MINIO_*`, and on-disk compatibility
-- [silo-console](https://github.com/pgsty/silo-console) 2.6.0 (standalone console; upstream native packages)
-  - deb amd64: https://github.com/pgsty/silo-console/releases/download/v2.6.0/silo-console_2.6.0_linux_amd64.deb
-  - deb arm64: https://github.com/pgsty/silo-console/releases/download/v2.6.0/silo-console_2.6.0_linux_arm64.deb
-  - rpm amd64: https://github.com/pgsty/silo-console/releases/download/v2.6.0/silo-console_2.6.0_linux_amd64.rpm
-  - rpm arm64: https://github.com/pgsty/silo-console/releases/download/v2.6.0/silo-console_2.6.0_linux_arm64.rpm
+- [silo-console](https://github.com/pgsty/silo-console) 2.7.0 (standalone console; upstream draft native packages; local acceptance only)
+  - deb amd64: https://github.com/pgsty/silo-console/releases/download/v2.7.0/silo-console_2.7.0_linux_amd64.deb
+  - deb arm64: https://github.com/pgsty/silo-console/releases/download/v2.7.0/silo-console_2.7.0_linux_arm64.deb
+  - rpm amd64: https://github.com/pgsty/silo-console/releases/download/v2.7.0/silo-console_2.7.0_linux_amd64.rpm
+  - rpm arm64: https://github.com/pgsty/silo-console/releases/download/v2.7.0/silo-console_2.7.0_linux_arm64.rpm
+  - draft assets were fetched through the authenticated GitHub API; public tag URLs become available after upstream publication
 - [vector](https://github.com/vectordotdev/vector/releases) : 0.61.0
   - deb amd64: https://github.com/vectordotdev/vector/releases/download/v0.61.0/vector_0.61.0-1_amd64.deb
   - deb arm64: https://github.com/vectordotdev/vector/releases/download/v0.61.0/vector_0.61.0-1_arm64.deb
@@ -194,6 +200,41 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-11-09**
+
+Consolidated the November 8 and 9 scans and rechecked PGEXT and SILO Console. Sixteen recipes have been built and verified locally, producing 62 packages (31 DEB and 31 RPM). All cover amd64/arm64 except the noarch Grafana plugin bundle. Downloads used `http://127.0.0.1:8888`. This batch has been imported into the local APT/YUM repositories; package and index signatures and checksums are verified. Online publication remains pending.
+
+| Name | Old | New | Comment |
+|---|---|---|---|
+| barn | 1.0.0 | 1.1.0 | Upstream native packages |
+| claude | 2.1.318 | 2.1.319 | Repacked for both architectures |
+| code | 1.145.1 | 1.145.2 | Upstream native packages |
+| code-server | 4.145.0 | 4.145.2 | Upstream native packages |
+| grafana-plugins | 13.2.3 | 13.3.0 | noarch; six plugins updated below |
+| grafana-victorialogs-ds | 0.33.1 | 0.34.0 | Repacked for both architectures |
+| mcli | 20261026000000.0.0 | 20261109000000.0.0 | Upstream native packages |
+| mtail | 3.4.19 | 3.4.20 | Repacked for both architectures |
+| pg-exporter | 1.5.0 | 1.6.0 | Repacked for both architectures |
+| pgext | — | 1.6.0 | New recipe; previous scan found 1.5.0 |
+| pgschema | 1.13.4 | 1.14.1 | Repacked for both architectures |
+| pgstream | 1.5.0 | 1.6.0 | Source build from pinned commit |
+| rclone | 1.75.2 | 1.76.0 | Repacked for both architectures |
+| seaweedfs | 4.52 | 4.53 | Package version: 4.53.0 |
+| silo-console | 2.6.0 | 2.7.0 | Upstream draft; local acceptance |
+| sow | 0.6.1 | 0.7.0 | Repacked for both architectures |
+| marcusolsson-dynamictext-panel | 6.3.0 | 6.3.1 | grafana-plugins |
+| marcusolsson-json-datasource | 1.4.3 | 1.4.4 | grafana-plugins |
+| volkovlabs-echarts-panel | 7.2.5 | 7.3.0 | grafana-plugins |
+| volkovlabs-form-panel | 6.3.5 | 6.3.6 | grafana-plugins |
+| volkovlabs-image-panel | 7.3.3 | 7.3.4 | grafana-plugins |
+| volkovlabs-table-panel | 3.6.8 | 3.6.9 | grafana-plugins |
+| nFPM | 2.43.1 | 2.48.0 | Build tool; three platforms cached |
+| Zig | 0.15.2 | 0.17.1 | Download only; Linux amd64/arm64 |
+
+[PGEXT 1.6.0](https://github.com/pgsty/pgext/releases/tag/v1.6.0) is published, superseding the previously scanned 1.5.0, and is added as a native-package recipe. SILO Console 2.7.0 was still an upstream draft when checked; the public latest release remained 2.6.0. Its four draft assets were SHA256-verified and retained byte for byte for local acceptance. The draft was not published.
+
+[PGStream 1.6.0](https://github.com/xataio/pgstream/releases/tag/v1.6.0) has no upstream binary assets. It was built from pinned commit `97d7ab464f0accf6cf1373b3c3f7b328debae4b9` with Go 1.27.3 and the upstream `go.mod`/`go.sum`, with `BUILDINFO` included. The Grafana bundle updates six plugins and preserves the other eight plugin directories. nFPM 2.48.0 was used for this batch; Zig 0.17.1 updates only the Linux download cache for both architectures.
 
 **2026-11-06**
 
