@@ -13,15 +13,16 @@ export ARCH RARCH
 
 REPONAME=pgplex/pgschema
 PACKAGE=pgschema
-VERSION=1.13.4
+VERSION=1.14.1
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-$(VERSION)-linux-$(ARCH)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=abce75a704ce411a8f9d1dcc786573d7e0e6dcc6b060a0e6b66a1550ed734bdb
-SHA256_arm64=5f7d81371111033ed1df54b894b3bd6eb2cb55c5c9fee20addf2aae67abb0c99
+SHA256_amd64=0f3915acdd15fcbe28e4aa14ad08a7e558a21669e8d1d5afa95ad590e59647f7
+SHA256_arm64=6a1617a21ba786a60c763e764437498e58d22f779e5e1e88684c1af2ad066688
 SHA256=$(SHA256_$(ARCH))
-CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
 default: all
 all:
@@ -34,7 +35,7 @@ link:
 	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	$(CURL) --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
