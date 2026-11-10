@@ -14,10 +14,13 @@ PRUNE_SUFFIX = $(if $(filter arm64,$(ARCH)),linux_amd64,linux_arm64)
 
 REPONAME1=VictoriaMetrics/victorialogs-datasource
 PACKAGE1=victoriametrics-logs-datasource
-VERSION1=0.33.1
+VERSION1=0.34.0
 FILENAME1=$(PACKAGE1)-v$(VERSION1).tar.gz
 WEB_URL1=https://github.com/$(REPONAME1)/releases/download/v$(VERSION1)/$(FILENAME1)
-SHA2561=849edf4d86a6555bbf3fdbe1c53ed719a6c51c3d69965dcc0384e2c129ad991a
+SHA2561=72c7dbe4bc046f278670f6ab4c4b1518201037f35f534eff462f76fa6ef771be
+
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" -fSL --retry 5 --retry-all-errors
 
 
 default: all
@@ -28,12 +31,12 @@ get: download verify extract
 
 # print download link and download command
 link:
-	@echo curl -fSL --retry 3 $(WEB_URL1) -o $(FILENAME1)
+	@echo $(CURL) $(WEB_URL1) -o $(FILENAME1)
 
 # download latest release tarball to current directory
 d: download
 download:
-	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else curl -fSL --retry 3 $(WEB_URL1) -o $(FILENAME1); fi
+	if [ -f ../tarball/$(FILENAME1) ]; then cp ../tarball/$(FILENAME1) .; else $(CURL) $(WEB_URL1) -o $(FILENAME1); fi
 
 # verify cached or downloaded input before extraction
 verify:
