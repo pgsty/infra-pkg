@@ -59,8 +59,38 @@ __pycache__/
 /k3s-images/AIRGAP.md
 /victoria-traces/victoria-traces/
 
+# 2026-11-09 package inputs and generated payloads.
+/pgext/*.deb
+/pgext/*.rpm
+/pgext/*.part
+/mcli/*.deb
+/mcli/*.rpm
+/mcli/*.part
+/pg-exporter/pg_exporter/
+/pgschema/pgschema/
+/pgschema/pgschema-*-linux-*
+/pgstream/pgstream/
+/pgstream/source/
+/sow/sow/
+/rclone/rclone/
+/rclone/rclone-v*-linux-*/
+/rclone/*.zip
+/mtail/mtail
+/mtail/LICENSE
+/mtail/README.md
+/grafana-victorialogs-ds/victoriametrics-logs-datasource/
+/grafana-plugins/plugins/
+/grafana-plugins/chart/
+/grafana-plugins/chart.tgz
+
 
 bin/*
 !bin/lint_specs.py
 !bin/nfpm
 !bin/render_debian_docs.py
+
+# Agent harness packages: official downloads and extracted payloads.
+/claude-code/*.deb
+/claude-code/*.rpm
+/claude-code/*.part
+/pi-coding-agent/pi/
