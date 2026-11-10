@@ -13,14 +13,14 @@ export ARCH RARCH
 
 REPONAME=seaweedfs/seaweedfs
 PACKAGE=seaweedfs
-VERSION=4.52
+VERSION=4.53
 PROXY ?= http://127.0.0.1:8888
 CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(VERSION)
 FILENAME=linux_$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(VERSION)/$(FILENAME)
-SHA256_amd64=8b538c22d47d0c3fb6792adaa6b0c735a967401270a53427d5a476dcaca9b7ae
-SHA256_arm64=b70a09540bf8aa2b9ea2a48b3b16abe27e162e90a0c3bf041f8d414caf52de8a
+SHA256_amd64=d1a7dec9f48d8b33895a0ea8951971defc2dc5312906dcc76fa5a5f74a6ee90d
+SHA256_arm64=2eee359ed0ce8a70b711b30162fadda0cd4ea818e13c73d2f156a76f9359717d
 SHA256=$(SHA256_$(ARCH))
 
 CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.gz
