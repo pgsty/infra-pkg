@@ -12,7 +12,7 @@ RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
 export ARCH RARCH
 
 PACKAGE=claude
-VERSION=2.1.318
+VERSION=2.1.319
 PLATFORM_amd64=linux-x64
 PLATFORM_arm64=linux-arm64
 PLATFORM=$(PLATFORM_$(ARCH))
@@ -20,8 +20,8 @@ INSTALLER_URL=https://claude.ai/install.sh
 BUCKET=https://downloads.claude.ai/claude-code-releases
 TARBALL=claude-$(VERSION)-linux-$(ARCH).gz
 WEB_URL=$(BUCKET)/$(VERSION)/$(PLATFORM)/claude
-SHA256_amd64=708c77b204db30086ff6f1ed34577bda03e1be74ced80557cbf7b54249ebf0bd
-SHA256_arm64=53a0d7e219d7b0804ecba5dbc002745e89f786cc946d2de85a6470d5b2d1fb06
+SHA256_amd64=dabafec82ca1319fa43d8be36a10fc61b1d11821cb98ad5df04ad95e199b8eed
+SHA256_arm64=a7e687fd1cb054d651c7588223de3786c99d4c682365e3c3ae1e59ce7f3a591f
 SHA256=$(SHA256_$(ARCH))
 PROXY ?= http://127.0.0.1:8888
 CURL=curl --proxy "$(PROXY)" --retry 5 --retry-delay 2 --retry-connrefused -fL
