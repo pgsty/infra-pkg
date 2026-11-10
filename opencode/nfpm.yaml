@@ -4,7 +4,7 @@ platform: "linux"
 section: "devel"
 priority: "optional"
 version: "v1.19.5"
-release: "1PGSTY"
+release: "2PGSTY"
 version_schema: semver
 description: Open-source AI coding assistant
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -15,7 +15,17 @@ changelog: "${NFPM_CHANGELOG}"
 
 rpm:
   prefixes:
-    - /usr/bin
+    - /usr
+
+# Without rg on PATH, opencode downloads ripgrep from GitHub on first use,
+# which fails on air-gapped hosts. Weak dependency: EL needs EPEL for it.
+overrides:
+  deb:
+    recommends:
+      - ripgrep
+  rpm:
+    recommends:
+      - ripgrep
 
 contents:
   - src: opencode/opencode
