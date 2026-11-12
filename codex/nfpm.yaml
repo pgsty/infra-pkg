@@ -4,7 +4,7 @@ platform: "linux"
 section: "devel"
 priority: "optional"
 version: "0.167.0"
-release: "2PGSTY"
+release: "3PGSTY"
 version_schema: semver
 description: OpenAI coding agent CLI
 maintainer: Ruohang Feng <rh@vonng.com>
@@ -17,27 +17,35 @@ rpm:
   prefixes:
     - /usr
 
-# This package ships the bare CLI, not upstream's codex-package directory with
-# its bundled bwrap and rg. The Linux sandbox needs bwrap from the system; rg is
-# only a faster search tool for the model, so it stays a weak dependency (EL
-# needs EPEL for it).
+# Upstream's canonical package directory, installed verbatim. Codex locates its
+# helpers through this layout: bin/ (code-mode host, exec server),
+# codex-resources/ (bwrap fallback, voice runtime), codex-path/rg (search).
+# Codex prefers a compatible system bubblewrap when one is available and falls
+# back to the digest-checked bundled copy when it is not. Keep the system copy
+# as a weak dependency so minimal or EL installations remain installable.
+# The bundled ARM64 rg also needs libgcc_s.so.1 from the system runtime.
 overrides:
   deb:
     depends:
-      - bubblewrap
+      - "libc6 (>= 2.28)"
+      - libgcc-s1
     recommends:
-      - ripgrep
+      - bubblewrap
   rpm:
     depends:
-      - bubblewrap
+      - "glibc >= 2.28"
+      - libgcc
     recommends:
-      - ripgrep
+      - bubblewrap
 
 contents:
-  - src: codex/codex
+  - src: codex/
+    type: tree
+    dst: /usr/lib/codex
+
+  - src: ../lib/codex/bin/codex
     dst: /usr/bin/codex
-    file_info:
-      mode: 0755
+    type: symlink
 
   - src: ../LICENSES/Apache-2.0.txt
     dst: /usr/share/doc/codex/LICENSE
@@ -46,6 +54,64 @@ contents:
 
   - src: NOTICE
     dst: /usr/share/doc/codex/NOTICE
+    file_info:
+      mode: 0644
+
+  - src: ../LICENSES/LGPL-2.0.txt
+    dst: /usr/share/doc/codex/LICENSE-bubblewrap-LGPL-2.0.txt
+    file_info:
+      mode: 0644
+
+  - src: ../LICENSES/MIT.txt
+    dst: /usr/share/doc/codex/LICENSE-ripgrep-MIT.txt
+    file_info:
+      mode: 0644
+
+  - src: ../LICENSES/Unlicense.txt
+    dst: /usr/share/doc/codex/LICENSE-ripgrep-Unlicense.txt
+    file_info:
+      mode: 0644
+
+  # The upstream voice runtime already carries these files inside the canonical
+  # tree. Copy them into the package documentation too so RPM and Debian both
+  # expose the complete notices for every bundled native library.
+  - src: codex/codex-resources/voice/NOTICE.md
+    dst: /usr/share/doc/codex/NOTICE-voice.md
+    file_info:
+      mode: 0644
+
+  - src: codex/codex-resources/voice/licenses/LGPL-2.1.txt
+    dst: /usr/share/doc/codex/LICENSE-voice-LGPL-2.1.txt
+    file_info:
+      mode: 0644
+
+  - src: codex/codex-resources/voice/licenses/libffi.txt
+    dst: /usr/share/doc/codex/LICENSE-voice-libffi.txt
+    file_info:
+      mode: 0644
+
+  - src: codex/codex-resources/voice/licenses/Opus.txt
+    dst: /usr/share/doc/codex/LICENSE-voice-Opus.txt
+    file_info:
+      mode: 0644
+
+  - src: codex/codex-resources/voice/licenses/PCRE2.md
+    dst: /usr/share/doc/codex/LICENSE-voice-PCRE2.md
+    file_info:
+      mode: 0644
+
+  - src: codex/codex-resources/voice/licenses/proxy-libintl.txt
+    dst: /usr/share/doc/codex/LICENSE-voice-proxy-libintl.txt
+    file_info:
+      mode: 0644
+
+  - src: codex/codex-resources/voice/licenses/sljit.txt
+    dst: /usr/share/doc/codex/LICENSE-voice-sljit.txt
+    file_info:
+      mode: 0644
+
+  - src: codex/codex-resources/voice/licenses/zlib.txt
+    dst: /usr/share/doc/codex/LICENSE-voice-zlib.txt
     file_info:
       mode: 0644
 

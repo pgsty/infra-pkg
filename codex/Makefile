@@ -17,15 +17,15 @@ VERSION=0.167.0
 TAG=rust-v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=$(RARCH)-unknown-linux-musl
-FILENAME=$(PACKAGE)-$(TARGET).tar.gz
-BINARY=$(PACKAGE)-$(TARGET)
+# upstream's canonical package directory: bin/, codex-resources/, codex-path/
+FILENAME=$(PACKAGE)-package-$(TARGET).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
-SHA256_amd64=9d64836106d5b374e90ee4454c7ebcde7ca7106558bd7e41a34b9f26ebda251a
-SHA256_arm64=843489acb4d4b1079745c36b03c5963b887b83155af208fd53584e33ee8eb281
+SHA256_amd64=3bbf75e83de6b58aed28f2cf6e33ad423ec31fd4700a1457b94be557ea5a7c6e
+SHA256_arm64=0de261ecf1e7f3028a7952f03fca2093f749277d38590b78bb32f8567756bbb7
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
-CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.gz
+CACHE=$(PACKAGE)-package-$(VERSION)-linux-$(ARCH).tar.gz
 
 default: all
 all:
@@ -51,12 +51,14 @@ download:
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
 
-# extract tarball content to current directory
+# extract the upstream package directory as-is: never rename or strip its files,
+# codex verifies the bundled bwrap against a digest compiled into the binary
 extract:
+	rm -rf $(PACKAGE)
 	mkdir -p $(PACKAGE)
 	tar -xf $(FILENAME) -C $(PACKAGE)
-	mv -f $(PACKAGE)/$(BINARY) $(PACKAGE)/$(PACKAGE)
-	chmod +x $(PACKAGE)/$(PACKAGE)
+	test -f $(PACKAGE)/codex-package.json
+	test -x $(PACKAGE)/bin/codex
 
 # remove tarball, build dir, rpm & deb files
 clean:

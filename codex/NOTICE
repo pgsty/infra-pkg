@@ -4,3 +4,17 @@ Copyright 2025 OpenAI
 This project includes code derived from [Ratatui](https://github.com/ratatui/ratatui), licensed under the MIT license.
 Copyright (c) 2016-2022 Florian Dehau
 Copyright (c) 2023-2025 The Ratatui Developers
+
+This package preserves OpenAI's canonical Linux package directory and therefore
+also distributes these bundled components:
+
+* bubblewrap, built from OpenAI Codex's vendored source and licensed under
+  LGPL-2.0-or-later. The complete license text is installed as
+  `LICENSE-bubblewrap-LGPL-2.0.txt`.
+* ripgrep, licensed under the MIT License or the Unlicense. The complete
+  license texts are installed as `LICENSE-ripgrep-MIT.txt` and
+  `LICENSE-ripgrep-Unlicense.txt`.
+* the native voice runtime, including GStreamer, GLib, libffi, Opus, PCRE2,
+  proxy-libintl, sljit, and zlib. OpenAI's `NOTICE.md` and the accompanying
+  license texts are installed under `/usr/share/doc/codex/` and are also kept
+  in the upstream package under `codex-resources/voice/`.
