@@ -3,13 +3,13 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "v26.13.0"
+version: "v26.13.1"
 version_schema: semver
 # EL AppStream ships nodejs with epoch 1, which outranks any epoch-less build
 # regardless of version; without this, `dnf install nodejs` picks Node 10/16/22.
 # RPM only: bin/render_debian_docs.py drops the epoch from DEB builds.
 epoch: 2
-release: "4PGSTY"
+release: "1PGSTY"
 description: Node.js JavaScript runtime
 maintainer: Ruohang Feng <rh@vonng.com>
 vendor: "PGSTY"

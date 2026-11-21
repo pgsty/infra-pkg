@@ -12,13 +12,13 @@ RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
 export ARCH RARCH
 
 PACKAGE=nodejs
-VERSION=26.13.0
+VERSION=26.13.1
 DIRNAME=node
 FILENAME_amd64=node-v$(VERSION)-linux-x64.tar.xz
 FILENAME_arm64=node-v$(VERSION)-linux-arm64.tar.xz
 FILENAME=$(FILENAME_$(ARCH))
-SHA256_amd64=d28a96af6c38596f6d9d97c0ee531c13d238d757742387d1928de822d959e997
-SHA256_arm64=406fe3fbde1c054adff8b297c16fdb5af6659db327c1ac8acd46b56ef1af9a92
+SHA256_amd64=5c063e46bab0fbc1c17cc445d7ff129cbdcd0471be6ed83b6ab864f8143bc864
+SHA256_arm64=89e1853138db51e8b82d3e98ba9c0d3f2956a28e5e55ea1b7e12d25aae92d5dd
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://nodejs.org/dist/v$(VERSION)/$(FILENAME)
 CURL=curl -fSL --retry 3
