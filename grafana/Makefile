@@ -10,22 +10,22 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=grafana
-VERSION=13.3.0
-BUILD=40412481033
+VERSION=13.3.1
+BUILD=42849527790
 PROXY ?= http://127.0.0.1:8888
 
-DEB_FILE_amd64=grafana_$(VERSION)_$(BUILD)_linux_amd64.deb
-DEB_FILE_arm64=grafana_$(VERSION)_$(BUILD)_linux_arm64.deb
-RPM_FILE_amd64=grafana_$(VERSION)_$(BUILD)_linux_amd64.rpm
-RPM_FILE_arm64=grafana_$(VERSION)_$(BUILD)_linux_arm64.rpm
-DEB_URL_amd64=https://dl.grafana.com/grafana/release/$(VERSION)/$(DEB_FILE_amd64)
-DEB_URL_arm64=https://dl.grafana.com/grafana/release/$(VERSION)/$(DEB_FILE_arm64)
-RPM_URL_amd64=https://dl.grafana.com/grafana/release/$(VERSION)/$(RPM_FILE_amd64)
-RPM_URL_arm64=https://dl.grafana.com/grafana/release/$(VERSION)/$(RPM_FILE_arm64)
-SHA256_DEB_amd64=458cb47824fda2c1e93c51e5d9c4893543f7fe24c58c2f5cb9c7a91d7360070f
-SHA256_DEB_arm64=6e687b1e4d8a3545035a030a4e7e0bc632ffdb483f1487f912fb0b3673853c30
-SHA256_RPM_amd64=b90daf6108231fba80cec2001b9a0759d4212bb50c4e315edddb4188c239a663
-SHA256_RPM_arm64=086e5a3f00f37f88f0ded594e50311b861ce92161ead20a5bf5754940d3f53ff
+DEB_FILE_amd64=grafana_13.3.1_42849527790_linux_amd64.deb
+DEB_FILE_arm64=grafana_13.3.1_42849527790_linux_arm64.deb
+RPM_FILE_amd64=grafana_13.3.1_42849527790_linux_amd64.rpm
+RPM_FILE_arm64=grafana_13.3.1_42849527790_linux_arm64.rpm
+DEB_URL_amd64=https://dl.grafana.com/grafana/release/13.3.1/grafana_13.3.1_42849527790_linux_amd64.deb
+DEB_URL_arm64=https://dl.grafana.com/grafana/release/13.3.1/grafana_13.3.1_42849527790_linux_arm64.deb
+RPM_URL_amd64=https://dl.grafana.com/grafana/release/13.3.1/grafana_13.3.1_42849527790_linux_amd64.rpm
+RPM_URL_arm64=https://dl.grafana.com/grafana/release/13.3.1/grafana_13.3.1_42849527790_linux_arm64.rpm
+SHA256_DEB_amd64=397eec6e64a538c68231b9a55f09fc4504869f198fd5339032fa6fb98b77a952
+SHA256_DEB_arm64=6b27669256c622014cb413dd26bc53d2a669948427aacc3d22e675b354056ae7
+SHA256_RPM_amd64=ea438041cbab09308416fd2156d8affd224b2c8999360545b39210efd1dee4f7
+SHA256_RPM_arm64=05ab0727686e44522d10f604f534b64a85ebf834cd7d6246ac016c6b1cefd1e1
 
 default: all
 all:
