@@ -13,7 +13,7 @@ DEVEL_PATH = sv:/data/pgsty/infra-pkg
 # every top-level directory holding a Makefile is a package recipe target
 PACKAGE_RECIPES := $(sort $(patsubst %/,%,$(dir $(wildcard */Makefile))))
 # Keep the large air-gap image archives out of the default batch build.
-ON_DEMAND_PKGS := k3s-images rust-toolchain cargo-pgrx-0191 cargo-pgrx-0192 cargo-pgrx-0193
+ON_DEMAND_PKGS := k3s-images rust-toolchain cargo-pgrx-0191 cargo-pgrx-0192 cargo-pgrx-0193 cargo-pgrx-0194 cargo-pgrx-0200
 PKGS := $(filter-out $(ON_DEMAND_PKGS),$(PACKAGE_RECIPES))
 
 ###############################################################
@@ -28,6 +28,10 @@ $(PACKAGE_RECIPES): | dir
 
 # Deprecated compatibility alias; the package output is now claude-code.
 claude: claude-code
+
+# Product-name aliases; preserve the package names published upstream.
+t3-code: t3code
+orca: orca-ide
 
 # build every package for a single architecture: make amd64 / make arm64
 amd64 arm64: | dir
@@ -56,4 +60,4 @@ pulld:
 
 
 .NOTPARALLEL:
-.PHONY: default all amd64 arm64 dir lint push pushd pull pulld claude $(PACKAGE_RECIPES)
+.PHONY: default all amd64 arm64 dir lint push pushd pull pulld claude t3-code orca $(PACKAGE_RECIPES)
