@@ -15,7 +15,7 @@ export ARCH RARCH
 # unrelated `pi` (from cln) that owns /usr/bin/pi.
 REPONAME=earendil-works/pi
 PACKAGE=pi-coding-agent
-VERSION=1.5.1
+VERSION=1.6.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 # Upstream ships a directory, not a single binary: pi loads package.json, themes,
 # wasm and docs from the directory of its own executable.
@@ -27,8 +27,8 @@ FILENAME_amd64=pi-$(VERSION)-linux-x64.tar.gz
 FILENAME_arm64=pi-$(VERSION)-linux-arm64.tar.gz
 FILENAME=$(FILENAME_$(ARCH))
 # from the SHA256SUMS asset of the release
-SHA256_amd64=cb69979c0a8162bf22bcee0762f3c3701a45b51b552fa16a736d467c6068509f
-SHA256_arm64=98f1762f56adc5703f931996ae802216dad490dde0b6793aed1e3bb0383df1f7
+SHA256_amd64=ef77dbe4379b3bdeb425a1e1b862fa3c915c255000dfe4965c98eee96a5765d1
+SHA256_arm64=5404547b9739be596d50ae7142c52535899e8e7dd37a7bace9be593e0355b468
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(ASSET)
 CURL=curl -fSL --retry 3
