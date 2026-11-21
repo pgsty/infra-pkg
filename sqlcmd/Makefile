@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=microsoft/go-sqlcmd
 PACKAGE=sqlcmd
-VERSION=1.10.0
+VERSION=1.11.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=$(PACKAGE)-linux-$(ARCH)
 FILENAME=$(DIRNAME).tar.bz2
 CACHE=$(PACKAGE)-v$(VERSION)-linux-$(ARCH).tar.bz2
-SHA256_amd64=92516d98c63d99b0994de5b61350c91f6915f9b76f139a59039fbcb225c2e987
-SHA256_arm64=9faaa981f9c374f319ac796dedb4678499b8596c87d5b6c512e9b0e7a3b74f8e
+SHA256_amd64=2e41111d2e00782d50b9f8887bf603890af1e85e308708703e4ce27dc3c410e7
+SHA256_arm64=9e8540e7d8e6d9941a73846b7cf9bbbe20d20b2abb9b0f0fa43fdc35ea9f157f
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL

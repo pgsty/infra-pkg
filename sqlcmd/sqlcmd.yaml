@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "v1.10.0"
+version: "v1.11.0"
 release: "1PGSTY"
 version_schema: semver
 description: Cross-platform command-line client for SQL Server and Azure SQL.
