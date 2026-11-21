@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2026-08-19
-# Mtime     :   2026-08-19
+# Mtime     :   2026-11-21
 # Desc      :   Current PGSTY Rust toolchain RPM/DEB package
 # Path      :   rust-toolchain/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
@@ -9,20 +9,20 @@
 ARCH  ?= amd64
 ARCHS ?= amd64 arm64
 RARCH  = $(if $(filter arm64,$(ARCH)),aarch64,x86_64)
-SOURCE_DATE_EPOCH=1792022400
+SOURCE_DATE_EPOCH=1794441600
 export ARCH RARCH
 export SOURCE_DATE_EPOCH
 
 PACKAGE=rust-toolchain
-VERSION=1.99.1
+VERSION=1.100.0
 RELEASE=1PGSTY
-DIST_DATE=2026-10-15
+DIST_DATE=2026-11-12
 TRIPLE=$(RARCH)-unknown-linux-gnu
 DIRNAME=rust-$(VERSION)-$(TRIPLE)
 FILENAME=$(DIRNAME).tar.xz
 SIGNATURE=$(FILENAME).asc
-SHA256_amd64=231fcae47ee950621374725b5fc3b5441d2fbda2955ac45dd7dc816d8876cfe7
-SHA256_arm64=a48fb1e853be56ce9b8e2751f5464dbd5e16440cd81e237920f3a5e7e806333e
+SHA256_amd64=98ee6bec240e1cfe944f17e7092412dc5ef6e008484bb668c6936d35a7d15acd
+SHA256_arm64=a21f6a21818df07c1e2e7addb570af5444b3fa9dd61e3a207f4fb1c5a5e665c9
 SHA256=$(SHA256_$(ARCH))
 RUST_KEY_FINGERPRINT=108F66205EAEB0AAA8DD5E1C85AB96E6FA1BE5FE
 RUST_DIST_SERVER ?= https://static.rust-lang.org
