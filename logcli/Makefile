@@ -11,12 +11,12 @@ export ARCH RARCH
 
 REPONAME=grafana/loki
 PACKAGE=logcli
-VERSION=3.7.9
+VERSION=3.7.10
 RELEASE=1PGSTY
 ASSET=logcli-linux-$(ARCH).zip
 FILENAME=logcli-$(VERSION)-linux-$(ARCH).zip
-SHA256_amd64=176bc538c72d959daa168bd127dece211ff3e9e435ad13a6946748170cbda5b4
-SHA256_arm64=8f4d691a5abe4b646eac2a76d6a11ed63cf5febc2e016dd4f08b461a9e535cd8
+SHA256_amd64=1d68c194adc7cab3efdf18ac67a63a9286f1e9634600c97c36ab3ce614c690be
+SHA256_arm64=2aebfe4bf2128b753a3df85bfac3ae479c7f7b50d04af7b42e604897247cf368
 SHA256=$(SHA256_$(ARCH))
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(ASSET)
