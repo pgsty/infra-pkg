@@ -13,11 +13,11 @@ export ARCH RARCH
 
 REPONAME=kenn-io/agentsview
 PACKAGE=agentsview
-VERSION=0.46.1
+VERSION=0.47.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)_$(VERSION)_linux_$(ARCH).tar.gz
-SHA256_amd64=e7822006d7bafa3aef9a5e4f7d7caffca56051bb039b848222a73633ed4c6c9b
-SHA256_arm64=b170c7a70fab2c5d6297515b0f972aa3b43e1f3a677e7cc6b450d64ca730fb02
+SHA256_amd64=a49876edf9fe8d0641978afe69d776540175852a446a5d42a6d439215eb0dc45
+SHA256_arm64=587936c600ecef1a0b18ecabf384c75c4ea503c37f9032ef1117c023544edeaa
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 CURL=curl -fSL --retry 3
