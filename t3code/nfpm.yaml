@@ -1,0 +1,74 @@
+name: "t3code"
+arch: "${ARCH}"
+platform: "linux"
+section: "devel"
+priority: "optional"
+version: "0.1.11"
+release: "1PGSTY"
+version_schema: semver
+description: Desktop GUI for coding agents
+maintainer: Ruohang Feng <rh@vonng.com>
+vendor: "PGSTY"
+homepage: "https://t3.codes"
+license: "MIT"
+changelog: "${NFPM_CHANGELOG}"
+
+# Equivalent RPM dependencies for the upstream Electron DEB payload.
+depends:
+  - "glibc >= 2.34"
+  - libgcc
+  - libstdc++
+  - alsa-lib
+  - at-spi2-core
+  - gtk3
+  - libnotify
+  - nss
+  - libsecret
+  - libuuid
+  - libXScrnSaver
+  - libXtst
+  - mesa-libgbm
+  - xdg-utils
+  - cups-libs
+
+scripts:
+  postinstall: src/postinstall.sh
+  postremove: src/postremove.sh
+
+contents:
+  # Preserve upstream paths: the desktop entry and bundled CLI use this layout.
+  - src: payload/opt/
+    dst: /opt/
+    type: tree
+  - src: payload/usr/share/
+    dst: /usr/share/
+    type: tree
+  - src: payload/chrome-sandbox
+    dst: /opt/T3 Code (Beta)/chrome-sandbox
+    file_info:
+      owner: root
+      group: root
+      mode: 04755
+  - src: /opt/T3 Code (Beta)/t3code
+    dst: /usr/bin/t3code
+    type: symlink
+  - src: LICENSE
+    dst: /usr/share/doc/t3code/LICENSE
+    file_info:
+      mode: 0644
+  - src: payload/opt/T3 Code (Beta)/LICENSE.electron.txt
+    dst: /usr/share/doc/t3code/LICENSE.electron.txt
+    file_info:
+      mode: 0644
+  - src: payload/opt/T3 Code (Beta)/LICENSES.chromium.html
+    dst: /usr/share/doc/t3code/LICENSES.chromium.html
+    file_info:
+      mode: 0644
+  # Required manifest placeholder; only RPM is built locally.
+  - src: "${NFPM_COPYRIGHT}"
+    dst: /usr/share/doc/t3code/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+      owner: root
+      group: root
