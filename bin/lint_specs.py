@@ -9,6 +9,7 @@ noarch-style packages build once with `arch: "all"`. Packages with genuinely
 different per-arch metadata split into `<base>.amd64.yaml` +
 `<base>.arm64.yaml`. Vendor-direct recipes are an explicit exception: they
 download checksum-pinned native DEB/RPM artifacts and never run nFPM.
+VENDOR_DEB recipes preserve upstream DEB packages and build only RPM locally.
 """
 
 from __future__ import annotations
@@ -578,8 +579,16 @@ def lint_vendor_direct_makefile(
     if not make_variable(text, "VERSION"):
         errors.append(f"{rel}: vendor-direct recipe must declare VERSION")
 
+    lint_vendor_inputs(pkg, text, errors, ("DEB", "RPM"))
+
+
+def lint_vendor_inputs(
+    pkg: Path, text: str, errors: List[str], formats: Tuple[str, ...]
+) -> None:
+    rel = (pkg / "Makefile").relative_to(ROOT)
     for arch in ARCHS:
-        for packager, suffix in (("DEB", ".deb"), ("RPM", ".rpm")):
+        for packager in formats:
+            suffix = "." + packager.lower()
             filename_var = f"{packager}_FILE_{arch}"
             url_var = f"{packager}_URL_{arch}"
             checksum_var = f"SHA256_{packager}_{arch}"
@@ -618,6 +627,9 @@ def lint_makefiles(errors: List[str]) -> None:
         path = pkg / "Makefile"
         text = path.read_text(encoding="utf-8")
         rel = path.relative_to(ROOT)
+        locked_version = make_variable(text, "LOCKED_VERSION")
+        if locked_version and make_variable(text, "VERSION") != locked_version:
+            errors.append(f"{rel}: VERSION violates LOCKED_VERSION={locked_version}")
         arch_pkg = is_arch_parameterized(text)
         configs: Dict[str, set] = {"rpm": set(), "deb": set()}
         if not re.search(r"^\.NOTPARALLEL:\s*$", text, re.M):
@@ -663,7 +675,17 @@ def lint_makefiles(errors: List[str]) -> None:
                 if not has_fail:
                     errors.append(f"{rel}:{number}: curl download must fail on HTTP errors")
 
-        if configs["rpm"] != configs["deb"]:
+        if make_variable(text, "VENDOR_DEB") == "1":
+            if is_vendor_direct(text) or not configs["rpm"] or configs["deb"]:
+                errors.append(f"{rel}: VENDOR_DEB must build only RPM through nFPM")
+            if not re.search(r"^one:\s+download\s+verify\s+extract\s+build\s+clean\s*$", text, re.M):
+                errors.append(f"{rel}: VENDOR_DEB must verify before extracting and building")
+            if make_variable(text, "PROXY") != "http://127.0.0.1:8888":
+                errors.append(f"{rel}: VENDOR_DEB downloads must default to Xray proxy port 8888")
+            if not re.search(r"^deb:\n\tmkdir -p ../dist/deb\n\tcp -p \$\(DEB_FILE\) ../dist/deb/\$\(PACKAGE\)_\$\(VERSION\)_\$\(ARCH\)\.deb\s*$", text, re.M):
+                errors.append(f"{rel}: VENDOR_DEB must copy the upstream DEB unchanged")
+            lint_vendor_inputs(pkg, text, errors, ("DEB",))
+        elif configs["rpm"] != configs["deb"]:
             errors.append(f"{rel}: RPM and DEB builds must use the same nFPM configs")
 
         if is_vendor_direct(text):
