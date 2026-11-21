@@ -13,11 +13,11 @@ export ARCH RARCH
 
 REPONAME=riii111/sabiql
 PACKAGE=sabiql
-VERSION=3.0.2
+VERSION=3.1.0
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-$(RARCH)-unknown-linux-gnu.tar.gz
-SHA256_amd64=1a471cbd634f61f4070b2f7b853cac946bd34da04dd30116ce925ddf84ad2211
-SHA256_arm64=a73a1a7f336462f633bea357b7ac237bbbeb52552429b7b6eb86e1165bf8ad29
+SHA256_amd64=e41352f1ea17e8f8759c75d6483118cd42ef1d28a95704fec548add7d24f1ea4
+SHA256_arm64=834b10a6427c6821da53c3152cb93625a87f0206ae6973887f8d4e666d4facd1
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
