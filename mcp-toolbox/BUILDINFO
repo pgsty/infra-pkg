@@ -1,18 +1,19 @@
 upstream=https://github.com/googleapis/mcp-toolbox
-tag=v1.16.0
-source_url=https://github.com/googleapis/mcp-toolbox/tree/06ea49d9a487a72c22419b5a8d5c22c11f0d7485
-source_tree=47581141118a0cd6a2b62a6bb940346c7d181e66
-go=1.27.3
+tag=v1.18.0
+source_commit=24762d91babd43d91afc3daeeece1cb446266c54
+source_url=https://github.com/googleapis/mcp-toolbox/tree/24762d91babd43d91afc3daeeece1cb446266c54
+go=1.27.4
 zig=0.15.2
 cgo=1
 glibc_target=2.28
 build_type=binary
-commit_label=06ea49d9a48
-source_commit=06ea49d9a487a72c22419b5a8d5c22c11f0d7485
-nfpm=2.43.1
-builder_image=sha256:28f970d809e011eca034d1707a16e8a9095e173d2f4c51082180501b827f6f01
-module_verification=go mod verify
-build_flags=-mod=readonly -buildvcs=false -p=6 -trimpath
-ldflags=-s -w -X github.com/googleapis/mcp-toolbox/cmd.buildType=binary -X github.com/googleapis/mcp-toolbox/cmd.commitSha=06ea49d9a48
-sha256_amd64=758191b5afca81ff3c6af2497bffa70a4bf75d1364610f9d01ea48f28ea720b4
-sha256_arm64=e702180cb6bded7a48d44a4b7a20c26846e94c88b83b0a0944733904528d6c44
+commit_label=24762d91bab
+nfpm=2.49.0
+binary_builder_image=sha256:4fa7c968ba93f1635670522dbb01a2c78150443e1385746924566079f36570ea
+build_flags=-mod=readonly -buildvcs=false -p=8 -trimpath
+ldflags=-s -w -X github.com/googleapis/mcp-toolbox/cmd.buildType=binary -X github.com/googleapis/mcp-toolbox/cmd.commitSha=24762d91bab
+sha256_amd64=249417ac708049af2eae031eaaf69070ad685e09158091b6bc34efee81228a3d
+sha256_arm64=de6dcb88b13ecd988f95f9dc5bf7a5e50a5c1e2dafd9a8e48732dff0c4c6225c
+source_archive=mcp-toolbox-1.18.0-source.tar.gz
+source_archive_sha256=2141c2f80d6bff7cb3748a48494369b366e5c55428e691307d35e1e8cca69860
+provenance=Reused source-built binaries from /Users/vonng/tmp/mcp-toolbox/v1.18.0; four independent Linux install/MCP checks and 424 Go race-test packages passed. Repackaged by infra-pkg with nFPM 2.49.0.
