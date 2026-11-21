@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=achristmascarl/rainfrog
 PACKAGE=rainfrog
-VERSION=0.4.6
+VERSION=0.4.7
 TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=$(RARCH)-unknown-linux-musl
 FILENAME=$(PACKAGE)-v$(VERSION)-$(TARGET).tar.gz
-SHA256_amd64=973341d39cb1e04359886670d08632b5bd876de220c7a4759889498b22482887
-SHA256_arm64=919ba9e2ddcda6ace07066967e375b7b091ba0a69b67b5a8135efdea3643b507
+SHA256_amd64=b208d72a7e8c65e298ade5ee14cd05b831c106167947c701e8f3465be790927a
+SHA256_arm64=c9db5df7d103faf4ccbff07371f2cdea8c4f0a26c542185c6fa50d3df3d69228
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
