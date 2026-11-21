@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "database"
 priority: "optional"
-version: "0.9.0"
+version: "0.10.0"
 release: "1PGSTY"
 version_schema: semver
 description: |
