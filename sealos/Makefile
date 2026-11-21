@@ -1,7 +1,7 @@
 #==============================================================#
 # File      :   Makefile
 # Ctime     :   2026-08-11
-# Mtime     :   2026-08-11
+# Mtime     :   2026-11-21
 # Desc      :   Makefile shortcuts for locked sealos rpm/deb build
 # Path      :   sealos/Makefile
 # Copyright (C) 2018-2026 Ruohang Feng (rh@vonng.com)
@@ -14,7 +14,12 @@ export ARCH RARCH
 REPONAME=labring/sealos
 PACKAGE=sealos
 VERSION=5.0.1
-RELEASE=1PGSTY
+# Permanent Apache-2.0 lock; see LOCKED.md. Routine updates must skip this recipe.
+LOCKED_VERSION=5.0.1
+ifneq ($(VERSION),$(LOCKED_VERSION))
+$(error sealos is locked at $(LOCKED_VERSION); see LOCKED.md)
+endif
+RELEASE=2PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)_$(VERSION)_linux_$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)

@@ -4,7 +4,7 @@ platform: "linux"
 section: "admin"
 priority: "optional"
 version: "5.0.1"
-release: "1PGSTY"
+release: "2PGSTY"
 version_schema: semver
 description: |
   Sealos Kubernetes distribution CLI.
@@ -14,6 +14,16 @@ vendor: "PGSTY"
 homepage: "https://github.com/labring/sealos"
 license: "Apache-2.0"
 changelog: "${NFPM_CHANGELOG}"
+
+# Both archived binaries link glibc, libpthread and libdl. The arm64 ABI
+# requires GLIBC_2.17; use that supported baseline for both architectures.
+overrides:
+  rpm:
+    depends:
+      - glibc >= 2.17
+  deb:
+    depends:
+      - libc6 (>= 2.17)
 
 contents:
   - src: sealos/sealos
