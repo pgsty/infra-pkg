@@ -1,13 +1,19 @@
-# VictoriaMetrics datasource: 0.26.1 to 1.0.1
+# VictoriaMetrics datasource: 0.26.1 to 1.0.2
 
 The 1.0.0 release preserves the plugin identity, backend name, installation
 directory, and Grafana requirements used by 0.26.1. The main functional changes
 fix POST requests and WITH templates. The local upgrade test preserved the
 existing datasource ID, UID, URL, and settings on Grafana 13.3.0.
 
-The current package is 1.0.1. It retains that compatibility and adds fixes for
+Version 1.0.1 retains that compatibility and adds fixes for
 query-editor browser storage, malformed `vmui` requests, and sensitive URLs in
 query errors. It also updates `golang.org/x/net` to v0.62.0.
+
+The current package is 1.0.2. Optimized label and label-value suggestions now
+use the selected time range instead of always querying the last six hours.
+The package build validates plugin identity, Grafana requirements, version,
+backend name, and architecture for both Linux targets. The historical
+Grafana/API upgrade tests below apply to the versions and dates stated there.
 
 | Property         | Value                                                          |
 | :--------------- | :------------------------------------------------------------- |
@@ -107,6 +113,7 @@ allowlist and restart requirement above still apply to 1.0.1.
 Sources:
 
 - [1.0.1 release notes](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.1)
+- [1.0.2 release notes](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.2)
 - [Source changes from 1.0.0](https://github.com/VictoriaMetrics/victoriametrics-datasource/compare/v1.0.0...v1.0.1)
 - [1.0.0 release notes](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/tag/v1.0.0)
 - [Source changes from 0.26.1](https://github.com/VictoriaMetrics/victoriametrics-datasource/compare/v0.26.1...v1.0.0)

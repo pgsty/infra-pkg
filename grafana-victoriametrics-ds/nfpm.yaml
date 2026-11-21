@@ -3,7 +3,7 @@ arch: "${ARCH}"
 platform: "linux"
 section: "web"
 priority: "optional"
-version: "1.0.1"
+version: "1.0.2"
 release: "1PGSTY"
 version_schema: semver
 description: "Grafana datasource for VictoriaMetrics"

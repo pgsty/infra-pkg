@@ -13,12 +13,12 @@ export ARCH RARCH
 
 REPONAME2=VictoriaMetrics/victoriametrics-datasource
 PACKAGE2=victoriametrics-metrics-datasource
-VERSION2=1.0.1
+VERSION2=1.0.2
 PROXY ?= http://127.0.0.1:8888
 CURL=curl --proxy "$(PROXY)" -fSL --retry 3
 FILENAME2=$(PACKAGE2)-v$(VERSION2).tar.gz
 WEB_URL2=https://github.com/$(REPONAME2)/releases/download/v$(VERSION2)/$(FILENAME2)
-SHA2562=68cce244b30e36528bf3782014ad8c241cc2ee8e2c2def318a20139390ad4f55
+SHA2562=040534dd3e1d1d665c9ea88c8c74f4cc4b731ee8426d96ae04565f11a068c2a5
 
 default: all
 all:
