@@ -10,21 +10,21 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=code-server
-VERSION=4.145.2
+VERSION=4.146.0
 PROXY ?= http://127.0.0.1:8888
 
-DEB_FILE_amd64=code-server_4.145.2_amd64.deb
-DEB_FILE_arm64=code-server_4.145.2_arm64.deb
-RPM_FILE_amd64=code-server-4.145.2-amd64.rpm
-RPM_FILE_arm64=code-server-4.145.2-arm64.rpm
-DEB_URL_amd64=https://github.com/coder/code-server/releases/download/v4.145.2/code-server_4.145.2_amd64.deb
-DEB_URL_arm64=https://github.com/coder/code-server/releases/download/v4.145.2/code-server_4.145.2_arm64.deb
-RPM_URL_amd64=https://github.com/coder/code-server/releases/download/v4.145.2/code-server-4.145.2-amd64.rpm
-RPM_URL_arm64=https://github.com/coder/code-server/releases/download/v4.145.2/code-server-4.145.2-arm64.rpm
-SHA256_DEB_amd64=7eddbdeaab34380bde3ac3bbadce58fe2f5722c4877f331ea593ae797c2517e1
-SHA256_DEB_arm64=0fa9af7f602536b1e320a17d32bb1a85e4a924fdc09283898f1bea73d2a5c1e7
-SHA256_RPM_amd64=282543b992f61f63a864e11d952e1fb7ba42778fc12ea711b92cd75f11f45684
-SHA256_RPM_arm64=0ba251ff8c96b11282ca7c1bdef4016f326051b61cea5cd66aaa3d1a241c8a6b
+DEB_FILE_amd64=code-server_4.146.0_amd64.deb
+DEB_FILE_arm64=code-server_4.146.0_arm64.deb
+RPM_FILE_amd64=code-server-4.146.0-amd64.rpm
+RPM_FILE_arm64=code-server-4.146.0-arm64.rpm
+DEB_URL_amd64=https://github.com/coder/code-server/releases/download/v4.146.0/code-server_4.146.0_amd64.deb
+DEB_URL_arm64=https://github.com/coder/code-server/releases/download/v4.146.0/code-server_4.146.0_arm64.deb
+RPM_URL_amd64=https://github.com/coder/code-server/releases/download/v4.146.0/code-server-4.146.0-amd64.rpm
+RPM_URL_arm64=https://github.com/coder/code-server/releases/download/v4.146.0/code-server-4.146.0-arm64.rpm
+SHA256_DEB_amd64=e4825ae7afb441dfa63a4f579c121569de7c7958d2f35c3d18d803c8a3c7018f
+SHA256_DEB_arm64=485d87c3c8df5978a89419d4fed0b3e0604a9b203bd177c7effa47bf21055a97
+SHA256_RPM_amd64=60a33925ccb764536662b03edfed9913984d82ae9506da40c8c36dc298738ee2
+SHA256_RPM_arm64=33ae5dfff175cf05b60b6c0b60e0853a4ba3af8f0ae90ca5fe3c4321d763e5c3
 
 default: all
 all:
