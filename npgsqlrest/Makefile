@@ -13,17 +13,19 @@ export ARCH RARCH
 
 REPONAME=NpgsqlRest/NpgsqlRest
 PACKAGE=npgsqlrest
-VERSION=3.21.0
+VERSION=4.0.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME_amd64=$(PACKAGE)-linux64
 FILENAME_arm64=$(PACKAGE)-linux-arm64
 FILENAME=$(FILENAME_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=ed68f8a635c427158c283ae275aa205e8313efe8db95f5c75c435520bd57ae3d
-SHA256_arm64=2a80a5661ee427c3f1fe83cd021183f69b3c9df3441b20bfe413d1813350fae1
+SHA256_amd64=94bf01ae46db0a9bf3cc8660d04eb94e32d512d9f70d5f272e5cbc6a4ef9a3e4
+SHA256_arm64=ba10533f67879a64533f379ee6637ca11b89f3a0b38aed99412fe34f7e3e57db
 SHA256=$(SHA256_$(ARCH))
 CURL=curl -fSL --retry 3
 
+
+CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH)
 
 default: all
 all:
@@ -43,7 +45,7 @@ meta:
 # download latest release tarball to current directory
 # if already in ../tarball/ , just copy it
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME); else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 # validate the pinned upstream binary before packaging
 verify:
