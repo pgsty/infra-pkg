@@ -9,8 +9,6 @@ tmp/
 .cursor/
 
 .claude
-CLAUDE.md
-AGENTS.md
 *.tar.gz
 *.tar.zst
 __pycache__/
@@ -92,3 +90,53 @@ bin/*
 /claude-code/*.rpm
 /claude-code/*.part
 /pi-coding-agent/pi/
+
+# Desktop agent applications: official inputs and extracted RPM payload.
+/orca-ide/*.deb
+/orca-ide/*.rpm
+/orca-ide/*.part
+/t3code/*.deb
+/t3code/*.rpm
+/t3code/*.part
+/t3code/payload/
+
+# 2026-11-12 batch inputs and generated payloads.
+/agentsview/agentsview/
+/alertmanager/alertmanager/
+/golang/go/
+/nodejs/node/
+/nodejs/*.tar.xz
+/opencode/opencode/
+/pg-hardstorage/payload/
+/rainfrog/rainfrog/
+/rustfs/rustfs/
+/rustfs/*.zip
+/sabiql/sabiql/
+/timescaledb-tools/timescaledb-tune
+/timescaledb-tools/timescaledb-parallel-copy
+/victoria-metrics/victoria-metrics/
+/xray/xray/
+/ivorysql/*.deb
+/ivorysql/*.rpm
+/ivorysql/*.part
+/sealos/*.deb
+/sealos/*.rpm
+/sealos/*.part
+/sealos/sealos/
+/grafana/*.deb
+/grafana/*.rpm
+/grafana/*.part
+/silo/*.deb
+/silo/*.rpm
+/silo/*.part
+
+# Rust toolchains and versioned cargo-pgrx build inputs/outputs.
+/rust-toolchain/rust-*-unknown-linux-gnu/
+/rust-toolchain/*.tar.xz
+/rust-toolchain/*.tar.xz.asc
+/rust-toolchain/stage/
+/cargo-pgrx-*/*.crate
+/cargo-pgrx-*/source/
+/cargo-pgrx-*/target/
+/cargo-pgrx-*/stage/
+/cargo-pgrx-*/cargo-home/
