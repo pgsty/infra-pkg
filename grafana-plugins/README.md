@@ -1,6 +1,6 @@
 # Grafana Plugins
 
-`plugins-13.3.0.tar.gz` is an intentionally curated one-shot archive. The
+`plugins-13.3.1.tar.gz` is an intentionally curated one-shot archive. The
 package recipe verifies the archive's pinned checksum but does not attempt to
 reconstruct it from individual upstream releases.
 
@@ -96,3 +96,15 @@ Updated six plugins from the official Grafana catalog through the port 8888 prox
 | volkovlabs-table-panel | 3.6.9 | 33202b75f1f940b6a2789fdf3f89d9a75141f8560a8247dfb7244890d649763f |
 
 Archive SHA256: `570d16041f1a222f8aeb0169fce34e17729cda0460c68894a1d4caf5c61d0935`.
+
+## 2026-11-21 bundle
+
+Updated `marcusolsson-json-datasource` from 1.4.4 to 1.4.5 using the official
+Grafana catalog ZIP through port 8888. Its SHA256 matches the catalog. The
+other 13 plugin directories are preserved from the checksum-pinned 13.3.0 bundle.
+
+| Plugin | Version | SHA256 of downloaded ZIP |
+|---|---|---|
+| marcusolsson-json-datasource | 1.4.5 | 41bd2eb72eac37f5e089538341b54c97e02e7430d8ead471a6945b447601fb86 |
+
+Archive SHA256: `d4783b1c718560d83c7f9adef2e45a190bcf43d8306a65aaf28e94fb45b22f08`.

@@ -7,10 +7,10 @@
 # Copyright (C) 2018-2024 Ruohang Feng (rh@vonng.com)
 #==============================================================#
 PACKAGE=plugins
-VERSION=13.3.0
+VERSION=13.3.1
 DIRNAME=$(PACKAGE)-v$(VERSION).linux-amd64
 FILENAME=plugins-$(VERSION).tar.gz
-SHA256=570d16041f1a222f8aeb0169fce34e17729cda0460c68894a1d4caf5c61d0935
+SHA256=d4783b1c718560d83c7f9adef2e45a190bcf43d8306a65aaf28e94fb45b22f08
 FILENAME2=chart.tgz
 SHA2562=b3aa73759d1890dd5be9e9527423ef1e92c76076f2aeb5476d5a6dbf7ecbc825
 PROXY ?= http://127.0.0.1:8888
