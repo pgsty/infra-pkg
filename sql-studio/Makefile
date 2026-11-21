@@ -13,16 +13,18 @@ export ARCH RARCH
 
 REPONAME=frectonz/sql-studio
 PACKAGE=sql-studio
-VERSION=0.1.53
+VERSION=0.1.54
 TAG=$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 TARGET=$(RARCH)-unknown-linux-gnu
 FILENAME=$(PACKAGE)-$(TARGET).tar.xz
-SHA256_amd64=55323af39b8acac55afb03a36c43922855e09d09feedde4f40415f1ee59311a3
-SHA256_arm64=88de523a6c36dffbbcc68770bb55665626c904bdfb45b1fbc2a2943a47c03a7e
+SHA256_amd64=ceadd0a42d53f4537ca6fa68a4464b32b9db53c3ba54205db3bd5a85c543a2b6
+SHA256_arm64=1cd19ca4f852228cfed9eccb4e894e772e1ee0c1cd46b58972b0375d60387657
 SHA256=$(SHA256_$(ARCH))
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
+
+CACHE=$(PACKAGE)-$(VERSION)-linux-$(ARCH).tar.xz
 
 default: all
 all:
@@ -38,7 +40,7 @@ meta:
 	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 download:
-	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
+	if [ -f ../tarball/$(CACHE) ]; then cp ../tarball/$(CACHE) $(FILENAME); else $(CURL) $(WEB_URL) -o $(FILENAME); fi
 
 verify:
 	if command -v sha256sum >/dev/null 2>&1; then echo "$(SHA256)  $(FILENAME)" | sha256sum -c -; else echo "$(SHA256)  $(FILENAME)" | shasum -a 256 -c -; fi
