@@ -14,14 +14,14 @@ export ARCH RARCH
 
 REPONAME=charmbracelet/crush
 PACKAGE=crush
-VERSION=0.100.0
+VERSION=0.102.0
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 DIRNAME=$(PACKAGE)_$(VERSION)_Linux_$(XARCH)
 FILENAME=$(DIRNAME).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=122d4afe0e3bb0fc4c571f58b0c08d485c8733f272e962a02064c2150cd7a152
-SHA256_arm64=095e3ab19710508e9ae41919e5f179f69bac390aeb7c06a14ef999c78dde705a
+SHA256_amd64=7930cc14a2dec3a857ddd2070c863c1c5d7edb335d20cdfb65a5b44e62a0ca1e
+SHA256_arm64=311e0a5b67e595ad2b6f2276181bcea78c396ac220541544fdd1b419c4ba62d1
 SHA256=$(SHA256_$(ARCH))
 CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
