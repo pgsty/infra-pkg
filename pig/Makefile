@@ -13,15 +13,16 @@ export ARCH RARCH
 
 REPONAME=pgsty/pig
 PACKAGE=pig
-VERSION=1.10.4
+VERSION=1.11.0
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-v$(VERSION).linux-$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=1caa6f4af13e1f40f5faa9752628efe1dd85190b344bf1597cb3c8d23e99fe0b
-SHA256_arm64=756b7c94936a4c8cca1b0a15f3bcac8eee9669480b8d6af205e920b673a680ba
+SHA256_amd64=8f21efdd33d5a063eb7e12d2908912682af4dd94e336d82124ab9eb57808974c
+SHA256_arm64=4c2699618fb50d6bb5d2c0807e407442c69c9873a4d33dc3193bbab9c039bdcd
 SHA256=$(SHA256_$(ARCH))
-CURL=curl --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
+PROXY ?= http://127.0.0.1:8888
+CURL=curl --proxy "$(PROXY)" --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
 
 default: all
 all:
@@ -34,7 +35,7 @@ link:
 	@echo $(CURL) $(WEB_URL) -o $(FILENAME)
 
 meta:
-	curl --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
+	curl --proxy "$(PROXY)" --fail --silent --show-error "https://api.github.com/repos/${REPONAME}/releases/latest" | tee meta.json
 
 download:
 	if [ -f ../tarball/$(FILENAME) ]; then cp ../tarball/$(FILENAME) .; else $(CURL) $(WEB_URL) -o $(FILENAME); fi
