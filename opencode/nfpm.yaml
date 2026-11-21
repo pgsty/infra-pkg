@@ -3,8 +3,8 @@ arch: "${ARCH}"
 platform: "linux"
 section: "devel"
 priority: "optional"
-version: "v1.19.5"
-release: "2PGSTY"
+version: "v1.19.6"
+release: "1PGSTY"
 version_schema: semver
 description: Open-source AI coding assistant
 maintainer: Ruohang Feng <rh@vonng.com>
