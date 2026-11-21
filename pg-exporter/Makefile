@@ -13,12 +13,12 @@ export ARCH RARCH
 
 REPONAME=pgsty/pg_exporter
 PACKAGE=pg_exporter
-VERSION=1.6.0
+VERSION=1.6.1
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)-$(VERSION).linux-$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=296a26bf83acd7024f4de8fdeac0ee31baffa01e3153cf5c694e90ed8268719a
-SHA256_arm64=ea6d1dbe0820d599e81ed702e128b4fe4a557e2afb5b5c157de222576c1d7ce7
+SHA256_amd64=e8fdf64c352081720a53420a2c7ea095654078d5fab5f6213786bb6476791fdf
+SHA256_arm64=91da5400ae31d42925af721c7d5f8eb0befcbb104d8a14ae5f08707abb5e333b
 SHA256=$(SHA256_$(ARCH))
 PROXY ?= http://127.0.0.1:8888
 CURL=curl --proxy "$(PROXY)" -fSL --retry 3
