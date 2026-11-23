@@ -21,7 +21,7 @@ Artifacts are available from the [**pigsty-infra**](https://pigsty.io/docs/repo/
 
 ## What's inside?
 
-Versions below describe local repository packages. The 2026-11-21 batch is imported, signed, indexed and verified on all four client lanes; remote synchronization and online publication are pending. See the dated changelog for batch status.
+The local APT and YUM repositories contain 24 DEBs and 24 RPMs from the 12 packages updated or added on 2026-11-23. Both repositories have signed indexes. Online publication is pending.
 
 Pigsty Infra RPM & DEB packages for `amd64`(`x86_64`) & `arm64`(`aarch64`).
 
@@ -42,7 +42,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [pg-exporter](https://github.com/pgsty/pg_exporter): 1.6.1
 - [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter) 0.25.0 (reproducible build from pinned upstream source; no upstream binary assets)
 - [mysqld-exporter](https://github.com/prometheus/mysqld_exporter) : 0.21.0
-- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.97.0
+- [redis-exporter](https://github.com/oliver006/redis_exporter) : 1.98.0
 - [kafka-exporter](https://github.com/danielqsj/kafka_exporter) : 1.11.0
 - [jmx-exporter](https://github.com/prometheus/jmx_exporter) : 1.7.0 (noarch)
 - [mongodb-exporter](https://github.com/percona/mongodb_exporter) : 0.54.0
@@ -55,7 +55,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [k3s](https://github.com/k3s-io/k3s) : 1.37.2 (upstream v1.37.2+k3s1) (release 2PGSTY)
 - [k3s-images](https://github.com/k3s-io/k3s/releases/tag/v1.37.2%2Bk3s1) : 1.37.2 (amd64/arm64 system images) (release 2PGSTY)
 
-- [mtail](https://github.com/jaqx0r/mtail) : 3.4.21
+- [mtail](https://github.com/jaqx0r/mtail) : 3.4.22
 - [restic](https://github.com/restic/restic) : 0.20.0
 - [juicefs](https://github.com/juicedata/juicefs) : 1.4.2
 - [tigerfs](https://github.com/timescale/tigerfs) : 0.7.0
@@ -84,7 +84,7 @@ release, called out inline. External-build exceptions are also noted inline.
 - [headscale](https://github.com/juanfont/headscale) 0.29.7
 - [tailcat](https://github.com/tailscale/tailcat) 0.7.0
 - [hugo](https://github.com/gohugoio/hugo) 0.170.1
-- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.54
+- [seaweedfs](https://github.com/seaweedfs/seaweedfs) 4.55
 - [sealos](https://github.com/labring/sealos/releases/tag/v5.0.1) 5.0.1 (`2PGSTY`; **locked / 锁定**, final Apache-2.0 stable release; no further upstream updates; locally indexed as 5.0.1-2PGSTY; historical 5.1.1 removed; APT/DNF select the locked version by default; publication pending; see [version lock](sealos/LOCKED.md))
 - [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) 2.5.0
 - [rustfs](https://github.com/rustfs/rustfs) 1.0.6 (stable release; `1PGSTY`)
@@ -94,14 +94,14 @@ release, called out inline. External-build exceptions are also noted inline.
 - [sabiql](https://github.com/riii111/sabiql) 3.1.0 (requires glibc 2.39)
 - [timescaledb-tools](https://github.com/timescale/timescaledb-tune) 0.19.1 (release `1PGSTY`; bundles timescaledb-parallel-copy 0.13.2; Go 1.27.4 source builds)
 - [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) 0.20.0
-- [agentsview](https://github.com/kenn-io/agentsview) 0.47.0
+- [agentsview](https://github.com/kenn-io/agentsview) 0.48.0
 - [t3code](https://github.com/pingdotgg/t3code/releases/tag/v0.1.11) 0.1.11 (T3 Code desktop; official DEBs, locally repackaged RPMs `1PGSTY`; `make t3-code` alias; glibc 2.34+, KDE capture / arm64 Cursor sandbox 2.39+)
 - [pi-coding-agent](https://github.com/earendil-works/pi) 1.6.0 (complete upstream runtime)
 - [codex](https://github.com/openai/codex) 0.171.0
 - [stalwart](https://github.com/stalwartlabs/stalwart) 1.1.1 (breaking database-layout change; [migration from 0.16.x required](https://stalw.art/docs/migration/upgrade-0-16/))
 - [maddy](https://github.com/foxcpp/maddy) 0.9.8
 - [mcp-toolbox](https://github.com/googleapis/mcp-toolbox) 1.18.0 (dual-architecture CGO source build; checksum-pinned local recipe)
-- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 4.0.1
+- [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest) 4.1.0
 - [vip-manager](https://github.com/cybertec-postgresql/vip-manager) 5.0.0 (built; installed disabled by default)
   - warning: review `/etc/vip-manager/vip-manager.yml` before explicitly enabling the service; 5.0 has breaking configuration and DCS-loss behavior changes, and the packaged sample uses `manager-type` instead of the ignored upstream `hosting-type` key
 - [postgrest](https://github.com/PostgREST/postgrest) 16.6 (requires PostgreSQL 14+)
@@ -109,14 +109,14 @@ release, called out inline. External-build exceptions are also noted inline.
 - [asciinema](https://github.com/asciinema/asciinema) 3.2.1
 - [opencode](https://github.com/anomalyco/opencode) 1.19.6-1PGSTY
 - [uv](https://github.com/astral-sh/uv) 0.13.9
-- [pgschema](https://github.com/pgplex/pgschema) 1.14.1
+- [pgschema](https://github.com/pgplex/pgschema) 1.15.0
 - [crush](https://github.com/charmbracelet/crush) 0.102.0
   - repacked from the official Linux archives with the FSL-1.1-MIT license, completions, and man page
 - [rclone](https://github.com/rclone/rclone) 1.76.0
 - [cloudflared](https://github.com/cloudflare/cloudflared) 2026.11.1
 - [pev2](https://github.com/dalibo/pev2/releases) 1.25.0 (noarch)
 - [pig](https://github.com/pgsty/pig) 1.11.0
-- [sow](https://github.com/pgsty/sow) 0.7.1
+- [sow](https://github.com/pgsty/sow) 0.8.0
 - [golang](https://go.dev/dl/) 1.27.4
   - x86_64: https://go.dev/dl/go1.27.4.linux-amd64.tar.gz
   - arm64: https://go.dev/dl/go1.27.4.linux-arm64.tar.gz
@@ -129,23 +129,25 @@ release, called out inline. External-build exceptions are also noted inline.
 - [cargo-pgrx-0191](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.1) 0.19.1 (retained exact version slot)
 - [cargo-pgrx-0192](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.2) 0.19.2 (new exact version slot; native EL8 builds)
 - [cargo-pgrx-0193](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.3) 0.19.3 (new exact version slot; 0191/0192 retained; native EL8 builds)
-- [cargo-pgrx-0194](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.4) 0.19.4 (new independent slot; Rust >= 1.96.0; final 0.19 maintenance release)
+- [cargo-pgrx-0194](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.4) 0.19.4 (new independent slot; Rust >= 1.96.0; PostgreSQL 13–19)
+- [cargo-pgrx-0195](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.5) 0.19.5 (Rust >= 1.96.0, PostgreSQL 13–19)
 - [cargo-pgrx-0200](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.20.0) 0.20.0 (new independent slot; Rust >= 1.99.1; PostgreSQL 15–19)
+- [cargo-pgrx-0201](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.20.1) 0.20.1 (Rust >= 1.99.1, PostgreSQL 15–19)
 
 **Vendor-direct packages**:
 
 These recipes preserve the vendor-published native DEB/RPM packages byte for
 byte, including their original release metadata.
 
-- [orca-ide](https://github.com/stablyai/orca/releases/tag/v1.4.267) 1.4.267 (Orca desktop; official amd64/arm64 DEB/RPM; `make orca` alias; CLI `orca-ide` avoids GNOME Orca)
+- [orca-ide](https://github.com/stablyai/orca/releases/tag/v1.4.271) 1.4.271 (Orca desktop; official amd64/arm64 DEB/RPM; `make orca` alias; CLI `orca-ide` avoids GNOME Orca)
 
 - [ivorysql](https://github.com/IvorySQL/IvorySQL/releases/tag/IvorySQL_5.6) 5.6 (DEB `ivorysql-5`; RPM `ivorysql5`; PostgreSQL 18.6 kernel)
 
-- [barn](https://github.com/pgsty/barn) 1.2.0 (native packages)
-  - deb amd64: https://github.com/pgsty/barn/releases/download/v1.2.0/barn_1.2.0_linux_amd64.deb
-  - rpm amd64: https://github.com/pgsty/barn/releases/download/v1.2.0/barn_1.2.0_linux_amd64.rpm
-  - deb arm64: https://github.com/pgsty/barn/releases/download/v1.2.0/barn_1.2.0_linux_arm64.deb
-  - rpm arm64: https://github.com/pgsty/barn/releases/download/v1.2.0/barn_1.2.0_linux_arm64.rpm
+- [barn](https://github.com/pgsty/barn) 1.3.0 (native packages)
+  - deb amd64: https://github.com/pgsty/barn/releases/download/v1.3.0/barn_1.3.0_linux_amd64.deb
+  - rpm amd64: https://github.com/pgsty/barn/releases/download/v1.3.0/barn_1.3.0_linux_amd64.rpm
+  - deb arm64: https://github.com/pgsty/barn/releases/download/v1.3.0/barn_1.3.0_linux_arm64.deb
+  - rpm arm64: https://github.com/pgsty/barn/releases/download/v1.3.0/barn_1.3.0_linux_arm64.rpm
 - [claude-code](https://github.com/anthropics/claude-code) 2.1.330 (official apt/dnf source packages preserved byte-for-byte in `dist`; current batch locally indexed; repository RPM copies signed with PGSTY; legacy `claude` installations require a package-name migration)
   - deb amd64: https://downloads.claude.ai/claude-code/apt/latest/pool/main/c/claude-code/claude-code_2.1.330-1_amd64.deb
   - deb arm64: https://downloads.claude.ai/claude-code/apt/latest/pool/main/c/claude-code/claude-code_2.1.330-1_arm64.deb
@@ -189,11 +191,11 @@ byte, including their original release metadata.
   - deb amd64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-11-12T00-00-00Z/mcli_20261112000000.0.0_amd64.deb
   - deb arm64: https://github.com/pgsty/mc/releases/download/RELEASE.2026-11-12T00-00-00Z/mcli_20261112000000.0.0_arm64.deb
   - native layout: `/usr/local/bin/mcli` (previous repack: `/usr/bin/mcli`); preserves upstream legal files, RPM release `1`, DEB version without a release suffix; repository RPMs use the PGSTY signing key
-- [pgext](https://github.com/pgsty/pgext) 1.7.1 (PostgreSQL extension catalog CLI and web app; upstream native packages)
-  - rpm arm64: https://github.com/pgsty/pgext/releases/download/v1.7.1/pgext-1.7.1-1PGSTY.aarch64.rpm
-  - rpm amd64: https://github.com/pgsty/pgext/releases/download/v1.7.1/pgext-1.7.1-1PGSTY.x86_64.rpm
-  - deb amd64: https://github.com/pgsty/pgext/releases/download/v1.7.1/pgext_1.7.1-1PGSTY_amd64.deb
-  - deb arm64: https://github.com/pgsty/pgext/releases/download/v1.7.1/pgext_1.7.1-1PGSTY_arm64.deb
+- [pgext](https://github.com/pgsty/pgext) 1.7.2 (PostgreSQL extension catalog CLI and web app; upstream native packages)
+  - rpm arm64: https://github.com/pgsty/pgext/releases/download/v1.7.2/pgext-1.7.2-1PGSTY.aarch64.rpm
+  - rpm amd64: https://github.com/pgsty/pgext/releases/download/v1.7.2/pgext-1.7.2-1PGSTY.x86_64.rpm
+  - deb amd64: https://github.com/pgsty/pgext/releases/download/v1.7.2/pgext_1.7.2-1PGSTY_amd64.deb
+  - deb arm64: https://github.com/pgsty/pgext/releases/download/v1.7.2/pgext_1.7.2-1PGSTY_arm64.deb
 - [silo](https://github.com/pgsty/silo): 20261112000000.0.0
   - rpm arm64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-11-12T00-00-00Z/silo-20261112000000.0.0-1PGSTY.aarch64.rpm
   - rpm amd64: https://github.com/pgsty/silo/releases/download/RELEASE.2026-11-12T00-00-00Z/silo-20261112000000.0.0-1PGSTY.x86_64.rpm
@@ -215,6 +217,25 @@ byte, including their original release metadata.
 --------
 
 ## Changelog
+
+**2026-11-23**
+
+This batch updates 10 packages and adds two cargo-pgrx slots. The signed local APT and YUM repositories index all 24 DEBs and 24 RPMs. APT and DNF verification passed on both architectures. Online publication is pending.
+
+| Package | Previous | New | Notes |
+|---|---|---|---|
+| [barn](https://github.com/pgsty/barn/releases/tag/v1.3.0) | 1.2.0 | 1.3.0 | Official DEB/RPM. The `rocky` and `ubuntu` aliases now select Rocky 10 and Ubuntu 26.04. |
+| [sow](https://github.com/pgsty/sow/releases/tag/v0.8.0) | 0.7.1 | 0.8.0 | R2 GC now records candidates by default. Finish any interrupted local GC with 0.7.1 before upgrading. |
+| [pgext](https://github.com/pgsty/pgext/releases/tag/v1.7.2) | 1.7.1 | 1.7.2 | Official DEB/RPM. Extension build targets are PG15–19, or PG15–18 on EL8. |
+| [agentsview](https://github.com/kenn-io/agentsview/releases/tag/v0.48.0) | 0.47.0 | 0.48.0 | Adds incremental ChatGPT history imports from Chrome and session imports for Gemini and Grok. |
+| [mtail](https://github.com/jaqx0r/mtail/releases/tag/v3.4.22) | 3.4.21 | 3.4.22 | Updates the log metrics collector. |
+| [npgsqlrest](https://github.com/NpgsqlRest/NpgsqlRest/releases/tag/v4.1.0) | 4.0.1 | 4.1.0 | Uses Npgsql 11 and adds `--inspect` and `--parse`. |
+| [orca-ide](https://github.com/stablyai/orca/releases/tag/v1.4.271) | 1.4.267 | 1.4.271 | Official DEB/RPM. The RPM license field reads `unknown`. The tagged source declares MIT. |
+| [pgschema](https://github.com/pgplex/pgschema/releases/tag/v1.15.0) | 1.14.1 | 1.15.0 | Tracks the stable 1.x release. |
+| [redis-exporter](https://github.com/oliver006/redis_exporter/releases/tag/v1.98.0) | 1.97.0 | 1.98.0 | Fixes latency histogram and stream group metrics. |
+| [seaweedfs](https://github.com/seaweedfs/seaweedfs/releases/tag/4.55) | 4.54 | 4.55 | Upstream tag `4.55` is packaged as `4.55.0`. |
+| [cargo-pgrx-0195](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.19.5) | — | 0.19.5 | New slot for PG13–19, requiring Rust 1.96.0 or later. |
+| [cargo-pgrx-0201](https://github.com/pgcentralfoundation/pgrx/releases/tag/v0.20.1) | — | 0.20.1 | New slot for PG15–19, requiring Rust 1.99.1 or later. Cross compilation now uses `package --bundle`. |
 
 **2026-11-21**
 
