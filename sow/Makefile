@@ -13,13 +13,13 @@ export ARCH RARCH
 
 REPONAME=pgsty/sow
 PACKAGE=sow
-VERSION=0.7.1
+VERSION=0.8.0
 RELEASE=1PGSTY
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/v$(VERSION)
 FILENAME=$(PACKAGE)_$(VERSION)_linux_$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/v$(VERSION)/$(FILENAME)
-SHA256_amd64=d1fd60997a86a2048bfe38a5b23a5bcab07e1d99b171133e64ff2b75e4694179
-SHA256_arm64=2adbe314ec4033825bc54effd870bfdbdd366858a35145e7831d298f72438f5c
+SHA256_amd64=d2de548971d399ff0a825cfebc0827bb78590be9af0948b18bc1d223248958b1
+SHA256_arm64=483403ea407eb5d9251d9d693fb811f6bbe325d82bb0c8f5cacd2b890b53ba07
 SHA256=$(SHA256_$(ARCH))
 PROXY ?= http://127.0.0.1:8888
 CURL=curl --proxy "$(PROXY)" --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
