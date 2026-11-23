@@ -7,21 +7,21 @@ export ARCH RARCH
 VENDOR_DIRECT=1
 REPONAME=pgsty/pgext
 PACKAGE=pgext
-VERSION=1.7.1
+VERSION=1.7.2
 PROXY ?= http://127.0.0.1:8888
 
-DEB_FILE_amd64=pgext_1.7.1-1PGSTY_amd64.deb
-DEB_URL_amd64=https://github.com/pgsty/pgext/releases/download/v1.7.1/pgext_1.7.1-1PGSTY_amd64.deb
-RPM_FILE_amd64=pgext-1.7.1-1PGSTY.x86_64.rpm
-RPM_URL_amd64=https://github.com/pgsty/pgext/releases/download/v1.7.1/pgext-1.7.1-1PGSTY.x86_64.rpm
-DEB_FILE_arm64=pgext_1.7.1-1PGSTY_arm64.deb
-DEB_URL_arm64=https://github.com/pgsty/pgext/releases/download/v1.7.1/pgext_1.7.1-1PGSTY_arm64.deb
-RPM_FILE_arm64=pgext-1.7.1-1PGSTY.aarch64.rpm
-RPM_URL_arm64=https://github.com/pgsty/pgext/releases/download/v1.7.1/pgext-1.7.1-1PGSTY.aarch64.rpm
-SHA256_DEB_amd64=7ecdf3ca514173555f1f341c5942909dea5123914e0d975714fe633acc02d0af
-SHA256_RPM_amd64=f1a011a5efd4b79009d6f3c3758fc35d3c31d920b54356a540be0357779368ea
-SHA256_DEB_arm64=b81099a0b3388bde730555053fe6263ffee3dada5b3542dc820d1215a86fa9f8
-SHA256_RPM_arm64=ce76ea24a8cc9afee0d79ea4b26fb4eb684286535b480682fbca557dabea1f00
+DEB_FILE_amd64=pgext_1.7.2-1PGSTY_amd64.deb
+DEB_URL_amd64=https://github.com/pgsty/pgext/releases/download/v1.7.2/pgext_1.7.2-1PGSTY_amd64.deb
+RPM_FILE_amd64=pgext-1.7.2-1PGSTY.x86_64.rpm
+RPM_URL_amd64=https://github.com/pgsty/pgext/releases/download/v1.7.2/pgext-1.7.2-1PGSTY.x86_64.rpm
+DEB_FILE_arm64=pgext_1.7.2-1PGSTY_arm64.deb
+DEB_URL_arm64=https://github.com/pgsty/pgext/releases/download/v1.7.2/pgext_1.7.2-1PGSTY_arm64.deb
+RPM_FILE_arm64=pgext-1.7.2-1PGSTY.aarch64.rpm
+RPM_URL_arm64=https://github.com/pgsty/pgext/releases/download/v1.7.2/pgext-1.7.2-1PGSTY.aarch64.rpm
+SHA256_DEB_amd64=d88acbec63150b663c15f213e53685f2928e6969a65b5ac2b7f511d15382c354
+SHA256_RPM_amd64=807d43dc804512090de4a7bec9a2d493cda7e99864522cc229a08e5970f670f7
+SHA256_DEB_arm64=5e89a4ccc0a9b2160a6fda420213cca22e40373132a0e81e029261edc46d21f6
+SHA256_RPM_arm64=1cf12e1dfde1cdff664b5f00503bfdf1b5561f394afc9273482c0735fc1469df
 
 default: all
 all:
