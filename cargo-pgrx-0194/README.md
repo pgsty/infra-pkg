@@ -44,8 +44,9 @@ This package is not FIPS-certified. Environments requiring a validated FIPS
 TLS implementation must not use cargo-pgrx's Rustls download path without a
 separate policy decision; normal PGSTY builds use installed `pg_config` paths.
 
-Version 0.19.4 is the final 0.19 release and includes the CVE-2026-6460
-fix. To apply it to an extension, update its pgrx dependencies to 0.19.4
+Version 0.19.4 includes the CVE-2026-6460 fix. The subsequent
+[0.19.5 slot](../cargo-pgrx-0195/) adds support for the final PostgreSQL 19 release.
+To apply the fix with this slot, update the extension's pgrx dependencies to 0.19.4
 and rebuild against patched PostgreSQL headers (14.25, 15.20, 16.16, 17.12,
 18.7 or 19rc2). Such extensions cannot load on earlier PostgreSQL minor
 releases. Installing this CLI alone does not update an existing extension.
