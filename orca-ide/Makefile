@@ -6,21 +6,21 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=orca-ide
-VERSION=1.4.267
+VERSION=1.4.271
 PROXY ?= http://127.0.0.1:8888
 
-RPM_FILE_arm64=orca-ide-1.4.267.aarch64.rpm
-RPM_URL_arm64=https://github.com/stablyai/orca/releases/download/v1.4.267/orca-ide-1.4.267.aarch64.rpm
-SHA256_RPM_arm64=1d791a6dd20dc3a9f8f113f265b1ebdab0a10439e37c0799f7627522ee2de501
-RPM_FILE_amd64=orca-ide-1.4.267.x86_64.rpm
-RPM_URL_amd64=https://github.com/stablyai/orca/releases/download/v1.4.267/orca-ide-1.4.267.x86_64.rpm
-SHA256_RPM_amd64=f4332c82c5dff0a70f06536a918204969c8af7283f6d9a032d8d05f9eb20aa8f
-DEB_FILE_amd64=orca-ide_1.4.267_amd64.deb
-DEB_URL_amd64=https://github.com/stablyai/orca/releases/download/v1.4.267/orca-ide_1.4.267_amd64.deb
-SHA256_DEB_amd64=7e7c455fe6fab97eaa3825103c104074a208afd598b66052c2a9dc5643efbcea
-DEB_FILE_arm64=orca-ide_1.4.267_arm64.deb
-DEB_URL_arm64=https://github.com/stablyai/orca/releases/download/v1.4.267/orca-ide_1.4.267_arm64.deb
-SHA256_DEB_arm64=4cb4974ad6794905c76aa37e1a8d152af977a1661d251a6a29558bb6d4d4f160
+RPM_FILE_arm64=orca-ide-1.4.271.aarch64.rpm
+RPM_URL_arm64=https://github.com/stablyai/orca/releases/download/v1.4.271/orca-ide-1.4.271.aarch64.rpm
+SHA256_RPM_arm64=0f64962649bf5fdf6da764cf9d871d1d42298efae3ad596e52843f7488a41e8c
+RPM_FILE_amd64=orca-ide-1.4.271.x86_64.rpm
+RPM_URL_amd64=https://github.com/stablyai/orca/releases/download/v1.4.271/orca-ide-1.4.271.x86_64.rpm
+SHA256_RPM_amd64=a0cab5c749d6557ee00f59dfbae4d30fcb5a4a27e68c76865638d0304fa253ec
+DEB_FILE_amd64=orca-ide_1.4.271_amd64.deb
+DEB_URL_amd64=https://github.com/stablyai/orca/releases/download/v1.4.271/orca-ide_1.4.271_amd64.deb
+SHA256_DEB_amd64=7fad3d721dc0b0920f248353f5391fe0138331791acb64c9677c7a91bf41e755
+DEB_FILE_arm64=orca-ide_1.4.271_arm64.deb
+DEB_URL_arm64=https://github.com/stablyai/orca/releases/download/v1.4.271/orca-ide_1.4.271_arm64.deb
+SHA256_DEB_arm64=2caed34d6f6eb12e265787dacaffed50dc3974674f8baef89b5e367370aa7706
 
 default: all
 all:
