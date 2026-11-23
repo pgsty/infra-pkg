@@ -65,6 +65,9 @@ __pycache__/
 /pg-exporter/pg_exporter/
 /pgschema/pgschema/
 /pgschema/pgschema-*-linux-*
+/npgsqlrest/npgsqlrest-linux64
+/npgsqlrest/npgsqlrest-linux-arm64
+/npgsqlrest/npgsqlrest/
 /pgstream/pgstream/
 /pgstream/source/
 /sow/sow/
