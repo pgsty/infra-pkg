@@ -15,6 +15,8 @@ __pycache__/
 *.pyc
 
 # Per-recipe build inputs and extracted vendor payloads.
+/cloudflared/cloudflared-*-linux-*
+/cloudflared/cloudflared/
 /codex/codex/
 /crush/crush/
 /crush/crush_*/
@@ -27,6 +29,8 @@ __pycache__/
 /grafana-victoriametrics-ds/victoriametrics-metrics-datasource/
 /seaweedfs/seaweedfs/
 /stalwart/stalwart/
+/tailcat/source/
+/tailcat/stage/
 /uv/uv/
 /pig/pig/
 /caddy/caddy/
