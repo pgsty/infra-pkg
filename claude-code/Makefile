@@ -20,21 +20,21 @@ export ARCH RARCH
 
 VENDOR_DIRECT=1
 PACKAGE=claude-code
-VERSION=2.1.330
+VERSION=2.1.331
 PROXY ?= http://127.0.0.1:8888
 
-DEB_FILE_amd64=claude-code_2.1.330-1_amd64.deb
-DEB_FILE_arm64=claude-code_2.1.330-1_arm64.deb
-RPM_FILE_amd64=claude-code-2.1.330-1.x86_64.rpm
-RPM_FILE_arm64=claude-code-2.1.330-1.aarch64.rpm
-DEB_URL_amd64=https://downloads.claude.ai/claude-code/apt/latest/pool/main/c/claude-code/claude-code_2.1.330-1_amd64.deb
-DEB_URL_arm64=https://downloads.claude.ai/claude-code/apt/latest/pool/main/c/claude-code/claude-code_2.1.330-1_arm64.deb
-RPM_URL_amd64=https://downloads.claude.ai/claude-code/rpm/latest/Packages/claude-code-2.1.330-1.x86_64.rpm
-RPM_URL_arm64=https://downloads.claude.ai/claude-code/rpm/latest/Packages/claude-code-2.1.330-1.aarch64.rpm
-SHA256_DEB_amd64=07495980f89fc1e62690c333a580e25d8c431306dfa5b112d5980be4778360b5
-SHA256_DEB_arm64=9cc220109c4853e03492013088de89c8ca3923c718460b3c9e60d81c12a34414
-SHA256_RPM_amd64=ad26fb886ea3d57aaca3d1320419aa9aa89fed4985f0314012956462b23579a7
-SHA256_RPM_arm64=97a8f08589bcba7fefd53c264ea6954b27f4a66b6b28bcfadf4563fb0be04334
+DEB_FILE_amd64=claude-code_2.1.331-1_amd64.deb
+DEB_FILE_arm64=claude-code_2.1.331-1_arm64.deb
+RPM_FILE_amd64=claude-code-2.1.331-1.x86_64.rpm
+RPM_FILE_arm64=claude-code-2.1.331-1.aarch64.rpm
+DEB_URL_amd64=https://downloads.claude.ai/claude-code/apt/latest/pool/main/c/claude-code/claude-code_2.1.331-1_amd64.deb
+DEB_URL_arm64=https://downloads.claude.ai/claude-code/apt/latest/pool/main/c/claude-code/claude-code_2.1.331-1_arm64.deb
+RPM_URL_amd64=https://downloads.claude.ai/claude-code/rpm/latest/Packages/claude-code-2.1.331-1.x86_64.rpm
+RPM_URL_arm64=https://downloads.claude.ai/claude-code/rpm/latest/Packages/claude-code-2.1.331-1.aarch64.rpm
+SHA256_DEB_amd64=cd9fc7001b0eb0a4a7f000fc07ed9c5c7bb530090637be7546767d359514ffe3
+SHA256_DEB_arm64=54de1d5eef8acabb87b8c3ce8ecd570885f90a1c4153ce0333d1dd3057ddfea6
+SHA256_RPM_amd64=9219726c1131513be9cbef16b0fce577d944645708bf5226423705420cc398f7
+SHA256_RPM_arm64=704711e8901ff8a75f549e24b1722629927df41c5ec88724e7343c2ac057d786
 
 default: all
 all:
