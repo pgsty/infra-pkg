@@ -13,15 +13,15 @@ export ARCH RARCH
 
 REPONAME=pgrundev/pgbot
 PACKAGE=pgbot
-VERSION=0.10.0
+VERSION=0.11.1
 RELEASE=1PGSTY
 TAG=v$(VERSION)
 RELEASE_PAGE=https://github.com/$(REPONAME)/releases/tag/$(TAG)
 FILENAME=$(PACKAGE)_$(VERSION)_linux_$(ARCH).tar.gz
 WEB_URL=https://github.com/$(REPONAME)/releases/download/$(TAG)/$(FILENAME)
 # Upstream checksums.txt from the versioned release.
-SHA256_amd64=102dd639639ab7a4c2a933bf612390e21b699962ee33d9c939128657e416ae2e
-SHA256_arm64=442d6e14883dae2d2066eddc74d5176e8a2eb9d22dc4b7f293be64f79db08cce
+SHA256_amd64=8385d329ca8d154104360816970d6d40da1f1730a0cb62bf618a34cdd4cc56a5
+SHA256_arm64=ee12d92453c3b6694c906bf8d249f97bb29404eb64a42bb5e9469c7b7dd32b1b
 SHA256=$(SHA256_$(ARCH))
 PROXY ?= http://127.0.0.1:8888
 CURL=curl --proxy "$(PROXY)" --http1.1 --retry 5 --retry-delay 2 --retry-connrefused --continue-at - -fL
