@@ -4,7 +4,7 @@ platform: "linux"
 section: "database"
 priority: "optional"
 version: "v0.19.1"
-release: "1PGSTY"
+release: "2PGSTY"
 version_schema: semver
 description: "TimescaleDB tuning and parallel copy tools"
 maintainer: Ruohang Feng <rh@vonng.com>
